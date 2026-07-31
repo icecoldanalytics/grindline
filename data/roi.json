@@ -1,168 +1,46 @@
 {
-  "generated": "2026-07-30 09:12 AM MT",
+  "generated": "2026-07-31 09:17 AM MT",
   "season": "2025-26",
-  "through_date": "2026-07-29",
+  "through_date": "2026-07-30",
   "signal1": {
-    "games": 61,
-    "wins": 32,
-    "losses": 29,
-    "win_rate": 52.5,
-    "roi": 0.1,
+    "games": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0.0,
+    "roi": 0.0,
     "avg_odds": -112,
-    "streak": "1L",
-    "best_month": "Feb 2026",
-    "monthly": [
-      {
-        "month": "2025-10",
-        "wins": 5,
-        "losses": 5,
-        "roi": -4.5
-      },
-      {
-        "month": "2025-11",
-        "wins": 5,
-        "losses": 4,
-        "roi": 6.1
-      },
-      {
-        "month": "2025-12",
-        "wins": 2,
-        "losses": 5,
-        "roi": -45.5
-      },
-      {
-        "month": "2026-01",
-        "wins": 9,
-        "losses": 5,
-        "roi": 22.7
-      },
-      {
-        "month": "2026-02",
-        "wins": 6,
-        "losses": 3,
-        "roi": 27.3
-      },
-      {
-        "month": "2026-03",
-        "wins": 3,
-        "losses": 4,
-        "roi": -18.2
-      },
-      {
-        "month": "2026-04",
-        "wins": 2,
-        "losses": 3,
-        "roi": -23.6
-      }
-    ],
+    "streak": "\u2014",
+    "best_month": "\u2014",
+    "monthly": [],
     "status": "Active"
   },
   "signal1_partial": {
-    "games": 137,
-    "wins": 89,
-    "losses": 48,
-    "win_rate": 65.0,
-    "roi": 24.0,
+    "games": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0.0,
+    "roi": 0.0,
     "avg_odds": -110,
-    "streak": "1W",
-    "monthly": [
-      {
-        "month": "2025-10",
-        "wins": 13,
-        "losses": 3,
-        "roi": 55.1
-      },
-      {
-        "month": "2025-11",
-        "wins": 11,
-        "losses": 5,
-        "roi": 31.2
-      },
-      {
-        "month": "2025-12",
-        "wins": 12,
-        "losses": 8,
-        "roi": 14.5
-      },
-      {
-        "month": "2026-01",
-        "wins": 23,
-        "losses": 15,
-        "roi": 15.6
-      },
-      {
-        "month": "2026-02",
-        "wins": 7,
-        "losses": 1,
-        "roi": 67.0
-      },
-      {
-        "month": "2026-03",
-        "wins": 15,
-        "losses": 12,
-        "roi": 6.1
-      },
-      {
-        "month": "2026-04",
-        "wins": 8,
-        "losses": 4,
-        "roi": 27.3
-      }
-    ],
+    "streak": "\u2014",
+    "monthly": [],
     "status": "Active"
   },
   "signal2": {
-    "games": 21,
-    "wins": 14,
-    "losses": 7,
-    "win_rate": 66.7,
-    "roi": 28.4,
+    "games": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0.0,
+    "roi": 0.0,
     "avg_odds": -108,
-    "streak": "1L",
+    "streak": "\u2014",
     "note": "Redefined after full-season backtest: away B2B + confirmed #1 goalie starting (backup variant tested -15% ROI)",
     "status": "Active"
   },
   "summary": {
-    "total_sig1_games": 61,
-    "total_partial_games": 137,
-    "total_sig2_games": 21,
-    "cancelled_both_b2b": 72,
-    "last5_sig1": [
-      {
-        "date": "2026-04-02",
-        "away": "VAN",
-        "home": "MIN",
-        "score": "2-5",
-        "fade_won": true
-      },
-      {
-        "date": "2026-04-03",
-        "away": "PHI",
-        "home": "NYI",
-        "score": "4-1",
-        "fade_won": false
-      },
-      {
-        "date": "2026-04-07",
-        "away": "NSH",
-        "home": "ANA",
-        "score": "5-0",
-        "fade_won": false
-      },
-      {
-        "date": "2026-04-09",
-        "away": "TOR",
-        "home": "NYI",
-        "score": "3-5",
-        "fade_won": true
-      },
-      {
-        "date": "2026-04-12",
-        "away": "VAN",
-        "home": "ANA",
-        "score": "4-3",
-        "fade_won": false
-      }
-    ]
+    "total_sig1_games": 0,
+    "total_partial_games": 0,
+    "total_sig2_games": 0,
+    "cancelled_both_b2b": 0,
+    "last5_sig1": []
   }
 }
