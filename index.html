@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Grind Line | NHL Betting Intelligence</title>
+<title>Grind Line | NHL Betting Intelligence</title>
 
 <style>
 :root {
@@ -12,14 +12,14 @@
   --navy:    #0b1522;
   --card:    #0d1a2a;
   --border:  #162334;
-  --accent: #00c46a;
-  --cyan:   #00e88a;
+  --accent:  #00c46a;
+  --cyan:    #00e88a;
   --gold:    #f5a623;
-  --green:  #3ddc97;
+  --green:   #3ddc97;
   --red:     #ff4757;
   --orange:  #ff8c00;
-  --text:   #c5e8d5;
-  --muted:   #4a6a88;
+  --text:    #c5e8d5;
+  --muted:   #5a8a72;
   --bright:  #ffffff;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -27,10 +27,10 @@ html{scroll-behavior:smooth;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--text);min-height:100vh;overflow-x:hidden;}
 ::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-track{background:var(--dark);}
-::-webkit-scrollbar-thumb{background:#1a3a5c;border-radius:3px;}
+::-webkit-scrollbar-thumb{background:#1a4a3c;border-radius:3px;}
 
 /* TICKER */
-.ticker-wrap{background:linear-gradient(90deg,#03080f,#060d19,#03080f);border-bottom:1px solid rgba(0,180,255,0.15);overflow:hidden;height:36px;display:flex;align-items:center;position:sticky;top:0;z-index:1000;}
+.ticker-wrap{background:linear-gradient(90deg,#03080f,#060d19,#03080f);border-bottom:1px solid rgba(0,196,106,0.15);overflow:hidden;height:36px;display:flex;align-items:center;position:sticky;top:0;z-index:1000;}
 .ticker-label{background:var(--accent);color:#000;font-weight:800;font-size:0.7rem;letter-spacing:1px;padding:0 14px;height:36px;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;}
 .ticker-overflow{overflow:hidden;flex:1;}
 .ticker-track{display:flex;animation:ticker-scroll 120s linear infinite;white-space:nowrap;}
@@ -41,17 +41,17 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 /* NAV */
 .topnav{position:sticky;top:36px;z-index:999;background:rgba(6,11,20,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:60px;}
 .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer;}
-.nav-brand-icon{width:38px;height:38px;background:linear-gradient(135deg,#00b4ff,#0066cc);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 14px rgba(0,180,255,0.35);flex-shrink:0;}
+.nav-brand-icon{width:38px;height:38px;background:linear-gradient(135deg,#00c46a,#00764a);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 14px rgba(0,196,106,0.35);flex-shrink:0;}
 .nav-brand-text{font-weight:800;font-size:1.1rem;letter-spacing:-0.3px;color:var(--bright);}
 .nav-brand-text span{color:var(--accent);}
 .nav-links{display:flex;align-items:center;gap:2px;}
 .nav-links a{font-weight:600;font-size:0.78rem;letter-spacing:0.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:8px 14px;border-radius:6px;border-bottom:3px solid transparent;transition:all 0.2s;cursor:pointer;}
 .nav-links a:hover,.nav-links a.active{color:var(--accent);border-bottom-color:var(--accent);}
 .nav-cta{font-weight:700;font-size:0.78rem;letter-spacing:1px;text-transform:uppercase;color:#000;background:var(--accent);border:none;padding:9px 18px;border-radius:6px;cursor:pointer;transition:all 0.2s;text-decoration:none;}
-.nav-cta:hover{background:var(--cyan);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,180,255,0.4);}
-  .nav-right{display:flex;align-items:center;gap:10px;}
+.nav-cta:hover{background:var(--cyan);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,196,106,0.4);}
+.nav-right{display:flex;align-items:center;gap:10px;}
 .nav-beta{background:transparent;border:1px solid var(--cyan);color:var(--cyan);padding:7px 14px;border-radius:6px;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:none;white-space:nowrap;}
-.nav-beta:hover{background:rgba(0,194,255,0.1);}
+.nav-beta:hover{background:rgba(0,232,138,0.1);}
 .nav-hamburger{display:none;background:transparent;border:1px solid var(--border);color:var(--text);font-size:1.2rem;padding:6px 10px;border-radius:6px;cursor:pointer;}
 .nav-beta-mobile{display:none;}
 @media(max-width:768px){.nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:#0d1a24;border-bottom:1px solid var(--border);flex-direction:column;padding:8px 0;z-index:999;}.nav-links.open{display:flex;}.nav-links a{padding:14px 24px;border-bottom:1px solid var(--border);font-size:1rem;}.nav-hamburger{display:block;}.nav-beta{display:none;}.nav-beta-mobile{display:block;color:var(--cyan);font-weight:700;}}
@@ -61,10 +61,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 
 /* HERO */
 .hero{position:relative;min-height:480px;display:flex;align-items:center;overflow:hidden;background:var(--dark);}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(0,100,180,0.18) 0%,transparent 60%),radial-gradient(ellipse 50% 80% at 20% 80%,rgba(0,30,80,0.4) 0%,transparent 60%),linear-gradient(135deg,#030810 0%,#060d1a 50%,#040b16 100%);}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(0,140,90,0.18) 0%,transparent 60%),radial-gradient(ellipse 50% 80% at 20% 80%,rgba(0,50,35,0.4) 0%,transparent 60%),linear-gradient(135deg,#030810 0%,#060d1a 50%,#040b16 100%);}
 .hero-rink{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:560px;height:380px;opacity:0.07;}
 .hero-rink svg{width:100%;height:100%;}
-.hero-orb{position:absolute;right:200px;top:40%;width:300px;height:300px;background:radial-gradient(circle,rgba(0,180,255,0.12) 0%,transparent 70%);border-radius:50%;animation:orb-pulse 4s ease-in-out infinite;}
+.hero-orb{position:absolute;right:200px;top:40%;width:300px;height:300px;background:radial-gradient(circle,rgba(0,196,106,0.12) 0%,transparent 70%);border-radius:50%;animation:orb-pulse 4s ease-in-out infinite;}
 @keyframes orb-pulse{0%,100%{transform:scale(1);opacity:0.8;}50%{transform:scale(1.15);opacity:1;}}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:70px 24px;width:100%;}
 .hero-eyebrow{font-weight:600;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
@@ -75,7 +75,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .hero-sub strong{color:var(--text);}
 .hero-buttons{display:flex;gap:12px;flex-wrap:wrap;}
 .btn-primary{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;background:var(--accent);color:#000;padding:13px 24px;border-radius:6px;text-decoration:none;cursor:pointer;border:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
-.btn-primary:hover{background:var(--cyan);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,180,255,0.4);}
+.btn-primary:hover{background:var(--cyan);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,196,106,0.4);}
 .btn-ghost{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;background:transparent;color:var(--text);padding:13px 24px;border-radius:6px;text-decoration:none;cursor:pointer;border:1px solid var(--border);transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
 .hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap;}
@@ -88,12 +88,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .section-divider{display:flex;align-items:center;gap:14px;margin:44px 0 20px;}
 .section-divider h2{font-weight:800;font-size:0.95rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--bright);white-space:nowrap;}
 .sd-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
-.sd-badge{font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent);background:rgba(0,180,255,0.08);border:1px solid rgba(0,180,255,0.2);padding:4px 12px;border-radius:20px;white-space:nowrap;}
+.sd-badge{font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent);background:rgba(0,196,106,0.08);border:1px solid rgba(0,196,106,0.2);padding:4px 12px;border-radius:20px;white-space:nowrap;}
 
 /* SIGNAL CARDS */
 .signal-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:10px;}
 .sig-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 24px;position:relative;overflow:hidden;transition:transform 0.2s,border-color 0.2s;}
-.sig-card:hover{transform:translateY(-2px);border-color:rgba(0,180,255,0.25);}
+.sig-card:hover{transform:translateY(-2px);border-color:rgba(0,196,106,0.25);}
 .sig-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0;}
 .sig-card.s1::after{background:linear-gradient(90deg,var(--accent),var(--cyan));}
 .sig-card.s2::after{background:linear-gradient(90deg,var(--gold),#ff8c00);}
@@ -111,7 +111,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .game-card{background:var(--card);border:1px solid var(--border);border-radius:10px;display:grid;grid-template-columns:1fr 100px 1fr 160px;align-items:center;overflow:hidden;transition:border-color 0.2s;position:relative;}
 .game-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
 .game-card.sig1::before{background:var(--accent);}.game-card.sig2::before{background:var(--gold);}.game-card.sig-partial::before{background:var(--orange);}.game-card.cancelled::before{background:var(--muted);}.game-card.nosig::before{background:var(--border);}
-.game-card.sig1{border-color:rgba(0,180,255,0.25);}.game-card.sig2{border-color:rgba(245,166,35,0.3);}.game-card.sig-partial{border-color:rgba(255,140,0,0.2);}
+.game-card.sig1{border-color:rgba(0,196,106,0.25);}.game-card.sig2{border-color:rgba(245,166,35,0.3);}.game-card.sig-partial{border-color:rgba(255,140,0,0.2);}
 .gc-team{padding:14px 16px 14px 20px;display:flex;flex-direction:column;gap:3px;}
 .gc-team.home{padding-right:20px;align-items:flex-end;text-align:right;}
 .gc-city{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
@@ -122,10 +122,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .gc-goalie span{color:var(--text);}
 .tag{font-size:0.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:3px;}
 .tag-b2b{background:rgba(255,71,87,0.15);color:#ff6b7a;border:1px solid rgba(255,71,87,0.25);}
-.tag-rest3{background:rgba(0,214,143,0.12);color:#00d68f;border:1px solid rgba(0,214,143,0.25);}
+.tag-rest3{background:rgba(61,220,151,0.12);color:#3ddc97;border:1px solid rgba(61,220,151,0.25);}
 .tag-rest2{background:rgba(255,140,0,0.12);color:#ffa040;border:1px solid rgba(255,140,0,0.2);}
-.tag-live{background:rgba(0,229,255,0.1);color:var(--cyan);border:1px solid rgba(0,229,255,0.25);animation:pulse 1.4s infinite;}
-.tag-final{background:rgba(74,106,136,0.1);color:var(--muted);border:1px solid rgba(74,106,136,0.2);}
+.tag-live{background:rgba(0,232,138,0.1);color:var(--cyan);border:1px solid rgba(0,232,138,0.25);animation:pulse 1.4s infinite;}
+.tag-final{background:rgba(90,138,114,0.1);color:var(--muted);border:1px solid rgba(90,138,114,0.2);}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.5;}}
 .gc-center{text-align:center;padding:12px 8px;background:rgba(255,255,255,0.02);border-left:1px solid var(--border);border-right:1px solid var(--border);}
 .gc-score{font-weight:800;font-size:1.4rem;color:var(--bright);letter-spacing:3px;line-height:1;}
@@ -135,11 +135,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .gc-odds span{color:var(--text);}
 .gc-signal{padding:14px 18px;display:flex;flex-direction:column;gap:5px;border-left:1px solid var(--border);}
 .gsig-badge{font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-radius:4px;text-align:center;}
-.gsb-s1{background:rgba(0,180,255,0.12);color:var(--accent);border:1px solid rgba(0,180,255,0.3);}
+.gsb-s1{background:rgba(0,196,106,0.12);color:var(--accent);border:1px solid rgba(0,196,106,0.3);}
 .gsb-s2{background:rgba(245,166,35,0.12);color:var(--gold);border:1px solid rgba(245,166,35,0.3);}
 .gsb-partial{background:rgba(255,140,0,0.1);color:var(--orange);border:1px solid rgba(255,140,0,0.25);}
-.gsb-cancel{background:rgba(74,106,136,0.08);color:var(--muted);border:1px solid rgba(74,106,136,0.15);}
-.gsb-none{background:transparent;color:var(--muted);border:1px solid rgba(74,106,136,0.1);}
+.gsb-cancel{background:rgba(90,138,114,0.08);color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
+.gsb-none{background:transparent;color:var(--muted);border:1px solid rgba(90,138,114,0.1);}
 .gsig-fade{font-size:0.72rem;color:var(--text);}
 .gsig-fade strong{color:var(--accent);}
 .gsig-note{font-size:0.67rem;color:var(--muted);line-height:1.4;}
@@ -154,25 +154,25 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .rr-note{font-size:0.68rem;color:var(--muted);margin-top:2px;}
 .rr-score{font-weight:700;font-size:1rem;color:var(--bright);letter-spacing:2px;white-space:nowrap;}
 .rr-result{font-weight:700;font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:4px;white-space:nowrap;}
-.r-hit{background:rgba(0,214,143,0.12);color:var(--green);border:1px solid rgba(0,214,143,0.25);}
+.r-hit{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
 .r-miss{background:rgba(255,71,87,0.12);color:var(--red);border:1px solid rgba(255,71,87,0.2);}
-.r-none{background:rgba(74,106,136,0.08);color:var(--muted);border:1px solid rgba(74,106,136,0.15);}
+.r-none{background:rgba(90,138,114,0.08);color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
 
 /* LOOKAHEAD */
 .la-stack{display:flex;flex-direction:column;gap:7px;}
 .la-day-label{font-size:0.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:10px 2px 4px;}
 .la-row{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 18px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;font-size:0.82rem;transition:border-color 0.2s;}
-.la-row.watch{border-color:rgba(0,180,255,0.25);}
+.la-row.watch{border-color:rgba(0,196,106,0.25);}
 .la-game strong{color:var(--bright);font-weight:700;font-size:0.95rem;text-transform:uppercase;letter-spacing:0.5px;}
 .la-desc{font-size:0.72rem;color:var(--muted);margin-top:3px;line-height:1.5;}
 .la-desc strong{color:var(--accent);}
 .la-flag{font-weight:700;font-size:0.68rem;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:4px;white-space:nowrap;}
-.lf-watch{background:rgba(0,180,255,0.1);color:var(--accent);border:1px solid rgba(0,180,255,0.25);}
-.lf-cancel{background:transparent;color:var(--muted);border:1px solid rgba(74,106,136,0.15);}
+.lf-watch{background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.25);}
+.lf-cancel{background:transparent;color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
 
 /* PAGE HERO */
-.page-hero{background:linear-gradient(135deg,#060b14,#0b1827);border-bottom:1px solid var(--border);padding:52px 32px;position:relative;overflow:hidden;}
-.page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,180,255,0.06) 0%,transparent 70%);border-radius:50%;}
+.page-hero{background:linear-gradient(135deg,#060b14,#0b2720);border-bottom:1px solid var(--border);padding:52px 32px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,196,106,0.06) 0%,transparent 70%);border-radius:50%;}
 .page-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
 .page-eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
 .page-title{font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--bright);letter-spacing:-0.3px;margin-bottom:10px;}
@@ -189,15 +189,15 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .stat-label{color:var(--muted);}
 .stat-val{color:var(--bright);font-weight:600;font-size:0.95rem;letter-spacing:0.5px;}
 .stat-val.good{color:var(--green);}.stat-val.warn{color:var(--gold);}
-.signal-rule-box{background:rgba(0,180,255,0.05);border:1px solid rgba(0,180,255,0.15);border-radius:10px;padding:18px 20px;margin-top:28px;}
+.signal-rule-box{background:rgba(0,196,106,0.05);border:1px solid rgba(0,196,106,0.15);border-radius:10px;padding:18px 20px;margin-top:28px;}
 .signal-rule-box h3{font-weight:800;font-size:1rem;text-transform:uppercase;color:var(--accent);letter-spacing:1px;margin-bottom:10px;}
 .signal-rule-box p{font-size:0.82rem;color:var(--text);line-height:1.7;}
 .signal-rule-box p strong{color:var(--bright);}
 
-/* RISK ANALYZER */
+/* EDGE FINDER */
 .analyzer-wrap{max-width:900px;margin:0 auto;padding:0 24px 80px;}
 .analyzer-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:28px;}
-.analyzer-card-header{background:linear-gradient(135deg,#0d1e30,#091625);padding:24px 28px;border-bottom:1px solid var(--border);}
+.analyzer-card-header{background:linear-gradient(135deg,#0d3024,#091f18);padding:24px 28px;border-bottom:1px solid var(--border);}
 .analyzer-card-header h3{font-weight:800;font-size:1.1rem;text-transform:uppercase;color:var(--bright);letter-spacing:1px;}
 .analyzer-card-header p{font-size:0.78rem;color:var(--muted);margin-top:4px;}
 .analyzer-body{padding:28px;}
@@ -207,9 +207,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .form-group select,.form-group input{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:0.85rem;padding:10px 14px;outline:none;transition:border-color 0.2s;appearance:none;}
 .form-group select:focus,.form-group input:focus{border-color:var(--accent);}
 .form-group select option{background:#0d1a2a;}
-.analyze-btn{width:100%;background:linear-gradient(135deg,var(--accent),#0077cc);border:none;border-radius:8px;color:var(--bright);font-weight:800;font-size:1rem;letter-spacing:2px;text-transform:uppercase;padding:16px;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 20px rgba(0,180,255,0.2);}
-.analyze-btn:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(0,180,255,0.35);}
-.result-panel{margin-top:28px;background:rgba(0,180,255,0.04);border:1px solid rgba(0,180,255,0.15);border-radius:12px;padding:24px;display:none;}
+.analyze-btn{width:100%;background:linear-gradient(135deg,var(--accent),#00764a);border:none;border-radius:8px;color:var(--bright);font-weight:800;font-size:1rem;letter-spacing:2px;text-transform:uppercase;padding:16px;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 20px rgba(0,196,106,0.2);}
+.analyze-btn:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(0,196,106,0.35);}
+.result-panel{margin-top:28px;background:rgba(0,196,106,0.04);border:1px solid rgba(0,196,106,0.15);border-radius:12px;padding:24px;display:none;}
 .result-panel.visible{display:block;}
 .result-header{font-weight:800;font-size:1.1rem;text-transform:uppercase;color:var(--bright);letter-spacing:1px;margin-bottom:16px;}
 .result-signals{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
@@ -217,9 +217,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .rsi-icon{font-size:1.2rem;flex-shrink:0;}
 .rsi-text{color:var(--text);line-height:1.5;}
 .rsi-badge{margin-left:auto;font-weight:700;font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:4px;white-space:nowrap;}
-.rsi-active{background:rgba(0,180,255,0.12);color:var(--accent);border:1px solid rgba(0,180,255,0.3);}
-.rsi-inactive{background:rgba(74,106,136,0.1);color:var(--muted);border:1px solid rgba(74,106,136,0.15);}
-.rsi-fired{background:rgba(0,214,143,0.12);color:var(--green);border:1px solid rgba(0,214,143,0.25);}
+.rsi-active{background:rgba(0,196,106,0.12);color:var(--accent);border:1px solid rgba(0,196,106,0.3);}
+.rsi-inactive{background:rgba(90,138,114,0.1);color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
+.rsi-fired{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
 .risk-meter-wrap{margin-top:20px;}
 .risk-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
 .risk-label{font-size:0.75rem;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase;}
@@ -229,8 +229,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .risk-verdict{margin-top:16px;padding:14px 16px;border-radius:8px;font-size:0.85rem;line-height:1.6;}
 
 /* ABOUT */
-.about-hero{background:linear-gradient(135deg,#060b14,#091828);border-bottom:1px solid var(--border);padding:64px 32px;text-align:center;position:relative;overflow:hidden;}
-.about-hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,180,255,0.07) 0%,transparent 60%);border-radius:50%;}
+.about-hero{background:linear-gradient(135deg,#060b14,#092820);border-bottom:1px solid var(--border);padding:64px 32px;text-align:center;position:relative;overflow:hidden;}
+.about-hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,196,106,0.07) 0%,transparent 60%);border-radius:50%;}
 .about-hero-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;}
 .about-headline{font-weight:900;font-size:clamp(2.2rem,5vw,4rem);text-transform:uppercase;color:var(--bright);letter-spacing:-0.5px;line-height:0.95;margin-bottom:20px;}
 .about-headline span{background:linear-gradient(90deg,var(--accent),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
@@ -238,18 +238,18 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .about-lead strong{color:var(--text);}
 .about-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:1200px;margin:48px auto 0;padding:0 24px;}
 .feat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px;transition:border-color 0.2s,transform 0.2s;}
-.feat-card:hover{border-color:rgba(0,180,255,0.25);transform:translateY(-3px);}
-.feat-icon{width:46px;height:46px;background:rgba(0,180,255,0.1);border:1px solid rgba(0,180,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px;}
+.feat-card:hover{border-color:rgba(0,196,106,0.25);transform:translateY(-3px);}
+.feat-icon{width:46px;height:46px;background:rgba(0,196,106,0.1);border:1px solid rgba(0,196,106,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px;}
 .feat-title{font-weight:800;font-size:1rem;text-transform:uppercase;color:var(--bright);letter-spacing:1px;margin-bottom:8px;}
 .feat-text{font-size:0.9rem;color:var(--muted);line-height:1.75;}
-.about-cta-band{background:linear-gradient(135deg,#091828,#060b14);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 32px;text-align:center;margin-top:60px;}
+.about-cta-band{background:linear-gradient(135deg,#092820,#060b14);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 32px;text-align:center;margin-top:60px;}
 .about-cta-band h2{font-weight:900;font-size:2.2rem;text-transform:uppercase;color:var(--bright);margin-bottom:12px;}
 .about-cta-band p{font-size:0.9rem;color:var(--muted);margin-bottom:28px;}
 
 /* PRICING */
 .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:48px auto 0;padding:0 24px;}
 .price-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px 28px;position:relative;display:flex;flex-direction:column;}
-.price-card.featured{border-color:var(--accent);box-shadow:0 0 30px rgba(0,180,255,0.1);}
+.price-card.featured{border-color:var(--accent);box-shadow:0 0 30px rgba(0,196,106,0.1);}
 .price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-weight:800;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;white-space:nowrap;}
 .price-tier-name{font-weight:800;font-size:1.1rem;color:var(--bright);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
 .price-tier-value{font-weight:900;font-size:2.4rem;color:var(--bright);line-height:1;margin-bottom:2px;}
@@ -260,51 +260,47 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .price-features li:last-child{border-bottom:none;}
 .price-features li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;}
 .price-cta{width:100%;padding:13px;border-radius:8px;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;text-align:center;text-decoration:none;cursor:pointer;border:none;}
-.price-cta.primary{background:linear-gradient(135deg,var(--accent),#0088cc);color:#000;}
+.price-cta.primary{background:linear-gradient(135deg,var(--accent),#00764a);color:#000;}
 .price-cta.ghost{background:transparent;border:1px solid var(--border);color:var(--text);}
 .pricing-note{max-width:700px;margin:32px auto 0;padding:0 24px;text-align:center;font-size:0.82rem;color:var(--muted);line-height:1.7;}
 
-/* PREMIUM GATE (visual teaser) */
+/* PREMIUM GATE */
 .premium-gate{position:relative;}
 .premium-gate .gated-content{filter:blur(7px);pointer-events:none;user-select:none;}
 .premium-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:5;background:linear-gradient(180deg,rgba(6,11,20,0.2),rgba(6,11,20,0.75));border-radius:12px;padding:32px;text-align:center;}
 .premium-overlay h3{color:var(--bright);font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:0.5px;}
 .premium-overlay p{color:var(--text);font-size:0.85rem;max-width:420px;line-height:1.7;}
-.premium-overlay .po-cta{background:linear-gradient(135deg,var(--accent),#0088cc);color:#000;font-weight:800;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;padding:13px 28px;border-radius:8px;text-decoration:none;cursor:pointer;}
+.premium-overlay .po-cta{background:linear-gradient(135deg,var(--accent),#00764a);color:#000;font-weight:800;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;padding:13px 28px;border-radius:8px;text-decoration:none;cursor:pointer;}
 .premium-overlay .po-sub{font-size:0.72rem;color:var(--muted);}
 
 /* FOOTER */
 footer{background:#03070e;border-top:1px solid var(--border);padding:36px 32px;text-align:center;}
 .footer-brand{font-weight:800;font-size:1.1rem;color:var(--text);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
 footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
-.footer-disclaimer{max-width:640px;margin:12px auto 0;padding-top:12px;border-top:1px solid var(--border);font-size:0.68rem;color:#2a3a4a;}
+.footer-disclaimer{max-width:640px;margin:12px auto 0;padding-top:12px;border-top:1px solid var(--border);font-size:0.68rem;color:#3a5a4a;}
 
-/* ── FANTASY PICKS PAGE ─────────────────────────── */
+/* FANTASY PICKS */
 .fp-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:28px;}
 .fp-tab{font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding:12px 20px;cursor:pointer;border-bottom:3px solid transparent;transition:all 0.2s;background:none;border-top:none;border-left:none;border-right:none;}
 .fp-tab:hover{color:var(--text);}
 .fp-tab.active{color:var(--accent);border-bottom-color:var(--accent);}
 .fp-panel{display:none;}.fp-panel.active{display:block;}
-
-/* Pick cards */
 .picks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:8px;}
 .pick-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform 0.2s,border-color 0.2s;position:relative;}
-.pick-card:hover{transform:translateY(-2px);border-color:rgba(0,180,255,0.2);}
+.pick-card:hover{transform:translateY(-2px);border-color:rgba(0,196,106,0.2);}
 .pick-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
 .pick-card.tier-s::before{background:linear-gradient(90deg,#f5a623,#ffcc44);}
 .pick-card.tier-a::before{background:linear-gradient(90deg,var(--accent),var(--cyan));}
 .pick-card.tier-b::before{background:linear-gradient(90deg,var(--green),#00ffaa);}
-.pick-card.tier-c::before{background:linear-gradient(90deg,var(--muted),#6a8aaa);}
-
+.pick-card.tier-c::before{background:linear-gradient(90deg,var(--muted),#7aaa92);}
 .pick-header{padding:14px 16px 10px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
 .pick-player{font-weight:700;font-size:1rem;color:var(--bright);}
 .pick-team{font-size:0.72rem;color:var(--muted);margin-top:2px;}
 .pick-tier{font-weight:800;font-size:0.72rem;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
 .tier-s-badge{background:rgba(245,166,35,0.15);color:var(--gold);border:1px solid rgba(245,166,35,0.3);}
-.tier-a-badge{background:rgba(0,180,255,0.12);color:var(--accent);border:1px solid rgba(0,180,255,0.25);}
-.tier-b-badge{background:rgba(0,214,143,0.12);color:var(--green);border:1px solid rgba(0,214,143,0.25);}
-.tier-c-badge{background:rgba(74,106,136,0.1);color:var(--muted);border:1px solid rgba(74,106,136,0.2);}
-
+.tier-a-badge{background:rgba(0,196,106,0.12);color:var(--accent);border:1px solid rgba(0,196,106,0.25);}
+.tier-b-badge{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
+.tier-c-badge{background:rgba(90,138,114,0.1);color:var(--muted);border:1px solid rgba(90,138,114,0.2);}
 .pick-body{padding:0 16px 14px;display:flex;flex-direction:column;gap:8px;}
 .pick-matchup{font-size:0.78rem;color:var(--muted);}
 .pick-matchup strong{color:var(--text);}
@@ -316,13 +312,11 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 .pick-reason strong{color:var(--accent);}
 .pick-tags{display:flex;gap:5px;flex-wrap:wrap;}
 .pick-tag{font-size:0.62rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:2px 7px;border-radius:3px;}
-.pt-dfs{background:rgba(0,180,255,0.08);color:var(--accent);border:1px solid rgba(0,180,255,0.2);}
+.pt-dfs{background:rgba(0,196,106,0.08);color:var(--accent);border:1px solid rgba(0,196,106,0.2);}
 .pt-season{background:rgba(245,166,35,0.08);color:var(--gold);border:1px solid rgba(245,166,35,0.2);}
-.pt-both{background:rgba(0,214,143,0.08);color:var(--green);border:1px solid rgba(0,214,143,0.2);}
+.pt-both{background:rgba(61,220,151,0.08);color:var(--green);border:1px solid rgba(61,220,151,0.2);}
 .pt-avoid{background:rgba(255,71,87,0.08);color:var(--red);border:1px solid rgba(255,71,87,0.2);}
 .pt-signal{background:rgba(255,140,0,0.08);color:var(--orange);border:1px solid rgba(255,140,0,0.2);}
-
-/* Goalie table */
 .goalie-table{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
 .goalie-row{display:grid;grid-template-columns:1fr 60px 70px 80px 100px;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid rgba(22,35,52,0.7);font-size:0.82rem;transition:background 0.15s;}
 .goalie-row:last-child{border-bottom:none;}
@@ -333,17 +327,15 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 .gr-team{font-size:0.68rem;color:var(--muted);margin-top:1px;}
 .gr-stat{color:var(--text);font-size:0.8rem;}
 .gr-start{font-weight:700;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;padding:3px 9px;border-radius:4px;text-align:center;}
-.gs-confirmed{background:rgba(0,214,143,0.12);color:var(--green);border:1px solid rgba(0,214,143,0.25);}
-.gs-likely{background:rgba(0,180,255,0.1);color:var(--accent);border:1px solid rgba(0,180,255,0.2);}
-.gs-unknown{background:rgba(74,106,136,0.08);color:var(--muted);border:1px solid rgba(74,106,136,0.15);}
+.gs-confirmed{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
+.gs-likely{background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.2);}
+.gs-unknown{background:rgba(90,138,114,0.08);color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
 .gs-avoid{background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);}
 .gr-rec{font-size:0.7rem;font-weight:600;text-align:right;}
 .rec-start{color:var(--green);}.rec-stream{color:var(--accent);}.rec-avoid{color:var(--red);}.rec-wait{color:var(--muted);}
-
-/* Prop cards */
 .props-stack{display:flex;flex-direction:column;gap:8px;}
 .prop-row{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 18px;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:14px;transition:border-color 0.15s;}
-.prop-row:hover{border-color:rgba(0,180,255,0.15);}
+.prop-row:hover{border-color:rgba(0,196,106,0.15);}
 .prop-player{font-weight:700;font-size:0.9rem;color:var(--bright);}
 .prop-desc{font-size:0.72rem;color:var(--muted);margin-top:2px;}
 .prop-desc strong{color:var(--text);}
@@ -351,10 +343,8 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 .prop-line-val{font-weight:800;font-size:1rem;color:var(--bright);}
 .prop-line-label{font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
 .prop-pick{font-weight:700;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;padding:5px 12px;border-radius:4px;white-space:nowrap;text-align:center;}
-.pp-over{background:rgba(0,214,143,0.12);color:var(--green);border:1px solid rgba(0,214,143,0.25);}
+.pp-over{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
 .pp-under{background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);}
-
-/* Fantasy summary bar */
 .fp-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:28px;}
 .fps-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;}
 .fps-val{font-weight:800;font-size:1.6rem;color:var(--bright);line-height:1;}
@@ -383,11 +373,11 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   <div class="ticker-label">⚡ LIVE</div>
   <div class="ticker-overflow">
     <div class="ticker-track" id="ticker-track">
-      <span>🧊 Grind Line — NHL fatigue signals, tracked publicly all season</span>
+      <span>🏒 Grind Line — NHL fatigue signals, tracked publicly all season</span>
       <span class="t-sep">·</span>
       <span><span class="t-sig">Off-Season</span> Live scores and signals return when the 2026-27 season begins</span>
       <span class="t-sep">·</span>
-      <span>🧊 Grind Line — NHL fatigue signals, tracked publicly all season</span>
+      <span>🏒 Grind Line — NHL fatigue signals, tracked publicly all season</span>
       <span class="t-sep">·</span>
       <span><span class="t-sig">Off-Season</span> Live scores and signals return when the 2026-27 season begins</span>
       <span class="t-sep">·</span>
@@ -398,8 +388,8 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 <!-- TOP NAV -->
 <nav class="topnav">
   <div class="nav-brand" onclick="showPage('dashboard')">
-    <div class="nav-brand-icon">🧊</div>
-    <div class="nav-brand-text">Grind Line <span></span></div>
+    <div class="nav-brand-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2" y="4" width="16" height="3" rx="1.5" fill="#03140c"/><rect x="2" y="9" width="11" height="3" rx="1.5" fill="#03140c" opacity="0.75"/><rect x="2" y="14" width="6" height="3" rx="1.5" fill="#03140c" opacity="0.5"/></svg></div>
+    <div class="nav-brand-text">GRIND <span>LINE</span></div>
   </div>
   <div class="nav-links" id="nav-links">
     <a id="nav-dashboard"      class="active"  onclick="showPage('dashboard');closeMenu()">Dashboard</a>
@@ -408,10 +398,11 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <a id="nav-fantasy-picks"                  onclick="showPage('fantasy-picks');closeMenu()">Fantasy Picks</a>
     <a id="nav-pricing"                        onclick="showPage('pricing');closeMenu()">Pricing</a>
     <a id="nav-about"                          onclick="showPage('about');closeMenu()">About</a>
-<a class="nav-beta-mobile" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" onclick="closeMenu()">✉ Join Beta</a>  </div>
+    <a class="nav-beta-mobile" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener" onclick="closeMenu()">✉ Join Beta</a>
+  </div>
   <div class="nav-right">
     <a class="nav-cta" onclick="showPage('edge-finder')">⚡ Edge Finder</a>
-    <a class="nav-beta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank">✉ Join Beta</a>
+    <a class="nav-beta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">✉ Join Beta</a>
     <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()">☰</button>
   </div>
 </nav>
@@ -442,12 +433,12 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     </div>
     <div class="hero-content">
       <div class="hero-eyebrow">NHL Betting Intelligence · Edmonton, AB</div>
-     <div class="hero-headline">Grind<br><span class="hl-blue">Line</span></div>
+      <div class="hero-headline">Grind<br><span class="hl-blue">Line</span></div>
       <p class="hero-sub">Data-driven signals. Real-time goalie tracking. AI-powered risk analysis.<br><strong>Built for bettors who want an edge before every puck drop.</strong></p>
       <div class="hero-buttons">
         <button class="btn-primary" onclick="showPage('edge-finder')">⚡ Edge Finder</button>
         <button class="btn-ghost"   onclick="showPage('signal-tracker')">Signal Tracker →</button>
-        <a class="btn-ghost" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank">✉ Join Beta</a>
+        <a class="btn-ghost" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">✉ Join Beta</a>
       </div>
       <div class="hero-stats">
         <div><div class="hero-stat-val" id="hero-partial-roi"><span>—</span>%</div><div class="hero-stat-label">Signal 1 Partial ROI</div></div>
@@ -484,17 +475,13 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     </div>
 
     <div class="section-divider"><h2>Tonight's Games</h2><div class="sd-line"></div><div class="sd-badge" id="tonight-games-badge">Loading...</div></div>
-    <div class="games-stack" id="games-stack-container">
-
-    </div>
+    <div class="games-stack" id="games-stack-container"></div>
 
     <div class="section-divider"><h2>Last Night's Recap</h2><div class="sd-line"></div><div class="sd-badge" id="last-night-badge">Loading...</div></div>
-    <div class="recap-table" id="recap-table-container">
-    </div>
+    <div class="recap-table" id="recap-table-container"></div>
 
     <div class="section-divider"><h2>2-Day Look-Ahead</h2><div class="sd-line"></div><div class="sd-badge" id="lookahead-badge">Loading...</div></div>
-    <div class="la-stack" id="lookahead-container">
-    </div>
+    <div class="la-stack" id="lookahead-container"></div>
   </div>
 </div>
 
@@ -526,7 +513,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       </div>
 
       <div class="tracker-card">
-        <div class="tracker-card-header"><h3>Signal 1 Partial — Moderate Edge</h3><span class="sd-badge" style="color:var(--green);border-color:rgba(0,255,136,0.3);background:rgba(0,255,136,0.08);">Loading...</span></div>
+        <div class="tracker-card-header"><h3>Signal 1 Partial — Moderate Edge</h3><span class="sd-badge" style="color:var(--green);border-color:rgba(61,220,151,0.3);background:rgba(61,220,151,0.08);">Loading...</span></div>
         <div class="tracker-card-body">
           <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="s1p-games">—</span></div>
           <div class="stat-row"><span class="stat-label">ROI</span><span class="stat-val good" id="s1p-roi">—</span></div>
@@ -564,7 +551,6 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       </div>
     </div>
 
-    <!-- LAST 5 SIGNAL 1 RESULTS -->
     <div class="section-divider" style="margin-top:32px;">
       <h2>Last 5 Signal 1 Results</h2>
       <div class="sd-line"></div>
@@ -574,7 +560,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     </div>
 
     <div class="signal-rule-box" style="margin-top:28px;">
-      <h3>Signal Rules & Methodology</h3>
+      <h3>Signal Rules &amp; Methodology</h3>
       <p><strong>Signal 1 — Fatigue Edge:</strong> Fires when the away team is on a back-to-back and the home team has been rested for 3 or more days. We fade the away team.</p>
       <br>
       <p><strong>Signal 1 Partial — Moderate Fatigue Edge:</strong> Away team on back-to-back, home team rested exactly 2 days. Lower confidence — reduced unit sizing recommended.</p>
@@ -587,7 +573,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 </div>
 
 <!-- ══════════════════════════════════
-     RISK ANALYZER PAGE
+     EDGE FINDER PAGE
 ══════════════════════════════════ -->
 <div id="page-edge-finder" class="page">
   <div class="page-hero">
@@ -635,7 +621,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 
 
 <!-- ══════════════════════════════════
-     ABOUT PAGE
+     PRICING PAGE
 ══════════════════════════════════ -->
 <div id="page-pricing" class="page">
   <div class="page-hero">
@@ -670,7 +656,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
         <li>Goalie starter confirmations</li>
         <li>Daily email alerts, 7 AM MST</li>
       </ul>
-      <a class="price-cta primary" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank">Join Beta Waitlist</a>
+      <a class="price-cta primary" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist</a>
     </div>
 
     <div class="price-card">
@@ -682,7 +668,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
         <li>Locked-in price for the full 2026-27 season</li>
         <li>Best value vs. paying monthly</li>
       </ul>
-      <a class="price-cta ghost" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank">Join Beta Waitlist</a>
+      <a class="price-cta ghost" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist</a>
     </div>
   </div>
 
@@ -690,6 +676,9 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 </div>
 
 
+<!-- ══════════════════════════════════
+     ABOUT PAGE
+══════════════════════════════════ -->
 <div id="page-about" class="page">
   <div class="about-hero">
     <div class="about-hero-inner">
@@ -699,11 +688,11 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     </div>
   </div>
   <div class="about-features">
-    <div class="feat-card"><div class="feat-icon">⚡</div><div class="feat-title">Signal Detection</div><p class="feat-text">Multiple back-to-back fatigue signals tracked across hundreds of NHL games, with verified ROI data updated every day of the season. Our top signal: 65% win rate, +24% ROI, 137 games — fully auditable on the Signal Tracker.</p></div>
-    <div class="feat-card"><div class="feat-icon">🥅</div><div class="feat-title">Goalie Tracking</div><p class="feat-text">Confirmed and projected starting goalie data, integrated as we roll out expanded coverage — the final piece before Signal 2 fires.</p></div>
+    <div class="feat-card"><div class="feat-icon">⚡</div><div class="feat-title">Signal Detection</div><p class="feat-text">Back-to-back fatigue signals tracked across a full season of NHL games, with ROI updated every day of the season. Every number is published on the Signal Tracker — current sample, win rate, and ROI, win or lose.</p></div>
+    <div class="feat-card"><div class="feat-icon">🥅</div><div class="feat-title">Goalie Tracking</div><p class="feat-text">Confirmed and projected starting goalie data feeding Signal 2, which our full-season backtest redefined around #1 goalie starts rather than backups.</p></div>
     <div class="feat-card"><div class="feat-icon">📊</div><div class="feat-title">Edge Finder</div><p class="feat-text">Enter any NHL matchup and instantly get a full signal breakdown, confidence score, and recommendation powered by our analytics engine.</p></div>
     <div class="feat-card"><div class="feat-icon">🏒</div><div class="feat-title">Daily Dashboard</div><p class="feat-text">Every game on tonight's slate scanned for signal activity — live scores, moneylines, goalie status, and a 2-day look-ahead, every day.</p></div>
-    <div class="feat-card"><div class="feat-icon">🧊</div><div class="feat-title">Hockey-Obsessed</div><p class="feat-text">Built in Edmonton by people who live and breathe the game. Every feature exists because a real bettor needed it before puck drop.</p></div>
+    <div class="feat-card"><div class="feat-icon">🍁</div><div class="feat-title">Hockey-Obsessed</div><p class="feat-text">Built in Edmonton by people who live and breathe the game. Every feature exists because a real bettor needed it before puck drop.</p></div>
     <div class="feat-card"><div class="feat-icon">📬</div><div class="feat-title">Daily Email Alerts</div><p class="feat-text">Signal alerts delivered to your inbox every morning at 7 AM MST — so you never miss a high-confidence edge before the lines move.</p></div>
   </div>
   <div class="about-cta-band">
@@ -717,24 +706,89 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 </div>
 
 
+<!-- ══════════════════════════════════
+     FANTASY PICKS PAGE
+══════════════════════════════════ -->
+<div id="page-fantasy-picks" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Grind Line · <span id="fp-updated-date">Off-season</span></div>
+      <div class="page-title">Fantasy Picks</div>
+      <p class="page-desc">Daily value plays, goalie starts, and player props for both DFS (DraftKings / FanDuel) and season-long leagues. Signal-informed where applicable.</p>
+    </div>
+  </div>
+
+  <div class="main-wrap">
+    <div class="fp-summary" style="margin-top:28px;">
+      <div class="fps-card"><div class="fps-val"><span id="fp-stat-plays">—</span></div><div class="fps-label">Value Plays Today</div></div>
+      <div class="fps-card"><div class="fps-val"><span id="fp-stat-goalies">—</span></div><div class="fps-label">Goalies Assessed</div></div>
+      <div class="fps-card"><div class="fps-val"><span id="fp-stat-props">—</span></div><div class="fps-label">Prop Picks</div></div>
+      <div class="fps-card"><div class="fps-val"><span id="fp-stat-games">—</span></div><div class="fps-label">Games on Slate</div></div>
+      <div class="fps-card"><div class="fps-val"><span id="fp-stat-tier" style="color:var(--gold);">—</span></div><div class="fps-label">Top Tier Available</div></div>
+    </div>
+
+    <div class="fp-tabs">
+      <button class="fp-tab active" onclick="showFPTab('value-plays', this)">🏒 Value Plays</button>
+      <button class="fp-tab"        onclick="showFPTab('goalie-starts', this)">🥅 Goalie Starts</button>
+      <button class="fp-tab"        onclick="showFPTab('player-props', this)">📊 Player Props</button>
+    </div>
+
+    <div id="fp-value-plays" class="fp-panel active">
+      <div class="section-divider" style="margin-top:0;"><h2>Top Value Plays</h2><div class="sd-line"></div><div class="sd-badge fantasy-date-label">Loading...</div></div>
+      <div class="premium-gate">
+        <div class="gated-content fantasy-plays-container"></div>
+        <div class="premium-overlay">
+          <h3>🔒 Beta Members Only</h3>
+          <p>Full daily value plays are part of the Pro tier, launching September 2026. Join the free beta waitlist for early access before launch.</p>
+          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist — Free</a>
+          <div class="po-sub">Our ROI tracker stays free forever — see the Signal Tracker for every graded result.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="fp-goalie-starts" class="fp-panel">
+      <div class="section-divider" style="margin-top:0;"><h2>Goalie Start Recommendations</h2><div class="sd-line"></div><div class="sd-badge">Goalie Starts</div></div>
+      <div class="premium-gate">
+        <div class="gated-content fantasy-goalies-container"></div>
+        <div class="premium-overlay">
+          <h3>🔒 Beta Members Only</h3>
+          <p>Goalie start recommendations are part of the Pro tier, launching September 2026. Join the free beta waitlist for early access.</p>
+          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist — Free</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="fp-player-props" class="fp-panel">
+      <div class="section-divider" style="margin-top:0;"><h2>Player Prop Picks</h2><div class="sd-line"></div><div class="sd-badge">Player Props</div></div>
+      <div class="premium-gate">
+        <div class="gated-content fantasy-props-container"></div>
+        <div class="premium-overlay">
+          <h3>🔒 Beta Members Only</h3>
+          <p>Our model-vs-market prop board — every pick with its real edge shown — is part of the Pro tier, launching September 2026. Join the free beta waitlist for early access.</p>
+          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist — Free</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-wrap -->
+</div><!-- /page-fantasy-picks -->
+
+
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">🧊 Grind Line</div>
+  <div class="footer-brand">🏒 Grind Line</div>
   <p>NHL Betting Intelligence · Edmonton, Alberta · grindline.ca</p>
-  <p style="margin-top:8px;"><a href="/sportsbooks.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Alberta Sportsbooks Guide</a> &nbsp;·&nbsp; <a href="/legal.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Privacy, Terms & Responsible Gambling</a></p>
+  <p style="margin-top:8px;"><a href="/sportsbooks.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Alberta Sportsbooks Guide</a> &nbsp;·&nbsp; <a href="/legal.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Privacy, Terms &amp; Responsible Gambling</a></p>
   <div class="footer-disclaimer">We never take bets — Grind Line is an independent analytics platform, not a sportsbook. For informational and entertainment purposes only. Signal data is historically tracked and does not guarantee future results. Please gamble responsibly — if you or someone you know has a gambling problem, call 1-800-522-4700. Data: NHL.com · The Odds API · SportsDataIO</div>
 </footer>
 
 
 <script>
-  function toggleMenu() {
-  const links = document.getElementById('nav-links');
-  links.classList.toggle('open');
+function toggleMenu() {
+  document.getElementById('nav-links').classList.toggle('open');
 }
-
 function closeMenu() {
-  const links = document.getElementById('nav-links');
-  links.classList.remove('open');
+  document.getElementById('nav-links').classList.remove('open');
 }
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -745,7 +799,6 @@ function showPage(id) {
   if (nav) nav.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 function showFPTab(id, btn) {
   document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.fp-tab').forEach(t => t.classList.remove('active'));
@@ -765,11 +818,10 @@ function runAnalysis() {
     return;
   }
 
-  const isB2B        = awayB2B === 'yes';
-  const homeBothB2B  = homeRest === 'b2b';
-  const homeRest3    = homeRest === '3' || homeRest === '4plus';
-  const homeRest2    = homeRest === '2';
-  const backupGoalie = goalie === 'backup';
+  const isB2B       = awayB2B === 'yes';
+  const homeBothB2B = homeRest === 'b2b';
+  const homeRest3   = homeRest === '3' || homeRest === '4plus';
+  const homeRest2   = homeRest === '2';
 
   let signals = [], score = 0;
 
@@ -807,17 +859,17 @@ function runAnalysis() {
 
   let color, verdictText;
   if (score >= 80) {
-    color = '#00d68f';
-    verdictText = `<strong style="color:#00d68f;">High Confidence — Both signals active.</strong> This is one of the strongest setups the system identifies. Fade <strong>${awayTeam}</strong> on the moneyline. Consider 1.5–2x unit sizing.`;
+    color = '#3ddc97';
+    verdictText = `<strong style="color:#3ddc97;">High Confidence — Both signals active.</strong> This is one of the strongest setups the system identifies. Fade <strong>${awayTeam}</strong> on the moneyline. Consider 1.5–2x unit sizing.`;
   } else if (score >= 50) {
-    color = '#00b4ff';
-    verdictText = `<strong style="color:#00b4ff;">Signal 1 Active.</strong> Solid edge — fade <strong>${awayTeam}</strong> at standard unit size. Confirm goalie before puck drop to check for Signal 2 upgrade.`;
+    color = '#00c46a';
+    verdictText = `<strong style="color:#00c46a;">Signal 1 Active.</strong> Solid edge — fade <strong>${awayTeam}</strong> at standard unit size. Confirm goalie before puck drop to check for Signal 2 upgrade.`;
   } else if (score >= 20) {
     color = '#ff8c00';
     verdictText = `<strong style="color:#ff8c00;">Partial Signal Only.</strong> Lower confidence. If betting, reduce to 0.5x unit size. Wait for goalie confirmation before committing.`;
   } else {
-    color = '#4a6a88';
-    verdictText = `<strong style="color:#4a6a88;">No Active Signal.</strong> This matchup does not meet signal criteria. No edge identified — pass or bet based on your own handicapping.`;
+    color = '#5a8a72';
+    verdictText = `<strong style="color:#5a8a72;">No Active Signal.</strong> This matchup does not meet signal criteria. No edge identified — pass or bet based on your own handicapping.`;
   }
 
   const scoreEl = document.getElementById('risk-score-display');
@@ -828,8 +880,8 @@ function runAnalysis() {
   scoreEl.style.color = color;
   bar.style.width     = score + '%';
   bar.style.background = `linear-gradient(90deg, ${color}, ${color}99)`;
-  verdict.style.background  = `${color}0d`;
-  verdict.style.border      = `1px solid ${color}33`;
+  verdict.style.background   = `${color}0d`;
+  verdict.style.border       = `1px solid ${color}33`;
   verdict.style.borderRadius = '8px';
   verdict.innerHTML = verdictText;
   document.getElementById('result-title').textContent = `Analysis: ${awayTeam} @ ${homeTeam}`;
@@ -840,83 +892,7 @@ function runAnalysis() {
 }
 </script>
 
-
-<!-- ══════════════════════════════════
-     FANTASY PICKS PAGE
-══════════════════════════════════ -->
-<div id="page-fantasy-picks" class="page">
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <div class="page-eyebrow">Grind Line · <span id="fp-updated-date">Updated March 4, 2026</span></div>
-      <div class="page-title">Fantasy Picks</div>
-      <p class="page-desc">Daily value plays, goalie starts, and player props for both DFS (DraftKings / FanDuel) and season-long leagues. Signal-informed where applicable.</p>
-    </div>
-  </div>
-
-  <div class="main-wrap">
-
-    <!-- SUMMARY BAR -->
-   <div class="fp-summary" style="margin-top:28px;">
-  <div class="fps-card"><div class="fps-val"><span id="fp-stat-plays">—</span></div><div class="fps-label">Value Plays Today</div></div>
-  <div class="fps-card"><div class="fps-val"><span id="fp-stat-goalies">—</span></div><div class="fps-label">Goalies Assessed</div></div>
-  <div class="fps-card"><div class="fps-val"><span id="fp-stat-props">—</span></div><div class="fps-label">Prop Picks</div></div>
-  <div class="fps-card"><div class="fps-val"><span id="fp-stat-games">—</span></div><div class="fps-label">Games on Slate</div></div>
-  <div class="fps-card"><div class="fps-val"><span id="fp-stat-tier" style="color:var(--gold);">—</span></div><div class="fps-label">Top Tier Available</div></div>
-</div>
-    <!-- TABS -->
-    <div class="fp-tabs">
-      <button class="fp-tab active" onclick="showFPTab('value-plays', this)">🏒 Value Plays</button>
-      <button class="fp-tab"        onclick="showFPTab('goalie-starts', this)">🥅 Goalie Starts</button>
-      <button class="fp-tab"        onclick="showFPTab('player-props', this)">📊 Player Props</button>
-    </div>
-
-    <!-- ── VALUE PLAYS ── -->
-    <div id="fp-value-plays" class="fp-panel active">
-      <div class="section-divider" style="margin-top:0;"><h2>Top Value Plays</h2><div class="sd-line"></div><div class="sd-badge fantasy-date-label">Loading...</div></div>
-      <div class="premium-gate">
-        <div class="gated-content fantasy-plays-container"></div>
-        <div class="premium-overlay">
-          <h3>🔒 Beta Members Only</h3>
-          <p>Full daily value plays are part of the Pro tier, launching September 2026. Join the free beta waitlist for early access before launch.</p>
-          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank">Join Beta Waitlist — Free</a>
-          <div class="po-sub">Our ROI tracker stays free forever — see the Signal Tracker for every graded result.</div>
-        </div>
-      </div>
-    </div>
-
-
-  <!-- ── GOALIE STARTS ── -->
-    <div id="fp-goalie-starts" class="fp-panel">
-      <div class="section-divider" style="margin-top:0;"><h2>Goalie Start Recommendations</h2><div class="sd-line"></div><div class="sd-badge">Goalie Starts</div></div>
-      <div class="premium-gate">
-        <div class="gated-content fantasy-goalies-container"></div>
-        <div class="premium-overlay">
-          <h3>🔒 Beta Members Only</h3>
-          <p>Goalie start recommendations are part of the Pro tier, launching September 2026. Join the free beta waitlist for early access.</p>
-          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank">Join Beta Waitlist — Free</a>
-        </div>
-      </div>
-    </div>
-
-  <!-- ── PLAYER PROPS ── -->
-    <div id="fp-player-props" class="fp-panel">
-      <div class="section-divider" style="margin-top:0;"><h2>Player Prop Picks</h2><div class="sd-line"></div><div class="sd-badge">Player Props</div></div>
-      <div class="premium-gate">
-        <div class="gated-content fantasy-props-container"></div>
-        <div class="premium-overlay">
-          <h3>🔒 Beta Members Only</h3>
-          <p>Our model-vs-market prop board — every pick with its real edge shown — is part of the Pro tier, launching September 2026. Join the free beta waitlist for early access.</p>
-          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank">Join Beta Waitlist — Free</a>
-        </div>
-      </div>
-    </div>
-  
-  </div><!-- /main-wrap -->
-</div><!-- /page-fantasy-picks -->
-
-
-</script>
-  <script>
+<script>
 // ── DYNAMIC TICKER ─────────────────────────────────────────────────────────
 async function buildTicker() {
   try {
@@ -932,11 +908,8 @@ async function buildTicker() {
     const track = document.querySelector('.ticker-track');
     if (!track) return;
 
-    // Build ticker items
     let items = [];
-
     for (const g of data.games) {
-      let text = `🏒 ${g.away} @ ${g.home} · ${g.time}`;
       let oddsHtml = '';
       if (g.away_ml && g.home_ml) {
         oddsHtml = ` · <span style="color:var(--cyan)">${g.away} ${g.away_ml}</span> · <span style="color:var(--cyan)">${g.home} ${g.home_ml}</span>`;
@@ -945,8 +918,7 @@ async function buildTicker() {
       items.push('<span class="t-sep">·</span>');
     }
 
-    // Append REAL signal stats from roi.json
-    const s1 = roi.signal1 || {};
+    const s1  = roi.signal1 || {};
     const s1p = roi.signal1_partial || {};
     if (s1p.games) {
       items.push(`<span><span class="t-sig">Signal 1 Partial</span> Away B2B + Home 2 Days Rest → ${s1p.roi >= 0 ? '+' : ''}${s1p.roi}% ROI · ${s1p.games} games</span>`);
@@ -957,16 +929,12 @@ async function buildTicker() {
       items.push('<span class="t-sep">·</span>');
     }
 
-    // Duplicate for seamless loop
-    const all = [...items, ...items];
-    track.innerHTML = all.join('');
-
+    track.innerHTML = [...items, ...items].join('');
     console.log(`Ticker loaded: ${data.games.length} games for ${data.date}`);
   } catch (e) {
     console.log('Ticker fetch failed, keeping static content:', e);
   }
 }
-
 buildTicker();
 </script>
 
@@ -979,15 +947,14 @@ async function buildDashboard() {
       fetch('data/roi.json?nocache=' + Date.now())
     ]);
     const data = await dashRes.json();
-    const roi = await roiRes.json();
+    const roi  = await roiRes.json();
     if (!data.games_tonight) return;
 
-    const s1 = roi.signal1 || {};
+    const s1  = roi.signal1 || {};
     const s1p = roi.signal1_partial || {};
-    const s2 = roi.signal2 || {};
+    const s2  = roi.signal2 || {};
     const totalGamesTracked = (s1.games || 0) + (s1p.games || 0) + (s2.games || 0);
 
-    // ── HERO STATS (real numbers, real empty states) ──
     const heroPartial = document.getElementById('hero-partial-roi');
     if (heroPartial) heroPartial.innerHTML = s1p.games ? `<span>${s1p.roi >= 0 ? '+' : ''}${s1p.roi}</span>%` : `<span>—</span>`;
     const heroSig1 = document.getElementById('hero-sig1-roi');
@@ -997,23 +964,19 @@ async function buildDashboard() {
     const heroTonight = document.getElementById('hero-games-tonight');
     if (heroTonight) heroTonight.textContent = data.n_games || 0;
 
-    // ── ACTIVE SIGNALS DATE BADGE ──
     const activeSigDate = document.getElementById('active-signals-date');
     if (activeSigDate) activeSigDate.textContent = data.date_label || '—';
 
-    // ── SIGNAL 1 CARD ──
-    const sig1Roi = document.getElementById('sig1-card-roi');
+    const sig1Roi  = document.getElementById('sig1-card-roi');
     const sig1Meta = document.getElementById('sig1-card-meta');
-    if (sig1Roi) sig1Roi.textContent = s1.games ? `${s1.roi >= 0 ? '+' : ''}${s1.roi}%` : 'Building';
+    if (sig1Roi)  sig1Roi.textContent  = s1.games ? `${s1.roi >= 0 ? '+' : ''}${s1.roi}%` : 'Building';
     if (sig1Meta) sig1Meta.textContent = s1.games ? `${s1.games}-game tracked sample · ${s1.win_rate}% win rate` : 'No games tracked yet this season';
 
-    // ── SIGNAL 2 CARD (honest small-sample handling) ──
-    const sig2Roi = document.getElementById('sig2-card-roi');
+    const sig2Roi  = document.getElementById('sig2-card-roi');
     const sig2Meta = document.getElementById('sig2-card-meta');
-    if (sig2Roi) sig2Roi.textContent = s2.games >= 5 ? `${s2.roi >= 0 ? '+' : ''}${s2.roi}%` : 'Building Sample';
+    if (sig2Roi)  sig2Roi.textContent  = s2.games >= 5 ? `${s2.roi >= 0 ? '+' : ''}${s2.roi}%` : 'Building Sample';
     if (sig2Meta) sig2Meta.textContent = s2.games > 0 ? `${s2.games}-game sample · still building` : 'Requires manual goalie confirmation — sample still building';
 
-    // ── TONIGHT'S SCAN CARD ──
     const n = data.n_games || 0;
     const tonightTitle = document.getElementById('tonight-scan-title');
     if (tonightTitle) tonightTitle.textContent = n > 0 ? `${data.date_label} — ${n} Game${n !== 1 ? 's' : ''}` : `${data.date_label}`;
@@ -1031,7 +994,6 @@ async function buildDashboard() {
     const tonightMeta = document.getElementById('tonight-scan-meta');
     if (tonightMeta) tonightMeta.textContent = n > 0 ? 'Scan complete' : 'Check back once the season resumes';
 
-    // ── TONIGHT'S GAMES ──
     const gamesBadge = document.getElementById('tonight-games-badge');
     if (gamesBadge) gamesBadge.textContent = `${n} Game${n !== 1 ? 's' : ''}`;
     const gamesStack = document.getElementById('games-stack-container');
@@ -1039,81 +1001,78 @@ async function buildDashboard() {
       if (data.games_tonight.length === 0) {
         gamesStack.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted);font-size:0.85rem;">No games scheduled. Check back once the season is underway.</div>`;
       } else {
-      gamesStack.innerHTML = data.games_tonight.map(g => {
-        const cardClass = g.signal === 'sig1' ? 'sig1' :
-                          g.signal === 'partial' ? 'sig-partial' :
-                          g.signal === 'cancel' ? 'cancelled' : 'nosig';
+        gamesStack.innerHTML = data.games_tonight.map(g => {
+          const cardClass = g.signal === 'sig1' ? 'sig1' :
+                            g.signal === 'partial' ? 'sig-partial' :
+                            g.signal === 'cancel' ? 'cancelled' : 'nosig';
+          const awayB2bTag = g.away_b2b ? `<span class="tag tag-b2b">B2B Away</span>` : '';
+          const homeTags = g.home_b2b ? `<span class="tag tag-b2b">B2B Home</span>` :
+                           g.home_rest >= 3 ? `<span class="tag tag-rest3">3+ Days Rest</span>` :
+                           g.home_rest === 2 ? `<span class="tag tag-rest2">2 Days Rest</span>` : '';
+          const oddsHtml = g.away_ml && g.home_ml
+            ? `<div class="gc-odds">${g.away} <span>${g.away_ml}</span> · ${g.home} <span>${g.home_ml}</span></div>`
+            : '';
 
-        const awayB2bTag = g.away_b2b ? `<span class="tag tag-b2b">B2B Away</span>` : '';
-        const homeTags = g.home_b2b ? `<span class="tag tag-b2b">B2B Home</span>` :
-                         g.home_rest >= 3 ? `<span class="tag tag-rest3">3+ Days Rest</span>` :
-                         g.home_rest === 2 ? `<span class="tag tag-rest2">2 Days Rest</span>` : '';
+          let signalBadge, signalFade, signalNote;
+          if (g.signal === 'sig1') {
+            signalBadge = `<div class="gsig-badge gsb-s1">⚡ Signal 1 Active</div>`;
+            signalFade  = `<div class="gsig-fade">Fade: <strong>${g.away} (Away B2B)</strong></div>`;
+            signalNote  = `<div class="gsig-note">${g.home} rested ${g.home_rest}+ days</div>`;
+          } else if (g.signal === 'partial') {
+            signalBadge = `<div class="gsig-badge gsb-partial">⚠ Signal 1 Partial</div>`;
+            signalFade  = `<div class="gsig-fade">Fade: <strong>${g.away} (Away B2B)</strong></div>`;
+            signalNote  = `<div class="gsig-note">${g.home} rested 2 days · Low confidence</div>`;
+          } else if (g.signal === 'cancel') {
+            signalBadge = `<div class="gsig-badge gsb-cancel">↔ Signals Cancel</div>`;
+            signalFade  = '';
+            signalNote  = `<div class="gsig-note">Both on B2B — signal void</div>`;
+          } else {
+            signalBadge = `<div class="gsig-badge gsb-none">No Signal</div>`;
+            signalFade  = '';
+            signalNote  = `<div class="gsig-note">Neither team on B2B</div>`;
+          }
 
-        const oddsHtml = g.away_ml && g.home_ml
-          ? `<div class="gc-odds">${g.away} <span>${g.away_ml}</span> · ${g.home} <span>${g.home_ml}</span></div>`
-          : '';
-
-        let signalBadge, signalFade, signalNote;
-        if (g.signal === 'sig1') {
-          signalBadge = `<div class="gsig-badge gsb-s1">⚡ Signal 1 Active</div>`;
-          signalFade = `<div class="gsig-fade">Fade: <strong>${g.away} (Away B2B)</strong></div>`;
-          signalNote = `<div class="gsig-note">${g.home} rested ${g.home_rest}+ days</div>`;
-        } else if (g.signal === 'partial') {
-          signalBadge = `<div class="gsig-badge gsb-partial">⚠ Signal 1 Partial</div>`;
-          signalFade = `<div class="gsig-fade">Fade: <strong>${g.away} (Away B2B)</strong></div>`;
-          signalNote = `<div class="gsig-note">${g.home} rested 2 days · Low confidence</div>`;
-        } else if (g.signal === 'cancel') {
-          signalBadge = `<div class="gsig-badge gsb-cancel">↔ Signals Cancel</div>`;
-          signalFade = '';
-          signalNote = `<div class="gsig-note">Both on B2B — signal void</div>`;
-        } else {
-          signalBadge = `<div class="gsig-badge gsb-none">No Signal</div>`;
-          signalFade = '';
-          signalNote = `<div class="gsig-note">Neither team on B2B</div>`;
-        }
-
-        return `
-        <div class="game-card ${cardClass}">
-          <div class="gc-team away">
-            <div class="gc-city">${g.away_city}</div>
-            <div class="gc-name">${g.away_name}</div>
-            <div class="gc-tags">${awayB2bTag}</div>
-          </div>
-          <div class="gc-center">
-            <div class="gc-score">vs</div>
-            <div class="gc-period">Upcoming</div>
-            <div class="gc-time">${g.time_et}</div>
-            ${oddsHtml}
-          </div>
-          <div class="gc-team home">
-            <div class="gc-city">${g.home_city}</div>
-            <div class="gc-name">${g.home_name}</div>
-            <div class="gc-tags">${homeTags}</div>
-          </div>
-          <div class="gc-signal">
-            ${signalBadge}
-            ${signalFade}
-            ${signalNote}
-          </div>
-        </div>`;
-      }).join('');
+          return `
+          <div class="game-card ${cardClass}">
+            <div class="gc-team away">
+              <div class="gc-city">${g.away_city}</div>
+              <div class="gc-name">${g.away_name}</div>
+              <div class="gc-tags">${awayB2bTag}</div>
+            </div>
+            <div class="gc-center">
+              <div class="gc-score">vs</div>
+              <div class="gc-period">Upcoming</div>
+              <div class="gc-time">${g.time_et}</div>
+              ${oddsHtml}
+            </div>
+            <div class="gc-team home">
+              <div class="gc-city">${g.home_city}</div>
+              <div class="gc-name">${g.home_name}</div>
+              <div class="gc-tags">${homeTags}</div>
+            </div>
+            <div class="gc-signal">
+              ${signalBadge}
+              ${signalFade}
+              ${signalNote}
+            </div>
+          </div>`;
+        }).join('');
       }
     }
 
-    // ── LAST NIGHT'S RECAP ──
+    const lastNight = data.last_night || [];
     const lastNightBadge = document.getElementById('last-night-badge');
     if (lastNightBadge) lastNightBadge.textContent = `${data.yesterday_label || '—'} · Signal Review`;
     const recapTable = document.getElementById('recap-table-container');
     if (recapTable) {
-      if (data.last_night.length === 0) {
+      if (lastNight.length === 0) {
         recapTable.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted);font-size:0.85rem;">No games last night.</div>`;
       } else {
-        recapTable.innerHTML = data.last_night.map(g => {
-          const resultClass = g.result === 'hit' ? 'r-hit' :
-                              g.result === 'miss' ? 'r-miss' : 'r-none';
-          const resultText = g.result === 'hit' ? '✅ Hit' :
-                             g.result === 'miss' ? '❌ Miss' :
-                             g.result === 'cancel' ? 'Cancelled' : 'No Signal';
+        recapTable.innerHTML = lastNight.map(g => {
+          const resultClass = g.result === 'hit' ? 'r-hit' : g.result === 'miss' ? 'r-miss' : 'r-none';
+          const resultText  = g.result === 'hit' ? '✅ Hit' :
+                              g.result === 'miss' ? '❌ Miss' :
+                              g.result === 'cancel' ? 'Cancelled' : 'No Signal';
           return `
           <div class="recap-row">
             <div>
@@ -1127,17 +1086,16 @@ async function buildDashboard() {
       }
     }
 
-    // ── LOOK-AHEAD ──
+    const lookahead = data.lookahead || [];
     const lookaheadBadge = document.getElementById('lookahead-badge');
     if (lookaheadBadge) lookaheadBadge.textContent = 'Early Flags';
     const laStack = document.getElementById('lookahead-container');
     if (laStack) {
-      if (data.lookahead.length === 0) {
+      if (lookahead.length === 0) {
         laStack.innerHTML = '<div class="la-day-label">No flagged games in the next 2 days</div>';
       } else {
-        let html = '';
-        let lastDate = '';
-        for (const g of data.lookahead) {
+        let html = '', lastDate = '';
+        for (const g of lookahead) {
           if (g.date_label !== lastDate) {
             html += `<div class="la-day-label">${g.date_label}</div>`;
             lastDate = g.date_label;
@@ -1172,51 +1130,35 @@ async function buildDashboard() {
   }
 }
 
-
-</script>
-
-<script>
-// ── LIVE SCORES FROM scores.json ───────────────────────────────────────────
+// ── LIVE SCORES ────────────────────────────────────────────────────────────
 async function updateLiveScores() {
   try {
-    const r = await fetch('/data/scores.json?nocache=' + Date.now());
+    const r = await fetch('data/scores.json?nocache=' + Date.now());
     const data = await r.json();
     if (!data.games || data.games.length === 0) return;
 
     const cards = document.querySelectorAll('.game-card');
-
     for (const g of data.games) {
       for (const card of cards) {
         const awayCity = card.querySelector('.gc-team.away .gc-city')?.textContent;
         const homeCity = card.querySelector('.gc-team.home .gc-city')?.textContent;
-
         if (awayCity !== g.away_city || homeCity !== g.home_city) continue;
 
         const gcCenter = card.querySelector('.gc-center');
         if (!gcCenter) break;
-
-        const scoreEl = gcCenter.querySelector('.gc-score');
+        const scoreEl  = gcCenter.querySelector('.gc-score');
         const periodEl = gcCenter.querySelector('.gc-period');
 
         if (g.status === 'live') {
           if (scoreEl) scoreEl.textContent = `${g.away_score}–${g.home_score}`;
-          if (periodEl) {
-            periodEl.textContent = g.display;
-            periodEl.style.color = 'var(--cyan)';
-          }
-          // Add live tag
+          if (periodEl) { periodEl.textContent = g.display; periodEl.style.color = 'var(--cyan)'; }
           const awayTagsEl = card.querySelector('.gc-team.away .gc-tags');
           if (awayTagsEl && !awayTagsEl.querySelector('.tag-live')) {
             awayTagsEl.innerHTML += `<span class="tag tag-live">Live</span>`;
           }
-
         } else if (g.status === 'final') {
           if (scoreEl) scoreEl.textContent = `${g.away_score}–${g.home_score}`;
-          if (periodEl) {
-            periodEl.textContent = g.display;
-            periodEl.style.color = 'var(--muted)';
-          }
-          // Update signal result
+          if (periodEl) { periodEl.textContent = g.display; periodEl.style.color = 'var(--muted)'; }
           const signalBadgeEl = card.querySelector('.gsig-badge');
           if (signalBadgeEl && (signalBadgeEl.classList.contains('gsb-s1') || signalBadgeEl.classList.contains('gsb-partial'))) {
             const fadeWon = g.home_score > g.away_score;
@@ -1234,7 +1176,6 @@ async function updateLiveScores() {
       }
     }
 
-    // Show last updated time
     if (data.updated) {
       const footer = document.querySelector('.footer-disclaimer');
       if (footer) {
@@ -1247,23 +1188,21 @@ async function updateLiveScores() {
         footer.appendChild(span);
       }
     }
-
     console.log(`Scores loaded: ${data.games.length} games, updated ${data.updated}`);
   } catch (e) {
     console.log('Scores fetch error:', e);
   }
 }
 
-// Call after dashboard is built
 async function buildDashboardThenScores() {
   await buildDashboard();
   updateLiveScores();
   setInterval(updateLiveScores, 60000);
 }
-
 buildDashboardThenScores();
 </script>
-  <script>
+
+<script>
 // ── FANTASY PICKS ──────────────────────────────────────────────────────────
 async function buildFantasy() {
   try {
@@ -1271,15 +1210,12 @@ async function buildFantasy() {
     const data = await r.json();
     if (!data.date) return;
 
-    // ── VALUE PLAYS TAB ──
-    const vp = data.value_plays;
+    const vp = data.value_plays || {};
     const playsContainer = document.querySelector('.fantasy-plays-container');
     if (playsContainer && vp.plays) {
-// Group by tier
       const tiers = { S: [], A: [], B: [] };
       for (const p of vp.plays) {
-        if (tiers[p.tier]) tiers[p.tier].push(p);
-        else tiers.B.push(p);
+        if (tiers[p.tier]) tiers[p.tier].push(p); else tiers.B.push(p);
       }
       const tierLabels = { S: 'S-Tier · Must-Plays', A: 'A-Tier · Strong Plays', B: 'B-Tier · Value Plays' };
       const tierColors = { S: 'var(--gold)', A: 'var(--accent)', B: 'var(--text)' };
@@ -1289,9 +1225,7 @@ async function buildFantasy() {
         playsHtml += `<div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:${tierColors[tier]};margin:20px 0 10px;">${tierLabels[tier]}</div>`;
         playsHtml += `<div class="picks-grid">`;
         playsHtml += plays.map(p => {
-          const tagsHtml = (p.tags || []).map(t =>
-            `<span class="pick-tag pt-both">${t}</span>`
-          ).join('');
+          const tagsHtml = (p.tags || []).map(t => `<span class="pick-tag pt-both">${t}</span>`).join('');
           return `
           <div class="pick-card tier-${tier.toLowerCase()}">
             <div class="pick-header">
@@ -1318,22 +1252,20 @@ async function buildFantasy() {
       }
       playsContainer.innerHTML = playsHtml;
 
-      // Avoids section
       if (vp.avoids && vp.avoids.length > 0) {
         const avoidsHtml = vp.avoids.map(a =>
-          `<div class="fc-avoid-row"><span class="tag tag-avoid">${a.tag}</span> <strong>${a.team}</strong> — ${a.reason}</div>`
+          `<div class="fc-avoid-row"><span class="pick-tag pt-avoid">${a.tag}</span> <strong>${a.team}</strong> — ${a.reason}</div>`
         ).join('');
         playsContainer.innerHTML += `
         <div class="fc-avoids-block">
-          <div class="fc-avoids-title">⚠ Fades & Avoids</div>
+          <div class="fc-avoids-title">⚠ Fades &amp; Avoids</div>
           ${avoidsHtml}
         </div>`;
       }
     }
 
-    // ── GOALIE STARTS TAB ──
-    const gs = data.goalie_starts;
-const goalieContainer = document.querySelector('.fantasy-goalies-container');
+    const gs = data.goalie_starts || {};
+    const goalieContainer = document.querySelector('.fantasy-goalies-container');
     if (goalieContainer && gs.goalies) {
       goalieContainer.innerHTML = `
         <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Signal games flagged — goalies facing signal-favoured home teams rated higher.</div>
@@ -1363,19 +1295,17 @@ const goalieContainer = document.querySelector('.fantasy-goalies-container');
             </div>`;
           }).join('')}
         </div>`;
-      }
+    }
 
-    // ── PLAYER PROPS TAB ──
-    const pp = data.player_props;
+    const pp = data.player_props || {};
     const propsContainer = document.querySelector('.fantasy-props-container');
     if (propsContainer && pp.props) {
-      // Group by category
       const categories = {};
       for (const prop of pp.props) {
         if (!categories[prop.category]) categories[prop.category] = [];
         categories[prop.category].push(prop);
       }
-propsContainer.innerHTML = `
+      propsContainer.innerHTML = `
         <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Signal context applied where relevant. Verify odds before placing.</div>
         ${Object.entries(categories).map(([cat, props]) => `
           <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin:20px 0 8px;">${cat.charAt(0).toUpperCase() + cat.slice(1)}</div>
@@ -1383,16 +1313,16 @@ propsContainer.innerHTML = `
             ${props.map(p => {
               const borderColor = p.unit_size === 'full' ? 'var(--gold)' : p.unit_size === 'half' ? 'var(--accent)' : 'var(--red)';
               const pickStyle = p.pick === 'over'
-                ? 'background:rgba(0,255,136,0.1);color:var(--green);border:1px solid rgba(0,255,136,0.2);'
+                ? 'background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);'
                 : p.pick === 'under'
                 ? 'background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);'
-                : 'background:rgba(0,163,255,0.1);color:var(--accent);border:1px solid rgba(0,163,255,0.2);';
+                : 'background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.2);';
               const pickLabel = p.pick === 'over' ? '✓ OVER' : p.pick === 'under' ? '✕ UNDER' : '✓ Back It';
-              const hasEdge = typeof p.edge === 'number';
-              const modelPct = hasEdge ? Math.round(p.model_prob * 100) : 0;
+              const hasEdge   = typeof p.edge === 'number';
+              const modelPct  = hasEdge ? Math.round(p.model_prob * 100) : 0;
               const marketPct = hasEdge ? Math.round(p.market_prob * 100) : 0;
-              const edgePct = hasEdge ? Math.round(p.edge * 100) : 0;
-              const maxPct = Math.max(modelPct, marketPct, 1);
+              const edgePct   = hasEdge ? Math.round(p.edge * 100) : 0;
+              const maxPct    = Math.max(modelPct, marketPct, 1);
               const edgeBlock = !hasEdge ? '' : `
                 <div style="display:flex;align-items:center;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(22,35,52,0.7);">
                   <div style="flex:1;">
@@ -1406,10 +1336,10 @@ propsContainer.innerHTML = `
                       <span>Market</span><span>${marketPct}%</span>
                     </div>
                     <div style="background:rgba(255,255,255,0.04);border-radius:4px;height:8px;position:relative;overflow:hidden;">
-                      <div style="position:absolute;top:0;bottom:0;left:0;border-radius:4px;background:linear-gradient(90deg,var(--muted),#6a8aa8);width:${(marketPct/maxPct)*100}%;"></div>
+                      <div style="position:absolute;top:0;bottom:0;left:0;border-radius:4px;background:linear-gradient(90deg,var(--muted),#7aaa92);width:${(marketPct/maxPct)*100}%;"></div>
                     </div>
                   </div>
-                  <div style="flex-shrink:0;text-align:center;background:rgba(0,214,143,0.08);border:1px solid rgba(0,214,143,0.25);border-radius:8px;padding:8px 12px;">
+                  <div style="flex-shrink:0;text-align:center;background:rgba(61,220,151,0.08);border:1px solid rgba(61,220,151,0.25);border-radius:8px;padding:8px 12px;">
                     <div style="font-weight:900;font-size:1.05rem;color:var(--green);line-height:1;">+${edgePct}%</div>
                     <div style="font-size:0.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:3px;">Edge</div>
                   </div>
@@ -1432,75 +1362,67 @@ propsContainer.innerHTML = `
           </div>`).join('')}`;
     }
 
-    // Update date label
-    document.querySelectorAll('.fantasy-date-label').forEach(el => {
-      el.textContent = data.date_label;
-    });
-// Update summary bar
-    const playsEl = document.getElementById('fp-stat-plays');
-    const goaliesEl = document.getElementById('fp-stat-goalies');
-    const propsEl = document.getElementById('fp-stat-props');
-    const gamesEl = document.getElementById('fp-stat-games');
-    const tierEl = document.getElementById('fp-stat-tier');
+    document.querySelectorAll('.fantasy-date-label').forEach(el => { el.textContent = data.date_label; });
 
-    if (playsEl) playsEl.textContent = vp.plays?.length || 0;
+    const playsEl   = document.getElementById('fp-stat-plays');
+    const goaliesEl = document.getElementById('fp-stat-goalies');
+    const propsEl   = document.getElementById('fp-stat-props');
+    const gamesEl   = document.getElementById('fp-stat-games');
+    const tierEl    = document.getElementById('fp-stat-tier');
+    if (playsEl)   playsEl.textContent   = vp.plays?.length || 0;
     if (goaliesEl) goaliesEl.textContent = gs.goalies?.length || 0;
-    if (propsEl) propsEl.textContent = pp.props?.length || 0;
-    if (gamesEl) gamesEl.textContent = data.value_plays?.summary?.slate_size || 0;
-    if (tierEl) tierEl.textContent = (data.value_plays?.summary?.top_tier || '—') + '-tier';
+    if (propsEl)   propsEl.textContent   = pp.props?.length || 0;
+    if (gamesEl)   gamesEl.textContent   = data.value_plays?.summary?.slate_size || 0;
+    if (tierEl)    tierEl.textContent    = (data.value_plays?.summary?.top_tier || '—') + '-tier';
     const updatedEl = document.getElementById('fp-updated-date');
     if (updatedEl) updatedEl.textContent = `Updated ${data.date_label}`;
+
     console.log(`Fantasy loaded: ${vp.plays?.length || 0} plays, ${gs.goalies?.length || 0} goalies, ${pp.props?.length || 0} props`);
   } catch (e) {
     console.log('Fantasy fetch error:', e);
   }
 }
-
 buildFantasy();
 </script>
 
 <script>
+// ── ROI / SIGNAL TRACKER ───────────────────────────────────────────────────
 async function buildROI() {
   try {
     const r = await fetch('data/roi.json?nocache=' + Date.now());
     const d = await r.json();
 
-    // Update badges
-    document.querySelector('#tracker-grid .tracker-card:nth-child(1) .sd-badge').textContent = d.signal1.status;
-    document.querySelector('#tracker-grid .tracker-card:nth-child(2) .sd-badge').textContent = d.signal1_partial.roi > 15 ? 'Outperforming' : d.signal1_partial.status;
-    document.querySelector('#tracker-grid .tracker-card:nth-child(3) .sd-badge').textContent = d.signal2.games === 0 ? 'No Data' : 'High Variance';
+    const badges = document.querySelectorAll('#tracker-grid .tracker-card .sd-badge');
+    if (badges[0]) badges[0].textContent = d.signal1.status;
+    if (badges[1]) badges[1].textContent = d.signal1_partial.roi > 15 ? 'Outperforming' : d.signal1_partial.status;
+    if (badges[2]) badges[2].textContent = d.signal2.games === 0 ? 'No Data' : 'High Variance';
 
-    // Signal 1
-    document.getElementById('s1-games').textContent = d.signal1.games + ' games';
-    document.getElementById('s1-roi').textContent = (d.signal1.roi >= 0 ? '+' : '') + d.signal1.roi + '%';
-    document.getElementById('s1-wr').textContent = d.signal1.win_rate + '%';
+    document.getElementById('s1-games').textContent      = d.signal1.games + ' games';
+    document.getElementById('s1-roi').textContent        = (d.signal1.roi >= 0 ? '+' : '') + d.signal1.roi + '%';
+    document.getElementById('s1-wr').textContent         = d.signal1.win_rate + '%';
     document.getElementById('s1-best-month').textContent = d.signal1.best_month;
-    document.getElementById('s1-streak').textContent = d.signal1.streak;
+    document.getElementById('s1-streak').textContent     = d.signal1.streak;
 
-    // Signal 1 Partial
-    document.getElementById('s1p-games').textContent = d.signal1_partial.games + ' games';
-    document.getElementById('s1p-roi').textContent = (d.signal1_partial.roi >= 0 ? '+' : '') + d.signal1_partial.roi + '%';
-    document.getElementById('s1p-wr').textContent = d.signal1_partial.win_rate + '%';
+    document.getElementById('s1p-games').textContent  = d.signal1_partial.games + ' games';
+    document.getElementById('s1p-roi').textContent    = (d.signal1_partial.roi >= 0 ? '+' : '') + d.signal1_partial.roi + '%';
+    document.getElementById('s1p-wr').textContent     = d.signal1_partial.win_rate + '%';
     document.getElementById('s1p-streak').textContent = d.signal1_partial.streak;
 
-    // Signal 2
-    document.getElementById('s2-games').textContent = d.signal2.games + ' games';
-    document.getElementById('s2-roi').textContent = (d.signal2.roi >= 0 ? '+' : '') + d.signal2.roi + '%';
-    document.getElementById('s2-wr').textContent = d.signal2.win_rate + '%';
+    document.getElementById('s2-games').textContent  = d.signal2.games + ' games';
+    document.getElementById('s2-roi').textContent    = (d.signal2.roi >= 0 ? '+' : '') + d.signal2.roi + '%';
+    document.getElementById('s2-wr').textContent     = d.signal2.win_rate + '%';
     document.getElementById('s2-streak').textContent = d.signal2.streak;
 
-    // Summary
-    document.getElementById('sum-sig1').textContent = d.summary.total_sig1_games;
-    document.getElementById('sum-roi').textContent = (d.signal1.roi >= 0 ? '+' : '') + d.signal1.roi + '%';
+    document.getElementById('sum-sig1').textContent      = d.summary.total_sig1_games;
+    document.getElementById('sum-roi').textContent       = (d.signal1.roi >= 0 ? '+' : '') + d.signal1.roi + '%';
     document.getElementById('sum-cancelled').textContent = d.summary.cancelled_both_b2b;
-    document.getElementById('sum-partial').textContent = d.summary.total_partial_games;
-    document.getElementById('sum-sig2').textContent = d.summary.total_sig2_games;
-    document.getElementById('sum-updated').textContent = d.generated;
+    document.getElementById('sum-partial').textContent   = d.summary.total_partial_games;
+    document.getElementById('sum-sig2').textContent      = d.summary.total_sig2_games;
+    document.getElementById('sum-updated').textContent   = d.generated;
 
-    // Last 5 results
     const table = document.getElementById('last5-table');
-    if (d.summary.last5_sig1 && d.summary.last5_sig1.length > 0) {
-      table.innerHTML = d.summary.last5_sig1.reverse().map(g => `
+    if (table && d.summary.last5_sig1 && d.summary.last5_sig1.length > 0) {
+      table.innerHTML = [...d.summary.last5_sig1].reverse().map(g => `
         <div class="recap-row">
           <div>
             <div class="rr-game"><strong>${g.away} @ ${g.home}</strong></div>
@@ -1512,12 +1434,12 @@ async function buildROI() {
     }
 
     console.log('ROI data loaded');
-  } catch(e) {
+  } catch (e) {
     console.log('ROI fetch error:', e);
   }
 }
-
 buildROI();
 </script>
 
+</body>
 </html>
