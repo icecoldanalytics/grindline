@@ -373,7 +373,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   <div class="ticker-label">⚡ LIVE</div>
   <div class="ticker-overflow">
     <div class="ticker-track" id="ticker-track">
-      <span>🏒 Grind Line — NHL fatigue signals, tracked publicly all season</span>
+      <span>🏒 Grind Line — one scheduling edge, graded at real prices, published win or lose</span>
       <span class="t-sep">·</span>
       <span><span class="t-sig">Off-Season</span> Live scores and signals return when the 2026-27 season begins</span>
       <span class="t-sep">·</span>
@@ -432,17 +432,17 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       </svg>
     </div>
     <div class="hero-content">
-      <div class="hero-eyebrow">NHL Betting Intelligence</div>
+      <div class="hero-eyebrow">NHL Betting Intelligence · Edmonton, AB</div>
       <div class="hero-headline">Grind<br><span class="hl-blue">Line</span></div>
-      <p class="hero-sub">Data-driven signals. Real-time goalie tracking. AI-powered risk analysis.<br><strong>Built for bettors who want an edge before every puck drop.</strong></p>
+      <p class="hero-sub">One scheduling edge, tracked publicly and graded against the real moneyline available when we publish it.<br><strong>No assumed prices. Every result, win or lose.</strong></p>
       <div class="hero-buttons">
         <button class="btn-primary" onclick="showPage('edge-finder')">⚡ Edge Finder</button>
         <button class="btn-ghost"   onclick="showPage('signal-tracker')">Signal Tracker →</button>
         <a class="btn-ghost" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">✉ Join Beta</a>
       </div>
       <div class="hero-stats">
-        <div><div class="hero-stat-val" id="hero-partial-roi"><span>—</span>%</div><div class="hero-stat-label">Signal 1 Partial ROI</div></div>
-        <div><div class="hero-stat-val" id="hero-sig1-roi"><span>—</span>%</div><div class="hero-stat-label">Signal 1 ROI</div></div>
+        <div><div class="hero-stat-val" id="hero-win-rate"><span>—</span>%</div><div class="hero-stat-label">Win Rate</div></div>
+        <div><div class="hero-stat-val" id="hero-roi"><span>—</span>%</div><div class="hero-stat-label">ROI at real prices</div></div>
         <div><div class="hero-stat-val" id="hero-games-tracked">—</div><div class="hero-stat-label">Games Tracked</div></div>
         <div><div class="hero-stat-val" id="hero-games-tonight">—</div><div class="hero-stat-label">Games Tonight</div></div>
       </div>
@@ -453,18 +453,18 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="section-divider"><h2>Active Signals</h2><div class="sd-line"></div><div class="sd-badge" id="active-signals-date">Loading...</div></div>
     <div class="signal-row">
       <div class="sig-card s1">
-        <div class="sig-label-small">Signal 1 · Fatigue Edge</div>
-        <div class="sig-title">Away B2B + Home Rested 3+ Days</div>
-        <div class="sig-roi-big" id="sig1-card-roi">—</div>
-        <div class="sig-meta" id="sig1-card-meta">Loading sample...</div>
-        <div class="sig-rule">Away team on back-to-back, home rested 3+ days → <strong>fade the away team</strong>. Cancels when both on B2B.</div>
+        <div class="sig-label-small">Rest Edge · Active</div>
+        <div class="sig-title">Away B2B + Home Rested 2 Days</div>
+        <div class="sig-roi-big" id="rest2-roi">—</div>
+        <div class="sig-meta" id="rest2-meta">Loading...</div>
+        <div class="sig-rule">Away team played last night, home team rested exactly two days &rarr; <strong>back the home team</strong>. Graded at the real moneyline, not an assumed price.</div>
       </div>
       <div class="sig-card s2">
-        <div class="sig-label-small">Signal 2 · Goalie Edge</div>
-        <div class="sig-title">Away B2B + #1 Goalie Confirmed</div>
-        <div class="sig-roi-big" id="sig2-card-roi">—</div>
-        <div class="sig-meta" id="sig2-card-meta">Loading sample...</div>
-        <div class="sig-rule">Away B2B AND their #1 goalie confirmed starting → <strong>fade the away team</strong>. Redefined after a full-season backtest — see the Signal Tracker.</div>
+        <div class="sig-label-small">Extended Rest · Retired</div>
+        <div class="sig-title">Away B2B + Home Rested 3+ Days</div>
+        <div class="sig-roi-big" id="rest3-roi" style="font-size:1.9rem;">—</div>
+        <div class="sig-meta" id="rest3-meta">Loading...</div>
+        <div class="sig-rule">Tested and <strong>found no edge</strong>. Still logged every night so the evidence keeps building, but never published as a pick.</div>
       </div>
       <div class="sig-card tonight">
         <div class="sig-label-small">Tonight's Scan</div>
@@ -500,59 +500,70 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   <div class="main-wrap">
     <div class="tracker-grid" id="tracker-grid">
       <div class="tracker-card">
-        <div class="tracker-card-header"><h3>Signal 1 — Fatigue Edge</h3><span class="sd-badge">Loading...</span></div>
+        <div class="tracker-card-header"><h3>Rest Edge</h3><span class="sd-badge" id="t-rest2-badge">Loading...</span></div>
         <div class="tracker-card-body">
-          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="s1-games">—</span></div>
-          <div class="stat-row"><span class="stat-label">ROI</span><span class="stat-val good" id="s1-roi">—</span></div>
-          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good" id="s1-wr">—</span></div>
-          <div class="stat-row"><span class="stat-label">Avg Odds (fade team)</span><span class="stat-val">-112</span></div>
-          <div class="stat-row"><span class="stat-label">Best Month</span><span class="stat-val warn" id="s1-best-month">—</span></div>
-          <div class="stat-row"><span class="stat-label">Current Streak</span><span class="stat-val" id="s1-streak">—</span></div>
-          <div class="stat-row"><span class="stat-label">Status</span><span class="stat-val good">Active</span></div>
+          <div class="stat-row"><span class="stat-label">Condition</span><span class="stat-val warn">Away B2B + Home 2d rest</span></div>
+          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="t-rest2-games">—</span></div>
+          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good" id="t-rest2-wr">—</span></div>
+          <div class="stat-row"><span class="stat-label">Avg Home Moneyline</span><span class="stat-val" id="t-rest2-odds">—</span></div>
+          <div class="stat-row"><span class="stat-label">Breakeven Needed</span><span class="stat-val" id="t-rest2-be">—</span></div>
+          <div class="stat-row"><span class="stat-label">ROI (real prices)</span><span class="stat-val good" id="t-rest2-roi">—</span></div>
+          <div class="stat-row"><span class="stat-label">Above Breakeven</span><span class="stat-val" id="t-rest2-sd">—</span></div>
+          <div class="stat-row"><span class="stat-label">Current Streak</span><span class="stat-val" id="t-rest2-streak">—</span></div>
         </div>
       </div>
 
       <div class="tracker-card">
-        <div class="tracker-card-header"><h3>Signal 1 Partial — Moderate Edge</h3><span class="sd-badge" style="color:var(--green);border-color:rgba(61,220,151,0.3);background:rgba(61,220,151,0.08);">Loading...</span></div>
+        <div class="tracker-card-header"><h3>Extended Rest — Retired</h3><span class="sd-badge" style="color:var(--muted);border-color:rgba(90,138,114,0.3);background:rgba(90,138,114,0.08);" id="t-rest3-badge">Loading...</span></div>
         <div class="tracker-card-body">
-          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="s1p-games">—</span></div>
-          <div class="stat-row"><span class="stat-label">ROI</span><span class="stat-val good" id="s1p-roi">—</span></div>
-          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good" id="s1p-wr">—</span></div>
-          <div class="stat-row"><span class="stat-label">Avg Odds (fade team)</span><span class="stat-val">-110</span></div>
-          <div class="stat-row"><span class="stat-label">Condition</span><span class="stat-val warn">Away B2B + Home 2d Rest</span></div>
-          <div class="stat-row"><span class="stat-label">Current Streak</span><span class="stat-val" id="s1p-streak">—</span></div>
-          <div class="stat-row"><span class="stat-label">Status</span><span class="stat-val good">Active</span></div>
+          <div class="stat-row"><span class="stat-label">Condition</span><span class="stat-val">Away B2B + Home 3+ d rest</span></div>
+          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="t-rest3-games">—</span></div>
+          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val" id="t-rest3-wr">—</span></div>
+          <div class="stat-row"><span class="stat-label">Avg Home Moneyline</span><span class="stat-val" id="t-rest3-odds">—</span></div>
+          <div class="stat-row"><span class="stat-label">Breakeven Needed</span><span class="stat-val" id="t-rest3-be">—</span></div>
+          <div class="stat-row"><span class="stat-label">ROI (real prices)</span><span class="stat-val" id="t-rest3-roi">—</span></div>
+          <div class="stat-row"><span class="stat-label">Above Breakeven</span><span class="stat-val" id="t-rest3-sd">—</span></div>
+          <div class="stat-row"><span class="stat-label">Verdict</span><span class="stat-val">No edge found</span></div>
         </div>
       </div>
 
       <div class="tracker-card">
-        <div class="tracker-card-header"><h3>Signal 2 — Goalie Edge</h3><span class="sd-badge" style="color:var(--gold);border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);">Loading...</span></div>
+        <div class="tracker-card-header"><h3>Goalie Edge — In Development</h3><span class="sd-badge" style="color:var(--gold);border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);">Unpublished</span></div>
         <div class="tracker-card-body">
-          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="s2-games">—</span></div>
-          <div class="stat-row"><span class="stat-label">ROI</span><span class="stat-val good" id="s2-roi">—</span></div>
-          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good" id="s2-wr">—</span></div>
-          <div class="stat-row"><span class="stat-label">Avg Odds (fade team)</span><span class="stat-val">-108</span></div>
-          <div class="stat-row"><span class="stat-label">Variance</span><span class="stat-val warn">High</span></div>
-          <div class="stat-row"><span class="stat-label">Current Streak</span><span class="stat-val" id="s2-streak">—</span></div>
-          <div class="stat-row"><span class="stat-label">Status</span><span class="stat-val good">Active</span></div>
+          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="t-goalie-games">—</span></div>
+          <div class="stat-row"><span class="stat-label">Status</span><span class="stat-val warn">No data yet</span></div>
+          <div style="font-size:0.78rem;color:var(--muted);line-height:1.7;margin-top:14px;">Whether a fatigued team starts its #1 goalie may carry information, but we don't yet have a reliable pre-game starter feed. Until we do, this signal has <strong style="color:var(--text);">no published results and does not affect any recommendation</strong> on this site.</div>
         </div>
       </div>
 
       <div class="tracker-card">
-        <div class="tracker-card-header"><h3>2025–26 Season to Date</h3><span class="sd-badge">Combined</span></div>
+        <div class="tracker-card-header"><h3>How These Numbers Are Made</h3><span class="sd-badge">Method</span></div>
         <div class="tracker-card-body">
-          <div class="stat-row"><span class="stat-label">Total Signal Games</span><span class="stat-val" id="sum-sig1">—</span></div>
-          <div class="stat-row"><span class="stat-label">Signal 1 ROI</span><span class="stat-val good" id="sum-roi">—</span></div>
-          <div class="stat-row"><span class="stat-label">Cancelled (Both B2B)</span><span class="stat-val" id="sum-cancelled">—</span></div>
-          <div class="stat-row"><span class="stat-label">Partial Flags</span><span class="stat-val warn" id="sum-partial">—</span></div>
-          <div class="stat-row"><span class="stat-label">Signal 2 Games</span><span class="stat-val" id="sum-sig2">—</span></div>
-          <div class="stat-row"><span class="stat-label">Last Updated</span><span class="stat-val" id="sum-updated">—</span></div>
+          <div class="stat-row"><span class="stat-label">Pricing</span><span class="stat-val" id="t-priced">Real moneyline</span></div>
+          <div class="stat-row"><span class="stat-label">Snapshot</span><span class="stat-val">7:00 AM MST</span></div>
+          <div class="stat-row"><span class="stat-label">Books</span><span class="stat-val">DK · FD · MGM · Pin</span></div>
+          <div class="stat-row"><span class="stat-label">Stake</span><span class="stat-val">Flat, 1 unit</span></div>
+          <div class="stat-row"><span class="stat-label">Season</span><span class="stat-val" id="t-season">—</span></div>
+          <div class="stat-row"><span class="stat-label">Last Updated</span><span class="stat-val" id="t-updated">—</span></div>
+          <div style="font-size:0.78rem;color:var(--muted);line-height:1.7;margin-top:14px;">ROI is the average across four books at the moment the daily email sends — the price you could actually have taken, not the closing line.</div>
         </div>
       </div>
     </div>
 
+    <!-- SEASON REVIEW -->
+    <div class="section-divider" style="margin-top:36px;">
+      <h2>Season Review</h2><div class="sd-line"></div><div class="sd-badge" id="review-badge">2025–26</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;">
+      <div style="font-size:0.8rem;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Cumulative units — Rest Edge</div>
+      <div style="font-size:0.75rem;color:var(--muted);margin-bottom:14px;">Flat 1-unit stakes, graded at the real price on each game.</div>
+      <div id="cum-chart" style="width:100%;overflow:hidden;"></div>
+      <div style="font-size:0.8rem;color:var(--muted);margin:26px 0 12px;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Monthly ROI</div>
+      <div id="monthly-chart"></div>
+    </div>
+
     <div class="section-divider" style="margin-top:32px;">
-      <h2>Last 5 Signal 1 Results</h2>
+      <h2>Last 5 Rest Edge Results</h2>
       <div class="sd-line"></div>
     </div>
     <div class="recap-table" id="last5-table">
@@ -560,14 +571,16 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     </div>
 
     <div class="signal-rule-box" style="margin-top:28px;">
-      <h3>Signal Rules &amp; Methodology</h3>
-      <p><strong>Signal 1 — Fatigue Edge:</strong> Fires when the away team is on a back-to-back and the home team has been rested for 3 or more days. We fade the away team.</p>
+      <h3>Method &amp; What We Found</h3>
+      <p><strong>The rule:</strong> when the away team played last night and the home team has had exactly two days off, back the home team. Flat stake, every occurrence, no discretion.</p>
       <br>
-      <p><strong>Signal 1 Partial — Moderate Fatigue Edge:</strong> Away team on back-to-back, home team rested exactly 2 days. Lower confidence — reduced unit sizing recommended.</p>
+      <p><strong>Why it might work:</strong> across the 2025–26 season the market priced two-day rest and three-plus-day rest almost identically — around −121 in both cases. But the results diverged sharply. Two days off produced a 64.7% home win rate; three or more produced 50.0%. The books appear to treat "rested" as one category when it isn't.</p>
       <br>
-      <p><strong>Signal 2 — Goalie Edge:</strong> Fires when Signal 1 conditions are met AND the away team's #1 goalie is confirmed starting. Our full-season backtest found the edge lives here — fatigued teams riding their starter underperformed the market, while backup starts (standard B2B practice) were already priced in.</p>
+      <p><strong>What we tested and dropped:</strong> the same setup with the home team rested three or more days returned worse than nothing against real prices. We publish that result rather than hiding it. Extra rest past two days looks like rust, not advantage.</p>
       <br>
-      <p><strong>Cancellation Rule:</strong> When both teams are on a back-to-back, all signals are void.</p>
+      <p><strong>Cancellation:</strong> when both teams are on a back-to-back, the edge disappears and no pick is published.</p>
+      <br>
+      <p><strong>Honest limits:</strong> this is one season and 136 games. The win rate sits roughly 2.3 standard deviations above the breakeven rate implied by the price — real, but not a certainty, and we selected this bucket after examining several. A second season either confirms it or doesn't. Every future result lands on this page either way.</p>
     </div>
   </div>
 </div>
@@ -580,7 +593,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="page-hero-inner">
       <div class="page-eyebrow">Grind Line</div>
       <div class="page-title">NHL Edge Finder</div>
-      <p class="page-desc">Enter a matchup's details and our signal engine will instantly score the risk profile and flag any active edges.</p>
+      <p class="page-desc">Enter the rest situation and we'll tell you whether the tracked edge applies — and, if you supply a price, whether it still clears breakeven.</p>
     </div>
   </div>
   <div class="analyzer-wrap">
@@ -596,10 +609,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
           <div class="form-group"><label>Home Team — Days Since Last Game</label>
             <select id="ra-home-rest"><option value="">Select...</option><option value="b2b">Back-to-back (played yesterday)</option><option value="1">1 day rest</option><option value="2">2 days rest</option><option value="3">3 days rest</option><option value="4plus">4+ days rest</option></select>
           </div>
-          <div class="form-group"><label>Away Goalie Status</label>
-            <select id="ra-goalie"><option value="">Select...</option><option value="starter">Starter confirmed</option><option value="backup">Backup confirmed</option><option value="unknown">Unknown / unconfirmed</option></select>
-          </div>
-          <div class="form-group"><label>Away Moneyline (optional)</label><input type="text" id="ra-odds" placeholder="e.g. +120 or -115"></div>
+          <div class="form-group"><label>Home Moneyline (optional)</label><input type="text" id="ra-odds" placeholder="e.g. -125"></div>
         </div>
         <button class="analyze-btn" onclick="runAnalysis()">⚡ Run Signal Analysis</button>
         <div class="result-panel" id="result-panel">
@@ -607,7 +617,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
           <div class="result-signals" id="result-signals"></div>
           <div class="risk-meter-wrap">
             <div class="risk-label-row">
-              <span class="risk-label">Signal Confidence Score</span>
+              <span class="risk-label">Tracked Edge</span>
               <span class="risk-score-big" id="risk-score-display">—</span>
             </div>
             <div class="risk-bar-track"><div class="risk-bar-fill" id="risk-bar"></div></div>
@@ -628,7 +638,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="page-hero-inner">
       <div class="page-eyebrow">Coming September 2026</div>
       <div class="page-title">One membership. <span class="hl-blue">Every signal.</span></div>
-      <p class="page-desc">Paid tiers launch alongside the 2026-27 season. Pricing below reflects our current plan — join the beta waitlist now to lock in early access and be notified the moment tiers go live.</p>
+      <p class="page-desc">Paid tiers launch alongside the 2026-27 season. The tracker stays free forever — you should be able to check our record before you pay us anything. Join the beta waitlist to lock in early access.</p>
     </div>
   </div>
 
@@ -638,7 +648,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       <div class="price-tier-value">$0</div>
       <div class="price-tier-sub">Full transparency, always free</div>
       <ul class="price-features">
-        <li>Public, auditable ROI tracker — every signal, every game, no cherry-picking</li>
+        <li>Public ROI tracker — every game, graded at the real price, including the signals that failed</li>
         <li>Season recap &amp; monthly breakdowns</li>
         <li>One free daily signal</li>
       </ul>
@@ -649,12 +659,13 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       <div class="price-badge">Most Popular</div>
       <div class="price-tier-name">Pro</div>
       <div class="price-tier-value">$12<span>/month</span></div>
-      <div class="price-tier-sub">Full daily slate, every signal</div>
+      <div class="price-tier-sub">The full daily board</div>
       <ul class="price-features">
-        <li>Full daily signal slate — Signal 1, Signal 1 Partial, Signal 2, playoff signals</li>
-        <li>Player prop board with real model probability vs. market probability shown on every pick</li>
-        <li>Goalie starter confirmations</li>
-        <li>Daily email alerts, 7 AM MST</li>
+        <li>Every Rest Edge pick the moment it fires, with the live moneyline attached</li>
+        <li>Player prop board showing model probability against market probability on every pick</li>
+        <li>Full daily slate — rest situations, fatigue flags and a 2-day look-ahead</li>
+        <li>Daily email at 7 AM MST, before the lines move</li>
+        <li>Fantasy value plays and goalie start guidance</li>
       </ul>
       <a class="price-cta primary" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist</a>
     </div>
@@ -672,7 +683,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     </div>
   </div>
 
-  <div class="pricing-note">We never take bets — Grind Line is an independent analytics platform, not a sportsbook. Our incentive is a track record you trust, not a book's margin. Prices shown are current plans and may be adjusted before the September launch.</div>
+  <div class="pricing-note">We never take bets — Grind Line is an independent analytics platform, not a sportsbook. We publish one proven signal, not a wall of picks, and we grade it against the price you could actually have taken. Prices shown are current plans and may be adjusted before the September launch.</div>
 </div>
 
 
@@ -682,17 +693,17 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 <div id="page-about" class="page">
   <div class="about-hero">
     <div class="about-hero-inner">
-      <div class="page-eyebrow" style="justify-content:center;display:flex;margin-bottom:12px;"></div>
+      <div class="page-eyebrow" style="justify-content:center;display:flex;margin-bottom:12px;">Edmonton, Alberta</div>
       <div class="about-headline">Bet Smarter.<br><span>Stay Grinding.</span></div>
-      <p class="about-lead">Grind Line gives you full control over your NHL betting decisions through our <strong>Edge Finder</strong> and <strong>Signal Tracker</strong> — built from the ice up for serious bettors and passionate fans alike. Our platform identifies proven scheduling edges, tracks goalie confirmations, and flags high-confidence situations before puck drop, so you always know where the value is before money goes on the line. <strong>We never take bets</strong> — we're an independent analytics platform, not a sportsbook, and every signal we publish is tracked publicly, win or lose.</p>
+      <p class="about-lead">Most handicapping sites show you a win rate and let you assume the price. We found that the NHL market prices a two-day rest advantage and a five-day rest advantage at almost exactly the same number — and that only one of them wins. That single observation is the whole product. <strong>We publish one signal</strong>, grade it against the moneyline that was actually available when we sent it, and show you the setups that failed alongside the one that didn't. <strong>We never take bets</strong> — we're an analytics platform, not a sportsbook.</p>
     </div>
   </div>
   <div class="about-features">
-    <div class="feat-card"><div class="feat-icon">⚡</div><div class="feat-title">Signal Detection</div><p class="feat-text">Back-to-back fatigue signals tracked across a full season of NHL games, with ROI updated every day of the season. Every number is published on the Signal Tracker — current sample, win rate, and ROI, win or lose.</p></div>
-    <div class="feat-card"><div class="feat-icon">🥅</div><div class="feat-title">Goalie Tracking</div><p class="feat-text">Confirmed and projected starting goalie data feeding Signal 2, which our full-season backtest redefined around #1 goalie starts rather than backups.</p></div>
-    <div class="feat-card"><div class="feat-icon">📊</div><div class="feat-title">Edge Finder</div><p class="feat-text">Enter any NHL matchup and instantly get a full signal breakdown, confidence score, and recommendation powered by our analytics engine.</p></div>
+    <div class="feat-card"><div class="feat-icon">⚡</div><div class="feat-title">One Proven Signal</div><p class="feat-text">We publish a single scheduling edge rather than a wall of daily picks. It is graded against the real moneyline available when we send it, and the setups we tested and rejected are published alongside it.</p></div>
+    <div class="feat-card"><div class="feat-icon">🥅</div><div class="feat-title">Honest Pricing</div><p class="feat-text">Most published ROI assumes a flat −110. Ours doesn't. Every game is graded at the average price across four books at 7 AM MST, which is why our numbers look smaller and hold up better.</p></div>
+    <div class="feat-card"><div class="feat-icon">📊</div><div class="feat-title">Edge Finder</div><p class="feat-text">Enter a matchup and find out whether the tracked edge applies — and if you supply the price, whether it still clears breakeven at that number.</p></div>
     <div class="feat-card"><div class="feat-icon">🏒</div><div class="feat-title">Daily Dashboard</div><p class="feat-text">Every game on tonight's slate scanned for signal activity — live scores, moneylines, goalie status, and a 2-day look-ahead, every day.</p></div>
-    <div class="feat-card"><div class="feat-icon">🍁</div><div class="feat-title">Hockey-Obsessed</div><p class="feat-text">Built by people who live and breathe the game. Every feature exists because a real bettor needed it before puck drop.</p></div>
+    <div class="feat-card"><div class="feat-icon">🍁</div><div class="feat-title">Hockey-Obsessed</div><p class="feat-text">Built in Edmonton by people who live and breathe the game. Every feature exists because a real bettor needed it before puck drop.</p></div>
     <div class="feat-card"><div class="feat-icon">📬</div><div class="feat-title">Daily Email Alerts</div><p class="feat-text">Signal alerts delivered to your inbox every morning at 7 AM MST — so you never miss a high-confidence edge before the lines move.</p></div>
   </div>
   <div class="about-cta-band">
@@ -777,7 +788,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">🏒 Grind Line</div>
-  <p>NHL Betting Intelligence · grindline.ca</p>
+  <p>NHL Betting Intelligence · Edmonton, Alberta · grindline.ca</p>
   <p style="margin-top:8px;"><a href="/sportsbooks.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Alberta Sportsbooks Guide</a> &nbsp;·&nbsp; <a href="/legal.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Privacy, Terms &amp; Responsible Gambling</a></p>
   <div class="footer-disclaimer">We never take bets — Grind Line is an independent analytics platform, not a sportsbook. For informational and entertainment purposes only. Signal data is historically tracked and does not guarantee future results. Please gamble responsibly — if you or someone you know has a gambling problem, call 1-800-522-4700. Data: NHL.com · The Odds API · SportsDataIO</div>
 </footer>
@@ -807,84 +818,74 @@ function showFPTab(id, btn) {
 }
 
 function runAnalysis() {
-  const awayTeam = document.getElementById('ra-away').value.trim() || 'Away Team';
-  const homeTeam = document.getElementById('ra-home').value.trim() || 'Home Team';
+  const awayTeam = document.getElementById('ra-away').value.trim() || 'the away team';
+  const homeTeam = document.getElementById('ra-home').value.trim() || 'the home team';
   const awayB2B  = document.getElementById('ra-away-b2b').value;
   const homeRest = document.getElementById('ra-home-rest').value;
-  const goalie   = document.getElementById('ra-goalie').value;
+  const rawOdds  = document.getElementById('ra-odds').value.trim();
 
-  if (!awayB2B || !homeRest || !goalie) {
-    alert('Please select Away B2B status, Home rest days, and goalie status.');
+  if (!awayB2B || !homeRest) {
+    alert('Please select the away back-to-back status and the home rest days.');
     return;
   }
 
-  const isB2B       = awayB2B === 'yes';
-  const homeBothB2B = homeRest === 'b2b';
-  const homeRest3   = homeRest === '3' || homeRest === '4plus';
-  const homeRest2   = homeRest === '2';
+  let signals = [], score = 0, verdictText, color;
 
-  let signals = [], score = 0;
-
-  if (!isB2B) {
-    signals.push({ icon:'❌', text:`<strong>${awayTeam}</strong> is NOT on a back-to-back. No signal conditions are met.`, badge:'rsi-inactive', label:'No B2B' });
-  } else if (homeBothB2B) {
-    signals.push({ icon:'⚠️', text:`Both teams are on a back-to-back. Signal logic is <strong>cancelled</strong> — the fatigue edge disappears when both sides are equally tired.`, badge:'rsi-inactive', label:'Both B2B' });
+  if (awayB2B !== 'yes') {
+    signals.push({ icon:'—', text:`${awayTeam} is not on a back-to-back, so the tracked setup does not apply.`, badge:'rsi-inactive', label:'No setup' });
+  } else if (homeRest === 'b2b') {
+    signals.push({ icon:'↔', text:`Both teams played last night. The rest difference disappears and <strong>no pick is published</strong>.`, badge:'rsi-inactive', label:'Cancelled' });
+  } else if (homeRest === '2') {
+    signals.push({ icon:'⚡', text:`<strong>Rest Edge applies</strong> — ${awayTeam} played last night, ${homeTeam} has had exactly two days off. Tracked at 64.7% across 136 games, +10.7% ROI at real prices. <strong>Back ${homeTeam}.</strong>`, badge:'rsi-fired', label:'Rest Edge' });
+    score = 75;
+  } else if (homeRest === '1') {
+    signals.push({ icon:'—', text:`${homeTeam} has only one day of rest. Outside the tracked condition.`, badge:'rsi-inactive', label:'No setup' });
   } else {
-    if (homeRest3) {
-      signals.push({ icon:'⚡', text:`<strong>Signal 1 ACTIVE</strong> — ${awayTeam} on back-to-back away, ${homeTeam} rested 3+ days. See the Signal Tracker for full tracked results. <strong>Fade ${awayTeam}.</strong>`, badge:'rsi-fired', label:'⚡ Signal 1' });
-      score += 55;
-    } else if (homeRest2) {
-      signals.push({ icon:'⚠️', text:`<strong>Signal 1 PARTIAL</strong> — ${awayTeam} on B2B away but ${homeTeam} only has 2 days rest (not 3+). Lower confidence partial flag.`, badge:'rsi-active', label:'⚠ Partial' });
-      score += 25;
-    } else {
-      signals.push({ icon:'➖', text:`Signal 1 not active — ${homeTeam} does not have sufficient rest advantage.`, badge:'rsi-inactive', label:'No S1' });
-    }
-    if (goalie === 'starter') {
-      signals.push({ icon:'🥅', text:`<strong>Signal 2 ACTIVE</strong> — ${awayTeam} on back-to-back AND riding their #1 goalie. Backtested edge: fatigued teams starting their #1 underperformed the market. <strong>Fade ${awayTeam}.</strong>`, badge:'rsi-fired', label:'⚡ Signal 2' });
-      score += 40;
-    } else if (goalie === 'unknown') {
-      signals.push({ icon:'❓', text:`Goalie status for ${awayTeam} is unconfirmed. Signal 2 activates if their #1 goalie is confirmed to start.`, badge:'rsi-active', label:'Goalie TBD' });
-      score += 5;
-    } else {
-      signals.push({ icon:'⚠️', text:`${awayTeam} starting a backup — standard B2B practice that the market prices in. Our season backtest showed fading backup starts <strong>lost</strong> money. Signal 2 does not apply; consider passing.`, badge:'rsi-inactive', label:'No S2' });
-      score -= 15;
-    }
+    signals.push({ icon:'✕', text:`${homeTeam} has three or more days off. We tested this and found <strong>no edge</strong> — 50.0% over 56 games, losing money against real prices. <strong>No pick.</strong>`, badge:'rsi-inactive', label:'Tested, no edge' });
   }
 
-  score = Math.max(0, Math.min(score, 100));
+  // Price check
+  const odds = parseFloat(rawOdds.replace('+',''));
+  if (score > 0 && !isNaN(odds) && odds !== 0) {
+    const be = odds < 0 ? (Math.abs(odds)/(Math.abs(odds)+100))*100 : (100/(odds+100))*100;
+    const clears = 64.7 - be;
+    signals.push({
+      icon: clears > 0 ? '✓' : '⚠️',
+      text: `At ${odds > 0 ? '+' : ''}${odds}, breakeven is <strong>${be.toFixed(1)}%</strong>. Our tracked rate is 64.7%, ${clears > 0 ? 'which clears it by ' + clears.toFixed(1) + ' points' : '<strong>below that line — the price has moved past the edge</strong>'}.`,
+      badge: clears > 0 ? 'rsi-fired' : 'rsi-inactive',
+      label: clears > 0 ? 'Price OK' : 'Too short'
+    });
+    if (clears <= 0) score = 25;
+  }
 
   document.getElementById('result-signals').innerHTML = signals.map(s =>
     `<div class="result-sig-item"><span class="rsi-icon">${s.icon}</span><span class="rsi-text">${s.text}</span><span class="rsi-badge ${s.badge}">${s.label}</span></div>`
   ).join('');
 
-  let color, verdictText;
-  if (score >= 80) {
+  if (score >= 70) {
     color = '#3ddc97';
-    verdictText = `<strong style="color:#3ddc97;">High Confidence — Both signals active.</strong> This is one of the strongest setups the system identifies. Fade <strong>${awayTeam}</strong> on the moneyline. Consider 1.5–2x unit sizing.`;
-  } else if (score >= 50) {
-    color = '#00c46a';
-    verdictText = `<strong style="color:#00c46a;">Signal 1 Active.</strong> Solid edge — fade <strong>${awayTeam}</strong> at standard unit size. Confirm goalie before puck drop to check for Signal 2 upgrade.`;
+    verdictText = `<strong style="color:#3ddc97;">Edge applies.</strong> This is the one setup we publish. Flat stake on <strong>${homeTeam}</strong> — the tracked results assume no variable sizing.`;
   } else if (score >= 20) {
     color = '#ff8c00';
-    verdictText = `<strong style="color:#ff8c00;">Partial Signal Only.</strong> Lower confidence. If betting, reduce to 0.5x unit size. Wait for goalie confirmation before committing.`;
+    verdictText = `<strong style="color:#ff8c00;">Setup present, price is not.</strong> The situation qualifies but the moneyline has already absorbed it. Passing is the correct play.`;
   } else {
     color = '#5a8a72';
-    verdictText = `<strong style="color:#5a8a72;">No Active Signal.</strong> This matchup does not meet signal criteria. No edge identified — pass or bet based on your own handicapping.`;
+    verdictText = `<strong style="color:#5a8a72;">No edge here.</strong> This matchup falls outside the tracked condition. We publish one signal and this isn't it — handicap it yourself or pass.`;
   }
 
   const scoreEl = document.getElementById('risk-score-display');
   const bar     = document.getElementById('risk-bar');
   const verdict = document.getElementById('risk-verdict');
-
-  scoreEl.textContent = score + '/100';
+  scoreEl.textContent = score > 0 ? 'Applies' : 'No edge';
   scoreEl.style.color = color;
-  bar.style.width     = score + '%';
+  scoreEl.style.fontSize = '1.3rem';
+  bar.style.width = score + '%';
   bar.style.background = `linear-gradient(90deg, ${color}, ${color}99)`;
   verdict.style.background   = `${color}0d`;
   verdict.style.border       = `1px solid ${color}33`;
   verdict.style.borderRadius = '8px';
   verdict.innerHTML = verdictText;
-  document.getElementById('result-title').textContent = `Analysis: ${awayTeam} @ ${homeTeam}`;
+  document.getElementById('result-title').textContent = `${awayTeam} @ ${homeTeam}`;
 
   const panel = document.getElementById('result-panel');
   panel.classList.add('visible');
@@ -918,14 +919,11 @@ async function buildTicker() {
       items.push('<span class="t-sep">·</span>');
     }
 
-    const s1  = roi.signal1 || {};
-    const s1p = roi.signal1_partial || {};
-    if (s1p.games) {
-      items.push(`<span><span class="t-sig">Signal 1 Partial</span> Away B2B + Home 2 Days Rest → ${s1p.roi >= 0 ? '+' : ''}${s1p.roi}% ROI · ${s1p.games} games</span>`);
+    const r2 = roi.rest2 || roi.signal1_partial || {};
+    if (r2.games) {
+      items.push(`<span><span class="t-sig">Rest Edge</span> Away B2B + Home 2 Days Rest → ${r2.win_rate}% · ${r2.roi >= 0 ? '+' : ''}${r2.roi}% ROI at real prices · ${r2.games} games</span>`);
       items.push('<span class="t-sep">·</span>');
-    }
-    if (s1.games) {
-      items.push(`<span><span class="t-sig">Signal 1</span> Away B2B + Home 3+ Days Rest → ${s1.roi >= 0 ? '+' : ''}${s1.roi}% ROI · ${s1.games} games</span>`);
+      items.push(`<span>Graded at the moneyline available 7 AM MST — never an assumed price</span>`);
       items.push('<span class="t-sep">·</span>');
     }
 
@@ -950,15 +948,14 @@ async function buildDashboard() {
     const roi  = await roiRes.json();
     if (!data.games_tonight) return;
 
-    const s1  = roi.signal1 || {};
-    const s1p = roi.signal1_partial || {};
-    const s2  = roi.signal2 || {};
-    const totalGamesTracked = (s1.games || 0) + (s1p.games || 0) + (s2.games || 0);
+    const r2 = roi.rest2 || roi.signal1_partial || {};
+    const r3 = roi.rest3plus || roi.signal1 || {};
+    const totalGamesTracked = (r2.games || 0) + (r3.games || 0);
 
-    const heroPartial = document.getElementById('hero-partial-roi');
-    if (heroPartial) heroPartial.innerHTML = s1p.games ? `<span>${s1p.roi >= 0 ? '+' : ''}${s1p.roi}</span>%` : `<span>—</span>`;
-    const heroSig1 = document.getElementById('hero-sig1-roi');
-    if (heroSig1) heroSig1.innerHTML = s1.games ? `<span>${s1.roi >= 0 ? '+' : ''}${s1.roi}</span>%` : `<span>—</span>`;
+    const heroWr = document.getElementById('hero-win-rate');
+    if (heroWr) heroWr.innerHTML = r2.games ? `<span>${r2.win_rate}</span>%` : `<span>—</span>`;
+    const heroRoi = document.getElementById('hero-roi');
+    if (heroRoi) heroRoi.innerHTML = r2.games ? `<span>${r2.roi >= 0 ? '+' : ''}${r2.roi}</span>%` : `<span>—</span>`;
     const heroTracked = document.getElementById('hero-games-tracked');
     if (heroTracked) heroTracked.textContent = totalGamesTracked;
     const heroTonight = document.getElementById('hero-games-tonight');
@@ -967,15 +964,15 @@ async function buildDashboard() {
     const activeSigDate = document.getElementById('active-signals-date');
     if (activeSigDate) activeSigDate.textContent = data.date_label || '—';
 
-    const sig1Roi  = document.getElementById('sig1-card-roi');
-    const sig1Meta = document.getElementById('sig1-card-meta');
-    if (sig1Roi)  sig1Roi.textContent  = s1.games ? `${s1.roi >= 0 ? '+' : ''}${s1.roi}%` : 'Building';
-    if (sig1Meta) sig1Meta.textContent = s1.games ? `${s1.games}-game tracked sample · ${s1.win_rate}% win rate` : 'No games tracked yet this season';
+    const r2Roi  = document.getElementById('rest2-roi');
+    const r2Meta = document.getElementById('rest2-meta');
+    if (r2Roi)  r2Roi.textContent  = r2.games ? `${r2.roi >= 0 ? '+' : ''}${r2.roi}%` : 'Building';
+    if (r2Meta) r2Meta.textContent = r2.games ? `${r2.games} games · ${r2.win_rate}% · avg ${r2.avg_odds}` : 'No games tracked yet';
 
-    const sig2Roi  = document.getElementById('sig2-card-roi');
-    const sig2Meta = document.getElementById('sig2-card-meta');
-    if (sig2Roi)  sig2Roi.textContent  = s2.games >= 5 ? `${s2.roi >= 0 ? '+' : ''}${s2.roi}%` : 'Building Sample';
-    if (sig2Meta) sig2Meta.textContent = s2.games > 0 ? `${s2.games}-game sample · still building` : 'Requires manual goalie confirmation — sample still building';
+    const r3Roi  = document.getElementById('rest3-roi');
+    const r3Meta = document.getElementById('rest3-meta');
+    if (r3Roi)  r3Roi.textContent  = r3.games ? `${r3.roi >= 0 ? '+' : ''}${r3.roi}%` : '—';
+    if (r3Meta) r3Meta.textContent = r3.games ? `${r3.games} games · ${r3.win_rate}% · avg ${r3.avg_odds}` : 'No games tracked yet';
 
     const n = data.n_games || 0;
     const tonightTitle = document.getElementById('tonight-scan-title');
@@ -1015,13 +1012,13 @@ async function buildDashboard() {
 
           let signalBadge, signalFade, signalNote;
           if (g.signal === 'sig1') {
-            signalBadge = `<div class="gsig-badge gsb-s1">⚡ Signal 1 Active</div>`;
-            signalFade  = `<div class="gsig-fade">Fade: <strong>${g.away} (Away B2B)</strong></div>`;
-            signalNote  = `<div class="gsig-note">${g.home} rested ${g.home_rest}+ days</div>`;
+            signalBadge = `<div class="gsig-badge gsb-none">Tested — no edge</div>`;
+            signalFade  = '';
+            signalNote  = `<div class="gsig-note">${g.home} rested ${g.home_rest}+ days · not a published pick</div>`;
           } else if (g.signal === 'partial') {
-            signalBadge = `<div class="gsig-badge gsb-partial">⚠ Signal 1 Partial</div>`;
-            signalFade  = `<div class="gsig-fade">Fade: <strong>${g.away} (Away B2B)</strong></div>`;
-            signalNote  = `<div class="gsig-note">${g.home} rested 2 days · Low confidence</div>`;
+            signalBadge = `<div class="gsig-badge gsb-s1">⚡ Rest Edge</div>`;
+            signalFade  = `<div class="gsig-fade">Back: <strong>${g.home}</strong></div>`;
+            signalNote  = `<div class="gsig-note">${g.away} played last night · ${g.home} rested 2 days</div>`;
           } else if (g.signal === 'cancel') {
             signalBadge = `<div class="gsig-badge gsb-cancel">↔ Signals Cancel</div>`;
             signalFade  = '';
@@ -1103,10 +1100,10 @@ async function buildDashboard() {
           let flagClass, flagText, desc;
           if (g.signal === 'sig1') {
             flagClass = 'lf-watch'; flagText = '⚡ Watch';
-            desc = `${g.away} on B2B away · ${g.home} rested ${g.home_rest}+ days → <strong>Signal 1 candidate — fade ${g.away}</strong>`;
+            desc = `${g.away} on B2B away · ${g.home} rested ${g.home_rest}+ days → outside the tracked edge`;
           } else if (g.signal === 'partial') {
-            flagClass = 'lf-watch'; flagText = '⚠ Partial';
-            desc = `${g.away} on B2B away · ${g.home} rested 2 days → Lower confidence partial flag`;
+            flagClass = 'lf-watch'; flagText = '⚡ Watch';
+            desc = `${g.away} on B2B away · ${g.home} rested 2 days → <strong>Rest Edge candidate — back ${g.home}</strong>`;
           } else {
             flagClass = 'lf-cancel'; flagText = 'Cancelled';
             desc = `Both teams on B2B — <strong>signals cancel</strong>`;
@@ -1387,52 +1384,101 @@ buildFantasy();
 
 <script>
 // ── ROI / SIGNAL TRACKER ───────────────────────────────────────────────────
+function fmtPct(v){ return (v >= 0 ? '+' : '') + v + '%'; }
+
+function renderCumulative(points) {
+  const el = document.getElementById('cum-chart');
+  if (!el || !points || points.length < 2) { if (el) el.innerHTML = '<div style="color:var(--muted);font-size:0.8rem;">Not enough graded games yet.</div>'; return; }
+  const W = 900, H = 220, P = 34;
+  const units = points.map(p => p.units);
+  const min = Math.min(0, ...units), max = Math.max(0, ...units);
+  const range = (max - min) || 1;
+  const x = i => P + (i / (points.length - 1)) * (W - P * 2);
+  const y = u => H - P - ((u - min) / range) * (H - P * 2);
+  const path = points.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p.units).toFixed(1)}`).join('');
+  const zero = y(0);
+  const last = points[points.length - 1];
+  el.innerHTML = `
+    <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;" role="img" aria-label="Cumulative units over the season, ending at ${last.units} units">
+      <line x1="${P}" y1="${zero}" x2="${W - P}" y2="${zero}" stroke="rgba(90,138,114,0.4)" stroke-width="1" stroke-dasharray="4 4"/>
+      <path d="${path}" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="${x(points.length - 1).toFixed(1)}" cy="${y(last.units).toFixed(1)}" r="4" fill="var(--cyan)"/>
+      <text x="${W - P}" y="${Math.max(y(last.units) - 12, 16).toFixed(1)}" text-anchor="end" fill="var(--cyan)" font-size="15" font-weight="700">${last.units > 0 ? '+' : ''}${last.units}u</text>
+      <text x="${P}" y="${H - 8}" fill="var(--muted)" font-size="12">${points[0].date}</text>
+      <text x="${W - P}" y="${H - 8}" text-anchor="end" fill="var(--muted)" font-size="12">${last.date}</text>
+    </svg>`;
+}
+
+function renderMonthly(monthly) {
+  const el = document.getElementById('monthly-chart');
+  if (!el || !monthly || !monthly.length) { if (el) el.innerHTML = ''; return; }
+  const peak = Math.max(...monthly.map(m => Math.abs(m.roi)), 1);
+  el.innerHTML = monthly.map(m => {
+    const n = m.wins + m.losses;
+    const pos = m.roi >= 0;
+    const w = (Math.abs(m.roi) / peak) * 50;
+    const label = new Date(m.month + '-02').toLocaleDateString('en', { month: 'short', year: '2-digit' });
+    return `
+      <div style="display:grid;grid-template-columns:64px 1fr 92px;align-items:center;gap:10px;padding:5px 0;">
+        <div style="font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">${label}</div>
+        <div style="position:relative;height:16px;background:rgba(255,255,255,0.03);border-radius:3px;">
+          <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(90,138,114,0.4);"></div>
+          <div style="position:absolute;top:2px;bottom:2px;border-radius:2px;${pos ? `left:50%;width:${w}%;background:var(--green);` : `right:50%;width:${w}%;background:var(--red);`}"></div>
+        </div>
+        <div style="font-size:0.75rem;text-align:right;color:${pos ? 'var(--green)' : 'var(--red)'};font-weight:700;">${fmtPct(m.roi)} <span style="color:var(--muted);font-weight:400;">${m.wins}-${m.losses}</span></div>
+      </div>`;
+  }).join('');
+}
+
 async function buildROI() {
   try {
     const r = await fetch('data/roi.json?nocache=' + Date.now());
     const d = await r.json();
+    const r2 = d.rest2 || d.signal1_partial || {};
+    const r3 = d.rest3plus || d.signal1 || {};
+    const gl = d.goalie || d.signal2 || {};
 
-    const badges = document.querySelectorAll('#tracker-grid .tracker-card .sd-badge');
-    if (badges[0]) badges[0].textContent = d.signal1.status;
-    if (badges[1]) badges[1].textContent = d.signal1_partial.roi > 15 ? 'Outperforming' : d.signal1_partial.status;
-    if (badges[2]) badges[2].textContent = d.signal2.games === 0 ? 'No Data' : 'High Variance';
+    const set = (id, val) => { const e = document.getElementById(id); if (e) e.textContent = val; };
 
-    document.getElementById('s1-games').textContent      = d.signal1.games + ' games';
-    document.getElementById('s1-roi').textContent        = (d.signal1.roi >= 0 ? '+' : '') + d.signal1.roi + '%';
-    document.getElementById('s1-wr').textContent         = d.signal1.win_rate + '%';
-    document.getElementById('s1-best-month').textContent = d.signal1.best_month;
-    document.getElementById('s1-streak').textContent     = d.signal1.streak;
+    set('t-rest2-badge', r2.status || '—');
+    set('t-rest2-games', (r2.games || 0) + ' games');
+    set('t-rest2-wr', (r2.win_rate ?? '—') + '%');
+    set('t-rest2-odds', r2.avg_odds ?? '—');
+    set('t-rest2-be', (r2.breakeven_rate ?? '—') + '%');
+    set('t-rest2-roi', r2.games ? fmtPct(r2.roi) : '—');
+    set('t-rest2-sd', r2.games ? `${r2.sd_above_breakeven >= 0 ? '+' : ''}${r2.sd_above_breakeven} SD` : '—');
+    set('t-rest2-streak', r2.streak || '—');
 
-    document.getElementById('s1p-games').textContent  = d.signal1_partial.games + ' games';
-    document.getElementById('s1p-roi').textContent    = (d.signal1_partial.roi >= 0 ? '+' : '') + d.signal1_partial.roi + '%';
-    document.getElementById('s1p-wr').textContent     = d.signal1_partial.win_rate + '%';
-    document.getElementById('s1p-streak').textContent = d.signal1_partial.streak;
+    set('t-rest3-badge', 'Retired');
+    set('t-rest3-games', (r3.games || 0) + ' games');
+    set('t-rest3-wr', (r3.win_rate ?? '—') + '%');
+    set('t-rest3-odds', r3.avg_odds ?? '—');
+    set('t-rest3-be', (r3.breakeven_rate ?? '—') + '%');
+    set('t-rest3-roi', r3.games ? fmtPct(r3.roi) : '—');
+    set('t-rest3-sd', r3.games ? `${r3.sd_above_breakeven >= 0 ? '+' : ''}${r3.sd_above_breakeven} SD` : '—');
 
-    document.getElementById('s2-games').textContent  = d.signal2.games + ' games';
-    document.getElementById('s2-roi').textContent    = (d.signal2.roi >= 0 ? '+' : '') + d.signal2.roi + '%';
-    document.getElementById('s2-wr').textContent     = d.signal2.win_rate + '%';
-    document.getElementById('s2-streak').textContent = d.signal2.streak;
+    set('t-goalie-games', (gl.games || 0) + ' games');
+    set('t-season', d.season || '—');
+    set('t-updated', d.generated || '—');
+    set('t-priced', d.pricing && d.pricing.assumed_odds_used === false ? 'Real moneyline' : 'Assumed');
+    set('review-badge', d.season || '2025–26');
 
-    document.getElementById('sum-sig1').textContent      = d.summary.total_sig1_games;
-    document.getElementById('sum-roi').textContent       = (d.signal1.roi >= 0 ? '+' : '') + d.signal1.roi + '%';
-    document.getElementById('sum-cancelled').textContent = d.summary.cancelled_both_b2b;
-    document.getElementById('sum-partial').textContent   = d.summary.total_partial_games;
-    document.getElementById('sum-sig2').textContent      = d.summary.total_sig2_games;
-    document.getElementById('sum-updated').textContent   = d.generated;
+    renderCumulative(r2.cumulative);
+    renderMonthly(r2.monthly);
 
     const table = document.getElementById('last5-table');
-    if (table && d.summary.last5_sig1 && d.summary.last5_sig1.length > 0) {
-      table.innerHTML = [...d.summary.last5_sig1].reverse().map(g => `
+    const last5 = (d.summary && d.summary.last5_sig1) || [];
+    if (table && last5.length) {
+      table.innerHTML = [...last5].reverse().map(g => `
         <div class="recap-row">
           <div>
             <div class="rr-game"><strong>${g.away} @ ${g.home}</strong></div>
-            <div class="rr-note">${g.date} · Fade ${g.away}</div>
+            <div class="rr-note">${g.date} · back ${g.home} at ${g.odds ?? '—'}</div>
           </div>
           <div class="rr-score">${g.score}</div>
           <div class="rr-result ${g.fade_won ? 'r-hit' : 'r-miss'}">${g.fade_won ? '✅ Hit' : '❌ Miss'}</div>
         </div>`).join('');
     }
-
     console.log('ROI data loaded');
   } catch (e) {
     console.log('ROI fetch error:', e);
