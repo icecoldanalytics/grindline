@@ -434,16 +434,16 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="hero-content">
       <div class="hero-eyebrow">NHL Betting Intelligence · Edmonton, AB</div>
       <div class="hero-headline">Grind<br><span class="hl-blue">Line</span></div>
-      <p class="hero-sub">One scheduling edge, tracked publicly and graded against the real moneyline available when we publish it.<br><strong>No assumed prices. Every result, win or lose.</strong></p>
+      <p class="hero-sub">One scheduling edge, tested across four NHL seasons and graded against the real moneyline — not an assumed price.<br><strong>508 games. Published win or lose, including the years it went flat.</strong></p>
       <div class="hero-buttons">
         <button class="btn-primary" onclick="showPage('edge-finder')">⚡ Edge Finder</button>
         <button class="btn-ghost"   onclick="showPage('signal-tracker')">Signal Tracker →</button>
         <a class="btn-ghost" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">✉ Join Beta</a>
       </div>
       <div class="hero-stats">
-        <div><div class="hero-stat-val" id="hero-win-rate"><span>—</span>%</div><div class="hero-stat-label">Win Rate</div></div>
-        <div><div class="hero-stat-val" id="hero-roi"><span>—</span>%</div><div class="hero-stat-label">ROI at real prices</div></div>
-        <div><div class="hero-stat-val" id="hero-games-tracked">—</div><div class="hero-stat-label">Games Tracked</div></div>
+        <div><div class="hero-stat-val"><span>62.0</span>%</div><div class="hero-stat-label">Win rate · 4 seasons</div></div>
+        <div><div class="hero-stat-val"><span>+6.7</span>%</div><div class="hero-stat-label">ROI at real prices</div></div>
+        <div><div class="hero-stat-val">508</div><div class="hero-stat-label">Games Graded</div></div>
         <div><div class="hero-stat-val" id="hero-games-tonight">—</div><div class="hero-stat-label">Games Tonight</div></div>
       </div>
     </div>
@@ -455,16 +455,16 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       <div class="sig-card s1">
         <div class="sig-label-small">Rest Edge · Active</div>
         <div class="sig-title">Away B2B + Home Rested 2 Days</div>
-        <div class="sig-roi-big" id="rest2-roi">—</div>
-        <div class="sig-meta" id="rest2-meta">Loading...</div>
-        <div class="sig-rule">Away team played last night, home team rested exactly two days &rarr; <strong>back the home team</strong>. Graded at the real moneyline, not an assumed price.</div>
+        <div class="sig-roi-big">+6.7%</div>
+        <div class="sig-meta">508 games over four seasons · 62.0% · avg &minus;106</div>
+        <div class="sig-rule">Away team played last night, home team rested exactly two days &rarr; <strong>back the home team</strong>. Held up in all four seasons tested. <span id="rest2-live"></span></div>
       </div>
       <div class="sig-card s2">
-        <div class="sig-label-small">Extended Rest · Retired</div>
-        <div class="sig-title">Away B2B + Home Rested 3+ Days</div>
-        <div class="sig-roi-big" id="rest3-roi" style="font-size:1.9rem;">—</div>
-        <div class="sig-meta" id="rest3-meta">Loading...</div>
-        <div class="sig-rule">Tested and <strong>found no edge</strong>. Still logged every night so the evidence keeps building, but never published as a pick.</div>
+        <div class="sig-label-small">Three-Day Rest · Retired</div>
+        <div class="sig-title">Away B2B + Home Rested Exactly 3 Days</div>
+        <div class="sig-roi-big" style="font-size:1.9rem;">&minus;5.7%</div>
+        <div class="sig-meta">230 games over four seasons · 54.3% · losing in three of four</div>
+        <div class="sig-rule">Tested and <strong>found no edge</strong>. We publish it because a signal we dropped tells you more about our method than one we kept.</div>
       </div>
       <div class="sig-card tonight">
         <div class="sig-label-small">Tonight's Scan</div>
@@ -550,6 +550,28 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       </div>
     </div>
 
+    <!-- FOUR-SEASON VALIDATION -->
+    <div class="section-divider" style="margin-top:36px;">
+      <h2>Four-Season Test</h2><div class="sd-line"></div><div class="sd-badge">2022–23 → 2025–26</div>
+    </div>
+    <div class="recap-table">
+      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(255,255,255,0.03);">
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Season</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Games</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Win%</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Avg ML</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">ROI</span>
+      </div>
+      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2022–23</span><span style="text-align:right;">123</span><span style="text-align:right;">59.3%</span><span style="text-align:right;">&minus;108</span><span style="text-align:right;color:var(--muted);font-weight:700;">&minus;0.2%</span></div>
+      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2023–24</span><span style="text-align:right;">116</span><span style="text-align:right;">60.3%</span><span style="text-align:right;">&minus;102</span><span style="text-align:right;color:var(--green);font-weight:700;">+4.1%</span></div>
+      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2024–25</span><span style="text-align:right;">133</span><span style="text-align:right;">63.2%</span><span style="text-align:right;">&minus;93</span><span style="text-align:right;color:var(--green);font-weight:700;">+11.2%</span></div>
+      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2025–26</span><span style="text-align:right;">136</span><span style="text-align:right;">64.7%</span><span style="text-align:right;">&minus;121</span><span style="text-align:right;color:var(--green);font-weight:700;">+10.7%</span></div>
+      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(0,196,106,0.06);"><span class="rr-game"><strong>All four</strong></span><span style="text-align:right;"><strong>508</strong></span><span style="text-align:right;"><strong>62.0%</strong></span><span style="text-align:right;"><strong>&minus;106</strong></span><span style="text-align:right;color:var(--green);font-weight:800;">+6.7%</span></div>
+    </div>
+    <div style="font-size:0.8rem;color:var(--muted);line-height:1.75;margin-top:14px;max-width:760px;">
+      <strong style="color:var(--text);">Read the 2022&ndash;23 row before you subscribe.</strong> The edge was present &mdash; 59.3%, well above that season's 52.8% baseline &mdash; and it still returned nothing, because the market priced it tighter that year. Roughly 120 bets a season is a small sample. A flat or losing year is entirely possible inside a genuine long-run edge, and pretending otherwise would be the first dishonest thing on this page.
+    </div>
+
     <!-- SEASON REVIEW -->
     <div class="section-divider" style="margin-top:36px;">
       <h2>Season Review</h2><div class="sd-line"></div><div class="sd-badge" id="review-badge">2025–26</div>
@@ -572,15 +594,19 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 
     <div class="signal-rule-box" style="margin-top:28px;">
       <h3>Method &amp; What We Found</h3>
-      <p><strong>The rule:</strong> when the away team played last night and the home team has had exactly two days off, back the home team. Flat stake, every occurrence, no discretion.</p>
+      <p><strong>The rule:</strong> when the away team played last night and the home team has had exactly two days off, back the home team. Flat stake, every occurrence, no discretion, no filtering after the fact.</p>
       <br>
-      <p><strong>Why it might work:</strong> across the 2025–26 season the market priced two-day rest and three-plus-day rest almost identically — around −121 in both cases. But the results diverged sharply. Two days off produced a 64.7% home win rate; three or more produced 50.0%. The books appear to treat "rested" as one category when it isn't.</p>
+      <p><strong>How it is graded:</strong> every game is priced at the average US moneyline available at 7:00 AM MST &mdash; the moment our daily email sends. Not the closing line, which subscribers cannot bet, and never an assumed &minus;110. This is why our published ROI is lower than most: assumed pricing inflates a 62% win rate by several points.</p>
       <br>
-      <p><strong>What we tested and dropped:</strong> the same setup with the home team rested three or more days returned worse than nothing against real prices. We publish that result rather than hiding it. Extra rest past two days looks like rust, not advantage.</p>
+      <p><strong>What the four seasons show:</strong> the two-day bucket beat its season's baseline home win rate by six to seven points every year, including three seasons we had never examined when the rule was written. Combined: 508 games, 62.0%, with a 95% confidence floor of 57.7% against a 51.5% breakeven.</p>
       <br>
-      <p><strong>Cancellation:</strong> when both teams are on a back-to-back, the edge disappears and no pick is published.</p>
+      <p><strong>The dead zone:</strong> exactly three days of home rest returned 54.3% over 230 games and lost money in three of four seasons. Longer layoffs of four or more days actually performed well (66.7% over 75 games) but on a sample too thin to publish as a pick.</p>
       <br>
-      <p><strong>Honest limits:</strong> this is one season and 136 games. The win rate sits roughly 2.3 standard deviations above the breakeven rate implied by the price — real, but not a certainty, and we selected this bucket after examining several. A second season either confirms it or doesn't. Every future result lands on this page either way.</p>
+      <p><strong>What we cannot explain:</strong> we do not have a clean mechanism for why two days and long layoffs both work while three days does not. Fatigue alone does not predict that shape. We are publishing the pattern because it replicated across four independent seasons, not because we have a tidy story for it &mdash; and we would rather say that than invent one.</p>
+      <br>
+      <p><strong>Cancellation:</strong> when both teams are on a back-to-back, the rest difference disappears and no pick is published.</p>
+      <br>
+      <p><strong>Honest limits:</strong> around 120 qualifying games a season means one year proves very little. 2022&ndash;23 returned &minus;0.2% despite a 59.3% win rate. Average prices have ranged from &minus;93 to &minus;121 across seasons, so the edge shrinks whenever the market tightens. Every future result lands on this page, whichever way it goes.</p>
     </div>
   </div>
 </div>
@@ -683,7 +709,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     </div>
   </div>
 
-  <div class="pricing-note">We never take bets — Grind Line is an independent analytics platform, not a sportsbook. We publish one proven signal, not a wall of picks, and we grade it against the price you could actually have taken. Prices shown are current plans and may be adjusted before the September launch.</div>
+  <div class="pricing-note"><strong style="color:var(--text);">Before you buy a season pass, read this.</strong> Our edge is roughly +6.7% over four seasons and about 120 qualifying bets a year. In 2022&ndash;23 that same edge returned &minus;0.2%. A flat or losing season is a normal outcome inside a real long-run edge, and anyone selling you certainty on a sample this size is not being straight with you.<br><br>Grind Line is an independent analytics platform, not a sportsbook &mdash; we never take bets and hold no position on any game. Prices shown are current plans and may change before the September launch.</div>
 </div>
 
 
@@ -695,7 +721,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="about-hero-inner">
       <div class="page-eyebrow" style="justify-content:center;display:flex;margin-bottom:12px;">Edmonton, Alberta</div>
       <div class="about-headline">Bet Smarter.<br><span>Stay Grinding.</span></div>
-      <p class="about-lead">Most handicapping sites show you a win rate and let you assume the price. We found that the NHL market prices a two-day rest advantage and a five-day rest advantage at almost exactly the same number — and that only one of them wins. That single observation is the whole product. <strong>We publish one signal</strong>, grade it against the moneyline that was actually available when we sent it, and show you the setups that failed alongside the one that didn't. <strong>We never take bets</strong> — we're an analytics platform, not a sportsbook.</p>
+      <p class="about-lead">Most sites in this space sell projections. Almost none of them publish a scoreboard. <strong>We publish one signal and its entire record</strong> &mdash; 508 games across four NHL seasons, graded at the real moneyline available when we sent it, including the season it returned nothing and the variants we tested and dropped. That is the whole product: not more picks, but a number you can actually check. <strong>We never take bets</strong> and hold no position on any game.</p>
     </div>
   </div>
   <div class="about-features">
@@ -836,22 +862,22 @@ function runAnalysis() {
   } else if (homeRest === 'b2b') {
     signals.push({ icon:'↔', text:`Both teams played last night. The rest difference disappears and <strong>no pick is published</strong>.`, badge:'rsi-inactive', label:'Cancelled' });
   } else if (homeRest === '2') {
-    signals.push({ icon:'⚡', text:`<strong>Rest Edge applies</strong> — ${awayTeam} played last night, ${homeTeam} has had exactly two days off. Tracked at 64.7% across 136 games, +10.7% ROI at real prices. <strong>Back ${homeTeam}.</strong>`, badge:'rsi-fired', label:'Rest Edge' });
+    signals.push({ icon:'⚡', text:`<strong>Rest Edge applies</strong> — ${awayTeam} played last night, ${homeTeam} has had exactly two days off. Tracked at 62.0% across 508 games and four seasons, +6.7% ROI at real prices. <strong>Back ${homeTeam}.</strong>`, badge:'rsi-fired', label:'Rest Edge' });
     score = 75;
   } else if (homeRest === '1') {
     signals.push({ icon:'—', text:`${homeTeam} has only one day of rest. Outside the tracked condition.`, badge:'rsi-inactive', label:'No setup' });
   } else {
-    signals.push({ icon:'✕', text:`${homeTeam} has three or more days off. We tested this and found <strong>no edge</strong> — 50.0% over 56 games, losing money against real prices. <strong>No pick.</strong>`, badge:'rsi-inactive', label:'Tested, no edge' });
+    signals.push({ icon:'✕', text:`${homeTeam} has three or more days off. Three days of rest is the dead zone — <strong>54.3% over 230 games</strong>, losing money in three of four seasons. <strong>No pick.</strong>`, badge:'rsi-inactive', label:'Tested, no edge' });
   }
 
   // Price check
   const odds = parseFloat(rawOdds.replace('+',''));
   if (score > 0 && !isNaN(odds) && odds !== 0) {
     const be = odds < 0 ? (Math.abs(odds)/(Math.abs(odds)+100))*100 : (100/(odds+100))*100;
-    const clears = 64.7 - be;
+    const clears = 62.0 - be;
     signals.push({
       icon: clears > 0 ? '✓' : '⚠️',
-      text: `At ${odds > 0 ? '+' : ''}${odds}, breakeven is <strong>${be.toFixed(1)}%</strong>. Our tracked rate is 64.7%, ${clears > 0 ? 'which clears it by ' + clears.toFixed(1) + ' points' : '<strong>below that line — the price has moved past the edge</strong>'}.`,
+      text: `At ${odds > 0 ? '+' : ''}${odds}, breakeven is <strong>${be.toFixed(1)}%</strong>. Our tracked rate is 62.0%, ${clears > 0 ? 'which clears it by ' + clears.toFixed(1) + ' points' : '<strong>below that line — the price has moved past the edge</strong>'}.`,
       badge: clears > 0 ? 'rsi-fired' : 'rsi-inactive',
       label: clears > 0 ? 'Price OK' : 'Too short'
     });
@@ -950,29 +976,20 @@ async function buildDashboard() {
 
     const r2 = roi.rest2 || roi.signal1_partial || {};
     const r3 = roi.rest3plus || roi.signal1 || {};
-    const totalGamesTracked = (r2.games || 0) + (r3.games || 0);
 
-    const heroWr = document.getElementById('hero-win-rate');
-    if (heroWr) heroWr.innerHTML = r2.games ? `<span>${r2.win_rate}</span>%` : `<span>—</span>`;
-    const heroRoi = document.getElementById('hero-roi');
-    if (heroRoi) heroRoi.innerHTML = r2.games ? `<span>${r2.roi >= 0 ? '+' : ''}${r2.roi}</span>%` : `<span>—</span>`;
-    const heroTracked = document.getElementById('hero-games-tracked');
-    if (heroTracked) heroTracked.textContent = totalGamesTracked;
+    // Hero shows the fixed four-season record; live season appears on the signal card.
     const heroTonight = document.getElementById('hero-games-tonight');
     if (heroTonight) heroTonight.textContent = data.n_games || 0;
 
     const activeSigDate = document.getElementById('active-signals-date');
     if (activeSigDate) activeSigDate.textContent = data.date_label || '—';
 
-    const r2Roi  = document.getElementById('rest2-roi');
-    const r2Meta = document.getElementById('rest2-meta');
-    if (r2Roi)  r2Roi.textContent  = r2.games ? `${r2.roi >= 0 ? '+' : ''}${r2.roi}%` : 'Building';
-    if (r2Meta) r2Meta.textContent = r2.games ? `${r2.games} games · ${r2.win_rate}% · avg ${r2.avg_odds}` : 'No games tracked yet';
-
-    const r3Roi  = document.getElementById('rest3-roi');
-    const r3Meta = document.getElementById('rest3-meta');
-    if (r3Roi)  r3Roi.textContent  = r3.games ? `${r3.roi >= 0 ? '+' : ''}${r3.roi}%` : '—';
-    if (r3Meta) r3Meta.textContent = r3.games ? `${r3.games} games · ${r3.win_rate}% · avg ${r3.avg_odds}` : 'No games tracked yet';
+    const liveEl = document.getElementById('rest2-live');
+    if (liveEl) {
+      liveEl.innerHTML = r2.games
+        ? `This season so far: <strong>${r2.games} games, ${r2.win_rate}%, ${r2.roi >= 0 ? '+' : ''}${r2.roi}% ROI</strong>.`
+        : 'This season has not started.';
+    }
 
     const n = data.n_games || 0;
     const tonightTitle = document.getElementById('tonight-scan-title');
