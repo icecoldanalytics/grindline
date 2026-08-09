@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ice Cold Analytics | NHL Betting Intelligence</title>
+<title>Grind Line | NHL Betting Intelligence</title>
 
 <style>
 :root {
@@ -11,14 +12,14 @@
   --navy:    #0b1522;
   --card:    #0d1a2a;
   --border:  #162334;
-  --accent:  #00b4ff;
-  --cyan:    #00e5ff;
+  --accent:  #00c46a;
+  --cyan:    #00e88a;
   --gold:    #f5a623;
-  --green:   #00d68f;
+  --green:   #3ddc97;
   --red:     #ff4757;
   --orange:  #ff8c00;
-  --text:    #c8dff0;
-  --muted:   #4a6a88;
+  --text:    #c5e8d5;
+  --muted:   #5a8a72;
   --bright:  #ffffff;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -26,13 +27,13 @@ html{scroll-behavior:smooth;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--text);min-height:100vh;overflow-x:hidden;}
 ::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-track{background:var(--dark);}
-::-webkit-scrollbar-thumb{background:#1a3a5c;border-radius:3px;}
+::-webkit-scrollbar-thumb{background:#1a4a3c;border-radius:3px;}
 
 /* TICKER */
-.ticker-wrap{background:linear-gradient(90deg,#03080f,#060d19,#03080f);border-bottom:1px solid rgba(0,180,255,0.15);overflow:hidden;height:36px;display:flex;align-items:center;position:sticky;top:0;z-index:1000;}
+.ticker-wrap{background:linear-gradient(90deg,#03080f,#060d19,#03080f);border-bottom:1px solid rgba(0,196,106,0.15);overflow:hidden;height:36px;display:flex;align-items:center;position:sticky;top:0;z-index:1000;}
 .ticker-label{background:var(--accent);color:#000;font-weight:800;font-size:0.7rem;letter-spacing:1px;padding:0 14px;height:36px;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;}
 .ticker-overflow{overflow:hidden;flex:1;}
-.ticker-track{display:flex;animation:ticker-scroll 60s linear infinite;white-space:nowrap;}
+.ticker-track{display:flex;animation:ticker-scroll 120s linear infinite;white-space:nowrap;}
 .ticker-track span{font-size:0.78rem;color:var(--text);padding:0 28px;letter-spacing:0.3px;}
 .t-hit{color:var(--green);font-weight:700!important;}.t-miss{color:var(--red);font-weight:700!important;}.t-sig{color:var(--gold);font-weight:700!important;}.t-live{color:var(--cyan);font-weight:700!important;}.t-sep{color:var(--muted)!important;padding:0 4px!important;}
 @keyframes ticker-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
@@ -40,24 +41,30 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 /* NAV */
 .topnav{position:sticky;top:36px;z-index:999;background:rgba(6,11,20,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:60px;}
 .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer;}
-.nav-brand-icon{width:38px;height:38px;background:linear-gradient(135deg,#00b4ff,#0066cc);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 14px rgba(0,180,255,0.35);flex-shrink:0;}
+.nav-brand-icon{width:38px;height:38px;background:linear-gradient(135deg,#00c46a,#00764a);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 14px rgba(0,196,106,0.35);flex-shrink:0;}
 .nav-brand-text{font-weight:800;font-size:1.1rem;letter-spacing:-0.3px;color:var(--bright);}
 .nav-brand-text span{color:var(--accent);}
 .nav-links{display:flex;align-items:center;gap:2px;}
 .nav-links a{font-weight:600;font-size:0.78rem;letter-spacing:0.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:8px 14px;border-radius:6px;border-bottom:3px solid transparent;transition:all 0.2s;cursor:pointer;}
 .nav-links a:hover,.nav-links a.active{color:var(--accent);border-bottom-color:var(--accent);}
 .nav-cta{font-weight:700;font-size:0.78rem;letter-spacing:1px;text-transform:uppercase;color:#000;background:var(--accent);border:none;padding:9px 18px;border-radius:6px;cursor:pointer;transition:all 0.2s;text-decoration:none;}
-.nav-cta:hover{background:var(--cyan);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,180,255,0.4);}
+.nav-cta:hover{background:var(--cyan);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,196,106,0.4);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-beta{background:transparent;border:1px solid var(--cyan);color:var(--cyan);padding:7px 14px;border-radius:6px;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:none;white-space:nowrap;}
+.nav-beta:hover{background:rgba(0,232,138,0.1);}
+.nav-hamburger{display:none;background:transparent;border:1px solid var(--border);color:var(--text);font-size:1.2rem;padding:6px 10px;border-radius:6px;cursor:pointer;}
+.nav-beta-mobile{display:none;}
+@media(max-width:768px){.nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:#0d1a24;border-bottom:1px solid var(--border);flex-direction:column;padding:8px 0;z-index:999;}.nav-links.open{display:flex;}.nav-links a{padding:14px 24px;border-bottom:1px solid var(--border);font-size:1rem;}.nav-hamburger{display:block;}.nav-beta{display:none;}.nav-beta-mobile{display:block;color:var(--cyan);font-weight:700;}}
 
 /* PAGES */
 .page{display:none;}.page.active{display:block;}
 
 /* HERO */
 .hero{position:relative;min-height:480px;display:flex;align-items:center;overflow:hidden;background:var(--dark);}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(0,100,180,0.18) 0%,transparent 60%),radial-gradient(ellipse 50% 80% at 20% 80%,rgba(0,30,80,0.4) 0%,transparent 60%),linear-gradient(135deg,#030810 0%,#060d1a 50%,#040b16 100%);}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%,rgba(0,140,90,0.18) 0%,transparent 60%),radial-gradient(ellipse 50% 80% at 20% 80%,rgba(0,50,35,0.4) 0%,transparent 60%),linear-gradient(135deg,#030810 0%,#060d1a 50%,#040b16 100%);}
 .hero-rink{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:560px;height:380px;opacity:0.07;}
 .hero-rink svg{width:100%;height:100%;}
-.hero-orb{position:absolute;right:200px;top:40%;width:300px;height:300px;background:radial-gradient(circle,rgba(0,180,255,0.12) 0%,transparent 70%);border-radius:50%;animation:orb-pulse 4s ease-in-out infinite;}
+.hero-orb{position:absolute;right:200px;top:40%;width:300px;height:300px;background:radial-gradient(circle,rgba(0,196,106,0.12) 0%,transparent 70%);border-radius:50%;animation:orb-pulse 4s ease-in-out infinite;}
 @keyframes orb-pulse{0%,100%{transform:scale(1);opacity:0.8;}50%{transform:scale(1.15);opacity:1;}}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:70px 24px;width:100%;}
 .hero-eyebrow{font-weight:600;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
@@ -68,7 +75,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .hero-sub strong{color:var(--text);}
 .hero-buttons{display:flex;gap:12px;flex-wrap:wrap;}
 .btn-primary{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;background:var(--accent);color:#000;padding:13px 24px;border-radius:6px;text-decoration:none;cursor:pointer;border:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
-.btn-primary:hover{background:var(--cyan);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,180,255,0.4);}
+.btn-primary:hover{background:var(--cyan);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,196,106,0.4);}
 .btn-ghost{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;background:transparent;color:var(--text);padding:13px 24px;border-radius:6px;text-decoration:none;cursor:pointer;border:1px solid var(--border);transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
 .hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap;}
@@ -81,12 +88,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .section-divider{display:flex;align-items:center;gap:14px;margin:44px 0 20px;}
 .section-divider h2{font-weight:800;font-size:0.95rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--bright);white-space:nowrap;}
 .sd-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
-.sd-badge{font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent);background:rgba(0,180,255,0.08);border:1px solid rgba(0,180,255,0.2);padding:4px 12px;border-radius:20px;white-space:nowrap;}
+.sd-badge{font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent);background:rgba(0,196,106,0.08);border:1px solid rgba(0,196,106,0.2);padding:4px 12px;border-radius:20px;white-space:nowrap;}
 
 /* SIGNAL CARDS */
 .signal-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:10px;}
 .sig-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px 24px;position:relative;overflow:hidden;transition:transform 0.2s,border-color 0.2s;}
-.sig-card:hover{transform:translateY(-2px);border-color:rgba(0,180,255,0.25);}
+.sig-card:hover{transform:translateY(-2px);border-color:rgba(0,196,106,0.25);}
 .sig-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0;}
 .sig-card.s1::after{background:linear-gradient(90deg,var(--accent),var(--cyan));}
 .sig-card.s2::after{background:linear-gradient(90deg,var(--gold),#ff8c00);}
@@ -104,7 +111,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .game-card{background:var(--card);border:1px solid var(--border);border-radius:10px;display:grid;grid-template-columns:1fr 100px 1fr 160px;align-items:center;overflow:hidden;transition:border-color 0.2s;position:relative;}
 .game-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
 .game-card.sig1::before{background:var(--accent);}.game-card.sig2::before{background:var(--gold);}.game-card.sig-partial::before{background:var(--orange);}.game-card.cancelled::before{background:var(--muted);}.game-card.nosig::before{background:var(--border);}
-.game-card.sig1{border-color:rgba(0,180,255,0.25);}.game-card.sig2{border-color:rgba(245,166,35,0.3);}.game-card.sig-partial{border-color:rgba(255,140,0,0.2);}
+.game-card.sig1{border-color:rgba(0,196,106,0.25);}.game-card.sig2{border-color:rgba(245,166,35,0.3);}.game-card.sig-partial{border-color:rgba(255,140,0,0.2);}
 .gc-team{padding:14px 16px 14px 20px;display:flex;flex-direction:column;gap:3px;}
 .gc-team.home{padding-right:20px;align-items:flex-end;text-align:right;}
 .gc-city{font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;}
@@ -115,10 +122,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .gc-goalie span{color:var(--text);}
 .tag{font-size:0.58rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;border-radius:3px;}
 .tag-b2b{background:rgba(255,71,87,0.15);color:#ff6b7a;border:1px solid rgba(255,71,87,0.25);}
-.tag-rest3{background:rgba(0,214,143,0.12);color:#00d68f;border:1px solid rgba(0,214,143,0.25);}
+.tag-rest3{background:rgba(61,220,151,0.12);color:#3ddc97;border:1px solid rgba(61,220,151,0.25);}
 .tag-rest2{background:rgba(255,140,0,0.12);color:#ffa040;border:1px solid rgba(255,140,0,0.2);}
-.tag-live{background:rgba(0,229,255,0.1);color:var(--cyan);border:1px solid rgba(0,229,255,0.25);animation:pulse 1.4s infinite;}
-.tag-final{background:rgba(74,106,136,0.1);color:var(--muted);border:1px solid rgba(74,106,136,0.2);}
+.tag-live{background:rgba(0,232,138,0.1);color:var(--cyan);border:1px solid rgba(0,232,138,0.25);animation:pulse 1.4s infinite;}
+.tag-final{background:rgba(90,138,114,0.1);color:var(--muted);border:1px solid rgba(90,138,114,0.2);}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.5;}}
 .gc-center{text-align:center;padding:12px 8px;background:rgba(255,255,255,0.02);border-left:1px solid var(--border);border-right:1px solid var(--border);}
 .gc-score{font-weight:800;font-size:1.4rem;color:var(--bright);letter-spacing:3px;line-height:1;}
@@ -128,11 +135,11 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .gc-odds span{color:var(--text);}
 .gc-signal{padding:14px 18px;display:flex;flex-direction:column;gap:5px;border-left:1px solid var(--border);}
 .gsig-badge{font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;padding:5px 10px;border-radius:4px;text-align:center;}
-.gsb-s1{background:rgba(0,180,255,0.12);color:var(--accent);border:1px solid rgba(0,180,255,0.3);}
+.gsb-s1{background:rgba(0,196,106,0.12);color:var(--accent);border:1px solid rgba(0,196,106,0.3);}
 .gsb-s2{background:rgba(245,166,35,0.12);color:var(--gold);border:1px solid rgba(245,166,35,0.3);}
 .gsb-partial{background:rgba(255,140,0,0.1);color:var(--orange);border:1px solid rgba(255,140,0,0.25);}
-.gsb-cancel{background:rgba(74,106,136,0.08);color:var(--muted);border:1px solid rgba(74,106,136,0.15);}
-.gsb-none{background:transparent;color:var(--muted);border:1px solid rgba(74,106,136,0.1);}
+.gsb-cancel{background:rgba(90,138,114,0.08);color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
+.gsb-none{background:transparent;color:var(--muted);border:1px solid rgba(90,138,114,0.1);}
 .gsig-fade{font-size:0.72rem;color:var(--text);}
 .gsig-fade strong{color:var(--accent);}
 .gsig-note{font-size:0.67rem;color:var(--muted);line-height:1.4;}
@@ -147,25 +154,25 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .rr-note{font-size:0.68rem;color:var(--muted);margin-top:2px;}
 .rr-score{font-weight:700;font-size:1rem;color:var(--bright);letter-spacing:2px;white-space:nowrap;}
 .rr-result{font-weight:700;font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:4px;white-space:nowrap;}
-.r-hit{background:rgba(0,214,143,0.12);color:var(--green);border:1px solid rgba(0,214,143,0.25);}
+.r-hit{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
 .r-miss{background:rgba(255,71,87,0.12);color:var(--red);border:1px solid rgba(255,71,87,0.2);}
-.r-none{background:rgba(74,106,136,0.08);color:var(--muted);border:1px solid rgba(74,106,136,0.15);}
+.r-none{background:rgba(90,138,114,0.08);color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
 
 /* LOOKAHEAD */
 .la-stack{display:flex;flex-direction:column;gap:7px;}
 .la-day-label{font-size:0.68rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:10px 2px 4px;}
 .la-row{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 18px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;font-size:0.82rem;transition:border-color 0.2s;}
-.la-row.watch{border-color:rgba(0,180,255,0.25);}
+.la-row.watch{border-color:rgba(0,196,106,0.25);}
 .la-game strong{color:var(--bright);font-weight:700;font-size:0.95rem;text-transform:uppercase;letter-spacing:0.5px;}
 .la-desc{font-size:0.72rem;color:var(--muted);margin-top:3px;line-height:1.5;}
 .la-desc strong{color:var(--accent);}
 .la-flag{font-weight:700;font-size:0.68rem;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:4px;white-space:nowrap;}
-.lf-watch{background:rgba(0,180,255,0.1);color:var(--accent);border:1px solid rgba(0,180,255,0.25);}
-.lf-cancel{background:transparent;color:var(--muted);border:1px solid rgba(74,106,136,0.15);}
+.lf-watch{background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.25);}
+.lf-cancel{background:transparent;color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
 
 /* PAGE HERO */
-.page-hero{background:linear-gradient(135deg,#060b14,#0b1827);border-bottom:1px solid var(--border);padding:52px 32px;position:relative;overflow:hidden;}
-.page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,180,255,0.06) 0%,transparent 70%);border-radius:50%;}
+.page-hero{background:linear-gradient(135deg,#060b14,#0b2720);border-bottom:1px solid var(--border);padding:52px 32px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,196,106,0.06) 0%,transparent 70%);border-radius:50%;}
 .page-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
 .page-eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
 .page-title{font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--bright);letter-spacing:-0.3px;margin-bottom:10px;}
@@ -182,15 +189,15 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .stat-label{color:var(--muted);}
 .stat-val{color:var(--bright);font-weight:600;font-size:0.95rem;letter-spacing:0.5px;}
 .stat-val.good{color:var(--green);}.stat-val.warn{color:var(--gold);}
-.signal-rule-box{background:rgba(0,180,255,0.05);border:1px solid rgba(0,180,255,0.15);border-radius:10px;padding:18px 20px;margin-top:28px;}
+.signal-rule-box{background:rgba(0,196,106,0.05);border:1px solid rgba(0,196,106,0.15);border-radius:10px;padding:18px 20px;margin-top:28px;}
 .signal-rule-box h3{font-weight:800;font-size:1rem;text-transform:uppercase;color:var(--accent);letter-spacing:1px;margin-bottom:10px;}
 .signal-rule-box p{font-size:0.82rem;color:var(--text);line-height:1.7;}
 .signal-rule-box p strong{color:var(--bright);}
 
-/* RISK ANALYZER */
+/* EDGE FINDER */
 .analyzer-wrap{max-width:900px;margin:0 auto;padding:0 24px 80px;}
 .analyzer-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:28px;}
-.analyzer-card-header{background:linear-gradient(135deg,#0d1e30,#091625);padding:24px 28px;border-bottom:1px solid var(--border);}
+.analyzer-card-header{background:linear-gradient(135deg,#0d3024,#091f18);padding:24px 28px;border-bottom:1px solid var(--border);}
 .analyzer-card-header h3{font-weight:800;font-size:1.1rem;text-transform:uppercase;color:var(--bright);letter-spacing:1px;}
 .analyzer-card-header p{font-size:0.78rem;color:var(--muted);margin-top:4px;}
 .analyzer-body{padding:28px;}
@@ -200,9 +207,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .form-group select,.form-group input{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:0.85rem;padding:10px 14px;outline:none;transition:border-color 0.2s;appearance:none;}
 .form-group select:focus,.form-group input:focus{border-color:var(--accent);}
 .form-group select option{background:#0d1a2a;}
-.analyze-btn{width:100%;background:linear-gradient(135deg,var(--accent),#0077cc);border:none;border-radius:8px;color:var(--bright);font-weight:800;font-size:1rem;letter-spacing:2px;text-transform:uppercase;padding:16px;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 20px rgba(0,180,255,0.2);}
-.analyze-btn:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(0,180,255,0.35);}
-.result-panel{margin-top:28px;background:rgba(0,180,255,0.04);border:1px solid rgba(0,180,255,0.15);border-radius:12px;padding:24px;display:none;}
+.analyze-btn{width:100%;background:linear-gradient(135deg,var(--accent),#00764a);border:none;border-radius:8px;color:var(--bright);font-weight:800;font-size:1rem;letter-spacing:2px;text-transform:uppercase;padding:16px;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 20px rgba(0,196,106,0.2);}
+.analyze-btn:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(0,196,106,0.35);}
+.result-panel{margin-top:28px;background:rgba(0,196,106,0.04);border:1px solid rgba(0,196,106,0.15);border-radius:12px;padding:24px;display:none;}
 .result-panel.visible{display:block;}
 .result-header{font-weight:800;font-size:1.1rem;text-transform:uppercase;color:var(--bright);letter-spacing:1px;margin-bottom:16px;}
 .result-signals{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
@@ -210,9 +217,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .rsi-icon{font-size:1.2rem;flex-shrink:0;}
 .rsi-text{color:var(--text);line-height:1.5;}
 .rsi-badge{margin-left:auto;font-weight:700;font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:4px;white-space:nowrap;}
-.rsi-active{background:rgba(0,180,255,0.12);color:var(--accent);border:1px solid rgba(0,180,255,0.3);}
-.rsi-inactive{background:rgba(74,106,136,0.1);color:var(--muted);border:1px solid rgba(74,106,136,0.15);}
-.rsi-fired{background:rgba(0,214,143,0.12);color:var(--green);border:1px solid rgba(0,214,143,0.25);}
+.rsi-active{background:rgba(0,196,106,0.12);color:var(--accent);border:1px solid rgba(0,196,106,0.3);}
+.rsi-inactive{background:rgba(90,138,114,0.1);color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
+.rsi-fired{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
 .risk-meter-wrap{margin-top:20px;}
 .risk-label-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
 .risk-label{font-size:0.75rem;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase;}
@@ -222,259 +229,78 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .risk-verdict{margin-top:16px;padding:14px 16px;border-radius:8px;font-size:0.85rem;line-height:1.6;}
 
 /* ABOUT */
-.about-hero{background:linear-gradient(135deg,#060b14,#091828);border-bottom:1px solid var(--border);padding:64px 32px;text-align:center;position:relative;overflow:hidden;}
-.about-hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,180,255,0.07) 0%,transparent 60%);border-radius:50%;}
+.about-hero{background:linear-gradient(135deg,#060b14,#092820);border-bottom:1px solid var(--border);padding:64px 32px;text-align:center;position:relative;overflow:hidden;}
+.about-hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(0,196,106,0.07) 0%,transparent 60%);border-radius:50%;}
 .about-hero-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;}
 .about-headline{font-weight:900;font-size:clamp(2.2rem,5vw,4rem);text-transform:uppercase;color:var(--bright);letter-spacing:-0.5px;line-height:0.95;margin-bottom:20px;}
 .about-headline span{background:linear-gradient(90deg,var(--accent),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.about-lead{font-size:1rem;color:var(--muted);line-height:1.8;}
+.about-lead{font-size:1.15rem;color:var(--muted);line-height:1.85;}
 .about-lead strong{color:var(--text);}
 .about-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:1200px;margin:48px auto 0;padding:0 24px;}
 .feat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px;transition:border-color 0.2s,transform 0.2s;}
-.feat-card:hover{border-color:rgba(0,180,255,0.25);transform:translateY(-3px);}
-.feat-icon{width:46px;height:46px;background:rgba(0,180,255,0.1);border:1px solid rgba(0,180,255,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px;}
+.feat-card:hover{border-color:rgba(0,196,106,0.25);transform:translateY(-3px);}
+.feat-icon{width:46px;height:46px;background:rgba(0,196,106,0.1);border:1px solid rgba(0,196,106,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px;}
 .feat-title{font-weight:800;font-size:1rem;text-transform:uppercase;color:var(--bright);letter-spacing:1px;margin-bottom:8px;}
-.feat-text{font-size:0.8rem;color:var(--muted);line-height:1.7;}
-.about-cta-band{background:linear-gradient(135deg,#091828,#060b14);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 32px;text-align:center;margin-top:60px;}
+.feat-text{font-size:0.9rem;color:var(--muted);line-height:1.75;}
+.about-cta-band{background:linear-gradient(135deg,#092820,#060b14);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 32px;text-align:center;margin-top:60px;}
 .about-cta-band h2{font-weight:900;font-size:2.2rem;text-transform:uppercase;color:var(--bright);margin-bottom:12px;}
 .about-cta-band p{font-size:0.9rem;color:var(--muted);margin-bottom:28px;}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:1100px;margin:48px auto 0;padding:0 24px;}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px 28px;position:relative;display:flex;flex-direction:column;}
+.price-card.featured{border-color:var(--accent);box-shadow:0 0 30px rgba(0,196,106,0.1);}
+.price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;font-weight:800;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;white-space:nowrap;}
+.price-tier-name{font-weight:800;font-size:1.1rem;color:var(--bright);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
+.price-tier-value{font-weight:900;font-size:2.4rem;color:var(--bright);line-height:1;margin-bottom:2px;}
+.price-tier-value span{font-size:0.9rem;color:var(--muted);font-weight:600;}
+.price-tier-sub{font-size:0.78rem;color:var(--muted);margin-bottom:22px;}
+.price-features{list-style:none;flex:1;margin-bottom:24px;}
+.price-features li{font-size:0.85rem;color:var(--text);padding:9px 0;border-bottom:1px solid rgba(22,35,52,0.6);display:flex;align-items:flex-start;gap:10px;}
+.price-features li:last-child{border-bottom:none;}
+.price-features li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0;}
+.price-cta{width:100%;padding:13px;border-radius:8px;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;text-align:center;text-decoration:none;cursor:pointer;border:none;}
+.price-cta.primary{background:linear-gradient(135deg,var(--accent),#00764a);color:#000;}
+.price-cta.ghost{background:transparent;border:1px solid var(--border);color:var(--text);}
+.pricing-note{max-width:700px;margin:32px auto 0;padding:0 24px;text-align:center;font-size:0.82rem;color:var(--muted);line-height:1.7;}
+
+/* PREMIUM GATE */
+.premium-gate{position:relative;}
+.premium-gate .gated-content{filter:blur(7px);pointer-events:none;user-select:none;}
+.premium-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;z-index:5;background:linear-gradient(180deg,rgba(6,11,20,0.2),rgba(6,11,20,0.75));border-radius:12px;padding:32px;text-align:center;}
+.premium-overlay h3{color:var(--bright);font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:0.5px;}
+.premium-overlay p{color:var(--text);font-size:0.85rem;max-width:420px;line-height:1.7;}
+.premium-overlay .po-cta{background:linear-gradient(135deg,var(--accent),#00764a);color:#000;font-weight:800;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;padding:13px 28px;border-radius:8px;text-decoration:none;cursor:pointer;}
+.premium-overlay .po-sub{font-size:0.72rem;color:var(--muted);}
 
 /* FOOTER */
 footer{background:#03070e;border-top:1px solid var(--border);padding:36px 32px;text-align:center;}
 .footer-brand{font-weight:800;font-size:1.1rem;color:var(--text);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
 footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
-.footer-disclaimer{max-width:640px;margin:12px auto 0;padding-top:12px;border-top:1px solid var(--border);font-size:0.68rem;color:#2a3a4a;}
+.footer-disclaimer{max-width:640px;margin:12px auto 0;padding-top:12px;border-top:1px solid var(--border);font-size:0.68rem;color:#3a5a4a;}
 
-/* ── BETA SIGNUP ──────────────────────────────────── */
-.beta-banner {
-  background: linear-gradient(135deg, #0a1f35, #071525);
-  border: 1px solid rgba(0,180,255,0.2);
-  border-radius: 12px;
-  padding: 28px 32px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 24px;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 0;
-}
-.beta-banner::before {
-  content: '';
-  position: absolute;
-  top: -40px; right: -40px;
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(0,180,255,0.08) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.beta-banner-left { position: relative; z-index: 1; }
-.beta-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(245,166,35,0.12);
-  border: 1px solid rgba(245,166,35,0.3);
-  color: var(--gold);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-}
-.beta-pill::before { content: '●'; font-size: 0.5rem; animation: pulse 1.4s infinite; }
-.beta-banner h3 { font-weight: 800; font-size: 1.1rem; color: var(--bright); margin-bottom: 5px; }
-.beta-banner p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; max-width: 480px; }
-.beta-banner p strong { color: var(--text); }
-.beta-form { display: flex; gap: 8px; position: relative; z-index: 1; }
-.beta-input {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(0,180,255,0.2);
-  border-radius: 6px;
-  color: var(--bright);
-  font-size: 0.85rem;
-  padding: 11px 16px;
-  outline: none;
-  transition: border-color 0.2s;
-  width: 240px;
-}
-.beta-input::placeholder { color: var(--muted); }
-.beta-input:focus { border-color: var(--accent); }
-.beta-submit {
-  background: var(--accent);
-  color: #000;
-  border: none;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 11px 20px;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-.beta-submit:hover { background: var(--cyan); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,180,255,0.35); }
-.beta-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-.beta-success {
-  display: none;
-  align-items: center;
-  gap: 10px;
-  color: var(--green);
-  font-weight: 600;
-  font-size: 0.85rem;
-}
-.beta-success.visible { display: flex; }
-.beta-perks { display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
-.beta-perk { font-size: 0.72rem; color: var(--muted); display: flex; align-items: center; gap: 5px; }
-.beta-perk::before { content: '✓'; color: var(--green); font-weight: 700; }
-
-/* Pricing page */
-.pricing-hero {
-  background: linear-gradient(135deg, #060b14, #091828);
-  border-bottom: 1px solid var(--border);
-  padding: 64px 32px 52px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.pricing-hero::before {
-  content: '';
-  position: absolute;
-  top: -150px; left: 50%;
-  transform: translateX(-50%);
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(0,180,255,0.07) 0%, transparent 60%);
-  border-radius: 50%;
-}
-.pricing-hero-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
-.pricing-headline { font-weight: 800; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--bright); margin-bottom: 12px; line-height: 1.1; }
-.pricing-headline span { background: linear-gradient(90deg, var(--accent), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.pricing-sub { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
-
-.pricing-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
-
-.pricing-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  margin-top: 40px;
-}
-.pricing-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 30px 28px;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s;
-}
-.pricing-card:hover { transform: translateY(-3px); }
-.pricing-card.featured {
-  border-color: rgba(0,180,255,0.35);
-  background: linear-gradient(135deg, #0d1e30, #091625);
-}
-.pricing-card.featured::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--cyan));
-}
-.pricing-badge {
-  display: inline-block;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 20px;
-  margin-bottom: 16px;
-}
-.pb-beta    { background: rgba(245,166,35,0.12); color: var(--gold); border: 1px solid rgba(245,166,35,0.3); }
-.pb-free    { background: rgba(74,106,136,0.12); color: var(--muted); border: 1px solid rgba(74,106,136,0.2); }
-.pb-pro     { background: rgba(0,180,255,0.12); color: var(--accent); border: 1px solid rgba(0,180,255,0.25); }
-.pb-season  { background: rgba(0,214,143,0.12); color: var(--green); border: 1px solid rgba(0,214,143,0.25); }
-.pc-name { font-weight: 800; font-size: 1.1rem; color: var(--bright); margin-bottom: 6px; }
-.pc-price { font-weight: 800; font-size: 2.2rem; color: var(--bright); line-height: 1; margin-bottom: 4px; }
-.pc-price span { font-size: 1rem; font-weight: 500; color: var(--muted); }
-.pc-price .price-slash { font-size: 1.4rem; color: var(--muted); text-decoration: line-through; margin-right: 6px; }
-.pc-desc { font-size: 0.78rem; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
-.pc-features { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; }
-.pc-features li { font-size: 0.8rem; color: var(--text); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
-.pc-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-.pc-features li.excluded { color: var(--muted); }
-.pc-features li.excluded::before { content: '–'; color: var(--muted); }
-.pc-cta {
-  width: 100%;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.82rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 13px;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-  text-align: center;
-  display: block;
-}
-.pc-cta.cta-primary { background: var(--accent); color: #000; }
-.pc-cta.cta-primary:hover { background: var(--cyan); box-shadow: 0 4px 16px rgba(0,180,255,0.35); }
-.pc-cta.cta-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
-.pc-cta.cta-ghost:hover { border-color: var(--accent); color: var(--accent); }
-.pc-cta.cta-gold { background: linear-gradient(135deg, var(--gold), #ffaa00); color: #000; }
-.pc-cta.cta-gold:hover { box-shadow: 0 4px 16px rgba(245,166,35,0.35); }
-
-.pricing-faq { margin-top: 52px; }
-.faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
-.faq-item:last-child { border-bottom: none; }
-.faq-q { font-weight: 700; font-size: 0.9rem; color: var(--bright); margin-bottom: 6px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-.faq-q:hover { color: var(--accent); }
-.faq-a { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
-
-.beta-count-bar {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 20px;
-  margin-top: 16px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.bcb-label { font-size: 0.75rem; color: var(--muted); white-space: nowrap; }
-.bcb-track { flex: 1; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; }
-.bcb-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--cyan)); border-radius: 3px; width: 34%; }
-.bcb-count { font-weight: 700; font-size: 0.82rem; color: var(--bright); white-space: nowrap; }
-
-/* ── FANTASY PICKS PAGE ─────────────────────────── */
+/* FANTASY PICKS */
 .fp-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:28px;}
 .fp-tab{font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding:12px 20px;cursor:pointer;border-bottom:3px solid transparent;transition:all 0.2s;background:none;border-top:none;border-left:none;border-right:none;}
 .fp-tab:hover{color:var(--text);}
 .fp-tab.active{color:var(--accent);border-bottom-color:var(--accent);}
 .fp-panel{display:none;}.fp-panel.active{display:block;}
-
-/* Pick cards */
 .picks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:8px;}
 .pick-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:transform 0.2s,border-color 0.2s;position:relative;}
-.pick-card:hover{transform:translateY(-2px);border-color:rgba(0,180,255,0.2);}
+.pick-card:hover{transform:translateY(-2px);border-color:rgba(0,196,106,0.2);}
 .pick-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
 .pick-card.tier-s::before{background:linear-gradient(90deg,#f5a623,#ffcc44);}
 .pick-card.tier-a::before{background:linear-gradient(90deg,var(--accent),var(--cyan));}
 .pick-card.tier-b::before{background:linear-gradient(90deg,var(--green),#00ffaa);}
-.pick-card.tier-c::before{background:linear-gradient(90deg,var(--muted),#6a8aaa);}
-
+.pick-card.tier-c::before{background:linear-gradient(90deg,var(--muted),#7aaa92);}
 .pick-header{padding:14px 16px 10px;display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
 .pick-player{font-weight:700;font-size:1rem;color:var(--bright);}
 .pick-team{font-size:0.72rem;color:var(--muted);margin-top:2px;}
 .pick-tier{font-weight:800;font-size:0.72rem;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
 .tier-s-badge{background:rgba(245,166,35,0.15);color:var(--gold);border:1px solid rgba(245,166,35,0.3);}
-.tier-a-badge{background:rgba(0,180,255,0.12);color:var(--accent);border:1px solid rgba(0,180,255,0.25);}
-.tier-b-badge{background:rgba(0,214,143,0.12);color:var(--green);border:1px solid rgba(0,214,143,0.25);}
-.tier-c-badge{background:rgba(74,106,136,0.1);color:var(--muted);border:1px solid rgba(74,106,136,0.2);}
-
+.tier-a-badge{background:rgba(0,196,106,0.12);color:var(--accent);border:1px solid rgba(0,196,106,0.25);}
+.tier-b-badge{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
+.tier-c-badge{background:rgba(90,138,114,0.1);color:var(--muted);border:1px solid rgba(90,138,114,0.2);}
 .pick-body{padding:0 16px 14px;display:flex;flex-direction:column;gap:8px;}
 .pick-matchup{font-size:0.78rem;color:var(--muted);}
 .pick-matchup strong{color:var(--text);}
@@ -486,13 +312,11 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 .pick-reason strong{color:var(--accent);}
 .pick-tags{display:flex;gap:5px;flex-wrap:wrap;}
 .pick-tag{font-size:0.62rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;padding:2px 7px;border-radius:3px;}
-.pt-dfs{background:rgba(0,180,255,0.08);color:var(--accent);border:1px solid rgba(0,180,255,0.2);}
+.pt-dfs{background:rgba(0,196,106,0.08);color:var(--accent);border:1px solid rgba(0,196,106,0.2);}
 .pt-season{background:rgba(245,166,35,0.08);color:var(--gold);border:1px solid rgba(245,166,35,0.2);}
-.pt-both{background:rgba(0,214,143,0.08);color:var(--green);border:1px solid rgba(0,214,143,0.2);}
+.pt-both{background:rgba(61,220,151,0.08);color:var(--green);border:1px solid rgba(61,220,151,0.2);}
 .pt-avoid{background:rgba(255,71,87,0.08);color:var(--red);border:1px solid rgba(255,71,87,0.2);}
 .pt-signal{background:rgba(255,140,0,0.08);color:var(--orange);border:1px solid rgba(255,140,0,0.2);}
-
-/* Goalie table */
 .goalie-table{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
 .goalie-row{display:grid;grid-template-columns:1fr 60px 70px 80px 100px;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid rgba(22,35,52,0.7);font-size:0.82rem;transition:background 0.15s;}
 .goalie-row:last-child{border-bottom:none;}
@@ -503,17 +327,15 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 .gr-team{font-size:0.68rem;color:var(--muted);margin-top:1px;}
 .gr-stat{color:var(--text);font-size:0.8rem;}
 .gr-start{font-weight:700;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;padding:3px 9px;border-radius:4px;text-align:center;}
-.gs-confirmed{background:rgba(0,214,143,0.12);color:var(--green);border:1px solid rgba(0,214,143,0.25);}
-.gs-likely{background:rgba(0,180,255,0.1);color:var(--accent);border:1px solid rgba(0,180,255,0.2);}
-.gs-unknown{background:rgba(74,106,136,0.08);color:var(--muted);border:1px solid rgba(74,106,136,0.15);}
+.gs-confirmed{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
+.gs-likely{background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.2);}
+.gs-unknown{background:rgba(90,138,114,0.08);color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
 .gs-avoid{background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);}
 .gr-rec{font-size:0.7rem;font-weight:600;text-align:right;}
 .rec-start{color:var(--green);}.rec-stream{color:var(--accent);}.rec-avoid{color:var(--red);}.rec-wait{color:var(--muted);}
-
-/* Prop cards */
 .props-stack{display:flex;flex-direction:column;gap:8px;}
 .prop-row{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 18px;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:14px;transition:border-color 0.15s;}
-.prop-row:hover{border-color:rgba(0,180,255,0.15);}
+.prop-row:hover{border-color:rgba(0,196,106,0.15);}
 .prop-player{font-weight:700;font-size:0.9rem;color:var(--bright);}
 .prop-desc{font-size:0.72rem;color:var(--muted);margin-top:2px;}
 .prop-desc strong{color:var(--text);}
@@ -521,10 +343,8 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 .prop-line-val{font-weight:800;font-size:1rem;color:var(--bright);}
 .prop-line-label{font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
 .prop-pick{font-weight:700;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;padding:5px 12px;border-radius:4px;white-space:nowrap;text-align:center;}
-.pp-over{background:rgba(0,214,143,0.12);color:var(--green);border:1px solid rgba(0,214,143,0.25);}
+.pp-over{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
 .pp-under{background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);}
-
-/* Fantasy summary bar */
 .fp-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:28px;}
 .fps-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;}
 .fps-val{font-weight:800;font-size:1.6rem;color:var(--bright);line-height:1;}
@@ -552,50 +372,14 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 <div class="ticker-wrap">
   <div class="ticker-label">⚡ LIVE</div>
   <div class="ticker-overflow">
-    <div class="ticker-track">
-      <span>🏒 <span class="t-live">LIVE</span> OTT @ EDM — <span class="t-live">OTT 4, EDM 3 · 3rd</span></span>
+    <div class="ticker-track" id="ticker-track">
+      <span>🏒 Grind Line — NHL fatigue signals, tracked publicly all season</span>
       <span class="t-sep">·</span>
-      <span>🏒 <span class="t-live">LIVE</span> DAL @ CGY — <span class="t-live">DAL 6, CGY 1 · 3rd</span></span>
+      <span><span class="t-sig">Off-Season</span> Live scores and signals return when the 2026-27 season begins</span>
       <span class="t-sep">·</span>
-      <span>🏒 <span class="t-live">LIVE</span> TB @ MIN — <span class="t-live">MIN 2, TB 0 · 2nd</span></span>
+      <span>🏒 Grind Line — NHL fatigue signals, tracked publicly all season</span>
       <span class="t-sep">·</span>
-      <span>🏒 <span class="t-live">LIVE</span> MTL @ SJ — <span class="t-live">1–1 · 1st</span></span>
-      <span class="t-sep">·</span>
-      <span>🏒 <span class="t-live">LIVE</span> COL @ ANA — <span class="t-live">COL 2, ANA 0 · 1st</span></span>
-      <span class="t-sep">·</span>
-      <span>✅ FINAL — NJ 5, FLA 1 · <span class="t-sig">Signal 1</span> <span class="t-hit">HIT</span></span>
-      <span class="t-sep">·</span>
-      <span>✅ FINAL — BOS 2, PIT 1 · No signal</span>
-      <span class="t-sep">·</span>
-      <span>✅ FINAL — BUF 3, VGK 2 · No signal</span>
-      <span class="t-sep">·</span>
-      <span>✅ FINAL — CBJ 3, NSH 2 · Both B2B — Cancelled</span>
-      <span class="t-sep">·</span>
-      <span class="t-sig">Signal 1</span><span> Away B2B + Home 3+ Days Rest → +8.7% ROI · 79 games</span>
-      <span class="t-sep">·</span>
-      <span class="t-sig">Signal 2</span><span> Away B2B + Backup Goalie → +38.7% ROI · 39 games</span>
-      <span class="t-sep">·</span>
-      <span>🏒 <span class="t-live">LIVE</span> OTT @ EDM — <span class="t-live">OTT 4, EDM 3 · 3rd</span></span>
-      <span class="t-sep">·</span>
-      <span>🏒 <span class="t-live">LIVE</span> DAL @ CGY — <span class="t-live">DAL 6, CGY 1 · 3rd</span></span>
-      <span class="t-sep">·</span>
-      <span>🏒 <span class="t-live">LIVE</span> TB @ MIN — <span class="t-live">MIN 2, TB 0 · 2nd</span></span>
-      <span class="t-sep">·</span>
-      <span>🏒 <span class="t-live">LIVE</span> MTL @ SJ — <span class="t-live">1–1 · 1st</span></span>
-      <span class="t-sep">·</span>
-      <span>🏒 <span class="t-live">LIVE</span> COL @ ANA — <span class="t-live">COL 2, ANA 0 · 1st</span></span>
-      <span class="t-sep">·</span>
-      <span>✅ FINAL — NJ 5, FLA 1 · <span class="t-sig">Signal 1</span> <span class="t-hit">HIT</span></span>
-      <span class="t-sep">·</span>
-      <span>✅ FINAL — BOS 2, PIT 1 · No signal</span>
-      <span class="t-sep">·</span>
-      <span>✅ FINAL — BUF 3, VGK 2 · No signal</span>
-      <span class="t-sep">·</span>
-      <span>✅ FINAL — CBJ 3, NSH 2 · Both B2B — Cancelled</span>
-      <span class="t-sep">·</span>
-      <span class="t-sig">Signal 1</span><span> Away B2B + Home 3+ Days Rest → +8.7% ROI · 79 games</span>
-      <span class="t-sep">·</span>
-      <span class="t-sig">Signal 2</span><span> Away B2B + Backup Goalie → +38.7% ROI · 39 games</span>
+      <span><span class="t-sig">Off-Season</span> Live scores and signals return when the 2026-27 season begins</span>
       <span class="t-sep">·</span>
     </div>
   </div>
@@ -604,18 +388,23 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 <!-- TOP NAV -->
 <nav class="topnav">
   <div class="nav-brand" onclick="showPage('dashboard')">
-    <div class="nav-brand-icon">🧊</div>
-    <div class="nav-brand-text">Ice Cold <span>Analytics</span></div>
+    <div class="nav-brand-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2" y="4" width="16" height="3" rx="1.5" fill="#03140c"/><rect x="2" y="9" width="11" height="3" rx="1.5" fill="#03140c" opacity="0.75"/><rect x="2" y="14" width="6" height="3" rx="1.5" fill="#03140c" opacity="0.5"/></svg></div>
+    <div class="nav-brand-text">GRIND <span>LINE</span></div>
   </div>
-  <div class="nav-links">
-    <a id="nav-dashboard"      class="active"  onclick="showPage('dashboard')">Dashboard</a>
-    <a id="nav-signal-tracker"                 onclick="showPage('signal-tracker')">Signal Tracker</a>
-    <a id="nav-risk-analyzer"                  onclick="showPage('risk-analyzer')">Risk Analyzer</a>
-    <a id="nav-fantasy-picks"                  onclick="showPage('fantasy-picks')">Fantasy Picks</a>
-    <a id="nav-pricing"                        onclick="showPage('pricing')">Pricing</a>
-    <a id="nav-about"                          onclick="showPage('about')">About</a>
+  <div class="nav-links" id="nav-links">
+    <a id="nav-dashboard"      class="active"  onclick="showPage('dashboard');closeMenu()">Dashboard</a>
+    <a id="nav-signal-tracker"                 onclick="showPage('signal-tracker');closeMenu()">Signal Tracker</a>
+    <a id="nav-edge-finder"                    onclick="showPage('edge-finder');closeMenu()">Edge Finder</a>
+    <a id="nav-fantasy-picks"                  onclick="showPage('fantasy-picks');closeMenu()">Fantasy Picks</a>
+    <a id="nav-pricing"                        onclick="showPage('pricing');closeMenu()">Pricing</a>
+    <a id="nav-about"                          onclick="showPage('about');closeMenu()">About</a>
+    <a class="nav-beta-mobile" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener" onclick="closeMenu()">✉ Join Beta</a>
   </div>
-  <a class="nav-cta" onclick="showPage('pricing')" style="background:var(--gold);color:#000;">🏒 Join Beta</a>
+  <div class="nav-right">
+    <a class="nav-cta" onclick="showPage('edge-finder')">⚡ Edge Finder</a>
+    <a class="nav-beta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">✉ Join Beta</a>
+    <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()">☰</button>
+  </div>
 </nav>
 
 
@@ -638,179 +427,61 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
         <circle cx="140" cy="270" r="30" stroke="white" stroke-width="1" opacity="0.6"/>
         <circle cx="420" cy="110" r="30" stroke="white" stroke-width="1" opacity="0.6"/>
         <circle cx="420" cy="270" r="30" stroke="white" stroke-width="1" opacity="0.6"/>
-        <line x1="175" y1="10" x2="175" y2="370" stroke="#4499ff" stroke-width="1.5" opacity="0.5"/>
-        <line x1="385" y1="10" x2="385" y2="370" stroke="#4499ff" stroke-width="1.5" opacity="0.5"/>
+        <line x1="175" y1="10" x2="175" y2="370" stroke="#2fa877" stroke-width="1.5" opacity="0.5"/>
+        <line x1="385" y1="10" x2="385" y2="370" stroke="#2fa877" stroke-width="1.5" opacity="0.5"/>
       </svg>
     </div>
     <div class="hero-content">
-      <div class="hero-eyebrow">NHL Betting Intelligence · Edmonton, AB</div>
-      <div class="hero-headline">Ice Cold<br><span class="hl-blue">Analytics</span></div>
+      <div class="hero-eyebrow">NHL Betting Intelligence</div>
+      <div class="hero-headline">Grind<br><span class="hl-blue">Line</span></div>
       <p class="hero-sub">Data-driven signals. Real-time goalie tracking. AI-powered risk analysis.<br><strong>Built for bettors who want an edge before every puck drop.</strong></p>
       <div class="hero-buttons">
-        <button class="btn-primary" onclick="showPage('risk-analyzer')">⚡ Risk Analyzer</button>
+        <button class="btn-primary" onclick="showPage('edge-finder')">⚡ Edge Finder</button>
         <button class="btn-ghost"   onclick="showPage('signal-tracker')">Signal Tracker →</button>
+        <a class="btn-ghost" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">✉ Join Beta</a>
       </div>
       <div class="hero-stats">
-        <div><div class="hero-stat-val"><span>+8.7</span>%</div><div class="hero-stat-label">Signal 1 ROI</div></div>
-        <div><div class="hero-stat-val"><span>+38.7</span>%</div><div class="hero-stat-label">Signal 2 ROI</div></div>
-        <div><div class="hero-stat-val">79</div><div class="hero-stat-label">Games Tracked</div></div>
-        <div><div class="hero-stat-val">11</div><div class="hero-stat-label">Games Tonight</div></div>
+        <div><div class="hero-stat-val" id="hero-partial-roi"><span>—</span>%</div><div class="hero-stat-label">Signal 1 Partial ROI</div></div>
+        <div><div class="hero-stat-val" id="hero-sig1-roi"><span>—</span>%</div><div class="hero-stat-label">Signal 1 ROI</div></div>
+        <div><div class="hero-stat-val" id="hero-games-tracked">—</div><div class="hero-stat-label">Games Tracked</div></div>
+        <div><div class="hero-stat-val" id="hero-games-tonight">—</div><div class="hero-stat-label">Games Tonight</div></div>
       </div>
     </div>
   </section>
 
   <div class="main-wrap">
-    <div class="section-divider"><h2>Active Signals</h2><div class="sd-line"></div><div class="sd-badge">March 3, 2026</div></div>
+    <div class="section-divider"><h2>Active Signals</h2><div class="sd-line"></div><div class="sd-badge" id="active-signals-date">Loading...</div></div>
     <div class="signal-row">
       <div class="sig-card s1">
         <div class="sig-label-small">Signal 1 · Fatigue Edge</div>
         <div class="sig-title">Away B2B + Home Rested 3+ Days</div>
-        <div class="sig-roi-big">+8.7%</div>
-        <div class="sig-meta">79-game tracked sample</div>
+        <div class="sig-roi-big" id="sig1-card-roi">—</div>
+        <div class="sig-meta" id="sig1-card-meta">Loading sample...</div>
         <div class="sig-rule">Away team on back-to-back, home rested 3+ days → <strong>fade the away team</strong>. Cancels when both on B2B.</div>
       </div>
       <div class="sig-card s2">
         <div class="sig-label-small">Signal 2 · Goalie Edge</div>
-        <div class="sig-title">Away B2B + Backup Goalie Confirmed</div>
-        <div class="sig-roi-big">+38.7%</div>
-        <div class="sig-meta">39-game sample · Higher variance</div>
-        <div class="sig-rule">Away B2B AND confirmed backup goalie → <strong>fade the away team</strong>. Stacks with Signal 1.</div>
+        <div class="sig-title">Away B2B + #1 Goalie Confirmed</div>
+        <div class="sig-roi-big" id="sig2-card-roi">—</div>
+        <div class="sig-meta" id="sig2-card-meta">Loading sample...</div>
+        <div class="sig-rule">Away B2B AND their #1 goalie confirmed starting → <strong>fade the away team</strong>. Redefined after a full-season backtest — see the Signal Tracker.</div>
       </div>
       <div class="sig-card tonight">
         <div class="sig-label-small">Tonight's Scan</div>
-        <div class="sig-title">March 3 — 11 Games</div>
-        <div class="sig-roi-big" style="font-size:1.8rem;line-height:1.3;background:linear-gradient(135deg,var(--green),#00ffaa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">1 Hit<br><span style="font-size:1.1rem;">+ 2 Partials</span></div>
-        <div class="sig-meta" style="margin-top:10px;">FLA: Signal 1 fired · NJ 5, FLA 1 ✅<br>DAL &amp; COL: Partial flag (home 2-day rest)</div>
+        <div class="sig-title" id="tonight-scan-title">Loading...</div>
+        <div class="sig-roi-big" id="tonight-scan-result" style="font-size:1.4rem;line-height:1.3;">—</div>
+        <div class="sig-meta" id="tonight-scan-meta" style="margin-top:10px;">—</div>
       </div>
     </div>
 
-    <div class="section-divider"><h2>Tonight's Games</h2><div class="sd-line"></div><div class="sd-badge">11 Games · 5 In Progress</div></div>
-    <div class="games-stack">
+    <div class="section-divider"><h2>Tonight's Games</h2><div class="sd-line"></div><div class="sd-badge" id="tonight-games-badge">Loading...</div></div>
+    <div class="games-stack" id="games-stack-container"></div>
 
-      <div class="game-card sig1">
-        <div class="gc-team away"><div class="gc-city">Florida</div><div class="gc-name">Panthers</div><div class="gc-tags"><span class="tag tag-b2b">B2B Away</span><span class="tag tag-final">Final</span></div><div class="gc-goalie">S. Bobrovsky <span>(Likely)</span></div></div>
-        <div class="gc-center"><div class="gc-score">1–5</div><div class="gc-period">Final</div><div class="gc-time">7 PM ET</div><div class="gc-odds">FLA <span>-115</span> · NJ <span>-105</span></div></div>
-        <div class="gc-team home"><div class="gc-city">New Jersey</div><div class="gc-name">Devils</div><div class="gc-tags"><span class="tag tag-rest3">3+ Days Rest</span></div><div class="gc-goalie">J. Markstrom <span>(Likely)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-s1">⚡ Signal 1 — HIT ✅</div><div class="gsig-fade">Fade: <strong>FLA (Away B2B)</strong></div><div class="gsig-note">NJ won 5–1 · +8.7% ROI signal</div></div>
-      </div>
+    <div class="section-divider"><h2>Last Night's Recap</h2><div class="sd-line"></div><div class="sd-badge" id="last-night-badge">Loading...</div></div>
+    <div class="recap-table" id="recap-table-container"></div>
 
-      <div class="game-card nosig">
-        <div class="gc-team away"><div class="gc-city">Pittsburgh</div><div class="gc-name">Penguins</div><div class="gc-tags"><span class="tag tag-final">Final</span></div><div class="gc-goalie">S. Skinner <span>(Confirmed)</span></div></div>
-        <div class="gc-center"><div class="gc-score">1–2</div><div class="gc-period">Final</div><div class="gc-time">7 PM ET</div><div class="gc-odds">PIT <span>+105</span> · BOS <span>-120</span></div></div>
-        <div class="gc-team home"><div class="gc-city">Boston</div><div class="gc-name">Bruins</div><div class="gc-tags"><span class="tag tag-final">Final</span></div><div class="gc-goalie">J. Swayman <span>(Confirmed)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-none">No Signal</div><div class="gsig-note">Neither team on B2B</div></div>
-      </div>
-
-      <div class="game-card nosig">
-        <div class="gc-team away"><div class="gc-city">Utah</div><div class="gc-name">Mammoth</div><div class="gc-tags"><span class="tag tag-final">Final</span></div><div class="gc-goalie">K. Vejmelka <span>(Likely)</span></div></div>
-        <div class="gc-center"><div class="gc-score">3–2</div><div class="gc-period">Final / OT</div><div class="gc-time">7 PM ET</div><div class="gc-odds">UTA <span>+103</span> · WSH <span>-119</span></div></div>
-        <div class="gc-team home"><div class="gc-city">Washington</div><div class="gc-name">Capitals</div><div class="gc-tags"><span class="tag tag-final">Final</span></div><div class="gc-goalie">L. Thompson <span>(Confirmed)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-none">No Signal</div><div class="gsig-note">Neither team on B2B</div></div>
-      </div>
-
-      <div class="game-card nosig">
-        <div class="gc-team away"><div class="gc-city">Vegas</div><div class="gc-name">Golden Knights</div><div class="gc-tags"><span class="tag tag-final">Final</span></div><div class="gc-goalie">A. Hill <span>(Unconfirmed)</span></div></div>
-        <div class="gc-center"><div class="gc-score">2–3</div><div class="gc-period">Final</div><div class="gc-time">7 PM ET</div><div class="gc-odds">VGK <span>+114</span> · BUF <span>-135</span></div></div>
-        <div class="gc-team home"><div class="gc-city">Buffalo</div><div class="gc-name">Sabres</div><div class="gc-tags"><span class="tag tag-final">Final</span></div><div class="gc-goalie">A. Lyon <span>(Likely)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-none">No Signal</div><div class="gsig-note">Neither team on B2B</div></div>
-      </div>
-
-      <div class="game-card cancelled">
-        <div class="gc-team away"><div class="gc-city">Nashville</div><div class="gc-name">Predators</div><div class="gc-tags"><span class="tag tag-b2b">B2B Away</span><span class="tag tag-final">Final</span></div><div class="gc-goalie">J. Annunen <span>(Unconfirmed)</span></div></div>
-        <div class="gc-center"><div class="gc-score">2–3</div><div class="gc-period">Final</div><div class="gc-time">7 PM ET</div><div class="gc-odds">NSH <span>+135</span> · CBJ <span>-155</span></div></div>
-        <div class="gc-team home"><div class="gc-city">Columbus</div><div class="gc-name">Blue Jackets</div><div class="gc-tags"><span class="tag tag-b2b">B2B Home</span><span class="tag tag-final">Final</span></div><div class="gc-goalie">J. Greaves <span>(Unconfirmed)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-cancel">Cancelled</div><div class="gsig-note">Both on B2B — signal void</div></div>
-      </div>
-
-      <div class="game-card nosig">
-        <div class="gc-team away"><div class="gc-city">Chicago</div><div class="gc-name">Blackhawks</div><div class="gc-tags"><span class="tag tag-live">Live</span></div><div class="gc-goalie">S. Knight <span>(Unconfirmed)</span></div></div>
-        <div class="gc-center"><div class="gc-score">– vs –</div><div class="gc-period">In Progress</div><div class="gc-time">8 PM ET</div><div class="gc-odds">CHI <span>+265</span> · WPG <span>-155</span></div></div>
-        <div class="gc-team home"><div class="gc-city">Winnipeg</div><div class="gc-name">Jets</div><div class="gc-tags"><span class="tag tag-live">Live</span></div><div class="gc-goalie">C. Hellebuyck <span>(Confirmed)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-none">No Signal</div><div class="gsig-note">Neither team on B2B</div></div>
-      </div>
-
-      <div class="game-card sig-partial">
-        <div class="gc-team away"><div class="gc-city">Dallas</div><div class="gc-name">Stars</div><div class="gc-tags"><span class="tag tag-b2b">B2B Away</span><span class="tag tag-live">Live</span></div><div class="gc-goalie">C. DeSmith <span>(Confirmed)</span></div></div>
-        <div class="gc-center"><div class="gc-score">6–1</div><div class="gc-period">In Progress</div><div class="gc-time">9 PM ET</div><div class="gc-odds">DAL <span>-137</span> · CGY <span>+114</span></div></div>
-        <div class="gc-team home"><div class="gc-city">Calgary</div><div class="gc-name">Flames</div><div class="gc-tags"><span class="tag tag-rest2">2 Days Rest</span></div><div class="gc-goalie">D. Cooley <span>(Expected)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-partial">⚠ Signal 1 Partial</div><div class="gsig-fade">Fade: <strong>DAL (Away B2B)</strong></div><div class="gsig-note">CGY rested 2 days · Low confidence</div></div>
-      </div>
-
-      <div class="game-card nosig">
-        <div class="gc-team away"><div class="gc-city">Ottawa</div><div class="gc-name">Senators</div><div class="gc-tags"><span class="tag tag-live">Live</span></div><div class="gc-goalie">L. Ullmark <span>(Expected)</span></div></div>
-        <div class="gc-center"><div class="gc-score">4–3</div><div class="gc-period">3rd · 14:12</div><div class="gc-time">9 PM ET</div><div class="gc-odds">OTT <span>+200</span> · EDM <span>-240</span></div></div>
-        <div class="gc-team home"><div class="gc-city">Edmonton</div><div class="gc-name">Oilers</div><div class="gc-tags"><span class="tag tag-live">Live</span></div><div class="gc-goalie">S. Skinner <span>(Expected)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-none">No Signal</div><div class="gsig-note">Neither team on B2B</div></div>
-      </div>
-
-      <div class="game-card nosig">
-        <div class="gc-team away"><div class="gc-city">Tampa Bay</div><div class="gc-name">Lightning</div><div class="gc-tags"><span class="tag tag-live">Live</span></div><div class="gc-goalie">A. Vasilevskiy <span>(Expected)</span></div></div>
-        <div class="gc-center"><div class="gc-score">0–2</div><div class="gc-period">2nd · 9:23</div><div class="gc-time">9:30 PM ET</div><div class="gc-odds">TB <span>-135</span> · MIN <span>+113</span></div></div>
-        <div class="gc-team home"><div class="gc-city">Minnesota</div><div class="gc-name">Wild</div><div class="gc-tags"><span class="tag tag-live">Live</span></div><div class="gc-goalie">F. Gustavsson <span>(Expected)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-none">No Signal</div><div class="gsig-note">Neither team on B2B</div></div>
-      </div>
-
-      <div class="game-card nosig">
-        <div class="gc-team away"><div class="gc-city">Montréal</div><div class="gc-name">Canadiens</div><div class="gc-tags"><span class="tag tag-live">Live</span></div><div class="gc-goalie">S. Montembeault <span>(Expected)</span></div></div>
-        <div class="gc-center"><div class="gc-score">1–1</div><div class="gc-period">1st · 17:06</div><div class="gc-time">10 PM ET</div><div class="gc-odds">MTL <span>+120</span> · SJ <span>-140</span></div></div>
-        <div class="gc-team home"><div class="gc-city">San Jose</div><div class="gc-name">Sharks</div><div class="gc-tags"><span class="tag tag-live">Live</span></div><div class="gc-goalie">M. Ranta <span>(Expected)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-none">No Signal</div><div class="gsig-note">Neither team on B2B</div></div>
-      </div>
-
-      <div class="game-card sig-partial">
-        <div class="gc-team away"><div class="gc-city">Colorado</div><div class="gc-name">Avalanche</div><div class="gc-tags"><span class="tag tag-b2b">B2B Away</span><span class="tag tag-live">Live</span></div><div class="gc-goalie">P. Francouz <span>(Expected)</span></div></div>
-        <div class="gc-center"><div class="gc-score">2–0</div><div class="gc-period">1st · 17:30</div><div class="gc-time">10 PM ET</div><div class="gc-odds">COL <span>-190</span> · ANA <span>+157</span></div></div>
-        <div class="gc-team home"><div class="gc-city">Anaheim</div><div class="gc-name">Ducks</div><div class="gc-tags"><span class="tag tag-rest2">2 Days Rest</span></div><div class="gc-goalie">L. Dostal <span>(Expected)</span></div></div>
-        <div class="gc-signal"><div class="gsig-badge gsb-partial">⚠ Signal 1 Partial</div><div class="gsig-fade">Fade: <strong>COL (Away B2B)</strong></div><div class="gsig-note">ANA rested 2 days · Low confidence</div></div>
-      </div>
-
-    </div>
-
-    <div class="section-divider"><h2>Last Night's Recap</h2><div class="sd-line"></div><div class="sd-badge">March 2 · Signal Review</div></div>
-    <div class="recap-table">
-      <div class="recap-row"><div><div class="rr-game"><strong>NSH @ DET</strong></div><div class="rr-note">NSH on B2B away · DET rested 3+ days → Signal 1 active · fade Nashville</div></div><div class="rr-score">DET 4–2</div><div class="rr-result r-hit">✅ Hit</div></div>
-      <div class="recap-row"><div><div class="rr-game"><strong>VAN @ DAL</strong></div><div class="rr-note">VAN on B2B away · DAL rested 3+ days → Signal 1 active · fade Vancouver</div></div><div class="rr-score">DAL 6–1</div><div class="rr-result r-hit">✅ Hit</div></div>
-      <div class="recap-row"><div><div class="rr-game"><strong>SEA @ CAR</strong></div><div class="rr-note">No signal · Neither team on B2B</div></div><div class="rr-score">SEA 2–1</div><div class="rr-result r-none">No Signal</div></div>
-      <div class="recap-row"><div><div class="rr-game"><strong>LA @ COL</strong></div><div class="rr-note">No signal · Neither team on B2B</div></div><div class="rr-score">COL 4–2</div><div class="rr-result r-none">No Signal</div></div>
-      <div class="recap-row"><div><div class="rr-game"><strong>NYR @ CBJ</strong></div><div class="rr-note">No signal · Neither team on B2B</div></div><div class="rr-score">CBJ 5–4</div><div class="rr-result r-none">No Signal</div></div>
-      <div class="recap-row"><div><div class="rr-game"><strong>TOR @ PHI</strong></div><div class="rr-note">No signal · Neither team on B2B</div></div><div class="rr-score">PHI 3–2</div><div class="rr-result r-none">No Signal</div></div>
-    </div>
-
-    <div class="section-divider"><h2>2-Day Look-Ahead</h2><div class="sd-line"></div><div class="sd-badge">March 4–5 · Early Flags</div></div>
-    <div class="la-stack">
-      <div class="la-day-label">Wednesday, March 4</div>
-      <div class="la-row"><div><div class="la-game"><strong>CAR @ VAN</strong></div><div class="la-desc">CAR played Mar 2 (B2B away) · VAN played Mar 2 (B2B home). <strong>Both on B2B — signals cancel.</strong></div></div><div class="la-flag lf-cancel">Cancelled</div></div>
-      <div class="la-row"><div><div class="la-game"><strong>NYI @ ANA</strong></div><div class="la-desc">NYI plays tonight @ NJ → B2B away Mar 4. ANA plays tonight → B2B home. <strong>Both on B2B — signals cancel.</strong></div></div><div class="la-flag lf-cancel">Cancelled</div></div>
-      <div class="la-day-label">Thursday, March 5</div>
-      <div class="la-row watch"><div><div class="la-game"><strong>VGK @ DET — ⭐ Top Watch</strong></div><div class="la-desc">VGK plays tonight → B2B away Mar 5. DET rested 3 days (played Mar 2). <strong>Signal 1 candidate — fade VGK.</strong> Adin Hill struggling (.858 SV%) — confirm for Signal 2 upgrade.</div></div><div class="la-flag lf-watch">⚡ Watch</div></div>
-      <div class="la-row"><div><div class="la-game"><strong>TOR @ NJ</strong></div><div class="la-desc">TOR played tonight → B2B away. NJ plays tonight → also B2B. <strong>Both on B2B — signals cancel.</strong></div></div><div class="la-flag lf-cancel">Cancelled</div></div>
-    </div>
-
-    <!-- BETA SIGNUP BANNER -->
-    <div class="section-divider" style="margin-top:44px;"><h2>Join the Beta</h2><div class="sd-line"></div><div class="sd-badge">Free All Season</div></div>
-    <div class="beta-banner">
-      <div class="beta-banner-left">
-        <div class="beta-pill">Beta Now Open</div>
-        <h3>Get the daily edge in your inbox — free all season.</h3>
-        <p>Signal alerts, goalie confirmations, and fantasy picks delivered every morning at <strong>7 AM MST</strong>. Free for the rest of the 2024–25 season while we build and refine. Founding members get <strong>locked-in pricing</strong> when we launch paid plans next season.</p>
-        <div class="beta-perks">
-          <div class="beta-perk">Daily morning email before puck drop</div>
-          <div class="beta-perk">Signal 1 &amp; 2 alerts</div>
-          <div class="beta-perk">Goalie start confirmations</div>
-          <div class="beta-perk">Fantasy picks &amp; props</div>
-          <div class="beta-perk">Locked-in pricing next season</div>
-        </div>
-      </div>
-      <div>
-        <div class="beta-form" id="beta-form-dash">
-          <input class="beta-input" type="email" id="beta-email-dash" placeholder="your@email.com" />
-          <button class="beta-submit" onclick="submitBeta('dash')">Join Beta →</button>
-        </div>
-        <div class="beta-success" id="beta-success-dash">✅ You're in! Check your inbox.</div>
-        <div style="font-size:0.65rem;color:var(--muted);margin-top:8px;max-width:280px;">No spam, ever. Unsubscribe anytime. <a onclick="showPage('pricing')" style="color:var(--accent);cursor:pointer;text-decoration:none;">See what's coming next season →</a></div>
-      </div>
-    </div>
-
+    <div class="section-divider"><h2>2-Day Look-Ahead</h2><div class="sd-line"></div><div class="sd-badge" id="lookahead-badge">Loading...</div></div>
+    <div class="la-stack" id="lookahead-container"></div>
   </div>
 </div>
 
@@ -821,63 +492,94 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 <div id="page-signal-tracker" class="page">
   <div class="page-hero">
     <div class="page-hero-inner">
-      <div class="page-eyebrow">Ice Cold Analytics</div>
+      <div class="page-eyebrow">Grind Line</div>
       <div class="page-title">Signal Tracker</div>
       <p class="page-desc">Full historical performance of both proprietary signals. Every game tracked, every result logged.</p>
     </div>
   </div>
   <div class="main-wrap">
-    <div class="tracker-grid">
+    <div class="tracker-grid" id="tracker-grid">
       <div class="tracker-card">
-        <div class="tracker-card-header"><h3>Signal 1 — Fatigue Edge</h3><span class="sd-badge">Active</span></div>
+        <div class="tracker-card-header"><h3>Signal 1 — Fatigue Edge</h3><span class="sd-badge">Loading...</span></div>
         <div class="tracker-card-body">
-          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val">79 games</span></div>
-          <div class="stat-row"><span class="stat-label">ROI</span><span class="stat-val good">+8.7%</span></div>
-          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good">58.2%</span></div>
+          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="s1-games">—</span></div>
+          <div class="stat-row"><span class="stat-label">ROI</span><span class="stat-val good" id="s1-roi">—</span></div>
+          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good" id="s1-wr">—</span></div>
           <div class="stat-row"><span class="stat-label">Avg Odds (fade team)</span><span class="stat-val">-112</span></div>
-          <div class="stat-row"><span class="stat-label">Best Month</span><span class="stat-val warn">Jan 2026</span></div>
+          <div class="stat-row"><span class="stat-label">Best Month</span><span class="stat-val warn" id="s1-best-month">—</span></div>
+          <div class="stat-row"><span class="stat-label">Current Streak</span><span class="stat-val" id="s1-streak">—</span></div>
           <div class="stat-row"><span class="stat-label">Status</span><span class="stat-val good">Active</span></div>
         </div>
       </div>
+
       <div class="tracker-card">
-        <div class="tracker-card-header"><h3>Signal 2 — Goalie Edge</h3><span class="sd-badge" style="color:var(--gold);border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);">High Variance</span></div>
+        <div class="tracker-card-header"><h3>Signal 1 Partial — Moderate Edge</h3><span class="sd-badge" style="color:var(--green);border-color:rgba(61,220,151,0.3);background:rgba(61,220,151,0.08);">Loading...</span></div>
         <div class="tracker-card-body">
-          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val">39 games</span></div>
-          <div class="stat-row"><span class="stat-label">ROI</span><span class="stat-val good">+38.7%</span></div>
-          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good">64.1%</span></div>
+          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="s1p-games">—</span></div>
+          <div class="stat-row"><span class="stat-label">ROI</span><span class="stat-val good" id="s1p-roi">—</span></div>
+          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good" id="s1p-wr">—</span></div>
+          <div class="stat-row"><span class="stat-label">Avg Odds (fade team)</span><span class="stat-val">-110</span></div>
+          <div class="stat-row"><span class="stat-label">Condition</span><span class="stat-val warn">Away B2B + Home 2d Rest</span></div>
+          <div class="stat-row"><span class="stat-label">Current Streak</span><span class="stat-val" id="s1p-streak">—</span></div>
+          <div class="stat-row"><span class="stat-label">Status</span><span class="stat-val good">Active</span></div>
+        </div>
+      </div>
+
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Signal 2 — Goalie Edge</h3><span class="sd-badge" style="color:var(--gold);border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);">Loading...</span></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="s2-games">—</span></div>
+          <div class="stat-row"><span class="stat-label">ROI</span><span class="stat-val good" id="s2-roi">—</span></div>
+          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good" id="s2-wr">—</span></div>
           <div class="stat-row"><span class="stat-label">Avg Odds (fade team)</span><span class="stat-val">-108</span></div>
           <div class="stat-row"><span class="stat-label">Variance</span><span class="stat-val warn">High</span></div>
+          <div class="stat-row"><span class="stat-label">Current Streak</span><span class="stat-val" id="s2-streak">—</span></div>
           <div class="stat-row"><span class="stat-label">Status</span><span class="stat-val good">Active</span></div>
         </div>
       </div>
+
       <div class="tracker-card">
         <div class="tracker-card-header"><h3>2025–26 Season to Date</h3><span class="sd-badge">Combined</span></div>
         <div class="tracker-card-body">
-          <div class="stat-row"><span class="stat-label">Total Signal Games</span><span class="stat-val">118</span></div>
-          <div class="stat-row"><span class="stat-label">Combined ROI</span><span class="stat-val good">+18.4%</span></div>
-          <div class="stat-row"><span class="stat-label">Cancelled (Both B2B)</span><span class="stat-val">31</span></div>
-          <div class="stat-row"><span class="stat-label">Partial Flags</span><span class="stat-val warn">27</span></div>
-          <div class="stat-row"><span class="stat-label">Last Signal Hit</span><span class="stat-val good">Mar 3 · NJ 5–1</span></div>
-          <div class="stat-row"><span class="stat-label">Current Streak</span><span class="stat-val good">4W</span></div>
+          <div class="stat-row"><span class="stat-label">Total Signal Games</span><span class="stat-val" id="sum-sig1">—</span></div>
+          <div class="stat-row"><span class="stat-label">Signal 1 ROI</span><span class="stat-val good" id="sum-roi">—</span></div>
+          <div class="stat-row"><span class="stat-label">Cancelled (Both B2B)</span><span class="stat-val" id="sum-cancelled">—</span></div>
+          <div class="stat-row"><span class="stat-label">Partial Flags</span><span class="stat-val warn" id="sum-partial">—</span></div>
+          <div class="stat-row"><span class="stat-label">Signal 2 Games</span><span class="stat-val" id="sum-sig2">—</span></div>
+          <div class="stat-row"><span class="stat-label">Last Updated</span><span class="stat-val" id="sum-updated">—</span></div>
         </div>
       </div>
     </div>
-    <div class="signal-rule-box">
-      <h3>Signal Rules</h3>
-      <p><strong>Signal 1:</strong> Away team on back-to-back + home team rested 3 or more days → fade the away team. ROI: +8.7% across 79 games.<br><br><strong>Signal 2:</strong> Away team on back-to-back + confirmed backup goalie starting → fade the away team. ROI: +38.7% across 39 games. Higher variance — use smaller unit sizing.<br><br><strong>Cancellation Rule:</strong> When both teams are on a back-to-back, all signals are void.<br><br><strong>Partial Signal:</strong> Away B2B + home rested exactly 2 days = lower confidence. Track but do not act at full unit size.</p>
+
+    <div class="section-divider" style="margin-top:32px;">
+      <h2>Last 5 Signal 1 Results</h2>
+      <div class="sd-line"></div>
+    </div>
+    <div class="recap-table" id="last5-table">
+      <div class="recap-row"><div class="rr-game">Loading...</div></div>
+    </div>
+
+    <div class="signal-rule-box" style="margin-top:28px;">
+      <h3>Signal Rules &amp; Methodology</h3>
+      <p><strong>Signal 1 — Fatigue Edge:</strong> Fires when the away team is on a back-to-back and the home team has been rested for 3 or more days. We fade the away team.</p>
+      <br>
+      <p><strong>Signal 1 Partial — Moderate Fatigue Edge:</strong> Away team on back-to-back, home team rested exactly 2 days. Lower confidence — reduced unit sizing recommended.</p>
+      <br>
+      <p><strong>Signal 2 — Goalie Edge:</strong> Fires when Signal 1 conditions are met AND the away team's #1 goalie is confirmed starting. Our full-season backtest found the edge lives here — fatigued teams riding their starter underperformed the market, while backup starts (standard B2B practice) were already priced in.</p>
+      <br>
+      <p><strong>Cancellation Rule:</strong> When both teams are on a back-to-back, all signals are void.</p>
     </div>
   </div>
 </div>
 
-
 <!-- ══════════════════════════════════
-     RISK ANALYZER PAGE
+     EDGE FINDER PAGE
 ══════════════════════════════════ -->
-<div id="page-risk-analyzer" class="page">
+<div id="page-edge-finder" class="page">
   <div class="page-hero">
     <div class="page-hero-inner">
-      <div class="page-eyebrow">Ice Cold Analytics</div>
-      <div class="page-title">NHL Risk Analyzer</div>
+      <div class="page-eyebrow">Grind Line</div>
+      <div class="page-title">NHL Edge Finder</div>
       <p class="page-desc">Enter a matchup's details and our signal engine will instantly score the risk profile and flag any active edges.</p>
     </div>
   </div>
@@ -919,44 +621,175 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 
 
 <!-- ══════════════════════════════════
+     PRICING PAGE
+══════════════════════════════════ -->
+<div id="page-pricing" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Coming September 2026</div>
+      <div class="page-title">One membership. <span class="hl-blue">Every signal.</span></div>
+      <p class="page-desc">Paid tiers launch alongside the 2026-27 season. Pricing below reflects our current plan — join the beta waitlist now to lock in early access and be notified the moment tiers go live.</p>
+    </div>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-tier-name">Free</div>
+      <div class="price-tier-value">$0</div>
+      <div class="price-tier-sub">Full transparency, always free</div>
+      <ul class="price-features">
+        <li>Public, auditable ROI tracker — every signal, every game, no cherry-picking</li>
+        <li>Season recap &amp; monthly breakdowns</li>
+        <li>One free daily signal</li>
+      </ul>
+      <a class="price-cta ghost" onclick="showPage('signal-tracker')">View Live Tracker</a>
+    </div>
+
+    <div class="price-card featured">
+      <div class="price-badge">Most Popular</div>
+      <div class="price-tier-name">Pro</div>
+      <div class="price-tier-value">$12<span>/month</span></div>
+      <div class="price-tier-sub">Full daily slate, every signal</div>
+      <ul class="price-features">
+        <li>Full daily signal slate — Signal 1, Signal 1 Partial, Signal 2, playoff signals</li>
+        <li>Player prop board with real model probability vs. market probability shown on every pick</li>
+        <li>Goalie starter confirmations</li>
+        <li>Daily email alerts, 7 AM MST</li>
+      </ul>
+      <a class="price-cta primary" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist</a>
+    </div>
+
+    <div class="price-card">
+      <div class="price-tier-name">Season Pass</div>
+      <div class="price-tier-value">$59<span>/season</span></div>
+      <div class="price-tier-sub">Everything in Pro, paid upfront</div>
+      <ul class="price-features">
+        <li>Everything in Pro</li>
+        <li>Locked-in price for the full 2026-27 season</li>
+        <li>Best value vs. paying monthly</li>
+      </ul>
+      <a class="price-cta ghost" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist</a>
+    </div>
+  </div>
+
+  <div class="pricing-note">We never take bets — Grind Line is an independent analytics platform, not a sportsbook. Our incentive is a track record you trust, not a book's margin. Prices shown are current plans and may be adjusted before the September launch.</div>
+</div>
+
+
+<!-- ══════════════════════════════════
      ABOUT PAGE
 ══════════════════════════════════ -->
 <div id="page-about" class="page">
   <div class="about-hero">
     <div class="about-hero-inner">
-      <div class="page-eyebrow" style="justify-content:center;display:flex;margin-bottom:12px;">Edmonton, Alberta</div>
-      <div class="about-headline">Bet Smarter.<br><span>Stay Ice Cold.</span></div>
-      <p class="about-lead">Ice Cold Analytics gives you full control over your NHL betting decisions through our <strong>Risk Analyzer</strong> and <strong>Signal Tracker</strong> — built from the ice up for serious bettors and passionate fans alike. Our platform identifies proven scheduling edges, tracks goalie confirmations in real time, and flags high-confidence situations before puck drop, so you always know where the value is before money goes on the line.</p>
+      <div class="page-eyebrow" style="justify-content:center;display:flex;margin-bottom:12px;"></div>
+      <div class="about-headline">Bet Smarter.<br><span>Stay Grinding.</span></div>
+      <p class="about-lead">Grind Line gives you full control over your NHL betting decisions through our <strong>Edge Finder</strong> and <strong>Signal Tracker</strong> — built from the ice up for serious bettors and passionate fans alike. Our platform identifies proven scheduling edges, tracks goalie confirmations, and flags high-confidence situations before puck drop, so you always know where the value is before money goes on the line. <strong>We never take bets</strong> — we're an independent analytics platform, not a sportsbook, and every signal we publish is tracked publicly, win or lose.</p>
     </div>
   </div>
   <div class="about-features">
-    <div class="feat-card"><div class="feat-icon">⚡</div><div class="feat-title">Signal Detection</div><p class="feat-text">Two proprietary back-to-back fatigue signals tracked across hundreds of NHL games, with verified ROI data updated every day of the season.</p></div>
-    <div class="feat-card"><div class="feat-icon">🥅</div><div class="feat-title">Goalie Tracking</div><p class="feat-text">Real-time goalie confirmation data sourced from morning skates and official sources — the final piece before Signal 2 fires.</p></div>
-    <div class="feat-card"><div class="feat-icon">📊</div><div class="feat-title">Risk Analyzer</div><p class="feat-text">Enter any NHL matchup and instantly get a full signal breakdown, confidence score, and recommendation powered by our analytics engine.</p></div>
+    <div class="feat-card"><div class="feat-icon">⚡</div><div class="feat-title">Signal Detection</div><p class="feat-text">Back-to-back fatigue signals tracked across a full season of NHL games, with ROI updated every day of the season. Every number is published on the Signal Tracker — current sample, win rate, and ROI, win or lose.</p></div>
+    <div class="feat-card"><div class="feat-icon">🥅</div><div class="feat-title">Goalie Tracking</div><p class="feat-text">Confirmed and projected starting goalie data feeding Signal 2, which our full-season backtest redefined around #1 goalie starts rather than backups.</p></div>
+    <div class="feat-card"><div class="feat-icon">📊</div><div class="feat-title">Edge Finder</div><p class="feat-text">Enter any NHL matchup and instantly get a full signal breakdown, confidence score, and recommendation powered by our analytics engine.</p></div>
     <div class="feat-card"><div class="feat-icon">🏒</div><div class="feat-title">Daily Dashboard</div><p class="feat-text">Every game on tonight's slate scanned for signal activity — live scores, moneylines, goalie status, and a 2-day look-ahead, every day.</p></div>
-    <div class="feat-card"><div class="feat-icon">🧊</div><div class="feat-title">Hockey-Obsessed</div><p class="feat-text">Built in Edmonton by people who live and breathe the game. Every feature exists because a real bettor needed it before puck drop.</p></div>
+    <div class="feat-card"><div class="feat-icon">🍁</div><div class="feat-title">Hockey-Obsessed</div><p class="feat-text">Built by people who live and breathe the game. Every feature exists because a real bettor needed it before puck drop.</p></div>
     <div class="feat-card"><div class="feat-icon">📬</div><div class="feat-title">Daily Email Alerts</div><p class="feat-text">Signal alerts delivered to your inbox every morning at 7 AM MST — so you never miss a high-confidence edge before the lines move.</p></div>
   </div>
   <div class="about-cta-band">
     <h2>Ready to Gain the Edge?</h2>
-    <p>Start with the Risk Analyzer — enter tonight's matchup and see the signals fire in real time.</p>
+    <p>Start with the Edge Finder — enter tonight's matchup and see the signals fire in real time.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <button class="btn-primary" onclick="showPage('risk-analyzer')">⚡ Open Risk Analyzer</button>
+      <button class="btn-primary" onclick="showPage('edge-finder')">⚡ Open Edge Finder</button>
       <button class="btn-ghost"   onclick="showPage('signal-tracker')">View Signal Tracker →</button>
     </div>
   </div>
 </div>
 
 
+<!-- ══════════════════════════════════
+     FANTASY PICKS PAGE
+══════════════════════════════════ -->
+<div id="page-fantasy-picks" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Grind Line · <span id="fp-updated-date">Off-season</span></div>
+      <div class="page-title">Fantasy Picks</div>
+      <p class="page-desc">Daily value plays, goalie starts, and player props for both DFS (DraftKings / FanDuel) and season-long leagues. Signal-informed where applicable.</p>
+    </div>
+  </div>
+
+  <div class="main-wrap">
+    <div class="fp-summary" style="margin-top:28px;">
+      <div class="fps-card"><div class="fps-val"><span id="fp-stat-plays">—</span></div><div class="fps-label">Value Plays Today</div></div>
+      <div class="fps-card"><div class="fps-val"><span id="fp-stat-goalies">—</span></div><div class="fps-label">Goalies Assessed</div></div>
+      <div class="fps-card"><div class="fps-val"><span id="fp-stat-props">—</span></div><div class="fps-label">Prop Picks</div></div>
+      <div class="fps-card"><div class="fps-val"><span id="fp-stat-games">—</span></div><div class="fps-label">Games on Slate</div></div>
+      <div class="fps-card"><div class="fps-val"><span id="fp-stat-tier" style="color:var(--gold);">—</span></div><div class="fps-label">Top Tier Available</div></div>
+    </div>
+
+    <div class="fp-tabs">
+      <button class="fp-tab active" onclick="showFPTab('value-plays', this)">🏒 Value Plays</button>
+      <button class="fp-tab"        onclick="showFPTab('goalie-starts', this)">🥅 Goalie Starts</button>
+      <button class="fp-tab"        onclick="showFPTab('player-props', this)">📊 Player Props</button>
+    </div>
+
+    <div id="fp-value-plays" class="fp-panel active">
+      <div class="section-divider" style="margin-top:0;"><h2>Top Value Plays</h2><div class="sd-line"></div><div class="sd-badge fantasy-date-label">Loading...</div></div>
+      <div class="premium-gate">
+        <div class="gated-content fantasy-plays-container"></div>
+        <div class="premium-overlay">
+          <h3>🔒 Beta Members Only</h3>
+          <p>Full daily value plays are part of the Pro tier, launching September 2026. Join the free beta waitlist for early access before launch.</p>
+          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist — Free</a>
+          <div class="po-sub">Our ROI tracker stays free forever — see the Signal Tracker for every graded result.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="fp-goalie-starts" class="fp-panel">
+      <div class="section-divider" style="margin-top:0;"><h2>Goalie Start Recommendations</h2><div class="sd-line"></div><div class="sd-badge">Goalie Starts</div></div>
+      <div class="premium-gate">
+        <div class="gated-content fantasy-goalies-container"></div>
+        <div class="premium-overlay">
+          <h3>🔒 Beta Members Only</h3>
+          <p>Goalie start recommendations are part of the Pro tier, launching September 2026. Join the free beta waitlist for early access.</p>
+          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist — Free</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="fp-player-props" class="fp-panel">
+      <div class="section-divider" style="margin-top:0;"><h2>Player Prop Picks</h2><div class="sd-line"></div><div class="sd-badge">Player Props</div></div>
+      <div class="premium-gate">
+        <div class="gated-content fantasy-props-container"></div>
+        <div class="premium-overlay">
+          <h3>🔒 Beta Members Only</h3>
+          <p>Our model-vs-market prop board — every pick with its real edge shown — is part of the Pro tier, launching September 2026. Join the free beta waitlist for early access.</p>
+          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist — Free</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-wrap -->
+</div><!-- /page-fantasy-picks -->
+
+
 <!-- FOOTER -->
 <footer>
-  <div class="footer-brand">🧊 Ice Cold Analytics</div>
-  <p>NHL Betting Intelligence · Edmonton, Alberta · icecoldanalytics.ca</p>
-  <div class="footer-disclaimer">For informational and entertainment purposes only. Signal data is historically tracked and does not guarantee future results. Please gamble responsibly — if you or someone you know has a gambling problem, call 1-800-522-4700. Data: Daily Faceoff · ESPN · NHL.com · Sports Reference · Updated March 3, 2026</div>
+  <div class="footer-brand">🏒 Grind Line</div>
+  <p>NHL Betting Intelligence · grindline.ca</p>
+  <p style="margin-top:8px;"><a href="/sportsbooks.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Alberta Sportsbooks Guide</a> &nbsp;·&nbsp; <a href="/legal.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Privacy, Terms &amp; Responsible Gambling</a></p>
+  <div class="footer-disclaimer">We never take bets — Grind Line is an independent analytics platform, not a sportsbook. For informational and entertainment purposes only. Signal data is historically tracked and does not guarantee future results. Please gamble responsibly — if you or someone you know has a gambling problem, call 1-800-522-4700. Data: NHL.com · The Odds API · SportsDataIO</div>
 </footer>
 
 
 <script>
+function toggleMenu() {
+  document.getElementById('nav-links').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('nav-links').classList.remove('open');
+}
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
@@ -966,66 +799,7 @@ function showPage(id) {
   if (nav) nav.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-// ── BETA SIGNUP ──────────────────────────────────
-// Replace BREVO_LIST_ID and BREVO_API_KEY with your actual values
-// Or use the Brevo JS embed form instead (see README)
-async function submitBeta(source) {
-  const emailEl = document.getElementById('beta-email-' + source);
-  const formEl  = document.getElementById('beta-form-' + source);
-  const successEl = document.getElementById('beta-success-' + source);
-  const btn = formEl.querySelector('.beta-submit');
-
-  const email = emailEl.value.trim();
-  if (!email || !email.includes('@')) {
-    emailEl.style.borderColor = 'var(--red)';
-    emailEl.focus();
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'Joining...';
-
-  try {
-    // ── Option A: Brevo API (server-side preferred — use GitHub Action or Netlify function)
-    // ── Option B: Brevo embedded JS form (paste your Brevo form snippet here instead)
-    // ── For now, this posts to Brevo's API directly (CORS-permitting on their plan)
-    const res = await fetch('https://api.brevo.com/v3/contacts', {
-      method: 'POST',
-      headers: {
-        'accept': 'application/json',
-        'content-type': 'application/json',
-        'api-key': 'YOUR_BREVO_API_KEY', // ← replace with your Brevo API key
-      },
-      body: JSON.stringify({
-        email: email,
-        listIds: [YOUR_BREVO_LIST_ID], // ← replace with your Brevo list ID (number)
-        updateEnabled: true,
-        attributes: {
-          SOURCE: 'website-beta-' + source,
-          SIGNUP_DATE: new Date().toISOString().split('T')[0],
-        }
-      })
-    });
-
-    if (res.ok || res.status === 204) {
-      formEl.style.display = 'none';
-      successEl.classList.add('visible');
-    } else {
-      throw new Error('API error ' + res.status);
-    }
-  } catch (err) {
-    // Fallback: open mailto (works even without API key set up)
-    console.warn('Brevo API not configured — falling back to mailto:', err.message);
-    formEl.style.display = 'none';
-    successEl.innerHTML = '✅ You\'re in! We\'ll be in touch soon.';
-    successEl.classList.add('visible');
-    // Still log the email somewhere useful
-    console.log('Beta signup:', email);
-  }
-}
-
-
+function showFPTab(id, btn) {
   document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.fp-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('fp-' + id).classList.add('active');
@@ -1044,11 +818,10 @@ function runAnalysis() {
     return;
   }
 
-  const isB2B        = awayB2B === 'yes';
-  const homeBothB2B  = homeRest === 'b2b';
-  const homeRest3    = homeRest === '3' || homeRest === '4plus';
-  const homeRest2    = homeRest === '2';
-  const backupGoalie = goalie === 'backup';
+  const isB2B       = awayB2B === 'yes';
+  const homeBothB2B = homeRest === 'b2b';
+  const homeRest3   = homeRest === '3' || homeRest === '4plus';
+  const homeRest2   = homeRest === '2';
 
   let signals = [], score = 0;
 
@@ -1058,7 +831,7 @@ function runAnalysis() {
     signals.push({ icon:'⚠️', text:`Both teams are on a back-to-back. Signal logic is <strong>cancelled</strong> — the fatigue edge disappears when both sides are equally tired.`, badge:'rsi-inactive', label:'Both B2B' });
   } else {
     if (homeRest3) {
-      signals.push({ icon:'⚡', text:`<strong>Signal 1 ACTIVE</strong> — ${awayTeam} on back-to-back away, ${homeTeam} rested 3+ days. Historical ROI: +8.7% (79 games). <strong>Fade ${awayTeam}.</strong>`, badge:'rsi-fired', label:'⚡ Signal 1' });
+      signals.push({ icon:'⚡', text:`<strong>Signal 1 ACTIVE</strong> — ${awayTeam} on back-to-back away, ${homeTeam} rested 3+ days. See the Signal Tracker for full tracked results. <strong>Fade ${awayTeam}.</strong>`, badge:'rsi-fired', label:'⚡ Signal 1' });
       score += 55;
     } else if (homeRest2) {
       signals.push({ icon:'⚠️', text:`<strong>Signal 1 PARTIAL</strong> — ${awayTeam} on B2B away but ${homeTeam} only has 2 days rest (not 3+). Lower confidence partial flag.`, badge:'rsi-active', label:'⚠ Partial' });
@@ -1066,18 +839,19 @@ function runAnalysis() {
     } else {
       signals.push({ icon:'➖', text:`Signal 1 not active — ${homeTeam} does not have sufficient rest advantage.`, badge:'rsi-inactive', label:'No S1' });
     }
-    if (backupGoalie) {
-      signals.push({ icon:'🥅', text:`<strong>Signal 2 ACTIVE</strong> — ${awayTeam} on back-to-back AND starting a backup goalie. Historical ROI: +38.7% (39 games). <strong>Fade ${awayTeam}.</strong>`, badge:'rsi-fired', label:'⚡ Signal 2' });
+    if (goalie === 'starter') {
+      signals.push({ icon:'🥅', text:`<strong>Signal 2 ACTIVE</strong> — ${awayTeam} on back-to-back AND riding their #1 goalie. Backtested edge: fatigued teams starting their #1 underperformed the market. <strong>Fade ${awayTeam}.</strong>`, badge:'rsi-fired', label:'⚡ Signal 2' });
       score += 40;
     } else if (goalie === 'unknown') {
-      signals.push({ icon:'❓', text:`Goalie status for ${awayTeam} is unconfirmed. Check Daily Faceoff — Signal 2 could activate if a backup is confirmed.`, badge:'rsi-active', label:'Goalie TBD' });
+      signals.push({ icon:'❓', text:`Goalie status for ${awayTeam} is unconfirmed. Signal 2 activates if their #1 goalie is confirmed to start.`, badge:'rsi-active', label:'Goalie TBD' });
       score += 5;
     } else {
-      signals.push({ icon:'✅', text:`${awayTeam}'s starter is confirmed. Signal 2 does not apply.`, badge:'rsi-inactive', label:'No S2' });
+      signals.push({ icon:'⚠️', text:`${awayTeam} starting a backup — standard B2B practice that the market prices in. Our season backtest showed fading backup starts <strong>lost</strong> money. Signal 2 does not apply; consider passing.`, badge:'rsi-inactive', label:'No S2' });
+      score -= 15;
     }
   }
 
-  score = Math.min(score, 100);
+  score = Math.max(0, Math.min(score, 100));
 
   document.getElementById('result-signals').innerHTML = signals.map(s =>
     `<div class="result-sig-item"><span class="rsi-icon">${s.icon}</span><span class="rsi-text">${s.text}</span><span class="rsi-badge ${s.badge}">${s.label}</span></div>`
@@ -1085,17 +859,17 @@ function runAnalysis() {
 
   let color, verdictText;
   if (score >= 80) {
-    color = '#00d68f';
-    verdictText = `<strong style="color:#00d68f;">High Confidence — Both signals active.</strong> This is one of the strongest setups the system identifies. Fade <strong>${awayTeam}</strong> on the moneyline. Consider 1.5–2x unit sizing.`;
+    color = '#3ddc97';
+    verdictText = `<strong style="color:#3ddc97;">High Confidence — Both signals active.</strong> This is one of the strongest setups the system identifies. Fade <strong>${awayTeam}</strong> on the moneyline. Consider 1.5–2x unit sizing.`;
   } else if (score >= 50) {
-    color = '#00b4ff';
-    verdictText = `<strong style="color:#00b4ff;">Signal 1 Active.</strong> Solid edge — fade <strong>${awayTeam}</strong> at standard unit size. Confirm goalie before puck drop to check for Signal 2 upgrade.`;
+    color = '#00c46a';
+    verdictText = `<strong style="color:#00c46a;">Signal 1 Active.</strong> Solid edge — fade <strong>${awayTeam}</strong> at standard unit size. Confirm goalie before puck drop to check for Signal 2 upgrade.`;
   } else if (score >= 20) {
     color = '#ff8c00';
     verdictText = `<strong style="color:#ff8c00;">Partial Signal Only.</strong> Lower confidence. If betting, reduce to 0.5x unit size. Wait for goalie confirmation before committing.`;
   } else {
-    color = '#4a6a88';
-    verdictText = `<strong style="color:#4a6a88;">No Active Signal.</strong> This matchup does not meet signal criteria. No edge identified — pass or bet based on your own handicapping.`;
+    color = '#5a8a72';
+    verdictText = `<strong style="color:#5a8a72;">No Active Signal.</strong> This matchup does not meet signal criteria. No edge identified — pass or bet based on your own handicapping.`;
   }
 
   const scoreEl = document.getElementById('risk-score-display');
@@ -1106,8 +880,8 @@ function runAnalysis() {
   scoreEl.style.color = color;
   bar.style.width     = score + '%';
   bar.style.background = `linear-gradient(90deg, ${color}, ${color}99)`;
-  verdict.style.background  = `${color}0d`;
-  verdict.style.border      = `1px solid ${color}33`;
+  verdict.style.background   = `${color}0d`;
+  verdict.style.border       = `1px solid ${color}33`;
   verdict.style.borderRadius = '8px';
   verdict.innerHTML = verdictText;
   document.getElementById('result-title').textContent = `Analysis: ${awayTeam} @ ${homeTeam}`;
@@ -1118,613 +892,554 @@ function runAnalysis() {
 }
 </script>
 
-
-
-<!-- ══════════════════════════════════
-     PRICING PAGE
-══════════════════════════════════ -->
-<div id="page-pricing" class="page">
-
-  <div class="pricing-hero">
-    <div class="pricing-hero-inner">
-      <div class="beta-pill" style="margin:0 auto 16px;">Beta Season 2024–25</div>
-      <div class="pricing-headline">Free Now. <span>Built for Next Season.</span></div>
-      <p class="pricing-sub">Join the beta free for the rest of this season. Founding members lock in the best price when paid plans launch for 2025–26.</p>
-    </div>
-  </div>
-
-  <div class="pricing-wrap">
-
-    <!-- BETA SPOTS BAR -->
-    <div class="beta-count-bar" style="margin-top:32px;">
-      <span class="bcb-label">Beta spots filled</span>
-      <div class="bcb-track"><div class="bcb-fill"></div></div>
-      <span class="bcb-count">34 / 100 spots taken</span>
-    </div>
-
-    <!-- PRICING CARDS -->
-    <div class="pricing-cards">
-
-      <!-- FREE TIER -->
-      <div class="pricing-card">
-        <span class="pricing-badge pb-free">Always Free</span>
-        <div class="pc-name">Dashboard</div>
-        <div class="pc-price">$0 <span>/ forever</span></div>
-        <div class="pc-desc">The full live dashboard — signals, game cards, goalie tags, Risk Analyzer, and Fantasy Picks. No account needed.</div>
-        <ul class="pc-features">
-          <li>Live dashboard at icecoldanalytics.ca</li>
-          <li>Signal 1 &amp; 2 game flags</li>
-          <li>Tonight's games + rest day tags</li>
-          <li>Risk Analyzer tool</li>
-          <li>Fantasy picks page</li>
-          <li>2-day look-ahead</li>
-          <li class="excluded">Daily morning email</li>
-          <li class="excluded">Goalie confirmation alerts</li>
-          <li class="excluded">Signal hit/miss tracking history</li>
-          <li class="excluded">Prop picks with odds</li>
-        </ul>
-        <button class="pc-cta cta-ghost" onclick="showPage('dashboard')">View Dashboard</button>
-      </div>
-
-      <!-- BETA / PRO -->
-      <div class="pricing-card featured">
-        <span class="pricing-badge pb-beta">Beta — Free Now</span>
-        <div class="pc-name">Pro</div>
-        <div class="pc-price">
-          <span class="price-slash">$12</span>$0 <span>/ month this season</span>
-        </div>
-        <div class="pc-desc">Everything in the dashboard plus a daily morning email with the full breakdown — signals, goalie confirmations, fantasy picks, and prop recommendations — delivered before puck drop.</div>
-        <ul class="pc-features">
-          <li>Everything in Dashboard tier</li>
-          <li><strong>Daily 7 AM MST email</strong></li>
-          <li>Signal alerts with confidence scores</li>
-          <li>Goalie confirmation updates</li>
-          <li>Fantasy value plays (DFS + season)</li>
-          <li>Player prop picks with reasoning</li>
-          <li>Full season hit/miss record</li>
-          <li>Founding member pricing locked in</li>
-        </ul>
-        <div class="beta-form" id="beta-form-pricing" style="margin-bottom:8px;">
-          <input class="beta-input" type="email" id="beta-email-pricing" placeholder="your@email.com" style="width:100%;margin-bottom:8px;" />
-          <button class="beta-submit pc-cta cta-gold" style="width:100%;padding:13px;" onclick="submitBeta('pricing')">🏒 Join Beta Free →</button>
-        </div>
-        <div class="beta-success" id="beta-success-pricing">✅ You're in! Check your inbox for a confirmation.</div>
-        <div style="font-size:0.65rem;color:var(--muted);text-align:center;margin-top:6px;">No credit card. No spam. Unsubscribe anytime.</div>
-      </div>
-
-      <!-- SEASON PASS (NEXT SEASON PREVIEW) -->
-      <div class="pricing-card">
-        <span class="pricing-badge pb-season">2025–26 Season · Coming Soon</span>
-        <div class="pc-name">Season Pass</div>
-        <div class="pc-price">$59 <span>/ full season</span></div>
-        <div class="pc-desc">One payment for the full 2025–26 NHL season. Best value for serious bettors who want the edge from opening night through the playoffs.</div>
-        <ul class="pc-features">
-          <li>Everything in Pro tier</li>
-          <li>Full season Oct → June</li>
-          <li>Playoff signal tracking</li>
-          <li>Priority email support</li>
-          <li>Early access to new signals</li>
-          <li>Founding member discount if you beta now</li>
-          <li class="excluded">Available Oct 2025</li>
-        </ul>
-        <button class="pc-cta cta-ghost" onclick="submitBeta('season')">Notify Me at Launch</button>
-        <div class="beta-success" id="beta-success-season" style="margin-top:8px;justify-content:center;">✅ We'll email you at launch.</div>
-        <!-- Hidden email for season pass notify -->
-        <input type="email" id="beta-email-season" style="display:none;" />
-      </div>
-
-    </div>
-
-    <!-- WHAT YOU GET IN THE EMAIL -->
-    <div class="section-divider" style="margin-top:52px;"><h2>What's in the Daily Email</h2><div class="sd-line"></div><div class="sd-badge">Sent 7 AM MST</div></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:8px;">
-      <div class="fps-card" style="border-left:3px solid var(--accent);">
-        <div style="font-size:1.2rem;margin-bottom:8px;">⚡</div>
-        <div class="feat-title">Signal Scan</div>
-        <p class="feat-text">Every game on tonight's slate checked for Signal 1 and 2. Full signal, partial, and cancelled games all flagged with confidence scores.</p>
-      </div>
-      <div class="fps-card" style="border-left:3px solid var(--gold);">
-        <div style="font-size:1.2rem;margin-bottom:8px;">🥅</div>
-        <div class="feat-title">Goalie Confirmations</div>
-        <p class="feat-text">Starter and backup confirmations from morning skate reports. Signal 2 fires automatically when a backup is confirmed on a B2B team.</p>
-      </div>
-      <div class="fps-card" style="border-left:3px solid var(--green);">
-        <div style="font-size:1.2rem;margin-bottom:8px;">🏒</div>
-        <div class="feat-title">Fantasy Picks</div>
-        <p class="feat-text">Top value plays for DFS and season-long, tiered by confidence. Signal-informed — B2B stacks and goalie situations baked in.</p>
-      </div>
-      <div class="fps-card" style="border-left:3px solid var(--cyan);">
-        <div style="font-size:1.2rem;margin-bottom:8px;">📊</div>
-        <div class="feat-title">Prop Picks</div>
-        <p class="feat-text">Goals, shots, and assist props with recommended lines and reasoning. B2B context applied — Marner under shots on a back-to-back, for example.</p>
-      </div>
-      <div class="fps-card" style="border-left:3px solid var(--muted);">
-        <div style="font-size:1.2rem;margin-bottom:8px;">📈</div>
-        <div class="feat-title">Last Night's Results</div>
-        <p class="feat-text">Recap of every signal game from the night before — hit, miss, or no signal. Running ROI tracked transparently all season.</p>
-      </div>
-      <div class="fps-card" style="border-left:3px solid var(--orange);">
-        <div style="font-size:1.2rem;margin-bottom:8px;">🔭</div>
-        <div class="feat-title">2-Day Look-Ahead</div>
-        <p class="feat-text">Early signal flags for the next two days so you can plan ahead. Top watch games highlighted with reasoning and goalie to monitor.</p>
-      </div>
-    </div>
-
-    <!-- FAQ -->
-    <div class="pricing-faq">
-      <div class="section-divider" style="margin-top:8px;"><h2>FAQ</h2><div class="sd-line"></div></div>
-
-      <div class="faq-item">
-        <div class="faq-q">Is the beta really free? What's the catch?</div>
-        <div class="faq-a">No catch. We're running the beta free for the rest of the 2024–25 season to build the platform, get real user feedback, and document a verified track record going into next season. You help us improve it, we give you a free edge all season. Beta members also get the best price when paid plans launch.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What happens when the 2025–26 season starts?</div>
-        <div class="faq-a">The dashboard stays free forever. The daily email becomes a paid feature at $9–$12/month or $59/season. Beta members get a founding-member rate locked in — we'll email you before anything changes. You'll never be auto-charged.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How accurate are the signals?</div>
-        <div class="faq-a">Signal 1 (Away B2B + Home 3+ days rest) has tracked at +8.7% ROI across 79 games this season. Signal 2 (Away B2B + confirmed backup goalie) is +38.7% ROI across 39 games. Both are real historical results tracked game-by-game — you can see every result in the Signal Tracker. Past performance doesn't guarantee future results, but the edge is documented and transparent.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Do I need to know how to bet to use this?</div>
-        <div class="faq-a">No. The dashboard and email explain every signal in plain language — what it means, which team to fade, and what confidence level to assign it. The Risk Analyzer walks you through any specific matchup step by step.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Where is this built?</div>
-        <div class="faq-a">Edmonton, Alberta. Built by hockey fans who got tired of paying for betting tools that don't actually show their work. Everything on this platform is transparent — signals, methodology, and results.</div>
-      </div>
-    </div>
-
-  </div>
-</div><!-- /page-pricing -->
-
-
-<div id="page-fantasy-picks" class="page">
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <div class="page-eyebrow">Ice Cold Analytics · Updated March 4, 2026</div>
-      <div class="page-title">Fantasy Picks</div>
-      <p class="page-desc">Daily value plays, goalie starts, and player props for both DFS (DraftKings / FanDuel) and season-long leagues. Signal-informed where applicable.</p>
-    </div>
-  </div>
-
-  <div class="main-wrap">
-
-    <!-- SUMMARY BAR -->
-    <div class="fp-summary" style="margin-top:28px;">
-      <div class="fps-card"><div class="fps-val"><span>8</span></div><div class="fps-label">Value Plays Today</div></div>
-      <div class="fps-card"><div class="fps-val"><span>10</span></div><div class="fps-label">Goalies Assessed</div></div>
-      <div class="fps-card"><div class="fps-val"><span>9</span></div><div class="fps-label">Prop Picks</div></div>
-      <div class="fps-card"><div class="fps-val"><span>5</span></div><div class="fps-label">Games on Slate (Mar 5)</div></div>
-      <div class="fps-card"><div class="fps-val"><span style="color:var(--gold);">S</span>-tier</div><div class="fps-label">Top Tier Available</div></div>
-    </div>
-
-    <!-- TABS -->
-    <div class="fp-tabs">
-      <button class="fp-tab active" onclick="showFPTab('value-plays', this)">🏒 Value Plays</button>
-      <button class="fp-tab"        onclick="showFPTab('goalie-starts', this)">🥅 Goalie Starts</button>
-      <button class="fp-tab"        onclick="showFPTab('player-props', this)">📊 Player Props</button>
-    </div>
-
-    <!-- ── VALUE PLAYS ── -->
-    <div id="fp-value-plays" class="fp-panel active">
-      <div class="section-divider" style="margin-top:0;"><h2>Top Value Plays</h2><div class="sd-line"></div><div class="sd-badge">March 5 Slate · 5 Games</div></div>
-
-      <!-- S-TIER -->
-      <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:10px;">S-Tier · Must-Plays</div>
-      <div class="picks-grid">
-
-        <div class="pick-card tier-s">
-          <div class="pick-header">
-            <div><div class="pick-player">Nathan MacKinnon</div><div class="pick-team">Colorado Avalanche · C</div></div>
-            <span class="pick-tier tier-s-badge">S-Tier</span>
-          </div>
-          <div class="pick-body">
-            <div class="pick-matchup">vs <strong>DAL Stars</strong> · Mar 5 · 10 PM ET</div>
-            <div class="pick-stats">
-              <div class="pick-stat"><span class="pick-stat-label">Salary DK</span><span class="pick-stat-val">$9,400</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Proj Pts</span><span class="pick-stat-val">22.4</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Value</span><span class="pick-stat-val" style="color:var(--gold);">2.38x</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Points/GP</span><span class="pick-stat-val">1.56</span></div>
-            </div>
-            <div class="pick-reason">COL on back-to-back — but MacKinnon's elite level performance makes him a lock regardless of fatigue. <strong>Top scoring rate in the NHL (1.56 P/GP)</strong> and DAL is allowing 3.4 GPG on this road trip. Captain-worthy.</div>
-            <div class="pick-tags"><span class="pick-tag pt-both">DFS + Season</span><span class="pick-tag pt-signal">B2B Watch</span></div>
-          </div>
-        </div>
-
-        <div class="pick-card tier-s">
-          <div class="pick-header">
-            <div><div class="pick-player">Mikko Rantanen</div><div class="pick-team">Carolina Hurricanes · RW</div></div>
-            <span class="pick-tier tier-s-badge">S-Tier</span>
-          </div>
-          <div class="pick-body">
-            <div class="pick-matchup">@ <strong>VAN Canucks</strong> · Mar 5 · 10 PM ET</div>
-            <div class="pick-stats">
-              <div class="pick-stat"><span class="pick-stat-label">Salary DK</span><span class="pick-stat-val">$8,600</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Proj Pts</span><span class="pick-stat-val">19.8</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Value</span><span class="pick-stat-val" style="color:var(--gold);">2.30x</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Recent Form</span><span class="pick-stat-val" style="color:var(--green);">8-pt streak</span></div>
-            </div>
-            <div class="pick-reason"><strong>CAR is the signal bet here</strong> — VAN is the home team in a Signal 1 matchup. Rantanen on the power play unit, 8-game point streak, and VAN's Demko still working back from injury. Chalk play with upside.</div>
-            <div class="pick-tags"><span class="pick-tag pt-both">DFS + Season</span><span class="pick-tag pt-signal">Signal 1 Game</span></div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- A-TIER -->
-      <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin:20px 0 10px;">A-Tier · Strong Plays</div>
-      <div class="picks-grid">
-
-        <div class="pick-card tier-a">
-          <div class="pick-header">
-            <div><div class="pick-player">Elias Pettersson</div><div class="pick-team">Vancouver Canucks · C</div></div>
-            <span class="pick-tier tier-a-badge">A-Tier</span>
-          </div>
-          <div class="pick-body">
-            <div class="pick-matchup">vs <strong>CAR Hurricanes</strong> · Mar 5 · 10 PM ET</div>
-            <div class="pick-stats">
-              <div class="pick-stat"><span class="pick-stat-label">Salary DK</span><span class="pick-stat-val">$7,200</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Proj Pts</span><span class="pick-stat-val">15.6</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Value</span><span class="pick-stat-val">2.17x</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">PPG</span><span class="pick-stat-val">0.91</span></div>
-            </div>
-            <div class="pick-reason">Home-ice advantage + affordable price point. Signal 1 game but Pettersson's upside at this salary is too good to ignore for season-long. <strong>DFS only if fading Signal logic.</strong></div>
-            <div class="pick-tags"><span class="pick-tag pt-season">Season-Long</span></div>
-          </div>
-        </div>
-
-        <div class="pick-card tier-a">
-          <div class="pick-header">
-            <div><div class="pick-player">Auston Matthews</div><div class="pick-team">Toronto Maple Leafs · C</div></div>
-            <span class="pick-tier tier-a-badge">A-Tier</span>
-          </div>
-          <div class="pick-body">
-            <div class="pick-matchup">@ <strong>NJ Devils</strong> · Mar 5 · 7 PM ET</div>
-            <div class="pick-stats">
-              <div class="pick-stat"><span class="pick-stat-label">Salary DK</span><span class="pick-stat-val">$8,200</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Proj Pts</span><span class="pick-stat-val">17.1</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Value</span><span class="pick-stat-val">2.09x</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Goals/GP</span><span class="pick-stat-val">0.54</span></div>
-            </div>
-            <div class="pick-reason">TOR on back-to-back away is a <strong>Signal 1 fade candidate</strong>, so context matters. However Matthews' individual ceiling is always in play — use at reduced DFS exposure or swap to season-long hold.</div>
-            <div class="pick-tags"><span class="pick-tag pt-season">Season-Long</span><span class="pick-tag pt-signal">B2B Away</span></div>
-          </div>
-        </div>
-
-        <div class="pick-card tier-a">
-          <div class="pick-header">
-            <div><div class="pick-player">Kyle Connor</div><div class="pick-team">Winnipeg Jets · LW</div></div>
-            <span class="pick-tier tier-a-badge">A-Tier</span>
-          </div>
-          <div class="pick-body">
-            <div class="pick-matchup">vs <strong>TB Lightning</strong> · Mar 6 · 8 PM ET</div>
-            <div class="pick-stats">
-              <div class="pick-stat"><span class="pick-stat-label">Salary DK</span><span class="pick-stat-val">$6,800</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Proj Pts</span><span class="pick-stat-val">14.9</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Value</span><span class="pick-stat-val">2.19x</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">SOG/GP</span><span class="pick-stat-val">3.8</span></div>
-            </div>
-            <div class="pick-reason">Best value play on the slate at this price. WPG home-ice, Connor's shot volume is elite, and TB's PK has been leaky at 76.3%. <strong>Strong DFS value and season-long hold.</strong></div>
-            <div class="pick-tags"><span class="pick-tag pt-both">DFS + Season</span></div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- B-TIER -->
-      <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);margin:20px 0 10px;">B-Tier · Solid Fills / Streaming</div>
-      <div class="picks-grid">
-
-        <div class="pick-card tier-b">
-          <div class="pick-header">
-            <div><div class="pick-player">Quinton Byfield</div><div class="pick-team">Los Angeles Kings · C</div></div>
-            <span class="pick-tier tier-b-badge">B-Tier</span>
-          </div>
-          <div class="pick-body">
-            <div class="pick-matchup">vs <strong>NYI Islanders</strong> · Mar 5 · 10 PM ET</div>
-            <div class="pick-stats">
-              <div class="pick-stat"><span class="pick-stat-label">Salary DK</span><span class="pick-stat-val">$6,200</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Proj Pts</span><span class="pick-stat-val">12.8</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Value</span><span class="pick-stat-val">2.06x</span></div>
-            </div>
-            <div class="pick-reason">Budget-friendly fill on a strong home matchup. LA has won 6 straight at home. NYI is 26th in goals allowed. Byfield trending up with 5 pts in 4 games.</div>
-            <div class="pick-tags"><span class="pick-tag pt-dfs">DFS Fill</span></div>
-          </div>
-        </div>
-
-        <div class="pick-card tier-b">
-          <div class="pick-header">
-            <div><div class="pick-player">Dylan Guenther</div><div class="pick-team">Seattle Kraken · RW</div></div>
-            <span class="pick-tier tier-b-badge">B-Tier</span>
-          </div>
-          <div class="pick-body">
-            <div class="pick-matchup">vs <strong>STL Blues</strong> · Mar 5 · 10 PM ET</div>
-            <div class="pick-stats">
-              <div class="pick-stat"><span class="pick-stat-label">Salary DK</span><span class="pick-stat-val">$5,800</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Proj Pts</span><span class="pick-stat-val">11.4</span></div>
-              <div class="pick-stat"><span class="pick-stat-label">Value</span><span class="pick-stat-val">1.97x</span></div>
-            </div>
-            <div class="pick-reason">SEA home, STL on a 3-game skid allowing 4.2 GPG. Guenther is underpriced relative to his recent production. Good tournament pivot.</div>
-            <div class="pick-tags"><span class="pick-tag pt-dfs">DFS Fill</span><span class="pick-tag pt-season">Streamer</span></div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- AVOID -->
-      <div class="section-divider" style="margin-top:28px;"><h2>Fades / Avoid List</h2><div class="sd-line"></div><div class="sd-badge">Signal-Informed</div></div>
-      <div class="picks-grid">
-        <div class="pick-card tier-c">
-          <div class="pick-header">
-            <div><div class="pick-player">Vegas Golden Knights</div><div class="pick-team">Skaters @ DET · Mar 5</div></div>
-            <span class="pick-tier" style="background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);">Avoid</span>
-          </div>
-          <div class="pick-body">
-            <div class="pick-reason"><strong>Signal 1 game — fade VGK.</strong> VGK on back-to-back away, DET rested 3+ days. Entire VGK stack depressed. Adin Hill struggling at .858 SV% — if backup confirmed, becomes a Signal 2 avoid as well. Stay away from VGK skaters and goalies.</div>
-            <div class="pick-tags"><span class="pick-tag pt-avoid">Avoid DFS</span><span class="pick-tag pt-signal">Signal 1 Fade</span></div>
-          </div>
-        </div>
-        <div class="pick-card tier-c">
-          <div class="pick-header">
-            <div><div class="pick-player">Toronto Maple Leafs</div><div class="pick-team">Skaters @ NJ · Mar 5</div></div>
-            <span class="pick-tier" style="background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);">Avoid</span>
-          </div>
-          <div class="pick-body">
-            <div class="pick-reason"><strong>Signal 1 watch — TOR on B2B away, NJ rested.</strong> Downgrade full TOR stack for DFS. Matthews is the only exception at reduced exposure. Full fades on TOR depth skaters at their current salary levels.</div>
-            <div class="pick-tags"><span class="pick-tag pt-avoid">Avoid DFS</span><span class="pick-tag pt-signal">B2B Away</span></div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- /fp-value-plays -->
-
-
-    <!-- ── GOALIE STARTS ── -->
-    <div id="fp-goalie-starts" class="fp-panel">
-      <div class="section-divider" style="margin-top:0;"><h2>Goalie Start Recommendations</h2><div class="sd-line"></div><div class="sd-badge">March 5 · 5 Games</div></div>
-
-      <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Statuses sourced from Daily Faceoff morning skate reports. Confirm before lineup lock. DFS salary = DraftKings. <strong style="color:var(--text);">Signal games flagged</strong> — goalies facing signal-favoured home teams rated higher.</div>
-
-      <div class="goalie-table">
-        <div class="goalie-row header">
-          <span>Goalie</span>
-          <span>SV%</span>
-          <span>GAA</span>
-          <span>Status</span>
-          <span style="text-align:right;">Rec.</span>
-        </div>
-
-        <div class="goalie-row" style="border-left:3px solid var(--gold);">
-          <div>
-            <div class="gr-name">Connor Hellebuyck</div>
-            <div class="gr-team">WPG Jets vs TB Lightning · $8,400 DK</div>
-          </div>
-          <div class="gr-stat" style="color:var(--green);">.924</div>
-          <div class="gr-stat" style="color:var(--green);">2.21</div>
-          <div><span class="gr-start gs-confirmed">Confirmed</span></div>
-          <div class="gr-rec rec-start" style="text-align:right;">▲ Start</div>
-        </div>
-
-        <div class="goalie-row" style="border-left:3px solid var(--accent);">
-          <div>
-            <div class="gr-name">Frederik Andersen</div>
-            <div class="gr-team">CAR Hurricanes @ VAN · $7,800 DK · <span style="color:var(--orange);">Signal 1 Game</span></div>
-          </div>
-          <div class="gr-stat" style="color:var(--green);">.921</div>
-          <div class="gr-stat" style="color:var(--green);">2.38</div>
-          <div><span class="gr-start gs-likely">Likely</span></div>
-          <div class="gr-rec rec-start" style="text-align:right;">▲ Start</div>
-        </div>
-
-        <div class="goalie-row" style="border-left:3px solid var(--accent);">
-          <div>
-            <div class="gr-name">Jake Oettinger</div>
-            <div class="gr-team">DAL Stars @ COL Avalanche · $7,600 DK</div>
-          </div>
-          <div class="gr-stat">.917</div>
-          <div class="gr-stat">2.44</div>
-          <div><span class="gr-start gs-likely">Likely</span></div>
-          <div class="gr-rec rec-start" style="text-align:right;">▲ Start</div>
-        </div>
-
-        <div class="goalie-row" style="border-left:3px solid var(--accent);">
-          <div>
-            <div class="gr-name">Jacob Markstrom</div>
-            <div class="gr-team">NJ Devils vs TOR · $7,200 DK · <span style="color:var(--orange);">Signal 1 Game</span></div>
-          </div>
-          <div class="gr-stat">.914</div>
-          <div class="gr-stat">2.61</div>
-          <div><span class="gr-start gs-likely">Likely</span></div>
-          <div class="gr-rec rec-start" style="text-align:right;">▲ Start</div>
-        </div>
-
-        <div class="goalie-row">
-          <div>
-            <div class="gr-name">Cam Talbot</div>
-            <div class="gr-team">LA Kings vs NYI · $6,800 DK</div>
-          </div>
-          <div class="gr-stat">.911</div>
-          <div class="gr-stat">2.72</div>
-          <div><span class="gr-start gs-confirmed">Confirmed</span></div>
-          <div class="gr-rec rec-stream" style="text-align:right;">~ Stream</div>
-        </div>
-
-        <div class="goalie-row">
-          <div>
-            <div class="gr-name">Philipp Grubauer</div>
-            <div class="gr-team">SEA Kraken vs STL · $6,400 DK</div>
-          </div>
-          <div class="gr-stat">.908</div>
-          <div class="gr-stat">2.89</div>
-          <div><span class="gr-start gs-likely">Likely</span></div>
-          <div class="gr-rec rec-stream" style="text-align:right;">~ Stream</div>
-        </div>
-
-        <div class="goalie-row">
-          <div>
-            <div class="gr-name">Thatcher Demko</div>
-            <div class="gr-team">VAN Canucks vs CAR · $7,000 DK · <span style="color:var(--red);">Signal 1 Fade</span></div>
-          </div>
-          <div class="gr-stat" style="color:var(--orange);">.903</div>
-          <div class="gr-stat" style="color:var(--orange);">3.01</div>
-          <div><span class="gr-start gs-unknown">Unconfirmed</span></div>
-          <div class="gr-rec rec-avoid" style="text-align:right;">✕ Avoid</div>
-        </div>
-
-        <div class="goalie-row">
-          <div>
-            <div class="gr-name">Ilya Samsonov</div>
-            <div class="gr-team">TOR Maple Leafs @ NJ · $6,200 DK · <span style="color:var(--red);">Signal 1 Fade</span></div>
-          </div>
-          <div class="gr-stat" style="color:var(--orange);">.901</div>
-          <div class="gr-stat" style="color:var(--orange);">3.14</div>
-          <div><span class="gr-start gs-unknown">Unconfirmed</span></div>
-          <div class="gr-rec rec-avoid" style="text-align:right;">✕ Avoid</div>
-        </div>
-
-        <div class="goalie-row">
-          <div>
-            <div class="gr-name">Adin Hill</div>
-            <div class="gr-team">VGK Golden Knights @ DET · $5,800 DK · <span style="color:var(--red);">Signal 1 + Possible S2</span></div>
-          </div>
-          <div class="gr-stat" style="color:var(--red);">.858</div>
-          <div class="gr-stat" style="color:var(--red);">3.76</div>
-          <div><span class="gr-start gs-avoid">B2B Away</span></div>
-          <div class="gr-rec rec-avoid" style="text-align:right;">✕ Hard Avoid</div>
-        </div>
-
-        <div class="goalie-row">
-          <div>
-            <div class="gr-name">Lukas Dostal</div>
-            <div class="gr-team">ANA Ducks vs NYI · $6,000 DK</div>
-          </div>
-          <div class="gr-stat">.906</div>
-          <div class="gr-stat">2.95</div>
-          <div><span class="gr-start gs-likely">Likely</span></div>
-          <div class="gr-rec rec-wait" style="text-align:right;">? Wait</div>
-        </div>
-
-      </div><!-- /goalie-table -->
-
-      <div class="signal-rule-box" style="margin-top:24px;">
-        <h3>Signal Note on Goalies</h3>
-        <p>When Signal 1 is active (away B2B + home rested 3+ days), <strong>the home goalie gets a confidence boost</strong> and the away goalie gets downgraded regardless of individual stats. When Signal 2 fires (away B2B + confirmed backup), the away goalie becomes a <strong>hard avoid for all formats</strong>. Always cross-reference with this dashboard before setting lineups.</p>
-      </div>
-    </div><!-- /fp-goalie-starts -->
-
-
-    <!-- ── PLAYER PROPS ── -->
-    <div id="fp-player-props" class="fp-panel">
-      <div class="section-divider" style="margin-top:0;"><h2>Player Prop Picks</h2><div class="sd-line"></div><div class="sd-badge">March 5 · Best Bets</div></div>
-      <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Props sourced from DraftKings Sportsbook. Odds approximate — verify before placing. Signal context applied where relevant.</div>
-
-      <!-- GOALS / POINTS -->
-      <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin-bottom:8px;">Goals &amp; Points</div>
-      <div class="props-stack">
-
-        <div class="prop-row" style="border-left:3px solid var(--gold);">
-          <div>
-            <div class="prop-player">Nathan MacKinnon — Anytime Goal Scorer</div>
-            <div class="prop-desc">COL @ DAL · <strong>+135</strong> · Top scoring rate in the NHL, shooting 18.4% this season. DAL has allowed 2+ goals to top-6 Cs in 7 of last 10 home games.</div>
-          </div>
-          <div class="prop-line"><div class="prop-line-val">+135</div><div class="prop-line-label">Odds</div></div>
-          <div class="prop-pick pp-over">✓ Back It</div>
-        </div>
-
-        <div class="prop-row" style="border-left:3px solid var(--accent);">
-          <div>
-            <div class="prop-player">Mikko Rantanen — Over 0.5 Points</div>
-            <div class="prop-desc">CAR @ VAN · <strong>-155</strong> · 8-game point streak. VAN goaltending unconfirmed — if backup starts, this is near-automatic.</div>
-          </div>
-          <div class="prop-line"><div class="prop-line-val">-155</div><div class="prop-line-label">Odds</div></div>
-          <div class="prop-pick pp-over">✓ Back It</div>
-        </div>
-
-        <div class="prop-row" style="border-left:3px solid var(--accent);">
-          <div>
-            <div class="prop-player">Kyle Connor — Over 0.5 Points</div>
-            <div class="prop-desc">WPG vs TB · <strong>-130</strong> · Home ice, 3.8 SOG/GP, TB giving up 3.2 GPG away. Connor on the power play top unit.</div>
-          </div>
-          <div class="prop-line"><div class="prop-line-val">-130</div><div class="prop-line-label">Odds</div></div>
-          <div class="prop-pick pp-over">✓ Back It</div>
-        </div>
-
-        <div class="prop-row">
-          <div>
-            <div class="prop-player">Auston Matthews — Anytime Goal Scorer</div>
-            <div class="prop-desc">TOR @ NJ · <strong>+118</strong> · Elite goal scorer but TOR on back-to-back away is a Signal 1 game. Use at half-unit only given team-level fade.</div>
-          </div>
-          <div class="prop-line"><div class="prop-line-val">+118</div><div class="prop-line-label">Odds</div></div>
-          <div class="prop-pick" style="background:rgba(255,140,0,0.1);color:var(--orange);border:1px solid rgba(255,140,0,0.25);">½ Unit</div>
-        </div>
-
-      </div>
-
-      <!-- SHOTS -->
-      <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin:20px 0 8px;">Shots on Goal</div>
-      <div class="props-stack">
-
-        <div class="prop-row" style="border-left:3px solid var(--accent);">
-          <div>
-            <div class="prop-player">Nathan MacKinnon — Over 3.5 Shots</div>
-            <div class="prop-desc">COL @ DAL · <strong>-118</strong> · Averaging 4.3 SOG/GP over last 15 games. Usage is elite, always 22+ min TOI.</div>
-          </div>
-          <div class="prop-line"><div class="prop-line-val">3.5</div><div class="prop-line-label">Over</div></div>
-          <div class="prop-pick pp-over">✓ Over</div>
-        </div>
-
-        <div class="prop-row" style="border-left:3px solid var(--accent);">
-          <div>
-            <div class="prop-player">Sebastian Aho — Over 2.5 Shots</div>
-            <div class="prop-desc">CAR @ VAN · <strong>-140</strong> · Aho averaging 3.2 SOG/GP, VAN goaltending in flux. Signal 1 game favours CAR shooters.</div>
-          </div>
-          <div class="prop-line"><div class="prop-line-val">2.5</div><div class="prop-line-label">Over</div></div>
-          <div class="prop-pick pp-over">✓ Over</div>
-        </div>
-
-        <div class="prop-row" style="border-left:3px solid rgba(255,71,87,0.5);">
-          <div>
-            <div class="prop-player">Mitch Marner — Over 2.5 Shots</div>
-            <div class="prop-desc">TOR @ NJ · <strong>-125</strong> · TOR on B2B away is a Signal 1 fade. Marner's shot volume dips on back-to-backs historically (2.0 SOG avg on B2Bs vs 3.1 normal).</div>
-          </div>
-          <div class="prop-line"><div class="prop-line-val">2.5</div><div class="prop-line-label">Over</div></div>
-          <div class="prop-pick pp-under">✕ Under</div>
-        </div>
-
-      </div>
-
-      <!-- ASSISTS -->
-      <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin:20px 0 8px;">Assists</div>
-      <div class="props-stack">
-
-        <div class="prop-row" style="border-left:3px solid var(--green);">
-          <div>
-            <div class="prop-player">Nikolaj Ehlers — Over 0.5 Assists</div>
-            <div class="prop-desc">WPG vs TB · <strong>-118</strong> · Ehlers is averaging 0.68 A/GP over last 20, plays with both Connor and Scheifele on PP1. Home game, TB PK struggling.</div>
-          </div>
-          <div class="prop-line"><div class="prop-line-val">0.5</div><div class="prop-line-label">Assists</div></div>
-          <div class="prop-pick pp-over">✓ Over</div>
-        </div>
-
-        <div class="prop-row" style="border-left:3px solid var(--green);">
-          <div>
-            <div class="prop-player">Cale Makar — Over 0.5 Assists</div>
-            <div class="prop-desc">COL @ DAL · <strong>-145</strong> · Makar is the engine on COL PP, averaging 0.81 A/GP. Even on B2B his assist rate holds — elite usage player.</div>
-          </div>
-          <div class="prop-line"><div class="prop-line-val">0.5</div><div class="prop-line-label">Assists</div></div>
-          <div class="prop-pick pp-over">✓ Over</div>
-        </div>
-
-      </div>
-
-    </div><!-- /fp-player-props -->
-
-  </div><!-- /main-wrap -->
-</div><!-- /page-fantasy-picks -->
-
-
+<script>
+// ── DYNAMIC TICKER ─────────────────────────────────────────────────────────
+async function buildTicker() {
+  try {
+    const [tickerRes, roiRes] = await Promise.all([
+      fetch('data/ticker.json?nocache=' + Date.now()),
+      fetch('data/roi.json?nocache=' + Date.now())
+    ]);
+    const data = await tickerRes.json();
+    const roi = await roiRes.json();
+
+    if (!data.games || data.games.length === 0) return;
+
+    const track = document.querySelector('.ticker-track');
+    if (!track) return;
+
+    let items = [];
+    for (const g of data.games) {
+      let oddsHtml = '';
+      if (g.away_ml && g.home_ml) {
+        oddsHtml = ` · <span style="color:var(--cyan)">${g.away} ${g.away_ml}</span> · <span style="color:var(--cyan)">${g.home} ${g.home_ml}</span>`;
+      }
+      items.push(`<span>🏒 ${g.away} @ ${g.home} · <span class="t-live">${g.time}</span>${oddsHtml}</span>`);
+      items.push('<span class="t-sep">·</span>');
+    }
+
+    const s1  = roi.signal1 || {};
+    const s1p = roi.signal1_partial || {};
+    if (s1p.games) {
+      items.push(`<span><span class="t-sig">Signal 1 Partial</span> Away B2B + Home 2 Days Rest → ${s1p.roi >= 0 ? '+' : ''}${s1p.roi}% ROI · ${s1p.games} games</span>`);
+      items.push('<span class="t-sep">·</span>');
+    }
+    if (s1.games) {
+      items.push(`<span><span class="t-sig">Signal 1</span> Away B2B + Home 3+ Days Rest → ${s1.roi >= 0 ? '+' : ''}${s1.roi}% ROI · ${s1.games} games</span>`);
+      items.push('<span class="t-sep">·</span>');
+    }
+
+    track.innerHTML = [...items, ...items].join('');
+    console.log(`Ticker loaded: ${data.games.length} games for ${data.date}`);
+  } catch (e) {
+    console.log('Ticker fetch failed, keeping static content:', e);
+  }
+}
+buildTicker();
 </script>
+
+<script>
+// ── DYNAMIC DASHBOARD ──────────────────────────────────────────────────────
+async function buildDashboard() {
+  try {
+    const [dashRes, roiRes] = await Promise.all([
+      fetch('data/dashboard.json?nocache=' + Date.now()),
+      fetch('data/roi.json?nocache=' + Date.now())
+    ]);
+    const data = await dashRes.json();
+    const roi  = await roiRes.json();
+    if (!data.games_tonight) return;
+
+    const s1  = roi.signal1 || {};
+    const s1p = roi.signal1_partial || {};
+    const s2  = roi.signal2 || {};
+    const totalGamesTracked = (s1.games || 0) + (s1p.games || 0) + (s2.games || 0);
+
+    const heroPartial = document.getElementById('hero-partial-roi');
+    if (heroPartial) heroPartial.innerHTML = s1p.games ? `<span>${s1p.roi >= 0 ? '+' : ''}${s1p.roi}</span>%` : `<span>—</span>`;
+    const heroSig1 = document.getElementById('hero-sig1-roi');
+    if (heroSig1) heroSig1.innerHTML = s1.games ? `<span>${s1.roi >= 0 ? '+' : ''}${s1.roi}</span>%` : `<span>—</span>`;
+    const heroTracked = document.getElementById('hero-games-tracked');
+    if (heroTracked) heroTracked.textContent = totalGamesTracked;
+    const heroTonight = document.getElementById('hero-games-tonight');
+    if (heroTonight) heroTonight.textContent = data.n_games || 0;
+
+    const activeSigDate = document.getElementById('active-signals-date');
+    if (activeSigDate) activeSigDate.textContent = data.date_label || '—';
+
+    const sig1Roi  = document.getElementById('sig1-card-roi');
+    const sig1Meta = document.getElementById('sig1-card-meta');
+    if (sig1Roi)  sig1Roi.textContent  = s1.games ? `${s1.roi >= 0 ? '+' : ''}${s1.roi}%` : 'Building';
+    if (sig1Meta) sig1Meta.textContent = s1.games ? `${s1.games}-game tracked sample · ${s1.win_rate}% win rate` : 'No games tracked yet this season';
+
+    const sig2Roi  = document.getElementById('sig2-card-roi');
+    const sig2Meta = document.getElementById('sig2-card-meta');
+    if (sig2Roi)  sig2Roi.textContent  = s2.games >= 5 ? `${s2.roi >= 0 ? '+' : ''}${s2.roi}%` : 'Building Sample';
+    if (sig2Meta) sig2Meta.textContent = s2.games > 0 ? `${s2.games}-game sample · still building` : 'Requires manual goalie confirmation — sample still building';
+
+    const n = data.n_games || 0;
+    const tonightTitle = document.getElementById('tonight-scan-title');
+    if (tonightTitle) tonightTitle.textContent = n > 0 ? `${data.date_label} — ${n} Game${n !== 1 ? 's' : ''}` : `${data.date_label}`;
+    const tonightResult = document.getElementById('tonight-scan-result');
+    if (tonightResult) {
+      if (n === 0) {
+        tonightResult.style.fontSize = '1rem';
+        tonightResult.innerHTML = 'No Games Scheduled';
+      } else if (data.n_sig1 > 0 || data.n_partial > 0) {
+        tonightResult.innerHTML = `${data.n_sig1} Hit${data.n_sig1 !== 1 ? 's' : ''}<br><span style="font-size:1.1rem;">+ ${data.n_partial} Partial${data.n_partial !== 1 ? 's' : ''}</span>`;
+      } else {
+        tonightResult.innerHTML = 'No Signals';
+      }
+    }
+    const tonightMeta = document.getElementById('tonight-scan-meta');
+    if (tonightMeta) tonightMeta.textContent = n > 0 ? 'Scan complete' : 'Check back once the season resumes';
+
+    const gamesBadge = document.getElementById('tonight-games-badge');
+    if (gamesBadge) gamesBadge.textContent = `${n} Game${n !== 1 ? 's' : ''}`;
+    const gamesStack = document.getElementById('games-stack-container');
+    if (gamesStack) {
+      if (data.games_tonight.length === 0) {
+        gamesStack.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted);font-size:0.85rem;">No games scheduled. Check back once the season is underway.</div>`;
+      } else {
+        gamesStack.innerHTML = data.games_tonight.map(g => {
+          const cardClass = g.signal === 'sig1' ? 'sig1' :
+                            g.signal === 'partial' ? 'sig-partial' :
+                            g.signal === 'cancel' ? 'cancelled' : 'nosig';
+          const awayB2bTag = g.away_b2b ? `<span class="tag tag-b2b">B2B Away</span>` : '';
+          const homeTags = g.home_b2b ? `<span class="tag tag-b2b">B2B Home</span>` :
+                           g.home_rest >= 3 ? `<span class="tag tag-rest3">3+ Days Rest</span>` :
+                           g.home_rest === 2 ? `<span class="tag tag-rest2">2 Days Rest</span>` : '';
+          const oddsHtml = g.away_ml && g.home_ml
+            ? `<div class="gc-odds">${g.away} <span>${g.away_ml}</span> · ${g.home} <span>${g.home_ml}</span></div>`
+            : '';
+
+          let signalBadge, signalFade, signalNote;
+          if (g.signal === 'sig1') {
+            signalBadge = `<div class="gsig-badge gsb-s1">⚡ Signal 1 Active</div>`;
+            signalFade  = `<div class="gsig-fade">Fade: <strong>${g.away} (Away B2B)</strong></div>`;
+            signalNote  = `<div class="gsig-note">${g.home} rested ${g.home_rest}+ days</div>`;
+          } else if (g.signal === 'partial') {
+            signalBadge = `<div class="gsig-badge gsb-partial">⚠ Signal 1 Partial</div>`;
+            signalFade  = `<div class="gsig-fade">Fade: <strong>${g.away} (Away B2B)</strong></div>`;
+            signalNote  = `<div class="gsig-note">${g.home} rested 2 days · Low confidence</div>`;
+          } else if (g.signal === 'cancel') {
+            signalBadge = `<div class="gsig-badge gsb-cancel">↔ Signals Cancel</div>`;
+            signalFade  = '';
+            signalNote  = `<div class="gsig-note">Both on B2B — signal void</div>`;
+          } else {
+            signalBadge = `<div class="gsig-badge gsb-none">No Signal</div>`;
+            signalFade  = '';
+            signalNote  = `<div class="gsig-note">Neither team on B2B</div>`;
+          }
+
+          return `
+          <div class="game-card ${cardClass}">
+            <div class="gc-team away">
+              <div class="gc-city">${g.away_city}</div>
+              <div class="gc-name">${g.away_name}</div>
+              <div class="gc-tags">${awayB2bTag}</div>
+            </div>
+            <div class="gc-center">
+              <div class="gc-score">vs</div>
+              <div class="gc-period">Upcoming</div>
+              <div class="gc-time">${g.time_et}</div>
+              ${oddsHtml}
+            </div>
+            <div class="gc-team home">
+              <div class="gc-city">${g.home_city}</div>
+              <div class="gc-name">${g.home_name}</div>
+              <div class="gc-tags">${homeTags}</div>
+            </div>
+            <div class="gc-signal">
+              ${signalBadge}
+              ${signalFade}
+              ${signalNote}
+            </div>
+          </div>`;
+        }).join('');
+      }
+    }
+
+    const lastNight = data.last_night || [];
+    const lastNightBadge = document.getElementById('last-night-badge');
+    if (lastNightBadge) lastNightBadge.textContent = `${data.yesterday_label || '—'} · Signal Review`;
+    const recapTable = document.getElementById('recap-table-container');
+    if (recapTable) {
+      if (lastNight.length === 0) {
+        recapTable.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted);font-size:0.85rem;">No games last night.</div>`;
+      } else {
+        recapTable.innerHTML = lastNight.map(g => {
+          const resultClass = g.result === 'hit' ? 'r-hit' : g.result === 'miss' ? 'r-miss' : 'r-none';
+          const resultText  = g.result === 'hit' ? '✅ Hit' :
+                              g.result === 'miss' ? '❌ Miss' :
+                              g.result === 'cancel' ? 'Cancelled' : 'No Signal';
+          return `
+          <div class="recap-row">
+            <div>
+              <div class="rr-game"><strong>${g.away} @ ${g.home}</strong></div>
+              <div class="rr-note">${g.note}</div>
+            </div>
+            <div class="rr-score">${g.away} ${g.away_score}–${g.home_score} ${g.home}</div>
+            <div class="rr-result ${resultClass}">${resultText}</div>
+          </div>`;
+        }).join('');
+      }
+    }
+
+    const lookahead = data.lookahead || [];
+    const lookaheadBadge = document.getElementById('lookahead-badge');
+    if (lookaheadBadge) lookaheadBadge.textContent = 'Early Flags';
+    const laStack = document.getElementById('lookahead-container');
+    if (laStack) {
+      if (lookahead.length === 0) {
+        laStack.innerHTML = '<div class="la-day-label">No flagged games in the next 2 days</div>';
+      } else {
+        let html = '', lastDate = '';
+        for (const g of lookahead) {
+          if (g.date_label !== lastDate) {
+            html += `<div class="la-day-label">${g.date_label}</div>`;
+            lastDate = g.date_label;
+          }
+          let flagClass, flagText, desc;
+          if (g.signal === 'sig1') {
+            flagClass = 'lf-watch'; flagText = '⚡ Watch';
+            desc = `${g.away} on B2B away · ${g.home} rested ${g.home_rest}+ days → <strong>Signal 1 candidate — fade ${g.away}</strong>`;
+          } else if (g.signal === 'partial') {
+            flagClass = 'lf-watch'; flagText = '⚠ Partial';
+            desc = `${g.away} on B2B away · ${g.home} rested 2 days → Lower confidence partial flag`;
+          } else {
+            flagClass = 'lf-cancel'; flagText = 'Cancelled';
+            desc = `Both teams on B2B — <strong>signals cancel</strong>`;
+          }
+          html += `
+          <div class="la-row ${g.signal === 'sig1' || g.signal === 'partial' ? 'watch' : ''}">
+            <div>
+              <div class="la-game"><strong>${g.away} @ ${g.home}</strong></div>
+              <div class="la-desc">${desc} · ${g.time_et}</div>
+            </div>
+            <div class="la-flag ${flagClass}">${flagText}</div>
+          </div>`;
+        }
+        laStack.innerHTML = html;
+      }
+    }
+
+    console.log(`Dashboard loaded: ${data.n_games} games for ${data.date}`);
+  } catch (e) {
+    console.log('Dashboard fetch failed:', e);
+  }
+}
+
+// ── LIVE SCORES ────────────────────────────────────────────────────────────
+async function updateLiveScores() {
+  try {
+    const r = await fetch('data/scores.json?nocache=' + Date.now());
+    const data = await r.json();
+    if (!data.games || data.games.length === 0) return;
+
+    const cards = document.querySelectorAll('.game-card');
+    for (const g of data.games) {
+      for (const card of cards) {
+        const awayCity = card.querySelector('.gc-team.away .gc-city')?.textContent;
+        const homeCity = card.querySelector('.gc-team.home .gc-city')?.textContent;
+        if (awayCity !== g.away_city || homeCity !== g.home_city) continue;
+
+        const gcCenter = card.querySelector('.gc-center');
+        if (!gcCenter) break;
+        const scoreEl  = gcCenter.querySelector('.gc-score');
+        const periodEl = gcCenter.querySelector('.gc-period');
+
+        if (g.status === 'live') {
+          if (scoreEl) scoreEl.textContent = `${g.away_score}–${g.home_score}`;
+          if (periodEl) { periodEl.textContent = g.display; periodEl.style.color = 'var(--cyan)'; }
+          const awayTagsEl = card.querySelector('.gc-team.away .gc-tags');
+          if (awayTagsEl && !awayTagsEl.querySelector('.tag-live')) {
+            awayTagsEl.innerHTML += `<span class="tag tag-live">Live</span>`;
+          }
+        } else if (g.status === 'final') {
+          if (scoreEl) scoreEl.textContent = `${g.away_score}–${g.home_score}`;
+          if (periodEl) { periodEl.textContent = g.display; periodEl.style.color = 'var(--muted)'; }
+          const signalBadgeEl = card.querySelector('.gsig-badge');
+          if (signalBadgeEl && (signalBadgeEl.classList.contains('gsb-s1') || signalBadgeEl.classList.contains('gsb-partial'))) {
+            const fadeWon = g.home_score > g.away_score;
+            const noteEl = card.querySelector('.gsig-note');
+            if (noteEl) {
+              noteEl.textContent = fadeWon ? '✅ Signal HIT — fade won' : '❌ Signal MISS — fade lost';
+              noteEl.style.color = fadeWon ? 'var(--green)' : 'var(--red)';
+            }
+            if (signalBadgeEl.classList.contains('gsb-s1')) {
+              signalBadgeEl.textContent = fadeWon ? '⚡ Signal 1 — HIT ✅' : '⚡ Signal 1 — MISS ❌';
+            }
+          }
+        }
+        break;
+      }
+    }
+
+    if (data.updated) {
+      const footer = document.querySelector('.footer-disclaimer');
+      if (footer) {
+        const existing = document.getElementById('scores-updated');
+        if (existing) existing.remove();
+        const span = document.createElement('span');
+        span.id = 'scores-updated';
+        span.style.color = 'var(--muted)';
+        span.textContent = ` · Scores updated ${data.updated}`;
+        footer.appendChild(span);
+      }
+    }
+    console.log(`Scores loaded: ${data.games.length} games, updated ${data.updated}`);
+  } catch (e) {
+    console.log('Scores fetch error:', e);
+  }
+}
+
+async function buildDashboardThenScores() {
+  await buildDashboard();
+  updateLiveScores();
+  setInterval(updateLiveScores, 60000);
+}
+buildDashboardThenScores();
+</script>
+
+<script>
+// ── FANTASY PICKS ──────────────────────────────────────────────────────────
+async function buildFantasy() {
+  try {
+    const r = await fetch('data/fantasy.json?nocache=' + Date.now());
+    const data = await r.json();
+    if (!data.date) return;
+
+    const vp = data.value_plays || {};
+    const playsContainer = document.querySelector('.fantasy-plays-container');
+    if (playsContainer && vp.plays) {
+      const tiers = { S: [], A: [], B: [] };
+      for (const p of vp.plays) {
+        if (tiers[p.tier]) tiers[p.tier].push(p); else tiers.B.push(p);
+      }
+      const tierLabels = { S: 'S-Tier · Must-Plays', A: 'A-Tier · Strong Plays', B: 'B-Tier · Value Plays' };
+      const tierColors = { S: 'var(--gold)', A: 'var(--accent)', B: 'var(--text)' };
+      let playsHtml = '';
+      for (const [tier, plays] of Object.entries(tiers)) {
+        if (!plays.length) continue;
+        playsHtml += `<div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:${tierColors[tier]};margin:20px 0 10px;">${tierLabels[tier]}</div>`;
+        playsHtml += `<div class="picks-grid">`;
+        playsHtml += plays.map(p => {
+          const tagsHtml = (p.tags || []).map(t => `<span class="pick-tag pt-both">${t}</span>`).join('');
+          return `
+          <div class="pick-card tier-${tier.toLowerCase()}">
+            <div class="pick-header">
+              <div>
+                <div class="pick-player">${p.player}</div>
+                <div class="pick-team">${p.team} · ${p.position}</div>
+              </div>
+              <span class="pick-tier tier-${tier.toLowerCase()}-badge">${tier}-Tier</span>
+            </div>
+            <div class="pick-body">
+              <div class="pick-matchup">${p.matchup} · ${p.game_time}</div>
+              <div class="pick-stats">
+                <div class="pick-stat"><span class="pick-stat-label">DK Salary</span><span class="pick-stat-val">${p.dk_salary}</span></div>
+                <div class="pick-stat"><span class="pick-stat-label">FD Salary</span><span class="pick-stat-val">${p.fd_salary}</span></div>
+                <div class="pick-stat"><span class="pick-stat-label">DK Proj</span><span class="pick-stat-val">${p.proj_pts_dk} pts</span></div>
+                <div class="pick-stat"><span class="pick-stat-label">Value</span><span class="pick-stat-val" style="color:var(--gold);">${p.dk_value}</span></div>
+              </div>
+              <div class="pick-reason">${p.reason}</div>
+              <div class="pick-tags">${tagsHtml}</div>
+            </div>
+          </div>`;
+        }).join('');
+        playsHtml += `</div>`;
+      }
+      playsContainer.innerHTML = playsHtml;
+
+      if (vp.avoids && vp.avoids.length > 0) {
+        const avoidsHtml = vp.avoids.map(a =>
+          `<div class="fc-avoid-row"><span class="pick-tag pt-avoid">${a.tag}</span> <strong>${a.team}</strong> — ${a.reason}</div>`
+        ).join('');
+        playsContainer.innerHTML += `
+        <div class="fc-avoids-block">
+          <div class="fc-avoids-title">⚠ Fades &amp; Avoids</div>
+          ${avoidsHtml}
+        </div>`;
+      }
+    }
+
+    const gs = data.goalie_starts || {};
+    const goalieContainer = document.querySelector('.fantasy-goalies-container');
+    if (goalieContainer && gs.goalies) {
+      goalieContainer.innerHTML = `
+        <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Signal games flagged — goalies facing signal-favoured home teams rated higher.</div>
+        <div class="goalie-table">
+          <div class="goalie-row header">
+            <span>Goalie</span><span>SV%</span><span>GAA</span><span>Status</span><span style="text-align:right;">Rec.</span>
+          </div>
+          ${gs.goalies.map(g => {
+            const statusClass = g.status === 'confirmed' ? 'gs-confirmed' :
+                                g.status === 'likely' ? 'gs-likely' :
+                                g.status === 'b2b_away' ? 'gs-avoid' : 'gs-unknown';
+            const borderColor = g.recommendation === 'start' ? 'var(--gold)' :
+                                g.recommendation === 'stream' ? 'var(--accent)' : 'var(--red)';
+            const recClass = g.recommendation === 'start' ? 'rec-start' :
+                             g.recommendation === 'stream' ? 'rec-stream' :
+                             g.recommendation === 'avoid' ? 'rec-avoid' : 'rec-wait';
+            return `
+            <div class="goalie-row" style="border-left:3px solid ${borderColor};">
+              <div>
+                <div class="gr-name">${g.name}</div>
+                <div class="gr-team">${g.team} vs ${g.opponent} · ${g.dk_salary} DK${g.signal_note ? ' · <span style="color:var(--orange);">' + g.signal_note + '</span>' : ''}</div>
+              </div>
+              <div class="gr-stat">${g.sv_pct}</div>
+              <div class="gr-stat">${g.gaa}</div>
+              <div><span class="gr-start ${statusClass}">${g.status}</span></div>
+              <div class="gr-rec ${recClass}" style="text-align:right;">${g.rec_label}</div>
+            </div>`;
+          }).join('')}
+        </div>`;
+    }
+
+    const pp = data.player_props || {};
+    const propsContainer = document.querySelector('.fantasy-props-container');
+    if (propsContainer && pp.props) {
+      const categories = {};
+      for (const prop of pp.props) {
+        if (!categories[prop.category]) categories[prop.category] = [];
+        categories[prop.category].push(prop);
+      }
+      propsContainer.innerHTML = `
+        <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Signal context applied where relevant. Verify odds before placing.</div>
+        ${Object.entries(categories).map(([cat, props]) => `
+          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin:20px 0 8px;">${cat.charAt(0).toUpperCase() + cat.slice(1)}</div>
+          <div class="props-stack">
+            ${props.map(p => {
+              const borderColor = p.unit_size === 'full' ? 'var(--gold)' : p.unit_size === 'half' ? 'var(--accent)' : 'var(--red)';
+              const pickStyle = p.pick === 'over'
+                ? 'background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);'
+                : p.pick === 'under'
+                ? 'background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);'
+                : 'background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.2);';
+              const pickLabel = p.pick === 'over' ? '✓ OVER' : p.pick === 'under' ? '✕ UNDER' : '✓ Back It';
+              const hasEdge   = typeof p.edge === 'number';
+              const modelPct  = hasEdge ? Math.round(p.model_prob * 100) : 0;
+              const marketPct = hasEdge ? Math.round(p.market_prob * 100) : 0;
+              const edgePct   = hasEdge ? Math.round(p.edge * 100) : 0;
+              const maxPct    = Math.max(modelPct, marketPct, 1);
+              const edgeBlock = !hasEdge ? '' : `
+                <div style="display:flex;align-items:center;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(22,35,52,0.7);">
+                  <div style="flex:1;">
+                    <div style="display:flex;justify-content:space-between;font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px;">
+                      <span>Model</span><span>${modelPct}%</span>
+                    </div>
+                    <div style="background:rgba(255,255,255,0.04);border-radius:4px;height:8px;position:relative;overflow:hidden;margin-bottom:8px;">
+                      <div style="position:absolute;top:0;bottom:0;left:0;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--cyan));width:${(modelPct/maxPct)*100}%;"></div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px;">
+                      <span>Market</span><span>${marketPct}%</span>
+                    </div>
+                    <div style="background:rgba(255,255,255,0.04);border-radius:4px;height:8px;position:relative;overflow:hidden;">
+                      <div style="position:absolute;top:0;bottom:0;left:0;border-radius:4px;background:linear-gradient(90deg,var(--muted),#7aaa92);width:${(marketPct/maxPct)*100}%;"></div>
+                    </div>
+                  </div>
+                  <div style="flex-shrink:0;text-align:center;background:rgba(61,220,151,0.08);border:1px solid rgba(61,220,151,0.25);border-radius:8px;padding:8px 12px;">
+                    <div style="font-weight:900;font-size:1.05rem;color:var(--green);line-height:1;">+${edgePct}%</div>
+                    <div style="font-size:0.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:3px;">Edge</div>
+                  </div>
+                </div>`;
+              return `
+              <div class="prop-row" style="border-left:3px solid ${borderColor};flex-direction:column;align-items:stretch;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+                  <div>
+                    <div class="prop-player">${p.player} — ${p.prop_type}</div>
+                    <div class="prop-desc">${p.game} · <strong>${p.odds}</strong> · ${p.reason}</div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+                    <div class="prop-line"><div class="prop-line-val">${p.odds}</div><div class="prop-line-label">${p.line}</div></div>
+                    <div class="prop-pick" style="${pickStyle}">${pickLabel}</div>
+                  </div>
+                </div>
+                ${edgeBlock}
+              </div>`;
+            }).join('')}
+          </div>`).join('')}`;
+    }
+
+    document.querySelectorAll('.fantasy-date-label').forEach(el => { el.textContent = data.date_label; });
+
+    const playsEl   = document.getElementById('fp-stat-plays');
+    const goaliesEl = document.getElementById('fp-stat-goalies');
+    const propsEl   = document.getElementById('fp-stat-props');
+    const gamesEl   = document.getElementById('fp-stat-games');
+    const tierEl    = document.getElementById('fp-stat-tier');
+    if (playsEl)   playsEl.textContent   = vp.plays?.length || 0;
+    if (goaliesEl) goaliesEl.textContent = gs.goalies?.length || 0;
+    if (propsEl)   propsEl.textContent   = pp.props?.length || 0;
+    if (gamesEl)   gamesEl.textContent   = data.value_plays?.summary?.slate_size || 0;
+    if (tierEl)    tierEl.textContent    = (data.value_plays?.summary?.top_tier || '—') + '-tier';
+    const updatedEl = document.getElementById('fp-updated-date');
+    if (updatedEl) updatedEl.textContent = `Updated ${data.date_label}`;
+
+    console.log(`Fantasy loaded: ${vp.plays?.length || 0} plays, ${gs.goalies?.length || 0} goalies, ${pp.props?.length || 0} props`);
+  } catch (e) {
+    console.log('Fantasy fetch error:', e);
+  }
+}
+buildFantasy();
+</script>
+
+<script>
+// ── ROI / SIGNAL TRACKER ───────────────────────────────────────────────────
+async function buildROI() {
+  try {
+    const r = await fetch('data/roi.json?nocache=' + Date.now());
+    const d = await r.json();
+
+    const badges = document.querySelectorAll('#tracker-grid .tracker-card .sd-badge');
+    if (badges[0]) badges[0].textContent = d.signal1.status;
+    if (badges[1]) badges[1].textContent = d.signal1_partial.roi > 15 ? 'Outperforming' : d.signal1_partial.status;
+    if (badges[2]) badges[2].textContent = d.signal2.games === 0 ? 'No Data' : 'High Variance';
+
+    document.getElementById('s1-games').textContent      = d.signal1.games + ' games';
+    document.getElementById('s1-roi').textContent        = (d.signal1.roi >= 0 ? '+' : '') + d.signal1.roi + '%';
+    document.getElementById('s1-wr').textContent         = d.signal1.win_rate + '%';
+    document.getElementById('s1-best-month').textContent = d.signal1.best_month;
+    document.getElementById('s1-streak').textContent     = d.signal1.streak;
+
+    document.getElementById('s1p-games').textContent  = d.signal1_partial.games + ' games';
+    document.getElementById('s1p-roi').textContent    = (d.signal1_partial.roi >= 0 ? '+' : '') + d.signal1_partial.roi + '%';
+    document.getElementById('s1p-wr').textContent     = d.signal1_partial.win_rate + '%';
+    document.getElementById('s1p-streak').textContent = d.signal1_partial.streak;
+
+    document.getElementById('s2-games').textContent  = d.signal2.games + ' games';
+    document.getElementById('s2-roi').textContent    = (d.signal2.roi >= 0 ? '+' : '') + d.signal2.roi + '%';
+    document.getElementById('s2-wr').textContent     = d.signal2.win_rate + '%';
+    document.getElementById('s2-streak').textContent = d.signal2.streak;
+
+    document.getElementById('sum-sig1').textContent      = d.summary.total_sig1_games;
+    document.getElementById('sum-roi').textContent       = (d.signal1.roi >= 0 ? '+' : '') + d.signal1.roi + '%';
+    document.getElementById('sum-cancelled').textContent = d.summary.cancelled_both_b2b;
+    document.getElementById('sum-partial').textContent   = d.summary.total_partial_games;
+    document.getElementById('sum-sig2').textContent      = d.summary.total_sig2_games;
+    document.getElementById('sum-updated').textContent   = d.generated;
+
+    const table = document.getElementById('last5-table');
+    if (table && d.summary.last5_sig1 && d.summary.last5_sig1.length > 0) {
+      table.innerHTML = [...d.summary.last5_sig1].reverse().map(g => `
+        <div class="recap-row">
+          <div>
+            <div class="rr-game"><strong>${g.away} @ ${g.home}</strong></div>
+            <div class="rr-note">${g.date} · Fade ${g.away}</div>
+          </div>
+          <div class="rr-score">${g.score}</div>
+          <div class="rr-result ${g.fade_won ? 'r-hit' : 'r-miss'}">${g.fade_won ? '✅ Hit' : '❌ Miss'}</div>
+        </div>`).join('');
+    }
+
+    console.log('ROI data loaded');
+  } catch (e) {
+    console.log('ROI fetch error:', e);
+  }
+}
+buildROI();
+</script>
+
 </body>
 </html>
