@@ -1,0 +1,36 @@
+{
+  "note": "Measured accuracy of the shots-on-goal model against real priced props. Every figure here was produced by grading the model's output against actual market prices and actual outcomes. Displayed beside each projection so users can see how much weight it deserves.",
+  "generated": "2026-08-09",
+  "season_tested": "2024-25",
+  "sample": {
+    "props_graded": 12576,
+    "events": 439,
+    "books": ["betrivers", "fanduel", "draftkings", "betonlineag", "betmgm"]
+  },
+  "headline": {
+    "overs_roi": -11.7,
+    "unders_roi": -0.7,
+    "verdict": "No exploitable edge found. Overs are priced worse than unders, consistent with public money on the over, but neither side is profitable after vig."
+  },
+  "by_line": [
+    { "line": 1.5, "side": "over",  "n": 2725, "hit": 53.3, "avg_price": -147.4, "breakeven": 59.6, "roi": -10.6 },
+    { "line": 1.5, "side": "under", "n": 2725, "hit": 46.7, "avg_price":  112.3, "breakeven": 47.1, "roi":  -0.9 },
+    { "line": 2.5, "side": "over",  "n": 2864, "hit": 44.0, "avg_price":  100.4, "breakeven": 49.9, "roi": -11.7 },
+    { "line": 2.5, "side": "under", "n": 2864, "hit": 56.0, "avg_price": -131.4, "breakeven": 56.8, "roi":  -0.9 },
+    { "line": 3.5, "side": "over",  "n":  654, "hit": 42.4, "avg_price":  102.8, "breakeven": 49.3, "roi": -15.0 },
+    { "line": 3.5, "side": "under", "n":  654, "hit": 57.6, "avg_price": -134.5, "breakeven": 57.4, "roi":  -0.1 }
+  ],
+  "model_confidence_bands": [
+    { "side": "over",  "band": "55-60", "n": 599, "said": 57.5, "actual": 54.9, "roi":  -7.7 },
+    { "side": "over",  "band": "60-65", "n": 466, "said": 62.5, "actual": 51.9, "roi": -14.3 },
+    { "side": "over",  "band": "65-70", "n": 169, "said": 67.5, "actual": 63.9, "roi":   1.4 },
+    { "side": "under", "band": "55-60", "n": 989, "said": 57.5, "actual": 55.7, "roi":   3.2 },
+    { "side": "under", "band": "60-65", "n": 785, "said": 62.5, "actual": 54.8, "roi":  -2.8 },
+    { "side": "under", "band": "65-70", "n": 565, "said": 67.5, "actual": 57.2, "roi":  -1.5 }
+  ],
+  "model_skill": {
+    "brier_skill_vs_baseline": 10.75,
+    "note": "The model does rank players correctly — betting against it lost 26.3%. It has genuine predictive information; the market simply already contains it."
+  },
+  "disclosure_line": "Our shots model has real predictive skill but did not beat market prices in testing. Treat these projections as context, not as a recommendation."
+}
