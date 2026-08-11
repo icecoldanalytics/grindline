@@ -528,11 +528,14 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       </div>
 
       <div class="tracker-card">
-        <div class="tracker-card-header"><h3>Goalie Edge — In Development</h3><span class="sd-badge" style="color:var(--gold);border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);">Unpublished</span></div>
+        <div class="tracker-card-header"><h3>Goalie Split — Research</h3><span class="sd-badge" style="color:var(--gold);border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);">Not sold</span></div>
         <div class="tracker-card-body">
           <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="t-goalie-games">—</span></div>
-          <div class="stat-row"><span class="stat-label">Status</span><span class="stat-val warn">No data yet</span></div>
-          <div style="font-size:0.78rem;color:var(--muted);line-height:1.7;margin-top:14px;">Whether a fatigued team starts its #1 goalie may carry information, but we don't yet have a reliable pre-game starter feed. Until we do, this signal has <strong style="color:var(--text);">no published results and does not affect any recommendation</strong> on this site.</div>
+          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good" id="t-goalie-wr">—</span></div>
+          <div class="stat-row"><span class="stat-label">Breakeven Needed</span><span class="stat-val" id="t-goalie-be">—</span></div>
+          <div class="stat-row"><span class="stat-label">ROI (real prices)</span><span class="stat-val good" id="t-goalie-roi">—</span></div>
+          <div class="stat-row"><span class="stat-label">95% Floor</span><span class="stat-val" id="t-goalie-floor">—</span></div>
+          <div style="font-size:0.78rem;color:var(--muted);line-height:1.7;margin-top:14px;" id="t-goalie-note">Loading...</div>
         </div>
       </div>
 
@@ -549,6 +552,13 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
         </div>
       </div>
     </div>
+
+    <!-- GOALIE RESEARCH -->
+    <div class="section-divider" style="margin-top:36px;">
+      <h2>Goalie Split — Why We Don't Sell It</h2><div class="sd-line"></div><div class="sd-badge" style="color:var(--gold);border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);">Research</div>
+    </div>
+    <div class="recap-table" id="goalie-splits"></div>
+    <div style="font-size:0.8rem;color:var(--muted);line-height:1.75;margin-top:14px;max-width:760px;" id="goalie-why"></div>
 
     <!-- FOUR-SEASON VALIDATION -->
     <div class="section-divider" style="margin-top:36px;">
@@ -1449,6 +1459,44 @@ function renderMonthly(monthly) {
   }).join('');
 }
 
+async function buildGoalie() {
+  try {
+    const r = await fetch('data/goalie_research.json?nocache=' + Date.now());
+    const g = await r.json();
+    const h = g.headline || {};
+    const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+    set('t-goalie-games', h.games + ' games');
+    set('t-goalie-wr', h.win_rate + '%');
+    set('t-goalie-be', h.avg_breakeven + '%');
+    set('t-goalie-roi', fmtPct(h.roi));
+    set('t-goalie-floor', h.confidence_floor + '%');
+    set('t-goalie-note', 'Away team on a back-to-back starting its #1 goalie. Real prices, four seasons — but we cannot know the starter when our 7 AM alert sends, so this is published as research and never as a pick.');
+
+    const tbl = document.getElementById('goalie-splits');
+    if (tbl && g.splits) {
+      tbl.innerHTML = `
+        <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(255,255,255,0.03);">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Situation</span>
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Games</span>
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Win%</span>
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">B/E</span>
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">ROI</span>
+        </div>` + g.splits.map(s => `
+        <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;">
+          <span class="rr-game">${s.bucket}</span>
+          <span style="text-align:right;">${s.games}</span>
+          <span style="text-align:right;">${s.win_rate}%</span>
+          <span style="text-align:right;">${s.breakeven}%</span>
+          <span style="text-align:right;font-weight:700;color:${s.roi >= 0 ? 'var(--green)' : 'var(--red)'};">${fmtPct(s.roi)}</span>
+        </div>`).join('');
+    }
+    const why = document.getElementById('goalie-why');
+    if (why) why.innerHTML = `<strong style="color:var(--text);">A real finding we are not selling.</strong> ${g.why_not_published} ${g.what_would_change_it}`;
+  } catch (e) {
+    console.log('Goalie research fetch error:', e);
+  }
+}
+
 async function buildROI() {
   try {
     const r = await fetch('data/roi.json?nocache=' + Date.now());
@@ -1482,6 +1530,7 @@ async function buildROI() {
     set('t-priced', d.pricing && d.pricing.assumed_odds_used === false ? 'Real moneyline' : 'Assumed');
     set('review-badge', d.season || '2025–26');
 
+    buildGoalie();
     renderCumulative(r2.cumulative);
     renderMonthly(r2.monthly);
 
