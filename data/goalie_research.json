@@ -1,0 +1,27 @@
+{
+  "note": "Research finding, not a published pick. Every figure graded against the real home moneyline available at 7 AM MST across four NHL seasons.",
+  "generated": "2026-08-09",
+  "seasons": "2022-23 to 2025-26",
+  "status": "Research — not tradeable",
+  "headline": {
+    "games": 229,
+    "record": "146-83",
+    "win_rate": 63.8,
+    "avg_breakeven": 58.5,
+    "roi": 9.8,
+    "confidence_floor": 57.3
+  },
+  "splits": [
+    { "bucket": "2-day rest · away started #1",     "games": 134, "win_rate": 66.4, "breakeven": 57.5, "roi": 16.3, "floor": 58.1 },
+    { "bucket": "2-day rest · away started backup", "games": 360, "win_rate": 60.8, "breakeven": 58.7, "roi":  4.0, "floor": 55.7 },
+    { "bucket": "3+ day rest · away started #1",    "games":  95, "win_rate": 60.0, "breakeven": 60.9, "roi":  4.3, "floor": 49.9 },
+    { "bucket": "3+ day rest · away started backup","games": 194, "win_rate": 55.2, "breakeven": 57.9, "roi": -6.2, "floor": 48.1 }
+  ],
+  "timing_test": [
+    { "send_time": "7:00 AM MST",  "rest2_roi": 7.3, "number_one_roi":  9.8 },
+    { "send_time": "11:00 AM MST", "rest2_roi": 7.1, "number_one_roi":  9.7 },
+    { "send_time": "3:00 PM MST",  "rest2_roi": 5.9, "number_one_roi": 11.0 }
+  ],
+  "why_not_published": "The split only exists once you know which goalie started, and that is not knowable at 7 AM when our signal sends. We tested later snapshots at 11 AM and 3 PM: the market barely moves, which either means goalie news is not being priced or that confirmations mostly land after 11 AM. We cannot tell those apart without announcement timestamps we do not have. Until we can, this stays research.",
+  "what_would_change_it": "Capturing prices at confirmation time during a live season, alongside the announcement timestamp, then grading against those prices. That is a different pipeline and a later alert, and we will build it before claiming an edge."
+}
