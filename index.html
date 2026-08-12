@@ -1013,8 +1013,10 @@ async function buildDashboard() {
       if (n === 0) {
         tonightResult.style.fontSize = '1rem';
         tonightResult.innerHTML = 'No Games Scheduled';
-      } else if (data.n_sig1 > 0 || data.n_partial > 0) {
-        tonightResult.innerHTML = `${data.n_sig1} Hit${data.n_sig1 !== 1 ? 's' : ''}<br><span style="font-size:1.1rem;">+ ${data.n_partial} Partial${data.n_partial !== 1 ? 's' : ''}</span>`;
+      } else if (data.n_partial > 0) {
+        tonightResult.innerHTML = `${data.n_partial} Rest Edge${data.n_partial !== 1 ? 's' : ''}`;
+      } else if (data.n_sig1 > 0) {
+        tonightResult.innerHTML = `<span style="font-size:1rem;color:var(--muted);">No active signals<br>${data.n_sig1} retired-condition game${data.n_sig1 !== 1 ? 's' : ''} (3+ rest)</span>`;
       } else {
         tonightResult.innerHTML = 'No Signals';
       }
@@ -1196,7 +1198,7 @@ async function updateLiveScores() {
               noteEl.style.color = fadeWon ? 'var(--green)' : 'var(--red)';
             }
             if (signalBadgeEl.classList.contains('gsb-s1')) {
-              signalBadgeEl.textContent = fadeWon ? '⚡ Signal 1 — HIT ✅' : '⚡ Signal 1 — MISS ❌';
+              signalBadgeEl.textContent = fadeWon ? '⚡ Rest Edge — HIT ✅' : '⚡ Rest Edge — MISS ❌';
             }
           }
         }

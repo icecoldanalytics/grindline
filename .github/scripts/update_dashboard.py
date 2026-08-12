@@ -270,11 +270,11 @@ def main():
         result = "none"
         note = "No signal · Neither team on B2B"
         if signal == "sig1":
-            result = "hit" if fade_won else "miss"
-            note = f"{away} on B2B away · {home} rested {home_rest}+ days → Signal 1 · fade {away}"
+            result = "none"
+            note = f"{away} on B2B away · {home} rested {home_rest}+ days — no pick (3+ days rest, retired)"
         elif signal == "partial":
             result = "hit" if fade_won else "miss"
-            note = f"{away} on B2B away · {home} rested 2 days → Signal 1 Partial"
+            note = f"{away} on B2B away · {home} rested 2 days — Rest Edge, back {home}"
         elif signal == "cancel":
             result = "cancel"
             note = "Both teams on B2B — signal cancelled"
