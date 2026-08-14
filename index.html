@@ -147,7 +147,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .gsig-note{font-size:0.67rem;color:var(--muted);line-height:1.4;}
 
 /* RECAP */
-.recap-table{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.recap-table{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;overflow-x:auto;}
 .recap-row{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:16px;padding:13px 20px;border-bottom:1px solid rgba(22,35,52,0.8);font-size:0.82rem;transition:background 0.15s;}
 .recap-row:last-child{border-bottom:none;}
 .recap-row:hover{background:rgba(255,255,255,0.02);}
@@ -360,6 +360,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   .hero-content{padding:50px 20px;}
   .hero-stats{gap:24px;}
   .main-wrap{padding:0 16px 60px;}
+  .recap-row.wide{min-width:600px;}
   .game-card{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;}
   .gc-center{grid-column:1/-1;border:none;border-bottom:1px solid var(--border);}
   .gc-signal{grid-column:1/-1;border-left:none;border-top:1px solid var(--border);flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px;}
@@ -567,18 +568,18 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       <h2>Four-Season Test</h2><div class="sd-line"></div><div class="sd-badge">2022–23 → 2025–26</div>
     </div>
     <div class="recap-table">
-      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(255,255,255,0.03);">
+      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(255,255,255,0.03);">
         <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Season</span>
         <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Games</span>
         <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Win%</span>
         <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Avg ML</span>
         <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">ROI</span>
       </div>
-      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2022–23</span><span style="text-align:right;">123</span><span style="text-align:right;">59.3%</span><span style="text-align:right;">&minus;108</span><span style="text-align:right;color:var(--muted);font-weight:700;">&minus;0.2%</span></div>
-      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2023–24</span><span style="text-align:right;">116</span><span style="text-align:right;">60.3%</span><span style="text-align:right;">&minus;102</span><span style="text-align:right;color:var(--green);font-weight:700;">+4.1%</span></div>
-      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2024–25</span><span style="text-align:right;">133</span><span style="text-align:right;">63.2%</span><span style="text-align:right;">&minus;93</span><span style="text-align:right;color:var(--green);font-weight:700;">+11.2%</span></div>
-      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2025–26</span><span style="text-align:right;">136</span><span style="text-align:right;">64.7%</span><span style="text-align:right;">&minus;121</span><span style="text-align:right;color:var(--green);font-weight:700;">+10.7%</span></div>
-      <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(0,196,106,0.06);"><span class="rr-game"><strong>All four</strong></span><span style="text-align:right;"><strong>508</strong></span><span style="text-align:right;"><strong>62.0%</strong></span><span style="text-align:right;"><strong>&minus;106</strong></span><span style="text-align:right;color:var(--green);font-weight:800;">+6.7%</span></div>
+      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2022–23</span><span style="text-align:right;">123</span><span style="text-align:right;">59.3%</span><span style="text-align:right;">&minus;108</span><span style="text-align:right;color:var(--muted);font-weight:700;">&minus;0.2%</span></div>
+      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2023–24</span><span style="text-align:right;">116</span><span style="text-align:right;">60.3%</span><span style="text-align:right;">&minus;102</span><span style="text-align:right;color:var(--green);font-weight:700;">+4.1%</span></div>
+      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2024–25</span><span style="text-align:right;">133</span><span style="text-align:right;">63.2%</span><span style="text-align:right;">&minus;93</span><span style="text-align:right;color:var(--green);font-weight:700;">+11.2%</span></div>
+      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2025–26</span><span style="text-align:right;">136</span><span style="text-align:right;">64.7%</span><span style="text-align:right;">&minus;121</span><span style="text-align:right;color:var(--green);font-weight:700;">+10.7%</span></div>
+      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(0,196,106,0.06);"><span class="rr-game"><strong>All four</strong></span><span style="text-align:right;"><strong>508</strong></span><span style="text-align:right;"><strong>62.0%</strong></span><span style="text-align:right;"><strong>&minus;106</strong></span><span style="text-align:right;color:var(--green);font-weight:800;">+6.7%</span></div>
     </div>
     <div style="font-size:0.8rem;color:var(--muted);line-height:1.75;margin-top:14px;max-width:760px;">
       <strong style="color:var(--text);">Read the 2022&ndash;23 row before you subscribe.</strong> The edge was present &mdash; 59.3%, well above that season's 52.8% baseline &mdash; and it still returned nothing, because the market priced it tighter that year. Roughly 120 bets a season is a small sample. A flat or losing year is entirely possible inside a genuine long-run edge, and pretending otherwise would be the first dishonest thing on this page.
@@ -1479,14 +1480,14 @@ async function buildGoalie() {
     const tbl = document.getElementById('goalie-splits');
     if (tbl && g.splits) {
       tbl.innerHTML = `
-        <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(255,255,255,0.03);">
+        <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(255,255,255,0.03);">
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Situation</span>
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Games</span>
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Win%</span>
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">B/E</span>
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">ROI</span>
         </div>` + g.splits.map(s => `
-        <div class="recap-row" style="grid-template-columns:1fr 70px 70px 80px 80px;">
+        <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;">
           <span class="rr-game">${s.bucket}</span>
           <span style="text-align:right;">${s.games}</span>
           <span style="text-align:right;">${s.win_rate}%</span>
