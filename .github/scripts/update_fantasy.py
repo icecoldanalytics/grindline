@@ -245,6 +245,7 @@ def generate_goalie_starts(game_context, date_label, rosters, games):
         'List one goalie per team. Hard avoid B2B away goalies.'
     )
     return call_claude(prompt)
+    
 def fetch_events():
     """Today's NHL event IDs from The Odds API. This endpoint is free."""
     url = "https://api.the-odds-api.com/v4/sports/icehockey_nhl/events"
@@ -383,12 +384,19 @@ def main():
     goalie_starts = generate_goalie_starts(game_context, date_label, rosters, games_list)
     time.sleep(60)
 
-    print("Generating player props (real model vs real market odds)...")
-    player_props = generate_real_player_props(games_list, scratches)
+        print("Fetching real prop lines...")
+    events = fetch_events()
+    raw_props = fetch_player_props(events)
+    prop_context = build_prop_context(raw_props)
 
-    if not value_plays or not goalie_starts or player_props is None:
-        print("One or more sections failed - aborting")
+    print("Generating player props...")
+    player_props = generate_player_props(prop_context, date_label)
+
+    if not value_plays or not goalie_starts:
+        print("Core sections failed - aborting")
         return
+    if not player_props:
+        player_props = {"props": [], "note": "Prop generation unavailable."}
 
     output = {
         "date": today,
