@@ -1,0 +1,36 @@
+name: Update Fantasy Picks
+on:
+  schedule:
+    - cron: '0 17 * * *'   # 11 AM MDT / 10 AM MST — after goalie confirmations
+  workflow_dispatch:
+
+jobs:
+  update-fantasy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests pytz
+
+      - name: Generate fantasy picks
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python .github/scripts/update_fantasy.py
+
+      - name: Commit fantasy data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/fantasy.json
+          git diff --staged --quiet || git commit -m "Update fantasy picks $(date -u '+%Y-%m-%d')"
+          git push
