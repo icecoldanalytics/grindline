@@ -13,7 +13,14 @@ import time
 from generate_real_props import generate_real_player_props, append_to_props_log
 
 MST = pytz.timezone("America/Edmonton")
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
+
+PROP_MARKETS = [
+    "player_goal_scorer_anytime",
+    "player_shots_on_goal",
+    "player_points",
+    "player_assists",
+]
 
 def fetch_dashboard():
     try:
