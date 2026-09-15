@@ -139,13 +139,18 @@ def build_game_context(dashboard, rosters, scratches=[]):
 
 def generate_value_plays(game_context, date_label, n_games):
     prompt = (
-        "You are an expert NHL DFS and fantasy hockey analyst. Today is " + date_label + ".\n\n"
-        "Tonight NHL slate with CONFIRMED CURRENT ROSTERS:\n"
+        "You are an expert NHL fantasy hockey analyst. Today is " + date_label + ".\n\n"
+        "Tonight's NHL slate with CONFIRMED CURRENT ROSTERS:\n"
         + game_context + "\n\n"
         "CRITICAL: Only use players listed above. Do not use players from your training data.\n"
         "Your training data is OUTDATED for current rosters, trades, and injuries.\n"
         "Only use players explicitly listed in the roster above.\n\n"
-        "Generate fantasy value plays for both DraftKings and FanDuel. Apply signal logic where flagged.\n\n"
+        "Do NOT output salaries, prices, projected point totals, or value multiples.\n"
+        "You have no access to DraftKings or FanDuel salary data. Never invent a number.\n"
+        "For usage_note, copy the TOI and shot figures verbatim from that player's roster\n"
+        "line above. Do not estimate, round, or adjust them.\n\n"
+        "Generate plays useful to both daily and season-long players. Ground every pick in\n"
+        "rest, schedule spot, matchup and usage.\n\n"
         "Respond ONLY with valid JSON, no markdown. Use this exact structure:\n"
         '{\n'
         '  "summary": {\n'
@@ -161,26 +166,23 @@ def generate_value_plays(game_context, date_label, n_games):
         '      "tier": "S",\n'
         '      "matchup": "vs OPP or @ OPP",\n'
         '      "game_time": "7:00 PM ET",\n'
-        '      "dk_salary": "$8,400",\n'
-        '      "fd_salary": "$7,200",\n'
-        '      "proj_pts_dk": 21.4,\n'
-        '      "proj_pts_fd": 38.2,\n'
-        '      "dk_value": "2.55x",\n'
-        '      "fd_value": "5.31x",\n'
-        '      "reason": "2-3 sentence explanation with signal context where relevant",\n'
-        '      "tags": ["DFS + Season"],\n'
-        '      "format": "both"\n'
+        '      "usage_note": "18.4min TOI, 3.1 SOG",\n'
+        '      "reason": "2-3 sentences grounded in rest, matchup and usage",\n'
+        '      "tags": ["Season-Long"],\n'
+        '      "audience": "both"\n'
         '    }\n'
         '  ],\n'
         '  "avoids": [\n'
         '    {\n'
         '      "team": "ABBREV",\n'
-        '      "reason": "Signal 1 fade - B2B away",\n'
-        '      "tag": "Avoid DFS"\n'
+        '      "reason": "Second half of a road back-to-back",\n'
+        '      "tag": "Avoid"\n'
         '    }\n'
         '  ]\n'
         '}\n\n'
-        'Generate 6-10 plays across S/A/B tiers. Tags: "DFS + Season", "DFS Only", "Season-Long", "Signal 1 Game", "B2B Watch", "Avoid DFS".'
+        'Generate 6-10 plays across S/A/B tiers.\n'
+        'Tags: "DFS Spot", "Season-Long", "Streamer", "B2B Watch", "Rest Advantage".\n'
+        'Audience: "dfs", "season", "both".'
     )
     return call_claude(prompt)
 
