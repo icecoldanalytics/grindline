@@ -191,15 +191,17 @@ def generate_goalie_starts(game_context, date_label, rosters, games):
     for g in games:
         away = g["away"]
         home = g["home"]
-        signal_note = ""
+        rest_note = ""
         if g["signal"] == "sig1":
-            signal_note = "SIGNAL 1 - home goalie boosted, away goalie downgraded"
+            rest_note = f"{away} on road B2B; {home} rested {g['home_rest']}+ days"
+        elif g["signal"] == "partial":
+            rest_note = f"{away} on road B2B; {home} rested 2 days"
         elif g["signal"] == "cancel":
-            signal_note = "BOTH B2B - signals cancel"
+            rest_note = "Both teams on B2B"
 
         away_goalies = rosters.get(away, {}).get("goalies", ["Unknown"])
         home_goalies = rosters.get(home, {}).get("goalies", ["Unknown"])
-        goalie_lines.append(f"- {away} @ {home} - {g['time_et']}{' | ' + signal_note if signal_note else ''}")
+        goalie_lines.append(f"- {away} @ {home} - {g['time_et']}{' | ' + rest_note if rest_note else ''}")
         goalie_lines.append(f"  {away} goalies: {', '.join(away_goalies)}")
         goalie_lines.append(f"  {home} goalies: {', '.join(home_goalies)}")
 
@@ -209,7 +211,10 @@ def generate_goalie_starts(game_context, date_label, rosters, games):
         "You are an expert NHL fantasy hockey analyst. Today is " + date_label + ".\n\n"
         "Games tonight with CONFIRMED CURRENT GOALIES:\n"
         + goalie_context + "\n\n"
-        "CRITICAL: Only use goalies listed above. Your training data is outdated.\n\n"
+        "CRITICAL: Only use goalies listed above. Your training data is outdated.\n"
+        "Do NOT output salaries or prices. You have no access to salary data.\n"
+        "Copy sv_pct and gaa verbatim from the goalie line above. Never invent a number.\n"
+        "If a goalie's stats are not shown above, use null for sv_pct and gaa.\n\n"
         "Respond ONLY with valid JSON, no markdown:\n"
         '{\n'
         '  "goalies": [\n'
@@ -218,12 +223,10 @@ def generate_goalie_starts(game_context, date_label, rosters, games):
         '      "team": "ABBREV",\n'
         '      "opponent": "OPP",\n'
         '      "home_away": "home",\n'
-        '      "dk_salary": "$8,200",\n'
-        '      "fd_salary": "$9,000",\n'
         '      "sv_pct": ".921",\n'
         '      "gaa": "2.38",\n'
         '      "status": "confirmed",\n'
-        '      "signal_note": "",\n'
+        '      "rest_note": "",\n'
         '      "recommendation": "start",\n'
         '      "rec_label": "Start"\n'
         '    }\n'
