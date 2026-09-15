@@ -384,7 +384,7 @@ def main():
     goalie_starts = generate_goalie_starts(game_context, date_label, rosters, games_list)
     time.sleep(60)
 
-        print("Fetching real prop lines...")
+    print("Fetching real prop lines...")
     events = fetch_events()
     raw_props = fetch_player_props(events)
     prop_context = build_prop_context(raw_props)
