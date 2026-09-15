@@ -127,11 +127,11 @@ def build_game_context(dashboard, rosters, scratches=[]):
     for g in games:
         signal_note = ""
         if g["signal"] == "sig1":
-            signal_note = f" [SIGNAL 1 - fade {g['away']}, home {g['home']} rested {g['home_rest']}+ days]"
+            signal_note = f" [{g['away']} on road B2B; {g['home']} rested {g['home_rest']}+ days]"
         elif g["signal"] == "partial":
-            signal_note = f" [SIGNAL 1 PARTIAL - fade {g['away']}, home rested 2 days]"
+            signal_note = f" [{g['away']} on road B2B; {g['home']} rested 2 days]"
         elif g["signal"] == "cancel":
-            signal_note = " [BOTH B2B - signals cancel]"
+            signal_note = " [Both teams on B2B]"
         odds_note = ""
         if g.get("away_ml") and g.get("home_ml"):
             odds_note = f" | ML: {g['away']} {g['away_ml']} / {g['home']} {g['home_ml']}"
