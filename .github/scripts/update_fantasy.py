@@ -245,38 +245,116 @@ def generate_goalie_starts(game_context, date_label, rosters, games):
         'List one goalie per team. Hard avoid B2B away goalies.'
     )
     return call_claude(prompt)
+def fetch_events():
+    """Today's NHL event IDs from The Odds API. This endpoint is free."""
+    url = "https://api.the-odds-api.com/v4/sports/icehockey_nhl/events"
+    try:
+        r = requests.get(url, params={"apiKey": ODDS_API_KEY}, timeout=15)
+        r.raise_for_status()
+        events = r.json()
+        print(f"Events found: {len(events)}")
+        return events
+    except Exception as e:
+        print(f"Events fetch error: {e}")
+        return []
 
-def generate_player_props(game_context, date_label):
+
+def fetch_player_props(events):
+    """One call per market per event so a bad key can't kill the batch."""
+    if not ODDS_API_KEY:
+        print("No Odds API key - skipping props")
+        return []
+    props = []
+    for ev in events:
+        for market in PROP_MARKETS:
+            url = f"https://api.the-odds-api.com/v4/sports/icehockey_nhl/events/{ev['id']}/odds"
+            try:
+                r = requests.get(url, params={
+                    "apiKey": ODDS_API_KEY,
+                    "regions": "us",
+                    "markets": market,
+                    "oddsFormat": "american",
+                }, timeout=15)
+                if r.status_code in (400, 404, 422):
+                    print(f"  {market} unavailable for {ev.get('away_team')} @ {ev.get('home_team')} ({r.status_code})")
+                    continue
+                r.raise_for_status()
+                data = r.json()
+            except Exception as e:
+                print(f"  Prop fetch error [{market}]: {e}")
+                continue
+            for bm in data.get("bookmakers", []):
+                for mk in bm.get("markets", []):
+                    for o in mk.get("outcomes", []):
+                        if not o.get("description") or o.get("price") is None:
+                            continue
+                        props.append({
+                            "player": o["description"],
+                            "market": mk.get("key", market),
+                            "book": bm.get("key", ""),
+                            "side": o.get("name", ""),
+                            "line": o.get("point"),
+                            "price": o["price"],
+                            "game": f"{ev.get('away_team')} @ {ev.get('home_team')}",
+                        })
+            time.sleep(0.5)
+    print(f"Prop outcomes fetched: {len(props)}")
+    return props
+
+
+def build_prop_context(props, per_market=15):
+    """Best available price per player/market/side, capped so the prompt stays sane."""
+    if not props:
+        return ""
+    best = {}
+    for p in props:
+        key = (p["player"], p["market"], p["side"], p["line"])
+        if key not in best or p["price"] > best[key]["price"]:
+            best[key] = p
+    by_market = {}
+    for p in best.values():
+        by_market.setdefault(p["market"], []).append(p)
+    lines = []
+    for market, rows in sorted(by_market.items()):
+        rows.sort(key=lambda x: x["player"])
+        lines.append(f"{market}:")
+        for p in rows[:per_market]:
+            line_str = f" {p['line']}" if p["line"] is not None else ""
+            price = f"+{p['price']}" if p["price"] > 0 else str(p["price"])
+            lines.append(f"  - {p['player']} | {p['side']}{line_str} @ {price} ({p['book']}) | {p['game']}")
+    return "\n".join(lines)
+def generate_player_props(prop_context, date_label):
+    if not prop_context:
+        print("No prop lines available - skipping props section")
+        return {"props": [], "note": "No prop markets posted yet for tonight's slate."}
+
     prompt = (
-        "You are an expert NHL prop betting analyst. Today is " + date_label + ".\n\n"
-        "Tonight NHL slate with CONFIRMED CURRENT ROSTERS:\n"
-        + game_context + "\n\n"
-        "CRITICAL: Only use players listed above. Your training data is OUTDATED for current rosters, trades, and injuries.\n"
-        "Do not use ANY player not explicitly listed in the rosters above.\n\n"
-        "Generate player prop picks using ONLY players listed in the rosters above.\n\n"
+        "You are an expert NHL prop analyst. Today is " + date_label + ".\n\n"
+        "REAL prop lines currently posted, best available price per player:\n"
+        + prop_context + "\n\n"
+        "Select the most attractive props from the list above.\n"
+        "CRITICAL: use ONLY players, lines, prices and books shown above.\n"
+        "Copy the line, odds and book verbatim. Never invent or adjust a number.\n"
+        "If you cannot justify a pick from the data shown, return fewer picks.\n\n"
         "Respond ONLY with valid JSON, no markdown:\n"
         '{\n'
         '  "props": [\n'
         '    {\n'
         '      "player": "First Last",\n'
-        '      "team": "ABBREV",\n'
-        '      "prop_type": "Anytime Goal Scorer",\n'
-        '      "line": "0.5",\n'
+        '      "market": "player_shots_on_goal",\n'
+        '      "line": "2.5",\n'
+        '      "side": "Over",\n'
         '      "odds": "+135",\n'
-        '      "pick": "over",\n'
-        '      "unit_size": "full",\n'
+        '      "book": "draftkings",\n'
         '      "game": "AWAY @ HOME",\n'
-        '      "reason": "2 sentence explanation with signal context",\n'
-        '      "category": "goals"\n'
+        '      "reason": "2 sentences grounded in usage, matchup or rest",\n'
+        '      "confidence": "medium"\n'
         '    }\n'
         '  ]\n'
         '}\n\n'
-        'Generate 8-12 props. Categories: "goals", "points", "shots", "assists"\n'
-        'Pick: "over", "under", "back"\n'
-        'Unit size: "full", "half", "avoid".'
+        'Return 5-10 props. Confidence: "high", "medium", "low".'
     )
     return call_claude(prompt)
-
 def main():
     now = datetime.now(MST)
     date_label = now.strftime("%A, %B %-d, %Y")
