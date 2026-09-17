@@ -10,10 +10,12 @@ import requests
 from datetime import datetime
 import pytz
 import time
+import unicodedata
 from generate_real_props import generate_real_player_props, append_to_props_log
 
 MST = pytz.timezone("America/Edmonton")
 ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
 PROP_MARKETS = [
     "player_goal_scorer_anytime",
@@ -89,6 +91,72 @@ def fetch_rosters(games):
                 rosters[team] = {"skaters": [], "goalies": []}
     return rosters
 
+def normalize_name(name):
+    """Fold a player name to a comparable key.
+
+    Accents are stripped (Barre-Boulet == Barré-Boulet) but hyphens and
+    apostrophes are kept, since they distinguish real names. Curly quotes are
+    folded to straight ones because model output and the NHL API disagree there.
+    """
+    if not name:
+        return ""
+    name = str(name).replace("’", "'").replace("ʼ", "'")
+    decomposed = unicodedata.normalize("NFKD", name)
+    stripped = "".join(c for c in decomposed if not unicodedata.combining(c))
+    return " ".join(stripped.lower().split())
+
+def parse_roster_name(entry):
+    """Pull the name off a roster string built by fetch_rosters().
+
+    Entries look like "Connor McDavid (C, 82GP, 48G 138PTS, 306SOG, 23.0min TOI)"
+    for skaters and "Stuart Skinner (23GP, 23GS, .891 SV%, 2.83 GAA)" for
+    goalies, so the name is everything before the first " (".
+    """
+    return entry.split(" (", 1)[0].strip()
+
+def build_roster_name_set(rosters):
+    """Every skater and goalie currently on a fetched roster, normalized."""
+    names = set()
+    for team in rosters.values():
+        for entry in team.get("skaters", []) + team.get("goalies", []):
+            normalized = normalize_name(parse_roster_name(entry))
+            if normalized:
+                names.add(normalized)
+    return names
+
+def validate_players(section, key, valid_names, label):
+    """Drop entries naming a player who is not in valid_names.
+
+    The model is told to use only the listed players, but it can still fall back
+    on training data. Anything it invents gets removed here rather than shipped.
+    """
+    if not section or not valid_names:
+        return section
+    entries = section.get(key)
+    if not isinstance(entries, list):
+        return section
+
+    kept, dropped = [], []
+    for entry in entries:
+        if not isinstance(entry, dict):
+            dropped.append(str(entry))
+            continue
+        name = entry.get("player") or entry.get("name") or ""
+        if normalize_name(name) in valid_names:
+            kept.append(entry)
+        else:
+            dropped.append(name or str(entry))
+
+    if dropped:
+        print(f"{label}: dropped {len(dropped)} of {len(entries)} - not on any fetched roster:")
+        for name in dropped:
+            print(f"  - {name}")
+    else:
+        print(f"{label}: all {len(entries)} entries verified against rosters")
+
+    section[key] = kept
+    return section
+
 def call_claude(prompt):
     if not ANTHROPIC_API_KEY:
         print("No Anthropic API key")
@@ -136,10 +204,13 @@ def build_game_context(dashboard, rosters, scratches=[]):
         if g.get("away_ml") and g.get("home_ml"):
             odds_note = f" | ML: {g['away']} {g['away_ml']} / {g['home']} {g['home_ml']}"
         lines.append(f"- {g['away']} @ {g['home']} - {g['time_et']}{odds_note}{signal_note}")
+        scratch_keys = {normalize_name(sc) for sc in scratches if normalize_name(sc)}
         for team in [g["away"], g["home"]]:
             if team in rosters and rosters[team]["skaters"]:
-                active_skaters = [s for s in rosters[team]["skaters"] if not any(sc.lower() in s.lower() for sc in scratches)]
-                active_goalies = [s for s in rosters[team]["goalies"] if not any(sc.lower() in s.lower() for sc in scratches)]
+                # Match on the parsed name only - matching the whole roster
+                # string would also test a scratch against the stat block.
+                active_skaters = [s for s in rosters[team]["skaters"] if normalize_name(parse_roster_name(s)) not in scratch_keys]
+                active_goalies = [s for s in rosters[team]["goalies"] if normalize_name(parse_roster_name(s)) not in scratch_keys]
                 lines.append(f"  {team} skaters: {', '.join(active_skaters[:10])}")
                 lines.append(f"  {team} goalies: {', '.join(active_goalies)}")
     return "\n".join(lines), games
@@ -397,6 +468,19 @@ def main():
         return
     if not player_props:
         player_props = {"props": [], "note": "Prop generation unavailable."}
+
+    roster_names = build_roster_name_set(rosters)
+    n_plays_before = len(value_plays.get("plays", []))
+    value_plays = validate_players(value_plays, "plays", roster_names, "Value plays")
+    goalie_starts = validate_players(goalie_starts, "goalies", roster_names, "Goalie starts")
+
+    if n_plays_before and not value_plays.get("plays"):
+        print("WARNING: every value play was dropped as off-roster - check the roster fetch")
+
+    # Prop players come from the books, not from the model, so the prop feed is
+    # authoritative for that section - a roster we truncated at 20 is not.
+    prop_names = {normalize_name(p["player"]) for p in raw_props if p.get("player")}
+    player_props = validate_players(player_props, "props", prop_names, "Player props")
 
     output = {
         "date": today,
