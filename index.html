@@ -1223,6 +1223,13 @@ async function buildFantasy() {
         playsHtml += `<div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:${tierColors[tier]};margin:20px 0 10px;">${tierLabels[tier]}</div>`;
         playsHtml += `<div class="picks-grid">`;
         playsHtml += plays.map(p => {
+          const audienceMap = {
+            dfs: { label: 'DFS Only', cls: 'pt-dfs' },
+            season: { label: 'Season-Long Only', cls: 'pt-season' },
+            both: { label: 'DFS + Season', cls: 'pt-both' },
+          };
+          const aud = audienceMap[p.audience] || null;
+          const audienceHtml = aud ? `<span class="pick-tag ${aud.cls}">${aud.label}</span>` : '';
           const tagsHtml = (p.tags || []).map(t => `<span class="pick-tag pt-both">${t}</span>`).join('');
           return `
           <div class="pick-card tier-${tier.toLowerCase()}">
@@ -1236,13 +1243,10 @@ async function buildFantasy() {
             <div class="pick-body">
               <div class="pick-matchup">${p.matchup} · ${p.game_time}</div>
               <div class="pick-stats">
-                <div class="pick-stat"><span class="pick-stat-label">DK Salary</span><span class="pick-stat-val">${p.dk_salary}</span></div>
-                <div class="pick-stat"><span class="pick-stat-label">FD Salary</span><span class="pick-stat-val">${p.fd_salary}</span></div>
-                <div class="pick-stat"><span class="pick-stat-label">DK Proj</span><span class="pick-stat-val">${p.proj_pts_dk} pts</span></div>
-                <div class="pick-stat"><span class="pick-stat-label">Value</span><span class="pick-stat-val" style="color:var(--gold);">${p.dk_value}</span></div>
+                <div class="pick-stat"><span class="pick-stat-label">Usage</span><span class="pick-stat-val">${p.usage_note || '—'}</span></div>
               </div>
               <div class="pick-reason">${p.reason}</div>
-              <div class="pick-tags">${tagsHtml}</div>
+              <div class="pick-tags">${audienceHtml}${tagsHtml}</div>
             </div>
           </div>`;
         }).join('');
@@ -1284,7 +1288,7 @@ async function buildFantasy() {
             <div class="goalie-row" style="border-left:3px solid ${borderColor};">
               <div>
                 <div class="gr-name">${g.name}</div>
-                <div class="gr-team">${g.team} vs ${g.opponent} · ${g.dk_salary} DK${g.signal_note ? ' · <span style="color:var(--orange);">' + g.signal_note + '</span>' : ''}</div>
+                <div class="gr-team">${g.team} vs ${g.opponent}${g.rest_note ? ' · <span style="color:var(--orange);">' + g.rest_note + '</span>' : ''}</div>
               </div>
               <div class="gr-stat">${g.sv_pct}</div>
               <div class="gr-stat">${g.gaa}</div>
@@ -1297,67 +1301,49 @@ async function buildFantasy() {
 
     const pp = data.player_props || {};
     const propsContainer = document.querySelector('.fantasy-props-container');
-    if (propsContainer && pp.props) {
-      const categories = {};
-      for (const prop of pp.props) {
-        if (!categories[prop.category]) categories[prop.category] = [];
-        categories[prop.category].push(prop);
-      }
-      propsContainer.innerHTML = `
-        <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Signal context applied where relevant. Verify odds before placing.</div>
-        ${Object.entries(categories).map(([cat, props]) => `
-          <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin:20px 0 8px;">${cat.charAt(0).toUpperCase() + cat.slice(1)}</div>
-          <div class="props-stack">
-            ${props.map(p => {
-              const borderColor = p.unit_size === 'full' ? 'var(--gold)' : p.unit_size === 'half' ? 'var(--accent)' : 'var(--red)';
-              const pickStyle = p.pick === 'over'
-                ? 'background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);'
-                : p.pick === 'under'
-                ? 'background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);'
-                : 'background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.2);';
-              const pickLabel = p.pick === 'over' ? '✓ OVER' : p.pick === 'under' ? '✕ UNDER' : '✓ Back It';
-              const hasEdge   = typeof p.edge === 'number';
-              const modelPct  = hasEdge ? Math.round(p.model_prob * 100) : 0;
-              const marketPct = hasEdge ? Math.round(p.market_prob * 100) : 0;
-              const edgePct   = hasEdge ? Math.round(p.edge * 100) : 0;
-              const maxPct    = Math.max(modelPct, marketPct, 1);
-              const edgeBlock = !hasEdge ? '' : `
-                <div style="display:flex;align-items:center;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(22,35,52,0.7);">
-                  <div style="flex:1;">
-                    <div style="display:flex;justify-content:space-between;font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px;">
-                      <span>Model</span><span>${modelPct}%</span>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.04);border-radius:4px;height:8px;position:relative;overflow:hidden;margin-bottom:8px;">
-                      <div style="position:absolute;top:0;bottom:0;left:0;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--cyan));width:${(modelPct/maxPct)*100}%;"></div>
-                    </div>
-                    <div style="display:flex;justify-content:space-between;font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:3px;">
-                      <span>Market</span><span>${marketPct}%</span>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.04);border-radius:4px;height:8px;position:relative;overflow:hidden;">
-                      <div style="position:absolute;top:0;bottom:0;left:0;border-radius:4px;background:linear-gradient(90deg,var(--muted),#7aaa92);width:${(marketPct/maxPct)*100}%;"></div>
-                    </div>
-                  </div>
-                  <div style="flex-shrink:0;text-align:center;background:rgba(61,220,151,0.08);border:1px solid rgba(61,220,151,0.25);border-radius:8px;padding:8px 12px;">
-                    <div style="font-weight:900;font-size:1.05rem;color:var(--green);line-height:1;">+${edgePct}%</div>
-                    <div style="font-size:0.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:3px;">Edge</div>
-                  </div>
-                </div>`;
-              return `
-              <div class="prop-row" style="border-left:3px solid ${borderColor};flex-direction:column;align-items:stretch;">
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+    if (propsContainer) {
+      if (!pp.props || !pp.props.length) {
+        propsContainer.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted);font-size:0.85rem;">${pp.note || 'No props available.'}</div>`;
+      } else {
+        const marketLabels = {
+          player_goal_scorer_anytime: 'Anytime Goal Scorer',
+          player_shots_on_goal: 'Shots On Goal',
+          player_points: 'Points',
+          player_assists: 'Assists',
+        };
+        const bookLabels = { draftkings: 'DraftKings', fanduel: 'FanDuel', betmgm: 'BetMGM', pinnacle: 'Pinnacle' };
+        const categories = {};
+        for (const prop of pp.props) {
+          const cat = marketLabels[prop.market] || prop.market || 'Other';
+          if (!categories[cat]) categories[cat] = [];
+          categories[cat].push(prop);
+        }
+        propsContainer.innerHTML = `
+          <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Best available price per player, pulled from posted lines. Verify odds before placing.</div>
+          ${Object.entries(categories).map(([cat, props]) => `
+            <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin:20px 0 8px;">${cat}</div>
+            <div class="props-stack">
+              ${props.map(p => {
+                const side = (p.side || '').toLowerCase();
+                const borderColor = p.confidence === 'high' ? 'var(--gold)' : p.confidence === 'low' ? 'var(--muted)' : 'var(--accent)';
+                const pickStyle = side === 'over'
+                  ? 'background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);'
+                  : side === 'under'
+                  ? 'background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);'
+                  : 'background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.2);';
+                const bookLabel = bookLabels[p.book] || (p.book ? p.book.charAt(0).toUpperCase() + p.book.slice(1) : '');
+                return `
+                <div class="prop-row" style="border-left:3px solid ${borderColor};">
                   <div>
-                    <div class="prop-player">${p.player} — ${p.prop_type}</div>
-                    <div class="prop-desc">${p.game} · <strong>${p.odds}</strong> · ${p.reason}</div>
+                    <div class="prop-player">${p.player}</div>
+                    <div class="prop-desc">${p.game} · ${bookLabel} · ${p.reason}</div>
                   </div>
-                  <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
-                    <div class="prop-line"><div class="prop-line-val">${p.odds}</div><div class="prop-line-label">${p.line}</div></div>
-                    <div class="prop-pick" style="${pickStyle}">${pickLabel}</div>
-                  </div>
-                </div>
-                ${edgeBlock}
-              </div>`;
-            }).join('')}
-          </div>`).join('')}`;
+                  <div class="prop-line"><div class="prop-line-val">${p.odds}</div><div class="prop-line-label">${p.line ?? ''}</div></div>
+                  <div class="prop-pick" style="${pickStyle}">${(p.side || '').toUpperCase()}</div>
+                </div>`;
+              }).join('')}
+            </div>`).join('')}`;
+      }
     }
 
     document.querySelectorAll('.fantasy-date-label').forEach(el => { el.textContent = data.date_label; });
