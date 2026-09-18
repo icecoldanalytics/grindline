@@ -425,7 +425,8 @@ def generate_player_props(prop_context, date_label):
     return call_claude(prompt)
 def main():
     now = datetime.now(MST)
-    date_label = now.strftime("%A, %B %-d, %Y")
+    # %-d isn't portable (glibc-only) - built from .day directly instead.
+    date_label = f"{now:%A, %B} {now.day}, {now.year}"
     today = now.strftime("%Y-%m-%d")
 
     print(f"Generating fantasy.json for {today}")

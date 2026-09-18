@@ -81,8 +81,13 @@ def get_schedule(date_str):
                     try:
                         utc_time = datetime.strptime(g["startTimeUTC"], "%Y-%m-%dT%H:%M:%SZ")
                         utc_time = UTC.localize(utc_time)
-                        mt_time = utc_time.astimezone(MST).strftime("%-I:%M %p MT")
-                        et_time = utc_time.astimezone(pytz.timezone("America/New_York")).strftime("%-I:%M %p ET")
+                        # %-I isn't portable (glibc-only; Windows' CRT lacks it), so the
+                        # no-leading-zero 12-hour value is built from .hour directly - see
+                        # update_dashboard.py's git history for the equivalence check.
+                        mst_dt = utc_time.astimezone(MST)
+                        et_dt = utc_time.astimezone(pytz.timezone("America/New_York"))
+                        mt_time = f"{mst_dt.hour % 12 or 12}:{mst_dt:%M %p} MT"
+                        et_time = f"{et_dt.hour % 12 or 12}:{et_dt:%M %p} ET"
                     except:
                         mt_time = "TBD"
                         et_time = "TBD"
@@ -206,8 +211,10 @@ def main():
     tomorrow = (now + timedelta(days=1)).strftime("%Y-%m-%d")
     day_after = (now + timedelta(days=2)).strftime("%Y-%m-%d")
 
-    today_label = now.strftime("%B %-d, %Y")
-    yesterday_label = (now - timedelta(days=1)).strftime("%B %-d")
+    # %-d isn't portable (glibc-only) - built from .day directly instead.
+    today_label = f"{now:%B} {now.day}, {now.year}"
+    yesterday_dt = now - timedelta(days=1)
+    yesterday_label = f"{yesterday_dt:%B} {yesterday_dt.day}"
 
     print(f"Generating dashboard.json for {today}")
 
@@ -291,7 +298,8 @@ def main():
     # ── 2-DAY LOOK-AHEAD ──
     lookahead = []
     for date_str in [tomorrow, day_after]:
-        date_label = datetime.strptime(date_str, "%Y-%m-%d").strftime("%A, %B %-d")
+        _d = datetime.strptime(date_str, "%Y-%m-%d")
+        date_label = f"{_d:%A, %B} {_d.day}"
         games = get_schedule(date_str)
         # Teams on B2B for that day = played the day before
         day_before = (datetime.strptime(date_str, "%Y-%m-%d") - timedelta(days=1)).strftime("%Y-%m-%d")
