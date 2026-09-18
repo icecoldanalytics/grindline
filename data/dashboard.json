@@ -1,10 +1,9 @@
 {
-  "date": "2026-09-17",
-  "date_label": "September 17, 2026",
-  "yesterday_label": "September 16",
+  "date": "2026-09-18",
+  "date_label": "September 18, 2026",
+  "yesterday_label": "September 17",
   "n_games": 0,
-  "n_sig1": 0,
-  "n_partial": 0,
+  "n_rest_edge": 0,
   "games_tonight": [],
   "last_night": [],
   "lookahead": []
