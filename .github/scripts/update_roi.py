@@ -185,7 +185,7 @@ def cumulative(entries):
 def load_retired_signal1():
     """Frozen historical documentation for the retired Signal 1 condition
     (away B2B, home rested 3+ days) - backtest_rest_signals.py's pooled
-    result at real closing moneylines across all three backfilled seasons.
+    result at real closing moneylines across all four backfilled seasons.
     Not re-derived from signal_log.json: capture_signals.py stopped logging
     these games once Signal 1 was retired, so there's nothing left to grade
     live."""
@@ -202,7 +202,7 @@ def load_retired_signal1():
         "roi_ci95": pooled["roi_ci95"],
         "label": "Away B2B + Home Rested 3+ Days",
         "status": "Retired — no edge found",
-        "source": "backtest_rest_signals.py, real closing moneylines, 2023-24 through 2025-26",
+        "source": "backtest_rest_signals.py, real closing moneylines, 2022-23 through 2025-26",
     }
 
 

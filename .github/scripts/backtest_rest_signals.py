@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
 """
 Backtests retired Signal 1 (away team on a back-to-back, home team rested
-3+ days) and Rest Edge (away team on a back-to-back, home team rested
-exactly 2 days) across all three backfilled NHL seasons, graded at real
-closing h2h moneylines - answering "would fading the tired away team have
-made money, at the actual price on offer?" for both conditions, not an
-assumed -110.
+3+ days), its two sub-buckets (home rested exactly 3 days vs. 4+ days -
+the "dead zone" split), and Rest Edge (away team on a back-to-back, home
+team rested exactly 2 days) across all four backfilled NHL seasons, graded
+at real closing h2h moneylines - answering "would fading the tired away
+team have made money, at the actual price on offer?" for each condition,
+not an assumed -110.
 
 Schedule (who played when, so back-to-back/rest can be derived) comes from
 data/historical_h2h_events_cache.json - the raw Odds API discovery
 snapshots backfill_h2h_odds.py already paid for - deduped by event id, so
-it covers every discovered game (3,953), not just the subset priced into
-data/historical_h2h_odds.json.
+it covers every discovered game, not just the subset priced into
+data/historical_h2h_odds.json. Rest is only resolved up to "4+ days" (no
+further lookback than 3 days prior); a team's rest at a season's first
+few calendar days can undercount if its prior game fell outside the
+discovery cache's window - a handful of games per season at most.
 
 Results (final scores) are fetched fresh from the free NHL score API and
 matched to events by date + common team name (e.g. "Predators" in
@@ -35,6 +39,7 @@ Writes data/rest_signal_backtest.json.
 """
 import json
 import math
+import os
 import statistics
 import time
 from datetime import datetime, timedelta
@@ -44,6 +49,19 @@ import requests
 
 EASTERN = pytz.timezone("America/New_York")
 
+
+def atomic_write_json(path, data, indent=None):
+    """Write JSON via temp-file + rename so a process kill mid-write can't
+    truncate the file on disk, matching backfill_h2h_odds.py's fix for the
+    same non-atomic-save data-loss risk (see that script's docstring)."""
+    tmp_path = path + ".tmp"
+    with open(tmp_path, "w") as f:
+        json.dump(data, f, indent=indent)
+    if os.path.exists(path):
+        os.replace(path, path + ".bak")
+    os.replace(tmp_path, path)
+
+
 EVENTS_CACHE_PATH = "data/historical_h2h_events_cache.json"
 ODDS_PATH = "data/historical_h2h_odds.json"
 SCORES_CACHE_PATH = "data/rest_signal_scores_cache.json"
@@ -51,6 +69,7 @@ OUTPUT_PATH = "data/rest_signal_backtest.json"
 REQUEST_SLEEP = 0.2
 
 SEASONS = [
+    ("2022-23", datetime(2022, 10, 7).date(), datetime(2023, 4, 14).date()),
     ("2023-24", datetime(2023, 10, 10).date(), datetime(2024, 4, 18).date()),
     ("2024-25", datetime(2024, 10, 4).date(), datetime(2025, 4, 17).date()),
     ("2025-26", datetime(2025, 10, 1).date(), datetime(2026, 4, 18).date()),
@@ -127,11 +146,9 @@ def fetch_scores_cache(dates):
         cache[d] = games
         if (i + 1) % 40 == 0:
             print(f"  ...{i + 1}/{len(to_fetch)}")
-            with open(SCORES_CACHE_PATH, "w") as f:
-                json.dump(cache, f)
+            atomic_write_json(SCORES_CACHE_PATH, cache)
         time.sleep(REQUEST_SLEEP)
-    with open(SCORES_CACHE_PATH, "w") as f:
-        json.dump(cache, f)
+    atomic_write_json(SCORES_CACHE_PATH, cache)
     return cache
 
 
@@ -164,7 +181,7 @@ def parse_odds_profit(american_odds):
 def calc_bucket(entries):
     n = len(entries)
     if n == 0:
-        return {"n": 0, "wins": 0, "win_rate": None, "roi": None, "roi_ci95": [None, None]}
+        return {"n": 0, "wins": 0, "win_rate": None, "roi": None, "roi_ci95": [None, None], "avg_odds": None}
     wins = sum(1 for e in entries if e["home_won"])
     total_profit, total_risk, per_bet = 0.0, 0.0, []
     for e in entries:
@@ -180,9 +197,10 @@ def calc_bucket(entries):
         ci = [round(mean_ret - 1.96 * se, 1), round(mean_ret + 1.96 * se, 1)]
     else:
         ci = [None, None]
+    avg_odds = sum(e["home_ml"] for e in entries) / n
     return {
         "n": n, "wins": wins, "win_rate": round(wins / n * 100, 1),
-        "roi": round(roi, 1), "roi_ci95": ci,
+        "roi": round(roi, 1), "roi_ci95": ci, "avg_odds": round(avg_odds, 1),
     }
 
 
@@ -193,7 +211,7 @@ def fmt(label, r):
     ci = r["roi_ci95"]
     ci_str = f"[{ci[0]:+.1f}%, {ci[1]:+.1f}%]" if ci[0] is not None else "n/a"
     print(f"  {label:<24} n={r['n']:<5} wins={r['wins']:<5} win_rate={r['win_rate']:>5.1f}%  "
-          f"roi={r['roi']:+.1f}%  95% CI={ci_str}")
+          f"avg={r['avg_odds']:+.1f}  roi={r['roi']:+.1f}%  95% CI={ci_str}")
 
 
 def main():
@@ -213,14 +231,18 @@ def main():
 
     scores_cache = fetch_scores_cache(build_all_dates())
 
-    retired_bucket = {"pooled": []}
+    retired_bucket = {"pooled": []}   # 3+ days, union of rest3 + rest4plus - kept for load_retired_signal1()
+    rest3_bucket = {"pooled": []}     # exactly 3 days
+    rest4plus_bucket = {"pooled": []} # 4 or more days
     rest_edge_bucket = {"pooled": []}
     for label, _, _ in SEASONS:
         retired_bucket[label] = []
+        rest3_bucket[label] = []
+        rest4plus_bucket[label] = []
         rest_edge_bucket[label] = []
 
-    unpriced = {"signal1": 0, "rest_edge": 0}
-    unscored = {"signal1": 0, "rest_edge": 0}
+    unpriced = {"signal1": 0, "rest3": 0, "rest4plus": 0, "rest_edge": 0}
+    unscored = {"signal1": 0, "rest3": 0, "rest4plus": 0, "rest_edge": 0}
 
     for date_str, evs in sorted(events_by_date.items()):
         season = season_for(date_str)
@@ -229,6 +251,7 @@ def main():
         d = datetime.strptime(date_str, "%Y-%m-%d").date()
         prev1 = (d - timedelta(days=1)).strftime("%Y-%m-%d")
         prev2 = (d - timedelta(days=2)).strftime("%Y-%m-%d")
+        prev3 = (d - timedelta(days=3)).strftime("%Y-%m-%d")
 
         for e in evs:
             away, home = e["away_team"], e["home_team"]
@@ -238,16 +261,20 @@ def main():
                 home_rest = 1
             elif home in teams_by_date.get(prev2, set()):
                 home_rest = 2
-            else:
+            elif home in teams_by_date.get(prev3, set()):
                 home_rest = 3
+            else:
+                home_rest = 4  # 4 or more days since home's last game
 
             if not away_b2b or home_b2b:
                 continue  # cancelled (both B2B) or no signal
 
-            if home_rest >= 3:
-                signal = "signal1"
-            elif home_rest == 2:
+            if home_rest == 2:
                 signal = "rest_edge"
+            elif home_rest == 3:
+                signal = "rest3"
+            elif home_rest >= 4:
+                signal = "rest4plus"
             else:
                 continue
 
@@ -255,38 +282,64 @@ def main():
             ml = home_ml_avg(odds_entry.get("data", {}).get("bookmakers", []), home) if odds_entry else None
             if ml is None:
                 unpriced[signal] += 1
+                if signal in ("rest3", "rest4plus"):
+                    unpriced["signal1"] += 1
                 continue
 
             scored = match_score(scores_cache.get(date_str, []), away, home)
             if scored is None:
                 unscored[signal] += 1
+                if signal in ("rest3", "rest4plus"):
+                    unscored["signal1"] += 1
                 continue
             away_score, home_score = scored
 
             entry = {"date": date_str, "away": away, "home": home,
                      "home_ml": ml, "home_won": home_score > away_score}
-            bucket = retired_bucket if signal == "signal1" else rest_edge_bucket
+            bucket = {"rest_edge": rest_edge_bucket, "rest3": rest3_bucket,
+                      "rest4plus": rest4plus_bucket}[signal]
             bucket[season].append(entry)
             bucket["pooled"].append(entry)
+            if signal in ("rest3", "rest4plus"):
+                retired_bucket[season].append(entry)
+                retired_bucket["pooled"].append(entry)
 
     print("\n" + "=" * 70)
     print("RETIRED SIGNAL 1 - Away B2B, Home Rested 3+ Days, back home")
     print("=" * 70)
     for label, _, _ in SEASONS:
         fmt(label, calc_bucket(retired_bucket[label]))
-    fmt("POOLED (all 3 seasons)", calc_bucket(retired_bucket["pooled"]))
+    fmt("POOLED (all 4 seasons)", calc_bucket(retired_bucket["pooled"]))
     print(f"  (unpriced: {unpriced['signal1']}, unscored: {unscored['signal1']})")
+
+    print("\n" + "=" * 70)
+    print("REST 3 EXACT - Away B2B, Home Rested Exactly 3 Days, back home")
+    print("=" * 70)
+    for label, _, _ in SEASONS:
+        fmt(label, calc_bucket(rest3_bucket[label]))
+    fmt("POOLED (all 4 seasons)", calc_bucket(rest3_bucket["pooled"]))
+    print(f"  (unpriced: {unpriced['rest3']}, unscored: {unscored['rest3']})")
+
+    print("\n" + "=" * 70)
+    print("REST 4+ - Away B2B, Home Rested 4+ Days, back home")
+    print("=" * 70)
+    for label, _, _ in SEASONS:
+        fmt(label, calc_bucket(rest4plus_bucket[label]))
+    fmt("POOLED (all 4 seasons)", calc_bucket(rest4plus_bucket["pooled"]))
+    print(f"  (unpriced: {unpriced['rest4plus']}, unscored: {unscored['rest4plus']})")
 
     print("\n" + "=" * 70)
     print("REST EDGE - Away B2B, Home Rested Exactly 2 Days, back home")
     print("=" * 70)
     for label, _, _ in SEASONS:
         fmt(label, calc_bucket(rest_edge_bucket[label]))
-    fmt("POOLED (all 3 seasons)", calc_bucket(rest_edge_bucket["pooled"]))
+    fmt("POOLED (all 4 seasons)", calc_bucket(rest_edge_bucket["pooled"]))
     print(f"  (unpriced: {unpriced['rest_edge']}, unscored: {unscored['rest_edge']})")
 
     output = {
         "signal1_retired": {k: calc_bucket(v) for k, v in retired_bucket.items()},
+        "rest3_exact": {k: calc_bucket(v) for k, v in rest3_bucket.items()},
+        "rest4plus": {k: calc_bucket(v) for k, v in rest4plus_bucket.items()},
         "rest_edge": {k: calc_bucket(v) for k, v in rest_edge_bucket.items()},
         "unpriced": unpriced,
         "unscored": unscored,
@@ -300,8 +353,7 @@ def main():
             "95% CI from the per-bet return distribution (mean +/- 1.96*SE).",
         ],
     }
-    with open(OUTPUT_PATH, "w") as f:
-        json.dump(output, f, indent=2)
+    atomic_write_json(OUTPUT_PATH, output, indent=2)
     print(f"\nWrote {OUTPUT_PATH}")
 
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 Backfills data/historical_h2h_odds.json with real historical moneyline
-(h2h) odds across three full NHL regular seasons (2023-24, 2024-25,
-2025-26), snapshotted near puck drop as a closing-line proxy - not the
-narrow 23-date slice in data/historical_prop_odds.json, which only
+(h2h) odds across four full NHL regular seasons (2022-23, 2023-24,
+2024-25, 2025-26), snapshotted near puck drop as a closing-line proxy -
+not the narrow 23-date slice in data/historical_prop_odds.json, which only
 covers games the props pipeline (update_fantasy.py) had already logged.
 
 IMPORTANT, learned from two live smoke tests:
@@ -40,28 +40,44 @@ Then for each distinct event not already in the output file, fetches
 the h2h market ~20 min before its own commence time: 1 market x 1
 region (us) = 10 credits/call, per the pricing the user confirmed.
 
-Resumable across all three seasons in one output file: re-running loads
+Resumable across all four seasons in one output file: re-running loads
 the existing file and skips any (date, game) key already present, and
 progress is saved to disk every SAVE_EVERY fetches (not just at the
 end), so an interrupted run - or one that hits a rate limit - doesn't
-lose games already paid for in credits. To add a fourth season later,
+lose games already paid for in credits. To add another season later,
 just append to SEASONS below; already-fetched dates from prior seasons
 are untouched and unbilled.
 
 Season boundaries pulled from the NHL's own stats API
-(api.nhle.com/stats/rest/en/season -> regularSeasonStartDate /
-regularSeasonEndDate) on 2026-09-16, except 2025-26 which keeps
-backtest_signal2_history.py's existing Oct 1 start (a few days earlier
-than the NHL's own Oct 7 record) so this stays in sync with that script.
+(api.nhle.com/stats/rest/en/season -> startDate / regularSeasonEndDate,
+falling back to startDate when regularSeasonStartDate is blank, as it is
+for 2022-23) on 2026-09-16 (2022-23 pulled 2026-09-18), except 2025-26
+which keeps backtest_signal2_history.py's existing Oct 1 start (a few
+days earlier than the NHL's own Oct 7 record) so this stays in sync with
+that script.
 
-Run:  python .github/scripts/backfill_h2h_odds.py
-(Full three-season backfill is roughly 3,900 games -> ~39,000 credits
-for the odds calls, plus ~570 discovery snapshots (one per day across
-three seasons) at ~1 credit each - well inside a 100k/month allowance,
-but it's a long-running job, safe to Ctrl-C and resume at any time.)
+Run:  python .github/scripts/backfill_h2h_odds.py [SEASON]
+An optional SEASON argument (e.g. "2025-26") restricts discovery and
+fetching to that one season - both the events cache and results file
+stay shared across seasons, so this is just a scoping filter, not a
+separate output. Omit it to run every season in SEASONS.
+(Full four-season backfill is roughly 5,200 games -> ~52,000 credits
+for the odds calls, plus ~750 discovery snapshots (one per day across
+four seasons) at ~1 credit each - well inside a 100k/month allowance,
+but it's a long-running job, safe to Ctrl-C and resume at any time. The
+2022-23 season alone adds ~1,300 games / ~13,000 credits on top of
+whatever the three-season run already fetched.)
+
+Every save (results file and the discovery cache) writes via a temp file
+plus atomic rename and keeps a rolling *.bak of the previous version, so
+a process killed mid-write can only ever lose the newest in-progress
+save, never truncate what was already safely on disk. Loading either
+file validates it parses as JSON and refuses to continue (rather than
+silently starting from empty) if it does not.
 """
 import json
 import os
+import sys
 import time
 from datetime import datetime, timedelta
 
@@ -76,6 +92,7 @@ if not API_KEY:
     raise SystemExit(1)
 
 SEASONS = [
+    ("2022-23", datetime(2022, 10, 7).date(), datetime(2023, 4, 14).date()),
     ("2023-24", datetime(2023, 10, 10).date(), datetime(2024, 4, 18).date()),
     ("2024-25", datetime(2024, 10, 4).date(), datetime(2025, 4, 17).date()),
     ("2025-26", datetime(2025, 10, 1).date(), datetime(2026, 4, 18).date()),
@@ -87,6 +104,42 @@ SAVE_EVERY = 10                    # fetched games between progress saves
 REQUEST_SLEEP = 0.3                # seconds between odds calls
 MAX_RETRIES = 4
 EVENT_DISCOVERY_STEP_DAYS = 1        # daily - see module docstring on why a wider step isn't safe here
+
+
+def load_json_or_fail(path):
+    """Load a JSON cache/output file, refusing to silently continue on a
+    corrupt file. A truncated file (e.g. from a process killed mid-write)
+    must never be treated as "nothing fetched yet" - that would re-spend
+    credits AND lose whatever the corrupt file still holds, since the next
+    save() would overwrite it with a rebuild-from-empty result set.
+    """
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except json.JSONDecodeError as e:
+        raise SystemExit(
+            f"\n{path} exists but will not parse as JSON ({e}).\n"
+            f"Refusing to proceed - starting from an empty dict here would "
+            f"silently discard whatever this file still holds and re-spend "
+            f"credits re-fetching it.\n"
+            f"Check {path}.bak (written before every save) for the last "
+            f"known-good version, or a Windows Previous Versions/File "
+            f"History backup, before re-running."
+        )
+
+
+def atomic_write_json(path, data):
+    """Write JSON via temp-file + rename, so a process kill mid-write can
+    never truncate the file on disk - the old file (if any) stays intact
+    until the new one is fully written and swapped in. Also keeps one
+    rolling backup (path + '.bak') of the last known-good version.
+    """
+    tmp_path = path + ".tmp"
+    with open(tmp_path, "w") as f:
+        json.dump(data, f, indent=2)
+    if os.path.exists(path):
+        os.replace(path, path + ".bak")
+    os.replace(tmp_path, path)
 
 
 def local_game_date(commence_time_str):
@@ -160,15 +213,22 @@ def get_event_odds(event_id, near_time):
     return r.json(), r.headers.get("x-requests-remaining", "?")
 
 
-def build_snapshot_dates():
-    """Sparse snapshot dates across every season in SEASONS, stepped by
+def season_for(date_str, seasons=SEASONS):
+    for label, start, end in seasons:
+        if start.strftime("%Y-%m-%d") <= date_str <= end.strftime("%Y-%m-%d"):
+            return label
+    return None
+
+
+def build_snapshot_dates(seasons=SEASONS):
+    """Sparse snapshot dates across every season passed in, stepped by
     EVENT_DISCOVERY_STEP_DAYS and capped at yesterday so we never ask the
     API for a day that hasn't happened (and doesn't have a closing line)
     yet - relevant if a season is still in progress.
     """
     today = datetime.now().date()
     dates = []
-    for label, start, end in SEASONS:
+    for label, start, end in seasons:
         capped_end = min(end, today - timedelta(days=1))
         if capped_end < start:
             print(f"Skipping {label}: entirely in the future.")
@@ -205,14 +265,12 @@ def discover_events(snapshot_dates):
     """
     cache = {}
     if os.path.exists(EVENTS_CACHE_PATH):
-        with open(EVENTS_CACHE_PATH) as f:
-            cache = json.load(f)
+        cache = load_json_or_fail(EVENTS_CACHE_PATH)
         print(f"Resuming discovery: {len(cache)} snapshot dates already sampled.")
 
     def save_cache():
         os.makedirs("data", exist_ok=True)
-        with open(EVENTS_CACHE_PATH, "w") as f:
-            json.dump(cache, f, indent=2)
+        atomic_write_json(EVENTS_CACHE_PATH, cache)
 
     fetched_since_save = 0
     try:
@@ -255,15 +313,29 @@ def discover_events(snapshot_dates):
 
 
 def main():
-    snapshot_dates = build_snapshot_dates()
+    season_filter = sys.argv[1] if len(sys.argv) > 1 else None
+    seasons = SEASONS
+    if season_filter:
+        seasons = [s for s in SEASONS if s[0] == season_filter]
+        if not seasons:
+            raise SystemExit(f"Unknown season {season_filter!r}. Choices: {[s[0] for s in SEASONS]}")
+        print(f"Running backfill for {season_filter} only.\n")
+
+    snapshot_dates = build_snapshot_dates(seasons)
     print(f"\nDiscovering events across {len(snapshot_dates)} snapshots...\n")
     events_by_id = discover_events(snapshot_dates)
     print(f"\nDiscovered {len(events_by_id)} distinct games across all seasons.\n")
 
+    if season_filter:
+        events_by_id = {
+            eid: e for eid, e in events_by_id.items()
+            if season_for(local_game_date(e["commence_time"])) == season_filter
+        }
+        print(f"Filtered to {len(events_by_id)} events in {season_filter}.\n")
+
     results = {}
     if os.path.exists(OUTPUT_PATH):
-        with open(OUTPUT_PATH) as f:
-            results = json.load(f)
+        results = load_json_or_fail(OUTPUT_PATH)
         print(f"Resuming: {len(results)} games already fetched.")
 
     print(f"Fetching h2h odds for events not already on disk...\n")
@@ -275,8 +347,7 @@ def main():
 
     def save():
         os.makedirs("data", exist_ok=True)
-        with open(OUTPUT_PATH, "w") as f:
-            json.dump(results, f, indent=2)
+        atomic_write_json(OUTPUT_PATH, results)
 
     try:
         for i, e in enumerate(events_by_id.values()):

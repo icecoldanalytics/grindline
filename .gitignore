@@ -5,3 +5,5 @@ regrade_results.json
 __pycache__/
 data/historical_h2h_odds.json
 data/historical_h2h_events_cache.json
+*.bak
+data/historical_h2h_odds.json.corrupted-*

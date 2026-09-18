@@ -3,10 +3,11 @@
 Single source of truth for the Rest Edge signal: away team on a
 back-to-back, home team rested exactly two days -> back the home side.
 
-Signal 1 (home rested 3+ days) backtested at -2.0% ROI / 57.9% win rate
-across 216 games at real closing moneylines (see backtest_rest_signals.py /
-data/rest_signal_backtest.json) and has been retired - it is no longer
-computed or logged anywhere in the live pipeline.
+Signal 1 (home rested 3+ days) backtested at -3.6% ROI / 57.6% win rate
+across 311 games at real closing moneylines, pooled across all four
+backfilled seasons (see backtest_rest_signals.py / data/rest_signal_backtest.json)
+and has been retired - it is no longer computed or logged anywhere in the
+live pipeline.
 
 Every script that needs the rule itself, or the odds-to-profit math, should
 import from here rather than re-deriving it. Each caller keeps its own
