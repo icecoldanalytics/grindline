@@ -462,13 +462,6 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
         <div class="sig-meta">508 games over four seasons · 62.0% · avg &minus;106</div>
         <div class="sig-rule">Away team played last night, home team rested exactly two days &rarr; <strong>back the home team</strong>. Held up in all four seasons tested. <span id="rest2-live"></span></div>
       </div>
-      <div class="sig-card s2">
-        <div class="sig-label-small">Three-Day Rest · Retired</div>
-        <div class="sig-title">Away B2B + Home Rested Exactly 3 Days</div>
-        <div class="sig-roi-big" style="font-size:1.9rem;">&minus;5.7%</div>
-        <div class="sig-meta">230 games over four seasons · 54.3% · losing in three of four</div>
-        <div class="sig-rule">Tested and <strong>found no edge</strong>. We publish it because a signal we dropped tells you more about our method than one we kept.</div>
-      </div>
       <div class="sig-card tonight">
         <div class="sig-label-small">Tonight's Scan</div>
         <div class="sig-title" id="tonight-scan-title">Loading...</div>
@@ -517,26 +510,11 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       </div>
 
       <div class="tracker-card">
-        <div class="tracker-card-header"><h3>Extended Rest — Retired</h3><span class="sd-badge" style="color:var(--muted);border-color:rgba(90,138,114,0.3);background:rgba(90,138,114,0.08);" id="t-rest3-badge">Loading...</span></div>
-        <div class="tracker-card-body">
-          <div class="stat-row"><span class="stat-label">Condition</span><span class="stat-val">Away B2B + Home 3+ d rest</span></div>
-          <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="t-rest3-games">—</span></div>
-          <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val" id="t-rest3-wr">—</span></div>
-          <div class="stat-row"><span class="stat-label">Avg Home Moneyline</span><span class="stat-val" id="t-rest3-odds">—</span></div>
-          <div class="stat-row"><span class="stat-label">Breakeven Needed</span><span class="stat-val" id="t-rest3-be">—</span></div>
-          <div class="stat-row"><span class="stat-label">ROI (real prices)</span><span class="stat-val" id="t-rest3-roi">—</span></div>
-          <div class="stat-row"><span class="stat-label">Above Breakeven</span><span class="stat-val" id="t-rest3-sd">—</span></div>
-          <div class="stat-row"><span class="stat-label">Verdict</span><span class="stat-val">No edge found</span></div>
-        </div>
-      </div>
-
-      <div class="tracker-card">
         <div class="tracker-card-header"><h3>Goalie Split — Research</h3><span class="sd-badge" style="color:var(--gold);border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);">Not sold</span></div>
         <div class="tracker-card-body">
           <div class="stat-row"><span class="stat-label">Tracked Sample</span><span class="stat-val" id="t-goalie-games">—</span></div>
           <div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-val good" id="t-goalie-wr">—</span></div>
           <div class="stat-row"><span class="stat-label">Breakeven Needed</span><span class="stat-val" id="t-goalie-be">—</span></div>
-          <div class="stat-row"><span class="stat-label">ROI (real prices)</span><span class="stat-val good" id="t-goalie-roi">—</span></div>
           <div class="stat-row"><span class="stat-label">95% Floor</span><span class="stat-val" id="t-goalie-floor">—</span></div>
           <div style="font-size:0.78rem;color:var(--muted);line-height:1.7;margin-top:14px;" id="t-goalie-note">Loading...</div>
         </div>
@@ -613,9 +591,9 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       <br>
       <p><strong>What the four seasons show:</strong> the two-day bucket beat its season's baseline home win rate by six to seven points every year, including three seasons we had never examined when the rule was written. Combined: 508 games, 62.0%, with a 95% confidence floor of 57.7% against a 51.5% breakeven.</p>
       <br>
-      <p><strong>The dead zone:</strong> exactly three days of home rest returned 54.3% over 230 games and lost money in three of four seasons. Longer layoffs of four or more days actually performed well (66.7% over 75 games) but on a sample too thin to publish as a pick.</p>
+      <p><strong>The dead zone:</strong> broaden home rest to three or more days — the condition we originally published as Signal 1 — and the edge disappears: 57.9% over 216 games sounds fine on its own, but at the real closing moneyline that's &minus;2.0% ROI, pooled across the three backfilled seasons with priced closing odds (<code>backtest_rest_signals.py</code>). That's why we retired it instead of publishing it.</p>
       <br>
-      <p><strong>What we cannot explain:</strong> we do not have a clean mechanism for why two days and long layoffs both work while three days does not. Fatigue alone does not predict that shape. We are publishing the pattern because it replicated across four independent seasons, not because we have a tidy story for it &mdash; and we would rather say that than invent one.</p>
+      <p><strong>What we cannot explain:</strong> two days of rest wins money at real prices and three-or-more days does not, even though both start from the same away-B2B trigger and get priced the same way. We do not have a clean mechanism for why the edge holds at exactly two days and disappears once rest stretches further — fatigue alone does not predict a cliff that sharp. We are publishing the boundary because it is what the pooled backtest shows, not because we have a tidy story for it &mdash; and we would rather say that than invent one.</p>
       <br>
       <p><strong>Cancellation:</strong> when both teams are on a back-to-back, the rest difference disappears and no pick is published.</p>
       <br>
@@ -882,7 +860,7 @@ function runAnalysis() {
   } else if (homeRest === '1') {
     signals.push({ icon:'—', text:`${homeTeam} has only one day of rest. Outside the tracked condition.`, badge:'rsi-inactive', label:'No setup' });
   } else {
-    signals.push({ icon:'✕', text:`${homeTeam} has three or more days off. Three days of rest is the dead zone — <strong>54.3% over 230 games</strong>, losing money in three of four seasons. <strong>No pick.</strong>`, badge:'rsi-inactive', label:'Tested, no edge' });
+    signals.push({ icon:'✕', text:`${homeTeam} has three or more days off. Outside the tracked condition. <strong>No pick.</strong>`, badge:'rsi-inactive', label:'No setup' });
   }
 
   // Price check
@@ -960,7 +938,7 @@ async function buildTicker() {
       items.push('<span class="t-sep">·</span>');
     }
 
-    const r2 = roi.rest2 || roi.signal1_partial || {};
+    const r2 = roi.rest_edge || {};
     if (r2.games) {
       items.push(`<span><span class="t-sig">Rest Edge</span> Away B2B + Home 2 Days Rest → ${r2.win_rate}% · ${r2.roi >= 0 ? '+' : ''}${r2.roi}% ROI at real prices · ${r2.games} games</span>`);
       items.push('<span class="t-sep">·</span>');
@@ -989,8 +967,7 @@ async function buildDashboard() {
     const roi  = await roiRes.json();
     if (!data.games_tonight) return;
 
-    const r2 = roi.rest2 || roi.signal1_partial || {};
-    const r3 = roi.rest3plus || roi.signal1 || {};
+    const r2 = roi.rest_edge || {};
 
     // Hero shows the fixed four-season record; live season appears on the signal card.
     const heroTonight = document.getElementById('hero-games-tonight');
@@ -1014,10 +991,8 @@ async function buildDashboard() {
       if (n === 0) {
         tonightResult.style.fontSize = '1rem';
         tonightResult.innerHTML = 'No Games Scheduled';
-      } else if (data.n_partial > 0) {
-        tonightResult.innerHTML = `${data.n_partial} Rest Edge${data.n_partial !== 1 ? 's' : ''}`;
-      } else if (data.n_sig1 > 0) {
-        tonightResult.innerHTML = `<span style="font-size:1rem;color:var(--muted);">No active signals<br>${data.n_sig1} retired-condition game${data.n_sig1 !== 1 ? 's' : ''} (3+ rest)</span>`;
+      } else if (data.n_rest_edge > 0) {
+        tonightResult.innerHTML = `${data.n_rest_edge} Rest Edge${data.n_rest_edge !== 1 ? 's' : ''}`;
       } else {
         tonightResult.innerHTML = 'No Signals';
       }
@@ -1033,8 +1008,7 @@ async function buildDashboard() {
         gamesStack.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted);font-size:0.85rem;">No games scheduled. Check back once the season is underway.</div>`;
       } else {
         gamesStack.innerHTML = data.games_tonight.map(g => {
-          const cardClass = g.signal === 'sig1' ? 'sig1' :
-                            g.signal === 'partial' ? 'sig-partial' :
+          const cardClass = g.signal === 'rest_edge' ? 'sig1' :
                             g.signal === 'cancel' ? 'cancelled' : 'nosig';
           const awayB2bTag = g.away_b2b ? `<span class="tag tag-b2b">B2B Away</span>` : '';
           const homeTags = g.home_b2b ? `<span class="tag tag-b2b">B2B Home</span>` :
@@ -1045,11 +1019,7 @@ async function buildDashboard() {
             : '';
 
           let signalBadge, signalFade, signalNote;
-          if (g.signal === 'sig1') {
-            signalBadge = `<div class="gsig-badge gsb-none">Tested — no edge</div>`;
-            signalFade  = '';
-            signalNote  = `<div class="gsig-note">${g.home} rested ${g.home_rest}+ days · not a published pick</div>`;
-          } else if (g.signal === 'partial') {
+          if (g.signal === 'rest_edge') {
             signalBadge = `<div class="gsig-badge gsb-s1">⚡ Rest Edge</div>`;
             signalFade  = `<div class="gsig-fade">Back: <strong>${g.home}</strong></div>`;
             signalNote  = `<div class="gsig-note">${g.away} played last night · ${g.home} rested 2 days</div>`;
@@ -1132,10 +1102,7 @@ async function buildDashboard() {
             lastDate = g.date_label;
           }
           let flagClass, flagText, desc;
-          if (g.signal === 'sig1') {
-            flagClass = 'lf-watch'; flagText = '⚡ Watch';
-            desc = `${g.away} on B2B away · ${g.home} rested ${g.home_rest}+ days → outside the tracked edge`;
-          } else if (g.signal === 'partial') {
+          if (g.signal === 'rest_edge') {
             flagClass = 'lf-watch'; flagText = '⚡ Watch';
             desc = `${g.away} on B2B away · ${g.home} rested 2 days → <strong>Rest Edge candidate — back ${g.home}</strong>`;
           } else {
@@ -1143,7 +1110,7 @@ async function buildDashboard() {
             desc = `Both teams on B2B — <strong>signals cancel</strong>`;
           }
           html += `
-          <div class="la-row ${g.signal === 'sig1' || g.signal === 'partial' ? 'watch' : ''}">
+          <div class="la-row ${g.signal === 'rest_edge' ? 'watch' : ''}">
             <div>
               <div class="la-game"><strong>${g.away} @ ${g.home}</strong></div>
               <div class="la-desc">${desc} · ${g.time_et}</div>
@@ -1473,26 +1440,23 @@ async function buildGoalie() {
     set('t-goalie-games', h.games + ' games');
     set('t-goalie-wr', h.win_rate + '%');
     set('t-goalie-be', h.avg_breakeven + '%');
-    set('t-goalie-roi', fmtPct(h.roi));
     set('t-goalie-floor', h.confidence_floor + '%');
-    set('t-goalie-note', 'Away team on a back-to-back starting its #1 goalie. Real prices, four seasons — but we cannot know the starter when our 7 AM alert sends, so this is published as research and never as a pick.');
+    set('t-goalie-note', 'Away team on a back-to-back starting its #1 goalie. Win rate only — ROI is withheld until it can be recomputed at real historical moneylines. We cannot know the starter when our 7 AM alert sends, so this is published as research and never as a pick.');
 
     const tbl = document.getElementById('goalie-splits');
     if (tbl && g.splits) {
       tbl.innerHTML = `
-        <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(255,255,255,0.03);">
+        <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px;background:rgba(255,255,255,0.03);">
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Situation</span>
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Games</span>
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Win%</span>
           <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">B/E</span>
-          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">ROI</span>
         </div>` + g.splits.map(s => `
-        <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;">
+        <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px;">
           <span class="rr-game">${s.bucket}</span>
           <span style="text-align:right;">${s.games}</span>
           <span style="text-align:right;">${s.win_rate}%</span>
           <span style="text-align:right;">${s.breakeven}%</span>
-          <span style="text-align:right;font-weight:700;color:${s.roi >= 0 ? 'var(--green)' : 'var(--red)'};">${fmtPct(s.roi)}</span>
         </div>`).join('');
     }
     const why = document.getElementById('goalie-why');
@@ -1506,9 +1470,7 @@ async function buildROI() {
   try {
     const r = await fetch('data/roi.json?nocache=' + Date.now());
     const d = await r.json();
-    const r2 = d.rest2 || d.signal1_partial || {};
-    const r3 = d.rest3plus || d.signal1 || {};
-    const gl = d.goalie || d.signal2 || {};
+    const r2 = d.rest_edge || {};
 
     const set = (id, val) => { const e = document.getElementById(id); if (e) e.textContent = val; };
 
@@ -1521,15 +1483,6 @@ async function buildROI() {
     set('t-rest2-sd', r2.games ? `${r2.sd_above_breakeven >= 0 ? '+' : ''}${r2.sd_above_breakeven} SD` : '—');
     set('t-rest2-streak', r2.streak || '—');
 
-    set('t-rest3-badge', 'Retired');
-    set('t-rest3-games', (r3.games || 0) + ' games');
-    set('t-rest3-wr', (r3.win_rate ?? '—') + '%');
-    set('t-rest3-odds', r3.avg_odds ?? '—');
-    set('t-rest3-be', (r3.breakeven_rate ?? '—') + '%');
-    set('t-rest3-roi', r3.games ? fmtPct(r3.roi) : '—');
-    set('t-rest3-sd', r3.games ? `${r3.sd_above_breakeven >= 0 ? '+' : ''}${r3.sd_above_breakeven} SD` : '—');
-
-    set('t-goalie-games', (gl.games || 0) + ' games');
     set('t-season', d.season || '—');
     set('t-updated', d.generated || '—');
     set('t-priced', d.pricing && d.pricing.assumed_odds_used === false ? 'Real moneyline' : 'Assumed');
@@ -1540,7 +1493,7 @@ async function buildROI() {
     renderMonthly(r2.monthly);
 
     const table = document.getElementById('last5-table');
-    const last5 = (d.summary && d.summary.last5_sig1) || [];
+    const last5 = (d.summary && d.summary.last5_rest_edge) || [];
     if (table && last5.length) {
       table.innerHTML = [...last5].reverse().map(g => `
         <div class="recap-row">

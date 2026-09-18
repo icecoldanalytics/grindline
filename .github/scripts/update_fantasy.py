@@ -194,9 +194,7 @@ def build_game_context(dashboard, rosters, scratches=[]):
     lines = []
     for g in games:
         signal_note = ""
-        if g["signal"] == "sig1":
-            signal_note = f" [{g['away']} on road B2B; {g['home']} rested {g['home_rest']}+ days]"
-        elif g["signal"] == "partial":
+        if g["signal"] == "rest_edge":
             signal_note = f" [{g['away']} on road B2B; {g['home']} rested 2 days]"
         elif g["signal"] == "cancel":
             signal_note = " [Both teams on B2B]"
@@ -270,9 +268,7 @@ def generate_goalie_starts(game_context, date_label, rosters, games):
         away = g["away"]
         home = g["home"]
         rest_note = ""
-        if g["signal"] == "sig1":
-            rest_note = f"{away} on road B2B; {home} rested {g['home_rest']}+ days"
-        elif g["signal"] == "partial":
+        if g["signal"] == "rest_edge":
             rest_note = f"{away} on road B2B; {home} rested 2 days"
         elif g["signal"] == "cancel":
             rest_note = "Both teams on B2B"

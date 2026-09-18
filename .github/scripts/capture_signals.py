@@ -18,6 +18,8 @@ from datetime import datetime, timedelta
 import pytz
 import requests
 
+from rest_edge import home_ml_average, is_rest_edge
+
 MST = pytz.timezone("America/Edmonton")
 LOG_PATH = os.path.join("data", "signal_log.json")
 LOOKBACK_DAYS = 10          # enough to establish rest for any team
@@ -101,23 +103,35 @@ def fetch_live_odds():
         return []
 
 
-def home_prices(events, away, home):
+def find_event(events, away, home):
+    """Finds the event by fuzzy city-name matching (live odds use full
+    team names; our signal candidates use abbreviations)."""
     a = NAME_KEY.get(away, away.lower())
     h = NAME_KEY.get(home, home.lower())
     for e in events:
         names = (e.get("home_team", "") + " " + e.get("away_team", "")).lower()
         if a not in names or h not in names:
             continue
-        prices = []
-        for bk in e.get("bookmakers", []):
-            for mkt in bk.get("markets", []):
-                if mkt.get("key") != "h2h":
-                    continue
-                for out in mkt.get("outcomes", []):
-                    if h in out.get("name", "").lower():
-                        prices.append(out["price"])
-        return prices
-    return []
+        return e
+    return None
+
+
+def home_best_price(event):
+    """Best (most favorable to a bettor) home price across bookmakers, for
+    the home_ml_best field - the average itself comes from
+    rest_edge.home_ml_average() using the event's exact home_team string."""
+    prices = []
+    home_team = event.get("home_team", "")
+    for bk in event.get("bookmakers", []):
+        for mkt in bk.get("markets", []):
+            if mkt.get("key") != "h2h":
+                continue
+            for out in mkt.get("outcomes", []):
+                if out.get("name") == home_team:
+                    prices.append(out["price"])
+    if not prices:
+        return None
+    return max(prices, key=lambda p: (100 * 100 / abs(p)) if p < 0 else p)
 
 
 def main():
@@ -142,10 +156,8 @@ def main():
     for g in todays_games:
         away_rest = rest_days(g["away"], today, teams_by_date)
         home_rest = rest_days(g["home"], today, teams_by_date)
-        if away_rest != 1:
-            continue                      # away not on a back-to-back
-        if home_rest == 1 or home_rest is None:
-            continue                      # both tired, or unknown
+        if home_rest is None or not is_rest_edge(away_rest, home_rest):
+            continue
         candidates.append(dict(g, away_rest=1, home_rest=home_rest))
 
     print(f"  {len(todays_games)} games, {len(candidates)} signal candidates.")
@@ -170,28 +182,27 @@ def main():
             print(f"    already logged: {c['away']} @ {c['home']}")
             continue
 
-        prices = home_prices(events, c["away"], c["home"])
-        if not prices:
+        event = find_event(events, c["away"], c["home"])
+        avg = home_ml_average(event.get("bookmakers", []), event.get("home_team", "")) if event else None
+        if avg is None:
             print(f"    NO PRICE for {c['away']} @ {c['home']} — skipped")
             continue
 
-        best = max(prices, key=lambda p: (100 * 100 / abs(p)) if p < 0 else p)
         log["entries"].append({
             "date":         today_str,
             "away":         c["away"],
             "home":         c["home"],
             "away_rest":    1,
             "home_rest":    c["home_rest"],
-            "signal":       "rest2" if c["home_rest"] == 2 else "rest3plus",
-            "home_ml_avg":  round(sum(prices) / len(prices), 1),
-            "home_ml_best": best,
+            "signal":       "rest_edge",
+            "home_ml_avg":  avg,
+            "home_ml_best": home_best_price(event),
             "price_source": f"live_{now.strftime('%H:%M')}_MT",
             "graded":       False,
         })
         added += 1
         print(f"    logged {c['away']} @ {c['home']} "
-              f"(home rest {c['home_rest']}d) at "
-              f"{sum(prices)/len(prices):+.1f}")
+              f"(home rest {c['home_rest']}d) at {avg:+.1f}")
 
     if added:
         log["entries"].sort(key=lambda e: (e["date"], e["away"], e["home"]))

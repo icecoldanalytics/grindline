@@ -13,6 +13,8 @@ import requests
 from datetime import datetime, timedelta
 import pytz
 
+from rest_edge import is_cancelled, is_rest_edge
+
 MST = pytz.timezone("America/Edmonton")
 UTC = pytz.utc
 ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
@@ -186,14 +188,13 @@ def get_rest_days(team, played_1_ago, played_2_ago):
 def detect_signal(away, home, b2b_teams, played_1_ago, played_2_ago):
     away_b2b = away in b2b_teams
     home_b2b = home in b2b_teams
+    away_rest = get_rest_days(away, played_1_ago, played_2_ago)
     home_rest = get_rest_days(home, played_1_ago, played_2_ago)
 
-    if away_b2b and home_b2b:
+    if is_cancelled(away_rest, home_rest):
         return "cancel", away_b2b, home_b2b, home_rest
-    if away_b2b and not home_b2b and home_rest >= 3:
-        return "sig1", away_b2b, home_b2b, home_rest
-    if away_b2b and not home_b2b and home_rest == 2:
-        return "partial", away_b2b, home_b2b, home_rest
+    if is_rest_edge(away_rest, home_rest):
+        return "rest_edge", away_b2b, home_b2b, home_rest
     return "none", away_b2b, home_b2b, home_rest
 
 def main():
@@ -248,9 +249,9 @@ def main():
             "home_ml": home_ml
         })
 
-    # Sort: sig1 first, partial, cancel, none
-    order = {"sig1": 0, "partial": 1, "cancel": 2, "none": 3}
-    games_tonight.sort(key=lambda x: order.get(x["signal"], 3))
+    # Sort: rest_edge first, then cancel, then none
+    order = {"rest_edge": 0, "cancel": 1, "none": 2}
+    games_tonight.sort(key=lambda x: order.get(x["signal"], 2))
 
     # ── LAST NIGHT'S RECAP ──
     scores_yesterday = get_scores(yesterday)
@@ -269,10 +270,7 @@ def main():
 
         result = "none"
         note = "No signal · Neither team on B2B"
-        if signal == "sig1":
-            result = "none"
-            note = f"{away} on B2B away · {home} rested {home_rest}+ days — no pick (3+ days rest, retired)"
-        elif signal == "partial":
+        if signal == "rest_edge":
             result = "hit" if fade_won else "miss"
             note = f"{away} on B2B away · {home} rested 2 days — Rest Edge, back {home}"
         elif signal == "cancel":
@@ -309,7 +307,7 @@ def main():
             signal, away_b2b, home_b2b, home_rest = detect_signal(
                 away, home, b2b_that_day, played_day_before, played_two_before
             )
-            if signal in ("sig1", "partial", "cancel"):
+            if signal in ("rest_edge", "cancel"):
                 lookahead.append({
                     "date": date_str,
                     "date_label": date_label,
@@ -323,16 +321,14 @@ def main():
                 })
 
     # ── SUMMARY STATS ──
-    n_sig1 = sum(1 for g in games_tonight if g["signal"] == "sig1")
-    n_partial = sum(1 for g in games_tonight if g["signal"] == "partial")
+    n_rest_edge = sum(1 for g in games_tonight if g["signal"] == "rest_edge")
 
     output = {
         "date": today,
         "date_label": today_label,
         "yesterday_label": yesterday_label,
         "n_games": len(games_tonight),
-        "n_sig1": n_sig1,
-        "n_partial": n_partial,
+        "n_rest_edge": n_rest_edge,
         "games_tonight": games_tonight,
         "last_night": last_night,
         "lookahead": lookahead
@@ -342,7 +338,7 @@ def main():
     with open("data/dashboard.json", "w") as f:
         json.dump(output, f, indent=2)
 
-    print(f"✓ dashboard.json written — {len(games_tonight)} games, {n_sig1} signals, {n_partial} partials")
+    print(f"✓ dashboard.json written — {len(games_tonight)} games, {n_rest_edge} Rest Edge signals")
 
 if __name__ == "__main__":
     main()

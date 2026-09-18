@@ -1256,7 +1256,7 @@ function updateVerdict(away, home, edge, abs) {
     el.textContent = 'No strong edge detected. The active factors roughly cancel out — this game sits close to a coin flip based on situational data alone.';
     el.style.color = 'var(--text-secondary)';
   } else if (edge <= -14) {
-    el.textContent = 'Maximum alert — ' + awayLabel + ' is in a high-fatigue situation. Signal 2 (B2B + backup goalie) is active. Backtested at +38.7% ROI. Back ' + homeLabel + '.';
+    el.textContent = 'Maximum alert — ' + awayLabel + ' is in a high-fatigue situation with a possible backup-goalie start. No backtested edge is published for this combination — check the line yourself.';
     el.style.color = 'var(--red)';
   } else if (edge <= -10) {
     el.textContent = 'Strong situational edge for ' + homeLabel + '. Multiple fatigue factors stacking against ' + awayLabel + '. Signal 1 + additional context active. Worth a look at the line.';

@@ -21,9 +21,12 @@ from datetime import datetime, timedelta
 import pytz
 import requests
 
+from rest_edge import breakeven, profit
+
 MST = pytz.timezone("America/Edmonton")
 LOG_PATH = os.path.join("data", "signal_log.json")
 OUT_PATH = os.path.join("data", "roi.json")
+BACKTEST_PATH = os.path.join("data", "rest_signal_backtest.json")
 SEASON = "2025-26"
 
 # A bucket needs this many games before its ROI is treated as meaningful
@@ -97,19 +100,6 @@ def grade_pending(log):
 
 
 # ── Maths ─────────────────────────────────────────────────────────────────
-def profit(american, won):
-    """Profit on a 100-unit stake at the given American price."""
-    if not won:
-        return -100.0
-    return 100.0 * 100.0 / abs(american) if american < 0 else float(american)
-
-
-def breakeven(american):
-    """Win rate needed to break even at this price, as a percentage."""
-    a = abs(american)
-    return (a / (a + 100) * 100) if american < 0 else (100 / (american + 100) * 100)
-
-
 def calc_stats(entries):
     """Stats for a bucket, graded at each game's own real price."""
     n = len(entries)
@@ -192,6 +182,30 @@ def cumulative(entries):
     return out
 
 
+def load_retired_signal1():
+    """Frozen historical documentation for the retired Signal 1 condition
+    (away B2B, home rested 3+ days) - backtest_rest_signals.py's pooled
+    result at real closing moneylines across all three backfilled seasons.
+    Not re-derived from signal_log.json: capture_signals.py stopped logging
+    these games once Signal 1 was retired, so there's nothing left to grade
+    live."""
+    try:
+        with open(BACKTEST_PATH, encoding="utf-8") as f:
+            backtest = json.load(f)
+    except FileNotFoundError:
+        return {"games": 0, "win_rate": None, "roi": None, "note": "backtest not found"}
+    pooled = backtest["signal1_retired"]["pooled"]
+    return {
+        "games": pooled["n"],
+        "win_rate": pooled["win_rate"],
+        "roi": pooled["roi"],
+        "roi_ci95": pooled["roi_ci95"],
+        "label": "Away B2B + Home Rested 3+ Days",
+        "status": "Retired — no edge found",
+        "source": "backtest_rest_signals.py, real closing moneylines, 2023-24 through 2025-26",
+    }
+
+
 # ── Main ──────────────────────────────────────────────────────────────────
 def main():
     log = load_log()
@@ -205,17 +219,14 @@ def main():
         key=lambda e: e["date"],
     )
 
-    rest2 = [e for e in entries if e["signal"] == "rest2"]
-    rest3 = [e for e in entries if e["signal"] == "rest3plus"]
-    goalie = [e for e in rest2 + rest3 if e.get("away_started_number_one") is True]
+    rest_edge = [e for e in entries if e["signal"] == "rest_edge"]
+    goalie = [e for e in rest_edge if e.get("away_started_number_one") is True]
     goalie.sort(key=lambda e: e["date"])
 
-    s_rest2 = calc_stats(rest2)
-    s_rest3 = calc_stats(rest3)
+    s_rest_edge = calc_stats(rest_edge)
     s_goalie = calc_stats(goalie)
 
-    m_rest2 = calc_monthly(rest2)
-    m_rest3 = calc_monthly(rest3)
+    m_rest_edge = calc_monthly(rest_edge)
 
     last5 = [{
         "date": e["date"],
@@ -224,27 +235,18 @@ def main():
         "score": f"{e['away_score']}-{e['home_score']}",
         "odds": e["home_ml_avg"],
         "fade_won": e["fade_won"],
-    } for e in rest2[-5:]]
+    } for e in rest_edge[-5:]]
 
     through = entries[-1]["date"] if entries else "—"
 
-    rest2_block = {
-        **s_rest2,
+    rest_edge_block = {
+        **s_rest_edge,
         "label": "Away B2B + Home Rested 2 Days",
-        "streak": calc_streak(rest2),
-        "best_month": best_month(m_rest2),
-        "monthly": m_rest2,
-        "cumulative": cumulative(rest2),
-        "status": "Active" if s_rest2["roi"] > 0 and s_rest2["sample_ok"] else "Monitoring",
-    }
-    rest3_block = {
-        **s_rest3,
-        "label": "Away B2B + Home Rested 3+ Days",
-        "streak": calc_streak(rest3),
-        "best_month": best_month(m_rest3),
-        "monthly": m_rest3,
-        "cumulative": cumulative(rest3),
-        "status": "Inactive — no edge found",
+        "streak": calc_streak(rest_edge),
+        "best_month": best_month(m_rest_edge),
+        "monthly": m_rest_edge,
+        "cumulative": cumulative(rest_edge),
+        "status": "Active" if s_rest_edge["roi"] > 0 and s_rest_edge["sample_ok"] else "Monitoring",
     }
     goalie_block = {
         **s_goalie,
@@ -266,26 +268,15 @@ def main():
             "assumed_odds_used": False,
         },
 
-        # Primary, descriptive keys
-        "rest2": rest2_block,
-        "rest3plus": rest3_block,
+        "rest_edge": rest_edge_block,
+        "retired_signal1": load_retired_signal1(),
         "goalie": goalie_block,
 
-        # Legacy keys — same meanings the old site expects, so nothing breaks
-        # while index.html is still reading them. Remove once the site moves
-        # to rest2 / rest3plus.
-        "signal1": rest3_block,
-        "signal1_partial": rest2_block,
-        "signal2": goalie_block,
-
         "summary": {
-            "total_rest2_games": s_rest2["games"],
-            "total_rest3plus_games": s_rest3["games"],
-            "total_sig1_games": s_rest3["games"],
-            "total_partial_games": s_rest2["games"],
-            "total_sig2_games": s_goalie["games"],
+            "total_rest_edge_games": s_rest_edge["games"],
+            "total_goalie_games": s_goalie["games"],
             "cancelled_both_b2b": log.get("cancelled_both_b2b", 0),
-            "last5_sig1": last5,
+            "last5_rest_edge": last5,
         },
     }
 
@@ -294,7 +285,7 @@ def main():
         json.dump(output, f, indent=2)
 
     print("✓ roi.json written — all ROI graded at real prices\n")
-    for name, s in (("rest2    ", s_rest2), ("rest3plus", s_rest3), ("goalie   ", s_goalie)):
+    for name, s in (("rest_edge", s_rest_edge), ("goalie   ", s_goalie)):
         if s["games"] == 0:
             print(f"  {name}  no games")
             continue
