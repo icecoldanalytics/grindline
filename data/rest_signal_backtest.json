@@ -1,0 +1,100 @@
+{
+  "signal1_retired": {
+    "pooled": {
+      "n": 216,
+      "wins": 125,
+      "win_rate": 57.9,
+      "roi": -2.0,
+      "roi_ci95": [
+        -14.6,
+        11.6
+      ]
+    },
+    "2023-24": {
+      "n": 68,
+      "wins": 39,
+      "win_rate": 57.4,
+      "roi": 0.1,
+      "roi_ci95": [
+        -25.0,
+        16.1
+      ]
+    },
+    "2024-25": {
+      "n": 86,
+      "wins": 54,
+      "win_rate": 62.8,
+      "roi": 3.8,
+      "roi_ci95": [
+        -16.3,
+        31.1
+      ]
+    },
+    "2025-26": {
+      "n": 62,
+      "wins": 32,
+      "win_rate": 51.6,
+      "roi": -13.8,
+      "roi_ci95": [
+        -32.9,
+        11.9
+      ]
+    }
+  },
+  "rest_edge": {
+    "pooled": {
+      "n": 385,
+      "wins": 242,
+      "win_rate": 62.9,
+      "roi": 6.3,
+      "roi_ci95": [
+        -1.1,
+        16.7
+      ]
+    },
+    "2023-24": {
+      "n": 116,
+      "wins": 70,
+      "win_rate": 60.3,
+      "roi": 3.3,
+      "roi_ci95": [
+        -14.1,
+        17.7
+      ]
+    },
+    "2024-25": {
+      "n": 133,
+      "wins": 84,
+      "win_rate": 63.2,
+      "roi": 8.0,
+      "roi_ci95": [
+        -5.1,
+        26.3
+      ]
+    },
+    "2025-26": {
+      "n": 136,
+      "wins": 88,
+      "win_rate": 64.7,
+      "roi": 7.3,
+      "roi_ci95": [
+        -4.3,
+        24.7
+      ]
+    }
+  },
+  "unpriced": {
+    "signal1": 1,
+    "rest_edge": 1
+  },
+  "unscored": {
+    "signal1": 0,
+    "rest_edge": 0
+  },
+  "method_notes": [
+    "Schedule reconstructed from historical_h2h_events_cache.json event discovery, deduped by event id - covers every discovered game, not just priced ones.",
+    "Results fetched fresh from the NHL score API, matched by date + common team name.",
+    "Home moneyline is the average across every bookmaker offering h2h in the ~20-min-pre-puck-drop snapshot backfill_h2h_odds.py fetched.",
+    "ROI/CI method matches backtest_prop_model_full.py: dollar-weighted ROI, 95% CI from the per-bet return distribution (mean +/- 1.96*SE)."
+  ]
+}
