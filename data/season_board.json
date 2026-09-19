@@ -1,9 +1,176 @@
 {
   "date": "2026-09-19",
   "date_label": "Saturday, September 19, 2026",
-  "generated": "2026-09-19 12:24 PM MT",
-  "pricing_book": "draftkings",
-  "pricing_note": "Implied totals and team goal splits are the market's own expectation (DraftKings h2h + totals, de-vigged) - not a Grind Line projection.",
+  "week_start": "2026-09-14",
+  "generated": "2026-09-19 14:56 PM MT",
+  "weekly_workload": {
+    "teams": [
+      {
+        "team": "ANA",
+        "full_name": "Anaheim Ducks",
+        "games": 0
+      },
+      {
+        "team": "BOS",
+        "full_name": "Boston Bruins",
+        "games": 0
+      },
+      {
+        "team": "BUF",
+        "full_name": "Buffalo Sabres",
+        "games": 0
+      },
+      {
+        "team": "CAR",
+        "full_name": "Carolina Hurricanes",
+        "games": 0
+      },
+      {
+        "team": "CBJ",
+        "full_name": "Columbus Blue Jackets",
+        "games": 0
+      },
+      {
+        "team": "CGY",
+        "full_name": "Calgary Flames",
+        "games": 0
+      },
+      {
+        "team": "CHI",
+        "full_name": "Chicago Blackhawks",
+        "games": 0
+      },
+      {
+        "team": "COL",
+        "full_name": "Colorado Avalanche",
+        "games": 0
+      },
+      {
+        "team": "DAL",
+        "full_name": "Dallas Stars",
+        "games": 0
+      },
+      {
+        "team": "DET",
+        "full_name": "Detroit Red Wings",
+        "games": 0
+      },
+      {
+        "team": "EDM",
+        "full_name": "Edmonton Oilers",
+        "games": 0
+      },
+      {
+        "team": "FLA",
+        "full_name": "Florida Panthers",
+        "games": 0
+      },
+      {
+        "team": "LAK",
+        "full_name": "Los Angeles Kings",
+        "games": 0
+      },
+      {
+        "team": "MIN",
+        "full_name": "Minnesota Wild",
+        "games": 0
+      },
+      {
+        "team": "MTL",
+        "full_name": "Montr\u00e9al Canadiens",
+        "games": 0
+      },
+      {
+        "team": "NJD",
+        "full_name": "New Jersey Devils",
+        "games": 0
+      },
+      {
+        "team": "NSH",
+        "full_name": "Nashville Predators",
+        "games": 0
+      },
+      {
+        "team": "NYI",
+        "full_name": "New York Islanders",
+        "games": 0
+      },
+      {
+        "team": "NYR",
+        "full_name": "New York Rangers",
+        "games": 0
+      },
+      {
+        "team": "OTT",
+        "full_name": "Ottawa Senators",
+        "games": 0
+      },
+      {
+        "team": "PHI",
+        "full_name": "Philadelphia Flyers",
+        "games": 0
+      },
+      {
+        "team": "PIT",
+        "full_name": "Pittsburgh Penguins",
+        "games": 0
+      },
+      {
+        "team": "SEA",
+        "full_name": "Seattle Kraken",
+        "games": 0
+      },
+      {
+        "team": "SJS",
+        "full_name": "San Jose Sharks",
+        "games": 0
+      },
+      {
+        "team": "STL",
+        "full_name": "St. Louis Blues",
+        "games": 0
+      },
+      {
+        "team": "TBL",
+        "full_name": "Tampa Bay Lightning",
+        "games": 0
+      },
+      {
+        "team": "TOR",
+        "full_name": "Toronto Maple Leafs",
+        "games": 0
+      },
+      {
+        "team": "UTA",
+        "full_name": "Utah Mammoth",
+        "games": 0
+      },
+      {
+        "team": "VAN",
+        "full_name": "Vancouver Canucks",
+        "games": 0
+      },
+      {
+        "team": "VGK",
+        "full_name": "Vegas Golden Knights",
+        "games": 0
+      },
+      {
+        "team": "WPG",
+        "full_name": "Winnipeg Jets",
+        "games": 0
+      },
+      {
+        "team": "WSH",
+        "full_name": "Washington Capitals",
+        "games": 0
+      }
+    ],
+    "max_games": 0,
+    "min_games": 0,
+    "heavy_teams": [],
+    "light_teams": []
+  },
   "games": [
     {
       "away": "DAL",
@@ -11,13 +178,12 @@
       "away_full": "Dallas Stars",
       "home_full": "St. Louis Blues",
       "start_time_utc": "2026-09-19T23:00:00Z",
-      "pricing": null,
+      "away_games_this_week": 0,
+      "home_games_this_week": 0,
       "away_rest_days": null,
       "home_rest_days": null,
       "away_b2b": false,
       "home_b2b": false,
-      "away_road_streak": 1,
-      "home_road_streak": 0,
       "away_goalie": {
         "goalie": null,
         "date": null,
@@ -113,13 +279,12 @@
       "away_full": "Montr\u00e9al Canadiens",
       "home_full": "Toronto Maple Leafs",
       "start_time_utc": "2026-09-19T23:00:00Z",
-      "pricing": null,
+      "away_games_this_week": 0,
+      "home_games_this_week": 0,
       "away_rest_days": null,
       "home_rest_days": null,
       "away_b2b": false,
       "home_b2b": false,
-      "away_road_streak": 1,
-      "home_road_streak": 0,
       "away_goalie": {
         "goalie": null,
         "date": null,
@@ -215,13 +380,12 @@
       "away_full": "Toronto Maple Leafs",
       "home_full": "Montr\u00e9al Canadiens",
       "start_time_utc": "2026-09-19T23:00:00Z",
-      "pricing": null,
+      "away_games_this_week": 0,
+      "home_games_this_week": 0,
       "away_rest_days": null,
       "home_rest_days": null,
       "away_b2b": false,
       "home_b2b": false,
-      "away_road_streak": 1,
-      "home_road_streak": 0,
       "away_goalie": {
         "goalie": null,
         "date": null,
@@ -317,13 +481,12 @@
       "away_full": "Winnipeg Jets",
       "home_full": "Edmonton Oilers",
       "start_time_utc": "2026-09-20T00:00:00Z",
-      "pricing": null,
+      "away_games_this_week": 0,
+      "home_games_this_week": 0,
       "away_rest_days": null,
       "home_rest_days": null,
       "away_b2b": false,
       "home_b2b": false,
-      "away_road_streak": 1,
-      "home_road_streak": 0,
       "away_goalie": {
         "goalie": null,
         "date": null,
@@ -419,13 +582,12 @@
       "away_full": "Chicago Blackhawks",
       "home_full": "Minnesota Wild",
       "start_time_utc": "2026-09-20T00:00:00Z",
-      "pricing": null,
+      "away_games_this_week": 0,
+      "home_games_this_week": 0,
       "away_rest_days": null,
       "home_rest_days": null,
       "away_b2b": false,
       "home_b2b": false,
-      "away_road_streak": 1,
-      "home_road_streak": 0,
       "away_goalie": {
         "goalie": null,
         "date": null,
@@ -521,13 +683,12 @@
       "away_full": "Vegas Golden Knights",
       "home_full": "Los Angeles Kings",
       "start_time_utc": "2026-09-20T01:00:00Z",
-      "pricing": null,
+      "away_games_this_week": 0,
+      "home_games_this_week": 0,
       "away_rest_days": null,
       "home_rest_days": null,
       "away_b2b": false,
       "home_b2b": false,
-      "away_road_streak": 1,
-      "home_road_streak": 0,
       "away_goalie": {
         "goalie": null,
         "date": null,
@@ -623,13 +784,12 @@
       "away_full": "Vancouver Canucks",
       "home_full": "Seattle Kraken",
       "start_time_utc": "2026-09-20T01:00:00Z",
-      "pricing": null,
+      "away_games_this_week": 0,
+      "home_games_this_week": 0,
       "away_rest_days": null,
       "home_rest_days": null,
       "away_b2b": false,
       "home_b2b": false,
-      "away_road_streak": 1,
-      "home_road_streak": 0,
       "away_goalie": {
         "goalie": null,
         "date": null,

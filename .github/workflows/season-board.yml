@@ -1,11 +1,11 @@
-name: DFS Board
+name: Season Board
 on:
   schedule:
     - cron: '0 16 * * *'  # 16:00 UTC, ahead of the 17:00 UTC fantasy job
   workflow_dispatch:
 
 jobs:
-  build-dfs-board:
+  build-season-board:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,14 +15,12 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install requests pytz
-      - name: Build DFS board
-        env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: python .github/scripts/build_dfs_board.py
+      - name: Build season board
+        run: python .github/scripts/build_season_board.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/dfs_board.json
-          git diff --staged --quiet || git commit -m "Update DFS board $(date -u '+%Y-%m-%d')"
+          git add data/season_board.json
+          git diff --staged --quiet || git commit -m "Update season board $(date -u '+%Y-%m-%d')"
           git pull --rebase
           git push
