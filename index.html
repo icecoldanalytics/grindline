@@ -400,6 +400,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <a id="nav-edge-finder"                    onclick="showPage('edge-finder');closeMenu()">Edge Finder</a>
     <a id="nav-fantasy-picks"                  onclick="showPage('fantasy-picks');closeMenu()">Fantasy Picks</a>
     <a id="nav-schedule"                       onclick="showPage('schedule');closeMenu()">Schedule</a>
+    <a id="nav-dfs-board"                      onclick="showPage('dfs-board');closeMenu()">DFS Board</a>
     <a id="nav-pricing"                        onclick="showPage('pricing');closeMenu()">Pricing</a>
     <a id="nav-about"                          onclick="showPage('about');closeMenu()">About</a>
     <a class="nav-beta-mobile" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener" onclick="closeMenu()">✉ Join Beta</a>
@@ -853,6 +854,29 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="section-divider" style="margin-top:36px;"><h2>Every Team</h2><div class="sd-line"></div><div class="sd-badge">Click a column to sort</div></div>
     <div class="recap-table" id="sched-team-table"></div>
     <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Back-to-back = played the calendar day before. Weeks run Monday&ndash;Sunday. Heaviest/lightest week is each team's own single busiest/quietest week of the season.</div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+     DFS BOARD PAGE
+══════════════════════════════════ -->
+<div id="page-dfs-board" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Grind Line</div>
+      <div class="page-title">DFS Board</div>
+      <p class="page-desc">Tonight's game environment, straight from the NHL API and The Odds API. No salaries, no projections &mdash; every number here is either pulled directly or derived by simple math from a real market price. <span id="dfs-pricing-note"></span></p>
+    </div>
+  </div>
+  <div class="main-wrap">
+    <div class="section-divider"><h2>Games Ranked by Implied Total</h2><div class="sd-line"></div><div class="sd-badge" id="dfs-date-badge">Loading...</div></div>
+    <div class="recap-table" id="dfs-games-table"></div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;" id="dfs-empty-note"></div>
+
+    <div class="section-divider" style="margin-top:36px;"><h2>Game Detail</h2><div class="sd-line"></div><div class="sd-badge">Goalies &amp; Usage Leaders</div></div>
+    <div id="dfs-game-cards"></div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Last Start = the goalie who started that team's most recent completed regular-season game, and the date &mdash; a fact about the past, not a claim about who starts tonight. Road streak counts consecutive regular-season road games ending with tonight. Rest days include preseason games, matching how the live Rest Edge signal counts them.</div>
   </div>
 </div>
 
@@ -1507,6 +1531,153 @@ async function buildSchedule() {
   }
 }
 buildSchedule();
+</script>
+
+<script>
+// ── DFS BOARD ────────────────────────────────────────────────────────────
+let dfsData = null;
+let dfsSortKey = 'total';
+let dfsSortDir = -1;
+
+function renderDFSGamesTable() {
+  const container = document.getElementById('dfs-games-table');
+  if (!container || !dfsData) return;
+  const games = [...dfsData.games];
+
+  const getVal = (g, key) => {
+    if (key === 'total') return g.pricing ? g.pricing.total : -1;
+    if (key === 'matchup') return `${g.away} @ ${g.home}`;
+    if (key === 'away_rest_days') return g.away_rest_days ?? -1;
+    if (key === 'home_rest_days') return g.home_rest_days ?? -1;
+    if (key === 'road') return Math.max(g.away_road_streak || 0, g.home_road_streak || 0);
+    return 0;
+  };
+  games.sort((a, b) => {
+    const av = getVal(a, dfsSortKey), bv = getVal(b, dfsSortKey);
+    if (typeof av === 'string') return av.localeCompare(bv) * dfsSortDir;
+    return (av - bv) * dfsSortDir;
+  });
+
+  const cols = [
+    { key: 'matchup', label: 'Matchup' },
+    { key: 'total', label: 'Total' },
+    { key: 'away_rest_days', label: 'Away Rest' },
+    { key: 'home_rest_days', label: 'Home Rest' },
+    { key: 'road', label: 'Road Streak' },
+  ];
+  const gridCols = '1fr 90px 100px 100px 130px';
+  const arrow = key => dfsSortKey === key ? (dfsSortDir === 1 ? ' ▲' : ' ▼') : '';
+
+  let html = `<div class="recap-row wide" style="grid-template-columns:${gridCols};background:rgba(255,255,255,0.03);">` +
+    cols.map(c => `<span class="dfs-sort-header" data-key="${c.key}" style="cursor:pointer;user-select:none;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);${c.key !== 'matchup' ? 'text-align:right;' : ''}">${c.label}${arrow(c.key)}</span>`).join('') +
+    `</div>`;
+
+  if (!games.length) {
+    container.innerHTML = html;
+    return;
+  }
+
+  html += games.map(g => {
+    const totalTxt = g.pricing ? g.pricing.total : '—';
+    const roadTxt = (t, streak) => streak > 1 ? `${t} road x${streak}` : (streak === 1 ? `${t} road` : '');
+    const roadParts = [roadTxt(g.away, g.away_road_streak || 0), roadTxt(g.home, g.home_road_streak || 0)].filter(Boolean).join(' · ');
+    return `
+    <div class="recap-row wide" style="grid-template-columns:${gridCols};">
+      <span class="rr-game"><strong>${g.away} @ ${g.home}</strong> <span style="color:var(--muted);font-size:0.72rem;">${g.away_full} @ ${g.home_full}</span></span>
+      <span style="text-align:right;font-weight:700;color:${g.pricing ? 'var(--bright)' : 'var(--muted)'};">${totalTxt}</span>
+      <span style="text-align:right;">${g.away_rest_days ?? '—'}d${g.away_b2b ? ' <span style="color:var(--orange);font-weight:700;">B2B</span>' : ''}</span>
+      <span style="text-align:right;">${g.home_rest_days ?? '—'}d${g.home_b2b ? ' <span style="color:var(--orange);font-weight:700;">B2B</span>' : ''}</span>
+      <span style="text-align:right;font-size:0.72rem;color:var(--muted);">${roadParts || '—'}</span>
+    </div>`;
+  }).join('');
+
+  container.innerHTML = html;
+  container.querySelectorAll('.dfs-sort-header').forEach(h => {
+    h.onclick = () => {
+      const key = h.dataset.key;
+      if (dfsSortKey === key) { dfsSortDir *= -1; }
+      else { dfsSortKey = key; dfsSortDir = key === 'matchup' ? 1 : -1; }
+      renderDFSGamesTable();
+    };
+  });
+}
+
+function renderDFSGameCards() {
+  const container = document.getElementById('dfs-game-cards');
+  if (!container || !dfsData) return;
+  if (!dfsData.games.length) { container.innerHTML = ''; return; }
+
+  const goalieBlock = (goalie) => {
+    if (!goalie || !goalie.goalie) {
+      return `<div style="font-size:0.78rem;color:var(--muted);">${(goalie && goalie.note) || 'No data'}</div>`;
+    }
+    const sv = goalie.sv_pct != null ? goalie.sv_pct.toFixed(3) : '—';
+    const gaa = goalie.gaa != null ? goalie.gaa.toFixed(2) : '—';
+    return `
+      <div style="font-size:0.85rem;font-weight:700;color:var(--bright);">${goalie.goalie}</div>
+      <div style="font-size:0.72rem;color:var(--muted);">Last Start: ${goalie.date}</div>
+      <div style="font-size:0.72rem;color:var(--muted);">${sv} SV% &middot; ${gaa} GAA</div>`;
+  };
+  const usageBlock = (leaders) => (leaders || []).map(p => `
+    <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:4px 0;border-bottom:1px solid rgba(22,35,52,0.6);">
+      <span>${p.player} <span style="color:var(--muted);">${p.position}</span></span>
+      <span style="color:var(--muted);">${p.toi_per_game}m &middot; ${p.shots_per_game} SOG/g</span>
+    </div>`).join('');
+
+  container.innerHTML = dfsData.games.map(g => {
+    let priceLine;
+    if (g.pricing) {
+      const awayMlTxt = (g.pricing.away_ml > 0 ? '+' : '') + g.pricing.away_ml;
+      const homeMlTxt = (g.pricing.home_ml > 0 ? '+' : '') + g.pricing.home_ml;
+      priceLine = `<strong>${g.pricing.total}</strong> total &middot; ${g.away} ${awayMlTxt} (implied ${g.pricing.implied_away_goals}g) &middot; ${g.home} ${homeMlTxt} (implied ${g.pricing.implied_home_goals}g)`;
+    } else {
+      priceLine = 'No DraftKings line posted yet.';
+    }
+
+    return `
+    <div class="tracker-card" style="margin-bottom:16px;">
+      <div class="tracker-card-header"><h3>${g.away} @ ${g.home}</h3><span class="sd-badge">${g.pricing ? g.pricing.total + ' total' : 'Unpriced'}</span></div>
+      <div class="tracker-card-body">
+        <div style="font-size:0.8rem;color:var(--muted);margin-bottom:14px;">${priceLine}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px;">${g.away} Goalie</div>
+            ${goalieBlock(g.away_goalie)}
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:14px 0 6px;">${g.away} Usage Leaders</div>
+            ${usageBlock(g.away_usage_leaders)}
+          </div>
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px;">${g.home} Goalie</div>
+            ${goalieBlock(g.home_goalie)}
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:14px 0 6px;">${g.home} Usage Leaders</div>
+            ${usageBlock(g.home_usage_leaders)}
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function buildDFSBoard() {
+  try {
+    const r = await fetch('data/dfs_board.json?nocache=' + Date.now());
+    dfsData = await r.json();
+    if (!dfsData.date) return;
+
+    const badge = document.getElementById('dfs-date-badge');
+    if (badge) badge.textContent = dfsData.date_label || '—';
+    const noteEl = document.getElementById('dfs-pricing-note');
+    if (noteEl) noteEl.textContent = dfsData.pricing_note || '';
+    const emptyNote = document.getElementById('dfs-empty-note');
+    if (emptyNote) emptyNote.textContent = dfsData.games.length ? '' : 'No games scheduled, or no lines posted yet.';
+
+    renderDFSGamesTable();
+    renderDFSGameCards();
+  } catch (e) {
+    console.log('DFS board fetch error:', e);
+  }
+}
+buildDFSBoard();
 </script>
 
 <script>
