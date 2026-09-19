@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-18 04:53 PM MT",
+  "generated": "2026-09-19 10:12 AM MT",
   "season": "2025-26",
   "through_date": "2026-04-16",
   "pricing": {
-    "method": "Real home moneyline, average across DraftKings, FanDuel, BetMGM and Pinnacle, at the 7 AM MST snapshot \u2014 the price available when the daily email sends.",
+    "method": "Real home moneyline, average across every US bookmaker the Odds API returns for that game (typically 9-11 books, not a fixed list \u2014 see rest_edge.home_ml_average), at the 7 AM MST snapshot \u2014 the price available when the daily email sends.",
     "assumed_odds_used": false
   },
   "rest_edge": {
