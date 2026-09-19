@@ -1,0 +1,132 @@
+{
+  "goalie_number_one": {
+    "pooled": {
+      "n": 160,
+      "wins": 99,
+      "win_rate": 61.9,
+      "roi": 7.6,
+      "roi_ci95": [
+        -5.9,
+        22.6
+      ],
+      "avg_odds": -101.8
+    },
+    "2022-23": {
+      "n": 36,
+      "wins": 22,
+      "win_rate": 61.1,
+      "roi": 14.2,
+      "roi_ci95": [
+        -24.9,
+        37.2
+      ],
+      "avg_odds": -104.7
+    },
+    "2023-24": {
+      "n": 40,
+      "wins": 27,
+      "win_rate": 67.5,
+      "roi": 11.0,
+      "roi_ci95": [
+        -10.9,
+        42.5
+      ],
+      "avg_odds": -118.0
+    },
+    "2024-25": {
+      "n": 38,
+      "wins": 22,
+      "win_rate": 57.9,
+      "roi": 1.4,
+      "roi_ci95": [
+        -27.5,
+        32.9
+      ],
+      "avg_odds": -76.1
+    },
+    "2025-26": {
+      "n": 46,
+      "wins": 28,
+      "win_rate": 60.9,
+      "roi": 4.5,
+      "roi_ci95": [
+        -19.2,
+        35.7
+      ],
+      "avg_odds": -106.6
+    }
+  },
+  "goalie_backup": {
+    "pooled": {
+      "n": 305,
+      "wins": 185,
+      "win_rate": 60.7,
+      "roi": 2.4,
+      "roi_ci95": [
+        -8.6,
+        11.1
+      ],
+      "avg_odds": -148.2
+    },
+    "2022-23": {
+      "n": 72,
+      "wins": 44,
+      "win_rate": 61.1,
+      "roi": 2.4,
+      "roi_ci95": [
+        -21.6,
+        18.6
+      ],
+      "avg_odds": -251.4
+    },
+    "2023-24": {
+      "n": 72,
+      "wins": 40,
+      "win_rate": 55.6,
+      "roi": -1.4,
+      "roi_ci95": [
+        -28.6,
+        11.7
+      ],
+      "avg_odds": -104.8
+    },
+    "2024-25": {
+      "n": 85,
+      "wins": 52,
+      "win_rate": 61.2,
+      "roi": 4.1,
+      "roi_ci95": [
+        -13.6,
+        25.5
+      ],
+      "avg_odds": -109.6
+    },
+    "2025-26": {
+      "n": 76,
+      "wins": 49,
+      "win_rate": 64.5,
+      "roi": 4.4,
+      "roi_ci95": [
+        -11.0,
+        26.6
+      ],
+      "avg_odds": -134.7
+    }
+  },
+  "unpriced": {
+    "number_one": 0,
+    "backup": 0
+  },
+  "unscored": {
+    "number_one": 0,
+    "backup": 0
+  },
+  "no_starter_data": 1,
+  "method_notes": [
+    "Condition: Rest Edge (away B2B, home rested exactly 2 days) AND the away team started its own #1 goalie by cumulative starts entering that date, within that season only.",
+    "Backup = starter with strictly fewer cumulative starts than the team's leader entering that date, AND the team has played 10+ games so far this season. Games before that threshold are excluded from both buckets rather than guessed at.",
+    "Schedule from historical_h2h_events_cache.json, pricing from historical_h2h_odds.json - identical sources and method to backtest_rest_signals.py.",
+    "Starting goalies reconstructed fresh from NHL box scores for all four seasons (data/goalie_starts_backtest_cache.json), using the actual starter as a proxy for pre-game confirmation - the same method and caveat as backtest_signal2_history.py.",
+    "ROI/CI method matches backtest_rest_signals.py: dollar-weighted ROI, 95% CI from the per-bet return distribution (mean +/- 1.96*SE)."
+  ]
+}
