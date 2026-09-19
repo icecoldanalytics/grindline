@@ -1,0 +1,4623 @@
+{
+  "season": "2026-27",
+  "generated": "2026-09-18 20:52",
+  "season_start": "2026-09-29",
+  "season_end": "2027-04-10",
+  "total_games": 1344,
+  "teams": {
+    "ANA": {
+      "team": "ANA",
+      "full_name": "Anaheim Ducks",
+      "games": 84,
+      "back_to_backs": 11,
+      "back_to_back_dates": [
+        "2026-10-10",
+        "2026-10-20",
+        "2026-11-06",
+        "2026-11-15",
+        "2026-11-28",
+        "2026-12-13",
+        "2027-01-24",
+        "2027-02-16",
+        "2027-02-27",
+        "2027-03-14",
+        "2027-03-25"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 2
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-19",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "BOS": {
+      "team": "BOS",
+      "full_name": "Boston Bruins",
+      "games": 84,
+      "back_to_backs": 14,
+      "back_to_back_dates": [
+        "2026-10-03",
+        "2026-10-17",
+        "2026-11-18",
+        "2026-12-13",
+        "2026-12-20",
+        "2026-12-27",
+        "2027-01-02",
+        "2027-01-06",
+        "2027-01-23",
+        "2027-02-22",
+        "2027-03-04",
+        "2027-03-11",
+        "2027-03-26",
+        "2027-04-10"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 4
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-12-07",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-11-09",
+        "games": 2
+      }
+    },
+    "BUF": {
+      "team": "BUF",
+      "full_name": "Buffalo Sabres",
+      "games": 84,
+      "back_to_backs": 14,
+      "back_to_back_dates": [
+        "2026-10-13",
+        "2026-11-12",
+        "2026-11-22",
+        "2026-12-04",
+        "2026-12-15",
+        "2027-01-05",
+        "2027-01-09",
+        "2027-01-21",
+        "2027-01-28",
+        "2027-02-21",
+        "2027-02-27",
+        "2027-03-07",
+        "2027-03-15",
+        "2027-03-21"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-12",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2027-02-01",
+        "games": 1
+      }
+    },
+    "CAR": {
+      "team": "CAR",
+      "full_name": "Carolina Hurricanes",
+      "games": 84,
+      "back_to_backs": 12,
+      "back_to_back_dates": [
+        "2026-10-03",
+        "2026-10-11",
+        "2026-10-18",
+        "2026-11-22",
+        "2026-12-18",
+        "2026-12-29",
+        "2027-01-15",
+        "2027-01-26",
+        "2027-02-19",
+        "2027-03-13",
+        "2027-03-30",
+        "2027-04-03"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 2
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 4
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-05",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-11-09",
+        "games": 2
+      }
+    },
+    "CBJ": {
+      "team": "CBJ",
+      "full_name": "Columbus Blue Jackets",
+      "games": 84,
+      "back_to_backs": 13,
+      "back_to_back_dates": [
+        "2026-10-10",
+        "2026-10-18",
+        "2026-11-06",
+        "2026-12-13",
+        "2026-12-22",
+        "2026-12-27",
+        "2027-01-03",
+        "2027-01-08",
+        "2027-01-16",
+        "2027-01-24",
+        "2027-02-09",
+        "2027-02-18",
+        "2027-02-27"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-12-07",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "CGY": {
+      "team": "CGY",
+      "full_name": "Calgary Flames",
+      "games": 84,
+      "back_to_backs": 8,
+      "back_to_back_dates": [
+        "2026-10-04",
+        "2026-10-31",
+        "2026-11-15",
+        "2026-11-28",
+        "2026-12-11",
+        "2027-01-03",
+        "2027-02-13",
+        "2027-03-13"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 2
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-26",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-10-05",
+        "games": 2
+      }
+    },
+    "CHI": {
+      "team": "CHI",
+      "full_name": "Chicago Blackhawks",
+      "games": 84,
+      "back_to_backs": 12,
+      "back_to_back_dates": [
+        "2026-11-05",
+        "2026-11-22",
+        "2026-11-30",
+        "2026-12-04",
+        "2027-01-02",
+        "2027-01-10",
+        "2027-02-11",
+        "2027-02-21",
+        "2027-03-01",
+        "2027-03-06",
+        "2027-03-14",
+        "2027-03-26"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 1
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-11-02",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-12-21",
+        "games": 1
+      }
+    },
+    "COL": {
+      "team": "COL",
+      "full_name": "Colorado Avalanche",
+      "games": 84,
+      "back_to_backs": 10,
+      "back_to_back_dates": [
+        "2026-10-08",
+        "2026-10-14",
+        "2026-10-20",
+        "2026-11-03",
+        "2026-11-19",
+        "2026-11-28",
+        "2026-12-08",
+        "2027-02-13",
+        "2027-02-28",
+        "2027-03-30"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 1
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 4
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-19",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-12-21",
+        "games": 1
+      }
+    },
+    "DAL": {
+      "team": "DAL",
+      "full_name": "Dallas Stars",
+      "games": 84,
+      "back_to_backs": 13,
+      "back_to_back_dates": [
+        "2026-10-03",
+        "2026-10-14",
+        "2026-11-15",
+        "2026-11-28",
+        "2026-12-20",
+        "2027-01-09",
+        "2027-01-15",
+        "2027-01-20",
+        "2027-02-13",
+        "2027-02-28",
+        "2027-03-06",
+        "2027-04-03",
+        "2027-04-10"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 4
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-12-14",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "DET": {
+      "team": "DET",
+      "full_name": "Detroit Red Wings",
+      "games": 84,
+      "back_to_backs": 12,
+      "back_to_back_dates": [
+        "2026-10-10",
+        "2026-11-03",
+        "2026-11-28",
+        "2026-12-12",
+        "2026-12-18",
+        "2026-12-29",
+        "2027-01-17",
+        "2027-01-30",
+        "2027-02-19",
+        "2027-03-24",
+        "2027-03-28",
+        "2027-04-10"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-11-02",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "EDM": {
+      "team": "EDM",
+      "full_name": "Edmonton Oilers",
+      "games": 84,
+      "back_to_backs": 11,
+      "back_to_back_dates": [
+        "2026-11-01",
+        "2026-11-15",
+        "2026-11-22",
+        "2026-11-28",
+        "2026-12-20",
+        "2026-12-28",
+        "2027-01-03",
+        "2027-01-21",
+        "2027-02-13",
+        "2027-03-21",
+        "2027-04-03"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 1
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-26",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-12-21",
+        "games": 1
+      }
+    },
+    "FLA": {
+      "team": "FLA",
+      "full_name": "Florida Panthers",
+      "games": 84,
+      "back_to_backs": 14,
+      "back_to_back_dates": [
+        "2026-10-13",
+        "2026-10-22",
+        "2026-11-08",
+        "2026-11-15",
+        "2026-11-28",
+        "2026-12-15",
+        "2027-01-02",
+        "2027-01-27",
+        "2027-02-13",
+        "2027-02-21",
+        "2027-02-27",
+        "2027-03-16",
+        "2027-04-04",
+        "2027-04-10"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 4
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-12",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-10-05",
+        "games": 2
+      }
+    },
+    "LAK": {
+      "team": "LAK",
+      "full_name": "Los Angeles Kings",
+      "games": 84,
+      "back_to_backs": 10,
+      "back_to_back_dates": [
+        "2026-10-27",
+        "2026-11-28",
+        "2026-12-12",
+        "2026-12-20",
+        "2027-01-16",
+        "2027-01-24",
+        "2027-02-09",
+        "2027-02-18",
+        "2027-02-27",
+        "2027-04-03"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 4
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-26",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "MIN": {
+      "team": "MIN",
+      "full_name": "Minnesota Wild",
+      "games": 84,
+      "back_to_backs": 10,
+      "back_to_back_dates": [
+        "2026-10-13",
+        "2026-10-25",
+        "2026-11-07",
+        "2026-12-19",
+        "2027-01-02",
+        "2027-01-17",
+        "2027-01-26",
+        "2027-02-16",
+        "2027-02-28",
+        "2027-03-07"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 4
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-12",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "MTL": {
+      "team": "MTL",
+      "full_name": "Montr\u00e9al Canadiens",
+      "games": 84,
+      "back_to_backs": 10,
+      "back_to_back_dates": [
+        "2026-10-14",
+        "2026-11-19",
+        "2026-12-06",
+        "2026-12-19",
+        "2026-12-27",
+        "2027-01-14",
+        "2027-01-19",
+        "2027-02-14",
+        "2027-03-10",
+        "2027-03-28"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-11-16",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "NJD": {
+      "team": "NJD",
+      "full_name": "New Jersey Devils",
+      "games": 84,
+      "back_to_backs": 13,
+      "back_to_back_dates": [
+        "2026-10-13",
+        "2026-10-28",
+        "2026-11-08",
+        "2026-11-28",
+        "2026-12-20",
+        "2026-12-27",
+        "2027-01-02",
+        "2027-01-13",
+        "2027-01-24",
+        "2027-01-31",
+        "2027-02-21",
+        "2027-03-05",
+        "2027-04-04"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 2
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 4
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-12",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2027-02-01",
+        "games": 1
+      }
+    },
+    "NSH": {
+      "team": "NSH",
+      "full_name": "Nashville Predators",
+      "games": 84,
+      "back_to_backs": 11,
+      "back_to_back_dates": [
+        "2026-10-25",
+        "2026-11-11",
+        "2026-11-28",
+        "2026-12-06",
+        "2026-12-29",
+        "2027-01-02",
+        "2027-01-10",
+        "2027-01-21",
+        "2027-01-31",
+        "2027-02-21",
+        "2027-03-27"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-11-09",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2027-02-01",
+        "games": 1
+      }
+    },
+    "NYI": {
+      "team": "NYI",
+      "full_name": "New York Islanders",
+      "games": 84,
+      "back_to_backs": 13,
+      "back_to_back_dates": [
+        "2026-11-28",
+        "2026-12-04",
+        "2026-12-11",
+        "2026-12-16",
+        "2026-12-27",
+        "2027-01-16",
+        "2027-01-23",
+        "2027-02-13",
+        "2027-02-23",
+        "2027-02-27",
+        "2027-03-13",
+        "2027-03-21",
+        "2027-04-02"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 2
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 2
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 4
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-11-23",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "NYR": {
+      "team": "NYR",
+      "full_name": "New York Rangers",
+      "games": 84,
+      "back_to_backs": 11,
+      "back_to_back_dates": [
+        "2026-10-02",
+        "2026-11-28",
+        "2026-12-08",
+        "2026-12-16",
+        "2027-01-12",
+        "2027-01-17",
+        "2027-01-30",
+        "2027-02-15",
+        "2027-02-21",
+        "2027-03-07",
+        "2027-03-21"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 2
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-09-28",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2027-02-01",
+        "games": 1
+      }
+    },
+    "OTT": {
+      "team": "OTT",
+      "full_name": "Ottawa Senators",
+      "games": 84,
+      "back_to_backs": 14,
+      "back_to_back_dates": [
+        "2026-10-06",
+        "2026-10-13",
+        "2026-10-22",
+        "2026-11-01",
+        "2026-11-28",
+        "2026-12-06",
+        "2027-01-06",
+        "2027-02-18",
+        "2027-02-22",
+        "2027-02-26",
+        "2027-03-07",
+        "2027-03-14",
+        "2027-03-25",
+        "2027-04-08"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 1
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 1
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-05",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 1
+      }
+    },
+    "PHI": {
+      "team": "PHI",
+      "full_name": "Philadelphia Flyers",
+      "games": 84,
+      "back_to_backs": 12,
+      "back_to_back_dates": [
+        "2026-10-01",
+        "2026-10-11",
+        "2026-10-28",
+        "2026-11-09",
+        "2026-11-15",
+        "2026-11-28",
+        "2026-12-21",
+        "2027-01-04",
+        "2027-01-10",
+        "2027-01-16",
+        "2027-01-31",
+        "2027-02-27"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-05",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2027-02-01",
+        "games": 1
+      }
+    },
+    "PIT": {
+      "team": "PIT",
+      "full_name": "Pittsburgh Penguins",
+      "games": 84,
+      "back_to_backs": 15,
+      "back_to_back_dates": [
+        "2026-10-10",
+        "2026-10-17",
+        "2026-11-08",
+        "2026-11-22",
+        "2026-11-28",
+        "2026-12-06",
+        "2026-12-18",
+        "2027-01-01",
+        "2027-01-13",
+        "2027-01-26",
+        "2027-02-16",
+        "2027-03-07",
+        "2027-03-14",
+        "2027-04-04",
+        "2027-04-10"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 2
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 4
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-05",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2027-02-01",
+        "games": 1
+      }
+    },
+    "SEA": {
+      "team": "SEA",
+      "full_name": "Seattle Kraken",
+      "games": 84,
+      "back_to_backs": 13,
+      "back_to_back_dates": [
+        "2026-10-04",
+        "2026-11-28",
+        "2026-12-04",
+        "2026-12-18",
+        "2026-12-30",
+        "2027-01-03",
+        "2027-01-09",
+        "2027-01-19",
+        "2027-01-26",
+        "2027-02-20",
+        "2027-03-04",
+        "2027-03-28",
+        "2027-04-06"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 1
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 2
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 4
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-11-23",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-12-21",
+        "games": 1
+      }
+    },
+    "SJS": {
+      "team": "SJS",
+      "full_name": "San Jose Sharks",
+      "games": 84,
+      "back_to_backs": 13,
+      "back_to_back_dates": [
+        "2026-10-20",
+        "2026-11-07",
+        "2026-11-15",
+        "2026-11-28",
+        "2026-12-04",
+        "2026-12-09",
+        "2026-12-29",
+        "2027-01-02",
+        "2027-01-09",
+        "2027-01-14",
+        "2027-03-06",
+        "2027-03-16",
+        "2027-04-04"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 2
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 4
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 2
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-19",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "STL": {
+      "team": "STL",
+      "full_name": "St. Louis Blues",
+      "games": 84,
+      "back_to_backs": 12,
+      "back_to_back_dates": [
+        "2026-10-03",
+        "2026-11-22",
+        "2026-11-28",
+        "2026-12-13",
+        "2026-12-22",
+        "2027-01-03",
+        "2027-01-14",
+        "2027-02-13",
+        "2027-02-28",
+        "2027-03-21",
+        "2027-03-28",
+        "2027-04-04"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 2
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-11-16",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "TBL": {
+      "team": "TBL",
+      "full_name": "Tampa Bay Lightning",
+      "games": 84,
+      "back_to_backs": 13,
+      "back_to_back_dates": [
+        "2026-10-24",
+        "2026-11-08",
+        "2026-11-12",
+        "2026-11-28",
+        "2026-12-13",
+        "2026-12-20",
+        "2026-12-29",
+        "2027-02-03",
+        "2027-02-13",
+        "2027-02-28",
+        "2027-03-06",
+        "2027-03-18",
+        "2027-04-06"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 4
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-11-02",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    },
+    "TOR": {
+      "team": "TOR",
+      "full_name": "Toronto Maple Leafs",
+      "games": 84,
+      "back_to_backs": 11,
+      "back_to_back_dates": [
+        "2026-09-30",
+        "2026-10-20",
+        "2026-11-08",
+        "2026-11-28",
+        "2026-12-13",
+        "2026-12-22",
+        "2026-12-30",
+        "2027-01-27",
+        "2027-03-06",
+        "2027-03-18",
+        "2027-03-28"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 2
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-19",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2027-04-05",
+        "games": 2
+      }
+    },
+    "UTA": {
+      "team": "UTA",
+      "full_name": "Utah Mammoth",
+      "games": 84,
+      "back_to_backs": 10,
+      "back_to_back_dates": [
+        "2026-10-04",
+        "2026-11-12",
+        "2026-11-28",
+        "2026-12-03",
+        "2026-12-15",
+        "2027-01-13",
+        "2027-02-03",
+        "2027-02-15",
+        "2027-03-19",
+        "2027-04-10"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 2
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 2
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 4
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-11-23",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-12-07",
+        "games": 2
+      }
+    },
+    "VAN": {
+      "team": "VAN",
+      "full_name": "Vancouver Canucks",
+      "games": 84,
+      "back_to_backs": 11,
+      "back_to_back_dates": [
+        "2026-10-04",
+        "2026-10-11",
+        "2026-11-16",
+        "2026-11-22",
+        "2026-12-05",
+        "2027-01-03",
+        "2027-01-23",
+        "2027-02-21",
+        "2027-03-14",
+        "2027-03-21",
+        "2027-04-10"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 2
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-09-28",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2027-02-08",
+        "games": 1
+      }
+    },
+    "VGK": {
+      "team": "VGK",
+      "full_name": "Vegas Golden Knights",
+      "games": 84,
+      "back_to_backs": 8,
+      "back_to_back_dates": [
+        "2026-10-13",
+        "2026-11-03",
+        "2026-11-28",
+        "2026-12-22",
+        "2026-12-29",
+        "2027-01-17",
+        "2027-03-05",
+        "2027-04-03"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 4
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 3
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-12",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2027-02-08",
+        "games": 1
+      }
+    },
+    "WPG": {
+      "team": "WPG",
+      "full_name": "Winnipeg Jets",
+      "games": 84,
+      "back_to_backs": 9,
+      "back_to_back_dates": [
+        "2026-10-05",
+        "2026-10-30",
+        "2026-11-28",
+        "2026-12-06",
+        "2026-12-20",
+        "2027-01-17",
+        "2027-02-03",
+        "2027-03-16",
+        "2027-04-10"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 4
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 4
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 1
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 2
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 4
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-10-26",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2027-02-08",
+        "games": 1
+      }
+    },
+    "WSH": {
+      "team": "WSH",
+      "full_name": "Washington Capitals",
+      "games": 84,
+      "back_to_backs": 14,
+      "back_to_back_dates": [
+        "2026-10-03",
+        "2026-10-14",
+        "2026-10-29",
+        "2026-11-28",
+        "2026-12-31",
+        "2027-01-19",
+        "2027-01-30",
+        "2027-02-03",
+        "2027-02-14",
+        "2027-02-26",
+        "2027-03-10",
+        "2027-03-18",
+        "2027-03-24",
+        "2027-04-04"
+      ],
+      "weekly_games": [
+        {
+          "week_start": "2026-09-28",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-05",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-12",
+          "games": 3
+        },
+        {
+          "week_start": "2026-10-19",
+          "games": 2
+        },
+        {
+          "week_start": "2026-10-26",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-02",
+          "games": 2
+        },
+        {
+          "week_start": "2026-11-09",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-16",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-23",
+          "games": 3
+        },
+        {
+          "week_start": "2026-11-30",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-07",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-14",
+          "games": 3
+        },
+        {
+          "week_start": "2026-12-21",
+          "games": 2
+        },
+        {
+          "week_start": "2026-12-28",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-04",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-11",
+          "games": 3
+        },
+        {
+          "week_start": "2027-01-18",
+          "games": 4
+        },
+        {
+          "week_start": "2027-01-25",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-01",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-08",
+          "games": 2
+        },
+        {
+          "week_start": "2027-02-15",
+          "games": 3
+        },
+        {
+          "week_start": "2027-02-22",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-01",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-08",
+          "games": 3
+        },
+        {
+          "week_start": "2027-03-15",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-22",
+          "games": 4
+        },
+        {
+          "week_start": "2027-03-29",
+          "games": 4
+        },
+        {
+          "week_start": "2027-04-05",
+          "games": 3
+        }
+      ],
+      "heaviest_week": {
+        "week_start": "2026-12-28",
+        "games": 4
+      },
+      "lightest_week": {
+        "week_start": "2026-09-28",
+        "games": 2
+      }
+    }
+  },
+  "league_weekly": [
+    {
+      "week_start": "2026-09-28",
+      "games": 39
+    },
+    {
+      "week_start": "2026-10-05",
+      "games": 47
+    },
+    {
+      "week_start": "2026-10-12",
+      "games": 50
+    },
+    {
+      "week_start": "2026-10-19",
+      "games": 48
+    },
+    {
+      "week_start": "2026-10-26",
+      "games": 47
+    },
+    {
+      "week_start": "2026-11-02",
+      "games": 51
+    },
+    {
+      "week_start": "2026-11-09",
+      "games": 48
+    },
+    {
+      "week_start": "2026-11-16",
+      "games": 47
+    },
+    {
+      "week_start": "2026-11-23",
+      "games": 52
+    },
+    {
+      "week_start": "2026-11-30",
+      "games": 52
+    },
+    {
+      "week_start": "2026-12-07",
+      "games": 49
+    },
+    {
+      "week_start": "2026-12-14",
+      "games": 54
+    },
+    {
+      "week_start": "2026-12-21",
+      "games": 34
+    },
+    {
+      "week_start": "2026-12-28",
+      "games": 55
+    },
+    {
+      "week_start": "2027-01-04",
+      "games": 51
+    },
+    {
+      "week_start": "2027-01-11",
+      "games": 51
+    },
+    {
+      "week_start": "2027-01-18",
+      "games": 54
+    },
+    {
+      "week_start": "2027-01-25",
+      "games": 51
+    },
+    {
+      "week_start": "2027-02-01",
+      "games": 14
+    },
+    {
+      "week_start": "2027-02-08",
+      "games": 34
+    },
+    {
+      "week_start": "2027-02-15",
+      "games": 57
+    },
+    {
+      "week_start": "2027-02-22",
+      "games": 50
+    },
+    {
+      "week_start": "2027-03-01",
+      "games": 53
+    },
+    {
+      "week_start": "2027-03-08",
+      "games": 49
+    },
+    {
+      "week_start": "2027-03-15",
+      "games": 55
+    },
+    {
+      "week_start": "2027-03-22",
+      "games": 51
+    },
+    {
+      "week_start": "2027-03-29",
+      "games": 52
+    },
+    {
+      "week_start": "2027-04-05",
+      "games": 49
+    }
+  ],
+  "summary": {
+    "heaviest_league_week": {
+      "week_start": "2027-02-15",
+      "games": 57
+    },
+    "lightest_league_week": {
+      "week_start": "2027-02-01",
+      "games": 14
+    },
+    "most_back_to_backs": {
+      "team": "PIT",
+      "count": 15
+    },
+    "fewest_back_to_backs": {
+      "team": "CGY",
+      "count": 8
+    },
+    "avg_back_to_backs": 11.8
+  }
+}

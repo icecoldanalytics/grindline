@@ -399,6 +399,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <a id="nav-signal-tracker"                 onclick="showPage('signal-tracker');closeMenu()">Signal Tracker</a>
     <a id="nav-edge-finder"                    onclick="showPage('edge-finder');closeMenu()">Edge Finder</a>
     <a id="nav-fantasy-picks"                  onclick="showPage('fantasy-picks');closeMenu()">Fantasy Picks</a>
+    <a id="nav-schedule"                       onclick="showPage('schedule');closeMenu()">Schedule</a>
     <a id="nav-pricing"                        onclick="showPage('pricing');closeMenu()">Pricing</a>
     <a id="nav-about"                          onclick="showPage('about');closeMenu()">About</a>
     <a class="nav-beta-mobile" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener" onclick="closeMenu()">✉ Join Beta</a>
@@ -802,6 +803,58 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 
   </div><!-- /main-wrap -->
 </div><!-- /page-fantasy-picks -->
+
+
+<!-- ══════════════════════════════════
+     SCHEDULE ANALYSIS PAGE
+══════════════════════════════════ -->
+<div id="page-schedule" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Grind Line</div>
+      <div class="page-title">Schedule Analysis</div>
+      <p class="page-desc">Every team's <span id="sched-season-label">—</span> back-to-backs and weekly game counts, straight from the NHL's own published schedule. Season-long: use games-per-week for streaming and start/sit calls. DFS: use back-to-back counts and weekly slate size for nightly spots.</p>
+    </div>
+  </div>
+  <div class="main-wrap">
+    <div class="section-divider"><h2>League Overview</h2><div class="sd-line"></div><div class="sd-badge" id="sched-season-badge">Loading...</div></div>
+    <div class="tracker-grid">
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Heaviest League Week</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Week Of</span><span class="stat-val" id="sched-heavy-week">—</span></div>
+          <div class="stat-row"><span class="stat-label">Games</span><span class="stat-val warn" id="sched-heavy-games">—</span></div>
+        </div>
+      </div>
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Lightest League Week</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Week Of</span><span class="stat-val" id="sched-light-week">—</span></div>
+          <div class="stat-row"><span class="stat-label">Games</span><span class="stat-val" id="sched-light-games">—</span></div>
+        </div>
+      </div>
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Most Back-to-Backs</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Team</span><span class="stat-val" id="sched-most-b2b-team">—</span></div>
+          <div class="stat-row"><span class="stat-label">Count</span><span class="stat-val warn" id="sched-most-b2b-count">—</span></div>
+        </div>
+      </div>
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Fewest Back-to-Backs</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Team</span><span class="stat-val" id="sched-fewest-b2b-team">—</span></div>
+          <div class="stat-row"><span class="stat-label">Count</span><span class="stat-val good" id="sched-fewest-b2b-count">—</span></div>
+          <div class="stat-row"><span class="stat-label">League Avg</span><span class="stat-val" id="sched-avg-b2b">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider" style="margin-top:36px;"><h2>Every Team</h2><div class="sd-line"></div><div class="sd-badge">Click a column to sort</div></div>
+    <div class="recap-table" id="sched-team-table"></div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Back-to-back = played the calendar day before. Weeks run Monday&ndash;Sunday. Heaviest/lightest week is each team's own single busiest/quietest week of the season.</div>
+  </div>
+</div>
 
 
 <!-- FOOTER -->
@@ -1367,6 +1420,93 @@ async function buildFantasy() {
   }
 }
 buildFantasy();
+</script>
+
+<script>
+// ── SCHEDULE ANALYSIS ───────────────────────────────────────────────────
+let scheduleData = null;
+let scheduleSortKey = 'back_to_backs';
+let scheduleSortDir = -1;
+
+function renderScheduleTable() {
+  const container = document.getElementById('sched-team-table');
+  if (!container || !scheduleData) return;
+  const teams = Object.values(scheduleData.teams);
+
+  teams.sort((a, b) => {
+    let av, bv;
+    if (scheduleSortKey === 'heaviest_week' || scheduleSortKey === 'lightest_week') {
+      av = a[scheduleSortKey].games; bv = b[scheduleSortKey].games;
+    } else {
+      av = a[scheduleSortKey]; bv = b[scheduleSortKey];
+    }
+    if (typeof av === 'string') return av.localeCompare(bv) * scheduleSortDir;
+    return (av - bv) * scheduleSortDir;
+  });
+
+  const cols = [
+    { key: 'team', label: 'Team' },
+    { key: 'games', label: 'Games' },
+    { key: 'back_to_backs', label: 'B2Bs' },
+    { key: 'heaviest_week', label: 'Heaviest Wk' },
+    { key: 'lightest_week', label: 'Lightest Wk' },
+  ];
+  const gridCols = '1fr 70px 70px 150px 150px';
+
+  const arrow = key => scheduleSortKey === key ? (scheduleSortDir === 1 ? ' ▲' : ' ▼') : '';
+  let html = `<div class="recap-row wide" style="grid-template-columns:${gridCols};background:rgba(255,255,255,0.03);">` +
+    cols.map(c => `<span class="sched-sort-header" data-key="${c.key}" style="cursor:pointer;user-select:none;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);${c.key !== 'team' ? 'text-align:right;' : ''}">${c.label}${arrow(c.key)}</span>`).join('') +
+    `</div>`;
+
+  html += teams.map(t => `
+    <div class="recap-row wide" style="grid-template-columns:${gridCols};">
+      <span class="rr-game"><strong>${t.team}</strong> <span style="color:var(--muted);font-size:0.72rem;">${t.full_name}</span></span>
+      <span style="text-align:right;">${t.games}</span>
+      <span style="text-align:right;font-weight:700;color:${t.back_to_backs >= 13 ? 'var(--orange)' : 'var(--text)'};">${t.back_to_backs}</span>
+      <span style="text-align:right;">${t.heaviest_week.games}g <span style="color:var(--muted);font-size:0.68rem;">(${t.heaviest_week.week_start})</span></span>
+      <span style="text-align:right;">${t.lightest_week.games}g <span style="color:var(--muted);font-size:0.68rem;">(${t.lightest_week.week_start})</span></span>
+    </div>`).join('');
+
+  container.innerHTML = html;
+  container.querySelectorAll('.sched-sort-header').forEach(h => {
+    h.onclick = () => {
+      const key = h.dataset.key;
+      if (scheduleSortKey === key) { scheduleSortDir *= -1; }
+      else { scheduleSortKey = key; scheduleSortDir = key === 'team' ? 1 : -1; }
+      renderScheduleTable();
+    };
+  });
+}
+
+async function buildSchedule() {
+  try {
+    const r = await fetch('data/schedule_analysis.json?nocache=' + Date.now());
+    scheduleData = await r.json();
+    if (!scheduleData.teams) return;
+
+    const seasonLabelEl = document.getElementById('sched-season-label');
+    if (seasonLabelEl) seasonLabelEl.textContent = scheduleData.season;
+    const badge = document.getElementById('sched-season-badge');
+    if (badge) badge.textContent = `${scheduleData.season} · ${scheduleData.total_games} games`;
+
+    const s = scheduleData.summary;
+    const set = (id, val) => { const e = document.getElementById(id); if (e) e.textContent = val; };
+    set('sched-heavy-week', s.heaviest_league_week.week_start);
+    set('sched-heavy-games', s.heaviest_league_week.games + ' games');
+    set('sched-light-week', s.lightest_league_week.week_start);
+    set('sched-light-games', s.lightest_league_week.games + ' games');
+    set('sched-most-b2b-team', s.most_back_to_backs.team);
+    set('sched-most-b2b-count', s.most_back_to_backs.count);
+    set('sched-fewest-b2b-team', s.fewest_back_to_backs.team);
+    set('sched-fewest-b2b-count', s.fewest_back_to_backs.count);
+    set('sched-avg-b2b', s.avg_back_to_backs);
+
+    renderScheduleTable();
+  } catch (e) {
+    console.log('Schedule fetch error:', e);
+  }
+}
+buildSchedule();
 </script>
 
 <script>
