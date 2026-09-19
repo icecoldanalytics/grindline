@@ -67,7 +67,10 @@ def fetch_odds():
                 "regions": "us",
                 "markets": "h2h",
                 "oddsFormat": "american",
-                "bookmakers": "draftkings,fanduel,betmgm,pinnacle"
+                # Pinnacle isn't returned for NHL by this project's Odds API plan
+                # (verified against both live and historical data, zero
+                # appearances) - dropped rather than requested for nothing.
+                "bookmakers": "draftkings,fanduel,betmgm"
             },
             timeout=10
         )

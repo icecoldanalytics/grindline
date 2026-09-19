@@ -262,9 +262,10 @@ def main():
         "season": SEASON,
         "through_date": through,
         "pricing": {
-            "method": "Real home moneyline, average across DraftKings, FanDuel, "
-                      "BetMGM and Pinnacle, at the 7 AM MST snapshot — the price "
-                      "available when the daily email sends.",
+            "method": "Real home moneyline, average across every US bookmaker the "
+                      "Odds API returns for that game (typically 9-11 books, not a "
+                      "fixed list — see rest_edge.home_ml_average), at the 7 AM MST "
+                      "snapshot — the price available when the daily email sends.",
             "assumed_odds_used": False,
         },
 
