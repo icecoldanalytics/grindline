@@ -1,0 +1,16 @@
+{
+  "total_logged": 0,
+  "total_graded": 0,
+  "pending": 0,
+  "overall": {
+    "n": 0,
+    "wins": 0,
+    "hit_rate": null,
+    "roi": null,
+    "roi_ci95": [
+      null,
+      null
+    ]
+  },
+  "by_market": {}
+}

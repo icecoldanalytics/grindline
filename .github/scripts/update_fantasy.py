@@ -11,11 +11,11 @@ from datetime import datetime
 import pytz
 import time
 import unicodedata
-from generate_real_props import generate_real_player_props, append_to_props_log
 
 MST = pytz.timezone("America/Edmonton")
 ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+PROP_LOG_PATH = "data/prop_log.json"
 
 PROP_MARKETS = [
     "player_goal_scorer_anytime",
@@ -423,6 +423,67 @@ def generate_player_props(prop_context, date_label):
         'Return 5-10 props. Confidence: "high", "medium", "low".'
     )
     return call_claude(prompt)
+
+
+def atomic_write_json(path, data, indent=2):
+    """Write JSON via temp-file + rename so a process kill mid-write can't
+    truncate the file on disk - see backfill_h2h_odds.py's docstring for
+    why this matters (a background run corrupted a prior data file this
+    same way)."""
+    tmp_path = path + ".tmp"
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=indent)
+    if os.path.exists(path):
+        os.replace(path, path + ".bak")
+    os.replace(tmp_path, path)
+
+
+def log_props(props, date_str):
+    """Appends today's real, validated props to data/prop_log.json as
+    ungraded entries - the same append_to_props_log() call this replaced
+    (imported from generate_real_props.py) required category/prop_type/
+    pick/unit_size, fields that belong to generate_real_props.py's
+    model-based prop schema, not this file's own generate_player_props()
+    output (market/line/side/odds/book/confidence) - it would KeyError
+    the moment any real props existed to log. This logs the schema this
+    pipeline actually produces, following capture_signals.py's pattern:
+    resumable (skips anything already logged today), atomic write,
+    graded later by a separate script once the games complete.
+    """
+    log = {"schema": 1, "entries": []}
+    if os.path.exists(PROP_LOG_PATH):
+        with open(PROP_LOG_PATH, encoding="utf-8") as f:
+            log = json.load(f)
+
+    seen = {(e["date"], e["player"], e["market"], e["line"], e["side"]) for e in log["entries"]}
+
+    added = 0
+    for p in props:
+        key = (date_str, p.get("player"), p.get("market"), p.get("line"), p.get("side"))
+        if key in seen:
+            continue
+        log["entries"].append({
+            "date": date_str,
+            "game": p.get("game"),
+            "player": p.get("player"),
+            "market": p.get("market"),
+            "line": p.get("line"),
+            "side": p.get("side"),
+            "price": p.get("odds"),
+            "book": p.get("book"),
+            "graded": False,
+            "actual_stat": None,
+            "hit": None,
+        })
+        added += 1
+
+    if added:
+        atomic_write_json(PROP_LOG_PATH, log)
+        print(f"Logged {added} new props to {PROP_LOG_PATH} ({len(log['entries'])} total)")
+    else:
+        print("No new props to log (already logged today, or none generated).")
+
+
 def main():
     now = datetime.now(MST)
     # %-d isn't portable (glibc-only) - built from .day directly instead.
@@ -491,7 +552,7 @@ def main():
     with open("data/fantasy.json", "w") as f:
         json.dump(output, f, indent=2)
 
-    append_to_props_log(player_props.get("props", []), today)
+    log_props(player_props.get("props", []), today)
 
     n_plays = len(value_plays.get("plays", []))
     n_goalies = len(goalie_starts.get("goalies", []))

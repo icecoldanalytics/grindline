@@ -16,12 +16,19 @@ Runs nightly via GitHub Actions.
 
 import json
 import os
+import sys
 from datetime import datetime, timedelta
 
 import pytz
 import requests
 
 from rest_edge import breakeven, profit
+
+# Windows' console defaults to cp1252, which can't encode the checkmark
+# used in the summary print below; GitHub Actions' ubuntu runners default
+# to UTF-8 already, so this only matters for local runs.
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
 
 MST = pytz.timezone("America/Edmonton")
 LOG_PATH = os.path.join("data", "signal_log.json")
@@ -220,11 +227,8 @@ def main():
     )
 
     rest_edge = [e for e in entries if e["signal"] == "rest_edge"]
-    goalie = [e for e in rest_edge if e.get("away_started_number_one") is True]
-    goalie.sort(key=lambda e: e["date"])
 
     s_rest_edge = calc_stats(rest_edge)
-    s_goalie = calc_stats(goalie)
 
     m_rest_edge = calc_monthly(rest_edge)
 
@@ -248,15 +252,6 @@ def main():
         "cumulative": cumulative(rest_edge),
         "status": "Active" if s_rest_edge["roi"] > 0 and s_rest_edge["sample_ok"] else "Monitoring",
     }
-    goalie_block = {
-        **s_goalie,
-        "label": "Signal game + away #1 goalie confirmed",
-        "streak": calc_streak(goalie),
-        "status": "No data" if s_goalie["games"] == 0 else "Building sample",
-        "note": "Requires goalie_starts_cache.json. Judged only on starts "
-                "accumulated before each game date.",
-    }
-
     output = {
         "generated": datetime.now(MST).strftime("%Y-%m-%d %I:%M %p MT"),
         "season": SEASON,
@@ -271,11 +266,9 @@ def main():
 
         "rest_edge": rest_edge_block,
         "retired_signal1": load_retired_signal1(),
-        "goalie": goalie_block,
 
         "summary": {
             "total_rest_edge_games": s_rest_edge["games"],
-            "total_goalie_games": s_goalie["games"],
             "cancelled_both_b2b": log.get("cancelled_both_b2b", 0),
             "last5_rest_edge": last5,
         },
@@ -286,13 +279,12 @@ def main():
         json.dump(output, f, indent=2)
 
     print("✓ roi.json written — all ROI graded at real prices\n")
-    for name, s in (("rest_edge", s_rest_edge), ("goalie   ", s_goalie)):
-        if s["games"] == 0:
-            print(f"  {name}  no games")
-            continue
-        print(f"  {name}  {s['games']:>4}g  {s['win_rate']:>5.1f}%  "
-              f"avg {s['avg_odds']:+.1f}  breakeven {s['breakeven_rate']:.1f}%  "
-              f"ROI {s['roi']:+.1f}%  ({s['sd_above_breakeven']:+.1f} SD)")
+    if s_rest_edge["games"] == 0:
+        print("  rest_edge  no games")
+    else:
+        print(f"  rest_edge  {s_rest_edge['games']:>4}g  {s_rest_edge['win_rate']:>5.1f}%  "
+              f"avg {s_rest_edge['avg_odds']:+.1f}  breakeven {s_rest_edge['breakeven_rate']:.1f}%  "
+              f"ROI {s_rest_edge['roi']:+.1f}%  ({s_rest_edge['sd_above_breakeven']:+.1f} SD)")
 
 
 if __name__ == "__main__":

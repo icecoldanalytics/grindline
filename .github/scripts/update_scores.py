@@ -6,22 +6,17 @@ Runs every 5 minutes during game hours via GitHub Actions.
 
 import os
 import json
+import sys
 import requests
 from datetime import datetime
 import pytz
 
-MST = pytz.timezone("America/Edmonton")
+from team_names import CITY_NAMES as CITY_MAP
 
-CITY_MAP = {
-    "TOR":"Toronto","FLA":"Florida","BOS":"Boston","BUF":"Buffalo",
-    "MTL":"Montréal","OTT":"Ottawa","DET":"Detroit","TBL":"Tampa Bay",
-    "CAR":"Carolina","NYR":"New York","NYI":"New York","NJD":"New Jersey",
-    "PHI":"Philadelphia","PIT":"Pittsburgh","WSH":"Washington","CBJ":"Columbus",
-    "CHI":"Chicago","NSH":"Nashville","STL":"St. Louis","MIN":"Minnesota",
-    "WPG":"Winnipeg","COL":"Colorado","UTA":"Utah","CGY":"Calgary",
-    "EDM":"Edmonton","VAN":"Vancouver","SEA":"Seattle","LAK":"Los Angeles",
-    "ANA":"Anaheim","SJS":"San Jose","VGK":"Vegas","DAL":"Dallas"
-}
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
+
+MST = pytz.timezone("America/Edmonton")
 
 def main():
     today = datetime.now(MST).strftime("%Y-%m-%d")

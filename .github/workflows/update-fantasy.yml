@@ -27,10 +27,13 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python .github/scripts/update_fantasy.py
 
+      - name: Grade prop picks and update ROI
+        run: python .github/scripts/update_prop_roi.py
+
       - name: Commit fantasy data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/fantasy.json
+          git add data/fantasy.json data/prop_log.json data/prop_roi.json
           git diff --staged --quiet || git commit -m "Update fantasy picks $(date -u '+%Y-%m-%d')"
           git push

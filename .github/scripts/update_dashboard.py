@@ -9,64 +9,20 @@ Runs daily at 7 AM MST via GitHub Actions.
 
 import os
 import json
+import sys
 import requests
 from datetime import datetime, timedelta
 import pytz
 
 from rest_edge import is_cancelled, is_rest_edge
+from team_names import NAME_MAP, FULL_NAMES, CITY_NAMES, TEAM_NAMES
+
+if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+    sys.stdout.reconfigure(encoding="utf-8")
 
 MST = pytz.timezone("America/Edmonton")
 UTC = pytz.utc
 ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
-
-NAME_MAP = {
-    "tor": "toronto", "fla": "florida", "bos": "boston", "buf": "buffalo",
-    "mtl": "montreal", "ott": "ottawa", "det": "detroit", "tbl": "tampa",
-    "car": "carolina", "nyr": "new york rangers", "nyi": "new york islanders",
-    "njd": "new jersey", "phi": "philadelphia", "pit": "pittsburgh",
-    "wsh": "washington", "cbj": "columbus", "chi": "chicago",
-    "nsh": "nashville", "stl": "st. louis", "min": "minnesota",
-    "wpg": "winnipeg", "col": "colorado", "uta": "utah", "cgy": "calgary",
-    "edm": "edmonton", "van": "vancouver", "sea": "seattle",
-    "lak": "los angeles", "ana": "anaheim", "sjs": "san jose",
-    "vgk": "vegas", "dal": "dallas"
-}
-
-FULL_NAMES = {
-    "TOR": "Toronto Maple Leafs", "FLA": "Florida Panthers", "BOS": "Boston Bruins",
-    "BUF": "Buffalo Sabres", "MTL": "Montréal Canadiens", "OTT": "Ottawa Senators",
-    "DET": "Detroit Red Wings", "TBL": "Tampa Bay Lightning", "CAR": "Carolina Hurricanes",
-    "NYR": "New York Rangers", "NYI": "New York Islanders", "NJD": "New Jersey Devils",
-    "PHI": "Philadelphia Flyers", "PIT": "Pittsburgh Penguins", "WSH": "Washington Capitals",
-    "CBJ": "Columbus Blue Jackets", "CHI": "Chicago Blackhawks", "NSH": "Nashville Predators",
-    "STL": "St. Louis Blues", "MIN": "Minnesota Wild", "WPG": "Winnipeg Jets",
-    "COL": "Colorado Avalanche", "UTA": "Utah Mammoth", "CGY": "Calgary Flames",
-    "EDM": "Edmonton Oilers", "VAN": "Vancouver Canucks", "SEA": "Seattle Kraken",
-    "LAK": "Los Angeles Kings", "ANA": "Anaheim Ducks", "SJS": "San Jose Sharks",
-    "VGK": "Vegas Golden Knights", "DAL": "Dallas Stars"
-}
-
-CITY_NAMES = {
-    "TOR": "Toronto", "FLA": "Florida", "BOS": "Boston", "BUF": "Buffalo",
-    "MTL": "Montréal", "OTT": "Ottawa", "DET": "Detroit", "TBL": "Tampa Bay",
-    "CAR": "Carolina", "NYR": "New York", "NYI": "New York", "NJD": "New Jersey",
-    "PHI": "Philadelphia", "PIT": "Pittsburgh", "WSH": "Washington", "CBJ": "Columbus",
-    "CHI": "Chicago", "NSH": "Nashville", "STL": "St. Louis", "MIN": "Minnesota",
-    "WPG": "Winnipeg", "COL": "Colorado", "UTA": "Utah", "CGY": "Calgary",
-    "EDM": "Edmonton", "VAN": "Vancouver", "SEA": "Seattle", "LAK": "Los Angeles",
-    "ANA": "Anaheim", "SJS": "San Jose", "VGK": "Vegas", "DAL": "Dallas"
-}
-
-TEAM_NAMES = {
-    "TOR": "Maple Leafs", "FLA": "Panthers", "BOS": "Bruins", "BUF": "Sabres",
-    "MTL": "Canadiens", "OTT": "Senators", "DET": "Red Wings", "TBL": "Lightning",
-    "CAR": "Hurricanes", "NYR": "Rangers", "NYI": "Islanders", "NJD": "Devils",
-    "PHI": "Flyers", "PIT": "Penguins", "WSH": "Capitals", "CBJ": "Blue Jackets",
-    "CHI": "Blackhawks", "NSH": "Predators", "STL": "Blues", "MIN": "Wild",
-    "WPG": "Jets", "COL": "Avalanche", "UTA": "Mammoth", "CGY": "Flames",
-    "EDM": "Oilers", "VAN": "Canucks", "SEA": "Kraken", "LAK": "Kings",
-    "ANA": "Ducks", "SJS": "Sharks", "VGK": "Golden Knights", "DAL": "Stars"
-}
 
 def get_schedule(date_str):
     url = f"https://api-web.nhle.com/v1/schedule/{date_str}"

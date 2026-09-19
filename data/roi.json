@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19 10:12 AM MT",
+  "generated": "2026-09-19 03:13 PM MT",
   "season": "2025-26",
   "through_date": "2026-04-16",
   "pricing": {
@@ -623,24 +623,8 @@
     "status": "Retired \u2014 no edge found",
     "source": "backtest_rest_signals.py, real closing moneylines, 2022-23 through 2025-26"
   },
-  "goalie": {
-    "games": 0,
-    "wins": 0,
-    "losses": 0,
-    "win_rate": 0.0,
-    "roi": 0.0,
-    "avg_odds": 0,
-    "breakeven_rate": 0.0,
-    "sd_above_breakeven": 0.0,
-    "sample_ok": false,
-    "label": "Signal game + away #1 goalie confirmed",
-    "streak": "\u2014",
-    "status": "No data",
-    "note": "Requires goalie_starts_cache.json. Judged only on starts accumulated before each game date."
-  },
   "summary": {
     "total_rest_edge_games": 136,
-    "total_goalie_games": 0,
     "cancelled_both_b2b": 0,
     "last5_rest_edge": [
       {
