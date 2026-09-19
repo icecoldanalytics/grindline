@@ -2,7 +2,7 @@
   "date": "2026-09-19",
   "date_label": "Saturday, September 19, 2026",
   "week_start": "2026-09-14",
-  "generated": "2026-09-19 14:56 PM MT",
+  "generated": "2026-09-19 15:42 PM MT",
   "weekly_workload": {
     "teams": [
       {
@@ -204,35 +204,40 @@
           "position": "D",
           "games_played": 77,
           "toi_per_game": 25.5,
-          "shots_per_game": 1.92
+          "shots_per_game": 1.92,
+          "stat_season": "last_season"
         },
         {
           "player": "Esa Lindell",
           "position": "D",
           "games_played": 82,
           "toi_per_game": 23.2,
-          "shots_per_game": 1.01
+          "shots_per_game": 1.01,
+          "stat_season": "last_season"
         },
         {
           "player": "Thomas Harley",
           "position": "D",
           "games_played": 70,
           "toi_per_game": 23.1,
-          "shots_per_game": 1.61
+          "shots_per_game": 1.61,
+          "stat_season": "last_season"
         },
         {
           "player": "Jason Robertson",
           "position": "L",
           "games_played": 82,
           "toi_per_game": 20.3,
-          "shots_per_game": 3.59
+          "shots_per_game": 3.59,
+          "stat_season": "last_season"
         },
         {
           "player": "Mikko Rantanen",
           "position": "R",
           "games_played": 64,
           "toi_per_game": 20.2,
-          "shots_per_game": 2.17
+          "shots_per_game": 2.17,
+          "stat_season": "last_season"
         }
       ],
       "home_usage_leaders": [
@@ -241,35 +246,40 @@
           "position": "D",
           "games_played": 81,
           "toi_per_game": 23.4,
-          "shots_per_game": 1.21
-        },
-        {
-          "player": "Justin Faulk",
-          "position": "D",
-          "games_played": 61,
-          "toi_per_game": 22.5,
-          "shots_per_game": 1.9
+          "shots_per_game": 1.21,
+          "stat_season": "last_season"
         },
         {
           "player": "Colton Parayko",
           "position": "D",
           "games_played": 77,
           "toi_per_game": 22.2,
-          "shots_per_game": 1.36
+          "shots_per_game": 1.36,
+          "stat_season": "last_season"
         },
         {
           "player": "Cam Fowler",
           "position": "D",
           "games_played": 82,
           "toi_per_game": 21.1,
-          "shots_per_game": 1.11
+          "shots_per_game": 1.11,
+          "stat_season": "last_season"
         },
         {
           "player": "Robert Thomas",
           "position": "C",
           "games_played": 64,
           "toi_per_game": 19.0,
-          "shots_per_game": 1.59
+          "shots_per_game": 1.59,
+          "stat_season": "last_season"
+        },
+        {
+          "player": "Dylan Holloway",
+          "position": "L",
+          "games_played": 59,
+          "toi_per_game": 18.3,
+          "shots_per_game": 2.75,
+          "stat_season": "last_season"
         }
       ]
     },
@@ -305,35 +315,40 @@
           "position": "D",
           "games_played": 78,
           "toi_per_game": 24.2,
-          "shots_per_game": 1.46
+          "shots_per_game": 1.46,
+          "stat_season": "last_season"
         },
         {
           "player": "Lane Hutson",
           "position": "D",
           "games_played": 82,
           "toi_per_game": 23.8,
-          "shots_per_game": 1.51
+          "shots_per_game": 1.51,
+          "stat_season": "last_season"
         },
         {
           "player": "Noah Dobson",
           "position": "D",
           "games_played": 80,
           "toi_per_game": 22.5,
-          "shots_per_game": 1.98
+          "shots_per_game": 1.98,
+          "stat_season": "last_season"
         },
         {
           "player": "Nick Suzuki",
           "position": "C",
           "games_played": 82,
           "toi_per_game": 20.8,
-          "shots_per_game": 2.23
+          "shots_per_game": 2.23,
+          "stat_season": "last_season"
         },
         {
           "player": "Kaiden Guhle",
           "position": "D",
           "games_played": 39,
           "toi_per_game": 19.5,
-          "shots_per_game": 1.03
+          "shots_per_game": 1.03,
+          "stat_season": "last_season"
         }
       ],
       "home_usage_leaders": [
@@ -342,35 +357,40 @@
           "position": "D",
           "games_played": 80,
           "toi_per_game": 22.4,
-          "shots_per_game": 0.96
+          "shots_per_game": 0.96,
+          "stat_season": "last_season"
         },
         {
           "player": "Morgan Rielly",
           "position": "D",
           "games_played": 78,
           "toi_per_game": 21.1,
-          "shots_per_game": 1.81
+          "shots_per_game": 1.81,
+          "stat_season": "last_season"
         },
         {
           "player": "Auston Matthews",
           "position": "C",
           "games_played": 60,
           "toi_per_game": 20.8,
-          "shots_per_game": 3.78
+          "shots_per_game": 3.78,
+          "stat_season": "last_season"
         },
         {
           "player": "Oliver Ekman-Larsson",
           "position": "D",
           "games_played": 78,
           "toi_per_game": 20.6,
-          "shots_per_game": 1.38
+          "shots_per_game": 1.38,
+          "stat_season": "last_season"
         },
         {
           "player": "Troy Stecher",
           "position": "D",
           "games_played": 58,
           "toi_per_game": 19.8,
-          "shots_per_game": 1.05
+          "shots_per_game": 1.05,
+          "stat_season": "last_season"
         }
       ]
     },
@@ -406,35 +426,40 @@
           "position": "D",
           "games_played": 80,
           "toi_per_game": 22.4,
-          "shots_per_game": 0.96
+          "shots_per_game": 0.96,
+          "stat_season": "last_season"
         },
         {
           "player": "Morgan Rielly",
           "position": "D",
           "games_played": 78,
           "toi_per_game": 21.1,
-          "shots_per_game": 1.81
+          "shots_per_game": 1.81,
+          "stat_season": "last_season"
         },
         {
           "player": "Auston Matthews",
           "position": "C",
           "games_played": 60,
           "toi_per_game": 20.8,
-          "shots_per_game": 3.78
+          "shots_per_game": 3.78,
+          "stat_season": "last_season"
         },
         {
           "player": "Oliver Ekman-Larsson",
           "position": "D",
           "games_played": 78,
           "toi_per_game": 20.6,
-          "shots_per_game": 1.38
+          "shots_per_game": 1.38,
+          "stat_season": "last_season"
         },
         {
           "player": "Troy Stecher",
           "position": "D",
           "games_played": 58,
           "toi_per_game": 19.8,
-          "shots_per_game": 1.05
+          "shots_per_game": 1.05,
+          "stat_season": "last_season"
         }
       ],
       "home_usage_leaders": [
@@ -443,35 +468,40 @@
           "position": "D",
           "games_played": 78,
           "toi_per_game": 24.2,
-          "shots_per_game": 1.46
+          "shots_per_game": 1.46,
+          "stat_season": "last_season"
         },
         {
           "player": "Lane Hutson",
           "position": "D",
           "games_played": 82,
           "toi_per_game": 23.8,
-          "shots_per_game": 1.51
+          "shots_per_game": 1.51,
+          "stat_season": "last_season"
         },
         {
           "player": "Noah Dobson",
           "position": "D",
           "games_played": 80,
           "toi_per_game": 22.5,
-          "shots_per_game": 1.98
+          "shots_per_game": 1.98,
+          "stat_season": "last_season"
         },
         {
           "player": "Nick Suzuki",
           "position": "C",
           "games_played": 82,
           "toi_per_game": 20.8,
-          "shots_per_game": 2.23
+          "shots_per_game": 2.23,
+          "stat_season": "last_season"
         },
         {
           "player": "Kaiden Guhle",
           "position": "D",
           "games_played": 39,
           "toi_per_game": 19.5,
-          "shots_per_game": 1.03
+          "shots_per_game": 1.03,
+          "stat_season": "last_season"
         }
       ]
     },
@@ -507,35 +537,40 @@
           "position": "D",
           "games_played": 77,
           "toi_per_game": 24.7,
-          "shots_per_game": 1.9
+          "shots_per_game": 1.9,
+          "stat_season": "last_season"
         },
         {
           "player": "Neal Pionk",
           "position": "D",
           "games_played": 51,
           "toi_per_game": 22.7,
-          "shots_per_game": 1.9
+          "shots_per_game": 1.9,
+          "stat_season": "last_season"
         },
         {
           "player": "Dylan Samberg",
           "position": "D",
           "games_played": 66,
           "toi_per_game": 21.8,
-          "shots_per_game": 1.32
+          "shots_per_game": 1.32,
+          "stat_season": "last_season"
         },
         {
-          "player": "Dylan DeMelo",
-          "position": "D",
+          "player": "Kyle Connor",
+          "position": "L",
           "games_played": 82,
           "toi_per_game": 21.5,
-          "shots_per_game": 0.91
+          "shots_per_game": 3.34,
+          "stat_season": "last_season"
         },
         {
           "player": "Mark Scheifele",
           "position": "C",
           "games_played": 82,
           "toi_per_game": 21.5,
-          "shots_per_game": 2.13
+          "shots_per_game": 2.13,
+          "stat_season": "last_season"
         }
       ],
       "home_usage_leaders": [
@@ -544,35 +579,40 @@
           "position": "D",
           "games_played": 82,
           "toi_per_game": 24.7,
-          "shots_per_game": 2.7
+          "shots_per_game": 2.7,
+          "stat_season": "last_season"
         },
         {
           "player": "Connor McDavid",
           "position": "C",
           "games_played": 82,
           "toi_per_game": 23.0,
-          "shots_per_game": 3.73
+          "shots_per_game": 3.73,
+          "stat_season": "last_season"
         },
         {
           "player": "Leon Draisaitl",
           "position": "C",
           "games_played": 65,
           "toi_per_game": 21.6,
-          "shots_per_game": 2.86
-        },
-        {
-          "player": "Darnell Nurse",
-          "position": "D",
-          "games_played": 82,
-          "toi_per_game": 21.0,
-          "shots_per_game": 2.0
+          "shots_per_game": 2.86,
+          "stat_season": "last_season"
         },
         {
           "player": "Mattias Ekholm",
           "position": "D",
           "games_played": 82,
           "toi_per_game": 20.6,
-          "shots_per_game": 1.6
+          "shots_per_game": 1.6,
+          "stat_season": "last_season"
+        },
+        {
+          "player": "Connor Murphy",
+          "position": "D",
+          "games_played": 20,
+          "toi_per_game": 20.4,
+          "shots_per_game": 0.75,
+          "stat_season": "last_season"
         }
       ]
     },
@@ -608,35 +648,40 @@
           "position": "D",
           "games_played": 81,
           "toi_per_game": 21.1,
-          "shots_per_game": 1.06
+          "shots_per_game": 1.06,
+          "stat_season": "last_season"
         },
         {
           "player": "Connor Bedard",
           "position": "C",
           "games_played": 69,
           "toi_per_game": 20.9,
-          "shots_per_game": 3.28
+          "shots_per_game": 3.28,
+          "stat_season": "last_season"
         },
         {
           "player": "Wyatt Kaiser",
           "position": "D",
           "games_played": 77,
           "toi_per_game": 19.6,
-          "shots_per_game": 0.97
+          "shots_per_game": 0.97,
+          "stat_season": "last_season"
         },
         {
           "player": "Artyom Levshunov",
           "position": "D",
           "games_played": 68,
           "toi_per_game": 19.6,
-          "shots_per_game": 1.24
+          "shots_per_game": 1.24,
+          "stat_season": "last_season"
         },
         {
           "player": "Tyler Bertuzzi",
           "position": "L",
           "games_played": 79,
           "toi_per_game": 18.4,
-          "shots_per_game": 2.08
+          "shots_per_game": 2.08,
+          "stat_season": "last_season"
         }
       ],
       "home_usage_leaders": [
@@ -645,35 +690,40 @@
           "position": "D",
           "games_played": 48,
           "toi_per_game": 27.9,
-          "shots_per_game": 2.35
+          "shots_per_game": 2.35,
+          "stat_season": "last_season"
         },
         {
           "player": "Brock Faber",
           "position": "D",
           "games_played": 80,
           "toi_per_game": 24.7,
-          "shots_per_game": 2.16
+          "shots_per_game": 2.16,
+          "stat_season": "last_season"
         },
         {
           "player": "Kirill Kaprizov",
           "position": "L",
           "games_played": 78,
           "toi_per_game": 22.1,
-          "shots_per_game": 3.45
+          "shots_per_game": 3.45,
+          "stat_season": "last_season"
         },
         {
           "player": "Viking Gustafsson Nyberg",
           "position": "D",
           "games_played": 2,
           "toi_per_game": 21.3,
-          "shots_per_game": 0.0
+          "shots_per_game": 0.0,
+          "stat_season": "last_season"
         },
         {
           "player": "Matt Boldy",
           "position": "L",
           "games_played": 76,
           "toi_per_game": 20.6,
-          "shots_per_game": 3.34
+          "shots_per_game": 3.34,
+          "stat_season": "last_season"
         }
       ]
     },
@@ -709,35 +759,40 @@
           "position": "D",
           "games_played": 70,
           "toi_per_game": 22.8,
-          "shots_per_game": 1.86
+          "shots_per_game": 1.86,
+          "stat_season": "last_season"
         },
         {
           "player": "Noah Hanifin",
           "position": "D",
           "games_played": 71,
           "toi_per_game": 22.6,
-          "shots_per_game": 1.9
+          "shots_per_game": 1.9,
+          "stat_season": "last_season"
         },
         {
           "player": "Rasmus Andersson",
           "position": "D",
           "games_played": 33,
           "toi_per_game": 21.7,
-          "shots_per_game": 2.0
+          "shots_per_game": 2.0,
+          "stat_season": "last_season"
         },
         {
           "player": "Jack Eichel",
           "position": "C",
           "games_played": 74,
           "toi_per_game": 21.2,
-          "shots_per_game": 3.51
+          "shots_per_game": 3.51,
+          "stat_season": "last_season"
         },
         {
           "player": "Brayden McNabb",
           "position": "D",
           "games_played": 63,
           "toi_per_game": 20.5,
-          "shots_per_game": 1.29
+          "shots_per_game": 1.29,
+          "stat_season": "last_season"
         }
       ],
       "home_usage_leaders": [
@@ -746,35 +801,40 @@
           "position": "D",
           "games_played": 72,
           "toi_per_game": 23.1,
-          "shots_per_game": 1.4
+          "shots_per_game": 1.4,
+          "stat_season": "last_season"
         },
         {
           "player": "Artemi Panarin",
           "position": "L",
           "games_played": 26,
           "toi_per_game": 20.7,
-          "shots_per_game": 2.54
+          "shots_per_game": 2.54,
+          "stat_season": "last_season"
         },
         {
           "player": "Mikey Anderson",
           "position": "D",
           "games_played": 80,
           "toi_per_game": 20.6,
-          "shots_per_game": 0.76
+          "shots_per_game": 0.76,
+          "stat_season": "last_season"
         },
         {
           "player": "Quinton Byfield",
           "position": "R",
           "games_played": 79,
           "toi_per_game": 20.0,
-          "shots_per_game": 2.28
+          "shots_per_game": 2.28,
+          "stat_season": "last_season"
         },
         {
           "player": "Brandt Clarke",
           "position": "D",
           "games_played": 82,
           "toi_per_game": 19.8,
-          "shots_per_game": 1.94
+          "shots_per_game": 1.94,
+          "stat_season": "last_season"
         }
       ]
     },
@@ -806,39 +866,44 @@
       },
       "away_usage_leaders": [
         {
-          "player": "Quinn Hughes",
-          "position": "D",
-          "games_played": 26,
-          "toi_per_game": 27.4,
-          "shots_per_game": 2.85
-        },
-        {
           "player": "Filip Hronek",
           "position": "D",
           "games_played": 82,
           "toi_per_game": 25.0,
-          "shots_per_game": 1.67
-        },
-        {
-          "player": "Marcus Pettersson",
-          "position": "D",
-          "games_played": 82,
-          "toi_per_game": 21.5,
-          "shots_per_game": 0.8
+          "shots_per_game": 1.67,
+          "stat_season": "last_season"
         },
         {
           "player": "Zeev Buium",
           "position": "D",
           "games_played": 45,
           "toi_per_game": 20.3,
-          "shots_per_game": 0.93
+          "shots_per_game": 0.93,
+          "stat_season": "last_season"
         },
         {
-          "player": "Tyler Myers",
-          "position": "D",
-          "games_played": 57,
-          "toi_per_game": 20.2,
-          "shots_per_game": 1.25
+          "player": "Brock Boeser",
+          "position": "R",
+          "games_played": 75,
+          "toi_per_game": 19.1,
+          "shots_per_game": 2.21,
+          "stat_season": "last_season"
+        },
+        {
+          "player": "Elias Pettersson",
+          "position": "C",
+          "games_played": 74,
+          "toi_per_game": 19.0,
+          "shots_per_game": 1.78,
+          "stat_season": "last_season"
+        },
+        {
+          "player": "Marco Rossi",
+          "position": "C",
+          "games_played": 33,
+          "toi_per_game": 17.2,
+          "shots_per_game": 1.18,
+          "stat_season": "last_season"
         }
       ],
       "home_usage_leaders": [
@@ -847,35 +912,40 @@
           "position": "D",
           "games_played": 64,
           "toi_per_game": 22.6,
-          "shots_per_game": 2.72
+          "shots_per_game": 2.72,
+          "stat_season": "last_season"
         },
         {
           "player": "Vince Dunn",
           "position": "D",
           "games_played": 81,
           "toi_per_game": 21.7,
-          "shots_per_game": 2.21
+          "shots_per_game": 2.21,
+          "stat_season": "last_season"
         },
         {
           "player": "Adam Larsson",
           "position": "D",
           "games_played": 82,
           "toi_per_game": 21.4,
-          "shots_per_game": 1.29
+          "shots_per_game": 1.29,
+          "stat_season": "last_season"
         },
         {
           "player": "Chandler Stephenson",
           "position": "C",
           "games_played": 80,
           "toi_per_game": 19.4,
-          "shots_per_game": 1.16
+          "shots_per_game": 1.16,
+          "stat_season": "last_season"
         },
         {
           "player": "Matty Beniers",
           "position": "C",
           "games_played": 82,
           "toi_per_game": 19.3,
-          "shots_per_game": 1.82
+          "shots_per_game": 1.82,
+          "stat_season": "last_season"
         }
       ]
     }

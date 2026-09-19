@@ -12,10 +12,13 @@ import pytz
 import time
 import unicodedata
 
+from roster_stats import roster_with_stats
+
 MST = pytz.timezone("America/Edmonton")
 ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 PROP_LOG_PATH = "data/prop_log.json"
+SEASON = "20262027"
 
 PROP_MARKETS = [
     "player_goal_scorer_anytime",
@@ -43,45 +46,66 @@ def fetch_scratches():
         return []
 
 def fetch_rosters(games):
+    """Real current-roster players only, joined against club-stats/{team}/now
+    by playerId via roster_stats.py - NOT club-stats read directly, which
+    returns anyone with stats for a team including players since traded or
+    waived off it. Confirmed concretely: Darnell Nurse (no longer on
+    Edmonton) was appearing here and being fed to the AI as a real,
+    current Oilers roster player. See roster_stats.py's docstring.
+
+    A roster player with no stats entry (new signing, rookie - nothing to
+    ground a pick in) is left out of the context entirely rather than
+    included with invented numbers. Every included player's stat line is
+    labeled "last season" whenever that's genuinely what it is (the
+    current season hasn't started, or this club-stats snapshot predates
+    it) - never presented to the model as current form.
+    """
     rosters = {}
     for g in games:
         for team in [g["away"], g["home"]]:
             if team in rosters:
                 continue
             try:
-                url = f"https://api-web.nhle.com/v1/club-stats/{team}/now"
-                r = requests.get(url, timeout=10)
-                r.raise_for_status()
-                data = r.json()
+                team_roster = roster_with_stats(team, SEASON)
 
-                all_gp = [p.get("gamesPlayed", 0) for p in data.get("skaters", [])]
-                avg_gp = sum(all_gp) / len(all_gp) if all_gp else 0
+                skater_gp = [v["stats"].get("gamesPlayed", 0) for v in team_roster.values()
+                             if v["group"] != "goalies" and v["stats"]]
+                avg_gp = sum(skater_gp) / len(skater_gp) if skater_gp else 0
                 min_gp = avg_gp * 0.4
 
                 skaters = []
-                for p in data.get("skaters", []):
-                    fn = p.get("firstName", {}).get("default", "")
-                    ln = p.get("lastName", {}).get("default", "")
-                    pos = p.get("positionCode", "")
-                    gp = p.get("gamesPlayed", 0)
-                    pts = p.get("points", 0)
-                    goals = p.get("goals", 0)
-                    shots = p.get("shots", 0)
-                    toi = round(p.get("avgTimeOnIcePerGame", 0) / 60, 1)
+                for v in team_roster.values():
+                    if v["group"] == "goalies":
+                        continue
+                    s = v["stats"]
+                    if s is None:
+                        continue  # on roster, no stats to ground a pick in - not invented
+                    fn, ln, pos = v["first_name"], v["last_name"], v["position"]
+                    gp = s.get("gamesPlayed", 0)
+                    pts = s.get("points", 0)
+                    goals = s.get("goals", 0)
+                    shots = s.get("shots", 0)
+                    toi = round(s.get("avgTimeOnIcePerGame", 0) / 60, 1)
                     if gp < min_gp:
                         print(f"  Skipping likely injured: {fn} {ln} ({gp} GP vs {avg_gp:.0f} avg)")
                         continue
-                    skaters.append(f"{fn} {ln} ({pos}, {gp}GP, {goals}G {pts}PTS, {shots}SOG, {toi}min TOI)")
+                    season_note = " — last season" if v["stat_season"] == "last_season" else ""
+                    skaters.append(f"{fn} {ln} ({pos}, {gp}GP, {goals}G {pts}PTS, {shots}SOG, {toi}min TOI{season_note})")
 
                 goalies = []
-                for p in data.get("goalies", []):
-                    fn = p.get("firstName", {}).get("default", "")
-                    ln = p.get("lastName", {}).get("default", "")
-                    gp = p.get("gamesPlayed", 0)
-                    gs = p.get("gamesStarted", 0)
-                    sv = round(p.get("savePercentage", 0), 3)
-                    gaa = round(p.get("goalsAgainstAverage", 0), 2)
-                    goalies.append(f"{fn} {ln} ({gp}GP, {gs}GS, .{str(sv)[2:]} SV%, {gaa} GAA)")
+                for v in team_roster.values():
+                    if v["group"] != "goalies":
+                        continue
+                    s = v["stats"]
+                    if s is None:
+                        continue
+                    fn, ln = v["first_name"], v["last_name"]
+                    gp = s.get("gamesPlayed", 0)
+                    gs = s.get("gamesStarted", 0)
+                    sv = round(s.get("savePercentage", 0), 3)
+                    gaa = round(s.get("goalsAgainstAverage", 0), 2)
+                    season_note = " — last season" if v["stat_season"] == "last_season" else ""
+                    goalies.append(f"{fn} {ln} ({gp}GP, {gs}GS, .{str(sv)[2:]} SV%, {gaa} GAA{season_note})")
 
                 rosters[team] = {"skaters": skaters[:20], "goalies": goalies}
                 print(f"Roster fetched: {team} - {len(skaters)} active skaters, {len(goalies)} goalies")

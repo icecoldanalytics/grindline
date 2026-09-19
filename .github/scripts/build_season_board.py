@@ -36,6 +36,15 @@ Rest days: the same day-by-day "who played on which date" lookback
 update_dashboard.py and capture_signals.py use, so preseason games count
 toward rest the same way they do for the live Rest Edge signal.
 
+Goalie SV%/GAA and skater usage leaders are joined against each team's
+actual current roster (roster_stats.py), not read off club-stats/{team}/now
+directly - that endpoint alone returns anyone with stats for a team,
+including players since traded or waived off it (confirmed concretely:
+Darnell Nurse, no longer on Edmonton, was showing up as a "current"
+Edmonton usage leader before this fix). Every stat is tagged current vs.
+last_season and the page must show that label - see roster_stats.py's
+docstring.
+
 Run:  python .github/scripts/build_season_board.py [YYYY-MM-DD]
 Defaults to today. An explicit date lets this be tested against a real
 past or future slate without inventing data. Writes data/season_board.json.
@@ -49,6 +58,8 @@ from datetime import datetime, timedelta
 
 import pytz
 import requests
+
+from roster_stats import roster_with_stats
 
 MST = pytz.timezone("America/Edmonton")
 SEASON = "20262027"
@@ -213,44 +224,58 @@ def last_start(team, season_games, today_str):
 
 
 # ── Roster (goalie SV%/GAA + skater usage leaders) ───────────────────────
-def get_club_stats(team):
-    try:
-        r = requests.get(f"https://api-web.nhle.com/v1/club-stats/{team}/now", timeout=15)
-        r.raise_for_status()
-        return r.json()
-    except Exception as e:
-        print(f"  club-stats error for {team}: {e}")
-        return {}
+# roster_stats.roster_with_stats() joins club-stats/{team}/now onto the
+# team's actual current roster by playerId - see that module's docstring
+# for the Darnell Nurse bug this replaced (club-stats alone includes
+# anyone who has stats for a team, including players since traded away).
+
+def goalie_stats_from_roster(team_roster, goalie_name):
+    """team_roster is one team's roster_with_stats() output. Matches by
+    name since the box-score starter name is all last_start() has to go
+    on - safe here because it's checked only against this one team's
+    small roster, not the whole league."""
+    for identity in team_roster.values():
+        if identity["group"] != "goalies":
+            continue
+        full = f"{identity['first_name']} {identity['last_name']}"
+        if full != goalie_name and identity["last_name"] != goalie_name.split()[-1]:
+            continue
+        s = identity["stats"]
+        if s is None:
+            return {"sv_pct": None, "gaa": None, "stat_season": None}
+        sv = s.get("savePercentage")
+        gaa = s.get("goalsAgainstAverage")
+        return {
+            "sv_pct": round(sv, 3) if sv is not None else None,
+            "gaa": round(gaa, 2) if gaa is not None else None,
+            "stat_season": identity["stat_season"],
+        }
+    return {"sv_pct": None, "gaa": None, "stat_season": None}
 
 
-def goalie_stats_from_roster(roster, goalie_name):
-    for g in roster.get("goalies", []):
-        fn = g.get("firstName", {}).get("default", "")
-        ln = g.get("lastName", {}).get("default", "")
-        if f"{fn} {ln}" == goalie_name or ln == goalie_name.split()[-1]:
-            sv = g.get("savePercentage")
-            gaa = g.get("goalsAgainstAverage")
-            return {
-                "sv_pct": round(sv, 3) if sv is not None else None,
-                "gaa": round(gaa, 2) if gaa is not None else None,
-            }
-    return {"sv_pct": None, "gaa": None}
-
-
-def usage_leaders(roster, n=5):
-    skaters = roster.get("skaters", [])
+def usage_leaders(team_roster, n=5):
+    """team_roster is one team's roster_with_stats() output. Only
+    players on the actual current roster are considered; a roster
+    player with no stats entry (new signing, rookie) is simply not
+    shown - never a substituted number."""
     rows = []
-    for p in skaters:
-        gp = p.get("gamesPlayed", 0)
+    for identity in team_roster.values():
+        if identity["group"] == "goalies":
+            continue
+        s = identity["stats"]
+        if s is None:
+            continue
+        gp = s.get("gamesPlayed", 0)
         if gp <= 0:
             continue
-        toi_sec = p.get("avgTimeOnIcePerGame", 0)
+        toi_sec = s.get("avgTimeOnIcePerGame", 0)
         rows.append({
-            "player": f"{p.get('firstName', {}).get('default', '')} {p.get('lastName', {}).get('default', '')}".strip(),
-            "position": p.get("positionCode", ""),
+            "player": f"{identity['first_name']} {identity['last_name']}".strip(),
+            "position": identity["position"],
             "games_played": gp,
             "toi_per_game": round(toi_sec / 60, 1) if toi_sec else 0.0,
-            "shots_per_game": round(p.get("shots", 0) / gp, 2),
+            "shots_per_game": round(s.get("shots", 0) / gp, 2),
+            "stat_season": identity["stat_season"],
         })
     rows.sort(key=lambda r: r["toi_per_game"], reverse=True)
     return rows[:n]
@@ -294,7 +319,7 @@ def main():
     roster_by_team = {}
     for team in playing_teams:
         season_games_by_team[team] = get_team_season_games(team)
-        roster_by_team[team] = get_club_stats(team)
+        roster_by_team[team] = roster_with_stats(team, SEASON)
 
     games_out = []
     for g in games_today:

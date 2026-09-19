@@ -880,7 +880,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 
     <div class="section-divider" style="margin-top:36px;"><h2>Game Detail</h2><div class="sd-line"></div><div class="sd-badge">Goalies &amp; Usage Leaders</div></div>
     <div id="sb-game-cards"></div>
-    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Games this week and weekly workload come from the Schedule Analysis page's data (Monday&ndash;Sunday calendar weeks). Last Start = the goalie who started that team's most recent completed regular-season game, and the date &mdash; a fact about the past, not a claim about who starts tonight. Rest days include preseason games, matching how the live Rest Edge signal counts them.</div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Games this week and weekly workload come from the Schedule Analysis page's data (Monday&ndash;Sunday calendar weeks). Last Start = the goalie who started that team's most recent completed regular-season game, and the date &mdash; a fact about the past, not a claim about who starts tonight. Rest days include preseason games, matching how the live Rest Edge signal counts them. Usage leaders and goalie SV%/GAA are joined against each team's actual current roster, never shown for a player who has left the team &mdash; a stat tagged <span style="color:var(--orange);">(last season)</span> is exactly that, not this year's form, and shows up until real current-season games replace it.</div>
   </div>
 </div>
 
@@ -1658,15 +1658,17 @@ function renderGameCards() {
     }
     const sv = goalie.sv_pct != null ? goalie.sv_pct.toFixed(3) : '—';
     const gaa = goalie.gaa != null ? goalie.gaa.toFixed(2) : '—';
+    const seasonTag = goalie.stat_season === 'last_season'
+      ? ' <span style="color:var(--orange);">(last season)</span>' : '';
     return `
       <div style="font-size:0.85rem;font-weight:700;color:var(--bright);">${goalie.goalie}</div>
       <div style="font-size:0.72rem;color:var(--muted);">Last Start: ${goalie.date}</div>
-      <div style="font-size:0.72rem;color:var(--muted);">${sv} SV% &middot; ${gaa} GAA</div>`;
+      <div style="font-size:0.72rem;color:var(--muted);">${sv} SV% &middot; ${gaa} GAA${seasonTag}</div>`;
   };
   const usageBlock = (leaders) => (leaders || []).map(p => `
     <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:4px 0;border-bottom:1px solid rgba(22,35,52,0.6);">
       <span>${p.player} <span style="color:var(--muted);">${p.position}</span></span>
-      <span style="color:var(--muted);">${p.toi_per_game}m &middot; ${p.shots_per_game} SOG/g</span>
+      <span style="color:var(--muted);">${p.toi_per_game}m &middot; ${p.shots_per_game} SOG/g${p.stat_season === 'last_season' ? ' <span style="color:var(--orange);">(last season)</span>' : ''}</span>
     </div>`).join('');
 
   container.innerHTML = sbData.games.map(g => `
