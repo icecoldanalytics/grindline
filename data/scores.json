@@ -1,6 +1,6 @@
 {
   "date": "2026-09-19",
-  "updated": "06:54 PM MT",
+  "updated": "10:27 PM MT",
   "games": [
     {
       "away": "DAL",
@@ -9,8 +9,8 @@
       "home_city": "St. Louis",
       "away_score": 2,
       "home_score": 1,
-      "status": "live",
-      "display": "3rd \u00b7 19:47",
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     },
     {
@@ -18,10 +18,10 @@
       "home": "TOR",
       "away_city": "Montr\u00e9al",
       "home_city": "Toronto",
-      "away_score": 1,
+      "away_score": 4,
       "home_score": 1,
-      "status": "live",
-      "display": "3rd \u00b7 20:00",
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     },
     {
@@ -30,54 +30,54 @@
       "away_city": "Toronto",
       "home_city": "Montr\u00e9al",
       "away_score": 3,
-      "home_score": 2,
-      "status": "live",
-      "display": "2nd \u00b7 06:39",
-      "period_label": "2nd"
+      "home_score": 4,
+      "status": "final",
+      "display": "Final/OT",
+      "period_label": "OT"
     },
     {
       "away": "WPG",
       "home": "EDM",
       "away_city": "Winnipeg",
       "home_city": "Edmonton",
-      "away_score": 1,
-      "home_score": 2,
-      "status": "live",
-      "display": "1st \u00b7 04:16",
-      "period_label": "1st"
+      "away_score": 2,
+      "home_score": 5,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "CHI",
       "home": "MIN",
       "away_city": "Chicago",
       "home_city": "Minnesota",
-      "away_score": 1,
-      "home_score": 1,
-      "status": "live",
-      "display": "1st \u00b7 03:34",
-      "period_label": "1st"
+      "away_score": 2,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final/OT",
+      "period_label": "OT"
     },
     {
       "away": "VGK",
       "home": "LAK",
       "away_city": "Vegas",
       "home_city": "Los Angeles",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 4,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "VAN",
       "home": "SEA",
       "away_city": "Vancouver",
       "home_city": "Seattle",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 4,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     }
   ]
 }
