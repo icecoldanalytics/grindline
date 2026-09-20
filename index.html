@@ -398,7 +398,6 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <a id="nav-dashboard"      class="active"  onclick="showPage('dashboard');closeMenu()">Dashboard</a>
     <a id="nav-signal-tracker"                 onclick="showPage('signal-tracker');closeMenu()">Signal Tracker</a>
     <a id="nav-edge-finder"                    onclick="showPage('edge-finder');closeMenu()">Edge Finder</a>
-    <a id="nav-fantasy-picks"                  onclick="showPage('fantasy-picks');closeMenu()">Fantasy Picks</a>
     <a id="nav-schedule"                       onclick="showPage('schedule');closeMenu()">Schedule</a>
     <a id="nav-season-board"                   onclick="showPage('season-board');closeMenu()">Season Board</a>
     <a id="nav-pricing"                        onclick="showPage('pricing');closeMenu()">Pricing</a>
@@ -739,74 +738,6 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 
 
 <!-- ══════════════════════════════════
-     FANTASY PICKS PAGE
-══════════════════════════════════ -->
-<div id="page-fantasy-picks" class="page">
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <div class="page-eyebrow">Grind Line · <span id="fp-updated-date">Off-season</span></div>
-      <div class="page-title">Fantasy Picks</div>
-      <p class="page-desc">Daily value plays, goalie starts, and player props for both DFS (DraftKings / FanDuel) and season-long leagues. Signal-informed where applicable.</p>
-    </div>
-  </div>
-
-  <div class="main-wrap">
-    <div class="fp-summary" style="margin-top:28px;">
-      <div class="fps-card"><div class="fps-val"><span id="fp-stat-plays">—</span></div><div class="fps-label">Value Plays Today</div></div>
-      <div class="fps-card"><div class="fps-val"><span id="fp-stat-goalies">—</span></div><div class="fps-label">Goalies Assessed</div></div>
-      <div class="fps-card"><div class="fps-val"><span id="fp-stat-props">—</span></div><div class="fps-label">Prop Picks</div></div>
-      <div class="fps-card"><div class="fps-val"><span id="fp-stat-games">—</span></div><div class="fps-label">Games on Slate</div></div>
-      <div class="fps-card"><div class="fps-val"><span id="fp-stat-tier" style="color:var(--gold);">—</span></div><div class="fps-label">Top Tier Available</div></div>
-    </div>
-
-    <div class="fp-tabs">
-      <button class="fp-tab active" onclick="showFPTab('value-plays', this)">🏒 Value Plays</button>
-      <button class="fp-tab"        onclick="showFPTab('goalie-starts', this)">🥅 Goalie Starts</button>
-      <button class="fp-tab"        onclick="showFPTab('player-props', this)">📊 Player Props</button>
-    </div>
-
-    <div id="fp-value-plays" class="fp-panel active">
-      <div class="section-divider" style="margin-top:0;"><h2>Top Value Plays</h2><div class="sd-line"></div><div class="sd-badge fantasy-date-label">Loading...</div></div>
-      <div class="premium-gate">
-        <div class="gated-content fantasy-plays-container"></div>
-        <div class="premium-overlay">
-          <h3>🔒 Beta Members Only</h3>
-          <p>Full daily value plays are part of the Pro tier, launching September 2026. Join the free beta waitlist for early access before launch.</p>
-          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist — Free</a>
-          <div class="po-sub">Our ROI tracker stays free forever — see the Signal Tracker for every graded result.</div>
-        </div>
-      </div>
-    </div>
-
-    <div id="fp-goalie-starts" class="fp-panel">
-      <div class="section-divider" style="margin-top:0;"><h2>Goalie Start Recommendations</h2><div class="sd-line"></div><div class="sd-badge">Goalie Starts</div></div>
-      <div class="premium-gate">
-        <div class="gated-content fantasy-goalies-container"></div>
-        <div class="premium-overlay">
-          <h3>🔒 Beta Members Only</h3>
-          <p>Goalie start recommendations are part of the Pro tier, launching September 2026. Join the free beta waitlist for early access.</p>
-          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist — Free</a>
-        </div>
-      </div>
-    </div>
-
-    <div id="fp-player-props" class="fp-panel">
-      <div class="section-divider" style="margin-top:0;"><h2>Player Prop Picks</h2><div class="sd-line"></div><div class="sd-badge">Player Props</div></div>
-      <div class="premium-gate">
-        <div class="gated-content fantasy-props-container"></div>
-        <div class="premium-overlay">
-          <h3>🔒 Beta Members Only</h3>
-          <p>Prop picks selected from real posted lines — best available price per player, with reasoning grounded in usage, matchup and rest — are part of the Pro tier, launching September 2026. Join the free beta waitlist for early access.</p>
-          <a class="po-cta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist — Free</a>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /main-wrap -->
-</div><!-- /page-fantasy-picks -->
-
-
-<!-- ══════════════════════════════════
      SCHEDULE ANALYSIS PAGE
 ══════════════════════════════════ -->
 <div id="page-schedule" class="page">
@@ -866,7 +797,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="page-hero-inner">
       <div class="page-eyebrow">Grind Line</div>
       <div class="page-title">Season Board</div>
-      <p class="page-desc">Roster decisions for season-long leagues, straight from the NHL API &mdash; no salaries, no DFS framing. Which teams to stream this week, who's rested, who's on a back-to-back, which goalie last started, and who's actually getting the ice time.</p>
+      <p class="page-desc">Roster decisions for season-long leagues, straight from the NHL API &mdash; no salaries, no DFS framing. Which teams to stream this week, who's rested, who's on a back-to-back, which goalie last started, who's actually getting the ice time, and tonight's prop picks from real posted lines &mdash; free, ungated, no beta gate.</p>
     </div>
   </div>
   <div class="main-wrap">
@@ -881,6 +812,12 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="section-divider" style="margin-top:36px;"><h2>Game Detail</h2><div class="sd-line"></div><div class="sd-badge">Goalies &amp; Usage Leaders</div></div>
     <div id="sb-game-cards"></div>
     <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Games this week and weekly workload come from the Schedule Analysis page's data (Monday&ndash;Sunday calendar weeks). Last Start = the goalie who started that team's most recent completed regular-season game, and the date &mdash; a fact about the past, not a claim about who starts tonight. Rest days include preseason games, matching how the live Rest Edge signal counts them. Usage leaders and goalie SV%/GAA are joined against each team's actual current roster, never shown for a player who has left the team &mdash; a stat tagged <span style="color:var(--orange);">(last season)</span> is exactly that, not this year's form, and shows up until real current-season games replace it.</div>
+
+    <div class="section-divider" style="margin-top:36px;"><h2>Prop Track Record</h2><div class="sd-line"></div><div class="sd-badge">Graded vs. real box scores</div></div>
+    <div id="sb-prop-track-record"></div>
+
+    <div class="section-divider" style="margin-top:36px;"><h2>Tonight's Props</h2><div class="sd-line"></div><div class="sd-badge fantasy-date-label">Loading...</div></div>
+    <div id="sb-props-container"></div>
   </div>
 </div>
 
@@ -910,13 +847,6 @@ function showPage(id) {
   if (nav) nav.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-function showFPTab(id, btn) {
-  document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.fp-tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('fp-' + id).classList.add('active');
-  btn.classList.add('active');
-}
-
 function runAnalysis() {
   const awayTeam = document.getElementById('ra-away').value.trim() || 'the away team';
   const homeTeam = document.getElementById('ra-home').value.trim() || 'the home team';
@@ -1282,172 +1212,118 @@ buildDashboardThenScores();
 </script>
 
 <script>
-// ── FANTASY PICKS ──────────────────────────────────────────────────────────
-async function buildFantasy() {
-  try {
-    const r = await fetch('data/fantasy.json?nocache=' + Date.now());
-    const data = await r.json();
-    if (!data.date) return;
+// ── SEASON BOARD: PROP TRACK RECORD + TONIGHT'S PROPS ───────────────────────
+function pct(v) { return v == null ? '—' : (v >= 0 ? '+' : '') + v + '%'; }
 
-    const vp = data.value_plays || {};
-    const playsContainer = document.querySelector('.fantasy-plays-container');
-    if (playsContainer && vp.plays) {
-      const tiers = { S: [], A: [], B: [] };
-      for (const p of vp.plays) {
-        if (tiers[p.tier]) tiers[p.tier].push(p); else tiers.B.push(p);
-      }
-      const tierLabels = { S: 'S-Tier · Must-Plays', A: 'A-Tier · Strong Plays', B: 'B-Tier · Value Plays' };
-      const tierColors = { S: 'var(--gold)', A: 'var(--accent)', B: 'var(--text)' };
-      let playsHtml = '';
-      for (const [tier, plays] of Object.entries(tiers)) {
-        if (!plays.length) continue;
-        playsHtml += `<div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:${tierColors[tier]};margin:20px 0 10px;">${tierLabels[tier]}</div>`;
-        playsHtml += `<div class="picks-grid">`;
-        playsHtml += plays.map(p => {
-          const audienceMap = {
-            dfs: { label: 'DFS Only', cls: 'pt-dfs' },
-            season: { label: 'Season-Long Only', cls: 'pt-season' },
-            both: { label: 'DFS + Season', cls: 'pt-both' },
-          };
-          const aud = audienceMap[p.audience] || null;
-          const audienceHtml = aud ? `<span class="pick-tag ${aud.cls}">${aud.label}</span>` : '';
-          const tagsHtml = (p.tags || []).map(t => `<span class="pick-tag pt-both">${t}</span>`).join('');
+function renderPropTrackRecord(stats) {
+  const container = document.getElementById('sb-prop-track-record');
+  if (!container) return;
+  const o = stats && stats.overall;
+  if (!o || !o.n) {
+    container.innerHTML = `<div style="font-size:0.85rem;color:var(--muted);line-height:1.6;padding:4px 0 16px;">Tracking starts opening night. No props have been graded yet, so no claim is being made about hit rate or ROI &mdash; check back once the season is underway.</div>`;
+    return;
+  }
+  const ci = o.roi_ci95;
+  const ciStr = (ci && ci[0] != null) ? `${pct(ci[0])} to ${pct(ci[1])}` : 'n/a';
+  const marketRows = Object.entries(stats.by_market || {});
+  container.innerHTML = `
+    <div class="tracker-grid">
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Overall</h3><span class="sd-badge">${stats.total_graded} graded &middot; ${stats.pending} pending</span></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Picks</span><span class="stat-val">${o.n}</span></div>
+          <div class="stat-row"><span class="stat-label">Hit Rate</span><span class="stat-val good">${o.hit_rate}%</span></div>
+          <div class="stat-row"><span class="stat-label">ROI (real prices)</span><span class="stat-val good">${pct(o.roi)}</span></div>
+          <div class="stat-row"><span class="stat-label">95% CI</span><span class="stat-val">${ciStr}</span></div>
+        </div>
+      </div>
+    </div>
+    ${marketRows.length ? `
+    <div class="recap-table" style="margin-top:16px;">
+      <div class="recap-row wide" style="grid-template-columns:1fr 70px 90px 90px;background:rgba(255,255,255,0.03);">
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Market</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">N</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Hit%</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">ROI</span>
+      </div>
+      ${marketRows.map(([market, r]) => `
+      <div class="recap-row wide" style="grid-template-columns:1fr 70px 90px 90px;">
+        <span class="rr-game">${market}</span>
+        <span style="text-align:right;">${r.n}</span>
+        <span style="text-align:right;">${r.hit_rate ?? '—'}%</span>
+        <span style="text-align:right;font-weight:700;color:${(r.roi || 0) >= 0 ? 'var(--green)' : 'var(--red)'};">${pct(r.roi)}</span>
+      </div>`).join('')}
+    </div>` : ''}
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Graded against real NHL box scores once each game completes, at the real price logged when the pick was made &mdash; never an assumed price. Updates daily.</div>`;
+}
+
+function renderTonightsProps(playerProps) {
+  const container = document.getElementById('sb-props-container');
+  if (!container) return;
+  const pp = playerProps || {};
+  if (!pp.props || !pp.props.length) {
+    container.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted);font-size:0.85rem;">${pp.note || 'No props available.'}</div>`;
+    return;
+  }
+  const marketLabels = {
+    player_goal_scorer_anytime: 'Anytime Goal Scorer',
+    player_shots_on_goal: 'Shots On Goal',
+    player_points: 'Points',
+    player_assists: 'Assists',
+  };
+  const bookLabels = { draftkings: 'DraftKings', fanduel: 'FanDuel', betmgm: 'BetMGM', pinnacle: 'Pinnacle' };
+  const categories = {};
+  for (const prop of pp.props) {
+    const cat = marketLabels[prop.market] || prop.market || 'Other';
+    if (!categories[cat]) categories[cat] = [];
+    categories[cat].push(prop);
+  }
+  container.innerHTML = `
+    <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Best available price per player, pulled from posted lines. Verify odds before placing.</div>
+    ${Object.entries(categories).map(([cat, props]) => `
+      <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin:20px 0 8px;">${cat}</div>
+      <div class="props-stack">
+        ${props.map(p => {
+          const side = (p.side || '').toLowerCase();
+          const borderColor = p.confidence === 'high' ? 'var(--gold)' : p.confidence === 'low' ? 'var(--muted)' : 'var(--accent)';
+          const pickStyle = side === 'over'
+            ? 'background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);'
+            : side === 'under'
+            ? 'background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);'
+            : 'background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.2);';
+          const bookLabel = bookLabels[p.book] || (p.book ? p.book.charAt(0).toUpperCase() + p.book.slice(1) : '');
           return `
-          <div class="pick-card tier-${tier.toLowerCase()}">
-            <div class="pick-header">
-              <div>
-                <div class="pick-player">${p.player}</div>
-                <div class="pick-team">${p.team} · ${p.position}</div>
-              </div>
-              <span class="pick-tier tier-${tier.toLowerCase()}-badge">${tier}-Tier</span>
+          <div class="prop-row" style="border-left:3px solid ${borderColor};">
+            <div>
+              <div class="prop-player">${p.player}</div>
+              <div class="prop-desc">${p.game} · ${bookLabel} · ${p.reason}</div>
             </div>
-            <div class="pick-body">
-              <div class="pick-matchup">${p.matchup} · ${p.game_time}</div>
-              <div class="pick-stats">
-                <div class="pick-stat"><span class="pick-stat-label">Usage</span><span class="pick-stat-val">${p.usage_note || '—'}</span></div>
-              </div>
-              <div class="pick-reason">${p.reason}</div>
-              <div class="pick-tags">${audienceHtml}${tagsHtml}</div>
-            </div>
+            <div class="prop-line"><div class="prop-line-val">${p.odds}</div><div class="prop-line-label">${p.line ?? ''}</div></div>
+            <div class="prop-pick" style="${pickStyle}">${(p.side || '').toUpperCase()}</div>
           </div>`;
-        }).join('');
-        playsHtml += `</div>`;
-      }
-      playsContainer.innerHTML = playsHtml;
+        }).join('')}
+      </div>`).join('')}`;
+}
 
-      if (vp.avoids && vp.avoids.length > 0) {
-        const avoidsHtml = vp.avoids.map(a =>
-          `<div class="fc-avoid-row"><span class="pick-tag pt-avoid">${a.tag}</span> <strong>${a.team}</strong> — ${a.reason}</div>`
-        ).join('');
-        playsContainer.innerHTML += `
-        <div class="fc-avoids-block">
-          <div class="fc-avoids-title">⚠ Fades &amp; Avoids</div>
-          ${avoidsHtml}
-        </div>`;
-      }
-    }
+async function buildPropsAndTrackRecord() {
+  try {
+    const [fantasyRes, propRoiRes] = await Promise.all([
+      fetch('data/fantasy.json?nocache=' + Date.now()),
+      fetch('data/prop_roi.json?nocache=' + Date.now()),
+    ]);
+    const fantasyData = await fantasyRes.json();
+    const propRoi = await propRoiRes.json();
 
-    const gs = data.goalie_starts || {};
-    const goalieContainer = document.querySelector('.fantasy-goalies-container');
-    if (goalieContainer && gs.goalies) {
-      goalieContainer.innerHTML = `
-        <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Signal games flagged — goalies facing signal-favoured home teams rated higher.</div>
-        <div class="goalie-table">
-          <div class="goalie-row header">
-            <span>Goalie</span><span>SV%</span><span>GAA</span><span>Status</span><span style="text-align:right;">Rec.</span>
-          </div>
-          ${gs.goalies.map(g => {
-            const statusClass = g.status === 'confirmed' ? 'gs-confirmed' :
-                                g.status === 'likely' ? 'gs-likely' :
-                                g.status === 'b2b_away' ? 'gs-avoid' : 'gs-unknown';
-            const borderColor = g.recommendation === 'start' ? 'var(--gold)' :
-                                g.recommendation === 'stream' ? 'var(--accent)' : 'var(--red)';
-            const recClass = g.recommendation === 'start' ? 'rec-start' :
-                             g.recommendation === 'stream' ? 'rec-stream' :
-                             g.recommendation === 'avoid' ? 'rec-avoid' : 'rec-wait';
-            return `
-            <div class="goalie-row" style="border-left:3px solid ${borderColor};">
-              <div>
-                <div class="gr-name">${g.name}</div>
-                <div class="gr-team">${g.team} vs ${g.opponent}${g.rest_note ? ' · <span style="color:var(--orange);">' + g.rest_note + '</span>' : ''}</div>
-              </div>
-              <div class="gr-stat">${g.sv_pct}</div>
-              <div class="gr-stat">${g.gaa}</div>
-              <div><span class="gr-start ${statusClass}">${g.status}</span></div>
-              <div class="gr-rec ${recClass}" style="text-align:right;">${g.rec_label}</div>
-            </div>`;
-          }).join('')}
-        </div>`;
-    }
+    renderPropTrackRecord(propRoi);
+    renderTonightsProps(fantasyData.player_props);
+    document.querySelectorAll('.fantasy-date-label').forEach(el => { el.textContent = fantasyData.date_label || '—'; });
 
-    const pp = data.player_props || {};
-    const propsContainer = document.querySelector('.fantasy-props-container');
-    if (propsContainer) {
-      if (!pp.props || !pp.props.length) {
-        propsContainer.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted);font-size:0.85rem;">${pp.note || 'No props available.'}</div>`;
-      } else {
-        const marketLabels = {
-          player_goal_scorer_anytime: 'Anytime Goal Scorer',
-          player_shots_on_goal: 'Shots On Goal',
-          player_points: 'Points',
-          player_assists: 'Assists',
-        };
-        const bookLabels = { draftkings: 'DraftKings', fanduel: 'FanDuel', betmgm: 'BetMGM', pinnacle: 'Pinnacle' };
-        const categories = {};
-        for (const prop of pp.props) {
-          const cat = marketLabels[prop.market] || prop.market || 'Other';
-          if (!categories[cat]) categories[cat] = [];
-          categories[cat].push(prop);
-        }
-        propsContainer.innerHTML = `
-          <div style="font-size:0.75rem;color:var(--muted);margin-bottom:16px;line-height:1.6;">Best available price per player, pulled from posted lines. Verify odds before placing.</div>
-          ${Object.entries(categories).map(([cat, props]) => `
-            <div style="font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin:20px 0 8px;">${cat}</div>
-            <div class="props-stack">
-              ${props.map(p => {
-                const side = (p.side || '').toLowerCase();
-                const borderColor = p.confidence === 'high' ? 'var(--gold)' : p.confidence === 'low' ? 'var(--muted)' : 'var(--accent)';
-                const pickStyle = side === 'over'
-                  ? 'background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);'
-                  : side === 'under'
-                  ? 'background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);'
-                  : 'background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.2);';
-                const bookLabel = bookLabels[p.book] || (p.book ? p.book.charAt(0).toUpperCase() + p.book.slice(1) : '');
-                return `
-                <div class="prop-row" style="border-left:3px solid ${borderColor};">
-                  <div>
-                    <div class="prop-player">${p.player}</div>
-                    <div class="prop-desc">${p.game} · ${bookLabel} · ${p.reason}</div>
-                  </div>
-                  <div class="prop-line"><div class="prop-line-val">${p.odds}</div><div class="prop-line-label">${p.line ?? ''}</div></div>
-                  <div class="prop-pick" style="${pickStyle}">${(p.side || '').toUpperCase()}</div>
-                </div>`;
-              }).join('')}
-            </div>`).join('')}`;
-      }
-    }
-
-    document.querySelectorAll('.fantasy-date-label').forEach(el => { el.textContent = data.date_label; });
-
-    const playsEl   = document.getElementById('fp-stat-plays');
-    const goaliesEl = document.getElementById('fp-stat-goalies');
-    const propsEl   = document.getElementById('fp-stat-props');
-    const gamesEl   = document.getElementById('fp-stat-games');
-    const tierEl    = document.getElementById('fp-stat-tier');
-    if (playsEl)   playsEl.textContent   = vp.plays?.length || 0;
-    if (goaliesEl) goaliesEl.textContent = gs.goalies?.length || 0;
-    if (propsEl)   propsEl.textContent   = pp.props?.length || 0;
-    if (gamesEl)   gamesEl.textContent   = data.value_plays?.summary?.slate_size || 0;
-    if (tierEl)    tierEl.textContent    = (data.value_plays?.summary?.top_tier || '—') + '-tier';
-    const updatedEl = document.getElementById('fp-updated-date');
-    if (updatedEl) updatedEl.textContent = `Updated ${data.date_label}`;
-
-    console.log(`Fantasy loaded: ${vp.plays?.length || 0} plays, ${gs.goalies?.length || 0} goalies, ${pp.props?.length || 0} props`);
+    console.log(`Props loaded: ${fantasyData.player_props?.props?.length || 0} tonight, ${propRoi.total_graded || 0} graded historically`);
   } catch (e) {
-    console.log('Fantasy fetch error:', e);
+    console.log('Props/track-record fetch error:', e);
   }
 }
-buildFantasy();
+buildPropsAndTrackRecord();
 </script>
 
 <script>

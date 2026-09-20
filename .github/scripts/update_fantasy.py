@@ -237,55 +237,6 @@ def build_game_context(dashboard, rosters, scratches=[]):
                 lines.append(f"  {team} goalies: {', '.join(active_goalies)}")
     return "\n".join(lines), games
 
-def generate_value_plays(game_context, date_label, n_games):
-    prompt = (
-        "You are an expert NHL fantasy hockey analyst. Today is " + date_label + ".\n\n"
-        "Tonight's NHL slate with CONFIRMED CURRENT ROSTERS:\n"
-        + game_context + "\n\n"
-        "CRITICAL: Only use players listed above. Do not use players from your training data.\n"
-        "Your training data is OUTDATED for current rosters, trades, and injuries.\n"
-        "Only use players explicitly listed in the roster above.\n\n"
-        "Do NOT output salaries, prices, projected point totals, or value multiples.\n"
-        "You have no access to DraftKings or FanDuel salary data. Never invent a number.\n"
-        "For usage_note, copy the TOI and shot figures verbatim from that player's roster\n"
-        "line above. Do not estimate, round, or adjust them.\n\n"
-        "Generate plays useful to both daily and season-long players. Ground every pick in\n"
-        "rest, schedule spot, matchup and usage.\n\n"
-        "Respond ONLY with valid JSON, no markdown. Use this exact structure:\n"
-        '{\n'
-        '  "summary": {\n'
-        '    "total_plays": 8,\n'
-        '    "top_tier": "S",\n'
-        f'    "slate_size": {n_games}\n'
-        '  },\n'
-        '  "plays": [\n'
-        '    {\n'
-        '      "player": "First Last",\n'
-        '      "team": "ABBREV",\n'
-        '      "position": "C",\n'
-        '      "tier": "S",\n'
-        '      "matchup": "vs OPP or @ OPP",\n'
-        '      "game_time": "7:00 PM ET",\n'
-        '      "usage_note": "18.4min TOI, 3.1 SOG",\n'
-        '      "reason": "2-3 sentences grounded in rest, matchup and usage",\n'
-        '      "tags": ["Season-Long"],\n'
-        '      "audience": "both"\n'
-        '    }\n'
-        '  ],\n'
-        '  "avoids": [\n'
-        '    {\n'
-        '      "team": "ABBREV",\n'
-        '      "reason": "Second half of a road back-to-back",\n'
-        '      "tag": "Avoid"\n'
-        '    }\n'
-        '  ]\n'
-        '}\n\n'
-        'Generate 6-10 plays across S/A/B tiers.\n'
-        'Tags: "DFS Spot", "Season-Long", "Streamer", "B2B Watch", "Rest Advantage".\n'
-        'Audience: "dfs", "season", "both".'
-    )
-    return call_claude(prompt)
-
 def generate_goalie_starts(game_context, date_label, rosters, games):
     goalie_lines = []
     for g in games:
@@ -529,10 +480,10 @@ def main():
 
     game_context, games_list = build_game_context(dashboard, rosters, scratches)
 
-    print("Generating value plays...")
-    value_plays = generate_value_plays(game_context, date_label, len(games))
-    time.sleep(60)
-
+    # value_plays generation was cut - nothing on the site displays it since
+    # the Fantasy Picks page was retired in favor of the Season Board (its
+    # Value Plays tab was never migrated, unlike Player Props). Was two
+    # Claude calls plus a 60s rate-limit sleep for output nothing read.
     print("Generating goalie starts...")
     goalie_starts = generate_goalie_starts(game_context, date_label, rosters, games_list)
     time.sleep(60)
@@ -545,19 +496,14 @@ def main():
     print("Generating player props...")
     player_props = generate_player_props(prop_context, date_label)
 
-    if not value_plays or not goalie_starts:
+    if not goalie_starts:
         print("Core sections failed - aborting")
         return
     if not player_props:
         player_props = {"props": [], "note": "Prop generation unavailable."}
 
     roster_names = build_roster_name_set(rosters)
-    n_plays_before = len(value_plays.get("plays", []))
-    value_plays = validate_players(value_plays, "plays", roster_names, "Value plays")
     goalie_starts = validate_players(goalie_starts, "goalies", roster_names, "Goalie starts")
-
-    if n_plays_before and not value_plays.get("plays"):
-        print("WARNING: every value play was dropped as off-roster - check the roster fetch")
 
     # Prop players come from the books, not from the model, so the prop feed is
     # authoritative for that section - a roster we truncated at 20 is not.
@@ -567,7 +513,6 @@ def main():
     output = {
         "date": today,
         "date_label": date_label,
-        "value_plays": value_plays,
         "goalie_starts": goalie_starts,
         "player_props": player_props
     }
@@ -578,10 +523,9 @@ def main():
 
     log_props(player_props.get("props", []), today)
 
-    n_plays = len(value_plays.get("plays", []))
     n_goalies = len(goalie_starts.get("goalies", []))
     n_props = len(player_props.get("props", []))
-    print(f"fantasy.json written - {n_plays} plays, {n_goalies} goalies, {n_props} props")
+    print(f"fantasy.json written - {n_goalies} goalies, {n_props} props")
 
 if __name__ == "__main__":
     main()
