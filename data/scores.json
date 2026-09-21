@@ -1,6 +1,6 @@
 {
   "date": "2026-09-20",
-  "updated": "06:57 PM MT",
+  "updated": "10:25 PM MT",
   "games": [
     {
       "away": "NYI",
@@ -52,10 +52,10 @@
       "away_city": "Carolina",
       "home_city": "Florida",
       "away_score": 3,
-      "home_score": 5,
-      "status": "live",
-      "display": "2nd \u00b7 01:11",
-      "period_label": "2nd"
+      "home_score": 6,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "UTA",
@@ -63,9 +63,9 @@
       "away_city": "Utah",
       "home_city": "Colorado",
       "away_score": 1,
-      "home_score": 2,
-      "status": "live",
-      "display": "3rd \u00b7 18:08",
+      "home_score": 4,
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     },
     {
@@ -73,11 +73,11 @@
       "home": "CGY",
       "away_city": "Seattle",
       "home_city": "Calgary",
-      "away_score": 2,
-      "home_score": 1,
-      "status": "live",
-      "display": "1st \u00b7 07:33",
-      "period_label": "1st"
+      "away_score": 4,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     }
   ]
 }
