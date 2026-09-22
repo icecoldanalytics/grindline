@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="alternate icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Grind Line Fantasy: season-long NHL fantasy tools built on real NHL data - every rostered player, season board and schedule analysis. No odds, no salaries, no betting.">
+<title>Grind Line | Fantasy Hockey</title>
+
+<style>
+:root {
+  --dark:    #060b14;
+  --navy:    #0b1522;
+  --card:    #0d1a2a;
+  --border:  #162334;
+  --accent:  #38bdf8;
+  --cyan:    #7dd3fc;
+  --gold:    #f5a623;
+  --green:   #3ddc97;
+  --red:     #ff4757;
+  --orange:  #ff8c00;
+  --text:    #c5e8d5;
+  --muted:   #5a8a72;
+  --bright:  #ffffff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:var(--text);min-height:100vh;overflow-x:hidden;}
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--dark);}
+::-webkit-scrollbar-thumb{background:#1a4a3c;border-radius:3px;}
+
+/* NAV */
+.topnav{position:sticky;top:36px;z-index:999;background:rgba(6,11,20,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:60px;}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer;}
+.nav-brand-icon{width:38px;height:38px;background:linear-gradient(135deg,#00c46a,#00764a);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 14px rgba(0,196,106,0.35);flex-shrink:0;}
+.nav-brand-text{font-weight:800;font-size:1.1rem;letter-spacing:-0.3px;color:var(--bright);}
+.nav-brand-text span{color:var(--accent);}
+.nav-links{display:flex;align-items:center;gap:2px;}
+.nav-links a{font-weight:600;font-size:0.78rem;letter-spacing:0.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:8px 14px;border-radius:6px;border-bottom:3px solid transparent;transition:all 0.2s;cursor:pointer;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);border-bottom-color:var(--accent);}
+.nav-cta{font-weight:700;font-size:0.78rem;letter-spacing:1px;text-transform:uppercase;color:#000;background:var(--accent);border:none;padding:9px 18px;border-radius:6px;cursor:pointer;transition:all 0.2s;text-decoration:none;}
+.nav-cta:hover{background:var(--cyan);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,196,106,0.4);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-beta{background:transparent;border:1px solid var(--cyan);color:var(--cyan);padding:7px 14px;border-radius:6px;font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;text-decoration:none;white-space:nowrap;}
+.nav-beta:hover{background:rgba(0,232,138,0.1);}
+.nav-hamburger{display:none;background:transparent;border:1px solid var(--border);color:var(--text);font-size:1.2rem;padding:6px 10px;border-radius:6px;cursor:pointer;}
+.nav-beta-mobile{display:none;}
+@media(max-width:768px){.nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:#0d1a24;border-bottom:1px solid var(--border);flex-direction:column;padding:8px 0;z-index:999;}.nav-links.open{display:flex;}.nav-links a{padding:14px 24px;border-bottom:1px solid var(--border);font-size:1rem;}.nav-hamburger{display:block;}.nav-beta{display:none;}.nav-beta-mobile{display:block;color:var(--cyan);font-weight:700;}}
+
+/* PAGES */
+.page{display:none;}.page.active{display:block;}
+
+/* LAYOUT */
+.main-wrap{max-width:1200px;margin:0 auto;padding:0 24px 80px;}
+.section-divider{display:flex;align-items:center;gap:14px;margin:44px 0 20px;}
+.section-divider h2{font-weight:800;font-size:0.95rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--bright);white-space:nowrap;}
+.sd-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}
+.sd-badge{font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent);background:rgba(0,196,106,0.08);border:1px solid rgba(0,196,106,0.2);padding:4px 12px;border-radius:20px;white-space:nowrap;}
+
+/* RECAP */
+.recap-table{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;overflow-x:auto;}
+.recap-row{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:16px;padding:13px 20px;border-bottom:1px solid rgba(22,35,52,0.8);font-size:0.82rem;transition:background 0.15s;}
+.recap-row:last-child{border-bottom:none;}
+.recap-row:hover{background:rgba(255,255,255,0.02);}
+.rr-game{color:var(--text);}
+.rr-game strong{color:var(--bright);font-size:0.9rem;}
+.rr-note{font-size:0.68rem;color:var(--muted);margin-top:2px;}
+.rr-score{font-weight:700;font-size:1rem;color:var(--bright);letter-spacing:2px;white-space:nowrap;}
+.rr-result{font-weight:700;font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:4px;white-space:nowrap;}
+.r-hit{background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);}
+.r-miss{background:rgba(255,71,87,0.12);color:var(--red);border:1px solid rgba(255,71,87,0.2);}
+.r-none{background:rgba(90,138,114,0.08);color:var(--muted);border:1px solid rgba(90,138,114,0.15);}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,#060b14,#0b2720);border-bottom:1px solid var(--border);padding:52px 32px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,196,106,0.06) 0%,transparent 70%);border-radius:50%;}
+.page-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+.page-eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.page-title{font-weight:800;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--bright);letter-spacing:-0.3px;margin-bottom:10px;}
+.page-desc{font-size:0.9rem;color:var(--muted);max-width:560px;line-height:1.7;}
+
+.tracker-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:28px;}
+.tracker-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.tracker-card-header{padding:18px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.tracker-card-header h3{font-weight:800;font-size:1rem;text-transform:uppercase;letter-spacing:1px;color:var(--bright);}
+.tracker-card-body{padding:20px;}
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid rgba(22,35,52,0.6);font-size:0.82rem;}
+.stat-row:last-child{border-bottom:none;}
+.stat-label{color:var(--muted);}
+.stat-val{color:var(--bright);font-weight:600;font-size:0.95rem;letter-spacing:0.5px;}
+.stat-val.good{color:var(--green);}.stat-val.warn{color:var(--gold);}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group label{font-size:0.7rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.form-group select,.form-group input{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:0.85rem;padding:10px 14px;outline:none;transition:border-color 0.2s;appearance:none;}
+.form-group select:focus,.form-group input:focus{border-color:var(--accent);}
+.form-group select option{background:#0d1a2a;}
+/* FOOTER */
+footer{background:#03070e;border-top:1px solid var(--border);padding:36px 32px;text-align:center;}
+.footer-brand{font-weight:800;font-size:1.1rem;color:var(--text);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
+.footer-disclaimer{max-width:640px;margin:12px auto 0;padding-top:12px;border-top:1px solid var(--border);font-size:0.68rem;color:#3a5a4a;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .topnav{padding:0 16px;}
+  .nav-links{display:none;}
+  .hero-content{padding:50px 20px;}
+  .hero-stats{gap:24px;}
+  .main-wrap{padding:0 16px 60px;}
+  .recap-row.wide{min-width:600px;}
+  .game-card{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;}
+  .gc-center{grid-column:1/-1;border:none;border-bottom:1px solid var(--border);}
+  .gc-signal{grid-column:1/-1;border-left:none;border-top:1px solid var(--border);flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px;}
+  .form-grid{grid-template-columns:1fr;}
+  .about-features{padding:0 16px;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <a class="nav-brand" href="/">
+    <div class="nav-brand-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2" y="4" width="16" height="3" rx="1.5" fill="#03140c"/><rect x="2" y="9" width="11" height="3" rx="1.5" fill="#03140c" opacity="0.75"/><rect x="2" y="14" width="6" height="3" rx="1.5" fill="#03140c" opacity="0.5"/></svg></div>
+    <div class="nav-brand-text">GRIND <span>LINE</span></div>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a id="nav-player-hub"     class="active"  onclick="showPage('player-hub');closeMenu()">Players</a>
+    <a id="nav-season-board"                   onclick="showPage('season-board');closeMenu()">Season Board</a>
+    <a id="nav-schedule"                       onclick="showPage('schedule');closeMenu()">Schedule</a>
+    <a href="/" onclick="closeMenu()">Home</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="/">Home</a>
+    <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+</nav>
+
+<div id="page-player-hub" class="page active">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Grind Line</div>
+      <div class="page-title">Players</div>
+      <p class="page-desc">Every rostered NHL skater, straight from the NHL API &mdash; three seasons of points, goals, assists and shots per game, each team's own scoring context, this week's opponents, and a disclosed points projection for the week. No salaries, nothing estimated beyond the projection formula itself.</p>
+    </div>
+  </div>
+  <div class="main-wrap">
+    <div class="section-divider"><h2>Player Reference</h2><div class="sd-line"></div><div class="sd-badge" id="ph-week-badge">Loading...</div></div>
+    <div id="ph-preseason-banner" style="display:none;background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.25);border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:0.8rem;color:var(--text);"></div>
+    <div style="font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:16px;" id="ph-formula-note"></div>
+
+    <div class="form-group" style="max-width:340px;margin-bottom:16px;">
+      <label for="ph-search">Search player or team</label>
+      <input type="text" id="ph-search" placeholder="e.g. McDavid or EDM" oninput="phFilterAndRender()">
+    </div>
+
+    <div style="font-size:0.7rem;color:var(--muted);margin-bottom:8px;" id="ph-count-note"></div>
+    <div class="recap-table" id="ph-table"></div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Only players on a team's actual current roster are shown &mdash; never someone who has since been traded or waived. A stat tagged <span style="color:var(--orange);">(last season)</span> is exactly that, not this year's form; it shows up until real current-season games replace it. The projection's prior-season rate is pooled across the two most recent seasons and requires at least 20 games combined &mdash; below that it's left blank rather than let a small sample (a 1-game call-up, say) produce a misleadingly high rate. Click a player to see the full three-season breakdown, team context, this week's opponents, and the projection math.</div>
+  </div>
+</div>
+<div id="page-season-board" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Grind Line</div>
+      <div class="page-title">Season Board</div>
+      <p class="page-desc">Roster decisions for season-long leagues, straight from the NHL API. Which teams to stream this week, who's rested, who's on a back-to-back, which goalie last started, and who's actually getting the ice time &mdash; free, no gate.</p>
+    </div>
+  </div>
+  <div class="main-wrap">
+    <div class="section-divider"><h2>This Week's Workload</h2><div class="sd-line"></div><div class="sd-badge" id="sb-week-badge">Loading...</div></div>
+    <div style="font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:16px;" id="sb-week-summary"></div>
+    <div class="recap-table" id="sb-workload-table"></div>
+
+    <div class="section-divider" style="margin-top:36px;"><h2>Tonight's Games</h2><div class="sd-line"></div><div class="sd-badge" id="sb-date-badge">Loading...</div></div>
+    <div class="recap-table" id="sb-games-table"></div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;" id="sb-empty-note"></div>
+
+    <div class="section-divider" style="margin-top:36px;"><h2>Game Detail</h2><div class="sd-line"></div><div class="sd-badge">Goalies &amp; Usage Leaders</div></div>
+    <div id="sb-game-cards"></div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Games this week and weekly workload come from the Schedule Analysis page's data (Monday&ndash;Sunday calendar weeks). Last Start = the goalie who started that team's most recent completed regular-season game, and the date &mdash; a fact about the past, not a claim about who starts tonight. Rest days include preseason games, matching how the live Rest Edge signal counts them. Usage leaders and goalie SV%/GAA are joined against each team's actual current roster, never shown for a player who has left the team &mdash; a stat tagged <span style="color:var(--orange);">(last season)</span> is exactly that, not this year's form, and shows up until real current-season games replace it.</div>
+  </div>
+</div>
+<div id="page-schedule" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Grind Line</div>
+      <div class="page-title">Schedule Analysis</div>
+      <p class="page-desc">Every team's <span id="sched-season-label">—</span> back-to-backs and weekly game counts, straight from the NHL's own published schedule. Use games-per-week for streaming and start/sit calls, and back-to-back counts to spot a light or heavy week coming.</p>
+    </div>
+  </div>
+  <div class="main-wrap">
+    <div class="section-divider"><h2>League Overview</h2><div class="sd-line"></div><div class="sd-badge" id="sched-season-badge">Loading...</div></div>
+    <div class="tracker-grid">
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Heaviest League Week</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Week Of</span><span class="stat-val" id="sched-heavy-week">—</span></div>
+          <div class="stat-row"><span class="stat-label">Games</span><span class="stat-val warn" id="sched-heavy-games">—</span></div>
+        </div>
+      </div>
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Lightest League Week</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Week Of</span><span class="stat-val" id="sched-light-week">—</span></div>
+          <div class="stat-row"><span class="stat-label">Games</span><span class="stat-val" id="sched-light-games">—</span></div>
+        </div>
+      </div>
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Most Back-to-Backs</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Team</span><span class="stat-val" id="sched-most-b2b-team">—</span></div>
+          <div class="stat-row"><span class="stat-label">Count</span><span class="stat-val warn" id="sched-most-b2b-count">—</span></div>
+        </div>
+      </div>
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Fewest Back-to-Backs</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Team</span><span class="stat-val" id="sched-fewest-b2b-team">—</span></div>
+          <div class="stat-row"><span class="stat-label">Count</span><span class="stat-val good" id="sched-fewest-b2b-count">—</span></div>
+          <div class="stat-row"><span class="stat-label">League Avg</span><span class="stat-val" id="sched-avg-b2b">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider" style="margin-top:36px;"><h2>Every Team</h2><div class="sd-line"></div><div class="sd-badge">Click a column to sort</div></div>
+    <div class="recap-table" id="sched-team-table"></div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Back-to-back = played the calendar day before. Weeks run Monday&ndash;Sunday. Heaviest/lightest week is each team's own single busiest/quietest week of the season.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">🏒 Grind Line</div>
+  <p>Edmonton, Alberta · grindline.ca</p>
+  <p style="margin-top:8px;"><a href="/legal.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Privacy &amp; Terms</a> &nbsp;·&nbsp; <a href="mailto:hello@grindline.ca" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Contact</a></p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('nav-links').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('nav-links').classList.remove('open');
+}
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const page = document.getElementById('page-' + id);
+  if (page) page.classList.add('active');
+  const nav = document.getElementById('nav-' + id);
+  if (nav) nav.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+<script>
+// ── SCHEDULE ANALYSIS ───────────────────────────────────────────────────
+let scheduleData = null;
+let scheduleSortKey = 'back_to_backs';
+let scheduleSortDir = -1;
+
+function renderScheduleTable() {
+  const container = document.getElementById('sched-team-table');
+  if (!container || !scheduleData) return;
+  const teams = Object.values(scheduleData.teams);
+
+  teams.sort((a, b) => {
+    let av, bv;
+    if (scheduleSortKey === 'heaviest_week' || scheduleSortKey === 'lightest_week') {
+      av = a[scheduleSortKey].games; bv = b[scheduleSortKey].games;
+    } else {
+      av = a[scheduleSortKey]; bv = b[scheduleSortKey];
+    }
+    if (typeof av === 'string') return av.localeCompare(bv) * scheduleSortDir;
+    return (av - bv) * scheduleSortDir;
+  });
+
+  const cols = [
+    { key: 'team', label: 'Team' },
+    { key: 'games', label: 'Games' },
+    { key: 'back_to_backs', label: 'B2Bs' },
+    { key: 'heaviest_week', label: 'Heaviest Wk' },
+    { key: 'lightest_week', label: 'Lightest Wk' },
+  ];
+  const gridCols = '1fr 70px 70px 150px 150px';
+
+  const arrow = key => scheduleSortKey === key ? (scheduleSortDir === 1 ? ' ▲' : ' ▼') : '';
+  let html = `<div class="recap-row wide" style="grid-template-columns:${gridCols};background:rgba(255,255,255,0.03);">` +
+    cols.map(c => `<span class="sched-sort-header" data-key="${c.key}" style="cursor:pointer;user-select:none;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);${c.key !== 'team' ? 'text-align:right;' : ''}">${c.label}${arrow(c.key)}</span>`).join('') +
+    `</div>`;
+
+  html += teams.map(t => `
+    <div class="recap-row wide" style="grid-template-columns:${gridCols};">
+      <span class="rr-game"><strong>${t.team}</strong> <span style="color:var(--muted);font-size:0.72rem;">${t.full_name}</span></span>
+      <span style="text-align:right;">${t.games}</span>
+      <span style="text-align:right;font-weight:700;color:${t.back_to_backs >= 13 ? 'var(--orange)' : 'var(--text)'};">${t.back_to_backs}</span>
+      <span style="text-align:right;">${t.heaviest_week.games}g <span style="color:var(--muted);font-size:0.68rem;">(${t.heaviest_week.week_start})</span></span>
+      <span style="text-align:right;">${t.lightest_week.games}g <span style="color:var(--muted);font-size:0.68rem;">(${t.lightest_week.week_start})</span></span>
+    </div>`).join('');
+
+  container.innerHTML = html;
+  container.querySelectorAll('.sched-sort-header').forEach(h => {
+    h.onclick = () => {
+      const key = h.dataset.key;
+      if (scheduleSortKey === key) { scheduleSortDir *= -1; }
+      else { scheduleSortKey = key; scheduleSortDir = key === 'team' ? 1 : -1; }
+      renderScheduleTable();
+    };
+  });
+}
+
+async function buildSchedule() {
+  try {
+    const r = await fetch('data/schedule_analysis.json?nocache=' + Date.now());
+    scheduleData = await r.json();
+    if (!scheduleData.teams) return;
+
+    const seasonLabelEl = document.getElementById('sched-season-label');
+    if (seasonLabelEl) seasonLabelEl.textContent = scheduleData.season;
+    const badge = document.getElementById('sched-season-badge');
+    if (badge) badge.textContent = `${scheduleData.season} · ${scheduleData.total_games} games`;
+
+    const s = scheduleData.summary;
+    const set = (id, val) => { const e = document.getElementById(id); if (e) e.textContent = val; };
+    set('sched-heavy-week', s.heaviest_league_week.week_start);
+    set('sched-heavy-games', s.heaviest_league_week.games + ' games');
+    set('sched-light-week', s.lightest_league_week.week_start);
+    set('sched-light-games', s.lightest_league_week.games + ' games');
+    set('sched-most-b2b-team', s.most_back_to_backs.team);
+    set('sched-most-b2b-count', s.most_back_to_backs.count);
+    set('sched-fewest-b2b-team', s.fewest_back_to_backs.team);
+    set('sched-fewest-b2b-count', s.fewest_back_to_backs.count);
+    set('sched-avg-b2b', s.avg_back_to_backs);
+
+    renderScheduleTable();
+  } catch (e) {
+    console.log('Schedule fetch error:', e);
+  }
+}
+buildSchedule();
+</script>
+<script>
+// ── SEASON BOARD ─────────────────────────────────────────────────────────
+let sbData = null;
+let sbWorkloadSortKey = 'games';
+let sbWorkloadSortDir = -1;
+let sbGamesSortKey = 'away_games_this_week';
+let sbGamesSortDir = -1;
+
+function renderWorkloadTable() {
+  const container = document.getElementById('sb-workload-table');
+  if (!container || !sbData) return;
+  const teams = [...sbData.weekly_workload.teams];
+
+  teams.sort((a, b) => {
+    const av = sbWorkloadSortKey === 'team' ? a.team : a.games;
+    const bv = sbWorkloadSortKey === 'team' ? b.team : b.games;
+    if (typeof av === 'string') return av.localeCompare(bv) * sbWorkloadSortDir;
+    return (av - bv) * sbWorkloadSortDir;
+  });
+
+  const cols = [
+    { key: 'team', label: 'Team' },
+    { key: 'games', label: 'Games This Week' },
+  ];
+  const gridCols = '1fr 160px';
+  const arrow = key => sbWorkloadSortKey === key ? (sbWorkloadSortDir === 1 ? ' ▲' : ' ▼') : '';
+  const max = sbData.weekly_workload.max_games, min = sbData.weekly_workload.min_games;
+
+  let html = `<div class="recap-row wide" style="grid-template-columns:${gridCols};background:rgba(255,255,255,0.03);">` +
+    cols.map(c => `<span class="sb-workload-sort" data-key="${c.key}" style="cursor:pointer;user-select:none;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);${c.key !== 'team' ? 'text-align:right;' : ''}">${c.label}${arrow(c.key)}</span>`).join('') +
+    `</div>`;
+
+  html += teams.map(t => {
+    const color = t.games === max && max > 0 ? 'var(--green)' : t.games === min && min > 0 ? 'var(--orange)' : 'var(--text)';
+    return `
+    <div class="recap-row wide" style="grid-template-columns:${gridCols};">
+      <span class="rr-game"><strong>${t.team}</strong> <span style="color:var(--muted);font-size:0.72rem;">${t.full_name}</span></span>
+      <span style="text-align:right;font-weight:700;color:${color};">${t.games || '—'}</span>
+    </div>`;
+  }).join('');
+
+  container.innerHTML = html;
+  container.querySelectorAll('.sb-workload-sort').forEach(h => {
+    h.onclick = () => {
+      const key = h.dataset.key;
+      if (sbWorkloadSortKey === key) { sbWorkloadSortDir *= -1; }
+      else { sbWorkloadSortKey = key; sbWorkloadSortDir = key === 'team' ? 1 : -1; }
+      renderWorkloadTable();
+    };
+  });
+}
+
+function renderGamesTable() {
+  const container = document.getElementById('sb-games-table');
+  if (!container || !sbData) return;
+  const games = [...sbData.games];
+
+  const getVal = (g, key) => {
+    if (key === 'matchup') return `${g.away} @ ${g.home}`;
+    if (key === 'away_games_this_week') return g.away_games_this_week ?? -1;
+    if (key === 'home_games_this_week') return g.home_games_this_week ?? -1;
+    if (key === 'away_rest_days') return g.away_rest_days ?? -1;
+    if (key === 'home_rest_days') return g.home_rest_days ?? -1;
+    return 0;
+  };
+  games.sort((a, b) => {
+    const av = getVal(a, sbGamesSortKey), bv = getVal(b, sbGamesSortKey);
+    if (typeof av === 'string') return av.localeCompare(bv) * sbGamesSortDir;
+    return (av - bv) * sbGamesSortDir;
+  });
+
+  const cols = [
+    { key: 'matchup', label: 'Matchup' },
+    { key: 'away_games_this_week', label: 'Away GP/Wk' },
+    { key: 'home_games_this_week', label: 'Home GP/Wk' },
+    { key: 'away_rest_days', label: 'Away Rest' },
+    { key: 'home_rest_days', label: 'Home Rest' },
+  ];
+  const gridCols = '1fr 100px 100px 100px 100px';
+  const arrow = key => sbGamesSortKey === key ? (sbGamesSortDir === 1 ? ' ▲' : ' ▼') : '';
+
+  let html = `<div class="recap-row wide" style="grid-template-columns:${gridCols};background:rgba(255,255,255,0.03);">` +
+    cols.map(c => `<span class="sb-games-sort" data-key="${c.key}" style="cursor:pointer;user-select:none;font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);${c.key !== 'matchup' ? 'text-align:right;' : ''}">${c.label}${arrow(c.key)}</span>`).join('') +
+    `</div>`;
+
+  if (!games.length) {
+    container.innerHTML = html;
+    return;
+  }
+
+  html += games.map(g => `
+    <div class="recap-row wide" style="grid-template-columns:${gridCols};">
+      <span class="rr-game"><strong>${g.away} @ ${g.home}</strong> <span style="color:var(--muted);font-size:0.72rem;">${g.away_full} @ ${g.home_full}</span></span>
+      <span style="text-align:right;">${g.away_games_this_week ?? '—'}</span>
+      <span style="text-align:right;">${g.home_games_this_week ?? '—'}</span>
+      <span style="text-align:right;">${g.away_rest_days ?? '—'}d${g.away_b2b ? ' <span style="color:var(--orange);font-weight:700;">B2B</span>' : ''}</span>
+      <span style="text-align:right;">${g.home_rest_days ?? '—'}d${g.home_b2b ? ' <span style="color:var(--orange);font-weight:700;">B2B</span>' : ''}</span>
+    </div>`).join('');
+
+  container.innerHTML = html;
+  container.querySelectorAll('.sb-games-sort').forEach(h => {
+    h.onclick = () => {
+      const key = h.dataset.key;
+      if (sbGamesSortKey === key) { sbGamesSortDir *= -1; }
+      else { sbGamesSortKey = key; sbGamesSortDir = key === 'matchup' ? 1 : -1; }
+      renderGamesTable();
+    };
+  });
+}
+
+function renderGameCards() {
+  const container = document.getElementById('sb-game-cards');
+  if (!container || !sbData) return;
+  if (!sbData.games.length) { container.innerHTML = ''; return; }
+
+  const goalieBlock = (goalie) => {
+    if (!goalie || !goalie.goalie) {
+      return `<div style="font-size:0.78rem;color:var(--muted);">${(goalie && goalie.note) || 'No data'}</div>`;
+    }
+    const sv = goalie.sv_pct != null ? goalie.sv_pct.toFixed(3) : '—';
+    const gaa = goalie.gaa != null ? goalie.gaa.toFixed(2) : '—';
+    const seasonTag = goalie.stat_season === 'last_season'
+      ? ' <span style="color:var(--orange);">(last season)</span>' : '';
+    return `
+      <div style="font-size:0.85rem;font-weight:700;color:var(--bright);">${goalie.goalie}</div>
+      <div style="font-size:0.72rem;color:var(--muted);">Last Start: ${goalie.date}</div>
+      <div style="font-size:0.72rem;color:var(--muted);">${sv} SV% &middot; ${gaa} GAA${seasonTag}</div>`;
+  };
+  const usageBlock = (leaders) => (leaders || []).map(p => `
+    <div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:4px 0;border-bottom:1px solid rgba(22,35,52,0.6);">
+      <span>${p.player} <span style="color:var(--muted);">${p.position}</span></span>
+      <span style="color:var(--muted);">${p.toi_per_game}m &middot; ${p.shots_per_game} SOG/g${p.stat_season === 'last_season' ? ' <span style="color:var(--orange);">(last season)</span>' : ''}</span>
+    </div>`).join('');
+
+  container.innerHTML = sbData.games.map(g => `
+    <div class="tracker-card" style="margin-bottom:16px;">
+      <div class="tracker-card-header"><h3>${g.away} @ ${g.home}</h3><span class="sd-badge">${g.away} ${g.away_games_this_week ?? '—'}gp/wk &middot; ${g.home} ${g.home_games_this_week ?? '—'}gp/wk</span></div>
+      <div class="tracker-card-body">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px;">${g.away} Goalie</div>
+            ${goalieBlock(g.away_goalie)}
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:14px 0 6px;">${g.away} Usage Leaders</div>
+            ${usageBlock(g.away_usage_leaders)}
+          </div>
+          <div>
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px;">${g.home} Goalie</div>
+            ${goalieBlock(g.home_goalie)}
+            <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:14px 0 6px;">${g.home} Usage Leaders</div>
+            ${usageBlock(g.home_usage_leaders)}
+          </div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+async function buildSeasonBoard() {
+  try {
+    const r = await fetch('data/season_board.json?nocache=' + Date.now());
+    sbData = await r.json();
+    if (!sbData.date) return;
+
+    const dateBadge = document.getElementById('sb-date-badge');
+    if (dateBadge) dateBadge.textContent = sbData.date_label || '—';
+    const weekBadge = document.getElementById('sb-week-badge');
+    if (weekBadge) weekBadge.textContent = 'Week of ' + (sbData.week_start || '—');
+    const emptyNote = document.getElementById('sb-empty-note');
+    if (emptyNote) emptyNote.textContent = sbData.games.length ? '' : 'No games scheduled tonight.';
+
+    const wl = sbData.weekly_workload;
+    const summaryEl = document.getElementById('sb-week-summary');
+    if (summaryEl) {
+      summaryEl.textContent = wl.max_games > 0
+        ? `Heaviest week: ${wl.max_games} games (${wl.heavy_teams.join(', ')}). Lightest week: ${wl.min_games} games (${wl.light_teams.join(', ')}).`
+        : 'No regular-season games scheduled this week yet.';
+    }
+
+    renderWorkloadTable();
+    renderGamesTable();
+    renderGameCards();
+  } catch (e) {
+    console.log('Season board fetch error:', e);
+  }
+}
+buildSeasonBoard();
+</script>
+<script>
+// ── PLAYER HUB ──────────────────────────────────────────────────────────────
+let phData = null;
+let phSort = { key: 'projected', dir: -1 };
+let phOpenId = null;
+
+function phPct(v) { return v == null ? '—' : (v * 100).toFixed(1) + '%'; }
+function phNum(v, d) { return v == null ? '—' : v.toFixed(d == null ? 2 : d); }
+function phSeasonTag(statSeason) {
+  if (statSeason === 'last_season') return ' <span style="color:var(--orange);font-size:0.68rem;">(last season)</span>';
+  return '';
+}
+
+function phFormulaText(p) {
+  const proj = p.projection;
+  const thisSzn = p.seasons[phData.season];
+  const w = proj.weight_this_season == null ? 0 : proj.weight_this_season;
+  const thisPpg = thisSzn.points_per_game;
+  const priorPpg = proj.prior_points_per_game;
+  const priorLabel = priorPpg == null
+    ? `— (only ${proj.prior_games_pooled} game${proj.prior_games_pooled === 1 ? '' : 's'} pooled across the two prior seasons, below the 20-game minimum)`
+    : `${priorPpg.toFixed(2)} (pooled across ${proj.prior_games_pooled} games, two prior seasons)`;
+  if (proj.blended_points_per_game == null) {
+    return `No qualifying rate in either season (this season: ${thisSzn.games_played} GP; prior two seasons pooled: ${proj.prior_games_pooled} GP, below the 20-game minimum) — no projection shown.`;
+  }
+  return `weight on this season = min(${thisSzn.games_played} / 20, 1) = ${w.toFixed(2)}<br>`
+    + `blended pts/gm = ${w.toFixed(2)} × ${thisPpg == null ? '—' : thisPpg.toFixed(2)} (this season)`
+    + ` + ${(1 - w).toFixed(2)} × ${priorLabel}`
+    + ` = ${proj.blended_points_per_game.toFixed(3)}<br>`
+    + `projected points = ${proj.blended_points_per_game.toFixed(3)} × ${proj.games_this_week} game${proj.games_this_week === 1 ? '' : 's'} this week`
+    + ` = <strong style="color:var(--accent);">${proj.projected_points.toFixed(2)}</strong>`;
+}
+
+function phDetailHtml(playerId, p) {
+  const team = phData.teams[p.team] || {};
+  const seasonIds = [phData.season, ...phData.prior_seasons];
+  const seasonRows = seasonIds.map(sid => {
+    const s = p.seasons[sid];
+    return `<div class="recap-row wide" style="grid-template-columns:100px 70px 70px 70px 70px 90px 90px;">
+      <span class="rr-game">${s.label}</span>
+      <span style="text-align:right;">${s.games_played}</span>
+      <span style="text-align:right;">${s.points}</span>
+      <span style="text-align:right;">${s.goals}</span>
+      <span style="text-align:right;">${s.assists}</span>
+      <span style="text-align:right;">${phNum(s.points_per_game, 2)}</span>
+      <span style="text-align:right;">${phNum(s.shots_per_game, 2)}</span>
+    </div>`;
+  }).join('');
+
+  const weekRows = (team.week_games || []).length ? team.week_games.map(g => {
+    const goalie = g.last_start;
+    const goalieText = goalie
+      ? `Last start: ${goalie.name} (${goalie.date}) — ${phNum(goalie.sv_pct, 3)} SV%${phSeasonTag(goalie.stat_season)}`
+      : 'No recent start on record';
+    return `<div class="recap-row" style="grid-template-columns:1fr auto;">
+      <div class="rr-game">
+        <strong>${g.home ? 'vs' : '@'} ${g.opponent}</strong> <span style="color:var(--muted);font-size:0.72rem;">${g.date}</span>
+        <div class="rr-note">Opp GA/gm ${phNum(g.opponent_goals_against_per_game, 2)}${phSeasonTag(g.opponent_stat_season)} · Opp PK% ${phPct(g.opponent_penalty_kill_pct)}${phSeasonTag(g.opponent_stat_season)}</div>
+        <div class="rr-note">${goalieText}</div>
+      </div>
+    </div>`;
+  }).join('') : `<div class="recap-row"><div class="rr-note">No games scheduled this week (${phData.week_start} to ${phData.week_end}).</div></div>`;
+
+  return `
+    <div style="padding:16px 20px;background:rgba(255,255,255,0.02);">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Three-Season Line</div>
+      <div class="recap-table" style="margin-bottom:16px;">
+        <div class="recap-row wide" style="grid-template-columns:100px 70px 70px 70px 70px 90px 90px;background:rgba(255,255,255,0.03);">
+          <span class="rr-game"><strong>Season</strong></span>
+          <span style="text-align:right;"><strong>GP</strong></span>
+          <span style="text-align:right;"><strong>Pts</strong></span>
+          <span style="text-align:right;"><strong>G</strong></span>
+          <span style="text-align:right;"><strong>A</strong></span>
+          <span style="text-align:right;"><strong>Pts/Gm</strong></span>
+          <span style="text-align:right;"><strong>Shots/Gm</strong></span>
+        </div>
+        ${seasonRows}
+      </div>
+
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Team Context — ${team.full_name || p.team}</div>
+      <div style="font-size:0.82rem;color:var(--text);margin-bottom:16px;">
+        Goals for/gm: ${phNum(team.goals_for_per_game, 2)}${phSeasonTag(team.team_stat_season)} &nbsp;·&nbsp;
+        Power play%: ${phPct(team.power_play_pct)}${phSeasonTag(team.team_stat_season)}
+      </div>
+
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">This Week's Opponents</div>
+      <div class="recap-table" style="margin-bottom:16px;">${weekRows}</div>
+
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Projected Points This Week — the Math</div>
+      <div style="font-size:0.78rem;color:var(--text);line-height:1.8;font-family:monospace;">${phFormulaText(p)}</div>
+    </div>`;
+}
+
+const PH_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px';
+
+function phRowHtml(playerId, p) {
+  const proj = p.projection;
+  const thisSzn = p.seasons[phData.season];
+  const lastSzn = p.seasons[phData.prior_seasons[0]];
+  const isOpen = phOpenId === playerId;
+  let html = `<div class="recap-row wide ph-row" data-id="${playerId}" style="grid-template-columns:${PH_GRID_COLS};cursor:pointer;">
+      <span class="rr-game"><strong>${p.name}</strong> <span style="color:var(--muted);font-size:0.72rem;">${p.position}</span></span>
+      <span style="text-align:right;">${p.team}</span>
+      <span style="text-align:right;color:var(--accent);font-weight:700;">${proj.projected_points == null ? '—' : proj.projected_points.toFixed(2)}</span>
+      <span style="text-align:right;">${phNum(proj.blended_points_per_game, 2)}</span>
+      <span style="text-align:right;">${proj.games_this_week}</span>
+      <span style="text-align:right;">${phNum(thisSzn.points_per_game, 2)}</span>
+      <span style="text-align:right;">${phNum(proj.prior_points_per_game, 2)}</span>
+      <span style="text-align:right;">${phNum(lastSzn.shots_per_game, 2)}</span>
+    </div>`;
+  if (isOpen) html += `<div class="ph-detail">${phDetailHtml(playerId, p)}</div>`;
+  return html;
+}
+
+function phRenderTable(ids) {
+  const el = document.getElementById('ph-table');
+  if (!el) return;
+  const header = `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};background:rgba(255,255,255,0.03);">
+      <span class="rr-game"><strong>Player</strong></span>
+      <span style="text-align:right;"><strong>Team</strong></span>
+      <span style="text-align:right;"><strong>Projected Points This Week</strong></span>
+      <span style="text-align:right;"><strong>PPG</strong> <span style="color:var(--muted);font-size:0.6rem;">(blended)</span></span>
+      <span style="text-align:right;"><strong>Games This Week</strong></span>
+      <span style="text-align:right;"><strong>This Szn PPG</strong></span>
+      <span style="text-align:right;"><strong>Prior 2Sn PPG</strong> <span style="color:var(--orange);font-size:0.6rem;">(20+ GP)</span></span>
+      <span style="text-align:right;"><strong>Shots/Gm</strong> <span style="color:var(--orange);font-size:0.6rem;">(LY)</span></span>
+    </div>`;
+  el.innerHTML = header + ids.map(id => phRowHtml(id, phData.players[id])).join('');
+
+  document.getElementById('ph-count-note').textContent = `${ids.length} of ${Object.keys(phData.players).length} players`;
+
+  el.querySelectorAll('.ph-row').forEach(row => {
+    row.addEventListener('click', () => {
+      const id = row.getAttribute('data-id');
+      phOpenId = phOpenId === id ? null : id;
+      phFilterAndRender();
+    });
+  });
+}
+
+function phFilterAndRender() {
+  if (!phData) return;
+  const q = (document.getElementById('ph-search').value || '').trim().toLowerCase();
+  let ids = Object.keys(phData.players);
+  if (q) {
+    ids = ids.filter(id => {
+      const p = phData.players[id];
+      return p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q);
+    });
+  }
+  ids.sort((a, b) => {
+    const pa = phData.players[a].projection.projected_points;
+    const pb = phData.players[b].projection.projected_points;
+    if (pa == null && pb == null) return 0;
+    if (pa == null) return 1;
+    if (pb == null) return -1;
+    return pb - pa;
+  });
+  phRenderTable(ids);
+}
+
+async function buildPlayerHub() {
+  try {
+    const r = await fetch('data/player_hub.json?nocache=' + Date.now());
+    phData = await r.json();
+    if (!phData.players) return;
+
+    const weekBadge = document.getElementById('ph-week-badge');
+    if (weekBadge) weekBadge.textContent = (phData.preseason ? 'Season-opening week ' : 'Week of ') + phData.week_start;
+    const formulaNote = document.getElementById('ph-formula-note');
+    if (formulaNote) formulaNote.textContent = phData.projection_formula;
+
+    const banner = document.getElementById('ph-preseason-banner');
+    if (banner) {
+      if (phData.preseason) {
+        const startLabel = new Date(phData.season_start + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        banner.style.display = 'block';
+        banner.innerHTML = `<strong style="color:var(--gold);">Preseason.</strong> The 2026-27 season starts ${startLabel}. This calendar week has no real games yet, so the table below shows the season-opening week's schedule and projections instead of a column of zeros.`;
+      } else {
+        banner.style.display = 'none';
+      }
+    }
+
+    phFilterAndRender();
+  } catch (e) {
+    console.log('Player hub fetch error:', e);
+  }
+}
+buildPlayerHub();
+</script>
+</body>
+</html>
