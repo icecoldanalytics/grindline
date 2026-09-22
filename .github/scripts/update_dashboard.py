@@ -81,6 +81,13 @@ def get_scores(date_str):
         return []
 
 def get_teams_on_date(date_str):
+    """Regular-season games only (gameType == 2). Rest-day counting has to
+    match what backtest_rest_signals.py actually validated (509 games,
+    62.1%, +5.6% ROI) - its data source, the Odds API historical cache,
+    never contained a single preseason game, so that record was always
+    regular-season-only no matter what this counted. Restricting here
+    means Rest Edge naturally can't fire during preseason, since there's
+    no current-season regular-season history yet to look back through."""
     url = f"https://api-web.nhle.com/v1/schedule/{date_str}"
     try:
         r = requests.get(url, timeout=10)
@@ -89,6 +96,8 @@ def get_teams_on_date(date_str):
         for gw in data.get("gameWeek", []):
             if gw.get("date") == date_str:
                 for g in gw.get("games", []):
+                    if g.get("gameType") != 2:
+                        continue
                     teams.add(g["awayTeam"]["abbrev"])
                     teams.add(g["homeTeam"]["abbrev"])
         return teams

@@ -33,8 +33,11 @@ goalie started that team's most recent completed regular-season game,
 and the date. Never labeled "confirmed" or "projected."
 
 Rest days: the same day-by-day "who played on which date" lookback
-update_dashboard.py and capture_signals.py use, so preseason games count
-toward rest the same way they do for the live Rest Edge signal.
+update_dashboard.py and capture_signals.py use, restricted to
+regular-season games (gameType == 2) only - matching exactly what
+backtest_rest_signals.py's published record (509 games, 62.1%, +5.6%
+ROI) validated, since its Odds-API-sourced data never contained a
+preseason game to begin with.
 
 Goalie SV%/GAA and skater usage leaders are joined against each team's
 actual current roster (roster_stats.py), not read off club-stats/{team}/now
@@ -140,6 +143,7 @@ def get_schedule(date_str):
 
 
 def get_teams_on_date(date_str):
+    """Regular-season games only (gameType == 2) - see module docstring."""
     try:
         r = requests.get(f"https://api-web.nhle.com/v1/schedule/{date_str}", timeout=15)
         r.raise_for_status()
@@ -149,6 +153,8 @@ def get_teams_on_date(date_str):
             if gw.get("date") != date_str:
                 continue
             for g in gw.get("games", []):
+                if g.get("gameType") != 2:
+                    continue
                 teams.add(g["awayTeam"]["abbrev"])
                 teams.add(g["homeTeam"]["abbrev"])
         return teams

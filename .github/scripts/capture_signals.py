@@ -53,16 +53,22 @@ NAME_KEY = {
 
 
 def teams_on(date_str):
-    """Every team with a game scheduled or played on this date, of ANY
-    game type. Deliberately unfiltered: rest-day counting includes
-    preseason games (a team that played last night has less rest whether
-    that game was preseason or not - see index.html's "Rest days include
-    preseason games, matching how the live Rest Edge signal counts them"
-    disclosure), and callers that need only regular-season games (i.e.
-    which games are eligible to actually be LOGGED as a tracked signal
-    occurrence) filter game_type themselves instead of being filtered
-    here, so the rest-day history this feeds is never accidentally
-    narrowed too."""
+    """Every team with a REGULAR-SEASON game (gameType == 2) scheduled or
+    played on this date - used both for rest-day counting AND for which
+    games are eligible to be logged. Confirmed live that these two must
+    use the SAME definition: backtest_rest_signals.py's published record
+    (509 games, 62.1%, +5.6% ROI) is regular-season-only not by choice but
+    because its underlying Odds API discovery data never contained a
+    single preseason game across all four backfilled seasons (earliest
+    commence_time in data/historical_h2h_events_cache.json is 2022-10-07,
+    the actual season opener) - so "preseason counts toward rest" was
+    never what got validated, regardless of what this script or the site
+    copy claimed. Restricting to regular season here means rest naturally
+    can't be computed - and the signal naturally can't fire - during
+    preseason at all, since there's no current-season regular-season
+    history yet to look back through; no separate check is needed once
+    the season is underway either, since by then every game in the
+    lookback window is already regular season."""
     try:
         r = requests.get(
             f"https://api-web.nhle.com/v1/score/{date_str}", timeout=15
@@ -75,13 +81,15 @@ def teams_on(date_str):
 
     teams, games = set(), []
     for g in data.get("games", []):
+        if g.get("gameType") != 2:
+            continue
         away = g.get("awayTeam", {}).get("abbrev")
         home = g.get("homeTeam", {}).get("abbrev")
         if away not in NHL_TEAMS or home not in NHL_TEAMS:
             continue
         teams.add(away)
         teams.add(home)
-        games.append({"away": away, "home": home, "game_type": g.get("gameType")})
+        games.append({"away": away, "home": home})
     return teams, games
 
 
@@ -160,22 +168,7 @@ def main():
         ds = (today - timedelta(days=back)).strftime("%Y-%m-%d")
         teams_by_date[ds], _ = teams_on(ds)
 
-    _, todays_games_all = teams_on(today_str)
-    if not todays_games_all:
-        print("  No games today. Nothing to log.")
-        return
-
-    # Only regular-season games are eligible to be logged/graded as a
-    # tracked signal occurrence - the published backtest (509 games,
-    # 62.1%, +5.6% ROI) is regular-season only, so a preseason result
-    # must never get blended into that same tracked record. Rest-day
-    # counting above is deliberately unaffected by this - a preseason
-    # game still counts as a team having played for rest purposes.
-    todays_games = [g for g in todays_games_all if g["game_type"] == 2]
-    skipped_preseason = [g for g in todays_games_all if g["game_type"] != 2]
-    if skipped_preseason:
-        print(f"  Excluding {len(skipped_preseason)} non-regular-season game(s) from logging: "
-              + ", ".join(f"{g['away']}@{g['home']} (type {g['game_type']})" for g in skipped_preseason))
+    _, todays_games = teams_on(today_str)
     if not todays_games:
         print("  No regular-season games today. Nothing to log.")
         return
