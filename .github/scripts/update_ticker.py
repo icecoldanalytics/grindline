@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Generates data/ticker.json with tonight's NHL games + best available odds.
-Runs daily at 7 AM MST via GitHub Actions.
+Runs daily via GitHub Actions (update-ticker.yml) - actual time varies
+by hours day to day, see that workflow's cron comment.
 """
 
 import os

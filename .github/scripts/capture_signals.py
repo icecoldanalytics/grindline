@@ -2,8 +2,13 @@
 """
 Capture today's signal games with the moneyline available right now.
 
-Runs every morning at 7 AM MST — the same moment the daily email sends — so
-the price logged is the price a subscriber could actually have taken.
+Scheduled to run each morning, but GitHub Actions' cron scheduling means
+the actual run time varies day to day by hours, not minutes - confirmed
+live across 15+ consecutive days. Never assume this happened at a fixed
+time like 7 AM. What matters is that the exact capture time IS recorded,
+honestly, per game: price_source is stamped "live_HH:MM_MT" using the
+real clock time this specific run pulled odds, so update_roi.py (and the
+site) can show each game's true capture time instead of a claimed one.
 
 Appends ungraded entries to data/signal_log.json. update_roi.py fills in the
 final scores on its next nightly run.

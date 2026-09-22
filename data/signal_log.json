@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "note": "Every entry carries the real home moneyline available at 7 AM MST. Never grade against an assumed price.",
+  "note": "Every entry carries the real home moneyline available when captured (see price_source per entry for the exact time). Never grade against an assumed price, and never against a claimed fixed time like 7 AM.",
   "entries": [
     {
       "date": "2025-10-08",

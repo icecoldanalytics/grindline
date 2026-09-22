@@ -3,8 +3,12 @@
 Builds data/roi.json from data/signal_log.json.
 
 Every ROI figure here is graded against the REAL home moneyline that was
-available at 7 AM MST, stored per game in the signal log. Nothing is priced
-by assumption.
+available when capture_signals.py's morning job actually captured it that
+day, stored per game in the signal log along with the exact capture time
+(price_source). Never assumed to be a fixed time like 7 AM - confirmed
+live that the job's actual run time varies by hours day to day, so that
+claim would itself have been an assumption. Nothing is priced by
+assumption.
 
 Two jobs:
   1. Grade any log entries that don't yet have a final score (fetches only
@@ -189,6 +193,28 @@ def cumulative(entries):
     return out
 
 
+def format_price_time(price_source):
+    """Human-readable label for a logged entry's price_source - either a
+    real live capture ("live_HH:MM_MT", the exact clock time
+    capture_signals.py actually pulled odds that run) or a fixed
+    historical backtest snapshot ("historical_14utc", used only for the
+    pre-live-tracking backfilled games and never a claim about a real
+    capture moment). Surfacing this per game is the honest alternative to
+    a single "captured at 7 AM" claim that wasn't true."""
+    if not price_source:
+        return "—"
+    if price_source.startswith("live_") and price_source.endswith("_MT"):
+        hhmm = price_source[len("live_"):-len("_MT")]
+        try:
+            dt = datetime.strptime(hhmm, "%H:%M")
+            return dt.strftime("%-I:%M %p MT")
+        except ValueError:
+            return price_source
+    if price_source.startswith("historical_"):
+        return "backtest snapshot"
+    return price_source
+
+
 def load_retired_signal1():
     """Frozen historical documentation for the retired Signal 1 condition
     (away B2B, home rested 3+ days) - backtest_rest_signals.py's pooled
@@ -239,6 +265,7 @@ def main():
         "score": f"{e['away_score']}-{e['home_score']}",
         "odds": e["home_ml_avg"],
         "fade_won": e["fade_won"],
+        "price_time": format_price_time(e.get("price_source")),
     } for e in rest_edge[-5:]]
 
     through = entries[-1]["date"] if entries else "—"
@@ -259,8 +286,10 @@ def main():
         "pricing": {
             "method": "Real home moneyline, average across every US bookmaker the "
                       "Odds API returns for that game (typically 9-11 books, not a "
-                      "fixed list — see rest_edge.home_ml_average), at the 7 AM MST "
-                      "snapshot — the price available when the daily email sends.",
+                      "fixed list — see rest_edge.home_ml_average), captured by the "
+                      "morning capture job. Never a fixed assumed time like 7 AM — "
+                      "each game's exact capture time is logged and shown per game "
+                      "in the results below.",
             "assumed_odds_used": False,
         },
 

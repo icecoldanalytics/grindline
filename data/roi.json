@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-21 12:27 PM MT",
+  "generated": "2026-09-22 01:08 PM MT",
   "season": "2025-26",
   "through_date": "2026-04-16",
   "pricing": {
-    "method": "Real home moneyline, average across every US bookmaker the Odds API returns for that game (typically 9-11 books, not a fixed list \u2014 see rest_edge.home_ml_average), at the 7 AM MST snapshot \u2014 the price available when the daily email sends.",
+    "method": "Real home moneyline, average across every US bookmaker the Odds API returns for that game (typically 9-11 books, not a fixed list \u2014 see rest_edge.home_ml_average), captured by the morning capture job. Never a fixed assumed time like 7 AM \u2014 each game's exact capture time is logged and shown per game in the results below.",
     "assumed_odds_used": false
   },
   "rest_edge": {
@@ -633,7 +633,8 @@
         "home": "CGY",
         "score": "3-1",
         "odds": 132.5,
-        "fade_won": false
+        "fade_won": false,
+        "price_time": "backtest snapshot"
       },
       {
         "date": "2026-04-14",
@@ -641,7 +642,8 @@
         "home": "VAN",
         "score": "3-4",
         "odds": 133.5,
-        "fade_won": true
+        "fade_won": true,
+        "price_time": "backtest snapshot"
       },
       {
         "date": "2026-04-14",
@@ -649,7 +651,8 @@
         "home": "UTA",
         "score": "3-5",
         "odds": -174.0,
-        "fade_won": true
+        "fade_won": true,
+        "price_time": "backtest snapshot"
       },
       {
         "date": "2026-04-16",
@@ -657,7 +660,8 @@
         "home": "COL",
         "score": "0-2",
         "odds": -184.0,
-        "fade_won": true
+        "fade_won": true,
+        "price_time": "backtest snapshot"
       },
       {
         "date": "2026-04-16",
@@ -665,7 +669,8 @@
         "home": "WPG",
         "score": "6-1",
         "odds": -159.5,
-        "fade_won": false
+        "fade_won": false,
+        "price_time": "backtest snapshot"
       }
     ]
   }

@@ -446,12 +446,12 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
         <div class="tracker-card-header"><h3>How These Numbers Are Made</h3><span class="sd-badge">Method</span></div>
         <div class="tracker-card-body">
           <div class="stat-row"><span class="stat-label">Pricing</span><span class="stat-val" id="t-priced">Real moneyline</span></div>
-          <div class="stat-row"><span class="stat-label">Snapshot</span><span class="stat-val">7:00 AM MST</span></div>
+          <div class="stat-row"><span class="stat-label">Snapshot</span><span class="stat-val">Morning capture job</span></div>
           <div class="stat-row"><span class="stat-label">Books</span><span class="stat-val">Every US book offered</span></div>
           <div class="stat-row"><span class="stat-label">Stake</span><span class="stat-val">Flat, 1 unit</span></div>
           <div class="stat-row"><span class="stat-label">Season</span><span class="stat-val" id="t-season">—</span></div>
           <div class="stat-row"><span class="stat-label">Last Updated</span><span class="stat-val" id="t-updated">—</span></div>
-          <div style="font-size:0.78rem;color:var(--muted);line-height:1.7;margin-top:14px;">ROI is the average across every US bookmaker the Odds API returns for that game at the moment the daily email sends — typically 9-11 books (DraftKings, FanDuel, BetMGM and others; not a fixed curated list, and not Pinnacle, which this project's Odds API plan doesn't return for NHL) — the price you could actually have taken, not the closing line.</div>
+          <div style="font-size:0.78rem;color:var(--muted);line-height:1.7;margin-top:14px;">ROI is the average across every US bookmaker the Odds API returns for that game at the moment our morning capture job actually runs — typically 9-11 books (DraftKings, FanDuel, BetMGM and others; not a fixed curated list, and not Pinnacle, which this project's Odds API plan doesn't return for NHL) — the price you could actually have taken, not the closing line. That job's exact run time varies day to day rather than firing at a fixed hour; each game's real capture time is logged and shown per game in the results below rather than claimed as a single fixed time.</div>
         </div>
       </div>
     </div>
@@ -509,7 +509,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       <h3>Method &amp; What We Found</h3>
       <p><strong>The rule:</strong> when the away team played last night and the home team has had exactly two days off, back the home team. Flat stake, every occurrence, no discretion, no filtering after the fact.</p>
       <br>
-      <p><strong>How it is graded:</strong> every game is priced at the average US moneyline available at 7:00 AM MST &mdash; the moment our daily email sends. Not the closing line, which subscribers cannot bet, and never an assumed &minus;110. This is why our published ROI is lower than most: assumed pricing inflates a 62% win rate by several points.</p>
+      <p><strong>How it is graded:</strong> every game is priced at the average US moneyline available when our morning capture job actually runs. Not the closing line, which subscribers cannot bet, and never an assumed &minus;110 &mdash; and not a claimed fixed time either: that job's real run time varies by hours day to day, so each game's exact capture time is logged and shown per game in the results below rather than stated as a single round number. This is why our published ROI is lower than most: assumed pricing inflates a 62% win rate by several points.</p>
       <br>
       <p><strong>What the four seasons show:</strong> the two-day bucket was profitable in every season tested, including three we had never examined when the rule was first written. Combined: 509 games, 62.1% win rate, +5.6% ROI at real prices, with a 95% confidence interval of &minus;2.2% to +13.3% on that ROI &mdash; the figure that actually answers whether a bettor made money. (A narrower-looking comparison exists &mdash; win rate's own 95% floor, 57.9%, clears the breakeven implied by the pooled <em>average</em> price, 56.5% &mdash; but that comparison assumes every bet was placed at one average price, when it wasn't: season averages alone ranged from &minus;100 to &minus;186. The ROI interval accounts for that price variation and the win-rate one does not, so it's the ROI interval we lead with.)</p>
       <br>
@@ -647,8 +647,8 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     </div>
   </div>
   <div class="about-features">
-    <div class="feat-card"><div class="feat-icon">⚡</div><div class="feat-title">One Proven Signal</div><p class="feat-text">We publish a single scheduling edge rather than a wall of daily picks. It is graded against the real moneyline available when we send it, and the setups we tested and rejected are published alongside it.</p></div>
-    <div class="feat-card"><div class="feat-icon">🥅</div><div class="feat-title">Honest Pricing</div><p class="feat-text">Most published ROI assumes a flat −110. Ours doesn't. Every game is graded at the average price across four books at 7 AM MST, which is why our numbers look smaller and hold up better.</p></div>
+    <div class="feat-card"><div class="feat-icon">⚡</div><div class="feat-title">One Proven Signal</div><p class="feat-text">We publish a single scheduling edge rather than a wall of daily picks. It is graded against the real moneyline available when our morning capture job actually runs, and the setups we tested and rejected are published alongside it.</p></div>
+    <div class="feat-card"><div class="feat-icon">🥅</div><div class="feat-title">Honest Pricing</div><p class="feat-text">Most published ROI assumes a flat −110. Ours doesn't. Every game is graded at the average price across four books when captured — never a claimed fixed time, and each game's real capture time is logged, which is why our numbers look smaller and hold up better.</p></div>
     <div class="feat-card"><div class="feat-icon">📊</div><div class="feat-title">Edge Finder</div><p class="feat-text">Enter a matchup and find out whether the tracked edge applies — and if you supply the price, whether it still clears breakeven at that number.</p></div>
     <div class="feat-card"><div class="feat-icon">🏒</div><div class="feat-title">Daily Dashboard</div><p class="feat-text">Every game on tonight's slate scanned for signal activity — live scores, moneylines, goalie status, and a 2-day look-ahead, every day.</p></div>
     <div class="feat-card"><div class="feat-icon">🍁</div><div class="feat-title">Hockey-Obsessed</div><p class="feat-text">Built in Edmonton by people who live and breathe the game. Every feature exists because a real bettor needed it before puck drop.</p></div>
@@ -820,7 +820,7 @@ async function buildTicker() {
     if (r2.games) {
       items.push(`<span><span class="t-sig">Rest Edge</span> Away B2B + Home 2 Days Rest → ${r2.win_rate}% · ${r2.roi >= 0 ? '+' : ''}${r2.roi}% ROI at real prices · ${r2.games} games</span>`);
       items.push('<span class="t-sep">·</span>');
-      items.push(`<span>Graded at the moneyline available 7 AM MST — never an assumed price</span>`);
+      items.push(`<span>Graded at the moneyline available when captured — logged per game, never an assumed price</span>`);
       items.push('<span class="t-sep">·</span>');
     }
 
@@ -1321,7 +1321,7 @@ async function buildROI() {
         <div class="recap-row">
           <div>
             <div class="rr-game"><strong>${g.away} @ ${g.home}</strong></div>
-            <div class="rr-note">${g.date} · back ${g.home} at ${g.odds ?? '—'}</div>
+            <div class="rr-note">${g.date} · back ${g.home} at ${g.odds ?? '—'}${g.price_time ? ' · captured ' + g.price_time : ''}</div>
           </div>
           <div class="rr-score">${g.score}</div>
           <div class="rr-result ${g.fade_won ? 'r-hit' : 'r-miss'}">${g.fade_won ? '✅ Hit' : '❌ Miss'}</div>

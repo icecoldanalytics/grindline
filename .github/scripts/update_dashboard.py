@@ -4,7 +4,8 @@ Generates data/dashboard.json with:
 - Tonight's games + signal flags
 - Last night's recap + signal results
 - 2-day look-ahead
-Runs daily at 7 AM MST via GitHub Actions.
+Runs daily via GitHub Actions (update-ticker.yml) - actual time varies
+by hours day to day, see that workflow's cron comment.
 """
 
 import os

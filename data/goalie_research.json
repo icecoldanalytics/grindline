@@ -1,5 +1,5 @@
 {
-  "note": "Research finding, not a published pick. Every figure graded against the real home moneyline available at 7 AM MST across four NHL seasons.",
+  "note": "Research finding, not a published pick. Every figure graded against the real home moneyline available when captured across four NHL seasons.",
   "generated": "2026-08-09",
   "seasons": "2022-23 to 2025-26",
   "status": "Research — not tradeable",
@@ -22,6 +22,6 @@
     { "send_time": "11:00 AM MST", "rest2_roi": 7.1, "number_one_roi":  9.7 },
     { "send_time": "3:00 PM MST",  "rest2_roi": 5.9, "number_one_roi": 11.0 }
   ],
-  "why_not_published": "The split only exists once you know which goalie started, and that is not knowable at 7 AM when our signal sends. We tested later snapshots at 11 AM and 3 PM: the market barely moves, which either means goalie news is not being priced or that confirmations mostly land after 11 AM. We cannot tell those apart without announcement timestamps we do not have. Until we can, this stays research.",
+  "why_not_published": "The split only exists once you know which goalie started, and that is not knowable when our signal captures its price (see the 7 AM/11 AM/3 PM comparison this research is based on, below). We tested later snapshots at 11 AM and 3 PM: the market barely moves, which either means goalie news is not being priced or that confirmations mostly land after 11 AM. We cannot tell those apart without announcement timestamps we do not have. Until we can, this stays research.",
   "what_would_change_it": "Capturing prices at confirmation time during a live season, alongside the announcement timestamp, then grading against those prices. That is a different pipeline and a later alert, and we will build it before claiming an edge."
 }
