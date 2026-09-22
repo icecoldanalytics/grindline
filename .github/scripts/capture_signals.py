@@ -48,7 +48,16 @@ NAME_KEY = {
 
 
 def teams_on(date_str):
-    """Every team with a game scheduled or played on this date."""
+    """Every team with a game scheduled or played on this date, of ANY
+    game type. Deliberately unfiltered: rest-day counting includes
+    preseason games (a team that played last night has less rest whether
+    that game was preseason or not - see index.html's "Rest days include
+    preseason games, matching how the live Rest Edge signal counts them"
+    disclosure), and callers that need only regular-season games (i.e.
+    which games are eligible to actually be LOGGED as a tracked signal
+    occurrence) filter game_type themselves instead of being filtered
+    here, so the rest-day history this feeds is never accidentally
+    narrowed too."""
     try:
         r = requests.get(
             f"https://api-web.nhle.com/v1/score/{date_str}", timeout=15
@@ -67,7 +76,7 @@ def teams_on(date_str):
             continue
         teams.add(away)
         teams.add(home)
-        games.append({"away": away, "home": home})
+        games.append({"away": away, "home": home, "game_type": g.get("gameType")})
     return teams, games
 
 
@@ -146,9 +155,24 @@ def main():
         ds = (today - timedelta(days=back)).strftime("%Y-%m-%d")
         teams_by_date[ds], _ = teams_on(ds)
 
-    _, todays_games = teams_on(today_str)
-    if not todays_games:
+    _, todays_games_all = teams_on(today_str)
+    if not todays_games_all:
         print("  No games today. Nothing to log.")
+        return
+
+    # Only regular-season games are eligible to be logged/graded as a
+    # tracked signal occurrence - the published backtest (509 games,
+    # 62.1%, +5.6% ROI) is regular-season only, so a preseason result
+    # must never get blended into that same tracked record. Rest-day
+    # counting above is deliberately unaffected by this - a preseason
+    # game still counts as a team having played for rest purposes.
+    todays_games = [g for g in todays_games_all if g["game_type"] == 2]
+    skipped_preseason = [g for g in todays_games_all if g["game_type"] != 2]
+    if skipped_preseason:
+        print(f"  Excluding {len(skipped_preseason)} non-regular-season game(s) from logging: "
+              + ", ".join(f"{g['away']}@{g['home']} (type {g['game_type']})" for g in skipped_preseason))
+    if not todays_games:
+        print("  No regular-season games today. Nothing to log.")
         return
 
     # Find signal games

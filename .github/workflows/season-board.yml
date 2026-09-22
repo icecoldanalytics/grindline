@@ -1,12 +1,24 @@
 name: Season Board
 on:
   schedule:
-    - cron: '0 16 * * *'  # 16:00 UTC, ahead of the 17:00 UTC fantasy job
+    # Daily refresh (goalie/opponent data changes every day). Off the top
+    # of the hour on purpose - see update-ticker.yml's comment for why.
+    - cron: '31 16 * * *'
+  workflow_run:
+    # build_season_board.py reads data/schedule_analysis.json - this
+    # chains an immediate extra run right after that data actually
+    # changes (weekly, Sundays) instead of waiting up to a day for the
+    # next scheduled run to pick it up. The daily schedule above still
+    # covers every other day, since season board needs fresher-than-weekly
+    # goalie/opponent data regardless of whether the schedule itself moved.
+    workflows: ["Schedule Analysis"]
+    types: [completed]
   workflow_dispatch:
 
 jobs:
   build-season-board:
     runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     permissions:
       contents: write
     steps:

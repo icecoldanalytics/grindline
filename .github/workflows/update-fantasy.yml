@@ -1,12 +1,23 @@
 name: Update Fantasy Picks
 on:
-  schedule:
-    - cron: '0 17 * * *'   # 11 AM MDT / 10 AM MST — after goalie confirmations
+  workflow_run:
+    # update_fantasy.py reads data/dashboard.json and data/scratches.json,
+    # both written by Update Ticker Data - this used to rely on that
+    # workflow's 13:00 UTC schedule finishing before this one's 17:00 UTC
+    # schedule started, but confirmed live that Update Ticker Data was
+    # itself landing as late as 18:30 UTC some days, meaning this job
+    # could genuinely run BEFORE its own upstream data was fresh for the
+    # day and silently generate picks off yesterday's dashboard. Chaining
+    # on workflow_run instead of a second independent schedule makes the
+    # ordering guaranteed rather than merely usually-true.
+    workflows: ["Update Ticker Data"]
+    types: [completed]
   workflow_dispatch:
 
 jobs:
   update-fantasy:
     runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     permissions:
       contents: write
     steps:
@@ -36,4 +47,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/fantasy.json data/prop_log.json data/prop_roi.json
           git diff --staged --quiet || git commit -m "Update fantasy picks $(date -u '+%Y-%m-%d')"
+          git pull --rebase
           git push

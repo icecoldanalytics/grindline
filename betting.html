@@ -379,6 +379,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   </section>
 
   <div class="main-wrap">
+    <div id="dashboard-stale-banner"></div>
     <div class="section-divider"><h2>Active Signals</h2><div class="sd-line"></div><div class="sd-badge" id="active-signals-date">Loading...</div></div>
     <div class="signal-row">
       <div class="sig-card s1">
@@ -578,6 +579,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div id="sb-prop-track-record"></div>
 
     <div class="section-divider" style="margin-top:36px;"><h2>Tonight's Props</h2><div class="sd-line"></div><div class="sd-badge fantasy-date-label">Loading...</div></div>
+    <div id="props-stale-banner"></div>
     <div id="sb-props-container"></div>
   </div>
 </div>
@@ -671,6 +673,24 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 </footer>
 
 <script>
+// ── DATE GUARD ──────────────────────────────────────────────────────────────
+// Every data file's "date" field is generated in America/Edmonton time (see
+// MST = pytz.timezone("America/Edmonton") in every Python script that writes
+// one) - "today" has to be checked in that same timezone, not the viewer's
+// local one, or a viewer elsewhere could see a false stale warning (or miss
+// a real one) purely from timezone offset, independent of whether the data
+// actually refreshed.
+function edmontonTodayStr() {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Edmonton' }).format(new Date());
+}
+function staleBannerHtml(dataDateStr, whatLabel) {
+  if (!dataDateStr || dataDateStr === edmontonTodayStr()) return '';
+  const label = new Date(dataDateStr + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+  return `<div style="background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.25);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:0.78rem;color:var(--text);">
+    <strong style="color:var(--gold);">Showing ${label}'s data.</strong> ${whatLabel} hasn't refreshed since then — what's below may not be tonight's actual slate.
+  </div>`;
+}
+
 function toggleMenu() {
   document.getElementById('nav-links').classList.toggle('open');
 }
@@ -782,6 +802,11 @@ async function buildTicker() {
     if (!track) return;
 
     let items = [];
+    if (data.date && data.date !== edmontonTodayStr()) {
+      const label = new Date(data.date + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+      items.push(`<span><span class="t-sig">Not live</span> Showing ${label}'s results — today's update hasn't landed yet</span>`);
+      items.push('<span class="t-sep">·</span>');
+    }
     for (const g of data.games) {
       let oddsHtml = '';
       if (g.away_ml && g.home_ml) {
@@ -818,6 +843,9 @@ async function buildDashboard() {
     const data = await dashRes.json();
     const roi  = await roiRes.json();
     if (!data.games_tonight) return;
+
+    const staleBanner = document.getElementById('dashboard-stale-banner');
+    if (staleBanner) staleBanner.innerHTML = staleBannerHtml(data.date, 'The dashboard');
 
     const r2 = roi.rest_edge || {};
 
@@ -1153,6 +1181,9 @@ async function buildPropsAndTrackRecord() {
     ]);
     const fantasyData = await fantasyRes.json();
     const propRoi = await propRoiRes.json();
+
+    const propsStaleBanner = document.getElementById('props-stale-banner');
+    if (propsStaleBanner) propsStaleBanner.innerHTML = staleBannerHtml(fantasyData.date, "Tonight's props");
 
     renderPropTrackRecord(propRoi);
     renderTonightsProps(fantasyData.player_props);

@@ -1,9 +1,14 @@
 name: Update Live Scores
 on:
   schedule:
-    # Every 15 minutes from 5 PM to midnight MT (23:00 - 06:00 UTC)
-    - cron: '*/15 23 * * *'
-    - cron: '*/15 0-6 * * *'
+    # Every 15 minutes from 5 PM to midnight MT (23:00 - 06:00 UTC).
+    # Offset to :09/:24/:39/:54 rather than the exact quarter-hour marks
+    # on purpose - GitHub's scheduler queues jobs landing on round minutes
+    # behind every other repo's jobs at that same instant platform-wide;
+    # confirmed live this pattern elsewhere in this repo at the exact hour
+    # mark (minute 0) causing multi-hour delays on once-daily jobs.
+    - cron: '9-59/15 23 * * *'
+    - cron: '9-59/15 0-6 * * *'
 
 jobs:
   update-scores:

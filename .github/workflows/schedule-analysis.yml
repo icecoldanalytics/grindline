@@ -1,8 +1,10 @@
 name: Schedule Analysis
 on:
   schedule:
-    - cron: '0 12 * * 0'  # weekly, Sunday - the NHL schedule is static
-                            # once published except for rare reschedules
+    # weekly, Sunday - the NHL schedule is static once published except
+    # for rare reschedules. Off the top of the hour on purpose - see
+    # update-ticker.yml's comment for why.
+    - cron: '23 12 * * 0'
   workflow_dispatch:
 
 jobs:

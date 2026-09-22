@@ -1,7 +1,11 @@
 name: Update Ticker Data
 on:
   schedule:
-    - cron: '0 13 * * *'  # 7 AM MST
+    # 7 AM MST-ish. Off the top of the hour on purpose - GitHub Actions'
+    # scheduler queues top-of-hour cron jobs behind every other repo's
+    # top-of-hour jobs platform-wide; confirmed live this workflow was
+    # landing 3-5.5 hours late every day for 15+ straight days at :00.
+    - cron: '7 13 * * *'
   workflow_dispatch:
 jobs:
   update-ticker:
