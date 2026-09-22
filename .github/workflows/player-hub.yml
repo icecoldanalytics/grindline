@@ -1,0 +1,27 @@
+name: Player Hub
+on:
+  schedule:
+    - cron: '0 11 * * *'  # 11:00 UTC daily, ahead of the rest of the day's jobs
+  workflow_dispatch:
+
+jobs:
+  build-player-hub:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - name: Build player hub
+        run: python .github/scripts/build_player_hub.py
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/player_hub.json data/player_prior_seasons_cache.json
+          git diff --staged --quiet || git commit -m "Update player hub $(date -u '+%Y-%m-%d')"
+          git pull --rebase
+          git push

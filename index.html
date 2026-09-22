@@ -400,6 +400,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <a id="nav-edge-finder"                    onclick="showPage('edge-finder');closeMenu()">Edge Finder</a>
     <a id="nav-schedule"                       onclick="showPage('schedule');closeMenu()">Schedule</a>
     <a id="nav-season-board"                   onclick="showPage('season-board');closeMenu()">Season Board</a>
+    <a id="nav-player-hub"                     onclick="showPage('player-hub');closeMenu()">Players</a>
     <a id="nav-pricing"                        onclick="showPage('pricing');closeMenu()">Pricing</a>
     <a id="nav-about"                          onclick="showPage('about');closeMenu()">About</a>
     <a class="nav-beta-mobile" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener" onclick="closeMenu()">✉ Join Beta</a>
@@ -818,6 +819,31 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 
     <div class="section-divider" style="margin-top:36px;"><h2>Tonight's Props</h2><div class="sd-line"></div><div class="sd-badge fantasy-date-label">Loading...</div></div>
     <div id="sb-props-container"></div>
+  </div>
+</div>
+
+
+<div id="page-player-hub" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Grind Line</div>
+      <div class="page-title">Players</div>
+      <p class="page-desc">Every rostered NHL skater, straight from the NHL API &mdash; three seasons of points, goals, assists and shots per game, each team's own scoring context, this week's opponents, and a disclosed points projection for the week. No salaries, no DFS framing, nothing estimated beyond the projection formula itself.</p>
+    </div>
+  </div>
+  <div class="main-wrap">
+    <div class="section-divider"><h2>Player Reference</h2><div class="sd-line"></div><div class="sd-badge" id="ph-week-badge">Loading...</div></div>
+    <div id="ph-preseason-banner" style="display:none;background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.25);border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:0.8rem;color:var(--text);"></div>
+    <div style="font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:16px;" id="ph-formula-note"></div>
+
+    <div class="form-group" style="max-width:340px;margin-bottom:16px;">
+      <label for="ph-search">Search player or team</label>
+      <input type="text" id="ph-search" placeholder="e.g. McDavid or EDM" oninput="phFilterAndRender()">
+    </div>
+
+    <div style="font-size:0.7rem;color:var(--muted);margin-bottom:8px;" id="ph-count-note"></div>
+    <div class="recap-table" id="ph-table"></div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Only players on a team's actual current roster are shown &mdash; never someone who has since been traded or waived. A stat tagged <span style="color:var(--orange);">(last season)</span> is exactly that, not this year's form; it shows up until real current-season games replace it. The projection's prior-season rate is pooled across the two most recent seasons and requires at least 20 games combined &mdash; below that it's left blank rather than let a small sample (a 1-game call-up, say) produce a misleadingly high rate. Click a player to see the full three-season breakdown, team context, this week's opponents, and the projection math.</div>
   </div>
 </div>
 
@@ -1598,6 +1624,197 @@ async function buildSeasonBoard() {
   }
 }
 buildSeasonBoard();
+</script>
+
+<script>
+// ── PLAYER HUB ──────────────────────────────────────────────────────────────
+let phData = null;
+let phSort = { key: 'projected', dir: -1 };
+let phOpenId = null;
+
+function phPct(v) { return v == null ? '—' : (v * 100).toFixed(1) + '%'; }
+function phNum(v, d) { return v == null ? '—' : v.toFixed(d == null ? 2 : d); }
+function phSeasonTag(statSeason) {
+  if (statSeason === 'last_season') return ' <span style="color:var(--orange);font-size:0.68rem;">(last season)</span>';
+  return '';
+}
+
+function phFormulaText(p) {
+  const proj = p.projection;
+  const thisSzn = p.seasons[phData.season];
+  const w = proj.weight_this_season == null ? 0 : proj.weight_this_season;
+  const thisPpg = thisSzn.points_per_game;
+  const priorPpg = proj.prior_points_per_game;
+  const priorLabel = priorPpg == null
+    ? `— (only ${proj.prior_games_pooled} game${proj.prior_games_pooled === 1 ? '' : 's'} pooled across the two prior seasons, below the 20-game minimum)`
+    : `${priorPpg.toFixed(2)} (pooled across ${proj.prior_games_pooled} games, two prior seasons)`;
+  if (proj.blended_points_per_game == null) {
+    return `No qualifying rate in either season (this season: ${thisSzn.games_played} GP; prior two seasons pooled: ${proj.prior_games_pooled} GP, below the 20-game minimum) — no projection shown.`;
+  }
+  return `weight on this season = min(${thisSzn.games_played} / 20, 1) = ${w.toFixed(2)}<br>`
+    + `blended pts/gm = ${w.toFixed(2)} × ${thisPpg == null ? '—' : thisPpg.toFixed(2)} (this season)`
+    + ` + ${(1 - w).toFixed(2)} × ${priorLabel}`
+    + ` = ${proj.blended_points_per_game.toFixed(3)}<br>`
+    + `projected points = ${proj.blended_points_per_game.toFixed(3)} × ${proj.games_this_week} game${proj.games_this_week === 1 ? '' : 's'} this week`
+    + ` = <strong style="color:var(--accent);">${proj.projected_points.toFixed(2)}</strong>`;
+}
+
+function phDetailHtml(playerId, p) {
+  const team = phData.teams[p.team] || {};
+  const seasonIds = [phData.season, ...phData.prior_seasons];
+  const seasonRows = seasonIds.map(sid => {
+    const s = p.seasons[sid];
+    return `<div class="recap-row wide" style="grid-template-columns:100px 70px 70px 70px 70px 90px 90px;">
+      <span class="rr-game">${s.label}</span>
+      <span style="text-align:right;">${s.games_played}</span>
+      <span style="text-align:right;">${s.points}</span>
+      <span style="text-align:right;">${s.goals}</span>
+      <span style="text-align:right;">${s.assists}</span>
+      <span style="text-align:right;">${phNum(s.points_per_game, 2)}</span>
+      <span style="text-align:right;">${phNum(s.shots_per_game, 2)}</span>
+    </div>`;
+  }).join('');
+
+  const weekRows = (team.week_games || []).length ? team.week_games.map(g => {
+    const goalie = g.last_start;
+    const goalieText = goalie
+      ? `Last start: ${goalie.name} (${goalie.date}) — ${phNum(goalie.sv_pct, 3)} SV%${phSeasonTag(goalie.stat_season)}`
+      : 'No recent start on record';
+    return `<div class="recap-row" style="grid-template-columns:1fr auto;">
+      <div class="rr-game">
+        <strong>${g.home ? 'vs' : '@'} ${g.opponent}</strong> <span style="color:var(--muted);font-size:0.72rem;">${g.date}</span>
+        <div class="rr-note">Opp GA/gm ${phNum(g.opponent_goals_against_per_game, 2)}${phSeasonTag(g.opponent_stat_season)} · Opp PK% ${phPct(g.opponent_penalty_kill_pct)}${phSeasonTag(g.opponent_stat_season)}</div>
+        <div class="rr-note">${goalieText}</div>
+      </div>
+    </div>`;
+  }).join('') : `<div class="recap-row"><div class="rr-note">No games scheduled this week (${phData.week_start} to ${phData.week_end}).</div></div>`;
+
+  return `
+    <div style="padding:16px 20px;background:rgba(255,255,255,0.02);">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Three-Season Line</div>
+      <div class="recap-table" style="margin-bottom:16px;">
+        <div class="recap-row wide" style="grid-template-columns:100px 70px 70px 70px 70px 90px 90px;background:rgba(255,255,255,0.03);">
+          <span class="rr-game"><strong>Season</strong></span>
+          <span style="text-align:right;"><strong>GP</strong></span>
+          <span style="text-align:right;"><strong>Pts</strong></span>
+          <span style="text-align:right;"><strong>G</strong></span>
+          <span style="text-align:right;"><strong>A</strong></span>
+          <span style="text-align:right;"><strong>Pts/Gm</strong></span>
+          <span style="text-align:right;"><strong>Shots/Gm</strong></span>
+        </div>
+        ${seasonRows}
+      </div>
+
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Team Context — ${team.full_name || p.team}</div>
+      <div style="font-size:0.82rem;color:var(--text);margin-bottom:16px;">
+        Goals for/gm: ${phNum(team.goals_for_per_game, 2)}${phSeasonTag(team.team_stat_season)} &nbsp;·&nbsp;
+        Power play%: ${phPct(team.power_play_pct)}${phSeasonTag(team.team_stat_season)}
+      </div>
+
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">This Week's Opponents</div>
+      <div class="recap-table" style="margin-bottom:16px;">${weekRows}</div>
+
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Projected Points This Week — the Math</div>
+      <div style="font-size:0.78rem;color:var(--text);line-height:1.8;font-family:monospace;">${phFormulaText(p)}</div>
+    </div>`;
+}
+
+const PH_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px';
+
+function phRowHtml(playerId, p) {
+  const proj = p.projection;
+  const thisSzn = p.seasons[phData.season];
+  const lastSzn = p.seasons[phData.prior_seasons[0]];
+  const isOpen = phOpenId === playerId;
+  let html = `<div class="recap-row wide ph-row" data-id="${playerId}" style="grid-template-columns:${PH_GRID_COLS};cursor:pointer;">
+      <span class="rr-game"><strong>${p.name}</strong> <span style="color:var(--muted);font-size:0.72rem;">${p.position}</span></span>
+      <span style="text-align:right;">${p.team}</span>
+      <span style="text-align:right;color:var(--accent);font-weight:700;">${proj.projected_points == null ? '—' : proj.projected_points.toFixed(2)}</span>
+      <span style="text-align:right;">${phNum(proj.blended_points_per_game, 2)}</span>
+      <span style="text-align:right;">${proj.games_this_week}</span>
+      <span style="text-align:right;">${phNum(thisSzn.points_per_game, 2)}</span>
+      <span style="text-align:right;">${phNum(proj.prior_points_per_game, 2)}</span>
+      <span style="text-align:right;">${phNum(lastSzn.shots_per_game, 2)}</span>
+    </div>`;
+  if (isOpen) html += `<div class="ph-detail">${phDetailHtml(playerId, p)}</div>`;
+  return html;
+}
+
+function phRenderTable(ids) {
+  const el = document.getElementById('ph-table');
+  if (!el) return;
+  const header = `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};background:rgba(255,255,255,0.03);">
+      <span class="rr-game"><strong>Player</strong></span>
+      <span style="text-align:right;"><strong>Team</strong></span>
+      <span style="text-align:right;"><strong>Projected Points This Week</strong></span>
+      <span style="text-align:right;"><strong>PPG</strong> <span style="color:var(--muted);font-size:0.6rem;">(blended)</span></span>
+      <span style="text-align:right;"><strong>Games This Week</strong></span>
+      <span style="text-align:right;"><strong>This Szn PPG</strong></span>
+      <span style="text-align:right;"><strong>Prior 2Sn PPG</strong> <span style="color:var(--orange);font-size:0.6rem;">(20+ GP)</span></span>
+      <span style="text-align:right;"><strong>Shots/Gm</strong> <span style="color:var(--orange);font-size:0.6rem;">(LY)</span></span>
+    </div>`;
+  el.innerHTML = header + ids.map(id => phRowHtml(id, phData.players[id])).join('');
+
+  document.getElementById('ph-count-note').textContent = `${ids.length} of ${Object.keys(phData.players).length} players`;
+
+  el.querySelectorAll('.ph-row').forEach(row => {
+    row.addEventListener('click', () => {
+      const id = row.getAttribute('data-id');
+      phOpenId = phOpenId === id ? null : id;
+      phFilterAndRender();
+    });
+  });
+}
+
+function phFilterAndRender() {
+  if (!phData) return;
+  const q = (document.getElementById('ph-search').value || '').trim().toLowerCase();
+  let ids = Object.keys(phData.players);
+  if (q) {
+    ids = ids.filter(id => {
+      const p = phData.players[id];
+      return p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q);
+    });
+  }
+  ids.sort((a, b) => {
+    const pa = phData.players[a].projection.projected_points;
+    const pb = phData.players[b].projection.projected_points;
+    if (pa == null && pb == null) return 0;
+    if (pa == null) return 1;
+    if (pb == null) return -1;
+    return pb - pa;
+  });
+  phRenderTable(ids);
+}
+
+async function buildPlayerHub() {
+  try {
+    const r = await fetch('data/player_hub.json?nocache=' + Date.now());
+    phData = await r.json();
+    if (!phData.players) return;
+
+    const weekBadge = document.getElementById('ph-week-badge');
+    if (weekBadge) weekBadge.textContent = (phData.preseason ? 'Season-opening week ' : 'Week of ') + phData.week_start;
+    const formulaNote = document.getElementById('ph-formula-note');
+    if (formulaNote) formulaNote.textContent = phData.projection_formula;
+
+    const banner = document.getElementById('ph-preseason-banner');
+    if (banner) {
+      if (phData.preseason) {
+        const startLabel = new Date(phData.season_start + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        banner.style.display = 'block';
+        banner.innerHTML = `<strong style="color:var(--gold);">Preseason.</strong> The 2026-27 season starts ${startLabel}. This calendar week has no real games yet, so the table below shows the season-opening week's schedule and projections instead of a column of zeros.`;
+      } else {
+        banner.style.display = 'none';
+      }
+    }
+
+    phFilterAndRender();
+  } catch (e) {
+    console.log('Player hub fetch error:', e);
+  }
+}
+buildPlayerHub();
 </script>
 
 <script>
