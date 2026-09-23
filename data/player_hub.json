@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22 15:27",
+  "generated": "2026-09-23 15:27",
   "season": "20262027",
   "season_label": "2026-27",
   "prior_seasons": [
@@ -313,7 +313,35 @@
       "goals_for_per_game": 3.44,
       "power_play_pct": 0.306,
       "team_stat_season": "last_season",
-      "week_games": []
+      "week_games": [
+        {
+          "date": "2026-09-29",
+          "opponent": "VAN",
+          "home": true,
+          "opponent_goals_against_per_game": 3.83,
+          "opponent_penalty_kill_pct": 0.715,
+          "opponent_stat_season": "last_season",
+          "last_start": null
+        },
+        {
+          "date": "2026-10-01",
+          "opponent": "VAN",
+          "home": false,
+          "opponent_goals_against_per_game": 3.83,
+          "opponent_penalty_kill_pct": 0.715,
+          "opponent_stat_season": "last_season",
+          "last_start": null
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "SEA",
+          "home": true,
+          "opponent_goals_against_per_game": 3.13,
+          "opponent_penalty_kill_pct": 0.722,
+          "opponent_stat_season": "last_season",
+          "last_start": null
+        }
+      ]
     },
     "FLA": {
       "full_name": "Florida Panthers",
@@ -11984,51 +12012,6 @@
         "projected_points": null
       }
     },
-    "8476884": {
-      "name": "Derrick Pouliot",
-      "team": "CHI",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8483506": {
       "name": "Sam Rinzel",
       "team": "CHI",
@@ -13964,51 +13947,6 @@
         "projected_points": 1.83
       }
     },
-    "8482919": {
-      "name": "Justin Ertel",
-      "team": "DAL",
-      "position": "L",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8476889": {
       "name": "Radek Faksa",
       "team": "DAL",
@@ -14052,51 +13990,6 @@
         "prior_games_pooled": 128,
         "blended_points_per_game": 0.25,
         "projected_points": 0.5
-      }
-    },
-    "8486174": {
-      "name": "Christian Fitzgerald",
-      "team": "DAL",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8485691": {
@@ -14502,96 +14395,6 @@
         "prior_games_pooled": 130,
         "blended_points_per_game": 0.246,
         "projected_points": 0.49
-      }
-    },
-    "8484468": {
-      "name": "Angus MacDonell",
-      "team": "DAL",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
-    "8482690": {
-      "name": "Ayrton Martino",
-      "team": "DAL",
-      "position": "L",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8478420": {
@@ -15314,96 +15117,6 @@
         "projected_points": 0.35
       }
     },
-    "8484194": {
-      "name": "Aram Minnetian",
-      "team": "DAL",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
-    "8485041": {
-      "name": "Niilopekka Muhonen",
-      "team": "DAL",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8474574": {
       "name": "Tyler Myers",
       "team": "DAL",
@@ -15447,51 +15160,6 @@
         "prior_games_pooled": 144,
         "blended_points_per_game": 0.243,
         "projected_points": 0.49
-      }
-    },
-    "8484523": {
-      "name": "Connor Punnett",
-      "team": "DAL",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8478891": {
@@ -17247,6 +16915,1761 @@
         "prior_games_pooled": 0,
         "blended_points_per_game": null,
         "projected_points": null
+      }
+    },
+    "8484529": {
+      "name": "Connor Clattenburg",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 5,
+          "points": 1,
+          "goals": 1,
+          "assists": 0,
+          "shots": 3,
+          "points_per_game": 0.2,
+          "shots_per_game": 0.6,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 5,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8482703": {
+      "name": "Colton Dach",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 61,
+          "points": 13,
+          "goals": 5,
+          "assists": 8,
+          "shots": 58,
+          "points_per_game": 0.213,
+          "shots_per_game": 0.951,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 25,
+          "points": 7,
+          "goals": 2,
+          "assists": 5,
+          "shots": 27,
+          "points_per_game": 0.28,
+          "shots_per_game": 1.08,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.233,
+        "prior_games_pooled": 86,
+        "blended_points_per_game": 0.233,
+        "projected_points": 0.7
+      }
+    },
+    "8477450": {
+      "name": "Jason Dickinson",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 64,
+          "points": 17,
+          "goals": 7,
+          "assists": 10,
+          "shots": 73,
+          "points_per_game": 0.266,
+          "shots_per_game": 1.141,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 59,
+          "points": 16,
+          "goals": 7,
+          "assists": 9,
+          "shots": 56,
+          "points_per_game": 0.271,
+          "shots_per_game": 0.949,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.268,
+        "prior_games_pooled": 123,
+        "blended_points_per_game": 0.268,
+        "projected_points": 0.8
+      }
+    },
+    "8477934": {
+      "name": "Leon Draisaitl",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 65,
+          "points": 97,
+          "goals": 35,
+          "assists": 62,
+          "shots": 186,
+          "points_per_game": 1.492,
+          "shots_per_game": 2.862,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 71,
+          "points": 106,
+          "goals": 52,
+          "assists": 54,
+          "shots": 240,
+          "points_per_game": 1.493,
+          "shots_per_game": 3.38,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 1.493,
+        "prior_games_pooled": 136,
+        "blended_points_per_game": 1.493,
+        "projected_points": 4.48
+      }
+    },
+    "8480029": {
+      "name": "Alex Formenton",
+      "team": "EDM",
+      "position": "L",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8479365": {
+      "name": "Trent Frederic",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 74,
+          "points": 7,
+          "goals": 4,
+          "assists": 3,
+          "shots": 77,
+          "points_per_game": 0.095,
+          "shots_per_game": 1.041,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 58,
+          "points": 15,
+          "goals": 8,
+          "assists": 7,
+          "shots": 78,
+          "points_per_game": 0.259,
+          "shots_per_game": 1.345,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.167,
+        "prior_games_pooled": 132,
+        "blended_points_per_game": 0.167,
+        "projected_points": 0.5
+      }
+    },
+    "8483455": {
+      "name": "Isaac Howard",
+      "team": "EDM",
+      "position": "L",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 29,
+          "points": 5,
+          "goals": 2,
+          "assists": 3,
+          "shots": 36,
+          "points_per_game": 0.172,
+          "shots_per_game": 1.241,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.172,
+        "prior_games_pooled": 29,
+        "blended_points_per_game": 0.172,
+        "projected_points": 0.52
+      }
+    },
+    "8485511": {
+      "name": "Quinn Hutson",
+      "team": "EDM",
+      "position": "R",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 4,
+          "points": 1,
+          "goals": 1,
+          "assists": 0,
+          "shots": 3,
+          "points_per_game": 0.25,
+          "shots_per_game": 0.75,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 2,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 1,
+          "points_per_game": 0.0,
+          "shots_per_game": 0.5,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 6,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8475786": {
+      "name": "Zach Hyman",
+      "team": "EDM",
+      "position": "L",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 58,
+          "points": 52,
+          "goals": 31,
+          "assists": 21,
+          "shots": 159,
+          "points_per_game": 0.897,
+          "shots_per_game": 2.741,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 73,
+          "points": 44,
+          "goals": 27,
+          "assists": 17,
+          "shots": 210,
+          "points_per_game": 0.603,
+          "shots_per_game": 2.877,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.733,
+        "prior_games_pooled": 131,
+        "blended_points_per_game": 0.733,
+        "projected_points": 2.2
+      }
+    },
+    "8477406": {
+      "name": "Mattias Janmark",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 43,
+          "points": 8,
+          "goals": 1,
+          "assists": 7,
+          "shots": 24,
+          "points_per_game": 0.186,
+          "shots_per_game": 0.558,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 80,
+          "points": 18,
+          "goals": 2,
+          "assists": 16,
+          "shots": 51,
+          "points_per_game": 0.225,
+          "shots_per_game": 0.637,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.211,
+        "prior_games_pooled": 123,
+        "blended_points_per_game": 0.211,
+        "projected_points": 0.63
+      }
+    },
+    "8479368": {
+      "name": "Max Jones",
+      "team": "EDM",
+      "position": "L",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 21,
+          "points": 5,
+          "goals": 3,
+          "assists": 2,
+          "shots": 22,
+          "points_per_game": 0.238,
+          "shots_per_game": 1.048,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 26,
+          "points": 2,
+          "goals": 1,
+          "assists": 1,
+          "shots": 17,
+          "points_per_game": 0.077,
+          "shots_per_game": 0.654,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.149,
+        "prior_games_pooled": 47,
+        "blended_points_per_game": 0.149,
+        "projected_points": 0.45
+      }
+    },
+    "8478472": {
+      "name": "Mathieu Joseph",
+      "team": "EDM",
+      "position": "R",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 51,
+          "points": 11,
+          "goals": 2,
+          "assists": 9,
+          "shots": 36,
+          "points_per_game": 0.216,
+          "shots_per_game": 0.706,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 60,
+          "points": 14,
+          "goals": 4,
+          "assists": 10,
+          "shots": 69,
+          "points_per_game": 0.233,
+          "shots_per_game": 1.15,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.225,
+        "prior_games_pooled": 111,
+        "blended_points_per_game": 0.225,
+        "projected_points": 0.68
+      }
+    },
+    "8477953": {
+      "name": "Kasperi Kapanen",
+      "team": "EDM",
+      "position": "R",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 41,
+          "points": 17,
+          "goals": 8,
+          "assists": 9,
+          "shots": 65,
+          "points_per_game": 0.415,
+          "shots_per_game": 1.585,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 67,
+          "points": 14,
+          "goals": 6,
+          "assists": 8,
+          "shots": 66,
+          "points_per_game": 0.209,
+          "shots_per_game": 0.985,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.287,
+        "prior_games_pooled": 108,
+        "blended_points_per_game": 0.287,
+        "projected_points": 0.86
+      }
+    },
+    "8482759": {
+      "name": "Viljami Marjala",
+      "team": "EDM",
+      "position": "L",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8478402": {
+      "name": "Connor McDavid",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 82,
+          "points": 138,
+          "goals": 48,
+          "assists": 90,
+          "shots": 306,
+          "points_per_game": 1.683,
+          "shots_per_game": 3.732,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 67,
+          "points": 100,
+          "goals": 26,
+          "assists": 74,
+          "shots": 196,
+          "points_per_game": 1.493,
+          "shots_per_game": 2.925,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 1.597,
+        "prior_games_pooled": 149,
+        "blended_points_per_game": 1.597,
+        "projected_points": 4.79
+      }
+    },
+    "8486161": {
+      "name": "Owen Michaels",
+      "team": "EDM",
+      "position": "R",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8485087": {
+      "name": "William Nicholl",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8476454": {
+      "name": "Ryan Nugent-Hopkins",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 72,
+          "points": 56,
+          "goals": 20,
+          "assists": 36,
+          "shots": 133,
+          "points_per_game": 0.778,
+          "shots_per_game": 1.847,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 78,
+          "points": 49,
+          "goals": 20,
+          "assists": 29,
+          "shots": 164,
+          "points_per_game": 0.628,
+          "shots_per_game": 2.103,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.7,
+        "prior_games_pooled": 150,
+        "blended_points_per_game": 0.7,
+        "projected_points": 2.1
+      }
+    },
+    "8481617": {
+      "name": "Vasily Podkolzin",
+      "team": "EDM",
+      "position": "R",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 82,
+          "points": 37,
+          "goals": 19,
+          "assists": 18,
+          "shots": 139,
+          "points_per_game": 0.451,
+          "shots_per_game": 1.695,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 82,
+          "points": 24,
+          "goals": 8,
+          "assists": 16,
+          "shots": 114,
+          "points_per_game": 0.293,
+          "shots_per_game": 1.39,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.372,
+        "prior_games_pooled": 164,
+        "blended_points_per_game": 0.372,
+        "projected_points": 1.12
+      }
+    },
+    "8481699": {
+      "name": "Aku Raty",
+      "team": "EDM",
+      "position": "R",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8484509": {
+      "name": "Josh Samanski",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 24,
+          "points": 4,
+          "goals": 2,
+          "assists": 2,
+          "shots": 9,
+          "points_per_game": 0.167,
+          "shots_per_game": 0.375,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.167,
+        "prior_games_pooled": 24,
+        "blended_points_per_game": 0.167,
+        "projected_points": 0.5
+      }
+    },
+    "8483100": {
+      "name": "James Stefan",
+      "team": "EDM",
+      "position": "R",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8483847": {
+      "name": "Brady Stonehouse",
+      "team": "EDM",
+      "position": "R",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8482631": {
+      "name": "Eduards Tralmaks",
+      "team": "EDM",
+      "position": "R",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8484139": {
+      "name": "Beau Akey",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8480803": {
+      "name": "Evan Bouchard",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 82,
+          "points": 95,
+          "goals": 21,
+          "assists": 74,
+          "shots": 221,
+          "points_per_game": 1.159,
+          "shots_per_game": 2.695,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 82,
+          "points": 67,
+          "goals": 14,
+          "assists": 53,
+          "shots": 235,
+          "points_per_game": 0.817,
+          "shots_per_game": 2.866,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.988,
+        "prior_games_pooled": 164,
+        "blended_points_per_game": 0.988,
+        "projected_points": 2.96
+      }
+    },
+    "8477384": {
+      "name": "Joshua Brown",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 10,
+          "points": 1,
+          "goals": 0,
+          "assists": 1,
+          "shots": 9,
+          "points_per_game": 0.1,
+          "shots_per_game": 0.9,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 10,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8485484": {
+      "name": "Damien Carfagna",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8485163": {
+      "name": "Tomas Cibulka",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8475218": {
+      "name": "Mattias Ekholm",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 82,
+          "points": 41,
+          "goals": 6,
+          "assists": 35,
+          "shots": 131,
+          "points_per_game": 0.5,
+          "shots_per_game": 1.598,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 65,
+          "points": 33,
+          "goals": 9,
+          "assists": 24,
+          "shots": 143,
+          "points_per_game": 0.508,
+          "shots_per_game": 2.2,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.503,
+        "prior_games_pooled": 147,
+        "blended_points_per_game": 0.503,
+        "projected_points": 1.51
+      }
+    },
+    "8480834": {
+      "name": "Ty Emberson",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 72,
+          "points": 12,
+          "goals": 2,
+          "assists": 10,
+          "shots": 46,
+          "points_per_game": 0.167,
+          "shots_per_game": 0.639,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 76,
+          "points": 13,
+          "goals": 2,
+          "assists": 11,
+          "shots": 62,
+          "points_per_game": 0.171,
+          "shots_per_game": 0.816,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.169,
+        "prior_games_pooled": 148,
+        "blended_points_per_game": 0.169,
+        "projected_points": 0.51
+      }
+    },
+    "8485509": {
+      "name": "Atro Leppanen",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8482166": {
+      "name": "Shakir Mukhamadullin",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 50,
+          "points": 12,
+          "goals": 5,
+          "assists": 7,
+          "shots": 49,
+          "points_per_game": 0.24,
+          "shots_per_game": 0.98,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 30,
+          "points": 9,
+          "goals": 2,
+          "assists": 7,
+          "shots": 30,
+          "points_per_game": 0.3,
+          "shots_per_game": 1.0,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.263,
+        "prior_games_pooled": 80,
+        "blended_points_per_game": 0.263,
+        "projected_points": 0.79
+      }
+    },
+    "8476473": {
+      "name": "Connor Murphy",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 80,
+          "points": 17,
+          "goals": 5,
+          "assists": 12,
+          "shots": 70,
+          "points_per_game": 0.212,
+          "shots_per_game": 0.875,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 68,
+          "points": 19,
+          "goals": 2,
+          "assists": 17,
+          "shots": 84,
+          "points_per_game": 0.279,
+          "shots_per_game": 1.235,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.243,
+        "prior_games_pooled": 148,
+        "blended_points_per_game": 0.243,
+        "projected_points": 0.73
+      }
+    },
+    "8480831": {
+      "name": "Alec Regula",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 29,
+          "points": 3,
+          "goals": 0,
+          "assists": 3,
+          "shots": 18,
+          "points_per_game": 0.103,
+          "shots_per_game": 0.621,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.103,
+        "prior_games_pooled": 29,
+        "blended_points_per_game": 0.103,
+        "projected_points": 0.31
+      }
+    },
+    "8478854": {
+      "name": "Ryan Shea",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 80,
+          "points": 35,
+          "goals": 6,
+          "assists": 29,
+          "shots": 72,
+          "points_per_game": 0.438,
+          "shots_per_game": 0.9,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 39,
+          "points": 5,
+          "goals": 2,
+          "assists": 3,
+          "shots": 19,
+          "points_per_game": 0.128,
+          "shots_per_game": 0.487,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.336,
+        "prior_games_pooled": 119,
+        "blended_points_per_game": 0.336,
+        "projected_points": 1.01
+      }
+    },
+    "8481056": {
+      "name": "Spencer Stastney",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 66,
+          "points": 10,
+          "goals": 2,
+          "assists": 8,
+          "shots": 56,
+          "points_per_game": 0.152,
+          "shots_per_game": 0.848,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 23,
+          "points": 3,
+          "goals": 0,
+          "assists": 3,
+          "shots": 15,
+          "points_per_game": 0.13,
+          "shots_per_game": 0.652,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.146,
+        "prior_games_pooled": 89,
+        "blended_points_per_game": 0.146,
+        "projected_points": 0.44
+      }
+    },
+    "8479388": {
+      "name": "Riley Stillman",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 4,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 1,
+          "points_per_game": 0.0,
+          "shots_per_game": 0.25,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 5,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 1,
+          "points_per_game": 0.0,
+          "shots_per_game": 0.2,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 9,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
+    "8478013": {
+      "name": "Jake Walman",
+      "team": "EDM",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 53,
+          "points": 20,
+          "goals": 8,
+          "assists": 12,
+          "shots": 96,
+          "points_per_game": 0.377,
+          "shots_per_game": 1.811,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 65,
+          "points": 40,
+          "goals": 7,
+          "assists": 33,
+          "shots": 164,
+          "points_per_game": 0.615,
+          "shots_per_game": 2.523,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.508,
+        "prior_games_pooled": 118,
+        "blended_points_per_game": 0.508,
+        "projected_points": 1.52
       }
     }
   }
