@@ -1,11 +1,12 @@
 name: Update Ticker Data
 on:
-  schedule:
-    # 7 AM MST-ish. Off the top of the hour on purpose - GitHub Actions'
-    # scheduler queues top-of-hour cron jobs behind every other repo's
-    # top-of-hour jobs platform-wide; confirmed live this workflow was
-    # landing 3-5.5 hours late every day for 15+ straight days at :00.
-    - cron: '7 13 * * *'
+  # No schedule: block - GitHub Actions' own scheduler queues top-of-hour
+  # cron jobs behind every other repo's jobs platform-wide; confirmed live
+  # this workflow was landing 3-5.5 hours late every day for 15+ straight
+  # days even after moving off the exact hour mark. Triggered externally
+  # via workflow_dispatch by a cron-job.org job instead, for real
+  # clock-time control. update-fantasy.yml's workflow_run trigger still
+  # fires automatically right after this completes, unaffected.
   workflow_dispatch:
 jobs:
   update-ticker:

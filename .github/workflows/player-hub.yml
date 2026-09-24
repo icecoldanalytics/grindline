@@ -1,9 +1,9 @@
 name: Player Hub
 on:
-  schedule:
-    # Off the top of the hour on purpose - see update-ticker.yml's
-    # comment for why (confirmed live across every daily job in this repo).
-    - cron: '17 11 * * *'
+  # No schedule: block - see update-ticker.yml's comment for why (GitHub's
+  # own scheduler ran every daily job in this repo 3-5+ hours late, even
+  # off the top of the hour). Triggered externally via workflow_dispatch
+  # by a cron-job.org job instead, for real clock-time control.
   workflow_dispatch:
 
 jobs:

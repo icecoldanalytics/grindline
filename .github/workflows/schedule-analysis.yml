@@ -1,10 +1,11 @@
 name: Schedule Analysis
 on:
-  schedule:
-    # weekly, Sunday - the NHL schedule is static once published except
-    # for rare reschedules. Off the top of the hour on purpose - see
-    # update-ticker.yml's comment for why.
-    - cron: '23 12 * * 0'
+  # No schedule: block - see update-ticker.yml's comment for why. Triggered
+  # externally via workflow_dispatch by a cron-job.org job instead (weekly,
+  # Sunday - the NHL schedule is static once published except for rare
+  # reschedules), for real clock-time control. season-board.yml's
+  # workflow_run trigger still fires automatically right after this
+  # completes, unaffected by this change.
   workflow_dispatch:
 
 jobs:

@@ -1,15 +1,14 @@
 name: Capture signals
 
 on:
-  schedule:
-    # Off the top of the hour on purpose - confirmed live this workflow
-    # was landing 3-5 hours late every day at :00 (GitHub's scheduler
-    # queues top-of-hour cron jobs behind every other repo's top-of-hour
-    # jobs platform-wide). Logged prices are whatever's live when the
-    # script actually runs (see price_source in signal_log.json), so
-    # this delay directly affects how close to a real, takeable price
-    # the logged number is - not just a cosmetic timing issue.
-    - cron: '11 14 * * *'
+  # No schedule: block - GitHub's own scheduler was landing this job
+  # 3-5 hours late every day even off the top of the hour (queues behind
+  # every other repo's cron jobs platform-wide), which mattered here
+  # specifically because logged prices are whatever's live when the
+  # script actually runs (see price_source in signal_log.json). Triggered
+  # externally via workflow_dispatch by a cron-job.org job hitting this
+  # repo's actions/workflows/capture-signals.yml/dispatches endpoint
+  # instead, for real clock-time control.
   workflow_dispatch:
 
 jobs:

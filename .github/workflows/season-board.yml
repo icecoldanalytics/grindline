@@ -1,9 +1,11 @@
 name: Season Board
 on:
-  schedule:
-    # Daily refresh (goalie/opponent data changes every day). Off the top
-    # of the hour on purpose - see update-ticker.yml's comment for why.
-    - cron: '31 16 * * *'
+  # No schedule: block - see update-ticker.yml's comment for why. Daily
+  # refresh (goalie/opponent data changes every day) now comes from an
+  # external cron-job.org job calling workflow_dispatch instead, for real
+  # clock-time control. The workflow_run trigger below is untouched - it's
+  # event-chained off Schedule Analysis's completion, not cron-delayed, so
+  # it was never part of the problem this migration is fixing.
   workflow_run:
     # build_season_board.py reads data/schedule_analysis.json - this
     # chains an immediate extra run right after that data actually

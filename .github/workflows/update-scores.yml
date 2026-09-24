@@ -7,8 +7,15 @@ on:
     # behind every other repo's jobs at that same instant platform-wide;
     # confirmed live this pattern elsewhere in this repo at the exact hour
     # mark (minute 0) causing multi-hour delays on once-daily jobs.
+    #
+    # Kept on GitHub's own scheduler (unlike the once-daily jobs) rather
+    # than moved to external triggering: 15-minute in-game score polling
+    # doesn't need the same clock-time precision the morning pipeline
+    # does, and ~52 external dispatch calls/day is a lot to hand to a
+    # free cron service for marginal benefit here.
     - cron: '9-59/15 23 * * *'
     - cron: '9-59/15 0-6 * * *'
+  workflow_dispatch:  # manual/ad-hoc trigger, e.g. to backfill a missed run
 
 jobs:
   update-scores:
