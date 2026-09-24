@@ -179,13 +179,21 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="page-hero-inner">
       <div class="page-eyebrow">Grind Line</div>
       <div class="page-title">My Team</div>
-      <p class="page-desc">Your own shortlist, built from the Players page. Add up to 20 players and see their combined projection and workload for the week.</p>
+      <p class="page-desc">Your own shortlist. Search for a player below to add them, up to 20, and see their combined projection and workload for the week.</p>
     </div>
   </div>
   <div class="main-wrap">
     <div class="mt-note">Saved in this browser only &mdash; no account, nothing sent to a server. Clearing your browser's site data (or switching browsers/devices) clears this too.</div>
 
-    <div class="section-divider"><h2>Weekly Summary</h2><div class="sd-line"></div><div class="sd-badge" id="mt-count-badge">0 / 20 players</div></div>
+    <div class="section-divider"><h2>Add Players</h2><div class="sd-line"></div></div>
+    <div class="form-group" style="max-width:420px;margin-bottom:8px;">
+      <label for="mt-search">Search player or team</label>
+      <input type="text" id="mt-search" placeholder="e.g. McDavid or EDM" oninput="mtSearchRender()">
+    </div>
+    <div style="font-size:0.72rem;color:var(--muted);margin-bottom:10px;" id="mt-search-cap-note"></div>
+    <div id="mt-search-results" style="margin-bottom:8px;"></div>
+
+    <div class="section-divider" style="margin-top:36px;"><h2>Weekly Summary</h2><div class="sd-line"></div><div class="sd-badge" id="mt-count-badge">0 / 20 players</div></div>
     <div class="tracker-grid" style="margin-bottom:8px;">
       <div class="tracker-card">
         <div class="tracker-card-header"><h3>Projected Points This Week</h3></div>
@@ -203,7 +211,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     </div>
 
     <div class="section-divider" style="margin-top:36px;"><h2>Your Players</h2><div class="sd-line"></div><button class="mt-clear-btn" onclick="clearMyTeam()">Clear All</button></div>
-    <div id="mt-empty-note" style="display:none;font-size:0.85rem;color:var(--muted);padding:28px 20px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;">You haven't added anyone yet. Go to <a onclick="showPage('player-hub')" style="color:var(--accent);cursor:pointer;">Players</a> and click "+ Add" on up to 20 players.</div>
+    <div id="mt-empty-note" style="display:none;font-size:0.85rem;color:var(--muted);padding:28px 20px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;">You haven't added anyone yet. Search for a player above to add up to 20.</div>
     <div class="recap-table" id="mt-table"></div>
   </div>
 </div>
@@ -687,7 +695,8 @@ function phDetailHtml(playerId, p) {
     </div>`;
 }
 
-const PH_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px 100px';
+const PH_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px';
+const MT_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px 100px';
 
 // ── MY TEAM state (localStorage only - no accounts, no backend) ─────────────
 const MY_TEAM_KEY = 'grindline_my_team_v1';
@@ -717,7 +726,6 @@ function toggleMyTeam(id) {
     myTeamIds.push(id);
   }
   saveMyTeam();
-  phFilterAndRender();
   renderMyTeam();
 }
 
@@ -726,7 +734,6 @@ function clearMyTeam() {
   if (!confirm('Remove all players from My Team? This can\'t be undone.')) return;
   myTeamIds = [];
   saveMyTeam();
-  phFilterAndRender();
   renderMyTeam();
 }
 
@@ -763,16 +770,14 @@ function phHeaderCellsHtml(lastLabel) {
       <span style="text-align:right;"><strong>Games This Week</strong></span>
       <span style="text-align:right;"><strong>This Szn PPG</strong></span>
       <span style="text-align:right;"><strong>Prior 2Sn PPG</strong> <span style="color:var(--orange);font-size:0.6rem;">(20+ GP)</span></span>
-      <span style="text-align:right;"><strong>Shots/Gm</strong> <span style="color:var(--orange);font-size:0.6rem;">(LY)</span></span>
-      <span style="text-align:right;"><strong>${lastLabel}</strong></span>`;
+      <span style="text-align:right;"><strong>Shots/Gm</strong> <span style="color:var(--orange);font-size:0.6rem;">(LY)</span></span>${lastLabel ? `
+      <span style="text-align:right;"><strong>${lastLabel}</strong></span>` : ''}`;
 }
 
 function phRowHtml(playerId, p) {
   const isOpen = phOpenId === playerId;
-  const onTeam = isOnMyTeam(playerId);
   let html = `<div class="recap-row wide ph-row" data-id="${playerId}" style="grid-template-columns:${PH_GRID_COLS};cursor:pointer;">
       ${phBaseCellsHtml(p)}
-      <span style="text-align:right;"><button class="ph-team-btn${onTeam ? ' on' : ''}" data-id="${playerId}" title="${onTeam ? 'Remove from My Team' : 'Add to My Team'}">${onTeam ? '✓ On Team' : '+ Add'}</button></span>
     </div>`;
   if (isOpen) html += `<div class="ph-detail">${phDetailHtml(playerId, p)}</div>`;
   return html;
@@ -781,7 +786,7 @@ function phRowHtml(playerId, p) {
 function phRenderTable(ids) {
   const el = document.getElementById('ph-table');
   if (!el) return;
-  const header = `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('My Team')}</div>`;
+  const header = `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml()}</div>`;
   el.innerHTML = header + ids.map(id => phRowHtml(id, phData.players[id])).join('');
 
   document.getElementById('ph-count-note').textContent = `${ids.length} of ${Object.keys(phData.players).length} players`;
@@ -793,15 +798,63 @@ function phRenderTable(ids) {
       phFilterAndRender();
     });
   });
-  bindTeamButtons(el);
 }
 
-// ── MY TEAM table + weekly summary ───────────────────────────────────────
+// ── MY TEAM: search-to-add, roster table + weekly summary ───────────────
 function mtRowHtml(playerId, p) {
-  return `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};">
+  return `<div class="recap-row wide" style="grid-template-columns:${MT_GRID_COLS};">
       ${phBaseCellsHtml(p)}
       <span style="text-align:right;"><button class="ph-team-btn on" data-id="${playerId}" title="Remove from My Team">Remove</button></span>
     </div>`;
+}
+
+function mtSearchRowHtml(playerId, p) {
+  return `<div class="recap-row wide mt-search-row" data-id="${playerId}" style="grid-template-columns:${MT_GRID_COLS};cursor:pointer;">
+      ${phBaseCellsHtml(p)}
+      <span style="text-align:right;"><button class="ph-team-btn" data-id="${playerId}">+ Add</button></span>
+    </div>`;
+}
+
+function mtSearchRender() {
+  const el = document.getElementById('mt-search-results');
+  const capNote = document.getElementById('mt-search-cap-note');
+  if (!el || !phData || !phData.players) return;
+
+  const atCap = myTeamIds.length >= MY_TEAM_CAP;
+  if (capNote) capNote.textContent = atCap ? `My Team is full (${MY_TEAM_CAP}/${MY_TEAM_CAP}) — remove a player below to add another.` : '';
+
+  const q = (document.getElementById('mt-search').value || '').trim().toLowerCase();
+  if (!q) { el.innerHTML = ''; return; }
+
+  const matches = Object.keys(phData.players)
+    .filter(id => !isOnMyTeam(id))
+    .filter(id => {
+      const p = phData.players[id];
+      return p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q);
+    });
+  matches.sort((a, b) => {
+    const pa = phData.players[a].projection.projected_points;
+    const pb = phData.players[b].projection.projected_points;
+    if (pa == null && pb == null) return 0;
+    if (pa == null) return 1;
+    if (pb == null) return -1;
+    return pb - pa;
+  });
+  const shown = matches.slice(0, 12);
+
+  if (!shown.length) {
+    el.innerHTML = `<div style="font-size:0.8rem;color:var(--muted);padding:10px 2px;">No matching players.</div>`;
+    return;
+  }
+
+  const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('Add')}</div>`;
+  const moreNote = matches.length > shown.length
+    ? `<div style="font-size:0.7rem;color:var(--muted);padding:8px 20px;">+${matches.length - shown.length} more match${matches.length - shown.length === 1 ? '' : 'es'} — narrow your search to see them.</div>` : '';
+  el.innerHTML = `<div class="recap-table">${header}${shown.map(id => mtSearchRowHtml(id, phData.players[id])).join('')}</div>${moreNote}`;
+
+  el.querySelectorAll('.mt-search-row').forEach(row => {
+    row.addEventListener('click', () => toggleMyTeam(row.getAttribute('data-id')));
+  });
 }
 
 function renderMyTeam() {
@@ -825,12 +878,13 @@ function renderMyTeam() {
     if (!validIds.length) {
       tableEl.innerHTML = '';
     } else {
-      const header = `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('Remove')}</div>`;
+      const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('Remove')}</div>`;
       tableEl.innerHTML = header + validIds.map(id => mtRowHtml(id, phData.players[id])).join('');
       bindTeamButtons(tableEl);
     }
   }
   if (emptyEl) emptyEl.style.display = validIds.length ? 'none' : 'block';
+  mtSearchRender();
 
   let totalProjected = 0, fourGame = 0, twoGame = 0;
   validIds.forEach(id => {
