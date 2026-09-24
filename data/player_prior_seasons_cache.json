@@ -23438,5 +23438,605 @@
       "shots_against": 0,
       "goals_against": 0
     }
+  },
+  "8480843": {
+    "20252026": {
+      "games_played": 56,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 1513,
+      "goals_against": 169
+    },
+    "20242025": {
+      "games_played": 54,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 1625,
+      "goals_against": 158
+    }
+  },
+  "8480280": {
+    "20252026": {
+      "games_played": 55,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 1571,
+      "goals_against": 146
+    },
+    "20242025": {
+      "games_played": 58,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 1632,
+      "goals_against": 176
+    }
+  },
+  "8480045": {
+    "20252026": {
+      "games_played": 35,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 930,
+      "goals_against": 85
+    },
+    "20242025": {
+      "games_played": 55,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 1490,
+      "goals_against": 169
+    }
+  },
+  "8480051": {
+    "20252026": {
+      "games_played": 3,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 80,
+      "goals_against": 13
+    },
+    "20242025": {
+      "games_played": 11,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 250,
+      "goals_against": 41
+    }
+  },
+  "8475660": {
+    "20252026": {
+      "games_played": 34,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 797,
+      "goals_against": 93
+    },
+    "20242025": {
+      "games_played": 47,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 1295,
+      "goals_against": 129
+    }
+  },
+  "8481692": {
+    "20252026": {
+      "games_played": 57,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 1558,
+      "goals_against": 158
+    },
+    "20242025": {
+      "games_played": 53,
+      "points": 0,
+      "goals": 0,
+      "assists": 3,
+      "shots": 0,
+      "shots_against": 1549,
+      "goals_against": 140
+    }
+  },
+  "8481519": {
+    "20252026": {
+      "games_played": 55,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 1583,
+      "goals_against": 155
+    },
+    "20242025": {
+      "games_played": 38,
+      "points": 0,
+      "goals": 0,
+      "assists": 2,
+      "shots": 0,
+      "shots_against": 1011,
+      "goals_against": 100
+    }
+  },
+  "8475809": {
+    "20252026": {
+      "games_played": 45,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 1093,
+      "goals_against": 86
+    },
+    "20242025": {
+      "games_played": 24,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 578,
+      "goals_against": 53
+    }
+  },
+  "8476434": {
+    "20252026": {
+      "games_played": 57,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 1461,
+      "goals_against": 144
+    },
+    "20242025": {
+      "games_played": 29,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 811,
+      "goals_against": 72
+    }
+  },
+  "8482221": {
+    "20252026": {
+      "games_played": 0,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 0,
+      "goals_against": 0
+    },
+    "20242025": {
+      "games_played": 9,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 258,
+      "goals_against": 33
+    }
+  },
+  "8481033": {
+    "20252026": {
+      "games_played": 34,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 791,
+      "goals_against": 85
+    },
+    "20242025": {
+      "games_played": 5,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 90,
+      "goals_against": 5
+    }
+  },
+  "8482661": {
+    "20252026": {
+      "games_played": 35,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 1020,
+      "goals_against": 87
+    },
+    "20242025": {
+      "games_played": 2,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 51,
+      "goals_against": 8
+    }
+  },
+  "8478470": {
+    "20252026": {
+      "games_played": 25,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 635,
+      "goals_against": 81
+    },
+    "20242025": {
+      "games_played": 62,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 1678,
+      "goals_against": 166
+    }
+  },
+  "8482076": {
+    "20252026": {
+      "games_played": 3,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 87,
+      "goals_against": 8
+    },
+    "20242025": {
+      "games_played": 6,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 114,
+      "goals_against": 7
+    }
+  },
+  "8481020": {
+    "20252026": {
+      "games_played": 28,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 711,
+      "goals_against": 67
+    },
+    "20242025": {
+      "games_played": 34,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 814,
+      "goals_against": 95
+    }
+  },
+  "8473575": {
+    "20252026": {
+      "games_played": 0,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 0,
+      "goals_against": 0
+    },
+    "20242025": {
+      "games_played": 10,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 262,
+      "goals_against": 29
+    }
+  },
+  "8478048": {
+    "20252026": {
+      "games_played": 51,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 1425,
+      "goals_against": 126
+    },
+    "20242025": {
+      "games_played": 61,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 1751,
+      "goals_against": 167
+    }
+  },
+  "8476999": {
+    "20252026": {
+      "games_played": 49,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 1198,
+      "goals_against": 131
+    },
+    "20242025": {
+      "games_played": 44,
+      "points": 0,
+      "goals": 0,
+      "assists": 2,
+      "shots": 0,
+      "shots_against": 1229,
+      "goals_against": 112
+    }
+  },
+  "8482783": {
+    "20252026": {
+      "games_played": 4,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 47,
+      "goals_against": 8
+    },
+    "20242025": {
+      "games_played": 17,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 406,
+      "goals_against": 54
+    }
+  },
+  "8481668": {
+    "20252026": {
+      "games_played": 39,
+      "points": 0,
+      "goals": 0,
+      "assists": 3,
+      "shots": 0,
+      "shots_against": 1020,
+      "goals_against": 115
+    },
+    "20242025": {
+      "games_played": 10,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 238,
+      "goals_against": 33
+    }
+  },
+  "8482137": {
+    "20252026": {
+      "games_played": 47,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 1341,
+      "goals_against": 157
+    },
+    "20242025": {
+      "games_played": 13,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 357,
+      "goals_against": 37
+    }
+  },
+  "8480981": {
+    "20252026": {
+      "games_played": 46,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 1250,
+      "goals_against": 114
+    },
+    "20242025": {
+      "games_played": 31,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 767,
+      "goals_against": 74
+    }
+  },
+  "8483710": {
+    "20252026": {
+      "games_played": 20,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 548,
+      "goals_against": 48
+    },
+    "20242025": {
+      "games_played": 6,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 156,
+      "goals_against": 20
+    }
+  },
+  "8476932": {
+    "20252026": {
+      "games_played": 26,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 708,
+      "goals_against": 76
+    },
+    "20242025": {
+      "games_played": 34,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 955,
+      "goals_against": 71
+    }
+  },
+  "8478872": {
+    "20252026": {
+      "games_played": 64,
+      "points": 0,
+      "goals": 0,
+      "assists": 2,
+      "shots": 0,
+      "shots_against": 1626,
+      "goals_against": 169
+    },
+    "20242025": {
+      "games_played": 58,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 1509,
+      "goals_against": 145
+    }
+  },
+  "8480947": {
+    "20252026": {
+      "games_played": 47,
+      "points": 0,
+      "goals": 0,
+      "assists": 2,
+      "shots": 0,
+      "shots_against": 1285,
+      "goals_against": 160
+    },
+    "20242025": {
+      "games_played": 51,
+      "points": 0,
+      "goals": 0,
+      "assists": 1,
+      "shots": 0,
+      "shots_against": 1345,
+      "goals_against": 132
+    }
+  },
+  "8479394": {
+    "20252026": {
+      "games_played": 18,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 422,
+      "goals_against": 46
+    },
+    "20242025": {
+      "games_played": 0,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 0,
+      "goals_against": 0
+    }
+  },
+  "8483711": {
+    "20252026": {
+      "games_played": 0,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 0,
+      "goals_against": 0
+    },
+    "20242025": {
+      "games_played": 0,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 0,
+      "goals_against": 0
+    }
+  },
+  "8483532": {
+    "20252026": {
+      "games_played": 4,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 101,
+      "goals_against": 8
+    },
+    "20242025": {
+      "games_played": 1,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 38,
+      "goals_against": 5
+    }
+  },
+  "8483512": {
+    "20252026": {
+      "games_played": 82,
+      "points": 37,
+      "goals": 18,
+      "assists": 19,
+      "shots": 138,
+      "shots_against": 0,
+      "goals_against": 0
+    },
+    "20242025": {
+      "games_played": 4,
+      "points": 1,
+      "goals": 0,
+      "assists": 1,
+      "shots": 6,
+      "shots_against": 0,
+      "goals_against": 0
+    }
   }
 }
