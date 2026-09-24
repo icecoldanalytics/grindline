@@ -97,6 +97,15 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .form-group select,.form-group input{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:0.85rem;padding:10px 14px;outline:none;transition:border-color 0.2s;appearance:none;}
 .form-group select:focus,.form-group input:focus{border-color:var(--accent);}
 .form-group select option{background:#0d1a2a;}
+
+/* MY TEAM */
+.ph-team-btn{font-size:0.68rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;padding:5px 10px;border-radius:5px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all 0.15s;}
+.ph-team-btn:hover{border-color:var(--accent);color:var(--accent);}
+.ph-team-btn.on{background:rgba(56,189,248,0.12);border-color:rgba(56,189,248,0.4);color:var(--accent);}
+.ph-team-btn.on:hover{background:rgba(255,71,87,0.12);border-color:rgba(255,71,87,0.35);color:var(--red);}
+.mt-clear-btn{background:transparent;border:1px solid rgba(255,71,87,0.3);color:var(--red);font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:6px;cursor:pointer;white-space:nowrap;transition:all 0.15s;}
+.mt-clear-btn:hover{background:rgba(255,71,87,0.1);border-color:rgba(255,71,87,0.5);}
+.mt-note{background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:0.78rem;color:var(--text);}
 /* FOOTER */
 footer{background:#03070e;border-top:1px solid var(--border);padding:36px 32px;text-align:center;}
 .footer-brand{font-weight:800;font-size:1.1rem;color:var(--text);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
@@ -130,6 +139,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   </a>
   <div class="nav-links" id="nav-links">
     <a id="nav-player-hub"     class="active"  onclick="showPage('player-hub');closeMenu()">Players</a>
+    <a id="nav-my-team"                        onclick="showPage('my-team');closeMenu()">My Team</a>
     <a id="nav-season-board"                   onclick="showPage('season-board');closeMenu()">Season Board</a>
     <a id="nav-schedule"                       onclick="showPage('schedule');closeMenu()">Schedule</a>
     <a href="/" onclick="closeMenu()">Home</a>
@@ -162,6 +172,39 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div style="font-size:0.7rem;color:var(--muted);margin-bottom:8px;" id="ph-count-note"></div>
     <div class="recap-table" id="ph-table"></div>
     <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Only players on a team's actual current roster are shown &mdash; never someone who has since been traded or waived. A stat tagged <span style="color:var(--orange);">(last season)</span> is exactly that, not this year's form; it shows up until real current-season games replace it. The projection's prior-season rate is pooled across the two most recent seasons and requires at least 20 games combined &mdash; below that it's left blank rather than let a small sample (a 1-game call-up, say) produce a misleadingly high rate. Click a player to see the full three-season breakdown, team context, this week's opponents, and the projection math.</div>
+  </div>
+</div>
+<div id="page-my-team" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-eyebrow">Grind Line</div>
+      <div class="page-title">My Team</div>
+      <p class="page-desc">Your own shortlist, built from the Players page. Add up to 20 players and see their combined projection and workload for the week.</p>
+    </div>
+  </div>
+  <div class="main-wrap">
+    <div class="mt-note">Saved in this browser only &mdash; no account, nothing sent to a server. Clearing your browser's site data (or switching browsers/devices) clears this too.</div>
+
+    <div class="section-divider"><h2>Weekly Summary</h2><div class="sd-line"></div><div class="sd-badge" id="mt-count-badge">0 / 20 players</div></div>
+    <div class="tracker-grid" style="margin-bottom:8px;">
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Projected Points This Week</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Total, My Team</span><span class="stat-val good" id="mt-total-projected">0.00</span></div>
+        </div>
+      </div>
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Schedule Split</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Players on 4-game weeks</span><span class="stat-val good" id="mt-four-game">0</span></div>
+          <div class="stat-row"><span class="stat-label">Players on 2-game weeks</span><span class="stat-val warn" id="mt-two-game">0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider" style="margin-top:36px;"><h2>Your Players</h2><div class="sd-line"></div><button class="mt-clear-btn" onclick="clearMyTeam()">Clear All</button></div>
+    <div id="mt-empty-note" style="display:none;font-size:0.85rem;color:var(--muted);padding:28px 20px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;">You haven't added anyone yet. Go to <a onclick="showPage('player-hub')" style="color:var(--accent);cursor:pointer;">Players</a> and click "+ Add" on up to 20 players.</div>
+    <div class="recap-table" id="mt-table"></div>
   </div>
 </div>
 <div id="page-season-board" class="page">
@@ -644,14 +687,64 @@ function phDetailHtml(playerId, p) {
     </div>`;
 }
 
-const PH_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px';
+const PH_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px 100px';
 
-function phRowHtml(playerId, p) {
+// ── MY TEAM state (localStorage only - no accounts, no backend) ─────────────
+const MY_TEAM_KEY = 'grindline_my_team_v1';
+const MY_TEAM_CAP = 20;
+
+function loadMyTeam() {
+  try {
+    const raw = localStorage.getItem(MY_TEAM_KEY);
+    const ids = raw ? JSON.parse(raw) : [];
+    return Array.isArray(ids) ? ids : [];
+  } catch (e) { return []; }
+}
+function saveMyTeam() {
+  try { localStorage.setItem(MY_TEAM_KEY, JSON.stringify(myTeamIds)); } catch (e) {}
+}
+let myTeamIds = loadMyTeam();
+function isOnMyTeam(id) { return myTeamIds.includes(id); }
+
+function toggleMyTeam(id) {
+  if (isOnMyTeam(id)) {
+    myTeamIds = myTeamIds.filter(x => x !== id);
+  } else {
+    if (myTeamIds.length >= MY_TEAM_CAP) {
+      alert(`My Team is capped at ${MY_TEAM_CAP} players — remove one before adding another.`);
+      return;
+    }
+    myTeamIds.push(id);
+  }
+  saveMyTeam();
+  phFilterAndRender();
+  renderMyTeam();
+}
+
+function clearMyTeam() {
+  if (!myTeamIds.length) return;
+  if (!confirm('Remove all players from My Team? This can\'t be undone.')) return;
+  myTeamIds = [];
+  saveMyTeam();
+  phFilterAndRender();
+  renderMyTeam();
+}
+
+function bindTeamButtons(container) {
+  container.querySelectorAll('.ph-team-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMyTeam(btn.getAttribute('data-id'));
+    });
+  });
+}
+
+// Shared by the Players table and the My Team table - same columns, both places.
+function phBaseCellsHtml(p) {
   const proj = p.projection;
   const thisSzn = p.seasons[phData.season];
   const lastSzn = p.seasons[phData.prior_seasons[0]];
-  const isOpen = phOpenId === playerId;
-  let html = `<div class="recap-row wide ph-row" data-id="${playerId}" style="grid-template-columns:${PH_GRID_COLS};cursor:pointer;">
+  return `
       <span class="rr-game"><strong>${p.name}</strong> <span style="color:var(--muted);font-size:0.72rem;">${p.position}</span></span>
       <span style="text-align:right;">${p.team}</span>
       <span style="text-align:right;color:var(--accent);font-weight:700;">${proj.projected_points == null ? '—' : proj.projected_points.toFixed(2)}</span>
@@ -659,16 +752,10 @@ function phRowHtml(playerId, p) {
       <span style="text-align:right;">${proj.games_this_week}</span>
       <span style="text-align:right;">${phNum(thisSzn.points_per_game, 2)}</span>
       <span style="text-align:right;">${phNum(proj.prior_points_per_game, 2)}</span>
-      <span style="text-align:right;">${phNum(lastSzn.shots_per_game, 2)}</span>
-    </div>`;
-  if (isOpen) html += `<div class="ph-detail">${phDetailHtml(playerId, p)}</div>`;
-  return html;
+      <span style="text-align:right;">${phNum(lastSzn.shots_per_game, 2)}</span>`;
 }
-
-function phRenderTable(ids) {
-  const el = document.getElementById('ph-table');
-  if (!el) return;
-  const header = `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};background:rgba(255,255,255,0.03);">
+function phHeaderCellsHtml(lastLabel) {
+  return `
       <span class="rr-game"><strong>Player</strong></span>
       <span style="text-align:right;"><strong>Team</strong></span>
       <span style="text-align:right;"><strong>Projected Points This Week</strong></span>
@@ -677,7 +764,24 @@ function phRenderTable(ids) {
       <span style="text-align:right;"><strong>This Szn PPG</strong></span>
       <span style="text-align:right;"><strong>Prior 2Sn PPG</strong> <span style="color:var(--orange);font-size:0.6rem;">(20+ GP)</span></span>
       <span style="text-align:right;"><strong>Shots/Gm</strong> <span style="color:var(--orange);font-size:0.6rem;">(LY)</span></span>
+      <span style="text-align:right;"><strong>${lastLabel}</strong></span>`;
+}
+
+function phRowHtml(playerId, p) {
+  const isOpen = phOpenId === playerId;
+  const onTeam = isOnMyTeam(playerId);
+  let html = `<div class="recap-row wide ph-row" data-id="${playerId}" style="grid-template-columns:${PH_GRID_COLS};cursor:pointer;">
+      ${phBaseCellsHtml(p)}
+      <span style="text-align:right;"><button class="ph-team-btn${onTeam ? ' on' : ''}" data-id="${playerId}" title="${onTeam ? 'Remove from My Team' : 'Add to My Team'}">${onTeam ? '✓ On Team' : '+ Add'}</button></span>
     </div>`;
+  if (isOpen) html += `<div class="ph-detail">${phDetailHtml(playerId, p)}</div>`;
+  return html;
+}
+
+function phRenderTable(ids) {
+  const el = document.getElementById('ph-table');
+  if (!el) return;
+  const header = `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('My Team')}</div>`;
   el.innerHTML = header + ids.map(id => phRowHtml(id, phData.players[id])).join('');
 
   document.getElementById('ph-count-note').textContent = `${ids.length} of ${Object.keys(phData.players).length} players`;
@@ -689,6 +793,56 @@ function phRenderTable(ids) {
       phFilterAndRender();
     });
   });
+  bindTeamButtons(el);
+}
+
+// ── MY TEAM table + weekly summary ───────────────────────────────────────
+function mtRowHtml(playerId, p) {
+  return `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};">
+      ${phBaseCellsHtml(p)}
+      <span style="text-align:right;"><button class="ph-team-btn on" data-id="${playerId}" title="Remove from My Team">Remove</button></span>
+    </div>`;
+}
+
+function renderMyTeam() {
+  const tableEl = document.getElementById('mt-table');
+  const emptyEl = document.getElementById('mt-empty-note');
+  const countBadge = document.getElementById('mt-count-badge');
+  if (countBadge) countBadge.textContent = `${myTeamIds.length} / ${MY_TEAM_CAP} players`;
+  if (!phData || !phData.players) return;
+
+  // Prune ids for players no longer on a current roster (traded/waived off
+  // since being added) - same "current roster only" rule the rest of this
+  // page follows.
+  const validIds = myTeamIds.filter(id => phData.players[id]);
+  if (validIds.length !== myTeamIds.length) {
+    myTeamIds = validIds;
+    saveMyTeam();
+    if (countBadge) countBadge.textContent = `${myTeamIds.length} / ${MY_TEAM_CAP} players`;
+  }
+
+  if (tableEl) {
+    if (!validIds.length) {
+      tableEl.innerHTML = '';
+    } else {
+      const header = `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('Remove')}</div>`;
+      tableEl.innerHTML = header + validIds.map(id => mtRowHtml(id, phData.players[id])).join('');
+      bindTeamButtons(tableEl);
+    }
+  }
+  if (emptyEl) emptyEl.style.display = validIds.length ? 'none' : 'block';
+
+  let totalProjected = 0, fourGame = 0, twoGame = 0;
+  validIds.forEach(id => {
+    const proj = phData.players[id].projection;
+    if (proj.projected_points != null) totalProjected += proj.projected_points;
+    if (proj.games_this_week === 4) fourGame++;
+    if (proj.games_this_week === 2) twoGame++;
+  });
+  const setText = (id, val) => { const e = document.getElementById(id); if (e) e.textContent = val; };
+  setText('mt-total-projected', totalProjected.toFixed(2));
+  setText('mt-four-game', fourGame);
+  setText('mt-two-game', twoGame);
 }
 
 function phFilterAndRender() {
@@ -742,6 +896,7 @@ async function buildPlayerHub() {
     }
 
     phFilterAndRender();
+    renderMyTeam();
   } catch (e) {
     console.log('Player hub fetch error:', e);
   }
