@@ -85,6 +85,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .hero-stat-val{font-weight:800;font-size:2rem;color:var(--bright);line-height:1;}
 .hero-stat-val span{color:var(--accent);}
 .hero-stat-label{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.hero-trial-line{font-size:0.85rem;color:var(--text);margin-top:22px;max-width:520px;line-height:1.6;}
+.hero-trial-cta{margin-top:14px;}
+.hero-trial-fine{font-size:0.72rem;color:var(--muted);margin-top:8px;line-height:1.5;}
 
 /* LAYOUT */
 .main-wrap{max-width:1200px;margin:0 auto;padding:0 24px 80px;}
@@ -265,6 +268,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .price-cta{width:100%;padding:13px;border-radius:8px;font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;text-align:center;text-decoration:none;cursor:pointer;border:none;}
 .price-cta.primary{background:linear-gradient(135deg,var(--accent),#00764a);color:#000;}
 .price-cta.ghost{background:transparent;border:1px solid var(--border);color:var(--text);}
+.price-cta-disabled{opacity:0.5;cursor:default;}
+.price-cta-fine{font-size:0.7rem;color:var(--muted);margin-top:10px;line-height:1.5;text-align:center;}
 .pricing-note{max-width:700px;margin:32px auto 0;padding:0 24px;text-align:center;font-size:0.82rem;color:var(--muted);line-height:1.7;}
 
 /* PREMIUM GATE */
@@ -331,11 +336,11 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <a id="nav-pricing"                        onclick="showPage('pricing');closeMenu()">Pricing</a>
     <a id="nav-about"                          onclick="showPage('about');closeMenu()">About</a>
     <a href="/fantasy.html" onclick="closeMenu()">Fantasy →</a>
-    <a class="nav-beta-mobile" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener" onclick="closeMenu()">✉ Join Beta</a>
+    <a class="nav-beta-mobile" href="https://buy.stripe.com/5kQ00i5cW6wV0gtdo31Nu00" target="_blank" rel="noopener" onclick="closeMenu()">Start free trial</a>
   </div>
   <div class="nav-right">
     <a class="nav-cta" onclick="showPage('edge-finder')">⚡ Edge Finder</a>
-    <a class="nav-beta" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">✉ Join Beta</a>
+    <a class="nav-beta" href="https://buy.stripe.com/5kQ00i5cW6wV0gtdo31Nu00" target="_blank" rel="noopener">Start free trial</a>
     <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()">☰</button>
   </div>
 </nav>
@@ -367,13 +372,17 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       <div class="hero-buttons">
         <button class="btn-primary" onclick="showPage('edge-finder')">⚡ Edge Finder</button>
         <button class="btn-ghost"   onclick="showPage('signal-tracker')">Signal Tracker →</button>
-        <a class="btn-ghost" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">✉ Join Beta</a>
       </div>
       <div class="hero-stats">
         <div><div class="hero-stat-val"><span>62.1</span>%</div><div class="hero-stat-label">Win rate · 4 seasons</div></div>
         <div><div class="hero-stat-val"><span>+5.6</span>%</div><div class="hero-stat-label">ROI at real prices</div></div>
         <div><div class="hero-stat-val">509</div><div class="hero-stat-label">Games Graded</div></div>
         <div><div class="hero-stat-val" id="hero-games-tonight">—</div><div class="hero-stat-label">Games Tonight</div></div>
+      </div>
+      <p class="hero-trial-line">Four seasons, 509 games, every result public. Tonight's Rest Edge signal lands in your inbox at 7 a.m.</p>
+      <div class="hero-trial-cta">
+        <a class="btn-primary" href="https://buy.stripe.com/5kQ00i5cW6wV0gtdo31Nu00" target="_blank" rel="noopener">Start 7-day free trial</a>
+        <div class="hero-trial-fine">7 days free, then $12/month CAD. Cancel anytime. 18+. Please bet responsibly.</div>
       </div>
     </div>
   </section>
@@ -619,7 +628,8 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
         <li>Personal bet tracker: log your own action and track your real bankroll, not ours</li>
         <li>2-day look-ahead so you can plan around the schedule</li>
       </ul>
-      <a class="price-cta primary" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist</a>
+      <a class="price-cta primary" href="https://buy.stripe.com/5kQ00i5cW6wV0gtdo31Nu00" target="_blank" rel="noopener">Start 7-day free trial</a>
+      <div class="price-cta-fine">7 days free, then $12/month CAD. Cancel anytime. 18+. Please bet responsibly.</div>
     </div>
 
     <div class="price-card">
@@ -631,7 +641,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
         <li>Locked-in price — no monthly renewal to forget about</li>
         <li>Roughly four months cheaper than paying month to month</li>
       </ul>
-      <a class="price-cta ghost" href="https://a4ceb66d.sibforms.com/serve/MUIFACuUw-XY-4Ja-nA-51l3oTnfYN4JPDuQyhJMasLYNND54R2AB5UO8L4vaA1Et5QnhClzTJRk2nMyA2XMO3Z1OvgVwSugVRFcR-KKOJ5wYGhz8usEPuv9L03uGuKzyvSAxXGhjWYepaAyaiMccEuUeqQw6wmvW-lvza1RWQsayfnge51YaYw9SC4ZpitnkiUkHfs7v4HbSgBFSw==" target="_blank" rel="noopener">Join Beta Waitlist</a>
+      <div class="price-cta ghost price-cta-disabled">Coming soon</div>
     </div>
   </div>
 
