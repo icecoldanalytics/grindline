@@ -138,7 +138,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="nav-brand-text">GRIND <span>LINE</span></div>
   </a>
   <div class="nav-links" id="nav-links">
-    <a id="nav-player-hub"     class="active"  onclick="showPage('player-hub');closeMenu()">Players</a>
+    <a id="nav-player-hub"     class="active"  onclick="showPage('player-hub');closeMenu()">Pickups</a>
     <a id="nav-my-team"                        onclick="showPage('my-team');closeMenu()">My Team</a>
     <a id="nav-season-board"                   onclick="showPage('season-board');closeMenu()">Season Board</a>
     <a id="nav-schedule"                       onclick="showPage('schedule');closeMenu()">Schedule</a>
@@ -154,24 +154,36 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   <div class="page-hero">
     <div class="page-hero-inner">
       <div class="page-eyebrow">Grind Line</div>
-      <div class="page-title">Players</div>
-      <p class="page-desc">Every rostered NHL skater, straight from the NHL API &mdash; three seasons of points, goals, assists and shots per game, each team's own scoring context, this week's opponents, and a disclosed points projection for the week. No salaries, nothing estimated beyond the projection formula itself.</p>
+      <div class="page-title">Pickups</div>
+      <p class="page-desc">Every skater not already on your My Team roster, ranked by projected points this week &mdash; straight from the NHL API, same projection as everywhere else on this site. No salaries, nothing estimated beyond the projection formula itself.</p>
     </div>
   </div>
   <div class="main-wrap">
-    <div class="section-divider"><h2>Player Reference</h2><div class="sd-line"></div><div class="sd-badge" id="ph-week-badge">Loading...</div></div>
+    <div class="section-divider"><h2>Available Pickups</h2><div class="sd-line"></div><div class="sd-badge" id="ph-week-badge">Loading...</div></div>
     <div id="ph-preseason-banner" style="display:none;background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.25);border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:0.8rem;color:var(--text);"></div>
     <div id="ph-stale-banner"></div>
+    <div id="ph-empty-team-note" style="display:none;background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:0.78rem;color:var(--text);">Your My Team roster is empty, so nothing is excluded below &mdash; this is every eligible skater. Add players on the <a onclick="showPage('my-team')" style="color:var(--accent);cursor:pointer;">My Team</a> page and they'll drop off this list.</div>
     <div style="font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:16px;" id="ph-formula-note"></div>
 
-    <div class="form-group" style="max-width:340px;margin-bottom:16px;">
-      <label for="ph-search">Search player or team</label>
-      <input type="text" id="ph-search" placeholder="e.g. McDavid or EDM" oninput="phFilterAndRender()">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+      <div class="form-group" style="max-width:340px;">
+        <label for="ph-search">Search player or team</label>
+        <input type="text" id="ph-search" placeholder="e.g. McDavid or EDM" oninput="phFilterAndRender()">
+      </div>
+      <div class="form-group" style="max-width:200px;">
+        <label for="ph-min-games">Minimum games this week</label>
+        <select id="ph-min-games" onchange="phFilterAndRender()">
+          <option value="1">1+ games</option>
+          <option value="2">2+ games</option>
+          <option value="3" selected>3+ games</option>
+          <option value="4">4+ games</option>
+        </select>
+      </div>
     </div>
 
     <div style="font-size:0.7rem;color:var(--muted);margin-bottom:8px;" id="ph-count-note"></div>
     <div class="recap-table" id="ph-table"></div>
-    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Only players on a team's actual current roster are shown &mdash; never someone who has since been traded or waived. A stat tagged <span style="color:var(--orange);">(last season)</span> is exactly that, not this year's form; it shows up until real current-season games replace it. The projection's prior-season rate is pooled across the two most recent seasons and requires at least 20 games combined &mdash; below that it's left blank rather than let a small sample (a 1-game call-up, say) produce a misleadingly high rate. Click a player to see the full three-season breakdown, team context, this week's opponents, and the projection math.</div>
+    <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Only players on a team's actual current roster are shown &mdash; never someone who has since been traded or waived. A stat tagged <span style="color:var(--orange);">(last season)</span> is exactly that, not this year's form; it shows up until real current-season games replace it. The projection's prior-season rate is pooled across the two most recent seasons and requires at least 20 games combined &mdash; below that it's left blank rather than let a small sample (a 1-game call-up, say) produce a misleadingly high rate. Ranked by projected points alone &mdash; we don't know your league's roster size or scoring system, so this isn't "better than your worst player," just the raw ranking. Click a player to see the full three-season breakdown, team context, this week's opponents, and the projection math.</div>
   </div>
 </div>
 <div id="page-my-team" class="page">
@@ -789,8 +801,6 @@ function phRenderTable(ids) {
   const header = `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml()}</div>`;
   el.innerHTML = header + ids.map(id => phRowHtml(id, phData.players[id])).join('');
 
-  document.getElementById('ph-count-note').textContent = `${ids.length} of ${Object.keys(phData.players).length} players`;
-
   el.querySelectorAll('.ph-row').forEach(row => {
     row.addEventListener('click', () => {
       const id = row.getAttribute('data-id');
@@ -885,6 +895,7 @@ function renderMyTeam() {
   }
   if (emptyEl) emptyEl.style.display = validIds.length ? 'none' : 'block';
   mtSearchRender();
+  phFilterAndRender(); // keep Pickups' exclusion list in sync with team changes
 
   let totalProjected = 0, fourGame = 0, twoGame = 0;
   validIds.forEach(id => {
@@ -901,8 +912,25 @@ function renderMyTeam() {
 
 function phFilterAndRender() {
   if (!phData) return;
+
+  const emptyTeamNote = document.getElementById('ph-empty-team-note');
+  if (emptyTeamNote) emptyTeamNote.style.display = myTeamIds.length ? 'none' : 'block';
+
+  const minGames = parseInt(document.getElementById('ph-min-games').value, 10) || 1;
+
+  // Pool = every skater eligible as a pickup: meets the games-this-week
+  // floor, and isn't already on the user's own team (skip that exclusion
+  // entirely when the team is empty, per the empty-team note above).
+  let pool = Object.keys(phData.players).filter(id => {
+    const gw = phData.players[id].projection.games_this_week;
+    return gw != null && gw >= minGames;
+  });
+  if (myTeamIds.length) {
+    pool = pool.filter(id => !isOnMyTeam(id));
+  }
+
   const q = (document.getElementById('ph-search').value || '').trim().toLowerCase();
-  let ids = Object.keys(phData.players);
+  let ids = pool;
   if (q) {
     ids = ids.filter(id => {
       const p = phData.players[id];
@@ -917,7 +945,10 @@ function phFilterAndRender() {
     if (pb == null) return -1;
     return pb - pa;
   });
+
   phRenderTable(ids);
+  const excludedNote = myTeamIds.length ? ` &mdash; excluding ${myTeamIds.length} on your team` : '';
+  document.getElementById('ph-count-note').innerHTML = `${ids.length} of ${pool.length} eligible pickups shown${excludedNote}`;
 }
 
 async function buildPlayerHub() {
