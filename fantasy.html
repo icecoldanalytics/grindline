@@ -191,7 +191,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div class="page-hero-inner">
       <div class="page-eyebrow">Grind Line</div>
       <div class="page-title">My Team</div>
-      <p class="page-desc">Your own shortlist. Search for a player below to add them, up to 20, and see their combined projection and workload for the week.</p>
+      <p class="page-desc">Your own shortlist. Search below to add skaters (up to 25) and goalies (up to 3) separately, and see your skaters' combined projection and workload for the week.</p>
     </div>
   </div>
   <div class="main-wrap">
@@ -199,32 +199,45 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 
     <div class="section-divider"><h2>Add Players</h2><div class="sd-line"></div></div>
     <div class="form-group" style="max-width:420px;margin-bottom:8px;">
-      <label for="mt-search">Search player or team</label>
-      <input type="text" id="mt-search" placeholder="e.g. McDavid or EDM" oninput="mtSearchRender()">
+      <label for="mt-search">Search skater or goalie, by name or team</label>
+      <input type="text" id="mt-search" placeholder="e.g. McDavid, EDM, or a goalie's name" oninput="mtSearchRender()">
     </div>
     <div style="font-size:0.72rem;color:var(--muted);margin-bottom:10px;" id="mt-search-cap-note"></div>
     <div id="mt-search-results" style="margin-bottom:8px;"></div>
 
-    <div class="section-divider" style="margin-top:36px;"><h2>Weekly Summary</h2><div class="sd-line"></div><div class="sd-badge" id="mt-count-badge">0 / 20 players</div></div>
+    <div class="section-divider" style="margin-top:36px;"><h2>Weekly Summary</h2><div class="sd-line"></div></div>
     <div class="tracker-grid" style="margin-bottom:8px;">
       <div class="tracker-card">
         <div class="tracker-card-header"><h3>Projected Points This Week</h3></div>
         <div class="tracker-card-body">
-          <div class="stat-row"><span class="stat-label">Total, My Team</span><span class="stat-val good" id="mt-total-projected">0.00</span></div>
+          <div class="stat-row"><span class="stat-label">Total (skaters only)</span><span class="stat-val good" id="mt-total-projected">0.00</span></div>
         </div>
       </div>
       <div class="tracker-card">
-        <div class="tracker-card-header"><h3>Schedule Split</h3></div>
+        <div class="tracker-card-header"><h3>Skater Schedule Split</h3></div>
         <div class="tracker-card-body">
-          <div class="stat-row"><span class="stat-label">Players on 4-game weeks</span><span class="stat-val good" id="mt-four-game">0</span></div>
-          <div class="stat-row"><span class="stat-label">Players on 2-game weeks</span><span class="stat-val warn" id="mt-two-game">0</span></div>
+          <div class="stat-row"><span class="stat-label">Skaters on 4-game weeks</span><span class="stat-val good" id="mt-four-game">0</span></div>
+          <div class="stat-row"><span class="stat-label">Skaters on 2-game weeks</span><span class="stat-val warn" id="mt-two-game">0</span></div>
+        </div>
+      </div>
+      <div class="tracker-card">
+        <div class="tracker-card-header"><h3>Roster</h3></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Skaters</span><span class="stat-val" id="mt-skater-count">0 / 25</span></div>
+          <div class="stat-row"><span class="stat-label">Goalies</span><span class="stat-val" id="mt-goalie-count">0 / 3</span></div>
         </div>
       </div>
     </div>
 
-    <div class="section-divider" style="margin-top:36px;"><h2>Your Players</h2><div class="sd-line"></div><button class="mt-clear-btn" onclick="clearMyTeam()">Clear All</button></div>
-    <div id="mt-empty-note" style="display:none;font-size:0.85rem;color:var(--muted);padding:28px 20px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;">You haven't added anyone yet. Search for a player above to add up to 20.</div>
-    <div class="recap-table" id="mt-table"></div>
+    <div class="section-divider" style="margin-top:36px;"><h2>Your Team</h2><div class="sd-line"></div><button class="mt-clear-btn" onclick="clearMyTeam()">Clear All</button></div>
+
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Skaters</div>
+    <div id="mt-skater-empty-note" style="display:none;font-size:0.85rem;color:var(--muted);padding:28px 20px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:24px;">No skaters added yet. Search above to add up to 25.</div>
+    <div class="recap-table" id="mt-skater-table" style="margin-bottom:24px;"></div>
+
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Goalies</div>
+    <div id="mt-goalie-empty-note" style="display:none;font-size:0.85rem;color:var(--muted);padding:28px 20px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;">No goalies added yet. Search above to add up to 3. Click a goalie once added to see their full three-season line.</div>
+    <div class="recap-table" id="mt-goalie-table"></div>
   </div>
 </div>
 <div id="page-season-board" class="page">
@@ -709,42 +722,63 @@ function phDetailHtml(playerId, p) {
 
 const PH_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px';
 const MT_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px 100px';
+const MT_GOALIE_GRID_COLS = '1fr 60px 55px 50px 70px 65px 50px 110px 110px 100px';
 
-// ── MY TEAM state (localStorage only - no accounts, no backend) ─────────────
-const MY_TEAM_KEY = 'grindline_my_team_v1';
-const MY_TEAM_CAP = 20;
+// ── MY TEAM state (localStorage only - no accounts, no backend). Skaters
+// and goalies are counted and capped independently, since they're
+// different roster slots, not one shared pool. ───────────────────────────
+const MY_TEAM_KEY = 'grindline_my_team_v2';
+const SKATER_CAP = 25;
+const GOALIE_CAP = 3;
 
 function loadMyTeam() {
   try {
     const raw = localStorage.getItem(MY_TEAM_KEY);
-    const ids = raw ? JSON.parse(raw) : [];
-    return Array.isArray(ids) ? ids : [];
-  } catch (e) { return []; }
+    const parsed = raw ? JSON.parse(raw) : null;
+    return {
+      skaters: Array.isArray(parsed && parsed.skaters) ? parsed.skaters : [],
+      goalies: Array.isArray(parsed && parsed.goalies) ? parsed.goalies : [],
+    };
+  } catch (e) { return { skaters: [], goalies: [] }; }
 }
 function saveMyTeam() {
-  try { localStorage.setItem(MY_TEAM_KEY, JSON.stringify(myTeamIds)); } catch (e) {}
+  try { localStorage.setItem(MY_TEAM_KEY, JSON.stringify(myTeam)); } catch (e) {}
 }
-let myTeamIds = loadMyTeam();
-function isOnMyTeam(id) { return myTeamIds.includes(id); }
+let myTeam = loadMyTeam();
+let mtGoalieOpenId = null;
+
+function playerType(id) {
+  if (phData && phData.players && phData.players[id]) return 'skater';
+  if (phData && phData.goalies && phData.goalies[id]) return 'goalie';
+  return null;
+}
+function isOnMyTeam(id) {
+  return myTeam.skaters.includes(id) || myTeam.goalies.includes(id);
+}
 
 function toggleMyTeam(id) {
-  if (isOnMyTeam(id)) {
-    myTeamIds = myTeamIds.filter(x => x !== id);
+  const type = playerType(id);
+  if (!type) return;
+  const list = type === 'skater' ? myTeam.skaters : myTeam.goalies;
+  const cap = type === 'skater' ? SKATER_CAP : GOALIE_CAP;
+  const idx = list.indexOf(id);
+  if (idx > -1) {
+    list.splice(idx, 1);
   } else {
-    if (myTeamIds.length >= MY_TEAM_CAP) {
-      alert(`My Team is capped at ${MY_TEAM_CAP} players — remove one before adding another.`);
+    if (list.length >= cap) {
+      alert(`Your ${type} slots are full (${cap}/${cap}) — remove one before adding another.`);
       return;
     }
-    myTeamIds.push(id);
+    list.push(id);
   }
   saveMyTeam();
   renderMyTeam();
 }
 
 function clearMyTeam() {
-  if (!myTeamIds.length) return;
-  if (!confirm('Remove all players from My Team? This can\'t be undone.')) return;
-  myTeamIds = [];
+  if (!myTeam.skaters.length && !myTeam.goalies.length) return;
+  if (!confirm('Remove everyone from My Team - skaters and goalies? This can\'t be undone.')) return;
+  myTeam = { skaters: [], goalies: [] };
   saveMyTeam();
   renderMyTeam();
 }
@@ -810,7 +844,7 @@ function phRenderTable(ids) {
   });
 }
 
-// ── MY TEAM: search-to-add, roster table + weekly summary ───────────────
+// ── MY TEAM: search-to-add, skater + goalie roster tables, weekly summary ──
 function mtRowHtml(playerId, p) {
   return `<div class="recap-row wide" style="grid-template-columns:${MT_GRID_COLS};">
       ${phBaseCellsHtml(p)}
@@ -825,24 +859,112 @@ function mtSearchRowHtml(playerId, p) {
     </div>`;
 }
 
+// Goalies get their own cell/header/detail functions - different stats
+// entirely (no projection, real counting + rate stats instead), so
+// there's nothing to usefully share with phBaseCellsHtml/phHeaderCellsHtml.
+function mtGoalieBaseCellsHtml(g) {
+  const s = g.seasons[phData.season];
+  return `
+      <span class="rr-game"><strong>${g.name}</strong> <span style="color:var(--muted);font-size:0.72rem;">${g.position}</span></span>
+      <span style="text-align:right;">${g.team}</span>
+      <span style="text-align:right;">${s.games_played}</span>
+      <span style="text-align:right;">${s.wins}</span>
+      <span style="text-align:right;">${s.save_pct == null ? '—' : s.save_pct.toFixed(3)}</span>
+      <span style="text-align:right;">${s.gaa == null ? '—' : s.gaa.toFixed(2)}</span>
+      <span style="text-align:right;">${s.shutouts}</span>
+      <span style="text-align:right;">${g.games_this_week}</span>
+      <span style="text-align:right;">${g.last_start_date || '—'}</span>`;
+}
+function mtGoalieHeaderCellsHtml(lastLabel) {
+  return `
+      <span class="rr-game"><strong>Goalie</strong></span>
+      <span style="text-align:right;"><strong>Team</strong></span>
+      <span style="text-align:right;"><strong>GP</strong> <span style="color:var(--muted);font-size:0.6rem;">(this szn)</span></span>
+      <span style="text-align:right;"><strong>W</strong></span>
+      <span style="text-align:right;"><strong>SV%</strong></span>
+      <span style="text-align:right;"><strong>GAA</strong></span>
+      <span style="text-align:right;"><strong>SO</strong></span>
+      <span style="text-align:right;"><strong>Games This Wk</strong> <span style="color:var(--muted);font-size:0.6rem;">(team)</span></span>
+      <span style="text-align:right;"><strong>Last Start</strong></span>${lastLabel ? `
+      <span style="text-align:right;"><strong>${lastLabel}</strong></span>` : ''}`;
+}
+const MT_GOALIE_DETAIL_COLS = '100px 55px 55px 50px 50px 55px 50px 70px 65px';
+function mtGoalieDetailHtml(g) {
+  const seasonIds = [phData.season, ...phData.prior_seasons];
+  const rows = seasonIds.map(sid => {
+    const s = g.seasons[sid];
+    return `<div class="recap-row wide" style="grid-template-columns:${MT_GOALIE_DETAIL_COLS};">
+      <span class="rr-game">${s.label}</span>
+      <span style="text-align:right;">${s.games_played}</span>
+      <span style="text-align:right;">${s.games_started}</span>
+      <span style="text-align:right;">${s.wins}</span>
+      <span style="text-align:right;">${s.losses}</span>
+      <span style="text-align:right;">${s.ot_losses}</span>
+      <span style="text-align:right;">${s.shutouts}</span>
+      <span style="text-align:right;">${s.save_pct == null ? '—' : s.save_pct.toFixed(3)}</span>
+      <span style="text-align:right;">${s.gaa == null ? '—' : s.gaa.toFixed(2)}</span>
+    </div>`;
+  }).join('');
+  return `
+    <div style="padding:16px 20px;background:rgba(255,255,255,0.02);">
+      <div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Three-Season Line</div>
+      <div class="recap-table">
+        <div class="recap-row wide" style="grid-template-columns:${MT_GOALIE_DETAIL_COLS};background:rgba(255,255,255,0.03);">
+          <span class="rr-game"><strong>Season</strong></span>
+          <span style="text-align:right;"><strong>GP</strong></span>
+          <span style="text-align:right;"><strong>GS</strong></span>
+          <span style="text-align:right;"><strong>W</strong></span>
+          <span style="text-align:right;"><strong>L</strong></span>
+          <span style="text-align:right;"><strong>OTL</strong></span>
+          <span style="text-align:right;"><strong>SO</strong></span>
+          <span style="text-align:right;"><strong>SV%</strong></span>
+          <span style="text-align:right;"><strong>GAA</strong></span>
+        </div>
+        ${rows}
+      </div>
+      <div style="font-size:0.72rem;color:var(--muted);margin-top:10px;line-height:1.6;">No projected starts or points shown &mdash; which goalie starts on a given night isn't predictable from anything this site can see, and goalie fantasy scoring isn't points-based anyway. These are the real season numbers; the call is yours.</div>
+    </div>`;
+}
+function mtGoalieRowHtml(goalieId, g) {
+  const isOpen = mtGoalieOpenId === goalieId;
+  let html = `<div class="recap-row wide mt-goalie-row" data-id="${goalieId}" style="grid-template-columns:${MT_GOALIE_GRID_COLS};cursor:pointer;">
+      ${mtGoalieBaseCellsHtml(g)}
+      <span style="text-align:right;"><button class="ph-team-btn on" data-id="${goalieId}" title="Remove from My Team">Remove</button></span>
+    </div>`;
+  if (isOpen) html += `<div class="ph-detail">${mtGoalieDetailHtml(g)}</div>`;
+  return html;
+}
+function mtGoalieSearchRowHtml(goalieId, g) {
+  return `<div class="recap-row wide mt-search-row mt-goalie-search-row" data-id="${goalieId}" style="grid-template-columns:${MT_GOALIE_GRID_COLS};cursor:pointer;">
+      ${mtGoalieBaseCellsHtml(g)}
+      <span style="text-align:right;"><button class="ph-team-btn" data-id="${goalieId}">+ Add</button></span>
+    </div>`;
+}
+
 function mtSearchRender() {
   const el = document.getElementById('mt-search-results');
   const capNote = document.getElementById('mt-search-cap-note');
-  if (!el || !phData || !phData.players) return;
+  if (!el || !phData) return;
 
-  const atCap = myTeamIds.length >= MY_TEAM_CAP;
-  if (capNote) capNote.textContent = atCap ? `My Team is full (${MY_TEAM_CAP}/${MY_TEAM_CAP}) — remove a player below to add another.` : '';
+  const skaterAtCap = myTeam.skaters.length >= SKATER_CAP;
+  const goalieAtCap = myTeam.goalies.length >= GOALIE_CAP;
+  if (capNote) {
+    const notes = [];
+    if (skaterAtCap) notes.push(`Skaters full (${SKATER_CAP}/${SKATER_CAP})`);
+    if (goalieAtCap) notes.push(`Goalies full (${GOALIE_CAP}/${GOALIE_CAP})`);
+    capNote.textContent = notes.length ? notes.join(' · ') + ' — remove one below to add another.' : '';
+  }
 
   const q = (document.getElementById('mt-search').value || '').trim().toLowerCase();
   if (!q) { el.innerHTML = ''; return; }
 
-  const matches = Object.keys(phData.players)
+  const skaterMatches = phData.players ? Object.keys(phData.players)
     .filter(id => !isOnMyTeam(id))
     .filter(id => {
       const p = phData.players[id];
       return p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q);
-    });
-  matches.sort((a, b) => {
+    }) : [];
+  skaterMatches.sort((a, b) => {
     const pa = phData.players[a].projection.projected_points;
     const pb = phData.players[b].projection.projected_points;
     if (pa == null && pb == null) return 0;
@@ -850,17 +972,41 @@ function mtSearchRender() {
     if (pb == null) return -1;
     return pb - pa;
   });
-  const shown = matches.slice(0, 12);
 
-  if (!shown.length) {
-    el.innerHTML = `<div style="font-size:0.8rem;color:var(--muted);padding:10px 2px;">No matching players.</div>`;
+  const goalieMatches = phData.goalies ? Object.keys(phData.goalies)
+    .filter(id => !isOnMyTeam(id))
+    .filter(id => {
+      const g = phData.goalies[id];
+      return g.name.toLowerCase().includes(q) || g.team.toLowerCase().includes(q);
+    }) : [];
+  goalieMatches.sort((a, b) => phData.goalies[a].name.localeCompare(phData.goalies[b].name));
+
+  const shownSkaters = skaterMatches.slice(0, 8);
+  const shownGoalies = goalieMatches.slice(0, 4);
+
+  if (!shownSkaters.length && !shownGoalies.length) {
+    el.innerHTML = `<div style="font-size:0.8rem;color:var(--muted);padding:10px 2px;">No matching skaters or goalies.</div>`;
     return;
   }
 
-  const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('Add')}</div>`;
-  const moreNote = matches.length > shown.length
-    ? `<div style="font-size:0.7rem;color:var(--muted);padding:8px 20px;">+${matches.length - shown.length} more match${matches.length - shown.length === 1 ? '' : 'es'} — narrow your search to see them.</div>` : '';
-  el.innerHTML = `<div class="recap-table">${header}${shown.map(id => mtSearchRowHtml(id, phData.players[id])).join('')}</div>${moreNote}`;
+  let html = '';
+  if (shownSkaters.length) {
+    const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('Add')}</div>`;
+    const remaining = skaterMatches.length - shownSkaters.length;
+    const more = remaining > 0
+      ? `<div style="font-size:0.7rem;color:var(--muted);padding:8px 20px;">+${remaining} more skater${remaining === 1 ? '' : 's'} — narrow your search to see them.</div>` : '';
+    html += `<div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:12px 0 6px;">Skaters</div>
+      <div class="recap-table">${header}${shownSkaters.map(id => mtSearchRowHtml(id, phData.players[id])).join('')}</div>${more}`;
+  }
+  if (shownGoalies.length) {
+    const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GOALIE_GRID_COLS};background:rgba(255,255,255,0.03);">${mtGoalieHeaderCellsHtml('Add')}</div>`;
+    const remaining = goalieMatches.length - shownGoalies.length;
+    const more = remaining > 0
+      ? `<div style="font-size:0.7rem;color:var(--muted);padding:8px 20px;">+${remaining} more goalie${remaining === 1 ? '' : 's'} — narrow your search to see them.</div>` : '';
+    html += `<div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:12px 0 6px;">Goalies</div>
+      <div class="recap-table">${header}${shownGoalies.map(id => mtGoalieSearchRowHtml(id, phData.goalies[id])).join('')}</div>${more}`;
+  }
+  el.innerHTML = html;
 
   el.querySelectorAll('.mt-search-row').forEach(row => {
     row.addEventListener('click', () => toggleMyTeam(row.getAttribute('data-id')));
@@ -868,37 +1014,67 @@ function mtSearchRender() {
 }
 
 function renderMyTeam() {
-  const tableEl = document.getElementById('mt-table');
-  const emptyEl = document.getElementById('mt-empty-note');
-  const countBadge = document.getElementById('mt-count-badge');
-  if (countBadge) countBadge.textContent = `${myTeamIds.length} / ${MY_TEAM_CAP} players`;
-  if (!phData || !phData.players) return;
+  const skaterTableEl = document.getElementById('mt-skater-table');
+  const goalieTableEl = document.getElementById('mt-goalie-table');
+  const skaterEmptyEl = document.getElementById('mt-skater-empty-note');
+  const goalieEmptyEl = document.getElementById('mt-goalie-empty-note');
+  const skaterCountEl = document.getElementById('mt-skater-count');
+  const goalieCountEl = document.getElementById('mt-goalie-count');
+  const setCounts = () => {
+    if (skaterCountEl) skaterCountEl.textContent = `${myTeam.skaters.length} / ${SKATER_CAP}`;
+    if (goalieCountEl) goalieCountEl.textContent = `${myTeam.goalies.length} / ${GOALIE_CAP}`;
+  };
+  setCounts();
+  if (!phData) return;
 
   // Prune ids for players no longer on a current roster (traded/waived off
   // since being added) - same "current roster only" rule the rest of this
   // page follows.
-  const validIds = myTeamIds.filter(id => phData.players[id]);
-  if (validIds.length !== myTeamIds.length) {
-    myTeamIds = validIds;
+  const validSkaters = myTeam.skaters.filter(id => phData.players && phData.players[id]);
+  const validGoalies = myTeam.goalies.filter(id => phData.goalies && phData.goalies[id]);
+  if (validSkaters.length !== myTeam.skaters.length || validGoalies.length !== myTeam.goalies.length) {
+    myTeam = { skaters: validSkaters, goalies: validGoalies };
     saveMyTeam();
-    if (countBadge) countBadge.textContent = `${myTeamIds.length} / ${MY_TEAM_CAP} players`;
+    setCounts();
   }
 
-  if (tableEl) {
-    if (!validIds.length) {
-      tableEl.innerHTML = '';
+  if (skaterTableEl) {
+    if (!validSkaters.length) {
+      skaterTableEl.innerHTML = '';
     } else {
       const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('Remove')}</div>`;
-      tableEl.innerHTML = header + validIds.map(id => mtRowHtml(id, phData.players[id])).join('');
-      bindTeamButtons(tableEl);
+      skaterTableEl.innerHTML = header + validSkaters.map(id => mtRowHtml(id, phData.players[id])).join('');
+      bindTeamButtons(skaterTableEl);
     }
   }
-  if (emptyEl) emptyEl.style.display = validIds.length ? 'none' : 'block';
+  if (skaterEmptyEl) skaterEmptyEl.style.display = validSkaters.length ? 'none' : 'block';
+
+  if (goalieTableEl) {
+    if (!validGoalies.length) {
+      goalieTableEl.innerHTML = '';
+    } else {
+      const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GOALIE_GRID_COLS};background:rgba(255,255,255,0.03);">${mtGoalieHeaderCellsHtml('Remove')}</div>`;
+      goalieTableEl.innerHTML = header + validGoalies.map(id => mtGoalieRowHtml(id, phData.goalies[id])).join('');
+      goalieTableEl.querySelectorAll('.mt-goalie-row').forEach(row => {
+        row.addEventListener('click', () => {
+          const id = row.getAttribute('data-id');
+          mtGoalieOpenId = mtGoalieOpenId === id ? null : id;
+          renderMyTeam();
+        });
+      });
+      bindTeamButtons(goalieTableEl);
+    }
+  }
+  if (goalieEmptyEl) goalieEmptyEl.style.display = validGoalies.length ? 'none' : 'block';
+
   mtSearchRender();
   phFilterAndRender(); // keep Pickups' exclusion list in sync with team changes
 
+  // Skaters only - goalies have no projection to sum (see build_player_hub.py)
+  // and mixing a goalie's team-games-this-week into this would wrongly imply
+  // they're predicted to play in all of them.
   let totalProjected = 0, fourGame = 0, twoGame = 0;
-  validIds.forEach(id => {
+  validSkaters.forEach(id => {
     const proj = phData.players[id].projection;
     if (proj.projected_points != null) totalProjected += proj.projected_points;
     if (proj.games_this_week === 4) fourGame++;
@@ -914,19 +1090,20 @@ function phFilterAndRender() {
   if (!phData) return;
 
   const emptyTeamNote = document.getElementById('ph-empty-team-note');
-  if (emptyTeamNote) emptyTeamNote.style.display = myTeamIds.length ? 'none' : 'block';
+  if (emptyTeamNote) emptyTeamNote.style.display = myTeam.skaters.length ? 'none' : 'block';
 
   const minGames = parseInt(document.getElementById('ph-min-games').value, 10) || 1;
 
   // Pool = every skater eligible as a pickup: meets the games-this-week
   // floor, and isn't already on the user's own team (skip that exclusion
   // entirely when the team is empty, per the empty-team note above).
+  // Goalies never appear on Pickups, so only the skater roster matters here.
   let pool = Object.keys(phData.players).filter(id => {
     const gw = phData.players[id].projection.games_this_week;
     return gw != null && gw >= minGames;
   });
-  if (myTeamIds.length) {
-    pool = pool.filter(id => !isOnMyTeam(id));
+  if (myTeam.skaters.length) {
+    pool = pool.filter(id => !myTeam.skaters.includes(id));
   }
 
   const q = (document.getElementById('ph-search').value || '').trim().toLowerCase();
@@ -947,7 +1124,7 @@ function phFilterAndRender() {
   });
 
   phRenderTable(ids);
-  const excludedNote = myTeamIds.length ? ` &mdash; excluding ${myTeamIds.length} on your team` : '';
+  const excludedNote = myTeam.skaters.length ? ` &mdash; excluding ${myTeam.skaters.length} on your team` : '';
   document.getElementById('ph-count-note').innerHTML = `${ids.length} of ${pool.length} eligible pickups shown${excludedNote}`;
 }
 

@@ -102,13 +102,41 @@ has no qualifying games in EITHER season the projection is left null
 (shown as blank on the page, never a fabricated zero) - confirmed live
 against 288 such players in the current roster set.
 
+GOALIES: a separate top-level "goalies" dict, same playerId-keyed shape
+philosophy as "players" but with goalie-appropriate stats instead of a
+skater line: games played, games started, wins, losses, OT losses,
+shutouts, save % and GAA - for this season and both prior seasons,
+using the SAME prior-season cache file and cache-once-reuse-after
+mechanism as skaters (extract_prior_seasons() now pulls both skater and
+goalie fields from every landing row, harmlessly defaulting to 0 for
+whichever fields the other player type doesn't have). Deliberately NO
+projected points or projected starts figure: goalie fantasy scoring
+isn't points-based, and which goalie starts on a given night isn't
+predictable from anything this script can see - the real season stats
+are shown and the projection machinery from the skater half of this
+file is not reused for goalies at all. save_pct is derived from pooled
+shots_against/goals_against (same formula as skaters' save_pct); GAA is
+derived from pooled goals_against and total TOI (goals per 60 minutes),
+not goals_against/games_played, which would be a different, less
+standard number. Each goalie also carries games_this_week (their team's,
+same source as the skater side) and last_start_date - found via that
+specific goalie's OWN game log (player/{id}/game-log/{season}/{type},
+gamesStarted flag), not their team's most recent game, so a backup who
+hasn't played in weeks doesn't inherit the starter's date. Falls back
+from regular-season to preseason game log when the regular season
+hasn't started yet, same "preseason is the only signal available"
+reasoning used for team context's last-start lookup. A cache entry
+written before this goalie support existed is detected (missing the
+"wins" key) and re-fetched once rather than silently read as zeros.
+
 Run:  python .github/scripts/build_player_hub.py
 Writes data/player_hub.json and updates data/player_prior_seasons_cache.json.
 The first run (or a run after many new call-ups) still does one landing-
 page call per uncached player; a normal daily run after that is roughly
 32 (rosters) + 32 (schedules) + 32 (current-season club-stats) + ~12-32
-(goalie boxscore/landing) + 2 (team summary) calls - well under 150,
-down from 800-900.
+(goalie boxscore/landing) + 2 (team summary) + ~60-96 (goalie last-start
+game-log, one call per rostered goalie every run - not cached, since
+it's a "right now" fact) calls.
 """
 import json
 import os
@@ -135,7 +163,12 @@ OUTPUT_PATH = os.path.join("data", "player_hub.json")
 CACHE_PATH = os.path.join("data", "player_prior_seasons_cache.json")
 
 EMPTY_SEASON = {"games_played": 0, "points": 0, "goals": 0, "assists": 0,
-                 "shots": 0, "shots_against": 0, "goals_against": 0}
+                 "shots": 0, "shots_against": 0, "goals_against": 0,
+                 # Goalie-only fields, always present (default 0) so skater
+                 # and goalie raw dicts share one shape - a skater's entry
+                 # simply never has these read.
+                 "games_started": 0, "wins": 0, "losses": 0, "ot_losses": 0,
+                 "shutouts": 0, "toi_seconds": 0}
 
 PROJECTION_FORMULA = (
     "Projected points this week = blended points/game x games this week. "
@@ -165,6 +198,15 @@ def load_cache():
         with open(CACHE_PATH, encoding="utf-8") as f:
             return json.load(f)
     return {}
+
+
+def cache_entry_has_goalie_fields(entry):
+    """True if every PRIOR_SEASONS row in this cache entry already has
+    the goalie fields (wins, as a sentinel key). A cache entry written
+    before goalie support was added won't have them - re-fetching those
+    (rather than silently reading 0 for a real career total) is a
+    one-time cost, same as any other "uncached" player on a fresh run."""
+    return all("wins" in entry.get(sid, {}) for sid in PRIOR_SEASONS)
 
 
 def week_bounds(anchor_date):
@@ -253,8 +295,22 @@ def current_season_stats(club_stats):
         out[pid] = {
             "games_played": g.get("gamesPlayed", 0), "points": 0, "goals": 0, "assists": 0, "shots": 0,
             "shots_against": g.get("shotsAgainst", 0), "goals_against": g.get("goalsAgainst", 0),
+            "games_started": g.get("gamesStarted", 0), "wins": g.get("wins", 0),
+            "losses": g.get("losses", 0), "ot_losses": g.get("overtimeLosses", 0),
+            "shutouts": g.get("shutouts", 0), "toi_seconds": g.get("timeOnIce", 0),
         }
     return out
+
+
+def parse_toi_seconds(s):
+    """'MM:SS' (or 'M:SS') -> total seconds. Used for both a single
+    boxscore's TOI and a landing page season row's cumulative TOI - same
+    format either way."""
+    try:
+        m, sec = s.split(":")
+        return int(m) * 60 + int(sec)
+    except Exception:
+        return 0
 
 
 def get_starter_id(game_id, team):
@@ -276,17 +332,48 @@ def get_starter_id(game_id, team):
     if not goalies:
         return None
 
-    def toi_seconds(s):
-        try:
-            m, sec = s.split(":")
-            return int(m) * 60 + int(sec)
-        except Exception:
-            return 0
-
     starter = next((g for g in goalies if g.get("starter") is True), None)
     if starter is None:
-        starter = max(goalies, key=lambda g: toi_seconds(g.get("toi", "0:00")))
+        starter = max(goalies, key=lambda g: parse_toi_seconds(g.get("toi", "0:00")))
     return starter.get("playerId")
+
+
+def fetch_goalie_last_start(player_id):
+    """The date THIS specific goalie last started (gamesStarted flag on
+    their own game log), not just their team's most recent game - a
+    backup who hasn't played in weeks must not inherit the starter's
+    date. One call per goalie instead of walking every team's boxscores
+    backward game-by-game to find each goalie's own last appearance.
+    Checks this season's regular-season log first, falling back to this
+    season's preseason log if empty (the only signal available before
+    the regular season starts - same reasoning as
+    most_recent_completed_game's "preseason counts" rule elsewhere in
+    this file). Never falls back to a PRIOR season - a goalie's last
+    start from a season ago isn't a "who's playing now" signal once the
+    season has turned over.
+
+    Confirmed live: this endpoint can lag a day or more behind the
+    score/boxscore endpoints for the very newest preseason games (a
+    goalie who started the very first preseason game of 2026-27 still
+    returned an empty game-log the next day) - not a bug here, just this
+    specific NHL API endpoint settling later than others early in a new
+    season. Returns None rather than falling back to a boxscore walk for
+    that gap, consistent with this file's "blank beats a guess" rule."""
+    for game_type in (2, 1):
+        try:
+            r = requests.get(
+                f"https://api-web.nhle.com/v1/player/{player_id}/game-log/{SEASON}/{game_type}",
+                timeout=15,
+            )
+            r.raise_for_status()
+            games = r.json().get("gameLog", [])
+        except Exception as e:
+            print(f"    game-log error for player {player_id} (type {game_type}): {e}")
+            continue
+        starts = [g for g in games if g.get("gamesStarted")]
+        if starts:
+            return starts[0]["gameDate"]  # game-log is sorted most-recent-first
+    return None
 
 
 def most_recent_completed_game(schedule, today_str):
@@ -310,7 +397,11 @@ def fetch_player_landing(player_id):
 def extract_prior_seasons(landing):
     """{season_id: EMPTY_SEASON-shaped dict} for PRIOR_SEASONS only -
     summing multiple rows for the same season (a mid-season trade
-    produces one NHL regular-season row per team - confirmed live)."""
+    produces one NHL regular-season row per team - confirmed live).
+    Goalie-only counting fields (games_started, wins, losses, ot_losses,
+    shutouts, toi_seconds) are pooled the same way for a traded goalie -
+    a skater row simply doesn't have these keys, so they default to 0
+    and are never read for a skater identity anyway."""
     out = {}
     for season_id in PRIOR_SEASONS:
         rows = [
@@ -326,6 +417,12 @@ def extract_prior_seasons(landing):
             "shots": sum(r.get("shots", 0) for r in rows),
             "shots_against": sum(r.get("shotsAgainst", 0) for r in rows),
             "goals_against": sum(r.get("goalsAgainst", 0) for r in rows),
+            "games_started": sum(r.get("gamesStarted", 0) for r in rows),
+            "wins": sum(r.get("wins", 0) for r in rows),
+            "losses": sum(r.get("losses", 0) for r in rows),
+            "ot_losses": sum(r.get("otLosses", 0) for r in rows),
+            "shutouts": sum(r.get("shutouts", 0) for r in rows),
+            "toi_seconds": sum(parse_toi_seconds(r.get("timeOnIce", "0:00")) for r in rows),
         }
     return out
 
@@ -344,6 +441,34 @@ def rate_stats(raw):
         "points_per_game": round(raw["points"] / gp, 3) if gp else None,
         "shots_per_game": round(raw["shots"] / gp, 3) if gp else None,
         "save_pct": save_pct,
+    }
+
+
+def rate_stats_goalie(raw):
+    """EMPTY_SEASON-shaped raw counts -> a goalie's display shape. No
+    projection, no derived "value" number - just the real counting
+    stats plus two derived rates that ARE honestly computable from raw
+    counts: save_pct from shots_against/goals_against (identical
+    definition to rate_stats' save_pct), and GAA from goals_against and
+    total TOI (goals per 60 minutes - NOT goals_against/games_played,
+    which would be a different and less standard number). Both are null,
+    never 0, when there's no relevant playing time to compute them from -
+    same "blank means no data" rule as everywhere else in this file."""
+    gaa = None
+    if raw["toi_seconds"] > 0:
+        gaa = round(raw["goals_against"] * 3600 / raw["toi_seconds"], 2)
+    save_pct = None
+    if raw["shots_against"] > 0:
+        save_pct = round((raw["shots_against"] - raw["goals_against"]) / raw["shots_against"], 3)
+    return {
+        "games_played": raw["games_played"],
+        "games_started": raw["games_started"],
+        "wins": raw["wins"],
+        "losses": raw["losses"],
+        "ot_losses": raw["ot_losses"],
+        "shutouts": raw["shutouts"],
+        "save_pct": save_pct,
+        "gaa": gaa,
     }
 
 
@@ -559,6 +684,53 @@ def main():
 
     print(f"Landing-page calls this run: {landing_calls} (of {total_skaters} skaters - the rest served from cache)")
 
+    print("Building every rostered goalie's 3-season stats...")
+    goalies_out = {}
+    total_goalies = sum(
+        1 for team in teams for identity in rosters[team].values() if identity["group"] == "goalies"
+    )
+    print(f"  {total_goalies} rostered goalies across {len(teams)} teams")
+
+    done_g = 0
+    goalie_landing_calls = 0
+    goalie_gamelog_calls = 0
+    for team in teams:
+        games_this_week = len(teams_out[team]["week_games"])
+        for player_id, identity in rosters[team].items():
+            if identity["group"] != "goalies":
+                continue
+            pid_str = str(player_id)
+            if pid_str not in cache or not cache_entry_has_goalie_fields(cache[pid_str]):
+                landing = fetch_player_landing(player_id)
+                time.sleep(0.15)
+                goalie_landing_calls += 1
+                if landing:
+                    cache[pid_str] = extract_prior_seasons(landing)
+            done_g += 1
+
+            prior = cache.get(pid_str, {s: dict(EMPTY_SEASON) for s in PRIOR_SEASONS})
+            current_raw = current_by_team[team].get(player_id, dict(EMPTY_SEASON))
+
+            seasons = {SEASON: {**rate_stats_goalie(current_raw), "label": SEASON_LABEL}}
+            for sid in PRIOR_SEASONS:
+                seasons[sid] = {**rate_stats_goalie(prior[sid]), "label": ALL_SEASON_LABELS[sid]}
+
+            last_start_date = fetch_goalie_last_start(player_id)
+            time.sleep(0.15)
+            goalie_gamelog_calls += 1
+
+            goalies_out[pid_str] = {
+                "name": f"{identity['first_name']} {identity['last_name']}".strip(),
+                "team": team,
+                "position": identity["position"],
+                "seasons": seasons,
+                "games_this_week": games_this_week,
+                "last_start_date": last_start_date,
+            }
+
+    print(f"Goalie landing-page calls this run: {goalie_landing_calls} (of {total_goalies} goalies - "
+          f"the rest served from cache), {goalie_gamelog_calls} game-log calls for last-start dates")
+
     save_cache(cache)
 
     output = {
@@ -573,13 +745,14 @@ def main():
         "projection_formula": PROJECTION_FORMULA,
         "teams": teams_out,
         "players": players_out,
+        "goalies": goalies_out,
     }
 
     os.makedirs("data", exist_ok=True)
     atomic_write_json(OUTPUT_PATH, output)
 
     print(f"\n{'='*60}")
-    print(f"Wrote {len(players_out)} players across {len(teams_out)} teams to {OUTPUT_PATH}")
+    print(f"Wrote {len(players_out)} skaters and {len(goalies_out)} goalies across {len(teams_out)} teams to {OUTPUT_PATH}")
 
 
 def save_cache(cache):
