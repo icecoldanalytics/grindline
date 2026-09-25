@@ -127,8 +127,25 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .p-card-detail-label{font-size:0.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.3px;line-height:1.3;}
 .p-card-detail-val{font-size:0.82rem;color:var(--text);font-weight:600;}
 .p-card-meta{font-size:0.7rem;color:var(--muted);line-height:1.5;}
+.p-card-more-btn{background:transparent;border:none;color:var(--accent);font-size:0.72rem;font-weight:700;letter-spacing:0.3px;text-transform:uppercase;padding:2px 0;margin-top:-2px;cursor:pointer;text-align:left;}
+.p-card-detail-extra{margin-top:7px;padding-top:7px;border-top:1px dashed var(--border);}
 .p-card-btn.ph-team-btn{width:100%;padding:12px;border-radius:8px;font-size:0.78rem;text-align:center;}
 @media(max-width:768px){.view-toggle{display:none;}}
+/* Card text was unreadably small on a phone - floor body/stat-value text
+   at 16px and labels at 13px on mobile specifically (desktop keeps the
+   tighter sizing, which reads fine with more room and viewing distance). */
+@media(max-width:768px){
+  .p-card-name{font-size:16px;}
+  .p-card-name span{font-size:13px;}
+  .p-card-team{font-size:13px;}
+  .p-card-stat-val{font-size:18px;}
+  .p-card-stat-label{font-size:13px;}
+  .p-card-detail-label{font-size:13px;}
+  .p-card-detail-val{font-size:16px;}
+  .p-card-meta{font-size:16px;}
+  .p-card-btn.ph-team-btn{font-size:16px;}
+  .p-card-more-btn{font-size:13px;padding:6px 0;}
+}
 /* FOOTER */
 footer{background:#03070e;border-top:1px solid var(--border);padding:36px 32px;text-align:center;}
 .footer-brand{font-weight:800;font-size:1.1rem;color:var(--text);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
@@ -928,6 +945,22 @@ function phRowHtml(playerId, p) {
   return html;
 }
 
+// Shared by every card type: a small toggle that reveals the secondary
+// detail block. At mobile's larger minimum type sizes, showing every
+// stat on the card face made cards too tall to scan comfortably - rather
+// than shrinking type back down, the least-decision-relevant stats moved
+// into this tap-to-expand block instead. Plain DOM toggle, no tracked
+// state - resets to collapsed on the next re-render (e.g. adding another
+// player), which is fine for a "peek at more" control.
+function cardMoreToggleHtml() {
+  return `<button type="button" class="p-card-more-btn" onclick="
+      const d = this.nextElementSibling;
+      const show = d.style.display === 'none';
+      d.style.display = show ? 'grid' : 'none';
+      this.textContent = show ? '▴ Fewer stats' : '▾ More stats';
+    ">▾ More stats</button>`;
+}
+
 // Cards get their own add/remove control (unlike the Pickups table, which
 // has never had one) - on mobile the table isn't available at all, so this
 // is the only way to add a pickup straight from this page.
@@ -947,13 +980,16 @@ function phCardHtml(playerId, p) {
         <div class="p-card-stat"><span class="p-card-stat-val">${proj.games_this_week}</span><span class="p-card-stat-label">Games Wk</span></div>
       </div>
       <div class="p-card-detail">
-        <div class="p-card-detail-item"><span class="p-card-detail-label">PPG (blended)</span><span class="p-card-detail-val">${phNum(proj.blended_points_per_game, 2)}</span></div>
         <div class="p-card-detail-item"><span class="p-card-detail-label">This Szn PPG</span><span class="p-card-detail-val">${phNum(thisSzn.points_per_game, 2)}</span></div>
-        <div class="p-card-detail-item"><span class="p-card-detail-label">Prior 2Sn PPG</span><span class="p-card-detail-val">${phNum(proj.prior_points_per_game, 2)}</span></div>
-        <div class="p-card-detail-item"><span class="p-card-detail-label">Shots/Gm (LY)</span><span class="p-card-detail-val">${phNum(lastSzn.shots_per_game, 2)}</span></div>
         <div class="p-card-detail-item"><span class="p-card-detail-label">Goals (this szn)</span><span class="p-card-detail-val">${thisSzn.goals}</span></div>
         <div class="p-card-detail-item"><span class="p-card-detail-label">Assists (this szn)</span><span class="p-card-detail-val">${thisSzn.assists}</span></div>
         ${isD ? `<div class="p-card-detail-item"><span class="p-card-detail-label">Blocked (this szn)</span><span class="p-card-detail-val">${thisSzn.blocked_shots}</span></div>` : ''}
+      </div>
+      ${cardMoreToggleHtml()}
+      <div class="p-card-detail p-card-detail-extra" style="display:none;">
+        <div class="p-card-detail-item"><span class="p-card-detail-label">PPG (blended)</span><span class="p-card-detail-val">${phNum(proj.blended_points_per_game, 2)}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">Prior 2Sn PPG</span><span class="p-card-detail-val">${phNum(proj.prior_points_per_game, 2)}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">Shots/Gm (LY)</span><span class="p-card-detail-val">${phNum(lastSzn.shots_per_game, 2)}</span></div>
       </div>
       <button class="p-card-btn ph-team-btn${onTeam ? ' on' : ''}" data-id="${playerId}">${onTeam ? '✓ On Team — Remove' : '+ Add to My Team'}</button>
     </div>`;
@@ -1100,9 +1136,12 @@ function mtGoalieCardHtml(goalieId, g) {
         <div class="p-card-stat"><span class="p-card-stat-val">${s.wins}</span><span class="p-card-stat-label">Wins (this szn)</span></div>
       </div>
       <div class="p-card-detail">
-        <div class="p-card-detail-item"><span class="p-card-detail-label">GP (this szn)</span><span class="p-card-detail-val">${s.games_played}</span></div>
         <div class="p-card-detail-item"><span class="p-card-detail-label">SV%</span><span class="p-card-detail-val">${s.save_pct == null ? '—' : s.save_pct.toFixed(3)}</span></div>
         <div class="p-card-detail-item"><span class="p-card-detail-label">GAA</span><span class="p-card-detail-val">${s.gaa == null ? '—' : s.gaa.toFixed(2)}</span></div>
+      </div>
+      ${cardMoreToggleHtml()}
+      <div class="p-card-detail p-card-detail-extra" style="display:none;">
+        <div class="p-card-detail-item"><span class="p-card-detail-label">GP (this szn)</span><span class="p-card-detail-val">${s.games_played}</span></div>
         <div class="p-card-detail-item"><span class="p-card-detail-label">Shutouts</span><span class="p-card-detail-val">${s.shutouts}</span></div>
         <div class="p-card-detail-item"><span class="p-card-detail-label">Last Start</span><span class="p-card-detail-val">${g.last_start_date || '—'}</span></div>
       </div>
