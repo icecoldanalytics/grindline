@@ -10,8 +10,17 @@ honestly, per game: price_source is stamped "live_HH:MM_MT" using the
 real clock time this specific run pulled odds, so update_roi.py (and the
 site) can show each game's true capture time instead of a claimed one.
 
-Appends ungraded entries to data/signal_log.json. update_roi.py fills in the
-final scores on its next nightly run.
+Appends ungraded entries to data/signal_log.json (Rest Edge) and
+data/emerging_edge_log.json (Emerging Edge - away B2B, home rested ANY
+amount, not just exactly 2 days). Same odds snapshot serves both -
+Emerging Edge is a strict superset of Rest Edge's home_rest==2 condition,
+so a game can legitimately be logged in both files; this does not cost a
+second Odds API credit. update_roi.py fills in final scores on its next
+nightly run, and - for Emerging Edge only - resolves which bucket
+(started its #1 goalie vs. a backup) each game belongs to once that
+game's boxscore exists; capture_signals.py runs before puck drop and has
+no way to know who's actually starting, so away_starter/goalie_bucket
+are logged null here and filled in later.
 
 Costs 1 Odds API credit per run.
 """
@@ -23,10 +32,11 @@ from datetime import datetime, timedelta
 import pytz
 import requests
 
-from rest_edge import home_ml_average, is_rest_edge
+from rest_edge import home_ml_average, is_emerging_edge, is_rest_edge
 
 MST = pytz.timezone("America/Edmonton")
 LOG_PATH = os.path.join("data", "signal_log.json")
+EMERGING_LOG_PATH = os.path.join("data", "emerging_edge_log.json")
 LOOKBACK_DAYS = 10          # enough to establish rest for any team
 MAX_LOOKBACK = 20
 
@@ -156,6 +166,71 @@ def home_best_price(event):
     return max(prices, key=lambda p: (100 * 100 / abs(p)) if p < 0 else p)
 
 
+def atomic_write_json(path, data, indent=2):
+    tmp_path = path + ".tmp"
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=indent)
+    if os.path.exists(path):
+        os.replace(path, path + ".bak")
+    os.replace(tmp_path, path)
+
+
+def load_log(path):
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    return {"schema": 1, "entries": []}
+
+
+def log_candidates(path, candidates, signal_name, today_str, now, events, extra_fields=None):
+    """Shared append logic for both signal_log.json and
+    emerging_edge_log.json - same skip-if-already-logged, same price
+    lookup against the one shared odds snapshot, same atomic write."""
+    log = load_log(path)
+    seen = {(e["date"], e["away"], e["home"]) for e in log["entries"]}
+
+    added = 0
+    for c in candidates:
+        key = (today_str, c["away"], c["home"])
+        if key in seen:
+            print(f"    [{signal_name}] already logged: {c['away']} @ {c['home']}")
+            continue
+
+        event = find_event(events, c["away"], c["home"])
+        avg = home_ml_average(event.get("bookmakers", []), event.get("home_team", "")) if event else None
+        if avg is None:
+            print(f"    [{signal_name}] NO PRICE for {c['away']} @ {c['home']} — skipped")
+            continue
+
+        entry = {
+            "date":         today_str,
+            "away":         c["away"],
+            "home":         c["home"],
+            "away_rest":    1,
+            "home_rest":    c["home_rest"],
+            "signal":       signal_name,
+            "home_ml_avg":  avg,
+            "home_ml_best": home_best_price(event),
+            "price_source": f"live_{now.strftime('%H:%M')}_MT",
+            "graded":       False,
+        }
+        if extra_fields:
+            entry.update(extra_fields)
+        log["entries"].append(entry)
+        added += 1
+        print(f"    [{signal_name}] logged {c['away']} @ {c['home']} "
+              f"(home rest {c['home_rest']}d) at {avg:+.1f}")
+
+    if added:
+        log["entries"].sort(key=lambda e: (e["date"], e["away"], e["home"]))
+        os.makedirs("data", exist_ok=True)
+        atomic_write_json(path, log)
+        print(f"  ✓ Added {added} entries to {path}")
+    else:
+        print(f"  [{signal_name}] nothing new to add.")
+    return added
+
+
 def main():
     now = datetime.now(MST)
     today = now.date()
@@ -173,67 +248,37 @@ def main():
         print("  No regular-season games today. Nothing to log.")
         return
 
-    # Find signal games
-    candidates = []
+    # Find candidates for both signals from the same rest computation.
+    # Emerging Edge is a superset of Rest Edge (home_rest==2 satisfies
+    # both) - a game can legitimately land in both candidate lists.
+    rest_edge_candidates = []
+    emerging_candidates = []
     for g in todays_games:
         away_rest = rest_days(g["away"], today, teams_by_date)
         home_rest = rest_days(g["home"], today, teams_by_date)
-        if home_rest is None or not is_rest_edge(away_rest, home_rest):
+        if home_rest is None:
             continue
-        candidates.append(dict(g, away_rest=1, home_rest=home_rest))
+        if is_rest_edge(away_rest, home_rest):
+            rest_edge_candidates.append(dict(g, away_rest=1, home_rest=home_rest))
+        if is_emerging_edge(away_rest, home_rest):
+            emerging_candidates.append(dict(g, away_rest=1, home_rest=home_rest))
 
-    print(f"  {len(todays_games)} games, {len(candidates)} signal candidates.")
-    if not candidates:
+    print(f"  {len(todays_games)} games, {len(rest_edge_candidates)} Rest Edge candidates, "
+          f"{len(emerging_candidates)} Emerging Edge candidates.")
+    if not rest_edge_candidates and not emerging_candidates:
         return
 
     events = fetch_live_odds()
 
-    # Load log and skip anything already recorded
-    if os.path.exists(LOG_PATH):
-        with open(LOG_PATH, encoding="utf-8") as f:
-            log = json.load(f)
-    else:
-        log = {"schema": 1, "entries": []}
+    log_candidates(LOG_PATH, rest_edge_candidates, "rest_edge", today_str, now, events)
 
-    seen = {(e["date"], e["away"], e["home"]) for e in log["entries"]}
-
-    added = 0
-    for c in candidates:
-        key = (today_str, c["away"], c["home"])
-        if key in seen:
-            print(f"    already logged: {c['away']} @ {c['home']}")
-            continue
-
-        event = find_event(events, c["away"], c["home"])
-        avg = home_ml_average(event.get("bookmakers", []), event.get("home_team", "")) if event else None
-        if avg is None:
-            print(f"    NO PRICE for {c['away']} @ {c['home']} — skipped")
-            continue
-
-        log["entries"].append({
-            "date":         today_str,
-            "away":         c["away"],
-            "home":         c["home"],
-            "away_rest":    1,
-            "home_rest":    c["home_rest"],
-            "signal":       "rest_edge",
-            "home_ml_avg":  avg,
-            "home_ml_best": home_best_price(event),
-            "price_source": f"live_{now.strftime('%H:%M')}_MT",
-            "graded":       False,
-        })
-        added += 1
-        print(f"    logged {c['away']} @ {c['home']} "
-              f"(home rest {c['home_rest']}d) at {avg:+.1f}")
-
-    if added:
-        log["entries"].sort(key=lambda e: (e["date"], e["away"], e["home"]))
-        os.makedirs("data", exist_ok=True)
-        with open(LOG_PATH, "w", encoding="utf-8") as f:
-            json.dump(log, f, indent=2)
-        print(f"\n✓ Added {added} entries to {LOG_PATH}")
-    else:
-        print("\n  Nothing new to add.")
+    # Emerging Edge: away_starter/goalie_bucket start null - capture runs
+    # before puck drop, so who's actually starting isn't knowable yet.
+    # update_roi.py resolves these once each game's boxscore exists.
+    log_candidates(
+        EMERGING_LOG_PATH, emerging_candidates, "emerging_edge", today_str, now, events,
+        extra_fields={"away_starter": None, "goalie_bucket": None},
+    )
 
 
 if __name__ == "__main__":

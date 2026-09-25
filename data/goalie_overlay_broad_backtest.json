@@ -1,6 +1,5 @@
 {
-  "research_only": true,
-  "not_wired_into": "capture_signals.py, any dashboard/board builder, any HTML page - nothing in this repo reads this output file.",
+  "status": "Backtest validation for the live Emerging Edge signal - betting.html reads this file directly. This script itself is still a standalone backtest (reads only cached historical data, not part of the daily pipeline) - the live signal itself is implemented separately in capture_signals.py/update_roi.py.",
   "question": "Does the goalie overlay (away started its #1 vs a backup) hold across every away-tired/home-rested game, not just the Rest Edge subset (home rested exactly 2 days)?",
   "condition": "Away team on a back-to-back AND home team not on a back-to-back (home rested >=2 days, any amount) - broader than Rest Edge's exactly-2-days requirement.",
   "raw_condition_games": 822,

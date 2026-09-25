@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-25 06:05 AM MT",
+  "generated": "2026-09-25 07:30 AM MT",
   "season": "2025-26",
   "through_date": "2026-04-16",
   "pricing": {
@@ -622,6 +622,44 @@
     "label": "Away B2B + Home Rested 3+ Days",
     "status": "Retired \u2014 no edge found",
     "source": "backtest_rest_signals.py, real closing moneylines, 2022-23 through 2025-26"
+  },
+  "emerging_edge": {
+    "label": "Away B2B + Home Rested (Any Amount, Not B2B) + Away Started Its #1 Goalie",
+    "what_emerging_means": "Fewer games than Rest Edge, and the 95% confidence interval on its backtested ROI still includes zero - it is not yet validated the way Rest Edge is. It's tracked live from opening night regardless, and results are published here either way, win or lose.",
+    "retirement_test": {
+      "games_so_far": 0,
+      "games_needed": 100,
+      "status": "pending",
+      "roi_so_far": null
+    },
+    "number_one": {
+      "games": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0.0,
+      "roi": 0.0,
+      "avg_odds": 0,
+      "breakeven_rate": 0.0,
+      "sd_above_breakeven": 0.0,
+      "sample_ok": false,
+      "streak": "\u2014",
+      "monthly": [],
+      "cumulative": []
+    },
+    "backup_comparison": {
+      "games": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0.0,
+      "roi": 0.0,
+      "avg_odds": 0,
+      "breakeven_rate": 0.0,
+      "sd_above_breakeven": 0.0,
+      "sample_ok": false
+    },
+    "excluded_pre_min_games": 0,
+    "pending_goalie_resolution": 0,
+    "last5": []
   },
   "summary": {
     "total_rest_edge_games": 136,

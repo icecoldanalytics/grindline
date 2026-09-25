@@ -440,6 +440,20 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
         </div>
       </div>
 
+      <div class="tracker-card" style="border-color:rgba(0,232,138,0.25);">
+        <div class="tracker-card-header"><h3>Emerging Edge</h3><span class="sd-badge" id="t-emerging-badge" style="color:var(--cyan);border-color:rgba(0,232,138,0.3);background:rgba(0,232,138,0.08);">Loading...</span></div>
+        <div class="tracker-card-body">
+          <div class="stat-row"><span class="stat-label">Condition</span><span class="stat-val warn">Away B2B + Home Rested</span></div>
+          <div class="stat-row"><span class="stat-label">Backtest Sample</span><span class="stat-val" id="t-emerging-bt-games">—</span></div>
+          <div class="stat-row"><span class="stat-label">Backtest Win Rate</span><span class="stat-val good" id="t-emerging-bt-wr">—</span></div>
+          <div class="stat-row"><span class="stat-label">Backtest ROI</span><span class="stat-val good" id="t-emerging-bt-roi">—</span></div>
+          <div class="stat-row"><span class="stat-label">95% ROI CI</span><span class="stat-val" id="t-emerging-bt-ci">—</span></div>
+          <div class="stat-row"><span class="stat-label">Live Tracked</span><span class="stat-val" id="t-emerging-live-games">—</span></div>
+          <div class="stat-row"><span class="stat-label">Live ROI</span><span class="stat-val" id="t-emerging-live-roi">—</span></div>
+          <div class="stat-row"><span class="stat-label">Retirement Test</span><span class="stat-val" id="t-emerging-retirement">—</span></div>
+        </div>
+      </div>
+
       <div class="tracker-card">
         <div class="tracker-card-header"><h3>Goalie Split — Research</h3><span class="sd-badge" style="color:var(--gold);border-color:rgba(245,166,35,0.3);background:rgba(245,166,35,0.08);">Not sold</span></div>
         <div class="tracker-card-body">
@@ -529,6 +543,27 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       <p><strong>Cancellation:</strong> when both teams are on a back-to-back, the rest difference disappears and no pick is published.</p>
       <br>
       <p><strong>Honest limits:</strong> roughly 120&ndash;135 qualifying games a season means any single year proves very little, and every season so far has landed positive (+3.3% to +8.0%) rather than the flat or losing year a real long-run edge should eventually produce &mdash; treat that as good fortune so far, not a guarantee. Average prices have also swung more than we would have guessed: &minus;186 in 2022&ndash;23 against &minus;100 to &minus;126 in the other three seasons, and we do not have a clean explanation for why. Every future result lands on this page, whichever way it goes.</p>
+    </div>
+
+    <!-- EMERGING EDGE -->
+    <div class="section-divider" style="margin-top:44px;">
+      <h2>Emerging Edge — Goalie Overlay</h2><div class="sd-line"></div><div class="sd-badge" id="emerging-status-badge" style="color:var(--cyan);border-color:rgba(0,232,138,0.3);background:rgba(0,232,138,0.08);">Loading...</div>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text);max-width:760px;margin-bottom:18px;">Away team on a back-to-back, home team <em>not</em> on a back-to-back (any amount of rest — not the exact two days Rest Edge requires), and the away team starts its own #1 goalie by cumulative starts this season. Back the home side. Same flat stake, same no-discretion rule as Rest Edge — a different, newer question about which goalie the tired road team actually sends out.</p>
+
+    <div class="recap-table" id="emerging-season-table"></div>
+
+    <div class="signal-rule-box" style="margin-top:28px;border-color:rgba(0,232,138,0.2);background:rgba(0,232,138,0.04);">
+      <h3 style="color:var(--cyan);">What "Emerging" Means</h3>
+      <p id="emerging-what-means">Loading...</p>
+      <br>
+      <p><strong>The backtest:</strong> <span id="emerging-backtest-summary">Loading...</span></p>
+      <br>
+      <p><strong>Comparison — away starts a backup instead:</strong> <span id="emerging-backup-summary">Loading...</span></p>
+      <br>
+      <p><strong>The retirement test:</strong> if the live sample's first 100 games run net negative ROI, we retire Emerging Edge publicly — the same predetermined-threshold approach Signal 1 was retired under, not a judgment call made after the fact. <span id="emerging-retirement-detail">Loading...</span></p>
+      <br>
+      <p><strong>Live tracking:</strong> <span id="emerging-live-summary">Loading...</span></p>
     </div>
   </div>
 </div>
@@ -1299,6 +1334,99 @@ async function buildGoalie() {
   }
 }
 
+async function buildEmergingEdge(liveBlock) {
+  try {
+    const btRes = await fetch('data/goalie_overlay_broad_backtest.json?nocache=' + Date.now());
+    const bt = await btRes.json();
+    const num1All = bt.goalie_overlay_broad_number_one || {};
+    const backupAll = bt.goalie_overlay_broad_backup || {};
+    const num1 = num1All.pooled || {};
+    const backup = backupAll.pooled || {};
+    const seasons = ['2022-23', '2023-24', '2024-25', '2025-26'];
+    const seasonLabels = { '2022-23': '2022–23', '2023-24': '2023–24', '2024-25': '2024–25', '2025-26': '2025–26' };
+
+    const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+    const setHtml = (id, v) => { const e = document.getElementById(id); if (e) e.innerHTML = v; };
+
+    // Tracker card - backtest (validation) numbers
+    set('t-emerging-bt-games', (num1.n ?? '—') + ' games');
+    set('t-emerging-bt-wr', (num1.win_rate ?? '—') + '%');
+    set('t-emerging-bt-roi', num1.roi != null ? fmtPct(num1.roi) : '—');
+    set('t-emerging-bt-ci', num1.roi_ci95 ? `${fmtPct(num1.roi_ci95[0])} to ${fmtPct(num1.roi_ci95[1])}` : '—');
+
+    // Tracker card - live (actually tracked this season) numbers
+    const live = liveBlock || {};
+    const liveNum1 = live.number_one || {};
+    const rt = live.retirement_test || {};
+    set('t-emerging-live-games', (liveNum1.games ?? 0) + ' games');
+    set('t-emerging-live-roi', liveNum1.games ? fmtPct(liveNum1.roi) : '—');
+    set('t-emerging-retirement', rt.status === 'pending' ? `${rt.games_so_far ?? 0}/${rt.games_needed ?? 100} tracked`
+      : rt.status === 'pass' ? 'Passed' : rt.status === 'retire' ? 'RETIRED' : '—');
+
+    const badge = document.getElementById('t-emerging-badge');
+    if (badge) badge.textContent = rt.status === 'retire' ? 'Retired' : 'Emerging';
+    const statusBadge = document.getElementById('emerging-status-badge');
+    if (statusBadge) statusBadge.textContent = rt.status === 'retire'
+      ? 'Retired — see retirement test below' : `Backtest ${num1.n ?? '—'}g · Live ${liveNum1.games ?? 0}g`;
+
+    // Four-season backtest validation table
+    const tbl = document.getElementById('emerging-season-table');
+    if (tbl && num1.n) {
+      const rows = seasons.map(s => {
+        const sd = num1All[s] || {};
+        return `<div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;">
+          <span class="rr-game">${seasonLabels[s]}</span>
+          <span style="text-align:right;">${sd.n ?? '—'}</span>
+          <span style="text-align:right;">${sd.win_rate ?? '—'}%</span>
+          <span style="text-align:right;">${sd.avg_odds != null ? Math.round(sd.avg_odds) : '—'}</span>
+          <span style="text-align:right;color:${(sd.roi ?? 0) >= 0 ? 'var(--green)' : 'var(--red)'};font-weight:700;">${sd.roi != null ? fmtPct(sd.roi) : '—'}</span>
+        </div>`;
+      }).join('');
+      tbl.innerHTML = `
+        <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(255,255,255,0.03);">
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Season</span>
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Games</span>
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Win%</span>
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Avg ML</span>
+          <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">ROI</span>
+        </div>` + rows + `
+        <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(0,232,138,0.06);">
+          <span class="rr-game"><strong>All four</strong></span>
+          <span style="text-align:right;"><strong>${num1.n}</strong></span>
+          <span style="text-align:right;"><strong>${num1.win_rate}%</strong></span>
+          <span style="text-align:right;"><strong>${Math.round(num1.avg_odds)}</strong></span>
+          <span style="text-align:right;color:var(--green);font-weight:800;">${fmtPct(num1.roi)}</span>
+        </div>`;
+    }
+
+    setHtml('emerging-what-means', `Fewer games than Rest Edge, and the 95% confidence interval on its backtested ROI still includes zero — it is not yet validated the way Rest Edge is (509 games, a pooled interval that, while still crossing zero itself, rests on three times the sample). We're tracking Emerging Edge live from opening night anyway, and every result — good or bad — gets published here, not just the ones that make it look good.`);
+
+    setHtml('emerging-backtest-summary', num1.n
+      ? `${num1.n} games across four seasons, ${num1.win_rate}% win rate, ${fmtPct(num1.roi)} ROI at real closing prices, 95% CI ${fmtPct(num1.roi_ci95[0])} to ${fmtPct(num1.roi_ci95[1])} — positive in all four individual seasons, though every single season's own interval still crosses zero on its own; pooling across all four is what tightens the range this much.`
+      : 'Loading...');
+
+    setHtml('emerging-backup-summary', backup.n
+      ? `${backup.n} games, ${backup.win_rate}% win rate, ${fmtPct(backup.roi)} ROI — essentially flat, consistent with no real edge when the away team doesn't start its #1.`
+      : 'Loading...');
+
+    if (rt.status === 'pending') {
+      setHtml('emerging-retirement-detail', `Live sample so far: ${rt.games_so_far ?? 0} of ${rt.games_needed ?? 100} games${rt.roi_so_far != null ? ` (running at ${fmtPct(rt.roi_so_far)} ROI)` : ' (none tracked yet)'}.`);
+    } else if (rt.status === 'pass') {
+      setHtml('emerging-retirement-detail', `First 100 live games finished at ${fmtPct(rt.roi_so_far)} ROI — passed. Still tracked and reported every game after that.`);
+    } else if (rt.status === 'retire') {
+      setHtml('emerging-retirement-detail', `First 100 live games finished at ${fmtPct(rt.roi_so_far)} ROI — negative. Emerging Edge is retired, the same as Signal 1 was.`);
+    } else {
+      setHtml('emerging-retirement-detail', 'Loading...');
+    }
+
+    setHtml('emerging-live-summary', liveNum1.games
+      ? `${liveNum1.games} game${liveNum1.games === 1 ? '' : 's'} tracked live so far this season, ${liveNum1.win_rate}% win rate, ${fmtPct(liveNum1.roi)} ROI at real captured prices. Current streak: ${liveNum1.streak || '—'}.`
+      : 'No games tracked yet this season — Emerging Edge starts logging from opening night, the same morning-capture pipeline as Rest Edge.');
+  } catch (e) {
+    console.log('Emerging Edge fetch error:', e);
+  }
+}
+
 async function buildROI() {
   try {
     const r = await fetch('data/roi.json?nocache=' + Date.now());
@@ -1322,6 +1450,7 @@ async function buildROI() {
     set('review-badge', d.season || '2025–26');
 
     buildGoalie();
+    buildEmergingEdge(d.emerging_edge);
     renderCumulative(r2.cumulative);
     renderMonthly(r2.monthly);
 

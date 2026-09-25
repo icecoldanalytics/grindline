@@ -20,6 +20,18 @@ def is_rest_edge(away_rest_days, home_rest_days):
     return away_rest_days == 1 and home_rest_days == 2
 
 
+def is_emerging_edge(away_rest_days, home_rest_days):
+    """Away team on a back-to-back, home team NOT on a back-to-back (any
+    amount of rest, not just exactly 2 days the way is_rest_edge requires) -
+    the broader population backtest_goalie_overlay_broad.py tested the
+    goalie-identity overlay against (away started its #1 goalie vs a
+    backup). A game satisfying is_rest_edge() also satisfies this - the
+    two are deliberately not exclusive. They're different questions (the
+    home team's own rest vs. which goalie the tired away team starts), so
+    the same game can legitimately be logged under both."""
+    return away_rest_days == 1 and home_rest_days is not None and home_rest_days >= 2
+
+
 def is_cancelled(away_rest_days, home_rest_days):
     return away_rest_days == 1 and home_rest_days == 1
 

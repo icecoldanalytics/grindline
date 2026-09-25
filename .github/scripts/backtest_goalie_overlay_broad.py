@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 """
-RESEARCH ONLY - not wired into capture_signals.py, any dashboard/board
-builder, or any HTML page. Writes data/goalie_overlay_broad_backtest.json,
-which nothing else in this repo reads.
+Originally a research-only backtest with no live counterpart. As of the
+Emerging Edge launch, this IS that live signal's backtest validation -
+betting.html's Emerging Edge section reads this file directly
+(data/goalie_overlay_broad_backtest.json) for its backtest numbers, and
+capture_signals.py / update_roi.py implement the same condition
+(away B2B, home not B2B, away starts its #1 goalie) as a live-tracked
+signal (data/emerging_edge_log.json -> data/roi.json's "emerging_edge"
+key). This script itself still only reads cached historical data and
+writes nothing live - it's a one-time-per-refresh backtest, not part of
+the daily pipeline - but its output is no longer research-only in the
+sense of "nothing reads it."
 
 Tests the goalie overlay (does it matter whether the tired road team
 starts its own #1 goalie vs. a backup?) as its own question, decoupled
@@ -323,9 +331,11 @@ def main():
     print(f"  (unpriced: {unpriced['backup']}, unscored: {unscored['backup']})")
 
     output = {
-        "research_only": True,
-        "not_wired_into": "capture_signals.py, any dashboard/board builder, any HTML page - "
-                           "nothing in this repo reads this output file.",
+        "status": "Backtest validation for the live Emerging Edge signal - "
+                   "betting.html reads this file directly. This script itself is "
+                   "still a standalone backtest (reads only cached historical data, "
+                   "not part of the daily pipeline) - the live signal itself is "
+                   "implemented separately in capture_signals.py/update_roi.py.",
         "question": "Does the goalie overlay (away started its #1 vs a backup) hold across "
                     "every away-tired/home-rested game, not just the Rest Edge subset "
                     "(home rested exactly 2 days)?",
@@ -366,7 +376,7 @@ def main():
         ],
     }
     atomic_write_json(OUTPUT_PATH, output, indent=2)
-    print(f"\nWrote {OUTPUT_PATH} (research only - not read by any live script or page)")
+    print(f"\nWrote {OUTPUT_PATH} (betting.html's Emerging Edge section reads this directly)")
 
 
 if __name__ == "__main__":
