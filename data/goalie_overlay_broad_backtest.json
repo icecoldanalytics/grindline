@@ -1,0 +1,138 @@
+{
+  "research_only": true,
+  "not_wired_into": "capture_signals.py, any dashboard/board builder, any HTML page - nothing in this repo reads this output file.",
+  "question": "Does the goalie overlay (away started its #1 vs a backup) hold across every away-tired/home-rested game, not just the Rest Edge subset (home rested exactly 2 days)?",
+  "condition": "Away team on a back-to-back AND home team not on a back-to-back (home rested >=2 days, any amount) - broader than Rest Edge's exactly-2-days requirement.",
+  "raw_condition_games": 822,
+  "goalie_overlay_broad_number_one": {
+    "pooled": {
+      "n": 263,
+      "wins": 166,
+      "win_rate": 63.1,
+      "roi": 7.1,
+      "roi_ci95": [
+        -3.3,
+        18.0
+      ],
+      "avg_odds": -121.7
+    },
+    "2022-23": {
+      "n": 65,
+      "wins": 39,
+      "win_rate": 60.0,
+      "roi": 4.1,
+      "roi_ci95": [
+        -21.6,
+        21.7
+      ],
+      "avg_odds": -137.7
+    },
+    "2023-24": {
+      "n": 65,
+      "wins": 42,
+      "win_rate": 64.6,
+      "roi": 7.0,
+      "roi_ci95": [
+        -11.5,
+        29.8
+      ],
+      "avg_odds": -125.5
+    },
+    "2024-25": {
+      "n": 66,
+      "wins": 43,
+      "win_rate": 65.2,
+      "roi": 10.8,
+      "roi_ci95": [
+        -12.0,
+        29.2
+      ],
+      "avg_odds": -107.5
+    },
+    "2025-26": {
+      "n": 67,
+      "wins": 42,
+      "win_rate": 62.7,
+      "roi": 6.4,
+      "roi_ci95": [
+        -10.8,
+        33.7
+      ],
+      "avg_odds": -116.3
+    }
+  },
+  "goalie_overlay_broad_backup": {
+    "pooled": {
+      "n": 473,
+      "wins": 274,
+      "win_rate": 57.9,
+      "roi": -1.5,
+      "roi_ci95": [
+        -9.8,
+        7.1
+      ],
+      "avg_odds": -134.4
+    },
+    "2022-23": {
+      "n": 122,
+      "wins": 70,
+      "win_rate": 57.4,
+      "roi": -2.1,
+      "roi_ci95": [
+        -19.3,
+        12.7
+      ],
+      "avg_odds": -190.1
+    },
+    "2023-24": {
+      "n": 109,
+      "wins": 60,
+      "win_rate": 55.0,
+      "roi": -1.5,
+      "roi_ci95": [
+        -25.0,
+        7.9
+      ],
+      "avg_odds": -91.9
+    },
+    "2024-25": {
+      "n": 132,
+      "wins": 80,
+      "win_rate": 60.6,
+      "roi": 2.0,
+      "roi_ci95": [
+        -11.6,
+        25.3
+      ],
+      "avg_odds": -119.5
+    },
+    "2025-26": {
+      "n": 110,
+      "wins": 64,
+      "win_rate": 58.2,
+      "roi": -4.9,
+      "roi_ci95": [
+        -18.1,
+        14.2
+      ],
+      "avg_odds": -132.7
+    }
+  },
+  "unpriced": {
+    "number_one": 0,
+    "backup": 0
+  },
+  "unscored": {
+    "number_one": 0,
+    "backup": 0
+  },
+  "no_starter_data": 2,
+  "excluded_pre_min_games": 84,
+  "method_notes": [
+    "Sample-size check done before writing any code: the away-B2B/home-not-B2B condition is 822 raw games across four seasons, not literally 'thousands' - the total discovered-event universe is only 5,273 games, so a genuinely selective away-tired/home-rested condition can't reach that without weakening what 'rested' means. Reporting the real number, not a larger one from a looser definition.",
+    "Reused every existing cache (schedule, odds, scores, starters) - zero new API calls for this run.",
+    "Goalie identity (#1 vs backup): cumulative starts per team, reset each season, judged only on starts entering that date. A start only counts once the team has played 10+ games this season (needs a clear #1 to compare against) - earlier starts are excluded from both buckets, not guessed at.",
+    "Starting goalies: boxscore 'starter' flag, confirmed present in 100% of a 24-game sample spread across all four seasons; falls back to max time-on-ice only when that flag is missing (matches backtest_goalie_signal.py's identical fallback).",
+    "Pricing: real closing h2h moneyline, averaged across bookmakers in the pre-puck-drop snapshot. ROI/CI: dollar-weighted ROI, 95% CI from the per-bet return distribution (mean +/- 1.96*SE) - identical method to backtest_rest_signals.py and backtest_goalie_signal.py."
+  ]
+}
