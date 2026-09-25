@@ -122,6 +122,10 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .p-card-stat{display:flex;flex-direction:column;}
 .p-card-stat-val{font-weight:800;font-size:1.1rem;color:var(--accent);}
 .p-card-stat-label{font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
+.p-card-detail{display:grid;grid-template-columns:repeat(2,1fr);gap:7px 12px;padding-top:10px;border-top:1px solid var(--border);}
+.p-card-detail-item{display:flex;flex-direction:column;gap:1px;}
+.p-card-detail-label{font-size:0.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.3px;line-height:1.3;}
+.p-card-detail-val{font-size:0.82rem;color:var(--text);font-weight:600;}
 .p-card-meta{font-size:0.7rem;color:var(--muted);line-height:1.5;}
 .p-card-btn.ph-team-btn{width:100%;padding:12px;border-radius:8px;font-size:0.78rem;text-align:center;}
 @media(max-width:768px){.view-toggle{display:none;}}
@@ -930,6 +934,7 @@ function phRowHtml(playerId, p) {
 function phCardHtml(playerId, p) {
   const proj = p.projection;
   const thisSzn = p.seasons[phData.season];
+  const lastSzn = p.seasons[phData.prior_seasons[0]];
   const isD = p.position === 'D';
   const onTeam = isOnMyTeam(playerId);
   return `<div class="p-card">
@@ -940,9 +945,15 @@ function phCardHtml(playerId, p) {
       <div class="p-card-stats">
         <div class="p-card-stat"><span class="p-card-stat-val">${proj.projected_points == null ? '—' : proj.projected_points.toFixed(2)}</span><span class="p-card-stat-label">Proj Pts Wk</span></div>
         <div class="p-card-stat"><span class="p-card-stat-val">${proj.games_this_week}</span><span class="p-card-stat-label">Games Wk</span></div>
-        <div class="p-card-stat"><span class="p-card-stat-val">${thisSzn.goals}</span><span class="p-card-stat-label">Goals</span></div>
-        <div class="p-card-stat"><span class="p-card-stat-val">${thisSzn.assists}</span><span class="p-card-stat-label">Assists</span></div>
-        ${isD ? `<div class="p-card-stat"><span class="p-card-stat-val">${thisSzn.blocked_shots}</span><span class="p-card-stat-label">Blocked</span></div>` : ''}
+      </div>
+      <div class="p-card-detail">
+        <div class="p-card-detail-item"><span class="p-card-detail-label">PPG (blended)</span><span class="p-card-detail-val">${phNum(proj.blended_points_per_game, 2)}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">This Szn PPG</span><span class="p-card-detail-val">${phNum(thisSzn.points_per_game, 2)}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">Prior 2Sn PPG</span><span class="p-card-detail-val">${phNum(proj.prior_points_per_game, 2)}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">Shots/Gm (LY)</span><span class="p-card-detail-val">${phNum(lastSzn.shots_per_game, 2)}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">Goals (this szn)</span><span class="p-card-detail-val">${thisSzn.goals}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">Assists (this szn)</span><span class="p-card-detail-val">${thisSzn.assists}</span></div>
+        ${isD ? `<div class="p-card-detail-item"><span class="p-card-detail-label">Blocked (this szn)</span><span class="p-card-detail-val">${thisSzn.blocked_shots}</span></div>` : ''}
       </div>
       <button class="p-card-btn ph-team-btn${onTeam ? ' on' : ''}" data-id="${playerId}">${onTeam ? '✓ On Team — Remove' : '+ Add to My Team'}</button>
     </div>`;
@@ -1085,12 +1096,16 @@ function mtGoalieCardHtml(goalieId, g) {
         <div class="p-card-team">${g.team}</div>
       </div>
       <div class="p-card-stats">
-        <div class="p-card-stat"><span class="p-card-stat-val">${s.games_played}</span><span class="p-card-stat-label">GP (this szn)</span></div>
-        <div class="p-card-stat"><span class="p-card-stat-val">${s.wins}</span><span class="p-card-stat-label">Wins</span></div>
-        <div class="p-card-stat"><span class="p-card-stat-val">${s.save_pct == null ? '—' : s.save_pct.toFixed(3)}</span><span class="p-card-stat-label">SV%</span></div>
-        <div class="p-card-stat"><span class="p-card-stat-val">${s.gaa == null ? '—' : s.gaa.toFixed(2)}</span><span class="p-card-stat-label">GAA</span></div>
+        <div class="p-card-stat"><span class="p-card-stat-val">${g.games_this_week}</span><span class="p-card-stat-label">Games Wk (team)</span></div>
+        <div class="p-card-stat"><span class="p-card-stat-val">${s.wins}</span><span class="p-card-stat-label">Wins (this szn)</span></div>
       </div>
-      <div class="p-card-meta">Team games this week: ${g.games_this_week} &middot; Last start: ${g.last_start_date || '—'}</div>
+      <div class="p-card-detail">
+        <div class="p-card-detail-item"><span class="p-card-detail-label">GP (this szn)</span><span class="p-card-detail-val">${s.games_played}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">SV%</span><span class="p-card-detail-val">${s.save_pct == null ? '—' : s.save_pct.toFixed(3)}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">GAA</span><span class="p-card-detail-val">${s.gaa == null ? '—' : s.gaa.toFixed(2)}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">Shutouts</span><span class="p-card-detail-val">${s.shutouts}</span></div>
+        <div class="p-card-detail-item"><span class="p-card-detail-label">Last Start</span><span class="p-card-detail-val">${g.last_start_date || '—'}</span></div>
+      </div>
       <button class="p-card-btn ph-team-btn${onTeam ? ' on' : ''}" data-id="${goalieId}">${onTeam ? '✓ On Team — Remove' : '+ Add to My Team'}</button>
     </div>`;
 }
