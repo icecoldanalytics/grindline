@@ -50,7 +50,7 @@ SEASON_LABEL = "2026-27"
 SEASON_START = "2026-09-29"
 SEASON_END = "2027-04-10"
 OUTPUT_PATH = os.path.join("data", "schedule_analysis.json")
-MIN_TEAMS_PRESENT = 30  # of 32 - see absolute_floor_check_or_abort()
+HARD_FLOOR_TEAMS = 24  # of 32 - see check_team_coverage_or_abort()
 
 # Current 32 teams - copied from update_dashboard.py's FULL_NAMES (already
 # excludes the retired ARI entry other, older scripts in this repo still carry).
@@ -95,9 +95,9 @@ def load_previous_output():
         return None
 
 
-def absolute_floor_check_or_abort(hard_failed_teams, min_teams=MIN_TEAMS_PRESENT):
-    """Refuses to write a file where fewer than min_teams of the 32 real
-    NHL teams have genuine schedule data (freshly fetched or carried
+def check_team_coverage_or_abort(hard_failed_teams, hard_floor=HARD_FLOOR_TEAMS):
+    """Aborts ONLY on a genuine collapse - fewer than hard_floor of the 32
+    real NHL teams have genuine schedule data (freshly fetched or carried
     over from a previous file) - checked BEFORE sanity_check_or_abort's
     relative comparison, and unconditionally, regardless of what the
     previous file held.
@@ -110,14 +110,25 @@ def absolute_floor_check_or_abort(hard_failed_teams, min_teams=MIN_TEAMS_PRESENT
     back to" - a team carried over from a real previous entry still
     counts as having genuine data here, since the season schedule is
     static and a carried-over entry is factually correct, just not
-    freshly confirmed."""
+    freshly confirmed.
+
+    hard_floor=24, not 30-32 - see build_player_hub.py's identical
+    reasoning: ordinary API throttling knocking out a handful of teams
+    should still publish (with those teams flagged in stale_teams, or a
+    0-games placeholder if there's no previous entry to fall back to
+    either), not get blocked entirely while waiting for a perfect run."""
     teams_with_real_data = len(FULL_NAMES) - len(hard_failed_teams)
-    if teams_with_real_data < min_teams:
+    if teams_with_real_data < hard_floor:
         print(f"\nABORTING: only {teams_with_real_data} of 32 teams have real schedule data "
-              f"(fresh or carried over) in this run (need at least {min_teams}), regardless of "
-              f"what the previous file held. Teams with no data at all: "
-              f"{', '.join(sorted(hard_failed_teams)) or 'none'}")
+              f"(fresh or carried over) in this run (need at least {hard_floor} to treat this as "
+              f"ordinary throttling rather than a collapse), regardless of what the previous file "
+              f"held. Teams with no data at all: {', '.join(sorted(hard_failed_teams)) or 'none'}")
         sys.exit(1)
+    elif hard_failed_teams:
+        print(f"\nPublishing with partial coverage: {teams_with_real_data} of 32 teams have real "
+              f"data this run ({', '.join(sorted(hard_failed_teams))} have neither a fresh fetch "
+              f"nor a previous entry, recorded as 0 games) - above the {hard_floor}-team collapse "
+              f"floor, so this is written rather than aborted.")
 
 
 def sanity_check_or_abort(previous, teams_out, threshold=0.8):
@@ -243,7 +254,9 @@ def main():
               f"lightest week {analysis['lightest_week']['games']}g on {analysis['lightest_week']['week_start']})")
         # Same reasoning as build_player_hub.py's per-team delay - confirmed
         # live that this API throttles a fast, unbroken run of per-team calls.
-        time.sleep(0.6)
+        # Raised from 0.6s alongside that script's same bump - see its
+        # comment for why (a follow-up run still saw scattered 429s there).
+        time.sleep(1.5)
 
     if failed_teams:
         print(f"  WARNING: schedule fetch failed after retries for {len(failed_teams)} "
@@ -261,7 +274,7 @@ def main():
     most_b2b_team = max(b2b_counts, key=b2b_counts.get)
     fewest_b2b_team = min(b2b_counts, key=b2b_counts.get)
 
-    absolute_floor_check_or_abort(hard_failed_teams)
+    check_team_coverage_or_abort(hard_failed_teams)
     sanity_check_or_abort(previous_output, teams_out)
 
     output = {

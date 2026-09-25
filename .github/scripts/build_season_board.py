@@ -334,7 +334,9 @@ def main():
         # had none before, and confirmed-live throttling elsewhere in this
         # repo's per-team fetches means it's not safe to assume this one is
         # exempt just because playing_teams is usually a small subset of 32.
-        time.sleep(0.6)
+        # Raised from 0.6s alongside that script's same bump - see its
+        # comment for why (a follow-up run still saw scattered 429s there).
+        time.sleep(1.5)
 
     if playing_teams and len(failed_roster_teams) / len(playing_teams) > 0.2:
         # Unlike a stable 32-team dataset, tonight's slate size varies

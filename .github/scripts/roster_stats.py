@@ -60,8 +60,16 @@ import time
 import requests
 
 DEFAULT_TIMEOUT = 15
-DEFAULT_MAX_RETRIES = 4
-DEFAULT_BASE_DELAY = 1.5  # seconds; doubles each retry, plus up to 0.5s jitter
+# Confirmed live on 2026-09-25: 4 retries at base_delay=1.5 (≈1.5+3+6 = 10.5s
+# of backoff) was NOT enough for 2 of 32 teams (NYI, WSH) during a period of
+# sustained NHL API throttling - both recovered on rerun, meaning the API
+# eventually let up, just not within the old budget. 6 retries at
+# base_delay=2.0 (2+4+8+16+32 = 62s of backoff) comfortably exceeds that by
+# ~6x. Runtime isn't a constraint for any of this repo's per-team dataset
+# builders - none of them have a downstream job waiting on them within
+# minutes - so there's no cost to erring generous here.
+DEFAULT_MAX_RETRIES = 6
+DEFAULT_BASE_DELAY = 2.0  # seconds; doubles each retry, plus up to 0.5s jitter
 
 
 def fetch_with_retry(url, params=None, headers=None, timeout=DEFAULT_TIMEOUT,

@@ -161,7 +161,7 @@ ALL_SEASON_LABELS = {SEASON: SEASON_LABEL, **PRIOR_SEASON_LABELS}
 MIN_POOLED_GAMES = 20  # minimum games, pooled across both prior seasons, before a prior-season rate is shown at all
 OUTPUT_PATH = os.path.join("data", "player_hub.json")
 CACHE_PATH = os.path.join("data", "player_prior_seasons_cache.json")
-MIN_TEAMS_PRESENT = 30  # of 32 - see absolute_floor_check_or_abort()
+HARD_FLOOR_TEAMS = 24  # of 32 - see check_team_coverage_or_abort()
 
 EMPTY_SEASON = {"games_played": 0, "points": 0, "goals": 0, "assists": 0,
                  "shots": 0, "shots_against": 0, "goals_against": 0,
@@ -273,9 +273,9 @@ def sanity_check_or_abort(previous, players_out, goalies_out, threshold=0.8):
         sys.exit(1)
 
 
-def absolute_floor_check_or_abort(players_out, goalies_out, min_teams=MIN_TEAMS_PRESENT):
-    """Refuses to write a file where fewer than min_teams of the 32 real
-    NHL teams have any players or goalies at all - checked BEFORE
+def check_team_coverage_or_abort(players_out, goalies_out, hard_floor=HARD_FLOOR_TEAMS):
+    """Aborts ONLY on a genuine collapse - fewer than hard_floor of the 32
+    real NHL teams have any players or goalies at all - checked BEFORE
     sanity_check_or_abort's relative comparison, and unconditionally,
     regardless of what the previous file held.
 
@@ -288,13 +288,31 @@ def absolute_floor_check_or_abort(players_out, goalies_out, min_teams=MIN_TEAMS_
     the relative check passes trivially - a broken baseline can't catch
     a repeat of the same break. No real NHL team is ever missing every
     single player, so team coverage is checked against a fixed floor
-    instead of a moving, possibly-already-wrong one."""
+    instead of a moving, possibly-already-wrong one.
+
+    hard_floor=24 (not 30-32): a re-run the same day, with retry/backoff
+    already in place, recovered 30 of 32 teams on its own - only 2 teams
+    (NYI, WSH) still failed after 6 retries each, both recovering on the
+    very next run. Aborting a 30-team result over 2 stubborn ones would
+    have kept the site stuck on the WORSE 8-team file indefinitely while
+    waiting for a perfect run that may not come soon - strictly worse for
+    users than publishing 30 real teams with the 2 gaps clearly flagged
+    in stale_teams. 24 is chosen to comfortably clear "ordinary API
+    throttling knocked out a handful of teams" while still catching
+    anything shaped like the original 8-team collapse."""
     teams_present = {p["team"] for p in players_out.values()} | {g["team"] for g in goalies_out.values()}
-    if len(teams_present) < min_teams:
+    missing = set(FULL_NAMES) - teams_present
+    if len(teams_present) < hard_floor:
         print(f"\nABORTING: only {len(teams_present)} of 32 teams have any players or goalies "
-              f"in this run (need at least {min_teams}), regardless of what the previous file "
-              f"held. Teams present: {', '.join(sorted(teams_present)) or 'none'}")
+              f"in this run (need at least {hard_floor} to treat this as ordinary throttling "
+              f"rather than a collapse), regardless of what the previous file held. "
+              f"Teams present: {', '.join(sorted(teams_present)) or 'none'}")
         sys.exit(1)
+    elif missing:
+        print(f"\nPublishing with partial coverage: {len(teams_present)} of 32 teams this run "
+              f"({', '.join(sorted(missing))} missing or carried over stale) - above the "
+              f"{hard_floor}-team collapse floor, so this is written rather than aborted. "
+              f"See stale_teams in the output for exactly which teams and why.")
 
 
 def cache_entry_has_goalie_fields(entry):
@@ -761,7 +779,11 @@ def main():
         # throttled this exact loop after ~8 teams' worth of requests in a
         # 2026-09-25 run, so slowing the steady-state pace (not just
         # reacting after a failure) is part of the fix, not just retrying.
-        time.sleep(0.6)
+        # Raised from 0.6s after a follow-up run the same day still hit 429s
+        # on a scattering of teams (though the retry budget recovered all
+        # but 2 of them) - runtime isn't a constraint here, so there's no
+        # cost to backing off the steady-state rate further too.
+        time.sleep(1.5)
 
     if failed_roster_teams:
         print(f"  WARNING: roster fetch failed after retries for {len(failed_roster_teams)} "
@@ -923,7 +945,7 @@ def main():
     save_cache(cache)
 
     carry_over_failed_teams(failed_roster_teams, previous_output, players_out, goalies_out)
-    absolute_floor_check_or_abort(players_out, goalies_out)
+    check_team_coverage_or_abort(players_out, goalies_out)
     sanity_check_or_abort(previous_output, players_out, goalies_out)
 
     output = {
