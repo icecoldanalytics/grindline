@@ -6,6 +6,7 @@ Fetches real rosters from NHL API to ensure accurate player/team data.
 
 import os
 import json
+import sys
 import requests
 from datetime import datetime
 import pytz
@@ -59,14 +60,30 @@ def fetch_rosters(games):
     labeled "last season" whenever that's genuinely what it is (the
     current season hasn't started, or this club-stats snapshot predates
     it) - never presented to the model as current form.
+
+    Returns (rosters, failed_teams) - failed_teams lists every team whose
+    roster fetch failed even after roster_stats.py's internal retries, so
+    main() can refuse to proceed if too much of tonight's slate came back
+    blank instead of silently feeding the model a roster missing whole
+    teams' worth of real players.
     """
     rosters = {}
+    failed_teams = []
     for g in games:
         for team in [g["away"], g["home"]]:
             if team in rosters:
                 continue
             try:
                 team_roster = roster_with_stats(team, SEASON)
+                if team_roster is None:
+                    # roster_with_stats() already retried with backoff
+                    # internally (see roster_stats.py) - this is a
+                    # confirmed-unreachable team for tonight's slate, not a
+                    # team with zero players. Raising here routes it
+                    # through the same except-branch/failed_teams tracking
+                    # as any other roster-fetch problem, rather than
+                    # silently building an empty roster for it.
+                    raise RuntimeError("roster fetch exhausted retries")
 
                 skater_gp = [v["stats"].get("gamesPlayed", 0) for v in team_roster.values()
                              if v["group"] != "goalies" and v["stats"]]
@@ -113,7 +130,11 @@ def fetch_rosters(games):
             except Exception as e:
                 print(f"Roster fetch error for {team}: {e}")
                 rosters[team] = {"skaters": [], "goalies": []}
-    return rosters
+                failed_teams.append(team)
+                time.sleep(1)  # same pacing as the success path, not just failures
+    if failed_teams:
+        print(f"  WARNING: roster fetch failed for {len(failed_teams)} team(s): {', '.join(failed_teams)}")
+    return rosters, failed_teams
 
 def normalize_name(name):
     """Fold a player name to a comparable key.
@@ -475,7 +496,26 @@ def main():
         return
 
     print(f"Fetching rosters for {len(games)} games...")
-    rosters = fetch_rosters(games)
+    rosters, failed_teams = fetch_rosters(games)
+
+    playing_teams = {t for g in games for t in (g["away"], g["home"])}
+    if playing_teams and len(failed_teams) / len(playing_teams) > 0.2:
+        # Same reasoning as build_season_board.py's equivalent guard: no
+        # legitimate "team has zero players" case exists, so if roster
+        # fetches failed for more than a fifth of tonight's teams even
+        # after retries, that's the API throttling or failing outright,
+        # not a real slate - abort before feeding the model a context
+        # with whole teams missing, and before overwriting fantasy.json.
+        print(f"\nABORTING: roster fetch failed for {len(failed_teams)} of {len(playing_teams)} "
+              f"playing teams ({', '.join(sorted(failed_teams))}) - over 20%. "
+              "Keeping the previous fantasy.json instead of generating picks from a gutted roster set.")
+        # sys.exit(1), not a plain return - this is a real failure (API
+        # trouble), unlike the "no games tonight" early-return above,
+        # which is a normal, frequent, non-error condition. A CI step
+        # that silently no-ops on a real failure hides it; failing the
+        # step gives it a visible red X.
+        sys.exit(1)
+
     scratches = fetch_scratches()
 
     game_context, games_list = build_game_context(dashboard, rosters, scratches)

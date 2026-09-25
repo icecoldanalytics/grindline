@@ -23,6 +23,17 @@ jobs:
       - name: Install dependencies
         run: pip install requests pytz beautifulsoup4
       - name: Fetch injury/scratch data
+        # continue-on-error: this step aborts (exit 1) and skips writing
+        # scratches.json if too many teams' pages failed even after
+        # retries, keeping the previous file rather than committing a
+        # mostly-stale one - see fetch_injuries.py's docstring. Without
+        # this flag, that abort would also skip every later step in this
+        # job (ticker, dashboard, ROI grading, the commit itself), none
+        # of which have anything to do with scratches.json - a scraper
+        # problem on nhl.com's injury pages should not block the rest of
+        # this pipeline. The commit step's own git-add only picks up
+        # scratches.json if this step actually wrote it.
+        continue-on-error: true
         run: python .github/scripts/fetch_injuries.py
       - name: Generate ticker data
         env:

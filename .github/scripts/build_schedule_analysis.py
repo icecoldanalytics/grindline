@@ -34,9 +34,10 @@ which a rerun picks up automatically.
 import json
 import os
 import sys
+import time
 from datetime import datetime, timedelta
 
-import requests
+from roster_stats import fetch_json_with_retry
 
 # Windows' console defaults to cp1252, which can't encode the checkmark
 # used in the summary print below; GitHub Actions' ubuntu runners default
@@ -80,11 +81,56 @@ def atomic_write_json(path, data, indent=2):
     os.replace(tmp_path, path)
 
 
+def load_previous_output():
+    """See build_player_hub.py's load_previous_output() - same purpose:
+    a team-level fallback source and a sanity-check baseline."""
+    if not os.path.exists(OUTPUT_PATH):
+        return None
+    try:
+        with open(OUTPUT_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"  could not read previous {OUTPUT_PATH} for comparison: {e}")
+        return None
+
+
+def sanity_check_or_abort(previous, teams_out, threshold=0.8):
+    """Refuses to write a file covering substantially fewer games than
+    the previous one. Compares the sum of each team's own "games" count
+    (well-defined whether that team's entry is freshly fetched or carried
+    over from the previous file) rather than the league-wide distinct-game
+    count, which a carried-over team can't contribute to (its raw game
+    ids aren't preserved, only the aggregated weekly view) and would
+    otherwise make a single stale team look like a much bigger data loss
+    than it is. Unlike a nightly slate, a full season schedule has no
+    legitimate reason to shrink between runs."""
+    if not previous:
+        return
+    old_total = sum(t.get("games", 0) for t in previous.get("teams", {}).values())
+    if old_total == 0:
+        return
+    new_total = sum(t.get("games", 0) for t in teams_out.values())
+    if new_total < old_total * threshold:
+        pct = new_total / old_total
+        print(f"\nABORTING: new file would cover {new_total} total team-games vs. the previous "
+              f"{old_total} ({pct:.0%}) - more than {int((1 - threshold) * 100)}% fewer. "
+              "Keeping the previous file on disk instead of committing a gutted one.")
+        sys.exit(1)
+
+
 def fetch_team_schedule(team):
-    url = f"https://api-web.nhle.com/v1/club-schedule-season/{team}/{SEASON}"
-    r = requests.get(url, timeout=15)
-    r.raise_for_status()
-    data = r.json()
+    """None (not []) on total failure after retries - the season schedule
+    is static once published, so a failed fetch here should fall back to
+    the previous file's entry for this team in main(), never get treated
+    as "this team plays zero games this season." See roster_stats.py's
+    docstring for the incident (a different script, same shape of bug)
+    that makes this distinction matter."""
+    data = fetch_json_with_retry(
+        f"https://api-web.nhle.com/v1/club-schedule-season/{team}/{SEASON}",
+        label=f"schedule/{team}",
+    )
+    if data is None:
+        return None
     games = [g for g in data.get("games", []) if g.get("gameType") == 2]
     games.sort(key=lambda g: g["gameDate"])
     return games
@@ -113,8 +159,12 @@ def analyze_team(team, games):
         weekly[wk] = weekly.get(wk, 0) + 1
     weekly_list = [{"week_start": wk, "games": n} for wk, n in sorted(weekly.items())]
 
-    heaviest = max(weekly_list, key=lambda w: w["games"])
-    lightest = min(weekly_list, key=lambda w: w["games"])
+    # Empty only if this team's schedule fetch failed AND no previous file
+    # existed to fall back to (a genuine first-run edge case, not the
+    # normal path) - a placeholder beats crashing the whole build.
+    empty_week = {"week_start": None, "games": 0}
+    heaviest = max(weekly_list, key=lambda w: w["games"]) if weekly_list else empty_week
+    lightest = min(weekly_list, key=lambda w: w["games"]) if weekly_list else empty_week
 
     return {
         "team": team,
@@ -130,11 +180,32 @@ def analyze_team(team, games):
 
 def main():
     print(f"Building schedule analysis for {SEASON_LABEL}...")
+    previous_output = load_previous_output()
+    prev_teams = (previous_output or {}).get("teams", {})
+
     teams_out = {}
     all_games_by_id = {}  # dedup for the league-wide weekly view
+    failed_teams = []
 
     for team in sorted(FULL_NAMES):
         games = fetch_team_schedule(team)
+        if games is None:
+            if team in prev_teams:
+                print(f"  {team}: schedule fetch failed after retries - reusing the previous file's "
+                      f"entry (the season schedule is static, so this is safe, not a guess)")
+                teams_out[team] = prev_teams[team]
+                failed_teams.append(team)
+                # Re-derive this team's games for the league-wide dedup from
+                # its carried-over weekly_games isn't possible (dates, not
+                # game ids, are all that's stored per week) - the league-wide
+                # view simply won't double-count a stale team, which only
+                # slightly undercounts total_games for as long as the fetch
+                # keeps failing, never overcounts or fabricates.
+                continue
+            print(f"  {team}: schedule fetch failed after retries and no previous file exists - "
+                  f"recording as 0 games rather than aborting a first-ever run")
+            failed_teams.append(team)
+            games = []
         for g in games:
             all_games_by_id[g["id"]] = g["gameDate"]
         analysis = analyze_team(team, games)
@@ -142,6 +213,13 @@ def main():
         print(f"  {team}: {analysis['games']} games, {analysis['back_to_backs']} B2Bs "
               f"(heaviest week {analysis['heaviest_week']['games']}g on {analysis['heaviest_week']['week_start']}, "
               f"lightest week {analysis['lightest_week']['games']}g on {analysis['lightest_week']['week_start']})")
+        # Same reasoning as build_player_hub.py's per-team delay - confirmed
+        # live that this API throttles a fast, unbroken run of per-team calls.
+        time.sleep(0.6)
+
+    if failed_teams:
+        print(f"  WARNING: schedule fetch failed after retries for {len(failed_teams)} "
+              f"team(s): {', '.join(failed_teams)}")
 
     league_weekly = {}
     for date_str in all_games_by_id.values():
@@ -155,12 +233,15 @@ def main():
     most_b2b_team = max(b2b_counts, key=b2b_counts.get)
     fewest_b2b_team = min(b2b_counts, key=b2b_counts.get)
 
+    sanity_check_or_abort(previous_output, teams_out)
+
     output = {
         "season": SEASON_LABEL,
         "generated": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "season_start": SEASON_START,
         "season_end": SEASON_END,
         "total_games": len(all_games_by_id),
+        "stale_teams": sorted(failed_teams),
         "teams": teams_out,
         "league_weekly": league_weekly_list,
         "summary": {

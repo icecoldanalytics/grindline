@@ -36,6 +36,15 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        # continue-on-error: this step aborts (exit 1) and skips writing
+        # fantasy.json if roster fetches failed for too many of tonight's
+        # teams even after retries, keeping the previous file rather than
+        # generating picks from a gutted roster set - see
+        # update_fantasy.py's roster-fetch guard. Without this flag, that
+        # abort would also skip prop grading below, which is unrelated
+        # (it grades past picks, not tonight's). The commit step's own
+        # git-add only picks up fantasy.json if this step actually wrote it.
+        continue-on-error: true
         run: python .github/scripts/update_fantasy.py
 
       - name: Grade prop picks and update ROI

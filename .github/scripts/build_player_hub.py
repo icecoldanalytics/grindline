@@ -149,7 +149,7 @@ import requests
 if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
 
-from roster_stats import get_current_roster
+from roster_stats import fetch_json_with_retry, get_current_roster
 from team_names import FULL_NAMES
 
 SEASON = "20262027"
@@ -205,6 +205,73 @@ def load_cache():
     return {}
 
 
+def load_previous_output():
+    """The last successfully-written player_hub.json, used two ways: to
+    backfill a team whose roster fetch failed this run (see
+    carry_over_failed_teams) and as the baseline for sanity_check_or_abort's
+    "did this run lose most of its data" guard. None on a first-ever run,
+    or if the existing file is somehow unreadable - both treated as
+    "nothing to compare against or borrow from," not an error."""
+    if not os.path.exists(OUTPUT_PATH):
+        return None
+    try:
+        with open(OUTPUT_PATH, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"  could not read previous {OUTPUT_PATH} for comparison: {e}")
+        return None
+
+
+def carry_over_failed_teams(failed_teams, previous, players_out, goalies_out):
+    """For every team whose roster fetch failed after retries this run,
+    copy that team's players/goalies from the previous file verbatim
+    (rather than leaving them missing) - a team briefly unreachable is
+    not the same as a team with no players, and stale-but-real data beats
+    no data for the "blanks, not drops" rule this file follows elsewhere.
+    Entries carried this way keep whatever "generated" values they had
+    (there are none per-player) and are listed in the "stale_teams" field
+    of the output so staleness is visible, not silent."""
+    if not failed_teams or not previous:
+        return
+    prev_players = previous.get("players", {})
+    prev_goalies = previous.get("goalies", {})
+    carried_players = 0
+    carried_goalies = 0
+    for pid, p in prev_players.items():
+        if p.get("team") in failed_teams and pid not in players_out:
+            players_out[pid] = p
+            carried_players += 1
+    for pid, g in prev_goalies.items():
+        if g.get("team") in failed_teams and pid not in goalies_out:
+            goalies_out[pid] = g
+            carried_goalies += 1
+    print(f"  Carried over {carried_players} skaters and {carried_goalies} goalies from the "
+          f"previous file for team(s) whose roster fetch failed: {', '.join(sorted(failed_teams))}")
+
+
+def sanity_check_or_abort(previous, players_out, goalies_out, threshold=0.8):
+    """Refuses to write a file with substantially fewer players/goalies
+    than the previous one - the backstop for any failure mode this run
+    didn't already catch and recover from (carry_over_failed_teams
+    handles the specific "team fetch failed" case; this catches anything
+    else that could gut the file, known or not). threshold=0.8 means
+    "abort if the new total is more than 20% below the old total."
+    A missing or empty previous file means there's nothing to compare
+    against - a first run is allowed through regardless of size."""
+    if not previous:
+        return
+    old_total = len(previous.get("players", {})) + len(previous.get("goalies", {}))
+    if old_total == 0:
+        return
+    new_total = len(players_out) + len(goalies_out)
+    if new_total < old_total * threshold:
+        pct = new_total / old_total
+        print(f"\nABORTING: new file would have {new_total} players/goalies vs. the previous "
+              f"{old_total} ({pct:.0%}) - more than {int((1 - threshold) * 100)}% fewer. "
+              "Keeping the previous file on disk instead of committing a gutted one.")
+        sys.exit(1)
+
+
 def cache_entry_has_goalie_fields(entry):
     """True if every PRIOR_SEASONS row in this cache entry already has
     the goalie fields (wins, as a sentinel key). A cache entry written
@@ -252,26 +319,29 @@ def fetch_team_summary(season):
 
 
 def fetch_team_schedule(team):
-    url = f"https://api-web.nhle.com/v1/club-schedule-season/{team}/{SEASON}"
-    try:
-        r = requests.get(url, timeout=15)
-        r.raise_for_status()
-        games = r.json().get("games", [])
-        games.sort(key=lambda g: g["gameDate"])
-        return games
-    except Exception as e:
-        print(f"  schedule error for {team}: {e}")
+    """[] on total failure (retried with backoff first) - a missing
+    schedule already degrades gracefully downstream (games_this_week
+    falls to 0 for that team, never a dropped player), unlike a missing
+    roster, which erases identity entirely. See roster_stats.py's
+    docstring for why that distinction matters and why the roster fetch
+    specifically must never make the same {}-on-failure substitution."""
+    data = fetch_json_with_retry(
+        f"https://api-web.nhle.com/v1/club-schedule-season/{team}/{SEASON}",
+        label=f"schedule/{team}",
+    )
+    if data is None:
         return []
+    games = data.get("games", [])
+    games.sort(key=lambda g: g["gameDate"])
+    return games
 
 
 def fetch_team_club_stats(team):
-    try:
-        r = requests.get(f"https://api-web.nhle.com/v1/club-stats/{team}/now", timeout=15)
-        r.raise_for_status()
-        return r.json()
-    except Exception as e:
-        print(f"  club-stats error for {team}: {e}")
-        return {}
+    data = fetch_json_with_retry(
+        f"https://api-web.nhle.com/v1/club-stats/{team}/now",
+        label=f"club-stats/{team}",
+    )
+    return data if data is not None else {}
 
 
 def current_season_stats(club_stats):
@@ -621,6 +691,8 @@ def main():
     cache = load_cache()
     print(f"Prior-season cache loaded: {len(cache)} players already cached")
 
+    previous_output = load_previous_output()
+
     print("Fetching team summary stats (current + last season, one call each)...")
     team_stats_current = fetch_team_summary(SEASON)
     team_stats_last = fetch_team_summary(PRIOR_SEASONS[0])
@@ -639,14 +711,36 @@ def main():
     club_stats = {}
     current_by_team = {}
     last_start_cache = {}
+    failed_roster_teams = []  # teams whose roster fetch failed after retries - see below
 
     print(f"Fetching schedules + rosters + current club-stats for {len(teams)} teams...")
     for team in teams:
         schedules[team] = fetch_team_schedule(team)
-        rosters[team] = get_current_roster(team)
+        roster = get_current_roster(team)
+        if roster is None:
+            # Every retry inside get_current_roster() already failed - this
+            # is a confirmed-unreachable team, not a team with zero
+            # players (no NHL team has zero rostered players). Recording
+            # {} here keeps every downstream loop crash-free, but the team
+            # stays in failed_roster_teams so main() can backfill its
+            # players from the previous file instead of silently letting
+            # them vanish - see roster_stats.py's docstring for the
+            # incident this replaced.
+            failed_roster_teams.append(team)
+            roster = {}
+        rosters[team] = roster
         club_stats[team] = fetch_team_club_stats(team)
         current_by_team[team] = current_season_stats(club_stats[team])
-        time.sleep(0.2)
+        # A conservative gap between teams, on top of fetch_json_with_retry's
+        # own backoff on a failed request - confirmed live that the NHL API
+        # throttled this exact loop after ~8 teams' worth of requests in a
+        # 2026-09-25 run, so slowing the steady-state pace (not just
+        # reacting after a failure) is part of the fix, not just retrying.
+        time.sleep(0.6)
+
+    if failed_roster_teams:
+        print(f"  WARNING: roster fetch failed after retries for {len(failed_roster_teams)} "
+              f"team(s), even with backoff: {', '.join(failed_roster_teams)}")
 
     print("Finding each team's last starting goalie (most recent completed game)...")
     for team in teams:
@@ -803,6 +897,9 @@ def main():
 
     save_cache(cache)
 
+    carry_over_failed_teams(failed_roster_teams, previous_output, players_out, goalies_out)
+    sanity_check_or_abort(previous_output, players_out, goalies_out)
+
     output = {
         "generated": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "season": SEASON,
@@ -813,6 +910,7 @@ def main():
         "week_start": week_start,
         "week_end": week_end,
         "projection_formula": PROJECTION_FORMULA,
+        "stale_teams": sorted(failed_roster_teams),
         "teams": teams_out,
         "players": players_out,
         "goalies": goalies_out,
@@ -822,7 +920,8 @@ def main():
     atomic_write_json(OUTPUT_PATH, output)
 
     print(f"\n{'='*60}")
-    print(f"Wrote {len(players_out)} skaters and {len(goalies_out)} goalies across {len(teams_out)} teams to {OUTPUT_PATH}")
+    print(f"Wrote {len(players_out)} skaters and {len(goalies_out)} goalies across {len(teams_out)} teams to {OUTPUT_PATH}"
+          + (f" ({len(failed_roster_teams)} team(s) stale from a failed fetch)" if failed_roster_teams else ""))
 
 
 def save_cache(cache):

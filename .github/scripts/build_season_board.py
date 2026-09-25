@@ -57,12 +57,12 @@ with build_schedule_analysis.py).
 import json
 import os
 import sys
+import time
 from datetime import datetime, timedelta
 
 import pytz
-import requests
 
-from roster_stats import roster_with_stats
+from roster_stats import fetch_json_with_retry, roster_with_stats
 
 MST = pytz.timezone("America/Edmonton")
 SEASON = "20262027"
@@ -123,43 +123,40 @@ def games_this_week(team, schedule_analysis, week_key):
 
 # ── Schedule / rest (same day-by-day lookback as the live signal) ───────
 def get_schedule(date_str):
-    try:
-        r = requests.get(f"https://api-web.nhle.com/v1/schedule/{date_str}", timeout=15)
-        r.raise_for_status()
-        data = r.json()
-        games = []
-        for gw in data.get("gameWeek", []):
-            if gw.get("date") != date_str:
-                continue
-            for g in gw.get("games", []):
-                games.append({
-                    "away": g["awayTeam"]["abbrev"], "home": g["homeTeam"]["abbrev"],
-                    "startTimeUTC": g.get("startTimeUTC", ""),
-                })
-        return games
-    except Exception as e:
-        print(f"Schedule error for {date_str}: {e}")
+    data = fetch_json_with_retry(
+        f"https://api-web.nhle.com/v1/schedule/{date_str}", label=f"schedule/{date_str}"
+    )
+    if data is None:
         return []
+    games = []
+    for gw in data.get("gameWeek", []):
+        if gw.get("date") != date_str:
+            continue
+        for g in gw.get("games", []):
+            games.append({
+                "away": g["awayTeam"]["abbrev"], "home": g["homeTeam"]["abbrev"],
+                "startTimeUTC": g.get("startTimeUTC", ""),
+            })
+    return games
 
 
 def get_teams_on_date(date_str):
     """Regular-season games only (gameType == 2) - see module docstring."""
-    try:
-        r = requests.get(f"https://api-web.nhle.com/v1/schedule/{date_str}", timeout=15)
-        r.raise_for_status()
-        data = r.json()
-        teams = set()
-        for gw in data.get("gameWeek", []):
-            if gw.get("date") != date_str:
-                continue
-            for g in gw.get("games", []):
-                if g.get("gameType") != 2:
-                    continue
-                teams.add(g["awayTeam"]["abbrev"])
-                teams.add(g["homeTeam"]["abbrev"])
-        return teams
-    except Exception:
+    data = fetch_json_with_retry(
+        f"https://api-web.nhle.com/v1/schedule/{date_str}", label=f"schedule/{date_str}"
+    )
+    if data is None:
         return set()
+    teams = set()
+    for gw in data.get("gameWeek", []):
+        if gw.get("date") != date_str:
+            continue
+        for g in gw.get("games", []):
+            if g.get("gameType") != 2:
+                continue
+            teams.add(g["awayTeam"]["abbrev"])
+            teams.add(g["homeTeam"]["abbrev"])
+    return teams
 
 
 def rest_days_for(team, today, teams_by_date):
@@ -172,25 +169,23 @@ def rest_days_for(team, today, teams_by_date):
 
 # ── Regular-season history (goalie last start) ───────────────────────────
 def get_team_season_games(team):
-    try:
-        r = requests.get(f"https://api-web.nhle.com/v1/club-schedule-season/{team}/{SEASON}", timeout=15)
-        r.raise_for_status()
-        data = r.json()
-        games = [g for g in data.get("games", []) if g.get("gameType") == 2]
-        games.sort(key=lambda g: g["gameDate"])
-        return games
-    except Exception as e:
-        print(f"  season schedule error for {team}: {e}")
+    data = fetch_json_with_retry(
+        f"https://api-web.nhle.com/v1/club-schedule-season/{team}/{SEASON}",
+        label=f"season-schedule/{team}",
+    )
+    if data is None:
         return []
+    games = [g for g in data.get("games", []) if g.get("gameType") == 2]
+    games.sort(key=lambda g: g["gameDate"])
+    return games
 
 
 def get_starters(game_id):
-    try:
-        r = requests.get(f"https://api-web.nhle.com/v1/gamecenter/{game_id}/boxscore", timeout=15)
-        r.raise_for_status()
-        box = r.json()
-    except Exception as e:
-        print(f"  boxscore error for game {game_id}: {e}")
+    box = fetch_json_with_retry(
+        f"https://api-web.nhle.com/v1/gamecenter/{game_id}/boxscore",
+        label=f"boxscore/{game_id}",
+    )
+    if box is None:
         return "", ""
 
     pbs = box.get("playerByGameStats", {})
@@ -236,10 +231,11 @@ def last_start(team, season_games, today_str):
 # anyone who has stats for a team, including players since traded away).
 
 def goalie_stats_from_roster(team_roster, goalie_name):
-    """team_roster is one team's roster_with_stats() output. Matches by
-    name since the box-score starter name is all last_start() has to go
-    on - safe here because it's checked only against this one team's
-    small roster, not the whole league."""
+    """team_roster is one team's roster_with_stats() output, or None if
+    that team's roster fetch failed after retries - treated the same as
+    an empty roster here (blank sv_pct/gaa/stat_season), never a crash."""
+    if team_roster is None:
+        return {"sv_pct": None, "gaa": None, "stat_season": None}
     for identity in team_roster.values():
         if identity["group"] != "goalies":
             continue
@@ -260,10 +256,14 @@ def goalie_stats_from_roster(team_roster, goalie_name):
 
 
 def usage_leaders(team_roster, n=5):
-    """team_roster is one team's roster_with_stats() output. Only
-    players on the actual current roster are considered; a roster
-    player with no stats entry (new signing, rookie) is simply not
-    shown - never a substituted number."""
+    """team_roster is one team's roster_with_stats() output, or None if
+    that team's roster fetch failed after retries - returns [] in that
+    case (blank, same as a team with no qualifying skaters) rather than
+    crashing. Only players on the actual current roster are considered;
+    a roster player with no stats entry (new signing, rookie) is simply
+    not shown - never a substituted number."""
+    if team_roster is None:
+        return []
     rows = []
     for identity in team_roster.values():
         if identity["group"] == "goalies":
@@ -323,9 +323,38 @@ def main():
     print(f"  {len(games_today)} games tonight, {len(playing_teams)} teams. Fetching season history + rosters...")
     season_games_by_team = {}
     roster_by_team = {}
+    failed_roster_teams = []
     for team in playing_teams:
         season_games_by_team[team] = get_team_season_games(team)
-        roster_by_team[team] = roster_with_stats(team, SEASON)
+        roster = roster_with_stats(team, SEASON)
+        if roster is None:
+            failed_roster_teams.append(team)
+        roster_by_team[team] = roster
+        # Same reasoning as build_player_hub.py's per-team delay - this loop
+        # had none before, and confirmed-live throttling elsewhere in this
+        # repo's per-team fetches means it's not safe to assume this one is
+        # exempt just because playing_teams is usually a small subset of 32.
+        time.sleep(0.6)
+
+    if playing_teams and len(failed_roster_teams) / len(playing_teams) > 0.2:
+        # Unlike a stable 32-team dataset, tonight's slate size varies
+        # legitimately night to night, so there's no clean "previous file"
+        # baseline to compare a total count against (see
+        # build_player_hub.py/build_schedule_analysis.py for that version
+        # of this guard). The equivalent guard here: if roster fetches
+        # failed for more than a fifth of tonight's actual playing teams,
+        # something is wrong with the API right now (not "these particular
+        # teams have no players," which is never true) - abort and keep
+        # the previous file rather than publish a board with usage
+        # leaders and goalie stats missing for a chunk of tonight's games.
+        print(f"\nABORTING: roster fetch failed after retries for {len(failed_roster_teams)} of "
+              f"{len(playing_teams)} playing teams ({', '.join(failed_roster_teams)}) - over 20%. "
+              "Keeping the previous file on disk instead of committing a board with holes in it.")
+        sys.exit(1)
+    elif failed_roster_teams:
+        print(f"  WARNING: roster fetch failed after retries for {len(failed_roster_teams)} "
+              f"team(s), proceeding with blank usage leaders/goalie stats for them: "
+              f"{', '.join(failed_roster_teams)}")
 
     games_out = []
     for g in games_today:
