@@ -106,6 +106,25 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .mt-clear-btn{background:transparent;border:1px solid rgba(255,71,87,0.3);color:var(--red);font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:6px;cursor:pointer;white-space:nowrap;transition:all 0.15s;}
 .mt-clear-btn:hover{background:rgba(255,71,87,0.1);border-color:rgba(255,71,87,0.5);}
 .mt-note{background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:0.78rem;color:var(--text);}
+
+/* VIEW TOGGLE + CARDS */
+.view-toggle{display:inline-flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;flex-shrink:0;}
+.view-toggle-btn{background:transparent;border:none;color:var(--muted);font-size:0.72rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;padding:9px 16px;cursor:pointer;transition:all 0.15s;}
+.view-toggle-btn.active{background:rgba(56,189,248,0.12);color:var(--accent);}
+.view-toggle-btn:hover:not(.active){color:var(--text);}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.p-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px;}
+.p-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+.p-card-name{font-weight:700;font-size:0.92rem;color:var(--bright);line-height:1.3;}
+.p-card-name span{color:var(--muted);font-size:0.72rem;font-weight:600;margin-left:3px;}
+.p-card-team{font-size:0.68rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;background:rgba(255,255,255,0.04);padding:3px 8px;border-radius:5px;white-space:nowrap;flex-shrink:0;}
+.p-card-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 12px;}
+.p-card-stat{display:flex;flex-direction:column;}
+.p-card-stat-val{font-weight:800;font-size:1.1rem;color:var(--accent);}
+.p-card-stat-label{font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;}
+.p-card-meta{font-size:0.7rem;color:var(--muted);line-height:1.5;}
+.p-card-btn.ph-team-btn{width:100%;padding:12px;border-radius:8px;font-size:0.78rem;text-align:center;}
+@media(max-width:768px){.view-toggle{display:none;}}
 /* FOOTER */
 footer{background:#03070e;border-top:1px solid var(--border);padding:36px 32px;text-align:center;}
 .footer-brand{font-weight:800;font-size:1.1rem;color:var(--text);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
@@ -119,6 +138,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   .hero-content{padding:50px 20px;}
   .hero-stats{gap:24px;}
   .main-wrap{padding:0 16px 60px;}
+  .section-divider{flex-wrap:wrap;row-gap:8px;}
   .recap-row.wide{min-width:600px;}
   .game-card{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;}
   .gc-center{grid-column:1/-1;border:none;border-bottom:1px solid var(--border);}
@@ -165,7 +185,7 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div id="ph-empty-team-note" style="display:none;background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:0.78rem;color:var(--text);">Your My Team roster is empty, so nothing is excluded below &mdash; this is every eligible skater. Add players on the <a onclick="showPage('my-team')" style="color:var(--accent);cursor:pointer;">My Team</a> page and they'll drop off this list.</div>
     <div style="font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:16px;" id="ph-formula-note"></div>
 
-    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end;margin-bottom:16px;">
       <div class="form-group" style="max-width:340px;">
         <label for="ph-search">Search player or team</label>
         <input type="text" id="ph-search" placeholder="e.g. McDavid or EDM" oninput="phFilterAndRender()">
@@ -179,10 +199,14 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
           <option value="4">4+ games</option>
         </select>
       </div>
+      <div class="view-toggle" id="ph-view-toggle">
+        <button class="view-toggle-btn" data-view="table" onclick="setPhView('table')">☰ Table</button>
+        <button class="view-toggle-btn" data-view="cards" onclick="setPhView('cards')">▦ Cards</button>
+      </div>
     </div>
 
     <div style="font-size:0.7rem;color:var(--muted);margin-bottom:8px;" id="ph-count-note"></div>
-    <div class="recap-table" id="ph-table"></div>
+    <div id="ph-table"></div>
     <div style="font-size:0.75rem;color:var(--muted);line-height:1.6;margin-top:12px;">Only players on a team's actual current roster are shown &mdash; never someone who has since been traded or waived. A stat tagged <span style="color:var(--orange);">(last season)</span> is exactly that, not this year's form; it shows up until real current-season games replace it. The projection's prior-season rate is pooled across the two most recent seasons and requires at least 20 games combined &mdash; below that it's left blank rather than let a small sample (a 1-game call-up, say) produce a misleadingly high rate. Ranked by projected points alone &mdash; we don't know your league's roster size or scoring system, so this isn't "better than your worst player," just the raw ranking. Click a player to see the full three-season breakdown, team context, this week's opponents, and the projection math.</div>
   </div>
 </div>
@@ -196,6 +220,13 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   </div>
   <div class="main-wrap">
     <div class="mt-note">Saved in this browser only &mdash; no account, nothing sent to a server. Clearing your browser's site data (or switching browsers/devices) clears this too.</div>
+
+    <div style="display:flex;justify-content:flex-end;margin-bottom:8px;">
+      <div class="view-toggle" id="mt-view-toggle">
+        <button class="view-toggle-btn" data-view="cards" onclick="setMtView('cards')">▦ Cards</button>
+        <button class="view-toggle-btn" data-view="table" onclick="setMtView('table')">☰ Table</button>
+      </div>
+    </div>
 
     <div class="section-divider"><h2>Add Players</h2><div class="sd-line"></div></div>
     <div class="form-group" style="max-width:420px;margin-bottom:8px;">
@@ -233,11 +264,11 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 
     <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Skaters</div>
     <div id="mt-skater-empty-note" style="display:none;font-size:0.85rem;color:var(--muted);padding:28px 20px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:24px;">No skaters added yet. Search above to add up to 25.</div>
-    <div class="recap-table" id="mt-skater-table" style="margin-bottom:24px;"></div>
+    <div id="mt-skater-table" style="margin-bottom:24px;"></div>
 
     <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Goalies</div>
     <div id="mt-goalie-empty-note" style="display:none;font-size:0.85rem;color:var(--muted);padding:28px 20px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;">No goalies added yet. Search above to add up to 3. Click a goalie once added to see their full three-season line.</div>
-    <div class="recap-table" id="mt-goalie-table"></div>
+    <div id="mt-goalie-table"></div>
   </div>
 </div>
 <div id="page-season-board" class="page">
@@ -663,16 +694,19 @@ function phFormulaText(p) {
 function phDetailHtml(playerId, p) {
   const team = phData.teams[p.team] || {};
   const seasonIds = [phData.season, ...phData.prior_seasons];
+  const isD = p.position === 'D';
+  const detailCols = isD ? '100px 70px 70px 70px 70px 90px 90px 60px' : '100px 70px 70px 70px 70px 90px 90px';
   const seasonRows = seasonIds.map(sid => {
     const s = p.seasons[sid];
-    return `<div class="recap-row wide" style="grid-template-columns:100px 70px 70px 70px 70px 90px 90px;">
+    return `<div class="recap-row wide" style="grid-template-columns:${detailCols};">
       <span class="rr-game">${s.label}</span>
       <span style="text-align:right;">${s.games_played}</span>
       <span style="text-align:right;">${s.points}</span>
       <span style="text-align:right;">${s.goals}</span>
       <span style="text-align:right;">${s.assists}</span>
       <span style="text-align:right;">${phNum(s.points_per_game, 2)}</span>
-      <span style="text-align:right;">${phNum(s.shots_per_game, 2)}</span>
+      <span style="text-align:right;">${phNum(s.shots_per_game, 2)}</span>${isD ? `
+      <span style="text-align:right;">${s.blocked_shots}</span>` : ''}
     </div>`;
   }).join('');
 
@@ -694,14 +728,15 @@ function phDetailHtml(playerId, p) {
     <div style="padding:16px 20px;background:rgba(255,255,255,0.02);">
       <div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Three-Season Line</div>
       <div class="recap-table" style="margin-bottom:16px;">
-        <div class="recap-row wide" style="grid-template-columns:100px 70px 70px 70px 70px 90px 90px;background:rgba(255,255,255,0.03);">
+        <div class="recap-row wide" style="grid-template-columns:${detailCols};background:rgba(255,255,255,0.03);">
           <span class="rr-game"><strong>Season</strong></span>
           <span style="text-align:right;"><strong>GP</strong></span>
           <span style="text-align:right;"><strong>Pts</strong></span>
           <span style="text-align:right;"><strong>G</strong></span>
           <span style="text-align:right;"><strong>A</strong></span>
           <span style="text-align:right;"><strong>Pts/Gm</strong></span>
-          <span style="text-align:right;"><strong>Shots/Gm</strong></span>
+          <span style="text-align:right;"><strong>Shots/Gm</strong></span>${isD ? `
+          <span style="text-align:right;"><strong>Blk</strong></span>` : ''}
         </div>
         ${seasonRows}
       </div>
@@ -720,8 +755,61 @@ function phDetailHtml(playerId, p) {
     </div>`;
 }
 
-const PH_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px';
-const MT_GRID_COLS = '1fr 60px 130px 80px 70px 90px 100px 90px 100px';
+// ── VIEW MODE (table vs cards) - per page, remembered in localStorage.
+// Mobile (<=768px) always shows cards regardless of the stored
+// preference - the tables genuinely don't fit a phone screen. ──────────
+const VIEW_KEY_PICKUPS = 'grindline_view_pickups';
+const VIEW_KEY_MYTEAM = 'grindline_view_myteam';
+function loadView(key, fallback) {
+  try {
+    const v = localStorage.getItem(key);
+    return (v === 'table' || v === 'cards') ? v : fallback;
+  } catch (e) { return fallback; }
+}
+function saveView(key, v) {
+  try { localStorage.setItem(key, v); } catch (e) {}
+}
+let phView = loadView(VIEW_KEY_PICKUPS, 'table');
+let mtView = loadView(VIEW_KEY_MYTEAM, 'cards');
+function isMobile() {
+  return window.matchMedia('(max-width: 768px)').matches;
+}
+function updateViewToggleUI(toggleId, v) {
+  const el = document.getElementById(toggleId);
+  if (!el) return;
+  el.querySelectorAll('.view-toggle-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-view') === v);
+  });
+}
+function setPhView(v) {
+  phView = v;
+  saveView(VIEW_KEY_PICKUPS, v);
+  updateViewToggleUI('ph-view-toggle', v);
+  phFilterAndRender();
+}
+function setMtView(v) {
+  mtView = v;
+  saveView(VIEW_KEY_MYTEAM, v);
+  updateViewToggleUI('mt-view-toggle', v);
+  renderMyTeam();
+}
+updateViewToggleUI('ph-view-toggle', phView);
+updateViewToggleUI('mt-view-toggle', mtView);
+window.addEventListener('resize', (() => {
+  let t = null;
+  return () => {
+    clearTimeout(t);
+    t = setTimeout(() => {
+      const activePage = document.querySelector('.page.active');
+      if (!activePage) return;
+      if (activePage.id === 'page-player-hub') phFilterAndRender();
+      if (activePage.id === 'page-my-team') renderMyTeam();
+    }, 200);
+  };
+})());
+
+const PH_GRID_COLS = '1fr 60px 130px 80px 70px 90px 50px 50px 55px 100px 90px';
+const MT_GRID_COLS = '1fr 60px 130px 80px 70px 90px 50px 50px 55px 100px 90px 100px';
 const MT_GOALIE_GRID_COLS = '1fr 60px 55px 50px 70px 65px 50px 110px 110px 100px';
 
 // ── MY TEAM state (localStorage only - no accounts, no backend). Skaters
@@ -797,6 +885,7 @@ function phBaseCellsHtml(p) {
   const proj = p.projection;
   const thisSzn = p.seasons[phData.season];
   const lastSzn = p.seasons[phData.prior_seasons[0]];
+  const isD = p.position === 'D';
   return `
       <span class="rr-game"><strong>${p.name}</strong> <span style="color:var(--muted);font-size:0.72rem;">${p.position}</span></span>
       <span style="text-align:right;">${p.team}</span>
@@ -804,6 +893,9 @@ function phBaseCellsHtml(p) {
       <span style="text-align:right;">${phNum(proj.blended_points_per_game, 2)}</span>
       <span style="text-align:right;">${proj.games_this_week}</span>
       <span style="text-align:right;">${phNum(thisSzn.points_per_game, 2)}</span>
+      <span style="text-align:right;">${thisSzn.goals}</span>
+      <span style="text-align:right;">${thisSzn.assists}</span>
+      <span style="text-align:right;">${isD ? thisSzn.blocked_shots : '—'}</span>
       <span style="text-align:right;">${phNum(proj.prior_points_per_game, 2)}</span>
       <span style="text-align:right;">${phNum(lastSzn.shots_per_game, 2)}</span>`;
 }
@@ -815,6 +907,9 @@ function phHeaderCellsHtml(lastLabel) {
       <span style="text-align:right;"><strong>PPG</strong> <span style="color:var(--muted);font-size:0.6rem;">(blended)</span></span>
       <span style="text-align:right;"><strong>Games This Week</strong></span>
       <span style="text-align:right;"><strong>This Szn PPG</strong></span>
+      <span style="text-align:right;"><strong>G</strong> <span style="color:var(--muted);font-size:0.6rem;">(this szn)</span></span>
+      <span style="text-align:right;"><strong>A</strong> <span style="color:var(--muted);font-size:0.6rem;">(this szn)</span></span>
+      <span style="text-align:right;"><strong>Blk</strong> <span style="color:var(--muted);font-size:0.6rem;">(D, this szn)</span></span>
       <span style="text-align:right;"><strong>Prior 2Sn PPG</strong> <span style="color:var(--orange);font-size:0.6rem;">(20+ GP)</span></span>
       <span style="text-align:right;"><strong>Shots/Gm</strong> <span style="color:var(--orange);font-size:0.6rem;">(LY)</span></span>${lastLabel ? `
       <span style="text-align:right;"><strong>${lastLabel}</strong></span>` : ''}`;
@@ -829,9 +924,45 @@ function phRowHtml(playerId, p) {
   return html;
 }
 
+// Cards get their own add/remove control (unlike the Pickups table, which
+// has never had one) - on mobile the table isn't available at all, so this
+// is the only way to add a pickup straight from this page.
+function phCardHtml(playerId, p) {
+  const proj = p.projection;
+  const thisSzn = p.seasons[phData.season];
+  const isD = p.position === 'D';
+  const onTeam = isOnMyTeam(playerId);
+  return `<div class="p-card">
+      <div class="p-card-top">
+        <div class="p-card-name">${p.name} <span>${p.position}</span></div>
+        <div class="p-card-team">${p.team}</div>
+      </div>
+      <div class="p-card-stats">
+        <div class="p-card-stat"><span class="p-card-stat-val">${proj.projected_points == null ? '—' : proj.projected_points.toFixed(2)}</span><span class="p-card-stat-label">Proj Pts Wk</span></div>
+        <div class="p-card-stat"><span class="p-card-stat-val">${proj.games_this_week}</span><span class="p-card-stat-label">Games Wk</span></div>
+        <div class="p-card-stat"><span class="p-card-stat-val">${thisSzn.goals}</span><span class="p-card-stat-label">Goals</span></div>
+        <div class="p-card-stat"><span class="p-card-stat-val">${thisSzn.assists}</span><span class="p-card-stat-label">Assists</span></div>
+        ${isD ? `<div class="p-card-stat"><span class="p-card-stat-val">${thisSzn.blocked_shots}</span><span class="p-card-stat-label">Blocked</span></div>` : ''}
+      </div>
+      <button class="p-card-btn ph-team-btn${onTeam ? ' on' : ''}" data-id="${playerId}">${onTeam ? '✓ On Team — Remove' : '+ Add to My Team'}</button>
+    </div>`;
+}
+
 function phRenderTable(ids) {
   const el = document.getElementById('ph-table');
   if (!el) return;
+  const useCards = isMobile() || phView === 'cards';
+
+  if (useCards) {
+    el.className = 'card-grid';
+    el.innerHTML = ids.length
+      ? ids.map(id => phCardHtml(id, phData.players[id])).join('')
+      : `<div style="font-size:0.8rem;color:var(--muted);padding:10px 2px;">No matching pickups.</div>`;
+    bindTeamButtons(el);
+    return;
+  }
+
+  el.className = 'recap-table';
   const header = `<div class="recap-row wide" style="grid-template-columns:${PH_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml()}</div>`;
   el.innerHTML = header + ids.map(id => phRowHtml(id, phData.players[id])).join('');
 
@@ -941,6 +1072,29 @@ function mtGoalieSearchRowHtml(goalieId, g) {
     </div>`;
 }
 
+// isOnMyTeam() decides Add vs Remove - reused as-is whether this card is
+// rendered in search results (never on team) or the roster (always on
+// team). No expand-on-card - cards are a compact summary + action only,
+// the three-season line stays a table-only (click-to-expand) feature.
+function mtGoalieCardHtml(goalieId, g) {
+  const s = g.seasons[phData.season];
+  const onTeam = isOnMyTeam(goalieId);
+  return `<div class="p-card">
+      <div class="p-card-top">
+        <div class="p-card-name">${g.name} <span>${g.position}</span></div>
+        <div class="p-card-team">${g.team}</div>
+      </div>
+      <div class="p-card-stats">
+        <div class="p-card-stat"><span class="p-card-stat-val">${s.games_played}</span><span class="p-card-stat-label">GP (this szn)</span></div>
+        <div class="p-card-stat"><span class="p-card-stat-val">${s.wins}</span><span class="p-card-stat-label">Wins</span></div>
+        <div class="p-card-stat"><span class="p-card-stat-val">${s.save_pct == null ? '—' : s.save_pct.toFixed(3)}</span><span class="p-card-stat-label">SV%</span></div>
+        <div class="p-card-stat"><span class="p-card-stat-val">${s.gaa == null ? '—' : s.gaa.toFixed(2)}</span><span class="p-card-stat-label">GAA</span></div>
+      </div>
+      <div class="p-card-meta">Team games this week: ${g.games_this_week} &middot; Last start: ${g.last_start_date || '—'}</div>
+      <button class="p-card-btn ph-team-btn${onTeam ? ' on' : ''}" data-id="${goalieId}">${onTeam ? '✓ On Team — Remove' : '+ Add to My Team'}</button>
+    </div>`;
+}
+
 function mtSearchRender() {
   const el = document.getElementById('mt-search-results');
   const capNote = document.getElementById('mt-search-cap-note');
@@ -989,25 +1143,29 @@ function mtSearchRender() {
     return;
   }
 
+  const useCards = isMobile() || mtView === 'cards';
   let html = '';
   if (shownSkaters.length) {
-    const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('Add')}</div>`;
     const remaining = skaterMatches.length - shownSkaters.length;
     const more = remaining > 0
       ? `<div style="font-size:0.7rem;color:var(--muted);padding:8px 20px;">+${remaining} more skater${remaining === 1 ? '' : 's'} — narrow your search to see them.</div>` : '';
-    html += `<div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:12px 0 6px;">Skaters</div>
-      <div class="recap-table">${header}${shownSkaters.map(id => mtSearchRowHtml(id, phData.players[id])).join('')}</div>${more}`;
+    const body = useCards
+      ? `<div class="card-grid">${shownSkaters.map(id => phCardHtml(id, phData.players[id])).join('')}</div>`
+      : `<div class="recap-table"><div class="recap-row wide" style="grid-template-columns:${MT_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('Add')}</div>${shownSkaters.map(id => mtSearchRowHtml(id, phData.players[id])).join('')}</div>`;
+    html += `<div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:12px 0 6px;">Skaters</div>${body}${more}`;
   }
   if (shownGoalies.length) {
-    const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GOALIE_GRID_COLS};background:rgba(255,255,255,0.03);">${mtGoalieHeaderCellsHtml('Add')}</div>`;
     const remaining = goalieMatches.length - shownGoalies.length;
     const more = remaining > 0
       ? `<div style="font-size:0.7rem;color:var(--muted);padding:8px 20px;">+${remaining} more goalie${remaining === 1 ? '' : 's'} — narrow your search to see them.</div>` : '';
-    html += `<div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:12px 0 6px;">Goalies</div>
-      <div class="recap-table">${header}${shownGoalies.map(id => mtGoalieSearchRowHtml(id, phData.goalies[id])).join('')}</div>${more}`;
+    const body = useCards
+      ? `<div class="card-grid">${shownGoalies.map(id => mtGoalieCardHtml(id, phData.goalies[id])).join('')}</div>`
+      : `<div class="recap-table"><div class="recap-row wide" style="grid-template-columns:${MT_GOALIE_GRID_COLS};background:rgba(255,255,255,0.03);">${mtGoalieHeaderCellsHtml('Add')}</div>${shownGoalies.map(id => mtGoalieSearchRowHtml(id, phData.goalies[id])).join('')}</div>`;
+    html += `<div style="font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:12px 0 6px;">Goalies</div>${body}${more}`;
   }
   el.innerHTML = html;
 
+  bindTeamButtons(el);
   el.querySelectorAll('.mt-search-row').forEach(row => {
     row.addEventListener('click', () => toggleMyTeam(row.getAttribute('data-id')));
   });
@@ -1038,10 +1196,17 @@ function renderMyTeam() {
     setCounts();
   }
 
+  const useCards = isMobile() || mtView === 'cards';
+
   if (skaterTableEl) {
     if (!validSkaters.length) {
       skaterTableEl.innerHTML = '';
+    } else if (useCards) {
+      skaterTableEl.className = 'card-grid';
+      skaterTableEl.innerHTML = validSkaters.map(id => phCardHtml(id, phData.players[id])).join('');
+      bindTeamButtons(skaterTableEl);
     } else {
+      skaterTableEl.className = 'recap-table';
       const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GRID_COLS};background:rgba(255,255,255,0.03);">${phHeaderCellsHtml('Remove')}</div>`;
       skaterTableEl.innerHTML = header + validSkaters.map(id => mtRowHtml(id, phData.players[id])).join('');
       bindTeamButtons(skaterTableEl);
@@ -1052,7 +1217,14 @@ function renderMyTeam() {
   if (goalieTableEl) {
     if (!validGoalies.length) {
       goalieTableEl.innerHTML = '';
+    } else if (useCards) {
+      // No expand-on-card for goalies (same as skaters) - the three-season
+      // line stays a table-only feature via mtGoalieRowHtml's click-expand.
+      goalieTableEl.className = 'card-grid';
+      goalieTableEl.innerHTML = validGoalies.map(id => mtGoalieCardHtml(id, phData.goalies[id])).join('');
+      bindTeamButtons(goalieTableEl);
     } else {
+      goalieTableEl.className = 'recap-table';
       const header = `<div class="recap-row wide" style="grid-template-columns:${MT_GOALIE_GRID_COLS};background:rgba(255,255,255,0.03);">${mtGoalieHeaderCellsHtml('Remove')}</div>`;
       goalieTableEl.innerHTML = header + validGoalies.map(id => mtGoalieRowHtml(id, phData.goalies[id])).join('');
       goalieTableEl.querySelectorAll('.mt-goalie-row').forEach(row => {

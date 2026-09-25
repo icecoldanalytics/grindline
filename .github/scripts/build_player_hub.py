@@ -168,7 +168,12 @@ EMPTY_SEASON = {"games_played": 0, "points": 0, "goals": 0, "assists": 0,
                  # and goalie raw dicts share one shape - a skater's entry
                  # simply never has these read.
                  "games_started": 0, "wins": 0, "losses": 0, "ot_losses": 0,
-                 "shutouts": 0, "toi_seconds": 0}
+                 "shutouts": 0, "toi_seconds": 0,
+                 # Defenseman-only field (see fetch_blocked_shots_by_season) -
+                 # left at 0 for forwards, who never get a real value merged
+                 # in; the page only displays this column for defensemen, so
+                 # a forward's 0 here is never shown as if it meant something.
+                 "blocked_shots": 0}
 
 PROJECTION_FORMULA = (
     "Projected points this week = blended points/game x games this week. "
@@ -427,17 +432,66 @@ def extract_prior_seasons(landing):
     return out
 
 
+def fetch_blocked_shots_by_season(season):
+    """{playerId: total blocked shots} for every defenseman in this
+    season - api.nhle.com/stats/rest/en/skater/realtime, filtered
+    server-side to positionCode='D' (so we're not paying to page through
+    forward rows we'd discard) and paginated 100 rows per call, the
+    server's apparent hard cap regardless of a larger requested limit
+    (confirmed live: limit=1000 still returned 100 rows). Neither
+    club-stats/now nor player/{id}/landing carries blocked shots at all
+    for skaters - confirmed live by inspecting both directly - this
+    separate bulk stats-REST endpoint is the only place it exists. Not
+    folded into the per-player prior-seasons cache: unlike that cache,
+    refetching this every run costs almost nothing (a handful of calls
+    total across all three seasons combined, see this function's
+    call-site in main() for the exact count), so there's no benefit to
+    the added complexity of caching it."""
+    out = {}
+    start = 0
+    while True:
+        try:
+            r = requests.get(
+                "https://api.nhle.com/stats/rest/en/skater/realtime",
+                params={"cayenneExp": f"seasonId={season} and gameTypeId=2 and positionCode='D'",
+                        "limit": 100, "start": start},
+                timeout=15,
+            )
+            r.raise_for_status()
+            payload = r.json()
+        except Exception as e:
+            print(f"  blocked-shots error for season {season} (start {start}): {e}")
+            break
+        rows = payload.get("data", [])
+        for row in rows:
+            out[row.get("playerId")] = row.get("blockedShots", 0)
+        total = payload.get("total", 0)
+        start += len(rows)
+        if not rows or start >= total:
+            break
+    return out
+
+
 def rate_stats(raw):
     """EMPTY_SEASON-shaped raw counts -> the display shape (label filled
     in by the caller), with points_per_game/shots_per_game/save_pct null
-    (never 0) when games_played is 0."""
+    (never 0) when games_played is 0.
+
+    blocked_shots reads via .get(), not raw["blocked_shots"], because
+    this same function is also called with raw cache entries that
+    predate that field (any dict written before blocked-shots support
+    existed) - safe specifically because the only two callers are the
+    last-starting-goalie lookup (never a defenseman, a 0 here is never
+    displayed) and the main skater loop, which always merges a freshly
+    bulk-fetched real value in for a defenseman BEFORE calling this - so
+    this default never masks a real defenseman's actual total."""
     gp = raw["games_played"]
     save_pct = None
     if raw["shots_against"] > 0:
         save_pct = round((raw["shots_against"] - raw["goals_against"]) / raw["shots_against"], 3)
     return {
         "games_played": gp, "points": raw["points"], "goals": raw["goals"], "assists": raw["assists"],
-        "shots": raw["shots"],
+        "shots": raw["shots"], "blocked_shots": raw.get("blocked_shots", 0),
         "points_per_game": round(raw["points"] / gp, 3) if gp else None,
         "shots_per_game": round(raw["shots"] / gp, 3) if gp else None,
         "save_pct": save_pct,
@@ -573,6 +627,12 @@ def main():
     print(f"  current season: {len(team_stats_current)} teams with games played")
     print(f"  last season: {len(team_stats_last)} teams")
 
+    print("Fetching defenseman blocked shots (this season + both prior, bulk per season)...")
+    blocked_shots_by_season = {}
+    for sid in [SEASON] + PRIOR_SEASONS:
+        blocked_shots_by_season[sid] = fetch_blocked_shots_by_season(sid)
+        print(f"  {sid}: {len(blocked_shots_by_season[sid])} defensemen with a blocked-shots total")
+
     teams = sorted(FULL_NAMES)
     schedules = {}
     rosters = {}
@@ -655,11 +715,21 @@ def main():
                 print(f"  Progress: {done}/{total_skaters} ({landing_calls} landing-page calls so far)")
 
             prior = cache.get(pid_str, {s: dict(EMPTY_SEASON) for s in PRIOR_SEASONS})
-            current_raw = current_by_team[team].get(player_id, dict(EMPTY_SEASON))
+            current_raw = dict(current_by_team[team].get(player_id, dict(EMPTY_SEASON)))
+
+            is_defenseman = identity["group"] == "defensemen"
+            if is_defenseman:
+                current_raw["blocked_shots"] = blocked_shots_by_season[SEASON].get(player_id, 0)
 
             seasons = {SEASON: {**rate_stats(current_raw), "label": SEASON_LABEL}}
             for sid in PRIOR_SEASONS:
-                seasons[sid] = {**rate_stats(prior[sid]), "label": ALL_SEASON_LABELS[sid]}
+                # Copy before mutating - prior[sid] is a reference into the
+                # shared cache dict, which must never carry blocked_shots
+                # (that field is bulk-refetched every run, not cached).
+                prior_raw = dict(prior[sid])
+                if is_defenseman:
+                    prior_raw["blocked_shots"] = blocked_shots_by_season[sid].get(player_id, 0)
+                seasons[sid] = {**rate_stats(prior_raw), "label": ALL_SEASON_LABELS[sid]}
             for sid in seasons:
                 seasons[sid].pop("save_pct", None)
 
