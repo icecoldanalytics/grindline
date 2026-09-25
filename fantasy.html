@@ -107,6 +107,21 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .mt-clear-btn:hover{background:rgba(255,71,87,0.1);border-color:rgba(255,71,87,0.5);}
 .mt-note{background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:0.78rem;color:var(--text);}
 
+/* TRADE CALCULATOR */
+.trade-panel{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.trade-panel-label{font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.trade-chip-list{display:flex;flex-wrap:wrap;gap:8px;}
+.trade-chip{display:inline-flex;align-items:center;gap:6px;font-size:0.8rem;font-weight:600;padding:8px 13px;border-radius:20px;border:1px solid var(--border);background:rgba(255,255,255,0.04);color:var(--text);cursor:pointer;white-space:nowrap;transition:all 0.15s;}
+.trade-chip:hover{border-color:var(--accent);color:var(--accent);}
+.trade-chip.selected{background:rgba(56,189,248,0.12);border-color:rgba(56,189,248,0.4);color:var(--accent);}
+.trade-chip.selected:hover{background:rgba(255,71,87,0.12);border-color:rgba(255,71,87,0.35);color:var(--red);}
+.trade-chip-remove{font-weight:700;opacity:0.7;}
+@media(max-width:768px){
+  .trade-panel{grid-template-columns:1fr;gap:20px;}
+  .trade-chip{font-size:16px;}
+  .trade-panel-label{font-size:13px;}
+}
+
 /* VIEW TOGGLE + CARDS */
 .view-toggle{display:inline-flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;flex-shrink:0;}
 .view-toggle-btn{background:transparent;border:none;color:var(--muted);font-size:0.72rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;padding:9px 16px;cursor:pointer;transition:all 0.15s;}
@@ -290,6 +305,61 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <div style="font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Goalies</div>
     <div id="mt-goalie-empty-note" style="display:none;font-size:0.85rem;color:var(--muted);padding:28px 20px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;">No goalies added yet. Search above to add up to 3. Click a goalie once added to see their full three-season line.</div>
     <div id="mt-goalie-table"></div>
+
+    <div class="section-divider" style="margin-top:36px;"><h2>Trade Calculator</h2><div class="sd-line"></div></div>
+    <div class="mt-note">Preview only &mdash; nothing changes on your saved team until you tap Apply Trade below. Skaters only, since goalies don't carry a weekly projection to compare. This before-and-after covers this week's schedule only; a trade is a season-long decision, so weigh it beyond this one week.</div>
+
+    <div id="trade-empty-note" style="display:none;font-size:0.85rem;color:var(--muted);padding:28px 20px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:12px;">Add skaters to My Team above to use the trade calculator.</div>
+
+    <div id="trade-calc-body">
+      <div class="trade-panel">
+        <div>
+          <div class="trade-panel-label">Give Away <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0;">(up to 2, tap from your roster)</span></div>
+          <div id="trade-give-chips" class="trade-chip-list"></div>
+        </div>
+        <div>
+          <div class="trade-panel-label">Receive <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0;">(up to 2, search below)</span></div>
+          <div id="trade-receive-chips" class="trade-chip-list" style="margin-bottom:8px;"></div>
+          <div class="form-group" style="max-width:340px;">
+            <input type="text" id="trade-search" placeholder="Search a skater to receive" oninput="renderTradeCalculator()">
+          </div>
+          <div id="trade-search-results" style="margin-top:8px;"></div>
+        </div>
+      </div>
+
+      <div id="trade-cap-warning" style="display:none;font-size:0.78rem;color:var(--red);margin:14px 0 0;"></div>
+
+      <div class="tracker-grid" style="margin-top:20px;">
+        <div class="tracker-card">
+          <div class="tracker-card-header"><h3>Before</h3></div>
+          <div class="tracker-card-body">
+            <div class="stat-row"><span class="stat-label">Projected Points This Week</span><span class="stat-val" id="trade-before-points">0.00</span></div>
+            <div class="stat-row"><span class="stat-label">Games This Week</span><span class="stat-val" id="trade-before-games">0</span></div>
+            <div class="stat-row"><span class="stat-label">4-Game / 2-Game Weeks</span><span class="stat-val" id="trade-before-split">0 / 0</span></div>
+          </div>
+        </div>
+        <div class="tracker-card">
+          <div class="tracker-card-header"><h3>After</h3></div>
+          <div class="tracker-card-body">
+            <div class="stat-row"><span class="stat-label">Projected Points This Week</span><span class="stat-val" id="trade-after-points">0.00</span></div>
+            <div class="stat-row"><span class="stat-label">Games This Week</span><span class="stat-val" id="trade-after-games">0</span></div>
+            <div class="stat-row"><span class="stat-label">4-Game / 2-Game Weeks</span><span class="stat-val" id="trade-after-split">0 / 0</span></div>
+          </div>
+        </div>
+        <div class="tracker-card">
+          <div class="tracker-card-header"><h3>Change</h3></div>
+          <div class="tracker-card-body">
+            <div class="stat-row"><span class="stat-label">Projected Points This Week</span><span class="stat-val" id="trade-delta-points">+0.00</span></div>
+            <div class="stat-row"><span class="stat-label">Games This Week</span><span class="stat-val" id="trade-delta-games">+0</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:16px;">
+        <button class="mt-clear-btn" id="trade-reset-btn" onclick="resetTradeCalc()">Reset</button>
+        <button class="p-card-btn ph-team-btn" id="trade-apply-btn" style="width:auto;padding:10px 22px;" onclick="applyTradeCalc()">Apply Trade</button>
+      </div>
+    </div>
   </div>
 </div>
 <div id="page-season-board" class="page">
@@ -1299,17 +1369,191 @@ function renderMyTeam() {
   // Skaters only - goalies have no projection to sum (see build_player_hub.py)
   // and mixing a goalie's team-games-this-week into this would wrongly imply
   // they're predicted to play in all of them.
-  let totalProjected = 0, fourGame = 0, twoGame = 0;
-  validSkaters.forEach(id => {
-    const proj = phData.players[id].projection;
+  const summary = computeSkaterSummary(validSkaters);
+  const setText = (id, val) => { const e = document.getElementById(id); if (e) e.textContent = val; };
+  setText('mt-total-projected', summary.totalProjected.toFixed(2));
+  setText('mt-four-game', summary.fourGame);
+  setText('mt-two-game', summary.twoGame);
+
+  renderTradeCalculator();
+}
+
+// Shared by the Weekly Summary above and the Trade Calculator's before/after
+// comparison - same skaters-only totals, just over different id lists.
+function computeSkaterSummary(ids) {
+  let totalProjected = 0, totalGames = 0, fourGame = 0, twoGame = 0;
+  ids.forEach(id => {
+    const p = phData.players[id];
+    if (!p) return;
+    const proj = p.projection;
     if (proj.projected_points != null) totalProjected += proj.projected_points;
+    if (proj.games_this_week != null) totalGames += proj.games_this_week;
     if (proj.games_this_week === 4) fourGame++;
     if (proj.games_this_week === 2) twoGame++;
   });
+  return { totalProjected, totalGames, fourGame, twoGame };
+}
+
+// ── TRADE CALCULATOR state. Local-only until Apply is clicked - selecting
+// give/receive players here never touches myTeam or localStorage, so the
+// saved roster is untouched unless the user explicitly confirms. ─────────
+let tradeGiveIds = [];
+let tradeReceiveIds = [];
+
+function toggleTradeGive(id) {
+  const idx = tradeGiveIds.indexOf(id);
+  if (idx > -1) {
+    tradeGiveIds.splice(idx, 1);
+  } else {
+    if (tradeGiveIds.length >= 2) return;
+    tradeGiveIds.push(id);
+  }
+  renderTradeCalculator();
+}
+
+function addTradeReceive(id) {
+  if (tradeReceiveIds.includes(id) || tradeReceiveIds.length >= 2) return;
+  tradeReceiveIds.push(id);
+  const searchEl = document.getElementById('trade-search');
+  if (searchEl) searchEl.value = '';
+  renderTradeCalculator();
+}
+
+function removeTradeReceive(id) {
+  tradeReceiveIds = tradeReceiveIds.filter(x => x !== id);
+  renderTradeCalculator();
+}
+
+function resetTradeCalc() {
+  tradeGiveIds = [];
+  tradeReceiveIds = [];
+  const searchEl = document.getElementById('trade-search');
+  if (searchEl) searchEl.value = '';
+  renderTradeCalculator();
+}
+
+function applyTradeCalc() {
+  if (!tradeGiveIds.length && !tradeReceiveIds.length) return;
+  const afterCount = myTeam.skaters.length - tradeGiveIds.length + tradeReceiveIds.length;
+  if (afterCount > SKATER_CAP) return;
+  const giveNames = tradeGiveIds.map(id => phData.players[id] ? phData.players[id].name : id).join(', ') || 'nobody';
+  const receiveNames = tradeReceiveIds.map(id => phData.players[id] ? phData.players[id].name : id).join(', ') || 'nobody';
+  if (!confirm(`Apply this trade to your saved team?\n\nGive away: ${giveNames}\nReceive: ${receiveNames}\n\nThis updates your roster right away.`)) return;
+  myTeam.skaters = myTeam.skaters.filter(id => !tradeGiveIds.includes(id)).concat(tradeReceiveIds);
+  saveMyTeam();
+  tradeGiveIds = [];
+  tradeReceiveIds = [];
+  renderMyTeam();
+}
+
+function renderTradeCalculator() {
+  const bodyEl = document.getElementById('trade-calc-body');
+  const emptyEl = document.getElementById('trade-empty-note');
+  if (!bodyEl || !phData) return;
+
+  const validSkaters = myTeam.skaters.filter(id => phData.players && phData.players[id]);
+  // Self-heal: drop any selection that no longer makes sense - e.g. a Give
+  // pick removed elsewhere on the page, or a Receive pick that's since
+  // landed on the real roster by some other route.
+  tradeGiveIds = tradeGiveIds.filter(id => validSkaters.includes(id));
+  tradeReceiveIds = tradeReceiveIds.filter(id => phData.players[id] && !validSkaters.includes(id));
+
+  if (!validSkaters.length) {
+    if (emptyEl) emptyEl.style.display = 'block';
+    bodyEl.style.display = 'none';
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = 'none';
+  bodyEl.style.display = 'block';
+
+  const giveChipsEl = document.getElementById('trade-give-chips');
+  if (giveChipsEl) {
+    giveChipsEl.innerHTML = validSkaters.map(id => {
+      const p = phData.players[id];
+      const selected = tradeGiveIds.includes(id);
+      const disabled = !selected && tradeGiveIds.length >= 2;
+      return `<button type="button" class="trade-chip${selected ? ' selected' : ''}"${disabled ? ' disabled style="opacity:0.4;cursor:not-allowed;"' : ''} data-id="${id}" onclick="toggleTradeGive('${id}')">${p.name} <span style="color:var(--muted);">${p.team}</span></button>`;
+    }).join('');
+  }
+
+  const receiveChipsEl = document.getElementById('trade-receive-chips');
+  if (receiveChipsEl) {
+    receiveChipsEl.innerHTML = tradeReceiveIds.map(id => {
+      const p = phData.players[id];
+      return `<button type="button" class="trade-chip selected" data-id="${id}" onclick="removeTradeReceive('${id}')">${p.name} <span style="color:var(--muted);">${p.team}</span> <span class="trade-chip-remove">✕</span></button>`;
+    }).join('');
+  }
+
+  const searchResultsEl = document.getElementById('trade-search-results');
+  const searchEl = document.getElementById('trade-search');
+  if (searchResultsEl && searchEl) {
+    const q = (searchEl.value || '').trim().toLowerCase();
+    if (tradeReceiveIds.length >= 2) {
+      searchResultsEl.innerHTML = q ? `<div style="font-size:0.75rem;color:var(--muted);padding:6px 2px;">Remove a Receive pick above to search for another.</div>` : '';
+    } else if (!q) {
+      searchResultsEl.innerHTML = '';
+    } else {
+      const matches = Object.keys(phData.players)
+        .filter(id => !validSkaters.includes(id) && !tradeReceiveIds.includes(id))
+        .filter(id => {
+          const p = phData.players[id];
+          return p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q);
+        })
+        .sort((a, b) => {
+          const pa = phData.players[a].projection.projected_points;
+          const pb = phData.players[b].projection.projected_points;
+          if (pa == null && pb == null) return 0;
+          if (pa == null) return 1;
+          if (pb == null) return -1;
+          return pb - pa;
+        })
+        .slice(0, 8);
+      searchResultsEl.innerHTML = matches.length
+        ? `<div class="trade-chip-list">${matches.map(id => {
+            const p = phData.players[id];
+            return `<button type="button" class="trade-chip" data-id="${id}" onclick="addTradeReceive('${id}')">+ ${p.name} <span style="color:var(--muted);">${p.team}</span></button>`;
+          }).join('')}</div>`
+        : `<div style="font-size:0.75rem;color:var(--muted);padding:6px 2px;">No matching skaters.</div>`;
+    }
+  }
+
+  const afterIds = validSkaters.filter(id => !tradeGiveIds.includes(id)).concat(tradeReceiveIds);
+  const afterCount = afterIds.length;
+  const warnEl = document.getElementById('trade-cap-warning');
+  if (warnEl) {
+    if (afterCount > SKATER_CAP) {
+      warnEl.style.display = 'block';
+      warnEl.textContent = `This trade would put you at ${afterCount} skaters, over your ${SKATER_CAP} cap. Give away more or receive fewer before applying.`;
+    } else {
+      warnEl.style.display = 'none';
+      warnEl.textContent = '';
+    }
+  }
+
+  // Before/after comparison - skaters only, this week's schedule only. No
+  // score or verdict on the trade itself: just the raw numbers, before and
+  // after, for the user to weigh against their own read of the deal.
+  const before = computeSkaterSummary(validSkaters);
+  const after = computeSkaterSummary(afterIds);
   const setText = (id, val) => { const e = document.getElementById(id); if (e) e.textContent = val; };
-  setText('mt-total-projected', totalProjected.toFixed(2));
-  setText('mt-four-game', fourGame);
-  setText('mt-two-game', twoGame);
+  setText('trade-before-points', before.totalProjected.toFixed(2));
+  setText('trade-before-games', before.totalGames);
+  setText('trade-before-split', `${before.fourGame} / ${before.twoGame}`);
+  setText('trade-after-points', after.totalProjected.toFixed(2));
+  setText('trade-after-games', after.totalGames);
+  setText('trade-after-split', `${after.fourGame} / ${after.twoGame}`);
+  const deltaPoints = after.totalProjected - before.totalProjected;
+  const deltaGames = after.totalGames - before.totalGames;
+  setText('trade-delta-points', `${deltaPoints >= 0 ? '+' : ''}${deltaPoints.toFixed(2)}`);
+  setText('trade-delta-games', `${deltaGames >= 0 ? '+' : ''}${deltaGames}`);
+
+  const applyBtn = document.getElementById('trade-apply-btn');
+  if (applyBtn) {
+    const disabled = (!tradeGiveIds.length && !tradeReceiveIds.length) || afterCount > SKATER_CAP;
+    applyBtn.disabled = disabled;
+    applyBtn.style.opacity = disabled ? '0.5' : '1';
+    applyBtn.style.cursor = disabled ? 'not-allowed' : 'pointer';
+  }
 }
 
 function phFilterAndRender() {
