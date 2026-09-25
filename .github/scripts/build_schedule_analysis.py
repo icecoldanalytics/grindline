@@ -50,6 +50,7 @@ SEASON_LABEL = "2026-27"
 SEASON_START = "2026-09-29"
 SEASON_END = "2027-04-10"
 OUTPUT_PATH = os.path.join("data", "schedule_analysis.json")
+MIN_TEAMS_PRESENT = 30  # of 32 - see absolute_floor_check_or_abort()
 
 # Current 32 teams - copied from update_dashboard.py's FULL_NAMES (already
 # excludes the retired ARI entry other, older scripts in this repo still carry).
@@ -92,6 +93,31 @@ def load_previous_output():
     except Exception as e:
         print(f"  could not read previous {OUTPUT_PATH} for comparison: {e}")
         return None
+
+
+def absolute_floor_check_or_abort(hard_failed_teams, min_teams=MIN_TEAMS_PRESENT):
+    """Refuses to write a file where fewer than min_teams of the 32 real
+    NHL teams have genuine schedule data (freshly fetched or carried
+    over from a previous file) - checked BEFORE sanity_check_or_abort's
+    relative comparison, and unconditionally, regardless of what the
+    previous file held.
+
+    Same reasoning as build_player_hub.py's version of this check: the
+    relative comparison alone can't catch a run that fails the same way
+    the previous run did, because a previous file that was ALSO gutted
+    makes the relative threshold trivially easy to clear. hard_failed_teams
+    is specifically "failed this run AND had no previous entry to fall
+    back to" - a team carried over from a real previous entry still
+    counts as having genuine data here, since the season schedule is
+    static and a carried-over entry is factually correct, just not
+    freshly confirmed."""
+    teams_with_real_data = len(FULL_NAMES) - len(hard_failed_teams)
+    if teams_with_real_data < min_teams:
+        print(f"\nABORTING: only {teams_with_real_data} of 32 teams have real schedule data "
+              f"(fresh or carried over) in this run (need at least {min_teams}), regardless of "
+              f"what the previous file held. Teams with no data at all: "
+              f"{', '.join(sorted(hard_failed_teams)) or 'none'}")
+        sys.exit(1)
 
 
 def sanity_check_or_abort(previous, teams_out, threshold=0.8):
@@ -186,6 +212,7 @@ def main():
     teams_out = {}
     all_games_by_id = {}  # dedup for the league-wide weekly view
     failed_teams = []
+    hard_failed_teams = []  # failed AND no previous entry to fall back to - genuinely zero real data
 
     for team in sorted(FULL_NAMES):
         games = fetch_team_schedule(team)
@@ -205,6 +232,7 @@ def main():
             print(f"  {team}: schedule fetch failed after retries and no previous file exists - "
                   f"recording as 0 games rather than aborting a first-ever run")
             failed_teams.append(team)
+            hard_failed_teams.append(team)
             games = []
         for g in games:
             all_games_by_id[g["id"]] = g["gameDate"]
@@ -233,6 +261,7 @@ def main():
     most_b2b_team = max(b2b_counts, key=b2b_counts.get)
     fewest_b2b_team = min(b2b_counts, key=b2b_counts.get)
 
+    absolute_floor_check_or_abort(hard_failed_teams)
     sanity_check_or_abort(previous_output, teams_out)
 
     output = {

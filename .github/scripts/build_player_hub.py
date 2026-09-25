@@ -161,6 +161,7 @@ ALL_SEASON_LABELS = {SEASON: SEASON_LABEL, **PRIOR_SEASON_LABELS}
 MIN_POOLED_GAMES = 20  # minimum games, pooled across both prior seasons, before a prior-season rate is shown at all
 OUTPUT_PATH = os.path.join("data", "player_hub.json")
 CACHE_PATH = os.path.join("data", "player_prior_seasons_cache.json")
+MIN_TEAMS_PRESENT = 30  # of 32 - see absolute_floor_check_or_abort()
 
 EMPTY_SEASON = {"games_played": 0, "points": 0, "goals": 0, "assists": 0,
                  "shots": 0, "shots_against": 0, "goals_against": 0,
@@ -269,6 +270,30 @@ def sanity_check_or_abort(previous, players_out, goalies_out, threshold=0.8):
         print(f"\nABORTING: new file would have {new_total} players/goalies vs. the previous "
               f"{old_total} ({pct:.0%}) - more than {int((1 - threshold) * 100)}% fewer. "
               "Keeping the previous file on disk instead of committing a gutted one.")
+        sys.exit(1)
+
+
+def absolute_floor_check_or_abort(players_out, goalies_out, min_teams=MIN_TEAMS_PRESENT):
+    """Refuses to write a file where fewer than min_teams of the 32 real
+    NHL teams have any players or goalies at all - checked BEFORE
+    sanity_check_or_abort's relative comparison, and unconditionally,
+    regardless of what the previous file held.
+
+    That ordering matters: sanity_check_or_abort() only catches a run
+    that's substantially SMALLER than the previous file. If the previous
+    file was already broken (confirmed concretely: a 2026-09-25 run only
+    covered 8 of 32 teams after the NHL API throttled it mid-run, and
+    that file got committed before this guard existed), a second run
+    that fails the exact same way produces a similarly-sized file and
+    the relative check passes trivially - a broken baseline can't catch
+    a repeat of the same break. No real NHL team is ever missing every
+    single player, so team coverage is checked against a fixed floor
+    instead of a moving, possibly-already-wrong one."""
+    teams_present = {p["team"] for p in players_out.values()} | {g["team"] for g in goalies_out.values()}
+    if len(teams_present) < min_teams:
+        print(f"\nABORTING: only {len(teams_present)} of 32 teams have any players or goalies "
+              f"in this run (need at least {min_teams}), regardless of what the previous file "
+              f"held. Teams present: {', '.join(sorted(teams_present)) or 'none'}")
         sys.exit(1)
 
 
@@ -898,6 +923,7 @@ def main():
     save_cache(cache)
 
     carry_over_failed_teams(failed_roster_teams, previous_output, players_out, goalies_out)
+    absolute_floor_check_or_abort(players_out, goalies_out)
     sanity_check_or_abort(previous_output, players_out, goalies_out)
 
     output = {
