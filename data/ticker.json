@@ -1,31 +1,101 @@
 {
-  "date": "2026-09-25",
+  "date": "2026-09-26",
   "games": [
     {
-      "away": "BOS",
-      "home": "WSH",
+      "away": "CAR",
+      "home": "NSH",
+      "time": "1:00 PM MT",
+      "away_ml": null,
+      "home_ml": null
+    },
+    {
+      "away": "PIT",
+      "home": "BUF",
+      "time": "1:00 PM MT",
+      "away_ml": null,
+      "home_ml": null
+    },
+    {
+      "away": "ANA",
+      "home": "LAK",
+      "time": "2:00 PM MT",
+      "away_ml": null,
+      "home_ml": null
+    },
+    {
+      "away": "COL",
+      "home": "UTA",
+      "time": "3:00 PM MT",
+      "away_ml": null,
+      "home_ml": null
+    },
+    {
+      "away": "WSH",
+      "home": "PHI",
+      "time": "3:00 PM MT",
+      "away_ml": null,
+      "home_ml": null
+    },
+    {
+      "away": "TBL",
+      "home": "FLA",
+      "time": "4:00 PM MT",
+      "away_ml": null,
+      "home_ml": null
+    },
+    {
+      "away": "SEA",
+      "home": "VAN",
       "time": "5:00 PM MT",
       "away_ml": null,
       "home_ml": null
     },
     {
-      "away": "NYR",
+      "away": "STL",
+      "home": "CHI",
+      "time": "5:00 PM MT",
+      "away_ml": null,
+      "home_ml": null
+    },
+    {
+      "away": "CBJ",
+      "home": "DET",
+      "time": "5:00 PM MT",
+      "away_ml": null,
+      "home_ml": null
+    },
+    {
+      "away": "MTL",
+      "home": "OTT",
+      "time": "5:00 PM MT",
+      "away_ml": null,
+      "home_ml": null
+    },
+    {
+      "away": "OTT",
+      "home": "MTL",
+      "time": "5:00 PM MT",
+      "away_ml": null,
+      "home_ml": null
+    },
+    {
+      "away": "NJD",
       "home": "NYI",
       "time": "5:30 PM MT",
+      "away_ml": "+100",
+      "home_ml": "-120"
+    },
+    {
+      "away": "CGY",
+      "home": "EDM",
+      "time": "7:00 PM MT",
       "away_ml": null,
       "home_ml": null
     },
     {
-      "away": "DAL",
-      "home": "MIN",
-      "time": "6:00 PM MT",
-      "away_ml": null,
-      "home_ml": null
-    },
-    {
-      "away": "WPG",
-      "home": "COL",
-      "time": "6:30 PM MT",
+      "away": "SJS",
+      "home": "VGK",
+      "time": "8:00 PM MT",
       "away_ml": null,
       "home_ml": null
     }
