@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Grind Line: NHL betting intelligence and season-long fantasy hockey tools, both built on real NHL data and published track records.">
 <title>Grind Line | NHL Betting Intelligence &amp; Fantasy Hockey</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
 
 <style>
 :root {
@@ -382,6 +383,33 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   <p>Edmonton, Alberta · grindline.ca</p>
   <p style="margin-top:8px;"><a href="/legal.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Privacy &amp; Terms</a> &nbsp;·&nbsp; <a href="mailto:hello@grindline.ca" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Contact</a></p>
 </footer>
+
+<script>
+// This page has no sign-in UI of its own - My Team's magic-link flow
+// lives entirely on fantasy.html. This client exists only as a safety
+// net: a magic-link session can still land HERE instead (a stale email
+// link sent before emailRedirectTo was hardcoded, or any future
+// redirect-allowlist mismatch that makes Supabase fall back to its Site
+// URL). Without a client on this page at all, that session token would
+// sit inert in the URL fragment and be lost the moment anything else
+// navigates - confirmed live that's exactly what was happening before
+// this existed. Creating the client is enough: supabase-js's default
+// detectSessionInUrl picks the token out of the fragment and persists
+// it, and onAuthStateChange only fires SIGNED_IN for a session that was
+// JUST captured this way (an already-signed-in visitor just browsing to
+// the homepage gets INITIAL_SESSION instead, and isn't redirected) - so
+// this sends someone who actually completed sign-in on to My Team,
+// which is where the flow was always headed, rather than stranding them
+// on the homepage with a session nothing here would otherwise use.
+const SUPABASE_URL = 'https://thdaersyskybpcukhciq.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRoZGFlcnN5c2t5YnBjdWtoY2lxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzNDc5NDUsImV4cCI6MjEwNTkyMzk0NX0.LY14jrMDLB-urPsDDeIMrJklP7rXtS7Y6vgSLL2o_aE';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+sb.auth.onAuthStateChange((event, session) => {
+  if (event === 'SIGNED_IN' && session) {
+    window.location.replace('/fantasy.html');
+  }
+});
+</script>
 
 </body>
 </html>

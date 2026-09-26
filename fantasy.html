@@ -960,6 +960,18 @@ function isOnMyTeam(id) {
 const SUPABASE_URL = 'https://thdaersyskybpcukhciq.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRoZGFlcnN5c2t5YnBjdWtoY2lxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzNDc5NDUsImV4cCI6MjEwNTkyMzk0NX0.LY14jrMDLB-urPsDDeIMrJklP7rXtS7Y6vgSLL2o_aE';
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Hardcoded, not derived from window.location - confirmed live that
+// grindline.ca 301-redirects to www.grindline.ca (GitHub Pages honoring
+// the repo's CNAME file), so window.location.origin on the executing
+// page is always "https://www.grindline.ca" regardless of which host a
+// visitor typed. A derived emailRedirectTo silently picked up that
+// value, which then didn't match the redirect allowlist entry that had
+// been added for the apex domain - Supabase fell back to its Site URL
+// (the homepage) instead of erroring, and the homepage had no Supabase
+// client to catch the session token. Hardcoding this means a future
+// apex/www change or a page rename fails loudly (an unnoticed drift)
+// rather than silently breaking sign-in again the same way.
+const AUTH_REDIRECT_URL = 'https://www.grindline.ca/fantasy.html';
 let currentUser = null;
 
 async function fetchRemoteRoster(userId) {
@@ -1031,7 +1043,7 @@ async function sendMagicLink(email) {
   const statusEl = document.getElementById('mt-auth-status');
   const { error } = await sb.auth.signInWithOtp({
     email,
-    options: { emailRedirectTo: window.location.origin + window.location.pathname },
+    options: { emailRedirectTo: AUTH_REDIRECT_URL },
   });
   if (error) {
     if (statusEl) statusEl.textContent = `Couldn't send that link: ${error.message}`;
