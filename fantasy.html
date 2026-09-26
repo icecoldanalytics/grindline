@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Grind Line Fantasy: season-long NHL fantasy tools built on real NHL data - every rostered player, season board and schedule analysis. No odds, no salaries, no betting.">
 <title>Grind Line | Fantasy Hockey</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
 
 <style>
 :root {
@@ -106,6 +107,17 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .mt-clear-btn{background:transparent;border:1px solid rgba(255,71,87,0.3);color:var(--red);font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:6px;cursor:pointer;white-space:nowrap;transition:all 0.15s;}
 .mt-clear-btn:hover{background:rgba(255,71,87,0.1);border-color:rgba(255,71,87,0.5);}
 .mt-note{background:rgba(56,189,248,0.06);border:1px solid rgba(56,189,248,0.2);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:0.78rem;color:var(--text);}
+.mt-auth-box{margin-bottom:16px;}
+.mt-auth-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.mt-auth-copy{font-size:0.82rem;color:var(--text);}
+.mt-auth-form{display:flex;gap:8px;flex-wrap:wrap;}
+.mt-auth-form input{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:0.85rem;padding:9px 12px;outline:none;transition:border-color 0.2s;min-width:200px;}
+.mt-auth-form input:focus{border-color:var(--accent);}
+.mt-auth-btn{background:var(--accent);border:1px solid var(--accent);color:#03140c;font-weight:700;font-size:0.78rem;letter-spacing:0.3px;padding:9px 16px;border-radius:6px;cursor:pointer;white-space:nowrap;transition:opacity 0.15s;}
+.mt-auth-btn:hover{opacity:0.85;}
+.mt-auth-btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
+.mt-auth-btn-ghost:hover{color:var(--text);border-color:var(--accent);opacity:1;}
+.mt-auth-status{font-size:0.78rem;color:var(--accent);margin-top:8px;}
 
 /* TRADE CALCULATOR */
 .trade-panel{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
@@ -255,7 +267,8 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     </div>
   </div>
   <div class="main-wrap">
-    <div class="mt-note">Saved in this browser only &mdash; no account, nothing sent to a server. Clearing your browser's site data (or switching browsers/devices) clears this too.</div>
+    <div class="mt-note" id="mt-storage-note">Saved in this browser only &mdash; no account, nothing sent to a server. Clearing your browser's site data (or switching browsers/devices) clears this too.</div>
+    <div id="mt-auth-box" class="mt-auth-box"></div>
 
     <div style="display:flex;justify-content:flex-end;margin-bottom:8px;">
       <div class="view-toggle" id="mt-view-toggle">
@@ -903,10 +916,13 @@ const PH_GRID_COLS = '1fr 60px 130px 80px 70px 90px 50px 50px 55px 100px 90px';
 const MT_GRID_COLS = '1fr 60px 130px 80px 70px 90px 50px 50px 55px 100px 90px 100px';
 const MT_GOALIE_GRID_COLS = '1fr 60px 55px 50px 70px 65px 50px 110px 110px 100px';
 
-// ── MY TEAM state (localStorage only - no accounts, no backend). Skaters
-// and goalies are counted and capped independently, since they're
-// different roster slots, not one shared pool. ───────────────────────────
+// ── MY TEAM state. Signed out: localStorage only, exactly as before - no
+// account, nothing sent to a server. Signed in: roster_players in
+// Supabase, synced across devices and feeding the daily email. Skaters
+// and goalies are counted and capped independently either way, since
+// they're different roster slots, not one shared pool. ───────────────────
 const MY_TEAM_KEY = 'grindline_my_team_v2';
+const IMPORT_PROMPTED_KEY = 'grindline_import_prompted_v1';
 const SKATER_CAP = 25;
 const GOALIE_CAP = 3;
 
@@ -921,6 +937,8 @@ function loadMyTeam() {
   } catch (e) { return { skaters: [], goalies: [] }; }
 }
 function saveMyTeam() {
+  // Local-only persistence - never called on the signed-in path, where
+  // each roster change is written straight to Supabase instead.
   try { localStorage.setItem(MY_TEAM_KEY, JSON.stringify(myTeam)); } catch (e) {}
 }
 let myTeam = loadMyTeam();
@@ -935,9 +953,135 @@ function isOnMyTeam(id) {
   return myTeam.skaters.includes(id) || myTeam.goalies.includes(id);
 }
 
+// ── SUPABASE AUTH + REMOTE ROSTER ─────────────────────────────────────
+// Client-side anon key - safe to embed, access is bounded by the
+// roster_players RLS policy (auth.uid() = user_id), never the
+// service_role key, which stays server-side only (the daily-email job).
+const SUPABASE_URL = 'https://thdaersyskybpcukhciq.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRoZGFlcnN5c2t5YnBjdWtoY2lxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzNDc5NDUsImV4cCI6MjEwNTkyMzk0NX0.LY14jrMDLB-urPsDDeIMrJklP7rXtS7Y6vgSLL2o_aE';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+let currentUser = null;
+
+async function fetchRemoteRoster(userId) {
+  const { data, error } = await sb.from('roster_players').select('nhl_player_id, player_type').eq('user_id', userId);
+  if (error) {
+    console.error('roster_players fetch error:', error);
+    return { skaters: [], goalies: [] };
+  }
+  const out = { skaters: [], goalies: [] };
+  (data || []).forEach(row => {
+    const id = String(row.nhl_player_id); // DB stores an integer; the rest of this page keys everything by string id
+    if (row.player_type === 'goalie') out.goalies.push(id); else out.skaters.push(id);
+  });
+  return out;
+}
+
+// Only called right after a fresh sign-in (never on an ordinary page
+// load with an already-open session) - offers to import this browser's
+// local team ONLY if the account has no roster of its own yet. If the
+// account already has data, that data wins for display and local data
+// is left exactly where it is, untouched - never merged, never deleted.
+async function maybeOfferImport(remote) {
+  if (remote.skaters.length || remote.goalies.length) return remote;
+  if (localStorage.getItem(IMPORT_PROMPTED_KEY)) return remote;
+  const local = loadMyTeam();
+  const total = local.skaters.length + local.goalies.length;
+  if (!total) return remote;
+  const wantsImport = confirm(
+    `You have ${total} player${total === 1 ? '' : 's'} saved on this browser. Import ${total === 1 ? 'it' : 'them'} into your account?`
+  );
+  localStorage.setItem(IMPORT_PROMPTED_KEY, '1'); // asked once per device either way - never re-nag on future sign-ins
+  if (!wantsImport) return remote;
+  const rows = [
+    ...local.skaters.map(id => ({ user_id: currentUser.id, nhl_player_id: parseInt(id, 10), player_type: 'skater' })),
+    ...local.goalies.map(id => ({ user_id: currentUser.id, nhl_player_id: parseInt(id, 10), player_type: 'goalie' })),
+  ];
+  const { error } = await sb.from('roster_players').upsert(rows, { onConflict: 'user_id,nhl_player_id', ignoreDuplicates: true });
+  if (error) {
+    console.error('import error:', error);
+    alert("Importing your local team failed - it's still saved on this browser, nothing was lost. Try again from a signed-in session.");
+    return remote;
+  }
+  return fetchRemoteRoster(currentUser.id);
+}
+
+async function refreshMyTeamFromSource(isFreshSignIn) {
+  if (currentUser) {
+    let remote = await fetchRemoteRoster(currentUser.id);
+    if (isFreshSignIn) remote = await maybeOfferImport(remote);
+    myTeam = remote;
+  } else {
+    myTeam = loadMyTeam();
+  }
+  renderAuthWidget();
+  renderMyTeam();
+}
+
+// Fires once immediately with whatever session is already restored
+// (event INITIAL_SESSION - deliberately not treated as a fresh sign-in,
+// so a returning visit never re-triggers the import prompt), then again
+// on every future sign-in/out.
+sb.auth.onAuthStateChange((event, session) => {
+  currentUser = session ? session.user : null;
+  refreshMyTeamFromSource(event === 'SIGNED_IN');
+});
+renderAuthWidget(); // paint a sensible signed-out default immediately, in case the listener above takes a moment
+
+async function sendMagicLink(email) {
+  const statusEl = document.getElementById('mt-auth-status');
+  const { error } = await sb.auth.signInWithOtp({
+    email,
+    options: { emailRedirectTo: window.location.origin + window.location.pathname },
+  });
+  if (error) {
+    if (statusEl) statusEl.textContent = `Couldn't send that link: ${error.message}`;
+    return;
+  }
+  if (statusEl) statusEl.textContent = `Check ${email} for a sign-in link.`;
+  const form = document.getElementById('mt-auth-form');
+  if (form) form.style.display = 'none';
+}
+
+async function signOut() {
+  await sb.auth.signOut();
+}
+
+function renderAuthWidget() {
+  const el = document.getElementById('mt-auth-box');
+  const noteEl = document.getElementById('mt-storage-note');
+  if (!el) return;
+  if (currentUser) {
+    if (noteEl) noteEl.textContent = 'Saved to your account — synced across devices and included in your daily email.';
+    el.innerHTML = `
+      <div class="mt-auth-row">
+        <div class="mt-auth-copy">Signed in as <strong>${currentUser.email}</strong></div>
+        <button type="button" class="mt-auth-btn mt-auth-btn-ghost" onclick="signOut()">Sign out</button>
+      </div>`;
+  } else {
+    if (noteEl) noteEl.textContent = "Saved in this browser only — no account, nothing sent to a server. Clearing your browser's site data (or switching browsers/devices) clears this too.";
+    el.innerHTML = `
+      <div class="mt-auth-row">
+        <div class="mt-auth-copy">Sign in to save your team across devices and get it in your daily email.</div>
+        <form id="mt-auth-form" class="mt-auth-form" onsubmit="event.preventDefault(); sendMagicLink(document.getElementById('mt-auth-email').value.trim());">
+          <input type="email" id="mt-auth-email" placeholder="you@email.com" required>
+          <button type="submit" class="mt-auth-btn">Send sign-in link</button>
+        </form>
+      </div>
+      <div id="mt-auth-status" class="mt-auth-status"></div>`;
+  }
+}
+
 function toggleMyTeam(id) {
   const type = playerType(id);
   if (!type) return;
+  if (currentUser) {
+    toggleMyTeamRemote(id, type);
+  } else {
+    toggleMyTeamLocal(id, type);
+  }
+}
+
+function toggleMyTeamLocal(id, type) {
   const list = type === 'skater' ? myTeam.skaters : myTeam.goalies;
   const cap = type === 'skater' ? SKATER_CAP : GOALIE_CAP;
   const idx = list.indexOf(id);
@@ -954,12 +1098,66 @@ function toggleMyTeam(id) {
   renderMyTeam();
 }
 
+async function toggleMyTeamRemote(id, type) {
+  const list = type === 'skater' ? myTeam.skaters : myTeam.goalies;
+  const cap = type === 'skater' ? SKATER_CAP : GOALIE_CAP;
+  const idx = list.indexOf(id);
+  const removing = idx > -1;
+  if (!removing && list.length >= cap) {
+    alert(`Your ${type} slots are full (${cap}/${cap}) — remove one before adding another.`);
+    return;
+  }
+  // Optimistic update - mutate and render immediately, then reconcile with
+  // the real write below; revert on failure rather than leave the UI
+  // showing a change that didn't actually save. The roster_cap_check
+  // trigger is the real backstop if a race (another tab, another device)
+  // slips past this client-side cap check.
+  if (removing) list.splice(idx, 1); else list.push(id);
+  renderMyTeam();
+
+  const userId = currentUser.id;
+  const pid = parseInt(id, 10);
+  const { error } = removing
+    ? await sb.from('roster_players').delete().eq('user_id', userId).eq('nhl_player_id', pid)
+    : await sb.from('roster_players').insert({ user_id: userId, nhl_player_id: pid, player_type: type });
+
+  if (error) {
+    console.error('roster_players write error:', error);
+    if (removing) { list.push(id); } else { const revertIdx = list.indexOf(id); if (revertIdx > -1) list.splice(revertIdx, 1); }
+    renderMyTeam();
+    alert(`That didn't save${error.message ? ': ' + error.message : ''} - your roster is unchanged.`);
+  }
+}
+
 function clearMyTeam() {
+  if (currentUser) {
+    clearMyTeamRemote();
+  } else {
+    clearMyTeamLocal();
+  }
+}
+
+function clearMyTeamLocal() {
   if (!myTeam.skaters.length && !myTeam.goalies.length) return;
   if (!confirm('Remove everyone from My Team - skaters and goalies? This can\'t be undone.')) return;
   myTeam = { skaters: [], goalies: [] };
   saveMyTeam();
   renderMyTeam();
+}
+
+async function clearMyTeamRemote() {
+  if (!myTeam.skaters.length && !myTeam.goalies.length) return;
+  if (!confirm('Remove everyone from My Team - skaters and goalies? This can\'t be undone.')) return;
+  const previous = myTeam;
+  myTeam = { skaters: [], goalies: [] };
+  renderMyTeam();
+  const { error } = await sb.from('roster_players').delete().eq('user_id', currentUser.id);
+  if (error) {
+    console.error('clear roster error:', error);
+    myTeam = previous;
+    renderMyTeam();
+    alert(`That didn't save${error.message ? ': ' + error.message : ''} - your roster is unchanged.`);
+  }
 }
 
 function bindTeamButtons(container) {
