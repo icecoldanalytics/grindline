@@ -1,50 +1,50 @@
 {
   "date": "2026-09-25",
-  "updated": "03:50 AM MT",
+  "updated": "07:29 PM MT",
   "games": [
     {
       "away": "BOS",
       "home": "WSH",
       "away_city": "Boston",
       "home_city": "Washington",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 2,
+      "status": "live",
+      "display": "3rd \u00b7 04:45",
+      "period_label": "3rd"
     },
     {
       "away": "NYR",
       "home": "NYI",
       "away_city": "New York",
       "home_city": "New York",
-      "away_score": 0,
+      "away_score": 5,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "live",
+      "display": "3rd \u00b7 20:00",
+      "period_label": "3rd"
     },
     {
       "away": "DAL",
       "home": "MIN",
       "away_city": "Dallas",
       "home_city": "Minnesota",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 1,
+      "home_score": 1,
+      "status": "live",
+      "display": "2nd \u00b7 02:59",
+      "period_label": "2nd"
     },
     {
       "away": "WPG",
       "home": "COL",
       "away_city": "Winnipeg",
       "home_city": "Colorado",
-      "away_score": 0,
+      "away_score": 1,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "live",
+      "display": "1st \u00b7 02:13",
+      "period_label": "1st"
     }
   ]
 }
