@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-26 12:12",
+  "generated": "2026-09-27 12:11",
   "season": "20262027",
   "season_label": "2026-27",
   "prior_seasons": [
@@ -26,13 +26,7 @@
           "opponent_goals_against_per_game": 2.95,
           "opponent_penalty_kill_pct": 0.814,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8478499,
-            "name": "Adin Hill",
-            "sv_pct": 0.871,
-            "stat_season": "last_season",
-            "date": "2026-09-24"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-04",
@@ -42,11 +36,11 @@
           "opponent_penalty_kill_pct": 0.81,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8484900,
-            "name": "Cooper Black",
-            "sv_pct": null,
-            "stat_season": null,
-            "date": "2026-09-24"
+            "player_id": 8481033,
+            "name": "Akira Schmid",
+            "sv_pct": 0.893,
+            "stat_season": "last_season",
+            "date": "2026-09-26"
           }
         }
       ]
@@ -79,13 +73,7 @@
           "opponent_goals_against_per_game": 3.12,
           "opponent_penalty_kill_pct": 0.776,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8479973,
-            "name": "Stuart Skinner",
-            "sv_pct": 0.888,
-            "stat_season": "last_season",
-            "date": "2026-09-25"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-03",
@@ -118,11 +106,11 @@
           "opponent_penalty_kill_pct": 0.76,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8475660,
-            "name": "Cam Talbot",
-            "sv_pct": 0.883,
+            "player_id": 8482982,
+            "name": "Jet Greaves",
+            "sv_pct": 0.908,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -133,11 +121,11 @@
           "opponent_penalty_kill_pct": 0.836,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8482821,
-            "name": "Arvid Soderblom",
-            "sv_pct": 0.88,
+            "player_id": 8481519,
+            "name": "Spencer Knight",
+            "sv_pct": 0.902,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -156,11 +144,11 @@
           "opponent_penalty_kill_pct": 0.81,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8484900,
-            "name": "Cooper Black",
-            "sv_pct": null,
-            "stat_season": null,
-            "date": "2026-09-24"
+            "player_id": 8481033,
+            "name": "Akira Schmid",
+            "sv_pct": 0.893,
+            "stat_season": "last_season",
+            "date": "2026-09-26"
           }
         },
         {
@@ -170,13 +158,7 @@
           "opponent_goals_against_per_game": 2.9,
           "opponent_penalty_kill_pct": 0.801,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8480313,
-            "name": "Logan Thompson",
-            "sv_pct": 0.912,
-            "stat_season": "last_season",
-            "date": "2026-09-25"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-03",
@@ -186,11 +168,11 @@
           "opponent_penalty_kill_pct": 0.776,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8479361,
-            "name": "Joseph Woll",
-            "sv_pct": 0.898,
+            "player_id": 8482783,
+            "name": "Aleksei Kolosov",
+            "sv_pct": 0.83,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -209,11 +191,11 @@
           "opponent_penalty_kill_pct": 0.819,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8481551,
-            "name": "Colten Ellis",
-            "sv_pct": 0.903,
+            "player_id": 8480045,
+            "name": "Ukko-Pekka Luukkonen",
+            "sv_pct": 0.909,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -223,13 +205,7 @@
           "opponent_goals_against_per_game": 2.93,
           "opponent_penalty_kill_pct": 0.781,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8482657,
-            "name": "Sebastian Cossa",
-            "sv_pct": null,
-            "stat_season": null,
-            "date": "2026-09-24"
-          }
+          "last_start": null
         }
       ]
     },
@@ -247,11 +223,11 @@
           "opponent_penalty_kill_pct": 0.722,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8475831,
-            "name": "Philipp Grubauer",
-            "sv_pct": 0.909,
+            "player_id": 8478916,
+            "name": "Joey Daccord",
+            "sv_pct": 0.896,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -261,13 +237,7 @@
           "opponent_goals_against_per_game": 3.83,
           "opponent_penalty_kill_pct": 0.715,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8484268,
-            "name": "Nikita Tolopilo",
-            "sv_pct": 0.881,
-            "stat_season": "last_season",
-            "date": "2026-09-24"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-04",
@@ -277,11 +247,11 @@
           "opponent_penalty_kill_pct": 0.722,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8475831,
-            "name": "Philipp Grubauer",
-            "sv_pct": 0.909,
+            "player_id": 8478916,
+            "name": "Joey Daccord",
+            "sv_pct": 0.896,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -299,13 +269,7 @@
           "opponent_goals_against_per_game": 2.95,
           "opponent_penalty_kill_pct": 0.814,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8478499,
-            "name": "Adin Hill",
-            "sv_pct": 0.871,
-            "stat_season": "last_season",
-            "date": "2026-09-24"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-01",
@@ -314,13 +278,7 @@
           "opponent_goals_against_per_game": 2.93,
           "opponent_penalty_kill_pct": 0.781,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8482657,
-            "name": "Sebastian Cossa",
-            "sv_pct": null,
-            "stat_season": null,
-            "date": "2026-09-24"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-03",
@@ -330,11 +288,11 @@
           "opponent_penalty_kill_pct": 0.819,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8481551,
-            "name": "Colten Ellis",
-            "sv_pct": 0.903,
+            "player_id": 8480045,
+            "name": "Ukko-Pekka Luukkonen",
+            "sv_pct": 0.909,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -353,11 +311,11 @@
           "opponent_penalty_kill_pct": 0.746,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8476341,
-            "name": "Anton Forsberg",
-            "sv_pct": 0.909,
+            "player_id": 8475311,
+            "name": "Darcy Kuemper",
+            "sv_pct": 0.891,
             "stat_season": "last_season",
-            "date": "2026-09-23"
+            "date": "2026-09-26"
           }
         },
         {
@@ -368,11 +326,11 @@
           "opponent_penalty_kill_pct": 0.767,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8476412,
-            "name": "Jordan Binnington",
-            "sv_pct": 0.873,
+            "player_id": 8480981,
+            "name": "Joel Hofer",
+            "sv_pct": 0.909,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -391,11 +349,11 @@
           "opponent_penalty_kill_pct": 0.767,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8476412,
-            "name": "Jordan Binnington",
-            "sv_pct": 0.873,
+            "player_id": 8480981,
+            "name": "Joel Hofer",
+            "sv_pct": 0.909,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -406,11 +364,11 @@
           "opponent_penalty_kill_pct": 0.817,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8481020,
-            "name": "Justus Annunen",
-            "sv_pct": 0.906,
+            "player_id": 8477424,
+            "name": "Juuse Saros",
+            "sv_pct": 0.894,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -443,13 +401,7 @@
           "opponent_goals_against_per_game": 3.12,
           "opponent_penalty_kill_pct": 0.776,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8479973,
-            "name": "Stuart Skinner",
-            "sv_pct": 0.888,
-            "stat_season": "last_season",
-            "date": "2026-09-25"
-          }
+          "last_start": null
         }
       ]
     },
@@ -466,13 +418,7 @@
           "opponent_goals_against_per_game": 3.83,
           "opponent_penalty_kill_pct": 0.715,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8484268,
-            "name": "Nikita Tolopilo",
-            "sv_pct": 0.881,
-            "stat_season": "last_season",
-            "date": "2026-09-24"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-01",
@@ -481,13 +427,7 @@
           "opponent_goals_against_per_game": 3.83,
           "opponent_penalty_kill_pct": 0.715,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8484268,
-            "name": "Nikita Tolopilo",
-            "sv_pct": 0.881,
-            "stat_season": "last_season",
-            "date": "2026-09-24"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-03",
@@ -497,11 +437,11 @@
           "opponent_penalty_kill_pct": 0.722,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8475831,
-            "name": "Philipp Grubauer",
-            "sv_pct": 0.909,
+            "player_id": 8478916,
+            "name": "Joey Daccord",
+            "sv_pct": 0.896,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -520,11 +460,11 @@
           "opponent_penalty_kill_pct": 0.805,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8481611,
-            "name": "Pyotr Kochetkov",
-            "sv_pct": 0.899,
+            "player_id": 8483548,
+            "name": "Brandon Bussi",
+            "sv_pct": 0.894,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -535,11 +475,11 @@
           "opponent_penalty_kill_pct": 0.764,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8477968,
-            "name": "Alex Nedeljkovic",
-            "sv_pct": 0.896,
+            "player_id": 8482137,
+            "name": "Yaroslav Askarov",
+            "sv_pct": 0.883,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -550,11 +490,11 @@
           "opponent_penalty_kill_pct": 0.764,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8478024,
-            "name": "Ville Husso",
-            "sv_pct": 0.884,
+            "player_id": 8480843,
+            "name": "Lukas Dostal",
+            "sv_pct": 0.888,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -573,11 +513,11 @@
           "opponent_penalty_kill_pct": 0.846,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8478406,
-            "name": "Mackenzie Blackwood",
-            "sv_pct": 0.904,
+            "player_id": 8475809,
+            "name": "Scott Wedgewood",
+            "sv_pct": 0.921,
             "stat_season": "last_season",
-            "date": "2026-09-25"
+            "date": "2026-09-26"
           }
         },
         {
@@ -588,11 +528,11 @@
           "opponent_penalty_kill_pct": 0.764,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8477968,
-            "name": "Alex Nedeljkovic",
-            "sv_pct": 0.896,
+            "player_id": 8482137,
+            "name": "Yaroslav Askarov",
+            "sv_pct": 0.883,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -611,11 +551,11 @@
           "opponent_penalty_kill_pct": 0.817,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8481020,
-            "name": "Justus Annunen",
-            "sv_pct": 0.906,
+            "player_id": 8477424,
+            "name": "Juuse Saros",
+            "sv_pct": 0.894,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -648,13 +588,7 @@
           "opponent_goals_against_per_game": 3.6,
           "opponent_penalty_kill_pct": 0.812,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8476932,
-            "name": "Anthony Stolarz",
-            "sv_pct": 0.893,
-            "stat_season": "last_season",
-            "date": "2026-09-23"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-03",
@@ -664,11 +598,11 @@
           "opponent_penalty_kill_pct": 0.814,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8483703,
-            "name": "Sergei Murashov",
-            "sv_pct": 0.897,
+            "player_id": 8481668,
+            "name": "Arturs Silovs",
+            "sv_pct": 0.887,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -687,11 +621,11 @@
           "opponent_penalty_kill_pct": 0.776,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8479361,
-            "name": "Joseph Woll",
-            "sv_pct": 0.898,
+            "player_id": 8482783,
+            "name": "Aleksei Kolosov",
+            "sv_pct": 0.83,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -702,11 +636,11 @@
           "opponent_penalty_kill_pct": 0.808,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8473575,
-            "name": "Semyon Varlamov",
-            "sv_pct": null,
-            "stat_season": null,
-            "date": "2026-09-25"
+            "player_id": 8478009,
+            "name": "Ilya Sorokin",
+            "sv_pct": 0.906,
+            "stat_season": "last_season",
+            "date": "2026-09-26"
           }
         }
       ]
@@ -762,13 +696,7 @@
           "opponent_goals_against_per_game": 3.6,
           "opponent_penalty_kill_pct": 0.812,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8476932,
-            "name": "Anthony Stolarz",
-            "sv_pct": 0.893,
-            "stat_season": "last_season",
-            "date": "2026-09-23"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-03",
@@ -778,11 +706,11 @@
           "opponent_penalty_kill_pct": 0.793,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8482076,
-            "name": "Nico Daws",
-            "sv_pct": 0.908,
+            "player_id": 8474596,
+            "name": "Jake Allen",
+            "sv_pct": 0.903,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -816,11 +744,11 @@
           "opponent_penalty_kill_pct": 0.826,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8476883,
-            "name": "Andrei Vasilevskiy",
-            "sv_pct": 0.911,
+            "player_id": 8483710,
+            "name": "Dennis Hildeby",
+            "sv_pct": 0.912,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -831,11 +759,11 @@
           "opponent_penalty_kill_pct": 0.771,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8480193,
-            "name": "Daniil Tarasov",
-            "sv_pct": 0.895,
+            "player_id": 8476434,
+            "name": "John Gibson",
+            "sv_pct": 0.901,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -845,13 +773,7 @@
           "opponent_goals_against_per_game": 2.93,
           "opponent_penalty_kill_pct": 0.781,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8482657,
-            "name": "Sebastian Cossa",
-            "sv_pct": null,
-            "stat_season": null,
-            "date": "2026-09-24"
-          }
+          "last_start": null
         }
       ]
     },
@@ -868,13 +790,7 @@
           "opponent_goals_against_per_game": 3.6,
           "opponent_penalty_kill_pct": 0.812,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8476932,
-            "name": "Anthony Stolarz",
-            "sv_pct": 0.893,
-            "stat_season": "last_season",
-            "date": "2026-09-23"
-          }
+          "last_start": null
         }
       ]
     },
@@ -892,11 +808,11 @@
           "opponent_penalty_kill_pct": 0.814,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8483703,
-            "name": "Sergei Murashov",
-            "sv_pct": 0.897,
+            "player_id": 8481668,
+            "name": "Arturs Silovs",
+            "sv_pct": 0.887,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -907,11 +823,11 @@
           "opponent_penalty_kill_pct": 0.793,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8482076,
-            "name": "Nico Daws",
-            "sv_pct": 0.908,
+            "player_id": 8474596,
+            "name": "Jake Allen",
+            "sv_pct": 0.903,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -922,11 +838,11 @@
           "opponent_penalty_kill_pct": 0.805,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8481611,
-            "name": "Pyotr Kochetkov",
-            "sv_pct": 0.899,
+            "player_id": 8483548,
+            "name": "Brandon Bussi",
+            "sv_pct": 0.894,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -945,11 +861,11 @@
           "opponent_penalty_kill_pct": 0.776,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8479361,
-            "name": "Joseph Woll",
-            "sv_pct": 0.898,
+            "player_id": 8482783,
+            "name": "Aleksei Kolosov",
+            "sv_pct": 0.83,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -960,11 +876,11 @@
           "opponent_penalty_kill_pct": 0.782,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8478470,
-            "name": "Samuel Montembeault",
-            "sv_pct": 0.872,
+            "player_id": 8484170,
+            "name": "Jacob Fowler",
+            "sv_pct": 0.908,
             "stat_season": "last_season",
-            "date": "2026-09-21"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -983,11 +899,11 @@
           "opponent_penalty_kill_pct": 0.804,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8482445,
-            "name": "Devin Cooley",
-            "sv_pct": 0.909,
+            "player_id": 8481692,
+            "name": "Dustin Wolf",
+            "sv_pct": 0.899,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -998,11 +914,11 @@
           "opponent_penalty_kill_pct": 0.778,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8477465,
-            "name": "Tristan Jarry",
-            "sv_pct": 0.882,
-            "stat_season": "last_season",
-            "date": "2026-09-24"
+            "player_id": 8482221,
+            "name": "Devon Levi",
+            "sv_pct": null,
+            "stat_season": null,
+            "date": "2026-09-26"
           }
         },
         {
@@ -1013,11 +929,11 @@
           "opponent_penalty_kill_pct": 0.804,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8482445,
-            "name": "Devin Cooley",
-            "sv_pct": 0.909,
+            "player_id": 8481692,
+            "name": "Dustin Wolf",
+            "sv_pct": 0.899,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -1036,11 +952,11 @@
           "opponent_penalty_kill_pct": 0.81,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8484900,
-            "name": "Cooper Black",
-            "sv_pct": null,
-            "stat_season": null,
-            "date": "2026-09-24"
+            "player_id": 8481033,
+            "name": "Akira Schmid",
+            "sv_pct": 0.893,
+            "stat_season": "last_season",
+            "date": "2026-09-26"
           }
         },
         {
@@ -1051,11 +967,11 @@
           "opponent_penalty_kill_pct": 0.746,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8476341,
-            "name": "Anton Forsberg",
-            "sv_pct": 0.909,
+            "player_id": 8475311,
+            "name": "Darcy Kuemper",
+            "sv_pct": 0.891,
             "stat_season": "last_season",
-            "date": "2026-09-23"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -1089,11 +1005,11 @@
           "opponent_penalty_kill_pct": 0.846,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8478406,
-            "name": "Mackenzie Blackwood",
-            "sv_pct": 0.904,
+            "player_id": 8475809,
+            "name": "Scott Wedgewood",
+            "sv_pct": 0.921,
             "stat_season": "last_season",
-            "date": "2026-09-25"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -1126,13 +1042,7 @@
           "opponent_goals_against_per_game": 2.9,
           "opponent_penalty_kill_pct": 0.801,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8480313,
-            "name": "Logan Thompson",
-            "sv_pct": 0.912,
-            "stat_season": "last_season",
-            "date": "2026-09-25"
-          }
+          "last_start": null
         }
       ]
     },
@@ -1150,11 +1060,11 @@
           "opponent_penalty_kill_pct": 0.782,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8478470,
-            "name": "Samuel Montembeault",
-            "sv_pct": 0.872,
+            "player_id": 8484170,
+            "name": "Jacob Fowler",
+            "sv_pct": 0.908,
             "stat_season": "last_season",
-            "date": "2026-09-21"
+            "date": "2026-09-26"
           }
         },
         {
@@ -1165,11 +1075,11 @@
           "opponent_penalty_kill_pct": 0.808,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8473575,
-            "name": "Semyon Varlamov",
-            "sv_pct": null,
-            "stat_season": null,
-            "date": "2026-09-25"
+            "player_id": 8478009,
+            "name": "Ilya Sorokin",
+            "sv_pct": 0.906,
+            "stat_season": "last_season",
+            "date": "2026-09-26"
           }
         },
         {
@@ -1180,11 +1090,11 @@
           "opponent_penalty_kill_pct": 0.757,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8476999,
-            "name": "Linus Ullmark",
-            "sv_pct": 0.891,
+            "player_id": 8481035,
+            "name": "Samuel Ersson",
+            "sv_pct": 0.87,
             "stat_season": "last_season",
-            "date": "2026-09-23"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -1203,11 +1113,11 @@
           "opponent_penalty_kill_pct": 0.836,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8482821,
-            "name": "Arvid Soderblom",
-            "sv_pct": 0.88,
+            "player_id": 8481519,
+            "name": "Spencer Knight",
+            "sv_pct": 0.902,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -1218,11 +1128,11 @@
           "opponent_penalty_kill_pct": 0.76,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8475660,
-            "name": "Cam Talbot",
-            "sv_pct": 0.883,
+            "player_id": 8482982,
+            "name": "Jet Greaves",
+            "sv_pct": 0.908,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -1256,11 +1166,11 @@
           "opponent_penalty_kill_pct": 0.778,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8477465,
-            "name": "Tristan Jarry",
-            "sv_pct": 0.882,
-            "stat_season": "last_season",
-            "date": "2026-09-24"
+            "player_id": 8482221,
+            "name": "Devon Levi",
+            "sv_pct": null,
+            "stat_season": null,
+            "date": "2026-09-26"
           }
         },
         {
@@ -1271,11 +1181,11 @@
           "opponent_penalty_kill_pct": 0.778,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8477465,
-            "name": "Tristan Jarry",
-            "sv_pct": 0.882,
-            "stat_season": "last_season",
-            "date": "2026-09-24"
+            "player_id": 8482221,
+            "name": "Devon Levi",
+            "sv_pct": null,
+            "stat_season": null,
+            "date": "2026-09-26"
           }
         },
         {
@@ -1286,11 +1196,11 @@
           "opponent_penalty_kill_pct": 0.804,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8482445,
-            "name": "Devin Cooley",
-            "sv_pct": 0.909,
+            "player_id": 8481692,
+            "name": "Dustin Wolf",
+            "sv_pct": 0.899,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -1300,13 +1210,7 @@
           "opponent_goals_against_per_game": 2.95,
           "opponent_penalty_kill_pct": 0.814,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8478499,
-            "name": "Adin Hill",
-            "sv_pct": 0.871,
-            "stat_season": "last_season",
-            "date": "2026-09-24"
-          }
+          "last_start": null
         }
       ]
     },
@@ -1324,11 +1228,11 @@
           "opponent_penalty_kill_pct": 0.836,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8482821,
-            "name": "Arvid Soderblom",
-            "sv_pct": 0.88,
+            "player_id": 8481519,
+            "name": "Spencer Knight",
+            "sv_pct": 0.902,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -1339,11 +1243,11 @@
           "opponent_penalty_kill_pct": 0.764,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8478024,
-            "name": "Ville Husso",
-            "sv_pct": 0.884,
+            "player_id": 8480843,
+            "name": "Lukas Dostal",
+            "sv_pct": 0.888,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -1353,13 +1257,7 @@
           "opponent_goals_against_per_game": 3.83,
           "opponent_penalty_kill_pct": 0.715,
           "opponent_stat_season": "last_season",
-          "last_start": {
-            "player_id": 8484268,
-            "name": "Nikita Tolopilo",
-            "sv_pct": 0.881,
-            "stat_season": "last_season",
-            "date": "2026-09-24"
-          }
+          "last_start": null
         }
       ]
     },
@@ -1392,11 +1290,11 @@
           "opponent_penalty_kill_pct": 0.771,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8480193,
-            "name": "Daniil Tarasov",
-            "sv_pct": 0.895,
+            "player_id": 8476434,
+            "name": "John Gibson",
+            "sv_pct": 0.901,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -1415,11 +1313,11 @@
           "opponent_penalty_kill_pct": 0.805,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8481611,
-            "name": "Pyotr Kochetkov",
-            "sv_pct": 0.899,
+            "player_id": 8483548,
+            "name": "Brandon Bussi",
+            "sv_pct": 0.894,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         },
         {
@@ -1430,11 +1328,11 @@
           "opponent_penalty_kill_pct": 0.826,
           "opponent_stat_season": "last_season",
           "last_start": {
-            "player_id": 8476883,
-            "name": "Andrei Vasilevskiy",
-            "sv_pct": 0.911,
+            "player_id": 8483710,
+            "name": "Dennis Hildeby",
+            "sv_pct": 0.912,
             "stat_season": "last_season",
-            "date": "2026-09-24"
+            "date": "2026-09-26"
           }
         }
       ]
@@ -1629,54 +1527,6 @@
         "weight_this_season": 0.0,
         "prior_points_per_game": null,
         "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
-    "8483444": {
-      "name": "Nathan Gaucher",
-      "team": "ANA",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 3,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 2,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.667,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 3,
         "blended_points_per_game": null,
         "projected_points": null
       }
@@ -3121,54 +2971,6 @@
         "projected_points": 0.77
       }
     },
-    "8476867": {
-      "name": "Brendan Gaunce",
-      "team": "BOS",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 25,
-          "points": 6,
-          "goals": 2,
-          "assists": 4,
-          "shots": 29,
-          "blocked_shots": 0,
-          "points_per_game": 0.24,
-          "shots_per_game": 1.16,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 12,
-          "points": 1,
-          "goals": 0,
-          "assists": 1,
-          "shots": 11,
-          "blocked_shots": 0,
-          "points_per_game": 0.083,
-          "shots_per_game": 0.917,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.189,
-        "prior_games_pooled": 37,
-        "blended_points_per_game": 0.189,
-        "projected_points": 0.57
-      }
-    },
     "8479987": {
       "name": "Morgan Geekie",
       "team": "BOS",
@@ -3261,54 +3063,6 @@
         "weight_this_season": 0.0,
         "prior_points_per_game": null,
         "prior_games_pooled": 2,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
-    "8483531": {
-      "name": "Brian Halonen",
-      "team": "BOS",
-      "position": "L",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 15,
-          "points": 2,
-          "goals": 1,
-          "assists": 1,
-          "shots": 7,
-          "blocked_shots": 0,
-          "points_per_game": 0.133,
-          "shots_per_game": 0.467,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 2,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 2,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.0,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 17,
         "blended_points_per_game": null,
         "projected_points": null
       }
@@ -4177,54 +3931,6 @@
         "projected_points": 0.54
       }
     },
-    "8480887": {
-      "name": "Jordan Harris",
-      "team": "BOS",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 8,
-          "points": 3,
-          "goals": 1,
-          "assists": 2,
-          "shots": 12,
-          "blocked_shots": 5,
-          "points_per_game": 0.375,
-          "shots_per_game": 1.5,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 33,
-          "points": 5,
-          "goals": 1,
-          "assists": 4,
-          "shots": 15,
-          "blocked_shots": 35,
-          "points_per_game": 0.152,
-          "shots_per_game": 0.455,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.195,
-        "prior_games_pooled": 41,
-        "blended_points_per_game": 0.195,
-        "projected_points": 0.58
-      }
-    },
     "8480035": {
       "name": "Henri Jokiharju",
       "team": "BOS",
@@ -4415,54 +4121,6 @@
         "prior_games_pooled": 119,
         "blended_points_per_game": 0.706,
         "projected_points": 2.12
-      }
-    },
-    "8482399": {
-      "name": "Billy Sweezey",
-      "team": "BOS",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8477507": {
@@ -4705,54 +4363,6 @@
         "projected_points": 1.07
       }
     },
-    "8477419": {
-      "name": "Mason Geertsen",
-      "team": "BUF",
-      "position": "L",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 5,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 1,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.2,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 5,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8484797": {
       "name": "Konsta Helenius",
       "team": "BUF",
@@ -4945,54 +4555,6 @@
         "projected_points": 0.78
       }
     },
-    "8482479": {
-      "name": "Trevor Kuntar",
-      "team": "BUF",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 1,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.0,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 1,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8479359": {
       "name": "Beck Malenstyn",
       "team": "BUF",
@@ -5041,54 +4603,6 @@
         "projected_points": 0.31
       }
     },
-    "8481683": {
-      "name": "Aidan McDonough",
-      "team": "BUF",
-      "position": "L",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8480802": {
       "name": "Ryan McLeod",
       "team": "BUF",
@@ -5135,54 +4649,6 @@
         "prior_games_pooled": 160,
         "blended_points_per_game": 0.669,
         "projected_points": 1.34
-      }
-    },
-    "8480292": {
-      "name": "Carson Meyer",
-      "team": "BUF",
-      "position": "R",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8480064": {
@@ -5279,54 +4745,6 @@
         "prior_games_pooled": 68,
         "blended_points_per_game": 0.397,
         "projected_points": 0.79
-      }
-    },
-    "8484255": {
-      "name": "Jason Polin",
-      "team": "BUF",
-      "position": "R",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 4,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.0,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 2,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 3,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.5,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 6,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8482097": {
@@ -5617,54 +5035,6 @@
         "projected_points": 1.89
       }
     },
-    "8478502": {
-      "name": "Dennis Gilbert",
-      "team": "BUF",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 8,
-          "points": 1,
-          "goals": 0,
-          "assists": 1,
-          "shots": 2,
-          "blocked_shots": 12,
-          "points_per_game": 0.125,
-          "shots_per_game": 0.25,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 29,
-          "points": 6,
-          "goals": 0,
-          "assists": 6,
-          "shots": 9,
-          "blocked_shots": 36,
-          "points_per_game": 0.207,
-          "shots_per_game": 0.31,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.189,
-        "prior_games_pooled": 37,
-        "blended_points_per_game": 0.189,
-        "projected_points": 0.38
-      }
-    },
     "8476891": {
       "name": "Matt Grzelcyk",
       "team": "BUF",
@@ -5711,54 +5081,6 @@
         "prior_games_pooled": 151,
         "blended_points_per_game": 0.344,
         "projected_points": 0.69
-      }
-    },
-    "8481564": {
-      "name": "Ryan Johnson",
-      "team": "BUF",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 3,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 3,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.0,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 3,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 3,
-          "blocked_shots": 4,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.0,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 6,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8484305": {
@@ -8929,102 +8251,6 @@
         "projected_points": 1.99
       }
     },
-    "8478211": {
-      "name": "Dryden Hunt",
-      "team": "CGY",
-      "position": "L",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 3,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 4,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.333,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 5,
-          "points": 3,
-          "goals": 0,
-          "assists": 3,
-          "shots": 5,
-          "blocked_shots": 0,
-          "points_per_game": 0.6,
-          "shots_per_game": 1.0,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 8,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
-    "8480259": {
-      "name": "Ben Jones",
-      "team": "CGY",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 28,
-          "points": 3,
-          "goals": 1,
-          "assists": 2,
-          "shots": 26,
-          "blocked_shots": 0,
-          "points_per_game": 0.107,
-          "shots_per_game": 0.929,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 26,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 24,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.923,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.056,
-        "prior_games_pooled": 54,
-        "blended_points_per_game": 0.056,
-        "projected_points": 0.17
-      }
-    },
     "8482209": {
       "name": "Rory Kerins",
       "team": "CGY",
@@ -9121,10 +8347,10 @@
         "projected_points": 0.77
       }
     },
-    "8484821": {
-      "name": "Sam Morton",
+    "8479423": {
+      "name": "Alex Nylander",
       "team": "CGY",
-      "position": "C",
+      "position": "L",
       "seasons": {
         "20262027": {
           "games_played": 0,
@@ -9138,25 +8364,25 @@
           "label": "2026-27"
         },
         "20252026": {
-          "games_played": 3,
+          "games_played": 0,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 3,
+          "shots": 0,
           "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.0,
+          "points_per_game": null,
+          "shots_per_game": null,
           "label": "2025-26"
         },
         "20242025": {
-          "games_played": 1,
-          "points": 1,
-          "goals": 1,
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
           "assists": 0,
-          "shots": 1,
+          "shots": 0,
           "blocked_shots": 0,
-          "points_per_game": 1.0,
-          "shots_per_game": 1.0,
+          "points_per_game": null,
+          "shots_per_game": null,
           "label": "2024-25"
         }
       },
@@ -9164,7 +8390,7 @@
         "games_this_week": 3,
         "weight_this_season": 0.0,
         "prior_points_per_game": null,
-        "prior_games_pooled": 4,
+        "prior_games_pooled": 0,
         "blended_points_per_game": null,
         "projected_points": null
       }
@@ -9361,54 +8587,6 @@
         "projected_points": 1.39
       }
     },
-    "8482766": {
-      "name": "William Stromgren",
-      "team": "CGY",
-      "position": "L",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 3,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 2,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.667,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 3,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8484234": {
       "name": "Aydar Suniev",
       "team": "CGY",
@@ -9601,54 +8779,6 @@
         "projected_points": 0.77
       }
     },
-    "8482107": {
-      "name": "Mike Benning",
-      "team": "CGY",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 18,
-          "points": 6,
-          "goals": 2,
-          "assists": 4,
-          "shots": 15,
-          "blocked_shots": 16,
-          "points_per_game": 0.333,
-          "shots_per_game": 0.833,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 18,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8484150": {
       "name": "Hunter Brzustewicz",
       "team": "CGY",
@@ -9695,54 +8825,6 @@
         "prior_games_pooled": 35,
         "blended_points_per_game": 0.2,
         "projected_points": 0.6
-      }
-    },
-    "8477971": {
-      "name": "Andreas Englund",
-      "team": "CGY",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 3,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 2,
-          "blocked_shots": 1,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.667,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 35,
-          "points": 3,
-          "goals": 1,
-          "assists": 2,
-          "shots": 17,
-          "blocked_shots": 40,
-          "points_per_game": 0.086,
-          "shots_per_game": 0.486,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.079,
-        "prior_games_pooled": 38,
-        "blended_points_per_game": 0.079,
-        "projected_points": 0.24
       }
     },
     "8477810": {
@@ -9839,54 +8921,6 @@
         "prior_games_pooled": 57,
         "blended_points_per_game": 0.211,
         "projected_points": 0.63
-      }
-    },
-    "8484256": {
-      "name": "Jake Livingstone",
-      "team": "CGY",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8478136": {
@@ -11329,54 +10363,6 @@
         "projected_points": 1.05
       }
     },
-    "8482067": {
-      "name": "Connor Mackey",
-      "team": "CHI",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 3,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 2,
-          "blocked_shots": 2,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.667,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 2,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 1,
-          "blocked_shots": 1,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.5,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 5,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8483506": {
       "name": "Sam Rinzel",
       "team": "CHI",
@@ -12287,6 +11273,54 @@
         "prior_games_pooled": 93,
         "blended_points_per_game": 0.247,
         "projected_points": 0.49
+      }
+    },
+    "8485105": {
+      "name": "Nikita Prishchepov",
+      "team": "COL",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 10,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 4,
+          "blocked_shots": 0,
+          "points_per_game": 0.0,
+          "shots_per_game": 0.4,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 2,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 10,
+        "blended_points_per_game": null,
+        "projected_points": null
       }
     },
     "8478462": {
@@ -15121,6 +14155,54 @@
         "projected_points": 0.34
       }
     },
+    "8477971": {
+      "name": "Andreas Englund",
+      "team": "DET",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 3,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 2,
+          "blocked_shots": 1,
+          "points_per_game": 0.0,
+          "shots_per_game": 0.667,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 35,
+          "points": 3,
+          "goals": 1,
+          "assists": 2,
+          "shots": 17,
+          "blocked_shots": 40,
+          "points_per_game": 0.086,
+          "shots_per_game": 0.486,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 2,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.079,
+        "prior_games_pooled": 38,
+        "blended_points_per_game": 0.079,
+        "projected_points": 0.16
+      }
+    },
     "8475753": {
       "name": "Justin Faulk",
       "team": "DET",
@@ -16225,102 +15307,6 @@
         "projected_points": 1.33
       }
     },
-    "8483100": {
-      "name": "James Stefan",
-      "team": "EDM",
-      "position": "R",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
-    "8482631": {
-      "name": "Eduards Tralmaks",
-      "team": "EDM",
-      "position": "R",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8480803": {
       "name": "Evan Bouchard",
       "team": "EDM",
@@ -16367,54 +15353,6 @@
         "prior_games_pooled": 164,
         "blended_points_per_game": 0.988,
         "projected_points": 2.96
-      }
-    },
-    "8477384": {
-      "name": "Joshua Brown",
-      "team": "EDM",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 10,
-          "points": 1,
-          "goals": 0,
-          "assists": 1,
-          "shots": 9,
-          "blocked_shots": 18,
-          "points_per_game": 0.1,
-          "shots_per_game": 0.9,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 10,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8485484": {
@@ -16559,54 +15497,6 @@
         "prior_games_pooled": 148,
         "blended_points_per_game": 0.169,
         "projected_points": 0.51
-      }
-    },
-    "8485509": {
-      "name": "Atro Leppanen",
-      "team": "EDM",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8482166": {
@@ -16847,54 +15737,6 @@
         "prior_games_pooled": 89,
         "blended_points_per_game": 0.146,
         "projected_points": 0.44
-      }
-    },
-    "8479388": {
-      "name": "Riley Stillman",
-      "team": "EDM",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 4,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 1,
-          "blocked_shots": 4,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.25,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 5,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 1,
-          "blocked_shots": 1,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.2,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 9,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8478013": {
@@ -17231,54 +16073,6 @@
         "prior_games_pooled": 148,
         "blended_points_per_game": 0.25,
         "projected_points": 0.75
-      }
-    },
-    "8480025": {
-      "name": "MacKenzie Entwistle",
-      "team": "FLA",
-      "position": "R",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8479981": {
@@ -18481,54 +17275,6 @@
         "projected_points": null
       }
     },
-    "8483712": {
-      "name": "Ludvig Jansson",
-      "team": "FLA",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 4,
-          "points": 1,
-          "goals": 0,
-          "assists": 1,
-          "shots": 3,
-          "blocked_shots": 5,
-          "points_per_game": 0.25,
-          "shots_per_game": 0.75,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 4,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8477495": {
       "name": "Seth Jones",
       "team": "FLA",
@@ -18721,54 +17467,6 @@
         "projected_points": 0.51
       }
     },
-    "8484213": {
-      "name": "Emil Pieniniemi",
-      "team": "FLA",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 3,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8482131": {
       "name": "Donovan Sebrango",
       "team": "FLA",
@@ -18959,54 +17657,6 @@
         "prior_games_pooled": 160,
         "blended_points_per_game": 0.644,
         "projected_points": 1.29
-      }
-    },
-    "8483675": {
-      "name": "Kenny Connors",
-      "team": "LAK",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 2,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 5,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 2.5,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 2,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8477942": {
@@ -19345,54 +17995,6 @@
         "projected_points": 0.38
       }
     },
-    "8486060": {
-      "name": "Liam Lefebvre",
-      "team": "LAK",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8479675": {
       "name": "Trevor Moore",
       "team": "LAK",
@@ -19631,54 +18233,6 @@
         "prior_games_pooled": 37,
         "blended_points_per_game": 0.216,
         "projected_points": 0.43
-      }
-    },
-    "8483756": {
-      "name": "Jared Wright",
-      "team": "LAK",
-      "position": "R",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 23,
-          "points": 4,
-          "goals": 0,
-          "assists": 4,
-          "shots": 32,
-          "blocked_shots": 0,
-          "points_per_game": 0.174,
-          "shots_per_game": 1.391,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.174,
-        "prior_games_pooled": 23,
-        "blended_points_per_game": 0.174,
-        "projected_points": 0.35
       }
     },
     "8475692": {
@@ -20063,6 +18617,54 @@
         "prior_games_pooled": 62,
         "blended_points_per_game": 0.29,
         "projected_points": 0.58
+      }
+    },
+    "8482922": {
+      "name": "Kirill Kirsanov",
+      "team": "LAK",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 2,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
       }
     },
     "8481059": {
@@ -21119,6 +19721,54 @@
         "prior_games_pooled": 33,
         "blended_points_per_game": 0.182,
         "projected_points": 0.36
+      }
+    },
+    "8482781": {
+      "name": "Carson Lambos",
+      "team": "MIN",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 1,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 1,
+          "blocked_shots": 1,
+          "points_per_game": 0.0,
+          "shots_per_game": 1.0,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 2,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 1,
+        "blended_points_per_game": null,
+        "projected_points": null
       }
     },
     "8476874": {
@@ -22679,7 +21329,7 @@
           "goals": 7,
           "assists": 30,
           "shots": 114,
-          "blocked_shots": 0,
+          "blocked_shots": 150,
           "points_per_game": 0.474,
           "shots_per_game": 1.462,
           "label": "2025-26"
@@ -24130,7 +22780,7 @@
           "goals": 2,
           "assists": 14,
           "shots": 48,
-          "blocked_shots": 0,
+          "blocked_shots": 108,
           "points_per_game": 0.195,
           "shots_per_game": 0.585,
           "label": "2024-25"
@@ -24274,7 +22924,7 @@
           "goals": 2,
           "assists": 5,
           "shots": 20,
-          "blocked_shots": 0,
+          "blocked_shots": 31,
           "points_per_game": 0.2,
           "shots_per_game": 0.571,
           "label": "2024-25"
@@ -24418,7 +23068,7 @@
           "goals": 2,
           "assists": 7,
           "shots": 52,
-          "blocked_shots": 0,
+          "blocked_shots": 92,
           "points_per_game": 0.164,
           "shots_per_game": 0.945,
           "label": "2024-25"
@@ -25441,54 +24091,6 @@
         "projected_points": 0.42
       }
     },
-    "8481715": {
-      "name": "Hunter Skinner",
-      "team": "NSH",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 1,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 1,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.0,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 1,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8476869": {
       "name": "Brady Skjei",
       "team": "NSH",
@@ -25535,6 +24137,54 @@
         "prior_games_pooled": 164,
         "blended_points_per_game": 0.36,
         "projected_points": 0.72
+      }
+    },
+    "8482806": {
+      "name": "William Trudeau",
+      "team": "NSH",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 2,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
       }
     },
     "8482715": {
@@ -26209,54 +24859,6 @@
         "projected_points": 1.53
       }
     },
-    "8482154": {
-      "name": "Alex Jefferies",
-      "team": "NYI",
-      "position": "L",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8483104": {
       "name": "Daylan Kuefler",
       "team": "NYI",
@@ -26591,54 +25193,6 @@
         "prior_games_pooled": 107,
         "blended_points_per_game": 0.617,
         "projected_points": 1.23
-      }
-    },
-    "8485448": {
-      "name": "Daniil Prokhorov",
-      "team": "NYI",
-      "position": "R",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8484221": {
@@ -27167,54 +25721,6 @@
         "prior_games_pooled": 82,
         "blended_points_per_game": 0.72,
         "projected_points": 1.44
-      }
-    },
-    "8481569": {
-      "name": "Marshall Warren",
-      "team": "NYI",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 8,
-          "points": 3,
-          "goals": 0,
-          "assists": 3,
-          "shots": 7,
-          "blocked_shots": 5,
-          "points_per_game": 0.375,
-          "shots_per_game": 0.875,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 8,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8477416": {
@@ -30418,7 +28924,7 @@
           "goals": 8,
           "assists": 22,
           "shots": 139,
-          "blocked_shots": 0,
+          "blocked_shots": 170,
           "points_per_game": 0.366,
           "shots_per_game": 1.695,
           "label": "2024-25"
@@ -32929,54 +31435,6 @@
         "projected_points": 1.0
       }
     },
-    "8481228": {
-      "name": "Jimmy Huntington",
-      "team": "SJS",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8481517": {
       "name": "Brett Leason",
       "team": "SJS",
@@ -34177,54 +32635,6 @@
         "projected_points": 0.58
       }
     },
-    "8482090": {
-      "name": "Jack Finley",
-      "team": "STL",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 44,
-          "points": 5,
-          "goals": 2,
-          "assists": 3,
-          "shots": 26,
-          "blocked_shots": 0,
-          "points_per_game": 0.114,
-          "shots_per_game": 0.591,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 1,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 1,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.0,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.111,
-        "prior_games_pooled": 45,
-        "blended_points_per_game": 0.111,
-        "projected_points": 0.22
-      }
-    },
     "8482077": {
       "name": "Dylan Holloway",
       "team": "STL",
@@ -34513,54 +32923,6 @@
         "projected_points": 1.43
       }
     },
-    "8476897": {
-      "name": "Oskar Sundqvist",
-      "team": "STL",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 52,
-          "points": 17,
-          "goals": 5,
-          "assists": 12,
-          "shots": 37,
-          "blocked_shots": 0,
-          "points_per_game": 0.327,
-          "shots_per_game": 0.712,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 67,
-          "points": 20,
-          "goals": 6,
-          "assists": 14,
-          "shots": 60,
-          "blocked_shots": 0,
-          "points_per_game": 0.299,
-          "shots_per_game": 0.896,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.311,
-        "prior_games_pooled": 119,
-        "blended_points_per_game": 0.311,
-        "projected_points": 0.62
-      }
-    },
     "8480459": {
       "name": "Pius Suter",
       "team": "STL",
@@ -34703,54 +33065,6 @@
         "prior_games_pooled": 145,
         "blended_points_per_game": 0.2,
         "projected_points": 0.4
-      }
-    },
-    "8477573": {
-      "name": "Nathan Walker",
-      "team": "STL",
-      "position": "L",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 46,
-          "points": 11,
-          "goals": 4,
-          "assists": 7,
-          "shots": 38,
-          "blocked_shots": 0,
-          "points_per_game": 0.239,
-          "shots_per_game": 0.826,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 73,
-          "points": 16,
-          "goals": 8,
-          "assists": 8,
-          "shots": 72,
-          "blocked_shots": 0,
-          "points_per_game": 0.219,
-          "shots_per_game": 0.986,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.227,
-        "prior_games_pooled": 119,
-        "blended_points_per_game": 0.227,
-        "projected_points": 0.45
       }
     },
     "8481598": {
@@ -36577,54 +34891,6 @@
         "projected_points": 0.49
       }
     },
-    "8481547": {
-      "name": "Simon Lundmark",
-      "team": "TBL",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 1,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 1,
-          "blocked_shots": 2,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.0,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 1,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8474151": {
       "name": "Ryan McDonagh",
       "team": "TBL",
@@ -36719,54 +34985,6 @@
         "prior_games_pooled": 133,
         "blended_points_per_game": 0.323,
         "projected_points": 0.65
-      }
-    },
-    "8477463": {
-      "name": "Steven Santini",
-      "team": "TBL",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 12,
-          "points": 1,
-          "goals": 0,
-          "assists": 1,
-          "shots": 4,
-          "blocked_shots": 7,
-          "points_per_game": 0.083,
-          "shots_per_game": 0.333,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 1,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 1,
-          "blocked_shots": 2,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.0,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 13,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8476927": {
@@ -41281,54 +39499,6 @@
         "projected_points": null
       }
     },
-    "8482787": {
-      "name": "Nikita Chibrikov",
-      "team": "WPG",
-      "position": "R",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 11,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 9,
-          "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.818,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 4,
-          "points": 3,
-          "goals": 2,
-          "assists": 1,
-          "shots": 6,
-          "blocked_shots": 0,
-          "points_per_game": 0.75,
-          "shots_per_game": 1.5,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 15,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
     "8478398": {
       "name": "Kyle Connor",
       "team": "WPG",
@@ -41375,102 +39545,6 @@
         "prior_games_pooled": 164,
         "blended_points_per_game": 1.152,
         "projected_points": 2.3
-      }
-    },
-    "8484135": {
-      "name": "Parker Ford",
-      "team": "WPG",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 15,
-          "points": 1,
-          "goals": 0,
-          "assists": 1,
-          "shots": 10,
-          "blocked_shots": 0,
-          "points_per_game": 0.067,
-          "shots_per_game": 0.667,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 3,
-          "points": 1,
-          "goals": 1,
-          "assists": 0,
-          "shots": 2,
-          "blocked_shots": 0,
-          "points_per_game": 0.333,
-          "shots_per_game": 0.667,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 18,
-        "blended_points_per_game": null,
-        "projected_points": null
-      }
-    },
-    "8479393": {
-      "name": "Noah Gregor",
-      "team": "WPG",
-      "position": "L",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 37,
-          "points": 9,
-          "goals": 4,
-          "assists": 5,
-          "shots": 41,
-          "blocked_shots": 0,
-          "points_per_game": 0.243,
-          "shots_per_game": 1.108,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 52,
-          "points": 7,
-          "goals": 4,
-          "assists": 3,
-          "shots": 60,
-          "blocked_shots": 0,
-          "points_per_game": 0.135,
-          "shots_per_game": 1.154,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.18,
-        "prior_games_pooled": 89,
-        "blended_points_per_game": 0.18,
-        "projected_points": 0.36
       }
     },
     "8480113": {
@@ -42287,54 +40361,6 @@
         "prior_games_pooled": 157,
         "blended_points_per_game": 0.745,
         "projected_points": 1.49
-      }
-    },
-    "8482192": {
-      "name": "Isaak Phillips",
-      "team": "WPG",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 3,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 3,
-          "blocked_shots": 1,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.0,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 3,
-          "points": 1,
-          "goals": 1,
-          "assists": 0,
-          "shots": 3,
-          "blocked_shots": 4,
-          "points_per_game": 0.333,
-          "shots_per_game": 1.0,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 6,
-        "blended_points_per_game": null,
-        "projected_points": null
       }
     },
     "8480145": {
@@ -43707,48 +41733,6 @@
       "games_this_week": 3,
       "last_start_date": null
     },
-    "8480238": {
-      "name": "Jiri Patera",
-      "team": "BOS",
-      "position": "G",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 1,
-          "games_started": 1,
-          "wins": 0,
-          "losses": 1,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": 0.825,
-          "gaa": 7.39,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2024-25"
-        }
-      },
-      "games_this_week": 3,
-      "last_start_date": null
-    },
     "8480280": {
       "name": "Jeremy Swayman",
       "team": "BOS",
@@ -43953,48 +41937,6 @@
           "shutouts": 1,
           "save_pct": 0.896,
           "gaa": 2.81,
-          "label": "2024-25"
-        }
-      },
-      "games_this_week": 2,
-      "last_start_date": null
-    },
-    "8480191": {
-      "name": "Matt Villalta",
-      "team": "BUF",
-      "position": "G",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 1,
-          "games_started": 1,
-          "wins": 1,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": 0.903,
-          "gaa": 3.0,
           "label": "2024-25"
         }
       },
@@ -45093,92 +43035,8 @@
       "games_this_week": 3,
       "last_start_date": null
     },
-    "8483083": {
-      "name": "Connor Ungar",
-      "team": "EDM",
-      "position": "G",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2024-25"
-        }
-      },
-      "games_this_week": 3,
-      "last_start_date": null
-    },
     "8484900": {
       "name": "Cooper Black",
-      "team": "FLA",
-      "position": "G",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2024-25"
-        }
-      },
-      "games_this_week": 3,
-      "last_start_date": null
-    },
-    "8482914": {
-      "name": "Kirill Gerasimyuk",
       "team": "FLA",
       "position": "G",
       "seasons": {
@@ -45255,48 +43113,6 @@
           "shutouts": 4,
           "save_pct": 0.9,
           "gaa": 2.5,
-          "label": "2024-25"
-        }
-      },
-      "games_this_week": 3,
-      "last_start_date": null
-    },
-    "8483736": {
-      "name": "Tyler Muszelik",
-      "team": "FLA",
-      "position": "G",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
           "label": "2024-25"
         }
       },
@@ -45471,48 +43287,6 @@
       "games_this_week": 2,
       "last_start_date": null
     },
-    "8483918": {
-      "name": "Riley Mercer",
-      "team": "MIN",
-      "position": "G",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2024-25"
-        }
-      },
-      "games_this_week": 2,
-      "last_start_date": null
-    },
     "8475717": {
       "name": "Calvin Pickard",
       "team": "MIN",
@@ -45549,48 +43323,6 @@
           "shutouts": 0,
           "save_pct": 0.9,
           "gaa": 2.71,
-          "label": "2024-25"
-        }
-      },
-      "games_this_week": 2,
-      "last_start_date": null
-    },
-    "8486275": {
-      "name": "Filip Ruzicka",
-      "team": "MIN",
-      "position": "G",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
           "label": "2024-25"
         }
       },
@@ -45969,48 +43701,6 @@
           "shutouts": 4,
           "save_pct": 0.895,
           "gaa": 2.98,
-          "label": "2024-25"
-        }
-      },
-      "games_this_week": 2,
-      "last_start_date": null
-    },
-    "8486136": {
-      "name": "Joshua Kotai",
-      "team": "NYI",
-      "position": "G",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
           "label": "2024-25"
         }
       },
@@ -46689,48 +44379,6 @@
       "games_this_week": 2,
       "last_start_date": null
     },
-    "8477480": {
-      "name": "Eric Comrie",
-      "team": "SJS",
-      "position": "G",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 25,
-          "games_started": 24,
-          "wins": 12,
-          "losses": 11,
-          "ot_losses": 1,
-          "shutouts": 0,
-          "save_pct": 0.89,
-          "gaa": 3.13,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 20,
-          "games_started": 20,
-          "wins": 9,
-          "losses": 10,
-          "ot_losses": 1,
-          "shutouts": 2,
-          "save_pct": 0.914,
-          "gaa": 2.39,
-          "label": "2024-25"
-        }
-      },
-      "games_this_week": 2,
-      "last_start_date": null
-    },
     "8480356": {
       "name": "Kyle Keyser",
       "team": "SJS",
@@ -47019,48 +44667,6 @@
           "shutouts": 0,
           "save_pct": 0.872,
           "gaa": 3.33,
-          "label": "2024-25"
-        }
-      },
-      "games_this_week": 2,
-      "last_start_date": null
-    },
-    "8480885": {
-      "name": "Olivier Rodrigue",
-      "team": "TBL",
-      "position": "G",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 0,
-          "games_started": 0,
-          "wins": 0,
-          "losses": 0,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 2,
-          "games_started": 1,
-          "wins": 0,
-          "losses": 1,
-          "ot_losses": 0,
-          "shutouts": 0,
-          "save_pct": 0.862,
-          "gaa": 3.1,
           "label": "2024-25"
         }
       },
