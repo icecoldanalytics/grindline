@@ -1,9 +1,10 @@
 {
   "season": "2026-27",
-  "generated": "2026-09-20 15:14",
+  "generated": "2026-09-27 11:01",
   "season_start": "2026-09-29",
   "season_end": "2027-04-10",
   "total_games": 1344,
+  "stale_teams": [],
   "teams": {
     "ANA": {
       "team": "ANA",
