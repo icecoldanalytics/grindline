@@ -973,6 +973,16 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 // rather than silently breaking sign-in again the same way.
 const AUTH_REDIRECT_URL = 'https://www.grindline.ca/fantasy.html';
 let currentUser = null;
+let profile = null; // the caller's own profiles row - currently just yahoo_connected/yahoo_connected_at
+
+async function fetchProfile(userId) {
+  const { data, error } = await sb.from('profiles').select('yahoo_connected, yahoo_connected_at').eq('id', userId).maybeSingle();
+  if (error) {
+    console.error('profiles fetch error:', error);
+    return null;
+  }
+  return data;
+}
 
 async function fetchRemoteRoster(userId) {
   const { data, error } = await sb.from('roster_players').select('nhl_player_id, player_type').eq('user_id', userId);
@@ -1019,11 +1029,17 @@ async function maybeOfferImport(remote) {
 
 async function refreshMyTeamFromSource(isFreshSignIn) {
   if (currentUser) {
-    let remote = await fetchRemoteRoster(currentUser.id);
+    const [remoteResult, profileResult] = await Promise.all([
+      fetchRemoteRoster(currentUser.id),
+      fetchProfile(currentUser.id),
+    ]);
+    let remote = remoteResult;
     if (isFreshSignIn) remote = await maybeOfferImport(remote);
     myTeam = remote;
+    profile = profileResult;
   } else {
     myTeam = loadMyTeam();
+    profile = null;
   }
   renderAuthWidget();
   renderMyTeam();
@@ -1058,17 +1074,84 @@ async function signOut() {
   await sb.auth.signOut();
 }
 
+// ── YAHOO FANTASY CONNECT ──────────────────────────────────────────────
+// Both calls go through Supabase Edge Functions (see supabase/functions/
+// yahoo-oauth-*) - the client never holds a Yahoo client_secret or a
+// Yahoo access/refresh token at any point, only ever a yes/no connected
+// state read from profiles.yahoo_connected.
+async function connectYahoo() {
+  const statusEl = document.getElementById('mt-yahoo-status');
+  if (statusEl) statusEl.textContent = 'Redirecting to Yahoo…';
+  const { data, error } = await sb.functions.invoke('yahoo-oauth-start');
+  if (error || !data?.authorize_url) {
+    console.error('yahoo-oauth-start error:', error);
+    if (statusEl) statusEl.textContent = "Couldn't start the Yahoo connection - try again.";
+    return;
+  }
+  window.location.href = data.authorize_url;
+}
+
+async function disconnectYahoo() {
+  if (!confirm('Disconnect your Yahoo Fantasy account?')) return;
+  const { error } = await sb.functions.invoke('yahoo-oauth-disconnect');
+  if (error) {
+    console.error('yahoo-oauth-disconnect error:', error);
+    alert("That didn't go through - try again.");
+    return;
+  }
+  if (currentUser) profile = await fetchProfile(currentUser.id);
+  renderAuthWidget();
+}
+
+const YAHOO_REDIRECT_MESSAGES = {
+  'connected': 'Yahoo Fantasy connected.',
+  'error=denied': 'Yahoo sign-in was cancelled.',
+  'error=state_expired': 'That connection attempt expired - try again.',
+  'error=missing_params': "Something went wrong connecting to Yahoo - try again.",
+  'error=exchange_failed': "Couldn't complete the Yahoo connection - try again.",
+  'error=storage_failed': 'Connected to Yahoo, but saving the connection failed - try again.',
+};
+
+// Reads the ?yahoo= param the Edge Function's callback redirect leaves
+// behind, shows a one-line result, then cleans the URL so a refresh
+// doesn't re-show it - same shape as this page already needs for the
+// magic-link sign-in confirmation, just for a different query param.
+function handleYahooRedirectParam() {
+  const params = new URLSearchParams(window.location.search);
+  const yahoo = params.get('yahoo');
+  if (!yahoo) return;
+  const message = YAHOO_REDIRECT_MESSAGES[yahoo] || "Couldn't connect to Yahoo - try again.";
+  alert(message);
+  params.delete('yahoo');
+  const newSearch = params.toString();
+  const newUrl = window.location.pathname + (newSearch ? `?${newSearch}` : '') + window.location.hash;
+  window.history.replaceState({}, '', newUrl);
+}
+handleYahooRedirectParam();
+
 function renderAuthWidget() {
   const el = document.getElementById('mt-auth-box');
   const noteEl = document.getElementById('mt-storage-note');
   if (!el) return;
   if (currentUser) {
     if (noteEl) noteEl.textContent = 'Saved to your account — synced across devices and included in your daily email.';
+    const yahooConnected = !!(profile && profile.yahoo_connected);
+    const yahooBlock = yahooConnected
+      ? `<div class="mt-auth-row" style="margin-top:8px;">
+          <div class="mt-auth-copy">Yahoo Fantasy connected ✓</div>
+          <button type="button" class="mt-auth-btn mt-auth-btn-ghost" onclick="disconnectYahoo()">Disconnect</button>
+        </div>`
+      : `<div class="mt-auth-row" style="margin-top:8px;">
+          <div class="mt-auth-copy">Connect your Yahoo Fantasy account</div>
+          <button type="button" class="mt-auth-btn" onclick="connectYahoo()">Connect Yahoo Fantasy</button>
+        </div>
+        <div id="mt-yahoo-status" class="mt-auth-status"></div>`;
     el.innerHTML = `
       <div class="mt-auth-row">
         <div class="mt-auth-copy">Signed in as <strong>${currentUser.email}</strong></div>
         <button type="button" class="mt-auth-btn mt-auth-btn-ghost" onclick="signOut()">Sign out</button>
-      </div>`;
+      </div>
+      ${yahooBlock}`;
   } else {
     if (noteEl) noteEl.textContent = "Saved in this browser only — no account, nothing sent to a server. Clearing your browser's site data (or switching browsers/devices) clears this too.";
     el.innerHTML = `

@@ -1,0 +1,11 @@
+# Edge Functions config for the Yahoo OAuth flow (see the approved plan
+# and supabase/functions/*/index.ts). Only yahoo-oauth-callback needs an
+# entry here - it's the one function Yahoo's browser redirect hits
+# directly with no Supabase Authorization header, so it must run with
+# JWT verification off. yahoo-oauth-start and yahoo-oauth-disconnect are
+# both called from the client via supabase.functions.invoke(), which
+# attaches the user's session JWT automatically, so they keep the
+# project default (verify_jwt = true) and need no entry here.
+
+[functions.yahoo-oauth-callback]
+verify_jwt = false
