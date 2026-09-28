@@ -1,175 +1,180 @@
 {
-  "date": "2026-09-27",
-  "date_label": "Sunday, September 27, 2026",
-  "week_start": "2026-09-21",
-  "generated": "2026-09-27 06:20 AM MT",
+  "date": "2026-09-28",
+  "date_label": "Monday, September 28, 2026",
+  "week_start": "2026-09-28",
+  "generated": "2026-09-28 06:20 AM MT",
   "weekly_workload": {
     "teams": [
       {
-        "team": "ANA",
-        "full_name": "Anaheim Ducks",
-        "games": 0
-      },
-      {
-        "team": "BOS",
-        "full_name": "Boston Bruins",
-        "games": 0
-      },
-      {
-        "team": "BUF",
-        "full_name": "Buffalo Sabres",
-        "games": 0
-      },
-      {
-        "team": "CAR",
-        "full_name": "Carolina Hurricanes",
-        "games": 0
-      },
-      {
-        "team": "CBJ",
-        "full_name": "Columbus Blue Jackets",
-        "games": 0
-      },
-      {
-        "team": "CGY",
-        "full_name": "Calgary Flames",
-        "games": 0
-      },
-      {
-        "team": "CHI",
-        "full_name": "Chicago Blackhawks",
-        "games": 0
-      },
-      {
-        "team": "COL",
-        "full_name": "Colorado Avalanche",
-        "games": 0
-      },
-      {
-        "team": "DAL",
-        "full_name": "Dallas Stars",
-        "games": 0
-      },
-      {
-        "team": "DET",
-        "full_name": "Detroit Red Wings",
-        "games": 0
-      },
-      {
-        "team": "EDM",
-        "full_name": "Edmonton Oilers",
-        "games": 0
-      },
-      {
-        "team": "FLA",
-        "full_name": "Florida Panthers",
-        "games": 0
-      },
-      {
-        "team": "LAK",
-        "full_name": "Los Angeles Kings",
-        "games": 0
-      },
-      {
-        "team": "MIN",
-        "full_name": "Minnesota Wild",
-        "games": 0
-      },
-      {
-        "team": "MTL",
-        "full_name": "Montr\u00e9al Canadiens",
-        "games": 0
-      },
-      {
-        "team": "NJD",
-        "full_name": "New Jersey Devils",
-        "games": 0
-      },
-      {
-        "team": "NSH",
-        "full_name": "Nashville Predators",
-        "games": 0
-      },
-      {
-        "team": "NYI",
-        "full_name": "New York Islanders",
-        "games": 0
-      },
-      {
         "team": "NYR",
         "full_name": "New York Rangers",
-        "games": 0
-      },
-      {
-        "team": "OTT",
-        "full_name": "Ottawa Senators",
-        "games": 0
-      },
-      {
-        "team": "PHI",
-        "full_name": "Philadelphia Flyers",
-        "games": 0
-      },
-      {
-        "team": "PIT",
-        "full_name": "Pittsburgh Penguins",
-        "games": 0
-      },
-      {
-        "team": "SEA",
-        "full_name": "Seattle Kraken",
-        "games": 0
-      },
-      {
-        "team": "SJS",
-        "full_name": "San Jose Sharks",
-        "games": 0
-      },
-      {
-        "team": "STL",
-        "full_name": "St. Louis Blues",
-        "games": 0
-      },
-      {
-        "team": "TBL",
-        "full_name": "Tampa Bay Lightning",
-        "games": 0
-      },
-      {
-        "team": "TOR",
-        "full_name": "Toronto Maple Leafs",
-        "games": 0
-      },
-      {
-        "team": "UTA",
-        "full_name": "Utah Mammoth",
-        "games": 0
+        "games": 4
       },
       {
         "team": "VAN",
         "full_name": "Vancouver Canucks",
-        "games": 0
+        "games": 4
+      },
+      {
+        "team": "BOS",
+        "full_name": "Boston Bruins",
+        "games": 3
+      },
+      {
+        "team": "CAR",
+        "full_name": "Carolina Hurricanes",
+        "games": 3
+      },
+      {
+        "team": "CGY",
+        "full_name": "Calgary Flames",
+        "games": 3
+      },
+      {
+        "team": "CHI",
+        "full_name": "Chicago Blackhawks",
+        "games": 3
+      },
+      {
+        "team": "EDM",
+        "full_name": "Edmonton Oilers",
+        "games": 3
+      },
+      {
+        "team": "FLA",
+        "full_name": "Florida Panthers",
+        "games": 3
+      },
+      {
+        "team": "PHI",
+        "full_name": "Philadelphia Flyers",
+        "games": 3
+      },
+      {
+        "team": "SEA",
+        "full_name": "Seattle Kraken",
+        "games": 3
+      },
+      {
+        "team": "TOR",
+        "full_name": "Toronto Maple Leafs",
+        "games": 3
+      },
+      {
+        "team": "UTA",
+        "full_name": "Utah Mammoth",
+        "games": 3
       },
       {
         "team": "VGK",
         "full_name": "Vegas Golden Knights",
-        "games": 0
+        "games": 3
+      },
+      {
+        "team": "ANA",
+        "full_name": "Anaheim Ducks",
+        "games": 2
+      },
+      {
+        "team": "BUF",
+        "full_name": "Buffalo Sabres",
+        "games": 2
+      },
+      {
+        "team": "CBJ",
+        "full_name": "Columbus Blue Jackets",
+        "games": 2
+      },
+      {
+        "team": "COL",
+        "full_name": "Colorado Avalanche",
+        "games": 2
+      },
+      {
+        "team": "DAL",
+        "full_name": "Dallas Stars",
+        "games": 2
+      },
+      {
+        "team": "DET",
+        "full_name": "Detroit Red Wings",
+        "games": 2
+      },
+      {
+        "team": "LAK",
+        "full_name": "Los Angeles Kings",
+        "games": 2
+      },
+      {
+        "team": "MIN",
+        "full_name": "Minnesota Wild",
+        "games": 2
+      },
+      {
+        "team": "MTL",
+        "full_name": "Montr\u00e9al Canadiens",
+        "games": 2
+      },
+      {
+        "team": "NJD",
+        "full_name": "New Jersey Devils",
+        "games": 2
+      },
+      {
+        "team": "NSH",
+        "full_name": "Nashville Predators",
+        "games": 2
+      },
+      {
+        "team": "NYI",
+        "full_name": "New York Islanders",
+        "games": 2
+      },
+      {
+        "team": "PIT",
+        "full_name": "Pittsburgh Penguins",
+        "games": 2
+      },
+      {
+        "team": "SJS",
+        "full_name": "San Jose Sharks",
+        "games": 2
+      },
+      {
+        "team": "STL",
+        "full_name": "St. Louis Blues",
+        "games": 2
+      },
+      {
+        "team": "TBL",
+        "full_name": "Tampa Bay Lightning",
+        "games": 2
       },
       {
         "team": "WPG",
         "full_name": "Winnipeg Jets",
-        "games": 0
+        "games": 2
       },
       {
         "team": "WSH",
         "full_name": "Washington Capitals",
-        "games": 0
+        "games": 2
+      },
+      {
+        "team": "OTT",
+        "full_name": "Ottawa Senators",
+        "games": 1
       }
     ],
-    "max_games": 0,
-    "min_games": 0,
-    "heavy_teams": [],
-    "light_teams": []
+    "max_games": 4,
+    "min_games": 1,
+    "heavy_teams": [
+      "NYR",
+      "VAN"
+    ],
+    "light_teams": [
+      "OTT"
+    ]
   },
   "games": []
 }
