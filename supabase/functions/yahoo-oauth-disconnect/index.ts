@@ -12,10 +12,9 @@
 // guess one. Worth revisiting when this is actually being tested live.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders } from "../_shared/cors.ts";
+import { getAnonKey, getServiceRoleKey } from "../_shared/supabase_keys.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
-const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
-const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
 function jsonResponse(body: unknown, status: number): Response {
   return new Response(JSON.stringify(body), {
@@ -33,14 +32,14 @@ Deno.serve(async (req) => {
     const authHeader = req.headers.get("Authorization");
     if (!authHeader) return jsonResponse({ error: "missing Authorization header" }, 401);
 
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    const supabase = createClient(SUPABASE_URL, getAnonKey(), {
       global: { headers: { Authorization: authHeader } },
     });
     const { data: userData, error: userError } = await supabase.auth.getUser();
     if (userError || !userData?.user) return jsonResponse({ error: "not signed in" }, 401);
     const userId = userData.user.id;
 
-    const supabaseAdmin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+    const supabaseAdmin = createClient(SUPABASE_URL, getServiceRoleKey());
     const { error: deleteError } = await supabaseAdmin.from("yahoo_oauth_tokens").delete().eq("user_id", userId);
     if (deleteError) {
       console.error("yahoo_oauth_tokens delete error:", deleteError);

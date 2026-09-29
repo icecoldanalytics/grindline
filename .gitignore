@@ -8,3 +8,4 @@ data/historical_h2h_events_cache.json
 data/goalie_starts_backtest_cache.json
 *.bak
 data/historical_h2h_odds.json.corrupted-*
+supabase/.temp/

@@ -5,10 +5,10 @@
 // "Flow, end to end" for the full sequence.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { corsHeaders } from "../_shared/cors.ts";
+import { getAnonKey } from "../_shared/supabase_keys.ts";
 import { buildAuthorizeUrl, signState } from "../_shared/yahoo.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
-const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
 const YAHOO_CLIENT_ID = Deno.env.get("YAHOO_CLIENT_ID")!;
 const YAHOO_REDIRECT_URI = Deno.env.get("YAHOO_REDIRECT_URI")!;
 const YAHOO_STATE_SECRET = Deno.env.get("YAHOO_STATE_SECRET")!;
@@ -38,7 +38,10 @@ Deno.serve(async (req) => {
     // Resolves the real signed-in user from their own session JWT rather
     // than trusting anything client-supplied - this is what makes the
     // signed state trustworthy downstream in yahoo-oauth-callback.
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    // getAnonKey() can throw if no key can be resolved at all - caught
+    // below like any other failure here, rather than crashing the
+    // function at cold start.
+    const supabase = createClient(SUPABASE_URL, getAnonKey(), {
       global: { headers: { Authorization: authHeader } },
     });
     const { data: userData, error: userError } = await supabase.auth.getUser();

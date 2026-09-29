@@ -13,10 +13,10 @@
 // and that failure happens entirely outside this function's own error
 // handling / logging.
 import { createClient } from "jsr:@supabase/supabase-js@2";
+import { getServiceRoleKey } from "../_shared/supabase_keys.ts";
 import { exchangeCodeForTokens, verifyState } from "../_shared/yahoo.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
-const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const YAHOO_CLIENT_ID = Deno.env.get("YAHOO_CLIENT_ID")!;
 const YAHOO_CLIENT_SECRET = Deno.env.get("YAHOO_CLIENT_SECRET")!;
 const YAHOO_REDIRECT_URI = Deno.env.get("YAHOO_REDIRECT_URI")!;
@@ -65,7 +65,20 @@ Deno.serve(async (req) => {
     return redirectTo("error=exchange_failed");
   }
 
-  const supabaseAdmin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+  // getServiceRoleKey() can throw (no usable key found at all) - caught
+  // here rather than left to crash the whole request with Deno's own
+  // generic error page. This exact failure mode (an admin client built
+  // with an undefined key from the old SUPABASE_SERVICE_ROLE_KEY var,
+  // which stopped being reliably injected) is what previously surfaced
+  // as every real connect attempt failing with error=storage_failed.
+  let supabaseAdmin;
+  try {
+    supabaseAdmin = createClient(SUPABASE_URL, getServiceRoleKey());
+  } catch (e) {
+    console.error("could not resolve a service-role key:", e);
+    return redirectTo("error=storage_failed");
+  }
+
   const expiresAt = new Date(Date.now() + tokens.expires_in * 1000).toISOString();
 
   const { error: upsertError } = await supabaseAdmin.from("yahoo_oauth_tokens").upsert({
