@@ -1,5 +1,61 @@
 {
-  "date": "2026-09-28",
-  "updated": "11:34 PM MT",
-  "games": []
+  "date": "2026-09-29",
+  "updated": "05:31 AM MT",
+  "games": [
+    {
+      "away": "FLA",
+      "home": "CAR",
+      "away_city": "Florida",
+      "home_city": "Carolina",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
+    },
+    {
+      "away": "MTL",
+      "home": "TOR",
+      "away_city": "Montr\u00e9al",
+      "home_city": "Toronto",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
+    },
+    {
+      "away": "NYR",
+      "home": "BOS",
+      "away_city": "New York",
+      "home_city": "Boston",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
+    },
+    {
+      "away": "VAN",
+      "home": "EDM",
+      "away_city": "Vancouver",
+      "home_city": "Edmonton",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
+    },
+    {
+      "away": "CHI",
+      "home": "VGK",
+      "away_city": "Chicago",
+      "home_city": "Vegas",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
+    }
+  ]
 }
