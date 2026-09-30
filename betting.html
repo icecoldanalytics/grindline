@@ -423,19 +423,8 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
     <p style="font-size:0.82rem;color:var(--muted);max-width:760px;margin-top:16px;line-height:1.7;">Held up in all four seasons tested — 509 games, 62.1% win rate, +5.6% ROI at real prices. When both teams are on a back-to-back, the rest difference disappears and no pick is published.</p>
 
     <div class="section-divider" style="margin-top:44px;"><h2>Does It Work? Four-Season Test</h2><div class="sd-line"></div><div class="sd-badge">2022–23 → 2025–26</div></div>
-    <div class="recap-table">
-      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(255,255,255,0.03);">
-        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Season</span>
-        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Games</span>
-        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Win%</span>
-        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Avg ML</span>
-        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">ROI</span>
-      </div>
-      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2022–23</span><span style="text-align:right;">124</span><span style="text-align:right;">59.7%</span><span style="text-align:right;">&minus;186</span><span style="text-align:right;color:var(--green);font-weight:700;">+4.1%</span></div>
-      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2023–24</span><span style="text-align:right;">116</span><span style="text-align:right;">60.3%</span><span style="text-align:right;">&minus;109</span><span style="text-align:right;color:var(--green);font-weight:700;">+3.3%</span></div>
-      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2024–25</span><span style="text-align:right;">133</span><span style="text-align:right;">63.2%</span><span style="text-align:right;">&minus;100</span><span style="text-align:right;color:var(--green);font-weight:700;">+8.0%</span></div>
-      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">2025–26</span><span style="text-align:right;">136</span><span style="text-align:right;">64.7%</span><span style="text-align:right;">&minus;126</span><span style="text-align:right;color:var(--green);font-weight:700;">+7.3%</span></div>
-      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(0,196,106,0.06);"><span class="rr-game"><strong>All four</strong></span><span style="text-align:right;"><strong>509</strong></span><span style="text-align:right;"><strong>62.1%</strong></span><span style="text-align:right;"><strong>&minus;130</strong></span><span style="text-align:right;color:var(--green);font-weight:800;">+5.6%</span></div>
+    <div class="recap-table four-season-table">
+      <div class="recap-row wide"><span class="rr-game">Loading...</span></div>
     </div>
     <div style="font-size:0.8rem;color:var(--muted);line-height:1.75;margin-top:14px;max-width:760px;">
       <strong style="color:var(--text);">Every season so far has been profitable at real prices</strong> &mdash; but read the 2022&ndash;23 row's price column before you take comfort in that. The average price that year was &minus;186, nearly double the other three seasons' &minus;100 to &minus;126 range, which is itself a caveat worth sitting with: we don't have a clean explanation for why the market priced this matchup so much steeper that season, and roughly 100&ndash;135 bets a year is a small enough sample that a season swinging the other way &mdash; on price, win rate, or both &mdash; is well within what a genuine long-run edge can produce. The pooled 95% ROI confidence interval is &minus;2.2% to +13.3%; the point estimate is positive, but the interval includes a flat outcome.
@@ -1550,6 +1539,42 @@ async function buildROI() {
   }
 }
 buildROI();
+
+// ── FOUR-SEASON TEST TABLE (How It Works) ──────────────────────────────────
+async function buildFourSeasonTable() {
+  try {
+    const r = await fetch('data/rest_signal_backtest.json?nocache=' + Date.now());
+    const d = await r.json();
+    const re = d.rest_edge || {};
+    if (!re.pooled) return;
+
+    const seasons = ['2022-23', '2023-24', '2024-25', '2025-26'];
+    const seasonLabels = { '2022-23': '2022–23', '2023-24': '2023–24', '2024-25': '2024–25', '2025-26': '2025–26' };
+    const fmtOdds = v => v == null ? '—' : (v >= 0 ? '+' : '−') + Math.abs(Math.round(v));
+    const fmtRoi  = v => v == null ? '—' : (v >= 0 ? '+' : '−') + Math.abs(v) + '%';
+
+    const header = `
+      <div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(255,255,255,0.03);">
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Season</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Games</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Win%</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">Avg ML</span>
+        <span style="font-size:0.65rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-align:right;">ROI</span>
+      </div>`;
+    const rows = seasons.map(s => {
+      const sd = re[s] || {};
+      return `<div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;"><span class="rr-game">${seasonLabels[s]}</span><span style="text-align:right;">${sd.n ?? '—'}</span><span style="text-align:right;">${sd.win_rate ?? '—'}%</span><span style="text-align:right;">${fmtOdds(sd.avg_odds)}</span><span style="text-align:right;color:var(--green);font-weight:700;">${fmtRoi(sd.roi)}</span></div>`;
+    }).join('');
+    const p = re.pooled;
+    const total = `<div class="recap-row wide" style="grid-template-columns:1fr 70px 70px 80px 80px;background:rgba(0,196,106,0.06);"><span class="rr-game"><strong>All four</strong></span><span style="text-align:right;"><strong>${p.n}</strong></span><span style="text-align:right;"><strong>${p.win_rate}%</strong></span><span style="text-align:right;"><strong>${fmtOdds(p.avg_odds)}</strong></span><span style="text-align:right;color:var(--green);font-weight:800;">${fmtRoi(p.roi)}</span></div>`;
+
+    document.querySelectorAll('.four-season-table').forEach(el => { el.innerHTML = header + rows + total; });
+    console.log(`Four-season table loaded from rest_signal_backtest.json: ${p.n} games`);
+  } catch (e) {
+    console.log('Four-season table fetch error:', e);
+  }
+}
+buildFourSeasonTable();
 </script>
 </body>
 </html>
