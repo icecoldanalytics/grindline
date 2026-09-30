@@ -394,18 +394,40 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 // sit inert in the URL fragment and be lost the moment anything else
 // navigates - confirmed live that's exactly what was happening before
 // this existed. Creating the client is enough: supabase-js's default
-// detectSessionInUrl picks the token out of the fragment and persists
-// it, and onAuthStateChange only fires SIGNED_IN for a session that was
-// JUST captured this way (an already-signed-in visitor just browsing to
-// the homepage gets INITIAL_SESSION instead, and isn't redirected) - so
-// this sends someone who actually completed sign-in on to My Team,
-// which is where the flow was always headed, rather than stranding them
-// on the homepage with a session nothing here would otherwise use.
+// detectSessionInUrl picks the token out of the fragment and persists it.
+//
+// Redirect guard: originally gated on event === 'SIGNED_IN', on the
+// assumption that only a freshly-captured magic-link session fires that
+// event (an already-signed-in visitor just browsing here would get
+// INITIAL_SESSION instead, and not be redirected). Confirmed live that
+// assumption is browser-dependent and wrong - it held in Chrome, but
+// Edge also emits SIGNED_IN on an ordinary session restore or token
+// refresh, which made this fire on every single visit for an
+// already-signed-in user in Edge specifically, with no auth fragment in
+// the URL at all. The event type was never the real signal; the URL is.
+// Captured BEFORE the client below is created, in case detectSessionInUrl
+// mutates window.location as part of processing it.
+const hadAuthTokenInUrl = window.location.hash.includes('access_token');
+
 const SUPABASE_URL = 'https://thdaersyskybpcukhciq.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRoZGFlcnN5c2t5YnBjdWtoY2lxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzNDc5NDUsImV4cCI6MjEwNTkyMzk0NX0.LY14jrMDLB-urPsDDeIMrJklP7rXtS7Y6vgSLL2o_aE';
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Correction to what this comment used to claim: supabase-js does NOT
+// reliably strip a processed #access_token=... fragment from the URL or
+// history on its own - confirmed live (Edge) that a real token sitting
+// in this page's history from an earlier magic-link click was still
+// there, unstripped, and the browser's own address-bar autocomplete
+// resurfaced that exact URL on a later, unrelated visit, silently
+// turning "type the bare domain" into "reload an old magic-link URL"
+// and re-triggering the redirect below for a token nothing about the
+// current visit actually presented. Cleared explicitly here instead,
+// once this callback fires at all (which only happens after Supabase
+// has already had its chance to read the fragment).
 sb.auth.onAuthStateChange((event, session) => {
-  if (event === 'SIGNED_IN' && session) {
+  if (window.location.hash.includes('access_token')) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
+  if (session && hadAuthTokenInUrl) {
     window.location.replace('/fantasy.html');
   }
 });

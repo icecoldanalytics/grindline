@@ -1050,6 +1050,16 @@ async function refreshMyTeamFromSource(isFreshSignIn) {
 // so a returning visit never re-triggers the import prompt), then again
 // on every future sign-in/out.
 sb.auth.onAuthStateChange((event, session) => {
+  // Strip a magic-link auth fragment from the URL/history once Supabase
+  // has had its chance to read it - supabase-js does not reliably do
+  // this itself (confirmed live on index.html's own copy of this same
+  // gap: a real #access_token=... left sitting in history got
+  // resurfaced by Edge's address-bar autocomplete on a later, unrelated
+  // visit). Same fix applied here so a genuine magic-link landing on
+  // this page doesn't leave the same stale trap behind.
+  if (window.location.hash.includes('access_token')) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }
   currentUser = session ? session.user : null;
   refreshMyTeamFromSource(event === 'SIGNED_IN');
 });
