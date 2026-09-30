@@ -1,28 +1,28 @@
 {
   "date": "2026-09-29",
-  "updated": "05:31 AM MT",
+  "updated": "08:03 PM MT",
   "games": [
     {
       "away": "FLA",
       "home": "CAR",
       "away_city": "Florida",
       "home_city": "Carolina",
-      "away_score": 0,
+      "away_score": 1,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "final",
+      "display": "Final/OT",
+      "period_label": "OT"
     },
     {
       "away": "MTL",
       "home": "TOR",
       "away_city": "Montr\u00e9al",
       "home_city": "Toronto",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 3,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "NYR",
@@ -31,9 +31,9 @@
       "home_city": "Boston",
       "away_score": 0,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "live",
+      "display": "3rd \u00b7 19:59",
+      "period_label": "3rd"
     },
     {
       "away": "VAN",
