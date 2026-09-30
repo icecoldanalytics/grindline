@@ -1,61 +1,39 @@
 {
-  "date": "2026-09-29",
-  "updated": "11:22 PM MT",
+  "date": "2026-09-30",
+  "updated": "05:14 AM MT",
   "games": [
     {
-      "away": "FLA",
-      "home": "CAR",
-      "away_city": "Florida",
-      "home_city": "Carolina",
-      "away_score": 1,
-      "home_score": 0,
-      "status": "final",
-      "display": "Final/OT",
-      "period_label": "OT"
-    },
-    {
-      "away": "MTL",
-      "home": "TOR",
-      "away_city": "Montr\u00e9al",
-      "home_city": "Toronto",
-      "away_score": 3,
-      "home_score": 2,
-      "status": "final",
-      "display": "Final",
-      "period_label": "3rd"
-    },
-    {
-      "away": "NYR",
-      "home": "BOS",
-      "away_city": "New York",
-      "home_city": "Boston",
+      "away": "PIT",
+      "home": "PHI",
+      "away_city": "Pittsburgh",
+      "home_city": "Philadelphia",
       "away_score": 0,
-      "home_score": 3,
-      "status": "final",
-      "display": "Final",
-      "period_label": "3rd"
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
     },
     {
-      "away": "VAN",
-      "home": "EDM",
-      "away_city": "Vancouver",
-      "home_city": "Edmonton",
-      "away_score": 6,
-      "home_score": 5,
-      "status": "final",
-      "display": "Final/OT",
-      "period_label": "OT"
+      "away": "NYI",
+      "home": "TOR",
+      "away_city": "New York",
+      "home_city": "Toronto",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
     },
     {
-      "away": "CHI",
-      "home": "VGK",
-      "away_city": "Chicago",
-      "home_city": "Vegas",
-      "away_score": 2,
-      "home_score": 5,
-      "status": "final",
-      "display": "Final",
-      "period_label": "3rd"
+      "away": "LAK",
+      "home": "COL",
+      "away_city": "Los Angeles",
+      "home_city": "Colorado",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
     }
   ]
 }
