@@ -221,15 +221,32 @@ def call_claude(prompt):
             },
             timeout=60
         )
-        r.raise_for_status()
+    except requests.RequestException as e:
+        print(f"Claude API request error: {e}")
+        return None
+
+    if not r.ok:
+        # r.raise_for_status()'s exception message is just the status line -
+        # it doesn't include the body, which is where Anthropic actually
+        # says what it's rejecting (bad model string, invalid request
+        # shape, etc). Print it here or every 400/401/429 looks identical.
+        print(f"Claude API error: HTTP {r.status_code} - {r.text}")
+        return None
+
+    try:
         text = r.json()["content"][0]["text"]
-        text = text.strip()
-        if text.startswith("```"):
-            text = text.split("\n", 1)[1]
-            text = text.rsplit("```", 1)[0]
-        return json.loads(text.strip())
     except Exception as e:
-        print(f"Claude API error: {e}")
+        print(f"Claude API response missing expected shape: {e}\n--- raw response ---\n{r.text}")
+        return None
+
+    text = text.strip()
+    if text.startswith("```"):
+        text = text.split("\n", 1)[1]
+        text = text.rsplit("```", 1)[0]
+    try:
+        return json.loads(text.strip())
+    except json.JSONDecodeError as e:
+        print(f"Claude returned unparseable JSON: {e}\n--- raw text ---\n{text}")
         return None
 
 def build_game_context(dashboard, rosters, scratches=[]):
@@ -537,8 +554,13 @@ def main():
     player_props = generate_player_props(prop_context, date_label)
 
     if not goalie_starts:
+        # sys.exit(1), not a plain return - same reasoning as the roster
+        # abort above. A run that aborts before writing fantasy.json must
+        # be visibly red, not indistinguishable from a normal exit; this
+        # is what silently left fantasy.json on a two-week-old placeholder
+        # (confirmed: Claude API 400s here weren't surfaced anywhere).
         print("Core sections failed - aborting")
-        return
+        sys.exit(1)
     if not player_props:
         player_props = {"props": [], "note": "Prop generation unavailable."}
 

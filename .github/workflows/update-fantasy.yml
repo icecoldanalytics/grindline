@@ -33,17 +33,26 @@ jobs:
         run: pip install requests pytz
 
       - name: Generate fantasy picks
+        id: fantasy
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         # continue-on-error: this step aborts (exit 1) and skips writing
         # fantasy.json if roster fetches failed for too many of tonight's
-        # teams even after retries, keeping the previous file rather than
-        # generating picks from a gutted roster set - see
-        # update_fantasy.py's roster-fetch guard. Without this flag, that
-        # abort would also skip prop grading below, which is unrelated
-        # (it grades past picks, not tonight's). The commit step's own
-        # git-add only picks up fantasy.json if this step actually wrote it.
+        # teams even after retries, or if goalie/prop generation failed
+        # outright (e.g. the Claude API), keeping the previous file rather
+        # than generating picks from a gutted context - see
+        # update_fantasy.py's abort guards. Without this flag, that abort
+        # would also skip prop grading below, which is unrelated (it
+        # grades past picks, not tonight's). The commit step's own git-add
+        # only picks up fantasy.json if this step actually wrote it.
+        #
+        # continue-on-error hides the failure from the job's overall
+        # conclusion, though - confirmed live, this is exactly how
+        # fantasy.json sat on a two-week-old placeholder with every run
+        # showing green. The "Fail the job if..." step below reads this
+        # step's pre-override outcome and turns the job red on a genuine
+        # abort, while still letting prop grading and the commit run.
         continue-on-error: true
         run: python .github/scripts/update_fantasy.py
 
@@ -58,3 +67,12 @@ jobs:
           git diff --staged --quiet || git commit -m "Update fantasy picks $(date -u '+%Y-%m-%d')"
           git pull --rebase
           git push
+
+      - name: Fail the job if fantasy picks generation aborted
+        # Runs last, after prop grading and the commit, so neither is
+        # skipped on a genuine abort - it exists only to flip the job's
+        # overall conclusion to red afterward.
+        if: steps.fantasy.outcome == 'failure'
+        run: |
+          echo "update_fantasy.py exited non-zero - see the 'Generate fantasy picks' step's log above for why (roster fetch, Claude API error, etc). fantasy.json was left unchanged."
+          exit 1
