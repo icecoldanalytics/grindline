@@ -1,1 +1,22 @@
-{}
+{
+  "2026-09-29|FLA@CAR": {
+    "away_starter": "J. Markstrom",
+    "home_starter": "B. Bussi"
+  },
+  "2026-09-29|MTL@TOR": {
+    "away_starter": "J. Dobes",
+    "home_starter": "S. Bobrovsky"
+  },
+  "2026-09-29|NYR@BOS": {
+    "away_starter": "I. Shesterkin",
+    "home_starter": "J. Swayman"
+  },
+  "2026-09-29|VAN@EDM": {
+    "away_starter": "K. Lankinen",
+    "home_starter": "T. Jarry"
+  },
+  "2026-09-29|CHI@VGK": {
+    "away_starter": "S. Knight",
+    "home_starter": "C. Hart"
+  }
+}
