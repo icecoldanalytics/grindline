@@ -1,16 +1,16 @@
 {
   "date": "2026-09-30",
-  "updated": "08:03 PM MT",
+  "updated": "11:38 PM MT",
   "games": [
     {
       "away": "PIT",
       "home": "PHI",
       "away_city": "Pittsburgh",
       "home_city": "Philadelphia",
-      "away_score": 6,
+      "away_score": 7,
       "home_score": 0,
-      "status": "live",
-      "display": "3rd \u00b7 04:14",
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     },
     {
@@ -18,10 +18,10 @@
       "home": "TOR",
       "away_city": "New York",
       "home_city": "Toronto",
-      "away_score": 0,
+      "away_score": 1,
       "home_score": 2,
-      "status": "live",
-      "display": "3rd \u00b7 06:28",
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     },
     {
@@ -29,11 +29,11 @@
       "home": "COL",
       "away_city": "Los Angeles",
       "home_city": "Colorado",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 4,
+      "home_score": 8,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     }
   ]
 }
