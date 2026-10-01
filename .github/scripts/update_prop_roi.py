@@ -94,20 +94,59 @@ def name_key(name):
     return (parts[0][0], parts[-1])
 
 
+TEAM_ABBREV_SEARCH = {
+    "tor": "toronto", "fla": "florida", "bos": "boston", "buf": "buffalo",
+    "mtl": "montreal", "ott": "ottawa", "det": "detroit", "tbl": "tampa",
+    "car": "carolina", "nyr": "new york rangers", "nyi": "new york islanders",
+    "njd": "new jersey", "phi": "philadelphia", "pit": "pittsburgh",
+    "wsh": "washington", "cbj": "columbus", "chi": "chicago",
+    "nsh": "nashville", "stl": "st. louis", "min": "minnesota",
+    "wpg": "winnipeg", "col": "colorado", "uta": "utah", "cgy": "calgary",
+    "edm": "edmonton", "van": "vancouver", "sea": "seattle",
+    "lak": "los angeles", "ana": "anaheim", "sjs": "san jose",
+    "vgk": "vegas", "dal": "dallas",
+}
+# Ported from icecoldanalytics-emailer/daily_email.py's match_odds() name_map
+# - same Odds-API-style full team names ("Los Angeles Kings", the format
+# update_fantasy.py's fetch_player_props() stores in prop_log.json's "game"
+# field) mapped to NHL abbreviation by city/region substring, not an exact
+# dict lookup - a full-name dict would need to track every Odds API naming
+# quirk (punctuation, "Utah Hockey Club" vs "Utah Mammoth", etc.) exactly;
+# substring containment against a city name doesn't care. Must not drift
+# from that copy.
+
+
+def team_abbrev(full_name):
+    """"Los Angeles Kings" -> "LAK". None (never a guessed wrong answer)
+    if no known team's city/region substring is found in it."""
+    low = (full_name or "").strip().lower()
+    for abbrev, needle in TEAM_ABBREV_SEARCH.items():
+        if needle in low:
+            return abbrev.upper()
+    return None
+
+
 def get_game_id(date_str, away, home):
+    """Returns (game_id, reason). game_id is set only once the game is
+    confirmed final; reason explains every other case so "team name
+    didn't match anything" doesn't look identical to "game just hasn't
+    finished yet" - confirmed live those were being conflated: every
+    entry's full team name ("Los Angeles Kings") was compared directly
+    against the score API's abbrev ("LAK"), which can never match, so
+    every prop silently fell into the same bucket as a game in progress."""
     try:
         r = requests.get(f"https://api-web.nhle.com/v1/score/{date_str}", timeout=15)
         r.raise_for_status()
         data = r.json()
         for g in data.get("games", []):
             if g["awayTeam"]["abbrev"] == away and g["homeTeam"]["abbrev"] == home:
-                if g.get("gameState") in ("OFF", "FINAL"):
-                    return g["id"]
-                return None  # not final yet - leave ungraded for a later run
-        return None
+                state = g.get("gameState")
+                if state in ("OFF", "FINAL"):
+                    return g["id"], None
+                return None, f"game found but not final yet (state={state})"
+        return None, f"no game on {date_str} had both {away} and {home} on the score slate"
     except Exception as e:
-        print(f"  score fetch error {away}@{home} {date_str}: {e}")
-        return None
+        return None, f"score fetch error: {e}"
 
 
 def get_boxscore_stats(game_id):
@@ -228,27 +267,45 @@ def main():
     if pending:
         print(f"Grading {len(pending)} pending props...")
         by_game = defaultdict(list)
+        skipped_count = 0
         for e in pending:
             game = e.get("game") or ""
             if "@" not in game:
+                print(f"  SKIP {e.get('player')} ({e.get('date')}): malformed game field {game!r} - no '@' separator")
+                skipped_count += 1
                 continue
-            away, home = [t.strip() for t in game.split("@", 1)]
+            away_full, home_full = [t.strip() for t in game.split("@", 1)]
+            away, home = team_abbrev(away_full), team_abbrev(home_full)
+            if away is None or home is None:
+                unmatched = away_full if away is None else home_full
+                print(f"  SKIP {e.get('player')} ({e.get('date')}): couldn't map team name "
+                      f"{unmatched!r} to an NHL abbreviation - update TEAM_ABBREV_SEARCH")
+                skipped_count += 1
+                continue
             by_game[(e["date"], away, home)].append(e)
 
         graded_count = 0
         for i, ((date_str, away, home), entries) in enumerate(by_game.items()):
-            game_id = get_game_id(date_str, away, home)
+            game_id, reason = get_game_id(date_str, away, home)
             if game_id is None:
-                continue  # not final yet, or not found - leave ungraded
+                print(f"  SKIP {len(entries)} prop(s) for {away}@{home} ({date_str}): {reason}")
+                skipped_count += len(entries)
+                continue
             stats = get_boxscore_stats(game_id)
             time.sleep(REQUEST_SLEEP)
             for e in entries:
                 player_stats = stats.get(name_key(e["player"]))
                 if player_stats is None:
-                    print(f"  no boxscore match for {e['player']} ({date_str})")
+                    print(f"  SKIP {e['player']} ({date_str}): no boxscore match for this name "
+                          f"(game {away}@{home}) - check spelling/suffix against the boxscore's own name")
+                    skipped_count += 1
                     continue
                 actual, hit = grade_one(e, player_stats)
                 if hit is None:
+                    print(f"  SKIP {e['player']} ({date_str}): couldn't grade {e['market']} "
+                          f"side={e.get('side')!r} line={e.get('line')!r} against stats {player_stats} "
+                          f"- unknown market, missing line, or unrecognized side")
+                    skipped_count += 1
                     continue
                 e["actual_stat"] = actual
                 e["hit"] = hit
@@ -258,7 +315,7 @@ def main():
                 print(f"  ...{i + 1}/{len(by_game)} games")
 
         atomic_write_json(LOG_PATH, log)
-        print(f"  Graded {graded_count} new props.\n")
+        print(f"  Graded {graded_count} new props, skipped {skipped_count} (reasons above).\n")
     else:
         print("Nothing pending to grade.\n")
 
