@@ -17,6 +17,11 @@ import unicodedata
 from roster_stats import roster_with_stats
 
 MST = pytz.timezone("America/Edmonton")
+# The NHL's own local calendar date for a game is US/Eastern, not Mountain
+# - see local_game_date() below. Used only to decide which of The Odds
+# API's events belong to "tonight"; MST above still stamps everything
+# else (date_label, the prop log's date field, etc).
+EASTERN = pytz.timezone("America/New_York")
 ODDS_API_KEY = os.environ.get("ODDS_API_KEY", "")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 PROP_LOG_PATH = "data/prop_log.json"
@@ -335,14 +340,48 @@ def generate_goalie_starts(game_context, date_label, rosters, games):
     )
     return call_claude(prompt)
     
+def local_game_date(commence_time_str):
+    """The NHL's own local (US/Eastern) calendar date for a game, from its
+    UTC commence_time - e.g. a 7pm PT game has a UTC commence_time on the
+    next calendar day, but is still "that night's" game in NHL scheduling
+    terms. Ported from backfill_h2h_odds.py's identical function - must
+    not drift from that copy.
+
+    This is the calendar update_prop_roi.py's get_game_id() later queries
+    the NHL schedule/score API against, so a prop's logged date has to
+    agree with it - not whatever Mountain-time day update_fantasy.py
+    happened to run on. Confirmed live that mismatch is exactly why 5 of
+    a night's props were logged a day before the NHL schedule actually
+    has the game on: fetch_events() had no date filtering at all, so
+    events up to two days out were being pulled in and stamped with
+    today's date alongside tonight's real slate.
+
+    Returns None on a missing or unparseable commence_time rather than
+    raising, so one malformed event can't crash the whole fetch.
+    """
+    try:
+        utc_dt = datetime.strptime(commence_time_str, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=pytz.UTC)
+    except (TypeError, ValueError):
+        return None
+    return utc_dt.astimezone(EASTERN).date().strftime("%Y-%m-%d")
+
+
 def fetch_events():
-    """Today's NHL event IDs from The Odds API. This endpoint is free."""
+    """Tonight's NHL event IDs from The Odds API - filtered to the NHL's
+    own (US/Eastern) calendar date for "tonight" (see local_game_date).
+    The bare /events endpoint is not date-scoped despite this function's
+    old claim that it was; confirmed live it returns everything currently
+    upcoming, which can span several days. Filtering here, once, means
+    fetch_player_props()/log_props() never have to re-derive "is this
+    actually tonight" themselves."""
     url = "https://api.the-odds-api.com/v4/sports/icehockey_nhl/events"
     try:
         r = requests.get(url, params={"apiKey": ODDS_API_KEY}, timeout=15)
         r.raise_for_status()
-        events = r.json()
-        print(f"Events found: {len(events)}")
+        all_events = r.json()
+        today_eastern = datetime.now(EASTERN).strftime("%Y-%m-%d")
+        events = [e for e in all_events if local_game_date(e.get("commence_time")) == today_eastern]
+        print(f"Events found: {len(all_events)} total, {len(events)} for tonight ({today_eastern} ET)")
         return events
     except Exception as e:
         print(f"Events fetch error: {e}")
