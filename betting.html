@@ -210,6 +210,25 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .rule-arrow{display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.6rem;font-weight:800;padding:0 14px;flex-shrink:0;}
 @media(max-width:768px){.rule-arrow{transform:rotate(90deg);padding:8px 0;}}
 
+/* PROPS */
+.props-stack{display:flex;flex-direction:column;gap:8px;}
+.prop-row{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:center;column-gap:12px;row-gap:6px;}
+.prop-row-main{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;flex:1 1 160px;min-width:0;}
+.prop-player{font-weight:700;font-size:0.92rem;color:var(--bright);}
+.prop-market-line{font-size:0.78rem;color:var(--muted);}
+.prop-side{font-weight:700;font-size:0.68rem;letter-spacing:1px;text-transform:uppercase;padding:5px 8px;border-radius:4px;text-align:center;white-space:nowrap;flex:0 0 auto;}
+.prop-price{font-weight:700;font-size:0.88rem;color:var(--text);white-space:nowrap;flex:0 0 auto;}
+.prop-book{font-size:0.74rem;color:var(--muted);flex:0 1 auto;min-width:0;}
+.prop-reason{flex:1 1 100%;font-size:0.74rem;color:var(--muted);line-height:1.55;}
+@media(max-width:600px){
+  /* Below this width, player+market can't reliably share a line with
+     side/price/book without one of them clipping (confirmed live - see
+     props rework). Force main onto its own line so side/price/book,
+     which are small enough to always fit together, get the remaining
+     line to themselves instead of fighting main for space. */
+  .prop-row-main{flex-basis:100%;}
+}
+
 /* EDGE FINDER */
 .analyzer-wrap{max-width:900px;margin:0 auto;padding:0 24px 80px;}
 .analyzer-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-top:28px;}
@@ -1255,20 +1274,23 @@ function renderTonightsProps(playerProps) {
         ${props.map(p => {
           const side = (p.side || '').toLowerCase();
           const borderColor = p.confidence === 'high' ? 'var(--gold)' : p.confidence === 'low' ? 'var(--muted)' : 'var(--accent)';
-          const pickStyle = side === 'over'
+          const sideStyle = side === 'over'
             ? 'background:rgba(61,220,151,0.12);color:var(--green);border:1px solid rgba(61,220,151,0.25);'
             : side === 'under'
             ? 'background:rgba(255,71,87,0.1);color:var(--red);border:1px solid rgba(255,71,87,0.2);'
             : 'background:rgba(0,196,106,0.1);color:var(--accent);border:1px solid rgba(0,196,106,0.2);';
-          const bookLabel = bookLabels[p.book] || (p.book ? p.book.charAt(0).toUpperCase() + p.book.slice(1) : '');
+          const bookLabel = bookLabels[p.book] || (p.book ? p.book.charAt(0).toUpperCase() + p.book.slice(1) : '—');
+          const marketLabel = marketLabels[p.market] || p.market || '';
           return `
           <div class="prop-row" style="border-left:3px solid ${borderColor};">
-            <div>
-              <div class="prop-player">${p.player}</div>
-              <div class="prop-desc">${p.game} · ${bookLabel} · ${p.reason}</div>
+            <div class="prop-row-main">
+              <span class="prop-player">${p.player}</span>
+              <span class="prop-market-line">${marketLabel}${p.line != null ? ' ' + p.line : ''}</span>
             </div>
-            <div class="prop-line"><div class="prop-line-val">${p.odds}</div><div class="prop-line-label">${p.line ?? ''}</div></div>
-            <div class="prop-pick" style="${pickStyle}">${(p.side || '').toUpperCase()}</div>
+            <div class="prop-side" style="${sideStyle}">${p.side ? p.side.toUpperCase() : '—'}</div>
+            <div class="prop-price">${p.odds ?? '—'}</div>
+            <div class="prop-book">${bookLabel}</div>
+            <div class="prop-reason">${p.game ? p.game + ' · ' : ''}${p.reason || ''}</div>
           </div>`;
         }).join('')}
       </div>`).join('')}`;
