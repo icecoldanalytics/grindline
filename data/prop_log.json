@@ -91,6 +91,71 @@
       "graded": false,
       "actual_stat": null,
       "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Los Angeles Kings @ Colorado Avalanche",
+      "player": "Artemi Panarin",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-192",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Tampa Bay Lightning @ New York Rangers",
+      "player": "Adam Fox",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-125",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Minnesota Wild @ Nashville Predators",
+      "player": "Filip Forsberg",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-170",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Los Angeles Kings @ Colorado Avalanche",
+      "player": "Adrian Kempe",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-105",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Edmonton Oilers @ Vancouver Canucks",
+      "player": "Brock Boeser",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+116",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
     }
   ]
 }

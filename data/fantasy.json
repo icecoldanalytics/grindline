@@ -12,8 +12,8 @@
         "gaa": "3.06",
         "status": "confirmed",
         "rest_note": "",
-        "recommendation": "wait",
-        "rec_label": "Wait"
+        "recommendation": "stream",
+        "rec_label": "Stream"
       }
     ]
   },
@@ -21,13 +21,13 @@
     "props": [
       {
         "player": "Artemi Panarin",
-        "market": "player_assists",
+        "market": "player_points",
         "line": "0.5",
         "side": "Over",
-        "odds": "+105",
-        "book": "draftkings",
+        "odds": "-192",
+        "book": "betonlineag",
         "game": "Los Angeles Kings @ Colorado Avalanche",
-        "reason": "Panarin is an elite playmaker who consistently drives offense for his line, making plus-money on a single assist strong value. His vision and power-play role give him multiple paths to a helper.",
+        "reason": "Panarin is an elite playmaker who routinely logs heavy ice time and powerplay minutes, giving him a very high floor for at least one point. His line has strong chemistry and volume of scoring chances most nights.",
         "confidence": "high"
       },
       {
@@ -35,11 +35,66 @@
         "market": "player_points",
         "line": "0.5",
         "side": "Over",
-        "odds": "-130",
+        "odds": "-140",
         "book": "draftkings",
         "game": "Los Angeles Kings @ Colorado Avalanche",
-        "reason": "Kempe is the Kings' top-line goal scorer and power-play fixture, giving him a high floor to record at least one point. The short price reflects his reliable offensive usage against a track meet-style Avalanche squad.",
+        "reason": "Kempe is the Kings' top-line scorer and powerplay weapon, consistently producing points at an above-average rate. The short price reflects his reliable usage in all situations.",
         "confidence": "high"
+      },
+      {
+        "player": "Aleksander Barkov",
+        "market": "player_shots_on_goal",
+        "line": "1.5",
+        "side": "Over",
+        "odds": "-168",
+        "book": "fanduel",
+        "game": "Florida Panthers @ San Jose Sharks",
+        "reason": "Barkov is Florida's top-line center and primary shot generator, averaging well above two shots per game in recent seasons. Facing a rebuilding Sharks squad should allow him ample offensive zone time.",
+        "confidence": "high"
+      },
+      {
+        "player": "Adam Fox",
+        "market": "player_shots_on_goal",
+        "line": "1.5",
+        "side": "Over",
+        "odds": "-125",
+        "book": "fanduel",
+        "game": "Tampa Bay Lightning @ New York Rangers",
+        "reason": "Fox quarterbacks the Rangers' top powerplay and logs heavy minutes, generating consistent shot volume from the point. His puck-moving role and shot-first mentality support clearing this low threshold regularly.",
+        "confidence": "medium"
+      },
+      {
+        "player": "Filip Forsberg",
+        "market": "player_shots_on_goal",
+        "line": "2.5",
+        "side": "Over",
+        "odds": "-170",
+        "book": "fanduel",
+        "game": "Minnesota Wild @ Nashville Predators",
+        "reason": "Forsberg is Nashville's primary shooter and powerplay trigger man, consistently exceeding three shots on many nights. His aggressive shot-first approach makes this a strong favorite line.",
+        "confidence": "medium"
+      },
+      {
+        "player": "Adrian Kempe",
+        "market": "player_shots_on_goal",
+        "line": "2.5",
+        "side": "Over",
+        "odds": "-105",
+        "book": "draftkings",
+        "game": "Los Angeles Kings @ Colorado Avalanche",
+        "reason": "Kempe leads the Kings in shot attempts and plays heavy minutes on both the top line and powerplay. Near-even odds reflect his typical volume well above three shots per game.",
+        "confidence": "medium"
+      },
+      {
+        "player": "Brock Boeser",
+        "market": "player_shots_on_goal",
+        "line": "2.5",
+        "side": "Over",
+        "odds": "+116",
+        "book": "fanduel",
+        "game": "Edmonton Oilers @ Vancouver Canucks",
+        "reason": "Boeser is a high-volume shooter on Vancouver's top unit, often peppering the net from the right circle. Plus-money value here offers good upside given his consistent shot attempts.",
+        "confidence": "medium"
       },
       {
         "player": "Artturi Lehkonen",
@@ -49,30 +104,8 @@
         "odds": "-103",
         "book": "betonlineag",
         "game": "Los Angeles Kings @ Colorado Avalanche",
-        "reason": "Lehkonen is a consistent secondary scorer who sees top-six and power-play minutes, supporting a near coin-flip price for one point. His finishing ability and net-front work make the over attractive at even money.",
+        "reason": "Lehkonen plays a top-six role with frequent power-play usage for Colorado, giving him steady point production. Near-even odds make this a solid value play given his involvement in scoring chances.",
         "confidence": "medium"
-      },
-      {
-        "player": "Brandt Clarke",
-        "market": "player_points",
-        "line": "0.5",
-        "side": "Over",
-        "odds": "+120",
-        "book": "betonlineag",
-        "game": "Los Angeles Kings @ Colorado Avalanche",
-        "reason": "Clarke is an offensive-minded defenseman who quarterbacks the power play, giving him multiple scoring looks each game. Plus-money on a single point for a puck-moving blueliner in a likely high-event game offers good value.",
-        "confidence": "medium"
-      },
-      {
-        "player": "Aleksander Barkov",
-        "market": "player_shots_on_goal",
-        "line": "1.5",
-        "side": "Over",
-        "odds": "-164",
-        "book": "fanduel",
-        "game": "Florida Panthers @ San Jose Sharks",
-        "reason": "Barkov is Florida's top center and a high-volume shooter who regularly clears this mark against a rebuilding Sharks defense. His workload and shot attempts per game support the favorite price.",
-        "confidence": "high"
       },
       {
         "player": "Adam Fantilli",
@@ -82,18 +115,7 @@
         "odds": "-118",
         "book": "fanduel",
         "game": "Buffalo Sabres @ Columbus Blue Jackets",
-        "reason": "Fantilli has emerged as a shot-volume driver for Columbus with top-line minutes and power-play time. The line sits at a reasonable number given his aggressive shooting tendencies.",
-        "confidence": "medium"
-      },
-      {
-        "player": "Alex Laferriere",
-        "market": "player_shots_on_goal",
-        "line": "2.5",
-        "side": "Over",
-        "odds": "+126",
-        "book": "betonlineag",
-        "game": "Los Angeles Kings @ Colorado Avalanche",
-        "reason": "Laferriere has carved out a shot-first role in LA's top-nine and benefits from playing alongside skilled playmakers. The plus-money price offers solid value for a player trending toward increased shot attempts.",
+        "reason": "Fantilli has emerged as a shot-generating force for Columbus, often exceeding three shots per game as a top-six center. His aggressive offensive style supports clearing this modest total.",
         "confidence": "low"
       }
     ]
