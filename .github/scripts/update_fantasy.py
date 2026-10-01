@@ -392,7 +392,19 @@ def fetch_player_props(events):
 
 
 def build_prop_context(props, per_market=15):
-    """Best available price per player/market/side, capped so the prompt stays sane."""
+    """Best available price per player/market/side, capped so the prompt stays sane.
+
+    Confirmed live on a 28-event slate: sorting each market's candidates
+    alphabetically by player name before truncating to per_market let a
+    handful of games - whichever teams happened to have alphabetically-
+    early surnames - dominate every market simultaneously, since the same
+    star players repeat across markets (points/assists/shots/anytime-goal).
+    One market's props ended up covering 7 of 28 games, and the SAME 7
+    every time. Round-robining one player from each game in turn (before
+    truncating) spreads the cap across games instead of names, so the
+    model sees a representative slice of the slate rather than whichever
+    games sort first.
+    """
     if not props:
         return ""
     best = {}
@@ -405,9 +417,25 @@ def build_prop_context(props, per_market=15):
         by_market.setdefault(p["market"], []).append(p)
     lines = []
     for market, rows in sorted(by_market.items()):
-        rows.sort(key=lambda x: x["player"])
+        by_game = {}
+        for p in rows:
+            by_game.setdefault(p["game"], []).append(p)
+        for game_rows in by_game.values():
+            game_rows.sort(key=lambda x: x["player"])
+
+        selected = []
+        i = 0
+        game_lists = list(by_game.values())
+        while len(selected) < per_market and i < max((len(g) for g in game_lists), default=0):
+            for g in game_lists:
+                if i < len(g):
+                    selected.append(g[i])
+                    if len(selected) >= per_market:
+                        break
+            i += 1
+
         lines.append(f"{market}:")
-        for p in rows[:per_market]:
+        for p in selected:
             line_str = f" {p['line']}" if p["line"] is not None else ""
             price = f"+{p['price']}" if p["price"] > 0 else str(p["price"])
             lines.append(f"  - {p['player']} | {p['side']}{line_str} @ {price} ({p['book']}) | {p['game']}")
