@@ -1,21 +1,101 @@
 {
-  "date": "2026-09-18",
-  "date_label": "Friday, September 18, 2026",
-  "note": "Off-season — picks resume when the 2026-27 season starts.",
-  "value_plays": {
-    "summary": {
-      "total_plays": 0,
-      "top_tier": null,
-      "slate_size": 0
-    },
-    "plays": [],
-    "avoids": []
-  },
+  "date": "2026-09-30",
+  "date_label": "Wednesday, September 30, 2026",
   "goalie_starts": {
-    "goalies": []
+    "goalies": [
+      {
+        "name": "Sergei Bobrovsky",
+        "team": "TOR",
+        "opponent": "NYI",
+        "home_away": "home",
+        "sv_pct": ".875",
+        "gaa": "3.06",
+        "status": "confirmed",
+        "rest_note": "",
+        "recommendation": "wait",
+        "rec_label": "Wait"
+      }
+    ]
   },
   "player_props": {
-    "props": [],
-    "note": "Off-season — picks resume when the 2026-27 season starts."
+    "props": [
+      {
+        "player": "Artemi Panarin",
+        "market": "player_assists",
+        "line": "0.5",
+        "side": "Over",
+        "odds": "+105",
+        "book": "draftkings",
+        "game": "Los Angeles Kings @ Colorado Avalanche",
+        "reason": "Panarin is an elite playmaker who consistently drives offense for his line, making plus-money on a single assist strong value. His vision and power-play role give him multiple paths to a helper.",
+        "confidence": "high"
+      },
+      {
+        "player": "Adrian Kempe",
+        "market": "player_points",
+        "line": "0.5",
+        "side": "Over",
+        "odds": "-130",
+        "book": "draftkings",
+        "game": "Los Angeles Kings @ Colorado Avalanche",
+        "reason": "Kempe is the Kings' top-line goal scorer and power-play fixture, giving him a high floor to record at least one point. The short price reflects his reliable offensive usage against a track meet-style Avalanche squad.",
+        "confidence": "high"
+      },
+      {
+        "player": "Artturi Lehkonen",
+        "market": "player_points",
+        "line": "0.5",
+        "side": "Over",
+        "odds": "-103",
+        "book": "betonlineag",
+        "game": "Los Angeles Kings @ Colorado Avalanche",
+        "reason": "Lehkonen is a consistent secondary scorer who sees top-six and power-play minutes, supporting a near coin-flip price for one point. His finishing ability and net-front work make the over attractive at even money.",
+        "confidence": "medium"
+      },
+      {
+        "player": "Brandt Clarke",
+        "market": "player_points",
+        "line": "0.5",
+        "side": "Over",
+        "odds": "+120",
+        "book": "betonlineag",
+        "game": "Los Angeles Kings @ Colorado Avalanche",
+        "reason": "Clarke is an offensive-minded defenseman who quarterbacks the power play, giving him multiple scoring looks each game. Plus-money on a single point for a puck-moving blueliner in a likely high-event game offers good value.",
+        "confidence": "medium"
+      },
+      {
+        "player": "Aleksander Barkov",
+        "market": "player_shots_on_goal",
+        "line": "1.5",
+        "side": "Over",
+        "odds": "-164",
+        "book": "fanduel",
+        "game": "Florida Panthers @ San Jose Sharks",
+        "reason": "Barkov is Florida's top center and a high-volume shooter who regularly clears this mark against a rebuilding Sharks defense. His workload and shot attempts per game support the favorite price.",
+        "confidence": "high"
+      },
+      {
+        "player": "Adam Fantilli",
+        "market": "player_shots_on_goal",
+        "line": "2.5",
+        "side": "Over",
+        "odds": "-118",
+        "book": "fanduel",
+        "game": "Buffalo Sabres @ Columbus Blue Jackets",
+        "reason": "Fantilli has emerged as a shot-volume driver for Columbus with top-line minutes and power-play time. The line sits at a reasonable number given his aggressive shooting tendencies.",
+        "confidence": "medium"
+      },
+      {
+        "player": "Alex Laferriere",
+        "market": "player_shots_on_goal",
+        "line": "2.5",
+        "side": "Over",
+        "odds": "+126",
+        "book": "betonlineag",
+        "game": "Los Angeles Kings @ Colorado Avalanche",
+        "reason": "Laferriere has carved out a shot-first role in LA's top-nine and benefits from playing alongside skilled playmakers. The plus-money price offers solid value for a player trending toward increased shot attempts.",
+        "confidence": "low"
+      }
+    ]
   }
 }

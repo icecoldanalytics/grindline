@@ -1,4 +1,96 @@
 {
   "schema": 1,
-  "entries": []
+  "entries": [
+    {
+      "date": "2026-09-30",
+      "game": "Los Angeles Kings @ Colorado Avalanche",
+      "player": "Artemi Panarin",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+105",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Los Angeles Kings @ Colorado Avalanche",
+      "player": "Adrian Kempe",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-130",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Los Angeles Kings @ Colorado Avalanche",
+      "player": "Artturi Lehkonen",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-103",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Los Angeles Kings @ Colorado Avalanche",
+      "player": "Brandt Clarke",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+120",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Florida Panthers @ San Jose Sharks",
+      "player": "Aleksander Barkov",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-164",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Buffalo Sabres @ Columbus Blue Jackets",
+      "player": "Adam Fantilli",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-118",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-09-30",
+      "game": "Los Angeles Kings @ Colorado Avalanche",
+      "player": "Alex Laferriere",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+126",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    }
+  ]
 }
