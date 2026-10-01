@@ -6,6 +6,7 @@ Fetches real rosters from NHL API to ensure accurate player/team data.
 
 import os
 import json
+import random
 import sys
 import requests
 from datetime import datetime
@@ -391,7 +392,7 @@ def fetch_player_props(events):
     return props
 
 
-def build_prop_context(props, per_market=15):
+def build_prop_context(props, date_seed=None, per_market=15):
     """Best available price per player/market/side, capped so the prompt stays sane.
 
     Confirmed live on a 28-event slate: sorting each market's candidates
@@ -404,6 +405,15 @@ def build_prop_context(props, per_market=15):
     truncating) spreads the cap across games instead of names, so the
     model sees a representative slice of the slate rather than whichever
     games sort first.
+
+    Which games get priority in that round-robin still depended on fetch
+    order (events, in turn, come back from The Odds API in whatever order
+    it returns them) - on a night with more than per_market games, the
+    same early-order subset would still win every day. date_seed (the
+    caller's "YYYY-MM-DD") shuffles the game order with a seed derived
+    from the date: stable within a day (a same-day rerun or retry
+    produces the same selection), different across days, so no game is
+    permanently favoured by where the API happens to list it.
     """
     if not props:
         return ""
@@ -423,9 +433,16 @@ def build_prop_context(props, per_market=15):
         for game_rows in by_game.values():
             game_rows.sort(key=lambda x: x["player"])
 
+        # Sort game keys themselves first so the shuffle below is applied
+        # to a deterministic starting order - dict insertion order (fetch
+        # order) would otherwise make the same date_seed produce a
+        # different shuffle if events ever came back in a different order
+        # for an unrelated reason (a retry, an API change).
+        game_lists = [by_game[g] for g in sorted(by_game.keys())]
+        random.Random(date_seed).shuffle(game_lists)
+
         selected = []
         i = 0
-        game_lists = list(by_game.values())
         while len(selected) < per_market and i < max((len(g) for g in game_lists), default=0):
             for g in game_lists:
                 if i < len(g):
@@ -584,7 +601,7 @@ def main():
     print("Fetching real prop lines...")
     events = fetch_events()
     raw_props = fetch_player_props(events)
-    prop_context = build_prop_context(raw_props)
+    prop_context = build_prop_context(raw_props, date_seed=today)
 
     print("Generating player props...")
     player_props = generate_player_props(prop_context, date_label)
