@@ -18,5 +18,17 @@
   "2026-09-29|CHI@VGK": {
     "away_starter": "S. Knight",
     "home_starter": "C. Hart"
+  },
+  "2026-09-30|PIT@PHI": {
+    "away_starter": "A. Silovs",
+    "home_starter": "D. Vladar"
+  },
+  "2026-09-30|NYI@TOR": {
+    "away_starter": "I. Sorokin",
+    "home_starter": "A. Stolarz"
+  },
+  "2026-09-30|LAK@COL": {
+    "away_starter": "D. Kuemper",
+    "home_starter": "M. Blackwood"
   }
 }
