@@ -299,21 +299,25 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
 }
 
 /* LANDING (index.html only) */
-.landing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1000px;margin:0 auto;padding:0 24px 80px;}
+.landing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto;padding:0 24px 80px;}
 .landing-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px 32px;text-decoration:none;display:flex;flex-direction:column;gap:14px;transition:transform 0.2s,border-color 0.2s;position:relative;overflow:hidden;}
 .landing-card:hover{transform:translateY(-4px);}
 .landing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
 .landing-card.betting::before{background:linear-gradient(90deg,#00c46a,#00e88a);}
 .landing-card.betting:hover{border-color:rgba(0,196,106,0.4);}
+.landing-card.props::before{background:linear-gradient(90deg,var(--gold),var(--orange));}
+.landing-card.props:hover{border-color:rgba(245,166,35,0.4);}
 .landing-card.fantasy::before{background:linear-gradient(90deg,#38bdf8,#7dd3fc);}
 .landing-card.fantasy:hover{border-color:rgba(56,189,248,0.4);}
 .landing-card-eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
 .landing-card h2{font-weight:800;font-size:1.6rem;color:var(--bright);}
 .landing-card p{font-size:0.88rem;color:var(--muted);line-height:1.7;flex:1;}
+.landing-card p strong{color:var(--text);}
 .landing-card-cta{font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;}
 .landing-card.betting .landing-card-cta{color:#00c46a;}
+.landing-card.props .landing-card-cta{color:var(--gold);}
 .landing-card.fantasy .landing-card-cta{color:#38bdf8;}
-@media(max-width:768px){.landing-grid{grid-template-columns:1fr;}}
+@media(max-width:1000px){.landing-grid{grid-template-columns:1fr;max-width:600px;}}
 
 /* No ticker on this page - nav sticks to the very top */
 .topnav{top:0;}
@@ -352,10 +356,10 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
       <line x1="385" y1="10" x2="385" y2="370" stroke="#2fa877" stroke-width="1.5" opacity="0.5"/>
     </svg>
   </div>
-  <div class="hero-content" style="text-align:center;max-width:720px;margin:0 auto;">
+  <div class="hero-content" style="text-align:center;max-width:760px;margin:0 auto;">
     <div class="hero-eyebrow" style="justify-content:center;">Edmonton, Alberta</div>
-    <div class="hero-headline">Grind<br><span class="hl-blue">Line</span></div>
-    <p class="hero-sub" style="margin-left:auto;margin-right:auto;">Real NHL data, two ways to use it: a published betting signal with its full track record, and season-long fantasy tools with no odds attached.</p>
+    <div class="hero-headline">NHL Intelligence.<br><span class="hl-blue">Know the difference between a trend and an edge.</span></div>
+    <p class="hero-sub" style="margin-left:auto;margin-right:auto;">Grind Line analyzes real NHL data across betting, player performance and fantasy. We don't call something an edge because it looks interesting. We test it. When the evidence supports a betting signal, we publish the complete record — wins, losses, real prices and everything we've tested and abandoned.</p>
   </div>
 </section>
 
@@ -363,16 +367,37 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   <div class="landing-grid">
     <a class="landing-card betting" href="/betting.html">
       <div class="landing-card-eyebrow">Grind Line</div>
-      <h2>Betting Intelligence</h2>
-      <p>Rest Edge: one NHL scheduling signal, graded against the real moneyline across four seasons — 509 games, published win or lose. Plus the Signal Tracker, Edge Finder, and prop research.</p>
-      <span class="landing-card-cta">Enter Betting →</span>
+      <h2>One Proven Betting Edge</h2>
+      <p>One proven NHL betting edge — Rest Edge. <strong id="idx-rest-games">509</strong> games. <strong id="idx-rest-winrate">62.1%</strong> win rate. <strong id="idx-rest-roi">+5.6%</strong> ROI at real prices. Four NHL seasons. Every result published.</p>
+      <span class="landing-card-cta">Explore the Betting Edge →</span>
+    </a>
+    <a class="landing-card props" href="/betting.html">
+      <div class="landing-card-eyebrow">Grind Line</div>
+      <h2>Player Prop Research</h2>
+      <p>Who's trending? Who is generating opportunity? What does the recent data say? We publish player trends and prop research against real posted lines — but we don't turn a trend into a betting recommendation unless we've demonstrated a market edge. Research, not picks.</p>
+      <span class="landing-card-cta">Explore Prop Research →</span>
     </a>
     <a class="landing-card fantasy" href="/fantasy.html">
       <div class="landing-card-eyebrow">Grind Line</div>
-      <h2>Fantasy Hockey</h2>
-      <p>Every rostered NHL skater, a season board, and full schedule analysis — straight from the NHL API. No odds, no sportsbooks, no salaries.</p>
+      <h2>Fantasy Hockey Intelligence</h2>
+      <p>Use NHL schedule, workload and player data to make better season-long decisions: available pickups, weekly projections, schedule analysis, player workload, goalie usage, trade analysis. Free. No odds. No sportsbook.</p>
       <span class="landing-card-cta">Enter Fantasy →</span>
     </a>
+  </div>
+
+  <div class="signal-rule-box" style="max-width:800px;margin:8px auto 0;text-align:center;">
+    <h3>Our Rule — Interesting Isn't Enough</h3>
+    <p>A trend can be interesting. A model can be accurate. A player can be "hot." None of that automatically means there is money to be made. We test the difference.</p>
+    <div style="margin-top:18px;">
+      <a href="/betting.html" class="btn-ghost">See How We Test →</a>
+    </div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:40px 32px;text-align:center;max-width:800px;margin:32px auto 0;">
+    <div style="font-weight:800;font-size:1.3rem;color:var(--bright);margin-bottom:10px;">Want to use the proven edge?</div>
+    <p style="font-size:0.9rem;color:var(--muted);max-width:560px;margin:0 auto 20px;line-height:1.7;">The complete historical record is free. Pro gives you the live tools around the Rest Edge: daily signal email, live Edge Finder, 2-day look-ahead.</p>
+    <a class="btn-primary" href="https://buy.stripe.com/5kQ00i5cW6wV0gtdo31Nu00" target="_blank" rel="noopener">Start 7-Day Free Trial</a>
+    <div style="font-size:0.72rem;color:var(--muted);margin-top:12px;">$12/month CAD · Cancel anytime</div>
   </div>
 </div>
 
@@ -383,6 +408,30 @@ footer p{font-size:0.72rem;color:var(--muted);line-height:1.8;}
   <p>Edmonton, Alberta · grindline.ca</p>
   <p style="margin-top:8px;"><a href="/legal.html" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Privacy &amp; Terms</a> &nbsp;·&nbsp; <a href="mailto:hello@grindline.ca" style="color:var(--accent);font-size:0.78rem;text-decoration:none;">Contact</a></p>
 </footer>
+
+<script>
+// ── REST EDGE STATS ──────────────────────────────────────────────────────────
+// Fed from the same backtest file betting.html's four-season table reads,
+// not hardcoded here - the spans above start with today's correct values as
+// a fallback (so nothing looks broken if this fetch fails or is slow), then
+// this overwrites them once the real data lands, keeping both pages' numbers
+// from drifting apart after a backtest rerun.
+async function buildHeroStats() {
+  try {
+    const r = await fetch('data/rest_signal_backtest.json?nocache=' + Date.now());
+    const d = await r.json();
+    const p = (d.rest_edge || {}).pooled;
+    if (!p) return;
+    const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+    set('idx-rest-games', p.n);
+    set('idx-rest-winrate', p.win_rate + '%');
+    set('idx-rest-roi', (p.roi >= 0 ? '+' : '') + p.roi + '%');
+  } catch (e) {
+    console.log('Rest Edge stats fetch error:', e);
+  }
+}
+buildHeroStats();
+</script>
 
 <script>
 // This page has no sign-in UI of its own - My Team's magic-link flow
