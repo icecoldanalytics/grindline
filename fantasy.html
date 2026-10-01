@@ -117,6 +117,8 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:va
 .mt-auth-btn:hover{opacity:0.85;}
 .mt-auth-btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
 .mt-auth-btn-ghost:hover{color:var(--text);border-color:var(--accent);opacity:1;}
+.mt-auth-btn-disabled{opacity:0.5;cursor:default;}
+.mt-auth-btn-disabled:hover{opacity:0.5;}
 .mt-auth-status{font-size:0.78rem;color:var(--accent);margin-top:8px;}
 
 /* TRADE CALCULATOR */
@@ -1153,7 +1155,7 @@ function renderAuthWidget() {
         </div>`
       : `<div class="mt-auth-row" style="margin-top:8px;">
           <div class="mt-auth-copy">Connect your Yahoo Fantasy account</div>
-          <button type="button" class="mt-auth-btn" onclick="connectYahoo()">Connect Yahoo Fantasy</button>
+          <div class="mt-auth-btn mt-auth-btn-ghost mt-auth-btn-disabled">Coming soon</div>
         </div>
         <div id="mt-yahoo-status" class="mt-auth-status"></div>`;
     el.innerHTML = `
