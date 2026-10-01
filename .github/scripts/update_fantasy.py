@@ -234,7 +234,15 @@ def call_claude(prompt):
         return None
 
     try:
-        text = r.json()["content"][0]["text"]
+        content = r.json()["content"]
+        # content[0] is not reliably the text block - a thinking block can
+        # (and, confirmed live, does) come first, with the text block after
+        # it at whatever index. Find it by type instead of assuming position.
+        text_block = next((b for b in content if b.get("type") == "text"), None)
+        if text_block is None:
+            print(f"Claude API response has no text block: {r.text}")
+            return None
+        text = text_block["text"]
     except Exception as e:
         print(f"Claude API response missing expected shape: {e}\n--- raw response ---\n{r.text}")
         return None
