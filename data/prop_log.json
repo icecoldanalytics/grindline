@@ -10,9 +10,9 @@
       "side": "Over",
       "price": "+105",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-09-30",
@@ -23,9 +23,9 @@
       "side": "Over",
       "price": "-130",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-09-30",
@@ -36,9 +36,9 @@
       "side": "Over",
       "price": "-103",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-09-30",
@@ -49,9 +49,9 @@
       "side": "Over",
       "price": "+120",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-09-30",
@@ -88,9 +88,9 @@
       "side": "Over",
       "price": "+126",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-09-30",
@@ -101,9 +101,9 @@
       "side": "Over",
       "price": "-192",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-09-30",
@@ -140,9 +140,9 @@
       "side": "Over",
       "price": "-105",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-09-30",
@@ -166,9 +166,9 @@
       "side": "Over",
       "price": "+140",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-10-01",
@@ -179,9 +179,9 @@
       "side": "Over",
       "price": "+140",
       "book": "williamhill_us",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-10-01",
@@ -192,9 +192,9 @@
       "side": "Over",
       "price": "-115",
       "book": "bovada",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-01",
@@ -205,9 +205,9 @@
       "side": "Over",
       "price": "-118",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-10-01",
@@ -218,9 +218,9 @@
       "side": "Over",
       "price": "+145",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-01",
@@ -231,9 +231,9 @@
       "side": "Over",
       "price": "+149",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-01",
@@ -244,9 +244,9 @@
       "side": "Over",
       "price": "+109",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-01",
@@ -257,6 +257,110 @@
       "side": "Over",
       "price": "+134",
       "book": "betonlineag",
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
+    },
+    {
+      "date": "2026-10-02",
+      "game": "New York Rangers @ Detroit Red Wings",
+      "player": "Adam Fox",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+100",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-02",
+      "game": "Washington Capitals @ Carolina Hurricanes",
+      "player": "Alex Ovechkin",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+104",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-02",
+      "game": "Washington Capitals @ Carolina Hurricanes",
+      "player": "Alex Ovechkin",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+240",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-02",
+      "game": "Boston Bruins @ Winnipeg Jets",
+      "player": "David Pastrnak",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+105",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-02",
+      "game": "St Louis Blues @ Dallas Stars",
+      "player": "Jason Robertson",
+      "market": "player_points",
+      "line": "1.5",
+      "side": "Over",
+      "price": "+175",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-02",
+      "game": "New York Rangers @ Detroit Red Wings",
+      "player": "Alex DeBrincat",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+120",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-02",
+      "game": "Boston Bruins @ Winnipeg Jets",
+      "player": "Cole Perfetti",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-156",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-02",
+      "game": "Anaheim Ducks @ Vegas Golden Knights",
+      "player": "Cutter Gauthier",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+112",
+      "book": "fanduel",
       "graded": false,
       "actual_stat": null,
       "hit": null
