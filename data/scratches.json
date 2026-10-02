@@ -1,6 +1,14 @@
 {
-  "scratched": [],
-  "details": [],
+  "scratched": [
+    "Connor Bedard"
+  ],
+  "details": [
+    {
+      "player": "Connor Bedard",
+      "injury": "Upper Body",
+      "team": "CHI"
+    }
+  ],
   "source": "nhl.com official injury reports",
   "stale_teams": [],
   "note": "Auto-generated. If this list looks wrong or empty during the season, the page structure may have changed \u2014 flag for review."

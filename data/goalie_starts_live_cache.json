@@ -30,5 +30,37 @@
   "2026-09-30|LAK@COL": {
     "away_starter": "D. Kuemper",
     "home_starter": "M. Blackwood"
+  },
+  "2026-10-01|PHI@NJD": {
+    "away_starter": "J. Woll",
+    "home_starter": "J. Allen"
+  },
+  "2026-10-01|TBL@NYR": {
+    "away_starter": "A. Vasilevskiy",
+    "home_starter": "I. Shesterkin"
+  },
+  "2026-10-01|BUF@CBJ": {
+    "away_starter": "U. Luukkonen",
+    "home_starter": "J. Greaves"
+  },
+  "2026-10-01|MIN@NSH": {
+    "away_starter": "J. Wallstedt",
+    "home_starter": "J. Saros"
+  },
+  "2026-10-01|SEA@CGY": {
+    "away_starter": "J. Daccord",
+    "home_starter": "D. Wolf"
+  },
+  "2026-10-01|CHI@UTA": {
+    "away_starter": "A. Soderblom",
+    "home_starter": "K. Vejmelka"
+  },
+  "2026-10-01|EDM@VAN": {
+    "away_starter": "D. Levi",
+    "home_starter": "K. Lankinen"
+  },
+  "2026-10-01|FLA@SJS": {
+    "away_starter": "A. Schmid",
+    "home_starter": "Y. Askarov"
   }
 }
