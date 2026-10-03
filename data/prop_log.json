@@ -270,9 +270,9 @@
       "side": "Over",
       "price": "+100",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-02",
@@ -283,9 +283,9 @@
       "side": "Over",
       "price": "+104",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-02",
@@ -296,9 +296,9 @@
       "side": "Yes",
       "price": "+240",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-02",
@@ -309,9 +309,9 @@
       "side": "Over",
       "price": "+105",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-10-02",
@@ -335,9 +335,9 @@
       "side": "Over",
       "price": "+120",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-02",
@@ -348,9 +348,9 @@
       "side": "Over",
       "price": "-156",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-10-02",
@@ -361,6 +361,110 @@
       "side": "Over",
       "price": "+112",
       "book": "fanduel",
+      "graded": true,
+      "actual_stat": 5,
+      "hit": true
+    },
+    {
+      "date": "2026-10-03",
+      "game": "Ottawa Senators @ Toronto Maple Leafs",
+      "player": "Auston Matthews",
+      "market": "player_goal_scorer_anytime",
+      "line": "0.5",
+      "side": "Yes",
+      "price": "+155",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-03",
+      "game": "Ottawa Senators @ Toronto Maple Leafs",
+      "player": "Auston Matthews",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+100",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-03",
+      "game": "Boston Bruins @ Minnesota Wild",
+      "player": "David Pastrnak",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+117",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-03",
+      "game": "Washington Capitals @ Tampa Bay Lightning",
+      "player": "Alex Ovechkin",
+      "market": "player_goal_scorer_anytime",
+      "line": "0.5",
+      "side": "Yes",
+      "price": "+250",
+      "book": "fanatics",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-03",
+      "game": "Montr\u00e9al Canadiens @ Pittsburgh Penguins",
+      "player": "Cole Caufield",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+160",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-03",
+      "game": "Los Angeles Kings @ San Jose Sharks",
+      "player": "Adrian Kempe",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+120",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-03",
+      "game": "Calgary Flames @ Vancouver Canucks",
+      "player": "Brock Boeser",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+130",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-03",
+      "game": "Utah Mammoth @ Columbus Blue Jackets",
+      "player": "Adam Fantilli",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+145",
+      "book": "draftkings",
       "graded": false,
       "actual_stat": null,
       "hit": null
