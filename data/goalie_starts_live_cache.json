@@ -62,5 +62,25 @@
   "2026-10-01|FLA@SJS": {
     "away_starter": "A. Schmid",
     "home_starter": "Y. Askarov"
+  },
+  "2026-10-02|NYR@DET": {
+    "away_starter": "D. Garand",
+    "home_starter": "J. Gibson"
+  },
+  "2026-10-02|WSH@CAR": {
+    "away_starter": "L. Thompson",
+    "home_starter": "B. Bussi"
+  },
+  "2026-10-02|BOS@WPG": {
+    "away_starter": "J. Swayman",
+    "home_starter": "S. Skinner"
+  },
+  "2026-10-02|STL@DAL": {
+    "away_starter": "J. Hofer",
+    "home_starter": "J. Oettinger"
+  },
+  "2026-10-02|ANA@VGK": {
+    "away_starter": "L. Dostal",
+    "home_starter": "C. Hart"
   }
 }
