@@ -2881,6 +2881,54 @@
       "home_score": 1,
       "fade_won": false,
       "graded": true
+    },
+    {
+      "date": "2026-10-03",
+      "away": "BOS",
+      "home": "MIN",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": -202.9,
+      "home_ml_best": -195,
+      "price_source": "live_06:00_MT",
+      "graded": false
+    },
+    {
+      "date": "2026-10-03",
+      "away": "CAR",
+      "home": "PHI",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": 110.8,
+      "home_ml_best": 116,
+      "price_source": "live_06:00_MT",
+      "graded": false
+    },
+    {
+      "date": "2026-10-03",
+      "away": "DAL",
+      "home": "NSH",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": 111.2,
+      "home_ml_best": 117,
+      "price_source": "live_06:00_MT",
+      "graded": false
+    },
+    {
+      "date": "2026-10-03",
+      "away": "WSH",
+      "home": "TBL",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": -163.7,
+      "home_ml_best": -155,
+      "price_source": "live_06:00_MT",
+      "graded": false
     }
   ]
 }

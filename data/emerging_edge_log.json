@@ -1,4 +1,75 @@
 {
   "schema": 1,
-  "entries": []
+  "entries": [
+    {
+      "date": "2026-10-03",
+      "away": "BOS",
+      "home": "MIN",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "emerging_edge",
+      "home_ml_avg": -202.9,
+      "home_ml_best": -195,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-03",
+      "away": "CAR",
+      "home": "PHI",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "emerging_edge",
+      "home_ml_avg": 110.8,
+      "home_ml_best": 116,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-03",
+      "away": "DAL",
+      "home": "NSH",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "emerging_edge",
+      "home_ml_avg": 111.2,
+      "home_ml_best": 117,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-03",
+      "away": "STL",
+      "home": "COL",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -283.5,
+      "home_ml_best": -275,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-03",
+      "away": "WSH",
+      "home": "TBL",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "emerging_edge",
+      "home_ml_avg": -163.7,
+      "home_ml_best": -155,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    }
+  ]
 }
