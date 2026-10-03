@@ -826,6 +826,20 @@ function showPage(id) {
   if (nav) nav.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Opens a specific page directly from a URL hash, e.g. betting.html#props
+// from the homepage's "Explore Prop Research" button - checked against
+// the actual DOM rather than a hardcoded id list, so this doesn't go
+// stale the next time a page gets added/renamed. Only runs once on
+// load; a bare betting.html (no hash, or an unrecognized one) leaves
+// page-how-it-works/nav-how-it-works's hardcoded "active" class alone,
+// so How It Works stays the default.
+(function showPageFromHash() {
+  const id = (window.location.hash || '').slice(1).trim();
+  if (id && document.getElementById('page-' + id)) {
+    showPage(id);
+  }
+})();
 </script>
 
 <script>
