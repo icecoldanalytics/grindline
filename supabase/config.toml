@@ -1,11 +1,18 @@
-# Edge Functions config for the Yahoo OAuth flow (see the approved plan
-# and supabase/functions/*/index.ts). Only yahoo-oauth-callback needs an
-# entry here - it's the one function Yahoo's browser redirect hits
-# directly with no Supabase Authorization header, so it must run with
-# JWT verification off. yahoo-oauth-start and yahoo-oauth-disconnect are
-# both called from the client via supabase.functions.invoke(), which
-# attaches the user's session JWT automatically, so they keep the
-# project default (verify_jwt = true) and need no entry here.
+# Edge Functions config. Only functions a third party calls directly -
+# with no Supabase Authorization header attached - need an entry here
+# setting JWT verification off; everything else keeps the project
+# default (verify_jwt = true) and needs no entry.
+#
+# yahoo-oauth-callback: Yahoo's browser redirect hits this directly.
+# yahoo-oauth-start and yahoo-oauth-disconnect are both called from the
+# client via supabase.functions.invoke(), which attaches the user's
+# session JWT automatically, so neither needs an entry.
 
 [functions.yahoo-oauth-callback]
+verify_jwt = false
+
+# stripe-webhook: Stripe's webhook delivery is server-to-server with no
+# Supabase session - security comes from verifying the Stripe-Signature
+# header against STRIPE_WEBHOOK_SECRET instead (see index.ts).
+[functions.stripe-webhook]
 verify_jwt = false
