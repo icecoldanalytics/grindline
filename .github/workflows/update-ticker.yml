@@ -49,7 +49,61 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ticker.json data/dashboard.json data/roi.json data/scratches.json data/emerging_edge_log.json data/goalie_starts_live_cache.json
+
+          # -A, not an explicit file list: the list had missed a path a
+          # script actually writes - update_roi.py also writes
+          # data/signal_log.json (via save_log(), whenever it grades any
+          # newly-final game) and that was never in this list, left
+          # unstaged, which is exactly what made `git pull --rebase`
+          # below refuse to run ("cannot pull with rebase: you have
+          # unstaged changes"). Scoped to data/ so this can't stage
+          # anything outside what this job's own steps just wrote - each
+          # job starts from a fresh checkout, so nothing here can come
+          # from an unrelated workflow run.
+          git add -A -- data/
           git diff --staged --quiet || git commit -m "Update dashboard data $(date -u '+%Y-%m-%d')"
-          git pull --rebase
+
+          # --autostash covers a dirty tree at the START of the rebase
+          # (stash before, pop after) - belt-and-suspenders against the
+          # failure above recurring via some other not-yet-seen path,
+          # now that the explicit list is gone.
+          #
+          # -X theirs, NOT ours: git's rebase direction inverts the
+          # usual merge meaning of these words. A rebase checks out each
+          # upstream commit and replays your commit as a patch on top of
+          # it, so internally "ours" means the branch being rebased ONTO
+          # (upstream/remote) and "theirs" means the commit being
+          # replayed (this run's own commit) - backwards from git merge,
+          # where "ours" is your own branch. -X ours here would silently
+          # keep the REMOTE's version of a file over this run's
+          # freshly-computed one on a conflict - the opposite of what's
+          # wanted. Don't "fix" this back to ours; this comment exists
+          # because that's the intuitive-but-wrong reading.
+          #
+          # -X theirs only resolves conflicts within the rebase replay
+          # itself, though - it has no effect on autostash's own
+          # pop-back afterward, which is a separate `git stash pop` git
+          # runs once the rebase finishes. Reproduced locally: if THAT
+          # pop conflicts, git keeps the stash in the stash list rather
+          # than discarding it (not a silent data loss - it's sitting
+          # there, recoverable), but `git pull --rebase --autostash`'s
+          # own exit code is still 0 even when the pop conflicted, same
+          # as a fully clean run. Exit-code checks alone cannot see this
+          # failure at all - confirmed by reproducing it: PULL_STATUS
+          # was 0 and only an explicit `git stash list` check caught it.
+          # `git push` is attempted regardless of that exit code too - a
+          # clean rebase with only the trailing pop failing still has a
+          # perfectly good commit that deserves to reach the remote,
+          # which is exactly the failure this whole step exists to stop
+          # happening silently.
+          set +e
+          git pull --rebase --autostash -X theirs
+          PULL_STATUS=$?
           git push
+          PUSH_STATUS=$?
+          set -e
+
+          if [ "$PULL_STATUS" -ne 0 ] || [ "$PUSH_STATUS" -ne 0 ] || git stash list | grep -q .; then
+            echo "::error::update-ticker commit step did not finish cleanly (pull exit $PULL_STATUS, push exit $PUSH_STATUS) and/or left entries in 'git stash list' - a stash-pop conflict likely means some of this run's data never reached the push. Check 'git stash list' / 'git stash show -p stash@{0}' on a fresh checkout before the next run overwrites it."
+            exit 1
+          fi
