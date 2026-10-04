@@ -1,83 +1,83 @@
 {
   "date": "2026-10-03",
-  "updated": "04:21 AM MT",
+  "updated": "08:32 PM MT",
   "games": [
     {
       "away": "CHI",
       "home": "BUF",
       "away_city": "Chicago",
       "home_city": "Buffalo",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 3,
+      "home_score": 4,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "OTT",
       "home": "TOR",
       "away_city": "Ottawa",
       "home_city": "Toronto",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 3,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "WSH",
       "home": "TBL",
       "away_city": "Washington",
       "home_city": "Tampa Bay",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 1,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "CAR",
       "home": "PHI",
       "away_city": "Carolina",
       "home_city": "Philadelphia",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 3,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final/OT",
+      "period_label": "OT"
     },
     {
       "away": "MTL",
       "home": "PIT",
       "away_city": "Montr\u00e9al",
       "home_city": "Pittsburgh",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 5,
+      "home_score": 6,
+      "status": "final",
+      "display": "Final/OT",
+      "period_label": "OT"
     },
     {
       "away": "UTA",
       "home": "CBJ",
       "away_city": "Utah",
       "home_city": "Columbus",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 4,
+      "home_score": 1,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "SEA",
       "home": "EDM",
       "away_city": "Seattle",
       "home_city": "Edmonton",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 1,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "NJD",
@@ -85,32 +85,32 @@
       "away_city": "New Jersey",
       "home_city": "New York",
       "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "home_score": 6,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "DAL",
       "home": "NSH",
       "away_city": "Dallas",
       "home_city": "Nashville",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 1,
+      "home_score": 2,
+      "status": "live",
+      "display": "3rd \u00b7 02:50",
+      "period_label": "3rd"
     },
     {
       "away": "BOS",
       "home": "MIN",
       "away_city": "Boston",
       "home_city": "Minnesota",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 1,
+      "home_score": 3,
+      "status": "live",
+      "display": "3rd \u00b7 08:34",
+      "period_label": "3rd"
     },
     {
       "away": "STL",
@@ -118,10 +118,10 @@
       "away_city": "St. Louis",
       "home_city": "Colorado",
       "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "home_score": 4,
+      "status": "live",
+      "display": "2nd \u00b7 07:50",
+      "period_label": "2nd"
     },
     {
       "away": "CGY",
@@ -130,9 +130,9 @@
       "home_city": "Vancouver",
       "away_score": 0,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "live",
+      "display": "1st \u00b7 10:10",
+      "period_label": "1st"
     },
     {
       "away": "LAK",
@@ -141,9 +141,9 @@
       "home_city": "San Jose",
       "away_score": 0,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "live",
+      "display": "1st \u00b7 07:37",
+      "period_label": "1st"
     }
   ]
 }
