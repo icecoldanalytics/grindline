@@ -11,9 +11,12 @@
       "home_ml_avg": -202.9,
       "home_ml_best": -195,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "M. DiPietro",
+      "goalie_bucket": "excluded",
+      "away_score": 1,
+      "home_score": 4,
+      "fade_won": true
     },
     {
       "date": "2026-10-03",
@@ -25,9 +28,12 @@
       "home_ml_avg": 110.8,
       "home_ml_best": 116,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "P. Kochetkov",
+      "goalie_bucket": "excluded",
+      "away_score": 3,
+      "home_score": 2,
+      "fade_won": false
     },
     {
       "date": "2026-10-03",
@@ -39,9 +45,12 @@
       "home_ml_avg": 111.2,
       "home_ml_best": 117,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "C. DeSmith",
+      "goalie_bucket": "excluded",
+      "away_score": 1,
+      "home_score": 2,
+      "fade_won": true
     },
     {
       "date": "2026-10-03",
@@ -53,9 +62,12 @@
       "home_ml_avg": -283.5,
       "home_ml_best": -275,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "J. Binnington",
+      "goalie_bucket": "excluded",
+      "away_score": 1,
+      "home_score": 6,
+      "fade_won": true
     },
     {
       "date": "2026-10-03",
@@ -67,9 +79,12 @@
       "home_ml_avg": -163.7,
       "home_ml_best": -155,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "C. Lindgren",
+      "goalie_bucket": "excluded",
+      "away_score": 1,
+      "home_score": 3,
+      "fade_won": true
     },
     {
       "date": "2026-10-04",
