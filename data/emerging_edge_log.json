@@ -99,6 +99,20 @@
       "graded": false,
       "away_starter": null,
       "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-05",
+      "away": "WPG",
+      "home": "PIT",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "emerging_edge",
+      "home_ml_avg": -176.5,
+      "home_ml_best": -170,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
