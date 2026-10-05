@@ -478,9 +478,9 @@
       "side": "Over",
       "price": "-200",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-10-04",
@@ -491,9 +491,9 @@
       "side": "Over",
       "price": "-120",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-04",
@@ -504,9 +504,9 @@
       "side": "Over",
       "price": "-172",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-04",
@@ -517,9 +517,9 @@
       "side": "Over",
       "price": "-180",
       "book": "bovada",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-10-04",
@@ -530,9 +530,9 @@
       "side": "Over",
       "price": "+105",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-10-04",
@@ -556,9 +556,9 @@
       "side": "Over",
       "price": "+100",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-04",
@@ -568,6 +568,110 @@
       "line": "0.5",
       "side": "Over",
       "price": "+160",
+      "book": "betmgm",
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
+    },
+    {
+      "date": "2026-10-05",
+      "game": "Philadelphia Flyers @ Tampa Bay Lightning",
+      "player": "Brandon Hagel",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+120",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-05",
+      "game": "Philadelphia Flyers @ Tampa Bay Lightning",
+      "player": "Brandon Hagel",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-120",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-05",
+      "game": "Philadelphia Flyers @ Tampa Bay Lightning",
+      "player": "Anthony Cirelli",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-110",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-05",
+      "game": "Winnipeg Jets @ Pittsburgh Penguins",
+      "player": "Cole Perfetti",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-103",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-05",
+      "game": "Ottawa Senators @ Boston Bruins",
+      "player": "Carter Yakemchuk",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "+120",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-05",
+      "game": "San Jose Sharks @ Dallas Stars",
+      "player": "Darnell Nurse",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-114",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-05",
+      "game": "Ottawa Senators @ Boston Bruins",
+      "player": "Casey Mittelstadt",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+134",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-05",
+      "game": "Ottawa Senators @ Boston Bruins",
+      "player": "Claude Giroux",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-120",
       "book": "betmgm",
       "graded": false,
       "actual_stat": null,
