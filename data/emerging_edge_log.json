@@ -96,9 +96,12 @@
       "home_ml_avg": -131.8,
       "home_ml_best": -128,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "K. Vejmelka",
+      "goalie_bucket": "excluded",
+      "away_score": 2,
+      "home_score": 4,
+      "fade_won": true
     },
     {
       "date": "2026-10-05",

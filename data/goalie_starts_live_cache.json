@@ -134,5 +134,25 @@
   "2026-10-03|LAK@SJS": {
     "away_starter": "A. Forsberg",
     "home_starter": "Y. Askarov"
+  },
+  "2026-10-04|WPG@DET": {
+    "away_starter": "S. Skinner",
+    "home_starter": "J. Gibson"
+  },
+  "2026-10-04|UTA@NYR": {
+    "away_starter": "K. Vejmelka",
+    "home_starter": "I. Shesterkin"
+  },
+  "2026-10-04|FLA@ANA": {
+    "away_starter": "J. Markstrom",
+    "home_starter": "L. Dostal"
+  },
+  "2026-10-04|CGY@SEA": {
+    "away_starter": "D. Wolf",
+    "home_starter": "J. Daccord"
+  },
+  "2026-10-04|VGK@VAN": {
+    "away_starter": "A. Hill",
+    "home_starter": "K. Lankinen"
   }
 }
