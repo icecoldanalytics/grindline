@@ -2967,7 +2967,10 @@
       "home_ml_avg": -176.5,
       "home_ml_best": -170,
       "price_source": "live_06:00_MT",
-      "graded": false
+      "graded": true,
+      "away_score": 3,
+      "home_score": 2,
+      "fade_won": false
     },
     {
       "date": "2026-10-06",

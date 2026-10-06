@@ -154,5 +154,21 @@
   "2026-10-04|VGK@VAN": {
     "away_starter": "A. Hill",
     "home_starter": "K. Lankinen"
+  },
+  "2026-10-05|PHI@TBL": {
+    "away_starter": "D. Vladar",
+    "home_starter": "A. Vasilevskiy"
+  },
+  "2026-10-05|OTT@BOS": {
+    "away_starter": "L. Ullmark",
+    "home_starter": "J. Swayman"
+  },
+  "2026-10-05|WPG@PIT": {
+    "away_starter": "C. Stevenson",
+    "home_starter": "S. Murashov"
+  },
+  "2026-10-05|SJS@DAL": {
+    "away_starter": "Y. Askarov",
+    "home_starter": "J. Oettinger"
   }
 }
