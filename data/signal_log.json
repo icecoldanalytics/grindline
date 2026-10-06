@@ -2968,6 +2968,18 @@
       "home_ml_best": -170,
       "price_source": "live_06:00_MT",
       "graded": false
+    },
+    {
+      "date": "2026-10-06",
+      "away": "OTT",
+      "home": "DET",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": -106.5,
+      "home_ml_best": -102,
+      "price_source": "live_06:00_MT",
+      "graded": false
     }
   ]
 }
