@@ -130,9 +130,12 @@
       "home_ml_avg": -106.5,
       "home_ml_best": -102,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "S. Ersson",
+      "goalie_bucket": "excluded",
+      "away_score": 3,
+      "home_score": 5,
+      "fade_won": true
     }
   ]
 }

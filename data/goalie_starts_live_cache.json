@@ -170,5 +170,41 @@
   "2026-10-05|SJS@DAL": {
     "away_starter": "Y. Askarov",
     "home_starter": "J. Oettinger"
+  },
+  "2026-10-06|NSH@TOR": {
+    "away_starter": "J. Saros",
+    "home_starter": "A. Stolarz"
+  },
+  "2026-10-06|CAR@MTL": {
+    "away_starter": "B. Bussi",
+    "home_starter": "J. Dobes"
+  },
+  "2026-10-06|OTT@DET": {
+    "away_starter": "S. Ersson",
+    "home_starter": "J. Gibson"
+  },
+  "2026-10-06|UTA@NJD": {
+    "away_starter": "K. Vejmelka",
+    "home_starter": "J. Allen"
+  },
+  "2026-10-06|MIN@BUF": {
+    "away_starter": "J. Wallstedt",
+    "home_starter": "C. Ellis"
+  },
+  "2026-10-06|NYI@NYR": {
+    "away_starter": "S. Varlamov",
+    "home_starter": "I. Shesterkin"
+  },
+  "2026-10-06|STL@CHI": {
+    "away_starter": "J. Hofer",
+    "home_starter": "S. Knight"
+  },
+  "2026-10-06|VGK@SEA": {
+    "away_starter": "C. Hart",
+    "home_starter": "J. Daccord"
+  },
+  "2026-10-06|FLA@LAK": {
+    "away_starter": "J. Markstrom",
+    "home_starter": "D. Kuemper"
   }
 }
