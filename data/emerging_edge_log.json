@@ -136,6 +136,20 @@
       "away_score": 3,
       "home_score": 5,
       "fade_won": true
+    },
+    {
+      "date": "2026-10-08",
+      "away": "COL",
+      "home": "CGY",
+      "away_rest": 1,
+      "home_rest": 4,
+      "signal": "emerging_edge",
+      "home_ml_avg": 197.6,
+      "home_ml_best": 208,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
