@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-07 12:11",
+  "generated": "2026-10-08 12:11",
   "season": "20262027",
   "season_label": "2026-27",
   "prior_seasons": [
@@ -15,39 +15,33 @@
   "teams": {
     "ANA": {
       "full_name": "Anaheim Ducks",
-      "goals_for_per_game": 3.5,
-      "power_play_pct": 0.5,
+      "goals_for_per_game": 3.0,
+      "power_play_pct": 0.385,
       "team_stat_season": "current",
       "week_games": [
         {
           "date": "2026-10-07",
           "opponent": "EDM",
           "home": true,
-          "opponent_goals_against_per_game": 4.67,
-          "opponent_penalty_kill_pct": 0.571,
+          "opponent_goals_against_per_game": 4.0,
+          "opponent_penalty_kill_pct": 0.643,
           "opponent_stat_season": "current",
           "last_start": {
             "player_id": 8482221,
             "name": "Devon Levi",
-            "sv_pct": 0.81,
+            "sv_pct": 0.863,
             "stat_season": "current",
-            "date": "2026-10-03"
+            "date": "2026-10-07"
           }
         },
         {
           "date": "2026-10-09",
           "opponent": "WPG",
           "home": false,
-          "opponent_goals_against_per_game": 2.67,
-          "opponent_penalty_kill_pct": 0.889,
+          "opponent_goals_against_per_game": 2.5,
+          "opponent_penalty_kill_pct": 0.9,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8483532,
-            "name": "Clay Stevenson",
-            "sv_pct": 0.935,
-            "stat_season": "current",
-            "date": "2026-10-05"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-10",
@@ -94,13 +88,7 @@
           "opponent_goals_against_per_game": 2.0,
           "opponent_penalty_kill_pct": 0.929,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8478872,
-            "name": "Karel Vejmelka",
-            "sv_pct": 0.913,
-            "stat_season": "current",
-            "date": "2026-10-06"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-10",
@@ -162,13 +150,7 @@
           "opponent_goals_against_per_game": 2.0,
           "opponent_penalty_kill_pct": 0.929,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8478872,
-            "name": "Karel Vejmelka",
-            "sv_pct": 0.913,
-            "stat_season": "current",
-            "date": "2026-10-06"
-          }
+          "last_start": null
         }
       ]
     },
@@ -188,7 +170,7 @@
           "last_start": {
             "player_id": 8482487,
             "name": "Jakub Dobes",
-            "sv_pct": 0.857,
+            "sv_pct": 0.856,
             "stat_season": "current",
             "date": "2026-10-06"
           }
@@ -200,13 +182,7 @@
           "opponent_goals_against_per_game": 4.5,
           "opponent_penalty_kill_pct": 0.688,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8480947,
-            "name": "Kevin Lankinen",
-            "sv_pct": 0.812,
-            "stat_season": "current",
-            "date": "2026-10-04"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-10",
@@ -218,7 +194,7 @@
           "last_start": {
             "player_id": 8481519,
             "name": "Spencer Knight",
-            "sv_pct": 0.891,
+            "sv_pct": 0.89,
             "stat_season": "current",
             "date": "2026-10-06"
           }
@@ -250,15 +226,15 @@
           "date": "2026-10-09",
           "opponent": "PIT",
           "home": true,
-          "opponent_goals_against_per_game": 2.67,
-          "opponent_penalty_kill_pct": 1.0,
+          "opponent_goals_against_per_game": 3.25,
+          "opponent_penalty_kill_pct": 0.9,
           "opponent_stat_season": "current",
           "last_start": {
-            "player_id": 8483703,
-            "name": "Sergei Murashov",
-            "sv_pct": 0.914,
+            "player_id": 8481668,
+            "name": "Arturs Silovs",
+            "sv_pct": 0.859,
             "stat_season": "current",
-            "date": "2026-10-05"
+            "date": "2026-10-07"
           }
         },
         {
@@ -288,30 +264,30 @@
           "date": "2026-10-08",
           "opponent": "COL",
           "home": true,
-          "opponent_goals_against_per_game": 2.5,
+          "opponent_goals_against_per_game": 2.67,
           "opponent_penalty_kill_pct": 1.0,
           "opponent_stat_season": "current",
           "last_start": {
             "player_id": 8478406,
             "name": "Mackenzie Blackwood",
-            "sv_pct": 0.912,
+            "sv_pct": 0.895,
             "stat_season": "current",
-            "date": "2026-10-03"
+            "date": "2026-10-07"
           }
         },
         {
           "date": "2026-10-10",
           "opponent": "ANA",
           "home": true,
-          "opponent_goals_against_per_game": 2.5,
-          "opponent_penalty_kill_pct": 0.857,
+          "opponent_goals_against_per_game": 3.33,
+          "opponent_penalty_kill_pct": 0.818,
           "opponent_stat_season": "current",
           "last_start": {
             "player_id": 8480843,
             "name": "Lukas Dostal",
-            "sv_pct": 0.918,
+            "sv_pct": 0.872,
             "stat_season": "current",
-            "date": "2026-10-04"
+            "date": "2026-10-07"
           }
         }
       ]
@@ -371,24 +347,18 @@
     },
     "COL": {
       "full_name": "Colorado Avalanche",
-      "goals_for_per_game": 7.0,
-      "power_play_pct": 0.444,
+      "goals_for_per_game": 5.33,
+      "power_play_pct": 0.4,
       "team_stat_season": "current",
       "week_games": [
         {
           "date": "2026-10-07",
           "opponent": "WPG",
           "home": false,
-          "opponent_goals_against_per_game": 2.67,
-          "opponent_penalty_kill_pct": 0.889,
+          "opponent_goals_against_per_game": 2.5,
+          "opponent_penalty_kill_pct": 0.9,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8483532,
-            "name": "Clay Stevenson",
-            "sv_pct": 0.935,
-            "stat_season": "current",
-            "date": "2026-10-05"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-08",
@@ -412,13 +382,7 @@
           "opponent_goals_against_per_game": 2.75,
           "opponent_penalty_kill_pct": 0.909,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8476932,
-            "name": "Anthony Stolarz",
-            "sv_pct": 0.904,
-            "stat_season": "current",
-            "date": "2026-10-06"
-          }
+          "last_start": null
         }
       ]
     },
@@ -462,15 +426,15 @@
           "date": "2026-10-10",
           "opponent": "PIT",
           "home": false,
-          "opponent_goals_against_per_game": 2.67,
-          "opponent_penalty_kill_pct": 1.0,
+          "opponent_goals_against_per_game": 3.25,
+          "opponent_penalty_kill_pct": 0.9,
           "opponent_stat_season": "current",
           "last_start": {
-            "player_id": 8483703,
-            "name": "Sergei Murashov",
-            "sv_pct": 0.914,
+            "player_id": 8481668,
+            "name": "Arturs Silovs",
+            "sv_pct": 0.859,
             "stat_season": "current",
-            "date": "2026-10-05"
+            "date": "2026-10-07"
           }
         }
       ]
@@ -521,7 +485,7 @@
           "last_start": {
             "player_id": 8482487,
             "name": "Jakub Dobes",
-            "sv_pct": 0.857,
+            "sv_pct": 0.856,
             "stat_season": "current",
             "date": "2026-10-06"
           }
@@ -530,7 +494,7 @@
     },
     "EDM": {
       "full_name": "Edmonton Oilers",
-      "goals_for_per_game": 5.67,
+      "goals_for_per_game": 5.5,
       "power_play_pct": 0.25,
       "team_stat_season": "current",
       "week_games": [
@@ -538,15 +502,15 @@
           "date": "2026-10-07",
           "opponent": "ANA",
           "home": false,
-          "opponent_goals_against_per_game": 2.5,
-          "opponent_penalty_kill_pct": 0.857,
+          "opponent_goals_against_per_game": 3.33,
+          "opponent_penalty_kill_pct": 0.818,
           "opponent_stat_season": "current",
           "last_start": {
             "player_id": 8480843,
             "name": "Lukas Dostal",
-            "sv_pct": 0.918,
+            "sv_pct": 0.872,
             "stat_season": "current",
-            "date": "2026-10-04"
+            "date": "2026-10-07"
           }
         },
         {
@@ -582,7 +546,7 @@
           "last_start": {
             "player_id": 8475311,
             "name": "Darcy Kuemper",
-            "sv_pct": 0.825,
+            "sv_pct": 0.831,
             "stat_season": "current",
             "date": "2026-10-06"
           }
@@ -632,13 +596,7 @@
           "opponent_goals_against_per_game": 2.5,
           "opponent_penalty_kill_pct": 0.833,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8479394,
-            "name": "Carter Hart",
-            "sv_pct": 0.89,
-            "stat_season": "current",
-            "date": "2026-10-06"
-          }
+          "last_start": null
         }
       ]
     },
@@ -761,13 +719,7 @@
           "opponent_goals_against_per_game": 2.0,
           "opponent_penalty_kill_pct": 0.929,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8478872,
-            "name": "Karel Vejmelka",
-            "sv_pct": 0.913,
-            "stat_season": "current",
-            "date": "2026-10-06"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-10",
@@ -776,13 +728,7 @@
           "opponent_goals_against_per_game": 4.5,
           "opponent_penalty_kill_pct": 0.688,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8480947,
-            "name": "Kevin Lankinen",
-            "sv_pct": 0.812,
-            "stat_season": "current",
-            "date": "2026-10-04"
-          }
+          "last_start": null
         }
       ]
     },
@@ -799,13 +745,7 @@
           "opponent_goals_against_per_game": 2.75,
           "opponent_penalty_kill_pct": 0.909,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8476932,
-            "name": "Anthony Stolarz",
-            "sv_pct": 0.904,
-            "stat_season": "current",
-            "date": "2026-10-06"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-08",
@@ -817,7 +757,7 @@
           "last_start": {
             "player_id": 8482487,
             "name": "Jakub Dobes",
-            "sv_pct": 0.857,
+            "sv_pct": 0.856,
             "stat_season": "current",
             "date": "2026-10-06"
           }
@@ -870,7 +810,7 @@
           "last_start": {
             "player_id": 8481519,
             "name": "Spencer Knight",
-            "sv_pct": 0.891,
+            "sv_pct": 0.89,
             "stat_season": "current",
             "date": "2026-10-06"
           }
@@ -917,16 +857,10 @@
           "date": "2026-10-09",
           "opponent": "WSH",
           "home": false,
-          "opponent_goals_against_per_game": 2.5,
-          "opponent_penalty_kill_pct": 0.889,
+          "opponent_goals_against_per_game": 2.67,
+          "opponent_penalty_kill_pct": 0.917,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8479292,
-            "name": "Charlie Lindgren",
-            "sv_pct": 0.931,
-            "stat_season": "current",
-            "date": "2026-10-03"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-11",
@@ -935,13 +869,7 @@
           "opponent_goals_against_per_game": 4.5,
           "opponent_penalty_kill_pct": 0.688,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8480947,
-            "name": "Kevin Lankinen",
-            "sv_pct": 0.812,
-            "stat_season": "current",
-            "date": "2026-10-04"
-          }
+          "last_start": null
         }
       ]
     },
@@ -1083,39 +1011,27 @@
     },
     "PIT": {
       "full_name": "Pittsburgh Penguins",
-      "goals_for_per_game": 5.0,
-      "power_play_pct": 0.4,
+      "goals_for_per_game": 4.5,
+      "power_play_pct": 0.308,
       "team_stat_season": "current",
       "week_games": [
         {
           "date": "2026-10-05",
           "opponent": "WPG",
           "home": true,
-          "opponent_goals_against_per_game": 2.67,
-          "opponent_penalty_kill_pct": 0.889,
+          "opponent_goals_against_per_game": 2.5,
+          "opponent_penalty_kill_pct": 0.9,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8483532,
-            "name": "Clay Stevenson",
-            "sv_pct": 0.935,
-            "stat_season": "current",
-            "date": "2026-10-05"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-07",
           "opponent": "WSH",
           "home": false,
-          "opponent_goals_against_per_game": 2.5,
-          "opponent_penalty_kill_pct": 0.889,
+          "opponent_goals_against_per_game": 2.67,
+          "opponent_penalty_kill_pct": 0.917,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8479292,
-            "name": "Charlie Lindgren",
-            "sv_pct": 0.931,
-            "stat_season": "current",
-            "date": "2026-10-03"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-09",
@@ -1162,13 +1078,7 @@
           "opponent_goals_against_per_game": 2.5,
           "opponent_penalty_kill_pct": 0.833,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8479394,
-            "name": "Carter Hart",
-            "sv_pct": 0.89,
-            "stat_season": "current",
-            "date": "2026-10-06"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-09",
@@ -1189,16 +1099,10 @@
           "date": "2026-10-11",
           "opponent": "WSH",
           "home": false,
-          "opponent_goals_against_per_game": 2.5,
-          "opponent_penalty_kill_pct": 0.889,
+          "opponent_goals_against_per_game": 2.67,
+          "opponent_penalty_kill_pct": 0.917,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8479292,
-            "name": "Charlie Lindgren",
-            "sv_pct": 0.931,
-            "stat_season": "current",
-            "date": "2026-10-03"
-          }
+          "last_start": null
         }
       ]
     },
@@ -1242,15 +1146,15 @@
           "date": "2026-10-10",
           "opponent": "EDM",
           "home": true,
-          "opponent_goals_against_per_game": 4.67,
-          "opponent_penalty_kill_pct": 0.571,
+          "opponent_goals_against_per_game": 4.0,
+          "opponent_penalty_kill_pct": 0.643,
           "opponent_stat_season": "current",
           "last_start": {
             "player_id": 8482221,
             "name": "Devon Levi",
-            "sv_pct": 0.81,
+            "sv_pct": 0.863,
             "stat_season": "current",
-            "date": "2026-10-03"
+            "date": "2026-10-07"
           }
         }
       ]
@@ -1271,7 +1175,7 @@
           "last_start": {
             "player_id": 8481519,
             "name": "Spencer Knight",
-            "sv_pct": 0.891,
+            "sv_pct": 0.89,
             "stat_season": "current",
             "date": "2026-10-06"
           }
@@ -1389,27 +1293,21 @@
           "opponent_goals_against_per_game": 2.5,
           "opponent_penalty_kill_pct": 0.833,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8479394,
-            "name": "Carter Hart",
-            "sv_pct": 0.89,
-            "stat_season": "current",
-            "date": "2026-10-06"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-10",
           "opponent": "COL",
           "home": false,
-          "opponent_goals_against_per_game": 2.5,
+          "opponent_goals_against_per_game": 2.67,
           "opponent_penalty_kill_pct": 1.0,
           "opponent_stat_season": "current",
           "last_start": {
             "player_id": 8478406,
             "name": "Mackenzie Blackwood",
-            "sv_pct": 0.912,
+            "sv_pct": 0.895,
             "stat_season": "current",
-            "date": "2026-10-03"
+            "date": "2026-10-07"
           }
         }
       ]
@@ -1548,13 +1446,7 @@
           "opponent_goals_against_per_game": 2.75,
           "opponent_penalty_kill_pct": 0.909,
           "opponent_stat_season": "current",
-          "last_start": {
-            "player_id": 8476932,
-            "name": "Anthony Stolarz",
-            "sv_pct": 0.904,
-            "stat_season": "current",
-            "date": "2026-10-06"
-          }
+          "last_start": null
         },
         {
           "date": "2026-10-10",
@@ -1566,7 +1458,7 @@
           "last_start": {
             "player_id": 8475311,
             "name": "Darcy Kuemper",
-            "sv_pct": 0.825,
+            "sv_pct": 0.831,
             "stat_season": "current",
             "date": "2026-10-06"
           }
@@ -1576,59 +1468,59 @@
     "WPG": {
       "full_name": "Winnipeg Jets",
       "goals_for_per_game": 3.0,
-      "power_play_pct": 0.5,
+      "power_play_pct": 0.4,
       "team_stat_season": "current",
       "week_games": [
         {
           "date": "2026-10-05",
           "opponent": "PIT",
           "home": false,
-          "opponent_goals_against_per_game": 2.67,
-          "opponent_penalty_kill_pct": 1.0,
+          "opponent_goals_against_per_game": 3.25,
+          "opponent_penalty_kill_pct": 0.9,
           "opponent_stat_season": "current",
           "last_start": {
-            "player_id": 8483703,
-            "name": "Sergei Murashov",
-            "sv_pct": 0.914,
+            "player_id": 8481668,
+            "name": "Arturs Silovs",
+            "sv_pct": 0.859,
             "stat_season": "current",
-            "date": "2026-10-05"
+            "date": "2026-10-07"
           }
         },
         {
           "date": "2026-10-07",
           "opponent": "COL",
           "home": true,
-          "opponent_goals_against_per_game": 2.5,
+          "opponent_goals_against_per_game": 2.67,
           "opponent_penalty_kill_pct": 1.0,
           "opponent_stat_season": "current",
           "last_start": {
             "player_id": 8478406,
             "name": "Mackenzie Blackwood",
-            "sv_pct": 0.912,
+            "sv_pct": 0.895,
             "stat_season": "current",
-            "date": "2026-10-03"
+            "date": "2026-10-07"
           }
         },
         {
           "date": "2026-10-09",
           "opponent": "ANA",
           "home": true,
-          "opponent_goals_against_per_game": 2.5,
-          "opponent_penalty_kill_pct": 0.857,
+          "opponent_goals_against_per_game": 3.33,
+          "opponent_penalty_kill_pct": 0.818,
           "opponent_stat_season": "current",
           "last_start": {
             "player_id": 8480843,
             "name": "Lukas Dostal",
-            "sv_pct": 0.918,
+            "sv_pct": 0.872,
             "stat_season": "current",
-            "date": "2026-10-04"
+            "date": "2026-10-07"
           }
         }
       ]
     },
     "WSH": {
       "full_name": "Washington Capitals",
-      "goals_for_per_game": 3.0,
+      "goals_for_per_game": 3.67,
       "power_play_pct": 0.25,
       "team_stat_season": "current",
       "week_games": [
@@ -1636,15 +1528,15 @@
           "date": "2026-10-07",
           "opponent": "PIT",
           "home": true,
-          "opponent_goals_against_per_game": 2.67,
-          "opponent_penalty_kill_pct": 1.0,
+          "opponent_goals_against_per_game": 3.25,
+          "opponent_penalty_kill_pct": 0.9,
           "opponent_stat_season": "current",
           "last_start": {
-            "player_id": 8483703,
-            "name": "Sergei Murashov",
-            "sv_pct": 0.914,
+            "player_id": 8481668,
+            "name": "Arturs Silovs",
+            "sv_pct": 0.859,
             "stat_season": "current",
-            "date": "2026-10-05"
+            "date": "2026-10-07"
           }
         },
         {
@@ -1687,14 +1579,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 5,
+          "games_played": 3,
+          "points": 7,
           "goals": 1,
-          "assists": 4,
+          "assists": 6,
           "shots": 1,
           "blocked_shots": 0,
-          "points_per_game": 2.5,
-          "shots_per_game": 0.5,
+          "points_per_game": 2.333,
+          "shots_per_game": 0.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -1722,11 +1614,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.767,
         "prior_games_pooled": 146,
-        "blended_points_per_game": 0.94,
-        "projected_points": 2.82
+        "blended_points_per_game": 1.002,
+        "projected_points": 3.01
       }
     },
     "8481538": {
@@ -1735,14 +1627,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 0,
+          "shots": 1,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 0.0,
+          "shots_per_game": 0.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -1831,14 +1723,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 4,
           "goals": 2,
           "assists": 2,
-          "shots": 9,
+          "shots": 16,
           "blocked_shots": 0,
-          "points_per_game": 2.0,
-          "shots_per_game": 4.5,
+          "points_per_game": 1.333,
+          "shots_per_game": 5.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -1866,11 +1758,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.715,
         "prior_games_pooled": 158,
-        "blended_points_per_game": 0.843,
-        "projected_points": 2.53
+        "blended_points_per_game": 0.808,
+        "projected_points": 2.42
       }
     },
     "8475798": {
@@ -1879,14 +1771,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 2,
+          "games_played": 3,
+          "points": 3,
           "goals": 1,
-          "assists": 1,
-          "shots": 2,
+          "assists": 2,
+          "shots": 4,
           "blocked_shots": 0,
           "points_per_game": 1.0,
-          "shots_per_game": 1.0,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -1914,11 +1806,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.759,
         "prior_games_pooled": 141,
-        "blended_points_per_game": 0.783,
-        "projected_points": 2.35
+        "blended_points_per_game": 0.795,
+        "projected_points": 2.39
       }
     },
     "8478421": {
@@ -1927,14 +1819,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 0,
           "assists": 1,
-          "shots": 6,
+          "shots": 7,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
-          "shots_per_game": 3.0,
+          "points_per_game": 0.333,
+          "shots_per_game": 2.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -1962,11 +1854,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.308,
         "prior_games_pooled": 159,
-        "blended_points_per_game": 0.327,
-        "projected_points": 0.98
+        "blended_points_per_game": 0.312,
+        "projected_points": 0.94
       }
     },
     "8473986": {
@@ -1975,14 +1867,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 1,
           "assists": 0,
-          "shots": 2,
+          "shots": 4,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
-          "shots_per_game": 1.0,
+          "points_per_game": 0.333,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -2010,11 +1902,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.427,
         "prior_games_pooled": 164,
-        "blended_points_per_game": 0.434,
-        "projected_points": 1.3
+        "blended_points_per_game": 0.413,
+        "projected_points": 1.24
       }
     },
     "8486052": {
@@ -2023,14 +1915,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 0,
+          "games_played": 1,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 0,
           "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
+          "points_per_game": 0.0,
+          "shots_per_game": 0.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -2058,11 +1950,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.0,
+        "weight_this_season": 1.0,
         "prior_points_per_game": null,
         "prior_games_pooled": 0,
-        "blended_points_per_game": null,
-        "projected_points": null
+        "blended_points_per_game": 0.0,
+        "projected_points": 0.0
       }
     },
     "8482408": {
@@ -2071,14 +1963,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 1,
           "assists": 0,
-          "shots": 2,
+          "shots": 4,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
-          "shots_per_game": 1.0,
+          "points_per_game": 0.333,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -2106,11 +1998,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.143,
         "prior_games_pooled": 70,
-        "blended_points_per_game": 0.179,
-        "projected_points": 0.54
+        "blended_points_per_game": 0.171,
+        "projected_points": 0.51
       }
     },
     "8481754": {
@@ -2119,14 +2011,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 0,
+          "shots": 1,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 0.0,
+          "shots_per_game": 0.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -2154,11 +2046,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.306,
         "prior_games_pooled": 49,
-        "blended_points_per_game": 0.275,
-        "projected_points": 0.83
+        "blended_points_per_game": 0.26,
+        "projected_points": 0.78
       }
     },
     "8480068": {
@@ -2167,14 +2059,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 3,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 1.5,
+          "shots_per_game": 1.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -2202,11 +2094,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.469,
         "prior_games_pooled": 143,
-        "blended_points_per_game": 0.422,
-        "projected_points": 1.27
+        "blended_points_per_game": 0.399,
+        "projected_points": 1.2
       }
     },
     "8484762": {
@@ -2215,14 +2107,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 2,
-          "goals": 1,
+          "games_played": 3,
+          "points": 4,
+          "goals": 3,
           "assists": 1,
-          "shots": 4,
+          "shots": 11,
           "blocked_shots": 0,
-          "points_per_game": 1.0,
-          "shots_per_game": 2.0,
+          "points_per_game": 1.333,
+          "shots_per_game": 3.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -2250,11 +2142,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.732,
         "prior_games_pooled": 82,
-        "blended_points_per_game": 0.759,
-        "projected_points": 2.28
+        "blended_points_per_game": 0.822,
+        "projected_points": 2.47
       }
     },
     "8478366": {
@@ -2311,14 +2203,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 0,
           "assists": 1,
-          "shots": 1,
+          "shots": 2,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
-          "shots_per_game": 0.5,
+          "points_per_game": 0.333,
+          "shots_per_game": 0.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -2346,11 +2238,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.122,
         "prior_games_pooled": 41,
-        "blended_points_per_game": 0.16,
-        "projected_points": 0.48
+        "blended_points_per_game": 0.154,
+        "projected_points": 0.46
       }
     },
     "8481563": {
@@ -2407,12 +2299,12 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 4,
-          "blocked_shots": 1,
+          "shots": 6,
+          "blocked_shots": 2,
           "points_per_game": 0.0,
           "shots_per_game": 2.0,
           "label": "2026-27"
@@ -2503,14 +2395,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 2,
+          "games_played": 3,
+          "points": 3,
           "goals": 0,
-          "assists": 2,
+          "assists": 3,
           "shots": 2,
-          "blocked_shots": 4,
+          "blocked_shots": 6,
           "points_per_game": 1.0,
-          "shots_per_game": 1.0,
+          "shots_per_game": 0.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -2538,11 +2430,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.643,
         "prior_games_pooled": 157,
-        "blended_points_per_game": 0.679,
-        "projected_points": 2.04
+        "blended_points_per_game": 0.697,
+        "projected_points": 2.09
       }
     },
     "8483482": {
@@ -2551,14 +2443,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 0,
           "assists": 1,
           "shots": 1,
           "blocked_shots": 7,
-          "points_per_game": 0.5,
-          "shots_per_game": 0.5,
+          "points_per_game": 0.333,
+          "shots_per_game": 0.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -2589,8 +2481,8 @@
         "weight_this_season": 1.0,
         "prior_points_per_game": null,
         "prior_games_pooled": 7,
-        "blended_points_per_game": 0.5,
-        "projected_points": 1.5
+        "blended_points_per_game": 0.333,
+        "projected_points": 1.0
       }
     },
     "8483490": {
@@ -2599,14 +2491,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 1,
-          "blocked_shots": 3,
+          "shots": 3,
+          "blocked_shots": 4,
           "points_per_game": 0.0,
-          "shots_per_game": 0.5,
+          "shots_per_game": 1.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -2634,11 +2526,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.291,
         "prior_games_pooled": 141,
-        "blended_points_per_game": 0.262,
-        "projected_points": 0.79
+        "blended_points_per_game": 0.247,
+        "projected_points": 0.74
       }
     },
     "8484262": {
@@ -2647,14 +2539,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 0,
+          "shots": 2,
           "blocked_shots": 1,
           "points_per_game": 0.0,
-          "shots_per_game": 0.0,
+          "shots_per_game": 0.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -2743,13 +2635,13 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 0,
           "assists": 1,
-          "shots": 2,
-          "blocked_shots": 1,
-          "points_per_game": 0.5,
+          "shots": 3,
+          "blocked_shots": 3,
+          "points_per_game": 0.333,
           "shots_per_game": 1.0,
           "label": "2026-27"
         },
@@ -2781,8 +2673,8 @@
         "weight_this_season": 1.0,
         "prior_points_per_game": null,
         "prior_games_pooled": 0,
-        "blended_points_per_game": 0.5,
-        "projected_points": 1.5
+        "blended_points_per_game": 0.333,
+        "projected_points": 1.0
       }
     },
     "8479987": {
@@ -5051,10 +4943,10 @@
           "points": 2,
           "goals": 0,
           "assists": 2,
-          "shots": 10,
+          "shots": 9,
           "blocked_shots": 0,
           "points_per_game": 0.5,
-          "shots_per_game": 2.5,
+          "shots_per_game": 2.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -6865,6 +6757,54 @@
         "projected_points": 0.81
       }
     },
+    "8484154": {
+      "name": "Jonathan Castagna",
+      "team": "CGY",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 2,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
+      }
+    },
     "8482679": {
       "name": "Matt Coronato",
       "team": "CGY",
@@ -7391,6 +7331,54 @@
         "prior_games_pooled": 134,
         "blended_points_per_game": 0.444,
         "projected_points": 0.89
+      }
+    },
+    "8484234": {
+      "name": "Aydar Suniev",
+      "team": "CGY",
+      "position": "L",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 6,
+          "points": 1,
+          "goals": 0,
+          "assists": 1,
+          "shots": 9,
+          "blocked_shots": 0,
+          "points_per_game": 0.167,
+          "shots_per_game": 1.5,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 1,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 1,
+          "blocked_shots": 0,
+          "points_per_game": 0.0,
+          "shots_per_game": 1.0,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 2,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 7,
+        "blended_points_per_game": null,
+        "projected_points": null
       }
     },
     "8484958": {
@@ -8839,14 +8827,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 4,
+          "shots": 5,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 2.0,
+          "shots_per_game": 1.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -8887,14 +8875,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 2,
           "goals": 0,
           "assists": 2,
-          "shots": 6,
+          "shots": 10,
           "blocked_shots": 0,
-          "points_per_game": 1.0,
-          "shots_per_game": 3.0,
+          "points_per_game": 0.667,
+          "shots_per_game": 3.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -8922,11 +8910,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.736,
         "prior_games_pooled": 159,
-        "blended_points_per_game": 0.762,
-        "projected_points": 2.29
+        "blended_points_per_game": 0.726,
+        "projected_points": 2.18
       }
     },
     "8480448": {
@@ -8935,13 +8923,13 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 4,
           "goals": 1,
           "assists": 3,
-          "shots": 2,
+          "shots": 3,
           "blocked_shots": 0,
-          "points_per_game": 2.0,
+          "points_per_game": 1.333,
           "shots_per_game": 1.0,
           "label": "2026-27"
         },
@@ -8970,11 +8958,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.333,
         "prior_games_pooled": 162,
-        "blended_points_per_game": 0.5,
-        "projected_points": 1.5
+        "blended_points_per_game": 0.483,
+        "projected_points": 1.45
       }
     },
     "8482742": {
@@ -8983,14 +8971,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 0,
+          "games_played": 1,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 0,
+          "shots": 3,
           "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
+          "points_per_game": 0.0,
+          "shots_per_game": 3.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -9018,11 +9006,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.0,
+        "weight_this_season": 0.05,
         "prior_points_per_game": 0.23,
         "prior_games_pooled": 87,
-        "blended_points_per_game": 0.23,
-        "projected_points": 0.69
+        "blended_points_per_game": 0.218,
+        "projected_points": 0.65
       }
     },
     "8476455": {
@@ -9031,14 +9019,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 2,
           "goals": 1,
           "assists": 1,
-          "shots": 1,
+          "shots": 4,
           "blocked_shots": 0,
-          "points_per_game": 1.0,
-          "shots_per_game": 0.5,
+          "points_per_game": 0.667,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -9066,11 +9054,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.583,
         "prior_games_pooled": 60,
-        "blended_points_per_game": 0.625,
-        "projected_points": 1.88
+        "blended_points_per_game": 0.596,
+        "projected_points": 1.79
       }
     },
     "8477476": {
@@ -9079,14 +9067,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 4,
           "goals": 3,
           "assists": 1,
           "shots": 5,
           "blocked_shots": 0,
-          "points_per_game": 2.0,
-          "shots_per_game": 2.5,
+          "points_per_game": 1.333,
+          "shots_per_game": 1.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -9114,11 +9102,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.669,
         "prior_games_pooled": 139,
-        "blended_points_per_game": 0.802,
-        "projected_points": 2.41
+        "blended_points_per_game": 0.769,
+        "projected_points": 2.31
       }
     },
     "8477492": {
@@ -9127,14 +9115,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 5,
           "goals": 2,
           "assists": 3,
-          "shots": 12,
+          "shots": 13,
           "blocked_shots": 0,
-          "points_per_game": 2.5,
-          "shots_per_game": 6.0,
+          "points_per_game": 1.667,
+          "shots_per_game": 4.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -9162,11 +9150,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 1.528,
         "prior_games_pooled": 159,
-        "blended_points_per_game": 1.625,
-        "projected_points": 4.88
+        "blended_points_per_game": 1.549,
+        "projected_points": 4.65
       }
     },
     "8480039": {
@@ -9175,14 +9163,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 4,
           "goals": 2,
           "assists": 2,
-          "shots": 8,
+          "shots": 11,
           "blocked_shots": 0,
-          "points_per_game": 2.0,
-          "shots_per_game": 4.0,
+          "points_per_game": 1.333,
+          "shots_per_game": 3.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -9210,11 +9198,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 1.166,
         "prior_games_pooled": 157,
-        "blended_points_per_game": 1.249,
-        "projected_points": 3.75
+        "blended_points_per_game": 1.191,
+        "projected_points": 3.57
       }
     },
     "8475754": {
@@ -9223,14 +9211,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 3,
           "goals": 1,
           "assists": 2,
           "shots": 2,
           "blocked_shots": 0,
-          "points_per_game": 1.5,
-          "shots_per_game": 1.0,
+          "points_per_game": 1.0,
+          "shots_per_game": 0.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -9258,11 +9246,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.752,
         "prior_games_pooled": 161,
-        "blended_points_per_game": 0.827,
-        "projected_points": 2.48
+        "blended_points_per_game": 0.789,
+        "projected_points": 2.37
       }
     },
     "8481186": {
@@ -9319,14 +9307,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 3,
           "goals": 2,
           "assists": 1,
-          "shots": 5,
+          "shots": 8,
           "blocked_shots": 0,
-          "points_per_game": 1.5,
-          "shots_per_game": 2.5,
+          "points_per_game": 1.0,
+          "shots_per_game": 2.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -9354,11 +9342,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.386,
         "prior_games_pooled": 145,
-        "blended_points_per_game": 0.497,
-        "projected_points": 1.49
+        "blended_points_per_game": 0.478,
+        "projected_points": 1.43
       }
     },
     "8475768": {
@@ -9367,14 +9355,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 2,
-          "goals": 0,
-          "assists": 2,
-          "shots": 5,
+          "games_played": 3,
+          "points": 4,
+          "goals": 1,
+          "assists": 3,
+          "shots": 7,
           "blocked_shots": 0,
-          "points_per_game": 1.0,
-          "shots_per_game": 2.5,
+          "points_per_game": 1.333,
+          "shots_per_game": 2.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -9402,11 +9390,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.573,
         "prior_games_pooled": 131,
-        "blended_points_per_game": 0.616,
-        "projected_points": 1.85
+        "blended_points_per_game": 0.687,
+        "projected_points": 2.06
       }
     },
     "8482768": {
@@ -9415,14 +9403,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 2,
+          "games_played": 3,
+          "points": 2,
+          "goals": 1,
+          "assists": 1,
+          "shots": 4,
           "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.0,
+          "points_per_game": 0.667,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -9450,11 +9438,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.279,
         "prior_games_pooled": 122,
-        "blended_points_per_game": 0.251,
-        "projected_points": 0.75
+        "blended_points_per_game": 0.337,
+        "projected_points": 1.01
       }
     },
     "8470613": {
@@ -9463,14 +9451,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 1,
+          "games_played": 3,
+          "points": 2,
           "goals": 0,
-          "assists": 1,
-          "shots": 2,
-          "blocked_shots": 1,
-          "points_per_game": 0.5,
-          "shots_per_game": 1.0,
+          "assists": 2,
+          "shots": 4,
+          "blocked_shots": 2,
+          "points_per_game": 0.667,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -9498,11 +9486,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.39,
         "prior_games_pooled": 164,
-        "blended_points_per_game": 0.401,
-        "projected_points": 1.2
+        "blended_points_per_game": 0.432,
+        "projected_points": 1.3
       }
     },
     "8478454": {
@@ -9559,14 +9547,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 0,
+          "games_played": 3,
+          "points": 1,
           "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 4,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.0,
+          "assists": 1,
+          "shots": 2,
+          "blocked_shots": 5,
+          "points_per_game": 0.333,
+          "shots_per_game": 0.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -9594,11 +9582,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.224,
         "prior_games_pooled": 165,
-        "blended_points_per_game": 0.202,
-        "projected_points": 0.61
+        "blended_points_per_game": 0.24,
+        "projected_points": 0.72
       }
     },
     "8480069": {
@@ -9607,14 +9595,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 3,
           "goals": 1,
           "assists": 2,
-          "shots": 4,
-          "blocked_shots": 3,
-          "points_per_game": 1.5,
-          "shots_per_game": 2.0,
+          "shots": 8,
+          "blocked_shots": 6,
+          "points_per_game": 1.0,
+          "shots_per_game": 2.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -9642,11 +9630,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 1.103,
         "prior_games_pooled": 155,
-        "blended_points_per_game": 1.143,
-        "projected_points": 3.43
+        "blended_points_per_game": 1.088,
+        "projected_points": 3.26
       }
     },
     "8484258": {
@@ -9655,14 +9643,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 3,
+          "shots": 4,
           "blocked_shots": 4,
           "points_per_game": 0.0,
-          "shots_per_game": 1.5,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -9690,11 +9678,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.348,
         "prior_games_pooled": 158,
-        "blended_points_per_game": 0.313,
-        "projected_points": 0.94
+        "blended_points_per_game": 0.296,
+        "projected_points": 0.89
       }
     },
     "8476312": {
@@ -9703,14 +9691,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 3,
           "goals": 1,
           "assists": 2,
           "shots": 3,
           "blocked_shots": 2,
-          "points_per_game": 1.5,
-          "shots_per_game": 1.5,
+          "points_per_game": 1.0,
+          "shots_per_game": 1.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -9738,11 +9726,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.362,
         "prior_games_pooled": 127,
-        "blended_points_per_game": 0.476,
-        "projected_points": 1.43
+        "blended_points_per_game": 0.458,
+        "projected_points": 1.37
       }
     },
     "8478038": {
@@ -9751,14 +9739,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 2,
           "goals": 0,
           "assists": 2,
-          "shots": 0,
+          "shots": 2,
           "blocked_shots": 1,
-          "points_per_game": 1.0,
-          "shots_per_game": 0.0,
+          "points_per_game": 0.667,
+          "shots_per_game": 0.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -9786,11 +9774,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.472,
         "prior_games_pooled": 144,
-        "blended_points_per_game": 0.525,
-        "projected_points": 1.58
+        "blended_points_per_game": 0.501,
+        "projected_points": 1.5
       }
     },
     "8473994": {
@@ -11868,7 +11856,7 @@
           "goals": 0,
           "assists": 0,
           "shots": 6,
-          "blocked_shots": 3,
+          "blocked_shots": 0,
           "points_per_game": 0.0,
           "shots_per_game": 2.0,
           "label": "2026-27"
@@ -12049,20 +12037,68 @@
         "projected_points": 0.4
       }
     },
+    "8477450": {
+      "name": "Jason Dickinson",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 1,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 1,
+          "blocked_shots": 0,
+          "points_per_game": 0.0,
+          "shots_per_game": 1.0,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 64,
+          "points": 17,
+          "goals": 7,
+          "assists": 10,
+          "shots": 73,
+          "blocked_shots": 0,
+          "points_per_game": 0.266,
+          "shots_per_game": 1.141,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 59,
+          "points": 16,
+          "goals": 7,
+          "assists": 9,
+          "shots": 56,
+          "blocked_shots": 0,
+          "points_per_game": 0.271,
+          "shots_per_game": 0.949,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 2,
+        "weight_this_season": 0.05,
+        "prior_points_per_game": 0.268,
+        "prior_games_pooled": 123,
+        "blended_points_per_game": 0.255,
+        "projected_points": 0.51
+      }
+    },
     "8477934": {
       "name": "Leon Draisaitl",
       "team": "EDM",
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 5,
+          "games_played": 4,
+          "points": 9,
           "goals": 3,
-          "assists": 2,
-          "shots": 16,
+          "assists": 6,
+          "shots": 18,
           "blocked_shots": 0,
-          "points_per_game": 1.667,
-          "shots_per_game": 5.333,
+          "points_per_game": 2.25,
+          "shots_per_game": 4.5,
           "label": "2026-27"
         },
         "20252026": {
@@ -12090,11 +12126,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 1.493,
         "prior_games_pooled": 136,
-        "blended_points_per_game": 1.519,
-        "projected_points": 3.04
+        "blended_points_per_game": 1.644,
+        "projected_points": 3.29
       }
     },
     "8480029": {
@@ -12103,14 +12139,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 2,
           "goals": 0,
           "assists": 2,
           "shots": 4,
           "blocked_shots": 0,
-          "points_per_game": 0.667,
-          "shots_per_game": 1.333,
+          "points_per_game": 0.5,
+          "shots_per_game": 1.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -12141,8 +12177,8 @@
         "weight_this_season": 1.0,
         "prior_points_per_game": null,
         "prior_games_pooled": 0,
-        "blended_points_per_game": 0.667,
-        "projected_points": 1.33
+        "blended_points_per_game": 0.5,
+        "projected_points": 1.0
       }
     },
     "8479365": {
@@ -12151,14 +12187,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 1,
           "goals": 1,
           "assists": 0,
           "shots": 3,
           "blocked_shots": 0,
-          "points_per_game": 0.333,
-          "shots_per_game": 1.0,
+          "points_per_game": 0.25,
+          "shots_per_game": 0.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -12186,11 +12222,59 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.167,
         "prior_games_pooled": 132,
-        "blended_points_per_game": 0.192,
-        "projected_points": 0.38
+        "blended_points_per_game": 0.184,
+        "projected_points": 0.37
+      }
+    },
+    "8480842": {
+      "name": "Filip Hallander",
+      "team": "EDM",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 13,
+          "points": 4,
+          "goals": 1,
+          "assists": 3,
+          "shots": 22,
+          "blocked_shots": 0,
+          "points_per_game": 0.308,
+          "shots_per_game": 1.692,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 2,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": null,
+        "prior_games_pooled": 13,
+        "blended_points_per_game": null,
+        "projected_points": null
       }
     },
     "8483455": {
@@ -12199,14 +12283,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 1,
           "goals": 0,
           "assists": 1,
           "shots": 5,
           "blocked_shots": 0,
-          "points_per_game": 0.333,
-          "shots_per_game": 1.667,
+          "points_per_game": 0.25,
+          "shots_per_game": 1.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -12234,11 +12318,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.172,
         "prior_games_pooled": 29,
-        "blended_points_per_game": 0.196,
-        "projected_points": 0.39
+        "blended_points_per_game": 0.188,
+        "projected_points": 0.38
       }
     },
     "8475786": {
@@ -12343,14 +12427,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 4,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 1.333,
+          "shots_per_game": 1.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -12378,11 +12462,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.149,
         "prior_games_pooled": 47,
-        "blended_points_per_game": 0.127,
-        "projected_points": 0.25
+        "blended_points_per_game": 0.119,
+        "projected_points": 0.24
       }
     },
     "8478472": {
@@ -12391,14 +12475,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 1,
           "goals": 0,
           "assists": 1,
           "shots": 3,
           "blocked_shots": 0,
-          "points_per_game": 0.333,
-          "shots_per_game": 1.0,
+          "points_per_game": 0.25,
+          "shots_per_game": 0.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -12426,11 +12510,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.225,
         "prior_games_pooled": 111,
-        "blended_points_per_game": 0.241,
-        "projected_points": 0.48
+        "blended_points_per_game": 0.23,
+        "projected_points": 0.46
       }
     },
     "8477953": {
@@ -12439,14 +12523,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 2,
-          "goals": 1,
+          "games_played": 4,
+          "points": 3,
+          "goals": 2,
           "assists": 1,
-          "shots": 5,
+          "shots": 8,
           "blocked_shots": 0,
-          "points_per_game": 0.667,
-          "shots_per_game": 1.667,
+          "points_per_game": 0.75,
+          "shots_per_game": 2.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -12474,11 +12558,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.287,
         "prior_games_pooled": 108,
-        "blended_points_per_game": 0.344,
-        "projected_points": 0.69
+        "blended_points_per_game": 0.38,
+        "projected_points": 0.76
       }
     },
     "8478402": {
@@ -12487,14 +12571,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 9,
-          "goals": 2,
-          "assists": 7,
-          "shots": 7,
+          "games_played": 4,
+          "points": 12,
+          "goals": 3,
+          "assists": 9,
+          "shots": 8,
           "blocked_shots": 0,
           "points_per_game": 3.0,
-          "shots_per_game": 2.333,
+          "shots_per_game": 2.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -12522,11 +12606,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 1.597,
         "prior_games_pooled": 149,
-        "blended_points_per_game": 1.807,
-        "projected_points": 3.61
+        "blended_points_per_game": 1.878,
+        "projected_points": 3.76
       }
     },
     "8486161": {
@@ -12535,14 +12619,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 2,
           "goals": 2,
           "assists": 0,
-          "shots": 4,
+          "shots": 5,
           "blocked_shots": 0,
-          "points_per_game": 0.667,
-          "shots_per_game": 1.333,
+          "points_per_game": 0.5,
+          "shots_per_game": 1.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -12573,8 +12657,8 @@
         "weight_this_season": 1.0,
         "prior_points_per_game": null,
         "prior_games_pooled": 0,
-        "blended_points_per_game": 0.667,
-        "projected_points": 1.33
+        "blended_points_per_game": 0.5,
+        "projected_points": 1.0
       }
     },
     "8476454": {
@@ -12631,14 +12715,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 5,
-          "goals": 3,
+          "games_played": 4,
+          "points": 6,
+          "goals": 4,
           "assists": 2,
-          "shots": 13,
+          "shots": 16,
           "blocked_shots": 0,
-          "points_per_game": 1.667,
-          "shots_per_game": 4.333,
+          "points_per_game": 1.5,
+          "shots_per_game": 4.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -12666,11 +12750,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.372,
         "prior_games_pooled": 164,
-        "blended_points_per_game": 0.566,
-        "projected_points": 1.13
+        "blended_points_per_game": 0.598,
+        "projected_points": 1.2
       }
     },
     "8484509": {
@@ -12679,7 +12763,7 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
@@ -12714,11 +12798,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.167,
         "prior_games_pooled": 24,
-        "blended_points_per_game": 0.15,
-        "projected_points": 0.3
+        "blended_points_per_game": 0.142,
+        "projected_points": 0.28
       }
     },
     "8483512": {
@@ -12775,13 +12859,13 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 8,
-          "goals": 4,
-          "assists": 4,
-          "shots": 12,
+          "games_played": 4,
+          "points": 11,
+          "goals": 6,
+          "assists": 5,
+          "shots": 16,
           "blocked_shots": 3,
-          "points_per_game": 2.667,
+          "points_per_game": 2.75,
           "shots_per_game": 4.0,
           "label": "2026-27"
         },
@@ -12810,11 +12894,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.988,
         "prior_games_pooled": 164,
-        "blended_points_per_game": 1.24,
-        "projected_points": 2.48
+        "blended_points_per_game": 1.34,
+        "projected_points": 2.68
       }
     },
     "8475218": {
@@ -12823,14 +12907,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 0,
+          "games_played": 4,
+          "points": 1,
           "goals": 0,
-          "assists": 0,
-          "shots": 2,
+          "assists": 1,
+          "shots": 3,
           "blocked_shots": 2,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.667,
+          "points_per_game": 0.25,
+          "shots_per_game": 0.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -12858,11 +12942,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.503,
         "prior_games_pooled": 147,
-        "blended_points_per_game": 0.428,
-        "projected_points": 0.86
+        "blended_points_per_game": 0.452,
+        "projected_points": 0.9
       }
     },
     "8480834": {
@@ -12871,12 +12955,12 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 1,
+          "games_played": 2,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 0,
-          "blocked_shots": 0,
+          "blocked_shots": 1,
           "points_per_game": 0.0,
           "shots_per_game": 0.0,
           "label": "2026-27"
@@ -12906,11 +12990,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.05,
+        "weight_this_season": 0.1,
         "prior_points_per_game": 0.169,
         "prior_games_pooled": 148,
-        "blended_points_per_game": 0.161,
-        "projected_points": 0.32
+        "blended_points_per_game": 0.152,
+        "projected_points": 0.3
       }
     },
     "8482166": {
@@ -12967,14 +13051,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 3,
-          "blocked_shots": 12,
+          "blocked_shots": 15,
           "points_per_game": 0.0,
-          "shots_per_game": 1.0,
+          "shots_per_game": 0.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -13002,11 +13086,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.243,
         "prior_games_pooled": 148,
-        "blended_points_per_game": 0.207,
-        "projected_points": 0.41
+        "blended_points_per_game": 0.194,
+        "projected_points": 0.39
       }
     },
     "8480831": {
@@ -13063,14 +13147,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 3,
           "goals": 1,
           "assists": 2,
-          "shots": 1,
-          "blocked_shots": 0,
-          "points_per_game": 1.0,
-          "shots_per_game": 0.333,
+          "shots": 3,
+          "blocked_shots": 1,
+          "points_per_game": 0.75,
+          "shots_per_game": 0.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -13098,59 +13182,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.336,
         "prior_games_pooled": 119,
-        "blended_points_per_game": 0.436,
-        "projected_points": 0.87
-      }
-    },
-    "8481056": {
-      "name": "Spencer Stastney",
-      "team": "EDM",
-      "position": "D",
-      "seasons": {
-        "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 66,
-          "points": 10,
-          "goals": 2,
-          "assists": 8,
-          "shots": 56,
-          "blocked_shots": 63,
-          "points_per_game": 0.152,
-          "shots_per_game": 0.848,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 23,
-          "points": 3,
-          "goals": 0,
-          "assists": 3,
-          "shots": 15,
-          "blocked_shots": 24,
-          "points_per_game": 0.13,
-          "shots_per_game": 0.652,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 2,
-        "weight_this_season": 0.0,
-        "prior_points_per_game": 0.146,
-        "prior_games_pooled": 89,
-        "blended_points_per_game": 0.146,
-        "projected_points": 0.29
+        "blended_points_per_game": 0.419,
+        "projected_points": 0.84
       }
     },
     "8478013": {
@@ -13159,14 +13195,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 4,
-          "blocked_shots": 4,
+          "shots": 5,
+          "blocked_shots": 7,
           "points_per_game": 0.0,
-          "shots_per_game": 1.333,
+          "shots_per_game": 1.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -13194,11 +13230,11 @@
       },
       "projection": {
         "games_this_week": 2,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.508,
         "prior_games_pooled": 118,
-        "blended_points_per_game": 0.432,
-        "projected_points": 0.86
+        "blended_points_per_game": 0.406,
+        "projected_points": 0.81
       }
     },
     "8477493": {
@@ -13787,10 +13823,10 @@
           "points": 2,
           "goals": 1,
           "assists": 1,
-          "shots": 6,
+          "shots": 7,
           "blocked_shots": 0,
           "points_per_game": 0.5,
-          "shots_per_game": 1.5,
+          "shots_per_game": 1.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -14171,10 +14207,10 @@
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 8,
+          "shots": 9,
           "blocked_shots": 6,
           "points_per_game": 0.0,
-          "shots_per_game": 2.0,
+          "shots_per_game": 2.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -15649,6 +15685,54 @@
         "projected_points": 0.97
       }
     },
+    "8475752": {
+      "name": "Tyler Pitlick",
+      "team": "MIN",
+      "position": "C",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 32,
+          "points": 2,
+          "goals": 2,
+          "assists": 0,
+          "shots": 26,
+          "blocked_shots": 0,
+          "points_per_game": 0.062,
+          "shots_per_game": 0.812,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 3,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.062,
+        "prior_games_pooled": 32,
+        "blended_points_per_game": 0.062,
+        "projected_points": 0.19
+      }
+    },
     "8485702": {
       "name": "Maxim Shabanov",
       "team": "MIN",
@@ -15970,7 +16054,7 @@
           "goals": 10,
           "assists": 19,
           "shots": 124,
-          "blocked_shots": 115,
+          "blocked_shots": 0,
           "points_per_game": 0.372,
           "shots_per_game": 1.59,
           "label": "2024-25"
@@ -16055,7 +16139,7 @@
           "goals": 7,
           "assists": 69,
           "shots": 187,
-          "blocked_shots": 87,
+          "blocked_shots": 0,
           "points_per_game": 1.027,
           "shots_per_game": 2.527,
           "label": "2025-26"
@@ -17015,7 +17099,7 @@
           "goals": 12,
           "assists": 35,
           "shots": 158,
-          "blocked_shots": 188,
+          "blocked_shots": 0,
           "points_per_game": 0.588,
           "shots_per_game": 1.975,
           "label": "2025-26"
@@ -17159,7 +17243,7 @@
           "goals": 7,
           "assists": 30,
           "shots": 114,
-          "blocked_shots": 150,
+          "blocked_shots": 0,
           "points_per_game": 0.474,
           "shots_per_game": 1.462,
           "label": "2025-26"
@@ -22055,7 +22139,7 @@
           "goals": 7,
           "assists": 24,
           "shots": 99,
-          "blocked_shots": 111,
+          "blocked_shots": 0,
           "points_per_game": 0.544,
           "shots_per_game": 1.737,
           "label": "2025-26"
@@ -22465,31 +22549,31 @@
         "projected_points": 1.5
       }
     },
-    "8483731": {
-      "name": "Alex Bump",
+    "8478047": {
+      "name": "Michael Bunting",
       "team": "PHI",
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 0,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 4,
+          "shots": 0,
           "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.333,
+          "points_per_game": null,
+          "shots_per_game": null,
           "label": "2026-27"
         },
         "20252026": {
-          "games_played": 17,
-          "points": 9,
-          "goals": 5,
-          "assists": 4,
-          "shots": 23,
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
           "blocked_shots": 0,
-          "points_per_game": 0.529,
-          "shots_per_game": 1.353,
+          "points_per_game": null,
+          "shots_per_game": null,
           "label": "2025-26"
         },
         "20242025": {
@@ -22506,11 +22590,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 1.0,
+        "weight_this_season": 0.0,
         "prior_points_per_game": null,
-        "prior_games_pooled": 17,
-        "blended_points_per_game": 0.0,
-        "projected_points": 0.0
+        "prior_games_pooled": 0,
+        "blended_points_per_game": null,
+        "projected_points": null
       }
     },
     "8480220": {
@@ -23111,7 +23195,7 @@
           "goals": 0,
           "assists": 6,
           "shots": 60,
-          "blocked_shots": 114,
+          "blocked_shots": 0,
           "points_per_game": 0.082,
           "shots_per_game": 0.822,
           "label": "2025-26"
@@ -23479,14 +23563,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 2,
           "goals": 1,
           "assists": 1,
-          "shots": 5,
+          "shots": 7,
           "blocked_shots": 0,
-          "points_per_game": 0.667,
-          "shots_per_game": 1.667,
+          "points_per_game": 0.5,
+          "shots_per_game": 1.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -23514,11 +23598,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.559,
         "prior_games_pooled": 102,
-        "blended_points_per_game": 0.575,
-        "projected_points": 2.3
+        "blended_points_per_game": 0.547,
+        "projected_points": 2.19
       }
     },
     "8471675": {
@@ -23527,14 +23611,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 2,
           "goals": 0,
           "assists": 2,
-          "shots": 10,
+          "shots": 12,
           "blocked_shots": 0,
-          "points_per_game": 0.667,
-          "shots_per_game": 3.333,
+          "points_per_game": 0.5,
+          "shots_per_game": 3.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -23562,11 +23646,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 1.115,
         "prior_games_pooled": 148,
-        "blended_points_per_game": 1.048,
-        "projected_points": 4.19
+        "blended_points_per_game": 0.992,
+        "projected_points": 3.97
       }
     },
     "8480980": {
@@ -23575,14 +23659,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 5,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 1.667,
+          "shots_per_game": 1.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -23610,59 +23694,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.317,
         "prior_games_pooled": 126,
-        "blended_points_per_game": 0.269,
-        "projected_points": 1.08
-      }
-    },
-    "8480842": {
-      "name": "Filip Hallander",
-      "team": "PIT",
-      "position": "C",
-      "seasons": {
-        "20262027": {
-          "games_played": 2,
-          "points": 3,
-          "goals": 1,
-          "assists": 2,
-          "shots": 3,
-          "blocked_shots": 0,
-          "points_per_game": 1.5,
-          "shots_per_game": 1.5,
-          "label": "2026-27"
-        },
-        "20252026": {
-          "games_played": 13,
-          "points": 4,
-          "goals": 1,
-          "assists": 3,
-          "shots": 22,
-          "blocked_shots": 0,
-          "points_per_game": 0.308,
-          "shots_per_game": 1.692,
-          "label": "2025-26"
-        },
-        "20242025": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
-          "assists": 0,
-          "shots": 0,
-          "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
-          "label": "2024-25"
-        }
-      },
-      "projection": {
-        "games_this_week": 4,
-        "weight_this_season": 1.0,
-        "prior_points_per_game": null,
-        "prior_games_pooled": 13,
-        "blended_points_per_game": 1.5,
-        "projected_points": 6.0
+        "blended_points_per_game": 0.254,
+        "projected_points": 1.02
       }
     },
     "8485414": {
@@ -23671,14 +23707,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 3,
+          "games_played": 3,
+          "points": 4,
           "goals": 2,
-          "assists": 1,
-          "shots": 7,
+          "assists": 2,
+          "shots": 9,
           "blocked_shots": 0,
-          "points_per_game": 1.5,
-          "shots_per_game": 3.5,
+          "points_per_game": 1.333,
+          "shots_per_game": 3.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -23706,11 +23742,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.455,
         "prior_games_pooled": 77,
-        "blended_points_per_game": 0.56,
-        "projected_points": 2.24
+        "blended_points_per_game": 0.587,
+        "projected_points": 2.35
       }
     },
     "8482758": {
@@ -23719,14 +23755,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 2,
           "goals": 1,
           "assists": 1,
-          "shots": 3,
+          "shots": 4,
           "blocked_shots": 0,
-          "points_per_game": 1.0,
-          "shots_per_game": 1.5,
+          "points_per_game": 0.667,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -23754,11 +23790,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.298,
         "prior_games_pooled": 47,
-        "blended_points_per_game": 0.368,
-        "projected_points": 1.47
+        "blended_points_per_game": 0.353,
+        "projected_points": 1.41
       }
     },
     "8483808": {
@@ -23815,14 +23851,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 3,
           "goals": 1,
           "assists": 2,
-          "shots": 1,
+          "shots": 2,
           "blocked_shots": 0,
-          "points_per_game": 1.0,
-          "shots_per_game": 0.333,
+          "points_per_game": 0.75,
+          "shots_per_game": 0.5,
           "label": "2026-27"
         },
         "20252026": {
@@ -23850,11 +23886,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.238,
         "prior_games_pooled": 101,
-        "blended_points_per_game": 0.352,
-        "projected_points": 1.41
+        "blended_points_per_game": 0.34,
+        "projected_points": 1.36
       }
     },
     "8481481": {
@@ -23863,14 +23899,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 0,
+          "games_played": 4,
+          "points": 1,
           "goals": 0,
-          "assists": 0,
-          "shots": 6,
+          "assists": 1,
+          "shots": 7,
           "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 2.0,
+          "points_per_game": 0.25,
+          "shots_per_game": 1.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -23898,11 +23934,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.342,
         "prior_games_pooled": 114,
-        "blended_points_per_game": 0.291,
-        "projected_points": 1.16
+        "blended_points_per_game": 0.324,
+        "projected_points": 1.3
       }
     },
     "8471215": {
@@ -23911,14 +23947,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 4,
           "goals": 2,
           "assists": 2,
-          "shots": 7,
+          "shots": 8,
           "blocked_shots": 0,
-          "points_per_game": 1.333,
-          "shots_per_game": 2.333,
+          "points_per_game": 1.0,
+          "shots_per_game": 2.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -23946,11 +23982,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.895,
         "prior_games_pooled": 124,
-        "blended_points_per_game": 0.961,
-        "projected_points": 3.84
+        "blended_points_per_game": 0.916,
+        "projected_points": 3.66
       }
     },
     "8478438": {
@@ -23959,14 +23995,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 4,
-          "goals": 2,
+          "games_played": 4,
+          "points": 5,
+          "goals": 3,
           "assists": 2,
-          "shots": 5,
+          "shots": 8,
           "blocked_shots": 0,
-          "points_per_game": 1.333,
-          "shots_per_game": 1.667,
+          "points_per_game": 1.25,
+          "shots_per_game": 2.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -23994,11 +24030,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.471,
         "prior_games_pooled": 136,
-        "blended_points_per_game": 0.6,
-        "projected_points": 2.4
+        "blended_points_per_game": 0.627,
+        "projected_points": 2.51
       }
     },
     "8476483": {
@@ -24007,14 +24043,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 2,
           "goals": 0,
           "assists": 2,
-          "shots": 6,
+          "shots": 9,
           "blocked_shots": 0,
-          "points_per_game": 0.667,
-          "shots_per_game": 2.0,
+          "points_per_game": 0.5,
+          "shots_per_game": 2.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -24042,11 +24078,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.837,
         "prior_games_pooled": 141,
-        "blended_points_per_game": 0.811,
-        "projected_points": 3.24
+        "blended_points_per_game": 0.77,
+        "projected_points": 3.08
       }
     },
     "8481582": {
@@ -24055,14 +24091,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 2,
-          "goals": 2,
+          "games_played": 4,
+          "points": 3,
+          "goals": 3,
           "assists": 0,
-          "shots": 6,
+          "shots": 7,
           "blocked_shots": 0,
-          "points_per_game": 0.667,
-          "shots_per_game": 2.0,
+          "points_per_game": 0.75,
+          "shots_per_game": 1.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -24090,11 +24126,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.367,
         "prior_games_pooled": 147,
-        "blended_points_per_game": 0.412,
-        "projected_points": 1.65
+        "blended_points_per_game": 0.444,
+        "projected_points": 1.78
       }
     },
     "8475810": {
@@ -24103,14 +24139,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 0,
-          "points": 0,
-          "goals": 0,
+          "games_played": 1,
+          "points": 1,
+          "goals": 1,
           "assists": 0,
-          "shots": 0,
+          "shots": 3,
           "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
+          "points_per_game": 1.0,
+          "shots_per_game": 3.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -24138,11 +24174,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.0,
+        "weight_this_season": 0.05,
         "prior_points_per_game": 0.909,
         "prior_games_pooled": 143,
-        "blended_points_per_game": 0.909,
-        "projected_points": 3.64
+        "blended_points_per_game": 0.914,
+        "projected_points": 3.66
       }
     },
     "8481725": {
@@ -24199,14 +24235,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 4,
           "goals": 2,
           "assists": 2,
           "shots": 8,
-          "blocked_shots": 6,
-          "points_per_game": 1.333,
-          "shots_per_game": 2.667,
+          "blocked_shots": 9,
+          "points_per_game": 1.0,
+          "shots_per_game": 2.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -24234,11 +24270,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.089,
         "prior_games_pooled": 45,
-        "blended_points_per_game": 0.276,
-        "projected_points": 1.1
+        "blended_points_per_game": 0.271,
+        "projected_points": 1.08
       }
     },
     "8479398": {
@@ -24247,14 +24283,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 3,
+          "games_played": 4,
+          "points": 4,
           "goals": 1,
-          "assists": 2,
-          "shots": 6,
+          "assists": 3,
+          "shots": 7,
           "blocked_shots": 3,
           "points_per_game": 1.0,
-          "shots_per_game": 2.0,
+          "shots_per_game": 1.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -24282,11 +24318,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.323,
         "prior_games_pooled": 133,
-        "blended_points_per_game": 0.425,
-        "projected_points": 1.7
+        "blended_points_per_game": 0.458,
+        "projected_points": 1.83
       }
     },
     "8474578": {
@@ -24295,14 +24331,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 4,
           "goals": 0,
           "assists": 4,
-          "shots": 4,
-          "blocked_shots": 2,
-          "points_per_game": 1.333,
-          "shots_per_game": 1.333,
+          "shots": 8,
+          "blocked_shots": 3,
+          "points_per_game": 1.0,
+          "shots_per_game": 2.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -24330,11 +24366,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.758,
         "prior_games_pooled": 157,
-        "blended_points_per_game": 0.844,
-        "projected_points": 3.38
+        "blended_points_per_game": 0.806,
+        "projected_points": 3.22
       }
     },
     "8481527": {
@@ -24343,14 +24379,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 3,
+          "games_played": 4,
+          "points": 4,
           "goals": 0,
-          "assists": 3,
-          "shots": 4,
-          "blocked_shots": 7,
+          "assists": 4,
+          "shots": 5,
+          "blocked_shots": 10,
           "points_per_game": 1.0,
-          "shots_per_game": 1.333,
+          "shots_per_game": 1.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -24378,11 +24414,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.22,
         "prior_games_pooled": 118,
-        "blended_points_per_game": 0.337,
-        "projected_points": 1.35
+        "blended_points_per_game": 0.376,
+        "projected_points": 1.5
       }
     },
     "8471724": {
@@ -24391,13 +24427,13 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 3,
           "goals": 0,
           "assists": 3,
-          "shots": 9,
-          "blocked_shots": 1,
-          "points_per_game": 1.0,
+          "shots": 12,
+          "blocked_shots": 2,
+          "points_per_game": 0.75,
           "shots_per_game": 3.0,
           "label": "2026-27"
         },
@@ -24426,11 +24462,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.432,
         "prior_games_pooled": 148,
-        "blended_points_per_game": 0.517,
-        "projected_points": 2.07
+        "blended_points_per_game": 0.496,
+        "projected_points": 1.98
       }
     },
     "8482470": {
@@ -24481,20 +24517,68 @@
         "projected_points": 1.03
       }
     },
+    "8481056": {
+      "name": "Spencer Stastney",
+      "team": "PIT",
+      "position": "D",
+      "seasons": {
+        "20262027": {
+          "games_played": 0,
+          "points": 0,
+          "goals": 0,
+          "assists": 0,
+          "shots": 0,
+          "blocked_shots": 0,
+          "points_per_game": null,
+          "shots_per_game": null,
+          "label": "2026-27"
+        },
+        "20252026": {
+          "games_played": 66,
+          "points": 10,
+          "goals": 2,
+          "assists": 8,
+          "shots": 56,
+          "blocked_shots": 63,
+          "points_per_game": 0.152,
+          "shots_per_game": 0.848,
+          "label": "2025-26"
+        },
+        "20242025": {
+          "games_played": 23,
+          "points": 3,
+          "goals": 0,
+          "assists": 3,
+          "shots": 15,
+          "blocked_shots": 24,
+          "points_per_game": 0.13,
+          "shots_per_game": 0.652,
+          "label": "2024-25"
+        }
+      },
+      "projection": {
+        "games_this_week": 4,
+        "weight_this_season": 0.0,
+        "prior_points_per_game": 0.146,
+        "prior_games_pooled": 89,
+        "blended_points_per_game": 0.146,
+        "projected_points": 0.58
+      }
+    },
     "8477845": {
       "name": "Trevor van Riemsdyk",
       "team": "PIT",
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 1,
-          "blocked_shots": 7,
+          "shots": 2,
+          "blocked_shots": 8,
           "points_per_game": 0.0,
-          "shots_per_game": 0.333,
+          "shots_per_game": 0.5,
           "label": "2026-27"
         },
         "20252026": {
@@ -24522,11 +24606,11 @@
       },
       "projection": {
         "games_this_week": 4,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.233,
         "prior_games_pooled": 150,
-        "blended_points_per_game": 0.198,
-        "projected_points": 0.79
+        "blended_points_per_game": 0.186,
+        "projected_points": 0.74
       }
     },
     "8482665": {
@@ -26747,10 +26831,10 @@
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 4,
+          "shots": 3,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 1.333,
+          "shots_per_game": 1.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -33031,14 +33115,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 1,
           "goals": 0,
           "assists": 1,
           "shots": 4,
           "blocked_shots": 0,
-          "points_per_game": 0.333,
-          "shots_per_game": 1.333,
+          "points_per_game": 0.25,
+          "shots_per_game": 1.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -33066,11 +33150,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.273,
         "prior_games_pooled": 139,
-        "blended_points_per_game": 0.282,
-        "projected_points": 0.85
+        "blended_points_per_game": 0.268,
+        "projected_points": 0.8
       }
     },
     "8486025": {
@@ -33079,14 +33163,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 4,
+          "shots": 5,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 1.333,
+          "shots_per_game": 1.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -33127,14 +33211,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 5,
-          "goals": 3,
+          "games_played": 4,
+          "points": 7,
+          "goals": 5,
           "assists": 2,
-          "shots": 20,
+          "shots": 24,
           "blocked_shots": 0,
-          "points_per_game": 1.667,
-          "shots_per_game": 6.667,
+          "points_per_game": 1.75,
+          "shots_per_game": 6.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -33162,11 +33246,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 1.152,
         "prior_games_pooled": 164,
-        "blended_points_per_game": 1.229,
-        "projected_points": 3.69
+        "blended_points_per_game": 1.272,
+        "projected_points": 3.82
       }
     },
     "8480113": {
@@ -33175,14 +33259,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 2,
           "goals": 1,
           "assists": 1,
-          "shots": 4,
+          "shots": 6,
           "blocked_shots": 0,
-          "points_per_game": 0.667,
-          "shots_per_game": 1.333,
+          "points_per_game": 0.5,
+          "shots_per_game": 1.5,
           "label": "2026-27"
         },
         "20252026": {
@@ -33210,11 +33294,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.373,
         "prior_games_pooled": 161,
-        "blended_points_per_game": 0.417,
-        "projected_points": 1.25
+        "blended_points_per_game": 0.398,
+        "projected_points": 1.19
       }
     },
     "8481043": {
@@ -33223,14 +33307,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 1,
+          "games_played": 2,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 1,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 1.0,
+          "shots_per_game": 0.5,
           "label": "2026-27"
         },
         "20252026": {
@@ -33258,11 +33342,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.05,
+        "weight_this_season": 0.1,
         "prior_points_per_game": 0.245,
         "prior_games_pooled": 139,
-        "blended_points_per_game": 0.233,
-        "projected_points": 0.7
+        "blended_points_per_game": 0.221,
+        "projected_points": 0.66
       }
     },
     "8483471": {
@@ -33271,14 +33355,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 3,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 1.0,
+          "shots_per_game": 0.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -33306,11 +33390,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.233,
         "prior_games_pooled": 30,
-        "blended_points_per_game": 0.198,
-        "projected_points": 0.59
+        "blended_points_per_game": 0.186,
+        "projected_points": 0.56
       }
     },
     "8476392": {
@@ -33319,14 +33403,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 3,
           "goals": 1,
           "assists": 2,
-          "shots": 3,
+          "shots": 5,
           "blocked_shots": 0,
-          "points_per_game": 1.0,
-          "shots_per_game": 1.0,
+          "points_per_game": 0.75,
+          "shots_per_game": 1.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -33354,11 +33438,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.385,
         "prior_games_pooled": 143,
-        "blended_points_per_game": 0.477,
-        "projected_points": 1.43
+        "blended_points_per_game": 0.458,
+        "projected_points": 1.37
       }
     },
     "8476480": {
@@ -33367,14 +33451,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 6,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 2.0,
+          "shots_per_game": 1.5,
           "label": "2026-27"
         },
         "20252026": {
@@ -33402,11 +33486,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.377,
         "prior_games_pooled": 138,
-        "blended_points_per_game": 0.32,
-        "projected_points": 0.96
+        "blended_points_per_game": 0.302,
+        "projected_points": 0.91
       }
     },
     "8475799": {
@@ -33463,14 +33547,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 5,
-          "goals": 2,
+          "games_played": 4,
+          "points": 6,
+          "goals": 3,
           "assists": 3,
-          "shots": 10,
+          "shots": 12,
           "blocked_shots": 0,
-          "points_per_game": 1.667,
-          "shots_per_game": 3.333,
+          "points_per_game": 1.5,
+          "shots_per_game": 3.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -33498,11 +33582,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.547,
         "prior_games_pooled": 150,
-        "blended_points_per_game": 0.715,
-        "projected_points": 2.15
+        "blended_points_per_game": 0.738,
+        "projected_points": 2.21
       }
     },
     "8482765": {
@@ -33511,14 +33595,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 2,
+          "shots": 3,
           "blocked_shots": 0,
           "points_per_game": 0.0,
-          "shots_per_game": 0.667,
+          "shots_per_game": 0.75,
           "label": "2026-27"
         },
         "20252026": {
@@ -33546,11 +33630,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.244,
         "prior_games_pooled": 45,
-        "blended_points_per_game": 0.207,
-        "projected_points": 0.62
+        "blended_points_per_game": 0.195,
+        "projected_points": 0.58
       }
     },
     "8476460": {
@@ -33559,14 +33643,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 0,
+          "games_played": 4,
+          "points": 2,
           "goals": 0,
-          "assists": 0,
-          "shots": 5,
+          "assists": 2,
+          "shots": 6,
           "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.667,
+          "points_per_game": 0.5,
+          "shots_per_game": 1.5,
           "label": "2026-27"
         },
         "20252026": {
@@ -33594,11 +33678,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 1.159,
         "prior_games_pooled": 164,
-        "blended_points_per_game": 0.985,
-        "projected_points": 2.96
+        "blended_points_per_game": 1.027,
+        "projected_points": 3.08
       }
     },
     "8480014": {
@@ -33607,13 +33691,13 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 2,
           "goals": 0,
           "assists": 2,
-          "shots": 6,
+          "shots": 8,
           "blocked_shots": 0,
-          "points_per_game": 0.667,
+          "points_per_game": 0.5,
           "shots_per_game": 2.0,
           "label": "2026-27"
         },
@@ -33642,11 +33726,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.85,
         "prior_games_pooled": 153,
-        "blended_points_per_game": 0.823,
-        "projected_points": 2.47
+        "blended_points_per_game": 0.78,
+        "projected_points": 2.34
       }
     },
     "8482459": {
@@ -33703,14 +33787,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 2,
           "goals": 1,
           "assists": 1,
           "shots": 2,
-          "blocked_shots": 4,
-          "points_per_game": 0.667,
-          "shots_per_game": 0.667,
+          "blocked_shots": 5,
+          "points_per_game": 0.5,
+          "shots_per_game": 0.5,
           "label": "2026-27"
         },
         "20252026": {
@@ -33738,11 +33822,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.232,
         "prior_games_pooled": 164,
-        "blended_points_per_game": 0.297,
-        "projected_points": 0.89
+        "blended_points_per_game": 0.286,
+        "projected_points": 0.86
       }
     },
     "8479983": {
@@ -33751,14 +33835,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 1,
           "goals": 1,
           "assists": 0,
           "shots": 5,
           "blocked_shots": 4,
-          "points_per_game": 0.333,
-          "shots_per_game": 1.667,
+          "points_per_game": 0.25,
+          "shots_per_game": 1.25,
           "label": "2026-27"
         },
         "20252026": {
@@ -33786,11 +33870,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.25,
         "prior_games_pooled": 160,
-        "blended_points_per_game": 0.262,
-        "projected_points": 0.79
+        "blended_points_per_game": 0.25,
+        "projected_points": 0.75
       }
     },
     "8477938": {
@@ -33847,14 +33931,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
+          "games_played": 4,
           "points": 3,
           "goals": 0,
           "assists": 3,
-          "shots": 11,
-          "blocked_shots": 4,
-          "points_per_game": 1.0,
-          "shots_per_game": 3.667,
+          "shots": 12,
+          "blocked_shots": 5,
+          "points_per_game": 0.75,
+          "shots_per_game": 3.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -33882,11 +33966,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.745,
         "prior_games_pooled": 157,
-        "blended_points_per_game": 0.783,
-        "projected_points": 2.35
+        "blended_points_per_game": 0.746,
+        "projected_points": 2.24
       }
     },
     "8480145": {
@@ -33895,14 +33979,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 0,
+          "games_played": 4,
+          "points": 1,
           "goals": 0,
-          "assists": 0,
-          "shots": 7,
-          "blocked_shots": 6,
-          "points_per_game": 0.0,
-          "shots_per_game": 2.333,
+          "assists": 1,
+          "shots": 8,
+          "blocked_shots": 8,
+          "points_per_game": 0.25,
+          "shots_per_game": 2.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -33930,11 +34014,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.425,
         "prior_games_pooled": 120,
-        "blended_points_per_game": 0.361,
-        "projected_points": 1.08
+        "blended_points_per_game": 0.39,
+        "projected_points": 1.17
       }
     },
     "8480049": {
@@ -33943,14 +34027,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 3,
-          "points": 0,
+          "games_played": 4,
+          "points": 2,
           "goals": 0,
-          "assists": 0,
-          "shots": 2,
-          "blocked_shots": 8,
-          "points_per_game": 0.0,
-          "shots_per_game": 0.667,
+          "assists": 2,
+          "shots": 4,
+          "blocked_shots": 9,
+          "points_per_game": 0.5,
+          "shots_per_game": 1.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -33978,11 +34062,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.15,
+        "weight_this_season": 0.2,
         "prior_points_per_game": 0.27,
         "prior_games_pooled": 126,
-        "blended_points_per_game": 0.23,
-        "projected_points": 0.69
+        "blended_points_per_game": 0.316,
+        "projected_points": 0.95
       }
     },
     "8481030": {
@@ -33991,12 +34075,12 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 1,
+          "games_played": 2,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 0,
-          "blocked_shots": 1,
+          "blocked_shots": 2,
           "points_per_game": 0.0,
           "shots_per_game": 0.0,
           "label": "2026-27"
@@ -34026,11 +34110,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.05,
+        "weight_this_season": 0.1,
         "prior_points_per_game": 0.205,
         "prior_games_pooled": 39,
-        "blended_points_per_game": 0.195,
-        "projected_points": 0.58
+        "blended_points_per_game": 0.184,
+        "projected_points": 0.55
       }
     },
     "8478463": {
@@ -34039,14 +34123,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 0,
-          "goals": 0,
+          "games_played": 3,
+          "points": 1,
+          "goals": 1,
           "assists": 0,
-          "shots": 5,
+          "shots": 6,
           "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 2.5,
+          "points_per_game": 0.333,
+          "shots_per_game": 2.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -34074,11 +34158,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.325,
         "prior_games_pooled": 163,
-        "blended_points_per_game": 0.293,
-        "projected_points": 0.88
+        "blended_points_per_game": 0.326,
+        "projected_points": 0.98
       }
     },
     "8479400": {
@@ -34087,14 +34171,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 2,
-          "goals": 0,
-          "assists": 2,
-          "shots": 2,
+          "games_played": 3,
+          "points": 4,
+          "goals": 1,
+          "assists": 3,
+          "shots": 5,
           "blocked_shots": 0,
-          "points_per_game": 1.0,
-          "shots_per_game": 1.0,
+          "points_per_game": 1.333,
+          "shots_per_game": 1.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -34122,11 +34206,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.766,
         "prior_games_pooled": 111,
-        "blended_points_per_game": 0.789,
-        "projected_points": 2.37
+        "blended_points_per_game": 0.851,
+        "projected_points": 2.55
       }
     },
     "8483573": {
@@ -34183,14 +34267,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 0,
           "assists": 1,
-          "shots": 6,
+          "shots": 8,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
-          "shots_per_game": 3.0,
+          "points_per_game": 0.333,
+          "shots_per_game": 2.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -34218,11 +34302,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.613,
         "prior_games_pooled": 93,
-        "blended_points_per_game": 0.602,
-        "projected_points": 1.81
+        "blended_points_per_game": 0.571,
+        "projected_points": 1.71
       }
     },
     "8479385": {
@@ -34231,14 +34315,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 0,
+          "games_played": 3,
+          "points": 1,
           "goals": 0,
-          "assists": 0,
-          "shots": 3,
+          "assists": 1,
+          "shots": 4,
           "blocked_shots": 0,
-          "points_per_game": 0.0,
-          "shots_per_game": 1.5,
+          "points_per_game": 0.333,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -34266,11 +34350,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.753,
         "prior_games_pooled": 154,
-        "blended_points_per_game": 0.678,
-        "projected_points": 2.03
+        "blended_points_per_game": 0.69,
+        "projected_points": 2.07
       }
     },
     "8484186": {
@@ -34279,14 +34363,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 1,
-          "goals": 1,
+          "games_played": 3,
+          "points": 2,
+          "goals": 2,
           "assists": 0,
-          "shots": 6,
+          "shots": 8,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
-          "shots_per_game": 3.0,
+          "points_per_game": 0.667,
+          "shots_per_game": 2.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -34314,11 +34398,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.548,
         "prior_games_pooled": 84,
-        "blended_points_per_game": 0.543,
-        "projected_points": 1.63
+        "blended_points_per_game": 0.566,
+        "projected_points": 1.7
       }
     },
     "8483491": {
@@ -34375,14 +34459,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 0,
           "assists": 1,
-          "shots": 1,
+          "shots": 3,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
-          "shots_per_game": 0.5,
+          "points_per_game": 0.333,
+          "shots_per_game": 1.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -34410,11 +34494,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.932,
         "prior_games_pooled": 147,
-        "blended_points_per_game": 0.889,
-        "projected_points": 2.67
+        "blended_points_per_game": 0.842,
+        "projected_points": 2.53
       }
     },
     "8481656": {
@@ -34423,13 +34507,13 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 0,
           "assists": 1,
-          "shots": 2,
+          "shots": 3,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
+          "points_per_game": 0.333,
           "shots_per_game": 1.0,
           "label": "2026-27"
         },
@@ -34458,11 +34542,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.776,
         "prior_games_pooled": 152,
-        "blended_points_per_game": 0.748,
-        "projected_points": 2.24
+        "blended_points_per_game": 0.71,
+        "projected_points": 2.13
       }
     },
     "8484999": {
@@ -34471,14 +34555,14 @@
       "position": "L",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 0,
           "assists": 1,
-          "shots": 0,
+          "shots": 1,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
-          "shots_per_game": 0.0,
+          "points_per_game": 0.333,
+          "shots_per_game": 0.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -34509,8 +34593,8 @@
         "weight_this_season": 1.0,
         "prior_points_per_game": null,
         "prior_games_pooled": 4,
-        "blended_points_per_game": 0.5,
-        "projected_points": 1.5
+        "blended_points_per_game": 0.333,
+        "projected_points": 1.0
       }
     },
     "8482088": {
@@ -34519,14 +34603,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 1,
           "goals": 1,
           "assists": 0,
           "shots": 1,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
-          "shots_per_game": 0.5,
+          "points_per_game": 0.333,
+          "shots_per_game": 0.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -34554,11 +34638,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.456,
         "prior_games_pooled": 79,
-        "blended_points_per_game": 0.46,
-        "projected_points": 1.38
+        "blended_points_per_game": 0.438,
+        "projected_points": 1.31
       }
     },
     "8478440": {
@@ -34567,14 +34651,14 @@
       "position": "C",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 2,
+          "games_played": 3,
+          "points": 3,
           "goals": 0,
-          "assists": 2,
-          "shots": 3,
+          "assists": 3,
+          "shots": 4,
           "blocked_shots": 0,
           "points_per_game": 1.0,
-          "shots_per_game": 1.5,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -34602,11 +34686,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.864,
         "prior_games_pooled": 162,
-        "blended_points_per_game": 0.878,
-        "projected_points": 2.63
+        "blended_points_per_game": 0.884,
+        "projected_points": 2.65
       }
     },
     "8477949": {
@@ -34615,14 +34699,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 2,
-          "goals": 2,
+          "games_played": 3,
+          "points": 3,
+          "goals": 3,
           "assists": 0,
-          "shots": 5,
+          "shots": 11,
           "blocked_shots": 0,
           "points_per_game": 1.0,
-          "shots_per_game": 2.5,
+          "shots_per_game": 3.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -34650,11 +34734,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.826,
         "prior_games_pooled": 161,
-        "blended_points_per_game": 0.843,
-        "projected_points": 2.53
+        "blended_points_per_game": 0.852,
+        "projected_points": 2.56
       }
     },
     "8476880": {
@@ -34663,14 +34747,14 @@
       "position": "R",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 1,
-          "goals": 0,
-          "assists": 1,
-          "shots": 2,
+          "games_played": 3,
+          "points": 4,
+          "goals": 1,
+          "assists": 3,
+          "shots": 4,
           "blocked_shots": 0,
-          "points_per_game": 0.5,
-          "shots_per_game": 1.0,
+          "points_per_game": 1.333,
+          "shots_per_game": 1.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -34698,11 +34782,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.83,
         "prior_games_pooled": 153,
-        "blended_points_per_game": 0.797,
-        "projected_points": 2.39
+        "blended_points_per_game": 0.905,
+        "projected_points": 2.71
       }
     },
     "8479345": {
@@ -34711,14 +34795,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 3,
           "goals": 1,
           "assists": 2,
-          "shots": 5,
-          "blocked_shots": 2,
-          "points_per_game": 1.5,
-          "shots_per_game": 2.5,
+          "shots": 6,
+          "blocked_shots": 3,
+          "points_per_game": 1.0,
+          "shots_per_game": 2.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -34746,11 +34830,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.695,
         "prior_games_pooled": 154,
-        "blended_points_per_game": 0.775,
-        "projected_points": 2.33
+        "blended_points_per_game": 0.741,
+        "projected_points": 2.22
       }
     },
     "8479576": {
@@ -34759,14 +34843,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 1,
-          "blocked_shots": 3,
+          "blocked_shots": 5,
           "points_per_game": 0.0,
-          "shots_per_game": 0.5,
+          "shots_per_game": 0.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -34794,11 +34878,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.096,
         "prior_games_pooled": 104,
-        "blended_points_per_game": 0.086,
-        "projected_points": 0.26
+        "blended_points_per_game": 0.082,
+        "projected_points": 0.25
       }
     },
     "8480796": {
@@ -34807,14 +34891,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 1,
-          "blocked_shots": 7,
+          "blocked_shots": 8,
           "points_per_game": 0.0,
-          "shots_per_game": 0.5,
+          "shots_per_game": 0.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -34842,11 +34926,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.321,
         "prior_games_pooled": 162,
-        "blended_points_per_game": 0.289,
-        "projected_points": 0.87
+        "blended_points_per_game": 0.273,
+        "projected_points": 0.82
       }
     },
     "8484873": {
@@ -34855,14 +34939,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "points": 1,
+          "games_played": 3,
+          "points": 2,
           "goals": 1,
-          "assists": 0,
-          "shots": 4,
-          "blocked_shots": 3,
-          "points_per_game": 0.5,
-          "shots_per_game": 2.0,
+          "assists": 1,
+          "shots": 7,
+          "blocked_shots": 5,
+          "points_per_game": 0.667,
+          "shots_per_game": 2.333,
           "label": "2026-27"
         },
         "20252026": {
@@ -34893,8 +34977,8 @@
         "weight_this_season": 1.0,
         "prior_points_per_game": null,
         "prior_games_pooled": 14,
-        "blended_points_per_game": 0.5,
-        "projected_points": 1.5
+        "blended_points_per_game": 0.667,
+        "projected_points": 2.0
       }
     },
     "8480043": {
@@ -34903,14 +34987,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 2,
+          "games_played": 3,
           "points": 0,
           "goals": 0,
           "assists": 0,
-          "shots": 1,
-          "blocked_shots": 4,
+          "shots": 2,
+          "blocked_shots": 6,
           "points_per_game": 0.0,
-          "shots_per_game": 0.5,
+          "shots_per_game": 0.667,
           "label": "2026-27"
         },
         "20252026": {
@@ -34938,11 +35022,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.1,
+        "weight_this_season": 0.15,
         "prior_points_per_game": 0.243,
         "prior_games_pooled": 115,
-        "blended_points_per_game": 0.219,
-        "projected_points": 0.66
+        "blended_points_per_game": 0.207,
+        "projected_points": 0.62
       }
     },
     "8475795": {
@@ -34951,14 +35035,14 @@
       "position": "D",
       "seasons": {
         "20262027": {
-          "games_played": 0,
+          "games_played": 1,
           "points": 0,
           "goals": 0,
           "assists": 0,
           "shots": 0,
           "blocked_shots": 0,
-          "points_per_game": null,
-          "shots_per_game": null,
+          "points_per_game": 0.0,
+          "shots_per_game": 0.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -34986,11 +35070,11 @@
       },
       "projection": {
         "games_this_week": 3,
-        "weight_this_season": 0.0,
+        "weight_this_season": 0.05,
         "prior_points_per_game": 0.067,
         "prior_games_pooled": 30,
-        "blended_points_per_game": 0.067,
-        "projected_points": 0.2
+        "blended_points_per_game": 0.064,
+        "projected_points": 0.19
       }
     },
     "8478911": {
@@ -35049,14 +35133,14 @@
       "position": "G",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "games_started": 2,
+          "games_played": 3,
+          "games_started": 3,
           "wins": 2,
-          "losses": 0,
+          "losses": 1,
           "ot_losses": 0,
           "shutouts": 0,
-          "save_pct": 0.918,
-          "gaa": 2.42,
+          "save_pct": 0.872,
+          "gaa": 3.67,
           "label": "2026-27"
         },
         "20252026": {
@@ -35083,7 +35167,7 @@
         }
       },
       "games_this_week": 3,
-      "last_start_date": "2026-10-04"
+      "last_start_date": null
     },
     "8478024": {
       "name": "Ville Husso",
@@ -35091,14 +35175,14 @@
       "position": "G",
       "seasons": {
         "20262027": {
-          "games_played": 0,
+          "games_played": 1,
           "games_started": 0,
           "wins": 0,
           "losses": 0,
           "ot_losses": 0,
           "shutouts": 0,
-          "save_pct": null,
-          "gaa": null,
+          "save_pct": 1.0,
+          "gaa": 0.0,
           "label": "2026-27"
         },
         "20252026": {
@@ -35167,7 +35251,7 @@
         }
       },
       "games_this_week": 3,
-      "last_start_date": "2026-10-03"
+      "last_start_date": null
     },
     "8480280": {
       "name": "Jeremy Swayman",
@@ -35209,7 +35293,7 @@
         }
       },
       "games_this_week": 3,
-      "last_start_date": "2026-10-05"
+      "last_start_date": null
     },
     "8481551": {
       "name": "Colten Ellis",
@@ -35251,7 +35335,7 @@
         }
       },
       "games_this_week": 3,
-      "last_start_date": "2026-10-06"
+      "last_start_date": null
     },
     "8480045": {
       "name": "Ukko-Pekka Luukkonen",
@@ -35293,7 +35377,7 @@
         }
       },
       "games_this_week": 3,
-      "last_start_date": "2026-10-03"
+      "last_start_date": null
     },
     "8479312": {
       "name": "Alex Lyon",
@@ -35601,7 +35685,7 @@
           "losses": 2,
           "ot_losses": 0,
           "shutouts": 0,
-          "save_pct": 0.891,
+          "save_pct": 0.89,
           "gaa": 3.36,
           "label": "2026-27"
         },
@@ -35679,14 +35763,14 @@
       "position": "G",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "games_started": 2,
+          "games_played": 3,
+          "games_started": 3,
           "wins": 2,
-          "losses": 0,
+          "losses": 1,
           "ot_losses": 0,
           "shutouts": 0,
-          "save_pct": 0.912,
-          "gaa": 2.5,
+          "save_pct": 0.895,
+          "gaa": 2.68,
           "label": "2026-27"
         },
         "20252026": {
@@ -36015,14 +36099,14 @@
       "position": "G",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "games_started": 2,
-          "wins": 2,
+          "games_played": 3,
+          "games_started": 3,
+          "wins": 3,
           "losses": 0,
           "ot_losses": 0,
           "shutouts": 0,
-          "save_pct": 0.81,
-          "gaa": 4.02,
+          "save_pct": 0.863,
+          "gaa": 3.35,
           "label": "2026-27"
         },
         "20252026": {
@@ -36189,7 +36273,7 @@
           "losses": 2,
           "ot_losses": 0,
           "shutouts": 0,
-          "save_pct": 0.825,
+          "save_pct": 0.831,
           "gaa": 5.11,
           "label": "2026-27"
         },
@@ -36315,7 +36399,7 @@
           "losses": 1,
           "ot_losses": 1,
           "shutouts": 0,
-          "save_pct": 0.857,
+          "save_pct": 0.856,
           "gaa": 4.43,
           "label": "2026-27"
         },
@@ -37107,14 +37191,14 @@
       "position": "G",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "games_started": 2,
+          "games_played": 3,
+          "games_started": 3,
           "wins": 2,
-          "losses": 0,
+          "losses": 1,
           "ot_losses": 0,
           "shutouts": 1,
-          "save_pct": 0.886,
-          "gaa": 2.47,
+          "save_pct": 0.859,
+          "gaa": 3.38,
           "label": "2026-27"
         },
         "20252026": {
@@ -37905,14 +37989,14 @@
       "position": "G",
       "seasons": {
         "20262027": {
-          "games_played": 2,
-          "games_started": 2,
-          "wins": 1,
+          "games_played": 3,
+          "games_started": 3,
+          "wins": 2,
           "losses": 0,
           "ot_losses": 1,
           "shutouts": 0,
-          "save_pct": 0.909,
-          "gaa": 2.92,
+          "save_pct": 0.92,
+          "gaa": 2.62,
           "label": "2026-27"
         },
         "20252026": {
@@ -38031,14 +38115,14 @@
       "position": "G",
       "seasons": {
         "20262027": {
-          "games_played": 1,
-          "games_started": 1,
-          "wins": 1,
+          "games_played": 2,
+          "games_started": 2,
+          "wins": 2,
           "losses": 0,
           "ot_losses": 0,
           "shutouts": 0,
-          "save_pct": 0.939,
-          "gaa": 2.0,
+          "save_pct": 0.921,
+          "gaa": 2.5,
           "label": "2026-27"
         },
         "20252026": {
@@ -38065,7 +38149,7 @@
         }
       },
       "games_this_week": 3,
-      "last_start_date": "2026-10-02"
+      "last_start_date": null
     }
   }
 }
