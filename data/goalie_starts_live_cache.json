@@ -206,5 +206,17 @@
   "2026-10-06|FLA@LAK": {
     "away_starter": "J. Markstrom",
     "home_starter": "D. Kuemper"
+  },
+  "2026-10-07|PIT@WSH": {
+    "away_starter": "A. Silovs",
+    "home_starter": "L. Thompson"
+  },
+  "2026-10-07|COL@WPG": {
+    "away_starter": "M. Blackwood",
+    "home_starter": "S. Skinner"
+  },
+  "2026-10-07|EDM@ANA": {
+    "away_starter": "D. Levi",
+    "home_starter": "L. Dostal"
   }
 }
