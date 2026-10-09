@@ -1,6 +1,6 @@
 {
   "date": "2026-10-08",
-  "updated": "08:55 PM MT",
+  "updated": "11:56 PM MT",
   "games": [
     {
       "away": "UTA",
@@ -95,11 +95,11 @@
       "home": "CGY",
       "away_city": "Colorado",
       "home_city": "Calgary",
-      "away_score": 4,
-      "home_score": 1,
-      "status": "live",
-      "display": "2nd \u00b7 08:29",
-      "period_label": "2nd"
+      "away_score": 7,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "TOR",
@@ -107,10 +107,10 @@
       "away_city": "Toronto",
       "home_city": "Vegas",
       "away_score": 3,
-      "home_score": 1,
-      "status": "live",
-      "display": "1st \u00b7 06:39",
-      "period_label": "1st"
+      "home_score": 4,
+      "status": "final",
+      "display": "Final/SO",
+      "period_label": "SO"
     }
   ]
 }
