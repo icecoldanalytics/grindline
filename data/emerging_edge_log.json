@@ -147,9 +147,12 @@
       "home_ml_avg": 197.6,
       "home_ml_best": 208,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "S. Wedgewood",
+      "goalie_bucket": "excluded",
+      "away_score": 7,
+      "home_score": 3,
+      "fade_won": false
     }
   ]
 }

@@ -218,5 +218,45 @@
   "2026-10-07|EDM@ANA": {
     "away_starter": "D. Levi",
     "home_starter": "L. Dostal"
+  },
+  "2026-10-08|UTA@BOS": {
+    "away_starter": "S. Cossa",
+    "home_starter": "J. Swayman"
+  },
+  "2026-10-08|DAL@BUF": {
+    "away_starter": "J. Oettinger",
+    "home_starter": "U. Luukkonen"
+  },
+  "2026-10-08|NSH@MTL": {
+    "away_starter": "J. Saros",
+    "home_starter": "J. Fowler"
+  },
+  "2026-10-08|PHI@OTT": {
+    "away_starter": "J. Woll",
+    "home_starter": "L. Ullmark"
+  },
+  "2026-10-08|MIN@TBL": {
+    "away_starter": "J. Wallstedt",
+    "home_starter": "D. Hildeby"
+  },
+  "2026-10-08|VAN@CAR": {
+    "away_starter": "K. Lankinen",
+    "home_starter": "P. Kochetkov"
+  },
+  "2026-10-08|CHI@NYI": {
+    "away_starter": "A. Soderblom",
+    "home_starter": "I. Sorokin"
+  },
+  "2026-10-08|SJS@STL": {
+    "away_starter": "A. Nedeljkovic",
+    "home_starter": "J. Hofer"
+  },
+  "2026-10-08|COL@CGY": {
+    "away_starter": "S. Wedgewood",
+    "home_starter": "D. Cooley"
+  },
+  "2026-10-08|TOR@VGK": {
+    "away_starter": "S. Bobrovsky",
+    "home_starter": "A. Hill"
   }
 }
