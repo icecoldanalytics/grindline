@@ -1,50 +1,50 @@
 {
   "date": "2026-10-09",
-  "updated": "07:05 AM MT",
+  "updated": "08:16 PM MT",
   "games": [
     {
       "away": "SEA",
       "home": "DET",
       "away_city": "Seattle",
       "home_city": "Detroit",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 6,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "NYR",
       "home": "WSH",
       "away_city": "New York",
       "home_city": "Washington",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 1,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "PIT",
       "home": "CBJ",
       "away_city": "Pittsburgh",
       "home_city": "Columbus",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final/SO",
+      "period_label": "SO"
     },
     {
       "away": "ANA",
       "home": "WPG",
       "away_city": "Anaheim",
       "home_city": "Winnipeg",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 3,
+      "home_score": 1,
+      "status": "live",
+      "display": "3rd \u00b7 09:14",
+      "period_label": "3rd"
     }
   ]
 }
