@@ -2986,6 +2986,42 @@
       "away_score": 3,
       "home_score": 5,
       "fade_won": true
+    },
+    {
+      "date": "2026-10-10",
+      "away": "ANA",
+      "home": "CGY",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": 103.2,
+      "home_ml_best": 110,
+      "price_source": "live_06:00_MT",
+      "graded": false
+    },
+    {
+      "date": "2026-10-10",
+      "away": "CBJ",
+      "home": "STL",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": -130.2,
+      "home_ml_best": -128,
+      "price_source": "live_06:00_MT",
+      "graded": false
+    },
+    {
+      "date": "2026-10-10",
+      "away": "DET",
+      "home": "MTL",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": -213.1,
+      "home_ml_best": -205,
+      "price_source": "live_06:00_MT",
+      "graded": false
     }
   ]
 }
