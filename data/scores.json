@@ -1,6 +1,6 @@
 {
   "date": "2026-10-09",
-  "updated": "08:16 PM MT",
+  "updated": "11:38 PM MT",
   "games": [
     {
       "away": "SEA",
@@ -40,10 +40,10 @@
       "home": "WPG",
       "away_city": "Anaheim",
       "home_city": "Winnipeg",
-      "away_score": 3,
+      "away_score": 5,
       "home_score": 1,
-      "status": "live",
-      "display": "3rd \u00b7 09:14",
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     }
   ]
