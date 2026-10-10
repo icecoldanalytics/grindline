@@ -790,9 +790,9 @@
       "side": "Yes",
       "price": "+225",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-09",
@@ -803,9 +803,9 @@
       "side": "Over",
       "price": "-115",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-09",
@@ -816,9 +816,9 @@
       "side": "Over",
       "price": "-112",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-09",
@@ -829,9 +829,9 @@
       "side": "Over",
       "price": "+104",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": false
     },
     {
       "date": "2026-10-09",
@@ -842,9 +842,9 @@
       "side": "Over",
       "price": "+110",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-10-09",
@@ -855,9 +855,9 @@
       "side": "Over",
       "price": "-156",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-09",
@@ -868,9 +868,9 @@
       "side": "Over",
       "price": "+209",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-10-09",
@@ -881,9 +881,9 @@
       "side": "Over",
       "price": "-160",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     }
   ]
 }
