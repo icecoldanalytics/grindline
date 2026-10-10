@@ -258,5 +258,21 @@
   "2026-10-08|TOR@VGK": {
     "away_starter": "S. Bobrovsky",
     "home_starter": "A. Hill"
+  },
+  "2026-10-09|SEA@DET": {
+    "away_starter": "P. Grubauer",
+    "home_starter": "J. Gibson"
+  },
+  "2026-10-09|NYR@WSH": {
+    "away_starter": "I. Shesterkin",
+    "home_starter": "L. Thompson"
+  },
+  "2026-10-09|PIT@CBJ": {
+    "away_starter": "S. Murashov",
+    "home_starter": "C. Talbot"
+  },
+  "2026-10-09|ANA@WPG": {
+    "away_starter": "L. Dostal",
+    "home_starter": "C. Stevenson"
   }
 }
