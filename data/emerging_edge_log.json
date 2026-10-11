@@ -164,9 +164,12 @@
       "home_ml_avg": 103.2,
       "home_ml_best": 110,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "V. Husso",
+      "goalie_bucket": "excluded",
+      "away_score": 4,
+      "home_score": 2,
+      "fade_won": false
     },
     {
       "date": "2026-10-10",
@@ -178,9 +181,12 @@
       "home_ml_avg": -130.2,
       "home_ml_best": -128,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "J. Greaves",
+      "goalie_bucket": "excluded",
+      "away_score": 3,
+      "home_score": 5,
+      "fade_won": true
     },
     {
       "date": "2026-10-10",
@@ -192,9 +198,12 @@
       "home_ml_avg": -213.1,
       "home_ml_best": -205,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "D. Tarasov",
+      "goalie_bucket": "excluded",
+      "away_score": 0,
+      "home_score": 1,
+      "fade_won": true
     },
     {
       "date": "2026-10-11",

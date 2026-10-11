@@ -274,5 +274,61 @@
   "2026-10-09|ANA@WPG": {
     "away_starter": "L. Dostal",
     "home_starter": "C. Stevenson"
+  },
+  "2026-10-10|PHI@BOS": {
+    "away_starter": "D. Vladar",
+    "home_starter": "J. Swayman"
+  },
+  "2026-10-10|VAN@NJD": {
+    "away_starter": "L. Meril\u00e4inen",
+    "home_starter": "J. Allen"
+  },
+  "2026-10-10|EDM@SJS": {
+    "away_starter": "T. Jarry",
+    "home_starter": "Y. Askarov"
+  },
+  "2026-10-10|MIN@FLA": {
+    "away_starter": "J. Wallstedt",
+    "home_starter": "J. Markstrom"
+  },
+  "2026-10-10|UTA@BUF": {
+    "away_starter": "K. Vejmelka",
+    "home_starter": "C. Ellis"
+  },
+  "2026-10-10|DET@MTL": {
+    "away_starter": "D. Tarasov",
+    "home_starter": "J. Fowler"
+  },
+  "2026-10-10|NSH@OTT": {
+    "away_starter": "M. Murray",
+    "home_starter": "L. Ullmark"
+  },
+  "2026-10-10|DAL@PIT": {
+    "away_starter": "J. Oettinger",
+    "home_starter": "A. Silovs"
+  },
+  "2026-10-10|CAR@CHI": {
+    "away_starter": "B. Bussi",
+    "home_starter": "S. Knight"
+  },
+  "2026-10-10|CBJ@STL": {
+    "away_starter": "J. Greaves",
+    "home_starter": "J. Binnington"
+  },
+  "2026-10-10|TOR@COL": {
+    "away_starter": "S. Bobrovsky",
+    "home_starter": "M. Blackwood"
+  },
+  "2026-10-10|TBL@NYI": {
+    "away_starter": "A. Vasilevskiy",
+    "home_starter": "I. Sorokin"
+  },
+  "2026-10-10|ANA@CGY": {
+    "away_starter": "V. Husso",
+    "home_starter": "D. Wolf"
+  },
+  "2026-10-10|LAK@VGK": {
+    "away_starter": "D. Kuemper",
+    "home_starter": "C. Hart"
   }
 }
