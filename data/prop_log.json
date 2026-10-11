@@ -884,6 +884,97 @@
       "graded": true,
       "actual_stat": 3,
       "hit": true
+    },
+    {
+      "date": "2026-10-11",
+      "game": "Seattle Kraken @ Washington Capitals",
+      "player": "Alex Ovechkin",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+210",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-11",
+      "game": "Seattle Kraken @ Washington Capitals",
+      "player": "Alex Ovechkin",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-123",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-11",
+      "game": "Vancouver Canucks @ New York Rangers",
+      "player": "Adam Fox",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-140",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-11",
+      "game": "Carolina Hurricanes @ Philadelphia Flyers",
+      "player": "Andrei Svechnikov",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-111",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-11",
+      "game": "Seattle Kraken @ Washington Capitals",
+      "player": "Alex Tuch",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+110",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-11",
+      "game": "Vancouver Canucks @ New York Rangers",
+      "player": "Alexis Lafreniere",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+130",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-11",
+      "game": "Carolina Hurricanes @ Philadelphia Flyers",
+      "player": "Jackson Blake",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+120",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
     }
   ]
 }
