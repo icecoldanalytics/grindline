@@ -330,5 +330,17 @@
   "2026-10-10|LAK@VGK": {
     "away_starter": "D. Kuemper",
     "home_starter": "C. Hart"
+  },
+  "2026-10-11|SEA@WSH": {
+    "away_starter": "J. Daccord",
+    "home_starter": "L. Thompson"
+  },
+  "2026-10-11|VAN@NYR": {
+    "away_starter": "K. Lankinen",
+    "home_starter": "D. Garand"
+  },
+  "2026-10-11|CAR@PHI": {
+    "away_starter": "P. Kochetkov",
+    "home_starter": "J. Woll"
   }
 }

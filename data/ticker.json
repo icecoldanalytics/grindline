@@ -1,26 +1,26 @@
 {
-  "date": "2026-10-11",
+  "date": "2026-10-12",
   "games": [
     {
-      "away": "SEA",
-      "home": "WSH",
-      "time": "3:00 PM MT",
-      "away_ml": "+180",
-      "home_ml": "-218"
+      "away": "FLA",
+      "home": "BUF",
+      "time": "11:00 AM MT",
+      "away_ml": "-112",
+      "home_ml": "-108"
     },
     {
-      "away": "VAN",
-      "home": "NYR",
-      "time": "4:00 PM MT",
-      "away_ml": "+215",
-      "home_ml": "-265"
-    },
-    {
-      "away": "CAR",
-      "home": "PHI",
+      "away": "OTT",
+      "home": "NJD",
       "time": "5:00 PM MT",
-      "away_ml": "-180",
-      "home_ml": "+150"
+      "away_ml": "+114",
+      "home_ml": "-135"
+    },
+    {
+      "away": "VGK",
+      "home": "MIN",
+      "time": "6:00 PM MT",
+      "away_ml": "-102",
+      "home_ml": "-118"
     }
   ]
 }

@@ -215,9 +215,12 @@
       "home_ml_avg": -271.9,
       "home_ml_best": -260,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "K. Lankinen",
+      "goalie_bucket": "excluded",
+      "away_score": 2,
+      "home_score": 6,
+      "fade_won": true
     }
   ]
 }
