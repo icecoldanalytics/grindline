@@ -342,5 +342,17 @@
   "2026-10-11|CAR@PHI": {
     "away_starter": "P. Kochetkov",
     "home_starter": "J. Woll"
+  },
+  "2026-10-12|FLA@BUF": {
+    "away_starter": "J. Markstrom",
+    "home_starter": "C. Ellis"
+  },
+  "2026-10-12|OTT@NJD": {
+    "away_starter": "L. Ullmark",
+    "home_starter": "N. Daws"
+  },
+  "2026-10-12|VGK@MIN": {
+    "away_starter": "C. Hart",
+    "home_starter": "J. Wallstedt"
   }
 }
