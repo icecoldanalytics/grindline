@@ -232,9 +232,12 @@
       "home_ml_avg": -156.9,
       "home_ml_best": -155,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "U. Luukkonen",
+      "goalie_bucket": "excluded",
+      "away_score": 3,
+      "home_score": 4,
+      "fade_won": true
     },
     {
       "date": "2026-10-13",
@@ -246,9 +249,12 @@
       "home_ml_avg": -122.8,
       "home_ml_best": -120,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "A. Schmid",
+      "goalie_bucket": "excluded",
+      "away_score": 7,
+      "home_score": 3,
+      "fade_won": false
     },
     {
       "date": "2026-10-13",
@@ -260,9 +266,12 @@
       "home_ml_avg": -110.0,
       "home_ml_best": -108,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "C. Pickard",
+      "goalie_bucket": "excluded",
+      "away_score": 2,
+      "home_score": 5,
+      "fade_won": true
     },
     {
       "date": "2026-10-13",
@@ -274,9 +283,12 @@
       "home_ml_avg": -110.5,
       "home_ml_best": -109,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "J. Allen",
+      "goalie_bucket": "excluded",
+      "away_score": 5,
+      "home_score": 4,
+      "fade_won": false
     },
     {
       "date": "2026-10-13",
@@ -288,9 +300,12 @@
       "home_ml_avg": 106.5,
       "home_ml_best": 115,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "A. Hill",
+      "goalie_bucket": "excluded",
+      "away_score": 5,
+      "home_score": 2,
+      "fade_won": false
     }
   ]
 }
