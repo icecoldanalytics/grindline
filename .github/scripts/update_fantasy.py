@@ -208,34 +208,77 @@ def validate_players(section, key, valid_names, label):
     section[key] = kept
     return section
 
+CLAUDE_TIMEOUT = 180  # generations here can run long - 60s was too tight, see update_fantasy failures
+CLAUDE_MAX_ATTEMPTS = 3
+CLAUDE_RETRY_DELAYS = [15, 45]  # between attempts 1->2 and 2->3; increasing so a transient blip isn't hit again immediately
+
 def call_claude(prompt):
     if not ANTHROPIC_API_KEY:
         print("No Anthropic API key")
         return None
-    try:
-        r = requests.post(
-            "https://api.anthropic.com/v1/messages",
-            headers={
-                "x-api-key": ANTHROPIC_API_KEY,
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json"
-            },
-            json={
-                "model": "claude-sonnet-5",
-                "max_tokens": 8000,
-                "messages": [{"role": "user", "content": prompt}]
-            },
-            timeout=60
-        )
-    except requests.RequestException as e:
-        print(f"Claude API request error: {e}")
+
+    r = None
+    for attempt in range(1, CLAUDE_MAX_ATTEMPTS + 1):
+        try:
+            r = requests.post(
+                "https://api.anthropic.com/v1/messages",
+                headers={
+                    "x-api-key": ANTHROPIC_API_KEY,
+                    "anthropic-version": "2023-06-01",
+                    "content-type": "application/json"
+                },
+                json={
+                    "model": "claude-sonnet-5",
+                    "max_tokens": 8000,
+                    "messages": [{"role": "user", "content": prompt}]
+                },
+                timeout=CLAUDE_TIMEOUT
+            )
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
+            # Both are worth retrying - a read timeout on a long generation or a
+            # dropped connection don't mean the request itself was bad. This is
+            # what took down the whole pipeline (fantasy.json left unchanged)
+            # the last two times a single call hit either of these.
+            print(f"Claude API request error (attempt {attempt}/{CLAUDE_MAX_ATTEMPTS}): {e}")
+            r = None
+            if attempt < CLAUDE_MAX_ATTEMPTS:
+                time.sleep(CLAUDE_RETRY_DELAYS[attempt - 1])
+            continue
+        except requests.RequestException as e:
+            # Anything else (bad URL, malformed request) won't be fixed by
+            # retrying - fail immediately like before.
+            print(f"Claude API request error: {e}")
+            return None
+
+        if r.status_code >= 500 or r.status_code == 429:
+            # 5xx is a transient Anthropic-side failure. 429 is a rate limit,
+            # not a permanent rejection - the only 4xx worth retrying. Honour
+            # Retry-After when Anthropic sends one instead of our own backoff
+            # schedule, since that's the actual time the limit clears.
+            print(f"Claude API error: HTTP {r.status_code} - {r.text} (attempt {attempt}/{CLAUDE_MAX_ATTEMPTS})")
+            if attempt < CLAUDE_MAX_ATTEMPTS:
+                delay = CLAUDE_RETRY_DELAYS[attempt - 1]
+                retry_after = r.headers.get("retry-after")
+                if retry_after is not None:
+                    try:
+                        delay = max(delay, float(retry_after))
+                    except ValueError:
+                        pass
+                time.sleep(delay)
+            continue
+
+        break  # got a response and it's not retryable - stop either way
+
+    if r is None:
+        print(f"Claude API request failed after {CLAUDE_MAX_ATTEMPTS} attempts")
         return None
 
     if not r.ok:
-        # r.raise_for_status()'s exception message is just the status line -
-        # it doesn't include the body, which is where Anthropic actually
-        # says what it's rejecting (bad model string, invalid request
-        # shape, etc). Print it here or every 400/401/429 looks identical.
+        # Remaining 4xx (bad model string, invalid request shape, auth) won't
+        # succeed on retry - fail fast. r.raise_for_status()'s exception
+        # message is just the status line - it doesn't include the body,
+        # which is where Anthropic actually says what it's rejecting. Print
+        # it here or every 400/401/429 looks identical.
         print(f"Claude API error: HTTP {r.status_code} - {r.text}")
         return None
 
