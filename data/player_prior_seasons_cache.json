@@ -27342,5 +27342,37 @@
       "shutouts": 1,
       "toi_seconds": 24959
     }
+  },
+  "8475413": {
+    "20252026": {
+      "games_played": 2,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 1,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    },
+    "20242025": {
+      "games_played": 52,
+      "points": 7,
+      "goals": 2,
+      "assists": 5,
+      "shots": 34,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    }
   }
 }
