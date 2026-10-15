@@ -1,8 +1,8 @@
 {
-  "date": "2026-10-14",
-  "date_label": "Wednesday, October 14, 2026",
+  "date": "2026-10-15",
+  "date_label": "Thursday, October 15, 2026",
   "week_start": "2026-10-12",
-  "generated": "2026-10-14 06:20 AM MT",
+  "generated": "2026-10-15 06:21 AM MT",
   "weekly_workload": {
     "teams": [
       {
@@ -183,223 +183,1222 @@
   },
   "games": [
     {
-      "away": "MTL",
-      "home": "WSH",
-      "away_full": "Montr\u00e9al Canadiens",
-      "home_full": "Washington Capitals",
-      "start_time_utc": "2026-10-14T23:30:00Z",
-      "away_games_this_week": 3,
+      "away": "BUF",
+      "home": "TOR",
+      "away_full": "Buffalo Sabres",
+      "home_full": "Toronto Maple Leafs",
+      "start_time_utc": "2026-10-15T23:00:00Z",
+      "away_games_this_week": 4,
       "home_games_this_week": 3,
-      "away_rest_days": 1,
-      "home_rest_days": 1,
-      "away_b2b": true,
-      "home_b2b": true,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
       "away_goalie": {
-        "goalie": "J. Fowler",
+        "goalie": "U. Luukkonen",
         "date": "2026-10-13",
-        "sv_pct": 0.908,
-        "gaa": 1.91,
+        "sv_pct": 0.85,
+        "gaa": 3.46,
         "stat_season": "current"
       },
       "home_goalie": {
-        "goalie": "L. Thompson",
+        "goalie": "A. Stolarz",
         "date": "2026-10-13",
-        "sv_pct": 0.904,
-        "gaa": 2.84,
+        "sv_pct": 0.875,
+        "gaa": 3.32,
         "stat_season": "current"
       },
       "away_usage_leaders": [
         {
-          "player": "Lane Hutson",
+          "player": "Owen Power",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 26.4,
+          "shots_per_game": 0.86,
+          "stat_season": "current"
+        },
+        {
+          "player": "Rasmus Dahlin",
           "position": "D",
           "games_played": 6,
-          "toi_per_game": 26.8,
-          "shots_per_game": 2.17,
+          "toi_per_game": 23.6,
+          "shots_per_game": 3.17,
           "stat_season": "current"
         },
         {
-          "player": "Mike Matheson",
+          "player": "Mattias Samuelsson",
           "position": "D",
-          "games_played": 5,
-          "toi_per_game": 24.2,
-          "shots_per_game": 1.8,
+          "games_played": 7,
+          "toi_per_game": 22.1,
+          "shots_per_game": 1.14,
           "stat_season": "current"
         },
         {
-          "player": "Nick Suzuki",
+          "player": "Tage Thompson",
           "position": "C",
-          "games_played": 6,
-          "toi_per_game": 22.3,
-          "shots_per_game": 2.83,
+          "games_played": 7,
+          "toi_per_game": 19.9,
+          "shots_per_game": 4.43,
           "stat_season": "current"
         },
         {
-          "player": "Noah Dobson",
-          "position": "D",
-          "games_played": 6,
-          "toi_per_game": 21.5,
-          "shots_per_game": 1.5,
-          "stat_season": "current"
-        },
-        {
-          "player": "Kaiden Guhle",
-          "position": "D",
-          "games_played": 2,
-          "toi_per_game": 20.5,
-          "shots_per_game": 1.0,
+          "player": "Zach Benson",
+          "position": "L",
+          "games_played": 7,
+          "toi_per_game": 19.5,
+          "shots_per_game": 1.57,
           "stat_season": "current"
         }
       ],
       "home_usage_leaders": [
         {
-          "player": "Jakob Chychrun",
+          "player": "Darren Raddysh",
           "position": "D",
-          "games_played": 6,
-          "toi_per_game": 24.7,
-          "shots_per_game": 3.17,
+          "games_played": 7,
+          "toi_per_game": 23.4,
+          "shots_per_game": 2.14,
           "stat_season": "current"
         },
         {
-          "player": "Martin Feh\u00e9rv\u00e1ry",
-          "position": "D",
-          "games_played": 6,
-          "toi_per_game": 22.3,
-          "shots_per_game": 0.17,
+          "player": "Auston Matthews",
+          "position": "C",
+          "games_played": 7,
+          "toi_per_game": 21.9,
+          "shots_per_game": 3.57,
           "stat_season": "current"
         },
         {
-          "player": "Vincent Desharnais",
-          "position": "D",
-          "games_played": 6,
-          "toi_per_game": 19.6,
-          "shots_per_game": 0.33,
-          "stat_season": "current"
-        },
-        {
-          "player": "Tom Wilson",
+          "player": "William Nylander",
           "position": "R",
-          "games_played": 6,
+          "games_played": 7,
+          "toi_per_game": 20.4,
+          "shots_per_game": 3.14,
+          "stat_season": "current"
+        },
+        {
+          "player": "Morgan Rielly",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 19.5,
+          "shots_per_game": 1.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Jake McCabe",
+          "position": "D",
+          "games_played": 7,
           "toi_per_game": 19.3,
-          "shots_per_game": 1.67,
-          "stat_season": "current"
-        },
-        {
-          "player": "Alex Tuch",
-          "position": "R",
-          "games_played": 6,
-          "toi_per_game": 18.9,
-          "shots_per_game": 2.67,
+          "shots_per_game": 0.86,
           "stat_season": "current"
         }
       ]
     },
     {
-      "away": "DAL",
-      "home": "COL",
-      "away_full": "Dallas Stars",
-      "home_full": "Colorado Avalanche",
-      "start_time_utc": "2026-10-15T00:30:00Z",
+      "away": "NYI",
+      "home": "OTT",
+      "away_full": "New York Islanders",
+      "home_full": "Ottawa Senators",
+      "start_time_utc": "2026-10-15T23:00:00Z",
       "away_games_this_week": 3,
-      "home_games_this_week": 3,
-      "away_rest_days": 1,
-      "home_rest_days": 1,
-      "away_b2b": true,
-      "home_b2b": true,
+      "home_games_this_week": 4,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
       "away_goalie": {
-        "goalie": "J. Oettinger",
+        "goalie": "I. Sorokin",
         "date": "2026-10-13",
-        "sv_pct": 0.944,
-        "gaa": 1.2,
+        "sv_pct": 0.934,
+        "gaa": 1.81,
         "stat_season": "current"
       },
       "home_goalie": {
-        "goalie": "M. Blackwood",
+        "goalie": "S. Ersson",
         "date": "2026-10-13",
-        "sv_pct": 0.879,
-        "gaa": 3.04,
+        "sv_pct": 0.829,
+        "gaa": 5.26,
         "stat_season": "current"
       },
       "away_usage_leaders": [
         {
-          "player": "Miro Heiskanen",
+          "player": "Matthew Schaefer",
           "position": "D",
           "games_played": 6,
-          "toi_per_game": 24.5,
-          "shots_per_game": 1.67,
+          "toi_per_game": 25.4,
+          "shots_per_game": 3.83,
           "stat_season": "current"
         },
         {
-          "player": "Thomas Harley",
+          "player": "Adam Pelech",
           "position": "D",
           "games_played": 6,
-          "toi_per_game": 23.9,
-          "shots_per_game": 1.67,
+          "toi_per_game": 20.5,
+          "shots_per_game": 1.17,
           "stat_season": "current"
         },
         {
-          "player": "Mikko Rantanen",
-          "position": "R",
-          "games_played": 6,
-          "toi_per_game": 20.6,
-          "shots_per_game": 2.17,
-          "stat_season": "current"
-        },
-        {
-          "player": "Esa Lindell",
+          "player": "Logan Stanley",
           "position": "D",
           "games_played": 6,
-          "toi_per_game": 20.3,
-          "shots_per_game": 0.5,
+          "toi_per_game": 19.6,
+          "shots_per_game": 0.67,
           "stat_season": "current"
         },
         {
-          "player": "Wyatt Johnston",
+          "player": "Bo Horvat",
           "position": "C",
-          "games_played": 5,
-          "toi_per_game": 20.0,
-          "shots_per_game": 2.2,
+          "games_played": 6,
+          "toi_per_game": 19.4,
+          "shots_per_game": 3.33,
+          "stat_season": "current"
+        },
+        {
+          "player": "Ryan Pulock",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 18.4,
+          "shots_per_game": 0.17,
           "stat_season": "current"
         }
       ],
       "home_usage_leaders": [
         {
-          "player": "Cale Makar",
+          "player": "Thomas Chabot",
           "position": "D",
-          "games_played": 5,
-          "toi_per_game": 21.5,
-          "shots_per_game": 2.6,
+          "games_played": 7,
+          "toi_per_game": 27.3,
+          "shots_per_game": 2.57,
           "stat_season": "current"
         },
         {
-          "player": "Martin Necas",
+          "player": "Jordan Spence",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 22.5,
+          "shots_per_game": 1.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Tim St\u00fctzle",
           "position": "C",
-          "games_played": 6,
-          "toi_per_game": 20.6,
-          "shots_per_game": 2.83,
+          "games_played": 7,
+          "toi_per_game": 21.8,
+          "shots_per_game": 1.86,
           "stat_season": "current"
         },
         {
-          "player": "Devon Toews",
+          "player": "Tyler Kleven",
           "position": "D",
+          "games_played": 7,
+          "toi_per_game": 21.0,
+          "shots_per_game": 1.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Shane Pinto",
+          "position": "C",
+          "games_played": 7,
+          "toi_per_game": 19.9,
+          "shots_per_game": 1.57,
+          "stat_season": "current"
+        }
+      ]
+    },
+    {
+      "away": "SEA",
+      "home": "TBL",
+      "away_full": "Seattle Kraken",
+      "home_full": "Tampa Bay Lightning",
+      "start_time_utc": "2026-10-15T23:00:00Z",
+      "away_games_this_week": 3,
+      "home_games_this_week": 3,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
+      "away_goalie": {
+        "goalie": "P. Grubauer",
+        "date": "2026-10-13",
+        "sv_pct": 0.918,
+        "gaa": 2.35,
+        "stat_season": "current"
+      },
+      "home_goalie": {
+        "goalie": "A. Vasilevskiy",
+        "date": "2026-10-13",
+        "sv_pct": 0.886,
+        "gaa": 2.45,
+        "stat_season": "current"
+      },
+      "away_usage_leaders": [
+        {
+          "player": "Brandon Montour",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 24.5,
+          "shots_per_game": 1.57,
+          "stat_season": "current"
+        },
+        {
+          "player": "Vince Dunn",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 22.7,
+          "shots_per_game": 1.71,
+          "stat_season": "current"
+        },
+        {
+          "player": "Ryker Evans",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 21.9,
+          "shots_per_game": 0.57,
+          "stat_season": "current"
+        },
+        {
+          "player": "Adam Larsson",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 21.8,
+          "shots_per_game": 1.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Chandler Stephenson",
+          "position": "C",
+          "games_played": 7,
+          "toi_per_game": 17.5,
+          "shots_per_game": 0.71,
+          "stat_season": "current"
+        }
+      ],
+      "home_usage_leaders": [
+        {
+          "player": "Brandon Hagel",
+          "position": "L",
           "games_played": 6,
-          "toi_per_game": 20.6,
+          "toi_per_game": 21.9,
+          "shots_per_game": 4.5,
+          "stat_season": "current"
+        },
+        {
+          "player": "Nikita Kucherov",
+          "position": "R",
+          "games_played": 6,
+          "toi_per_game": 21.8,
           "shots_per_game": 1.5,
           "stat_season": "current"
         },
         {
-          "player": "Nathan MacKinnon",
+          "player": "Jake Guentzel",
           "position": "C",
           "games_played": 6,
-          "toi_per_game": 19.8,
+          "toi_per_game": 20.5,
+          "shots_per_game": 2.67,
+          "stat_season": "current"
+        },
+        {
+          "player": "John Carlson",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 19.9,
+          "shots_per_game": 3.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Brayden Point",
+          "position": "C",
+          "games_played": 6,
+          "toi_per_game": 19.7,
+          "shots_per_game": 2.5,
+          "stat_season": "current"
+        }
+      ]
+    },
+    {
+      "away": "VAN",
+      "home": "FLA",
+      "away_full": "Vancouver Canucks",
+      "home_full": "Florida Panthers",
+      "start_time_utc": "2026-10-15T23:00:00Z",
+      "away_games_this_week": 3,
+      "home_games_this_week": 4,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
+      "away_goalie": {
+        "goalie": "L. Meril\u00e4inen",
+        "date": "2026-10-13",
+        "sv_pct": 0.926,
+        "gaa": 2.4,
+        "stat_season": "current"
+      },
+      "home_goalie": {
+        "goalie": "A. Schmid",
+        "date": "2026-10-13",
+        "sv_pct": 0.875,
+        "gaa": 3.72,
+        "stat_season": "current"
+      },
+      "away_usage_leaders": [
+        {
+          "player": "Filip Hronek",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 24.9,
+          "shots_per_game": 1.25,
+          "stat_season": "current"
+        },
+        {
+          "player": "Zeev Buium",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 21.7,
+          "shots_per_game": 0.75,
+          "stat_season": "current"
+        },
+        {
+          "player": "Tom Willander",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 21.6,
+          "shots_per_game": 0.75,
+          "stat_season": "current"
+        },
+        {
+          "player": "Elias Pettersson",
+          "position": "C",
+          "games_played": 8,
+          "toi_per_game": 19.5,
+          "shots_per_game": 1.75,
+          "stat_season": "current"
+        },
+        {
+          "player": "Jamie Oleksiak",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 18.4,
+          "shots_per_game": 0.43,
+          "stat_season": "current"
+        }
+      ],
+      "home_usage_leaders": [
+        {
+          "player": "Seth Jones",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 25.9,
+          "shots_per_game": 2.71,
+          "stat_season": "current"
+        },
+        {
+          "player": "Sam Reinhart",
+          "position": "C",
+          "games_played": 7,
+          "toi_per_game": 21.1,
+          "shots_per_game": 3.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Gustav Forsling",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.1,
+          "shots_per_game": 1.17,
+          "stat_season": "current"
+        },
+        {
+          "player": "Aaron Ekblad",
+          "position": "D",
+          "games_played": 5,
+          "toi_per_game": 21.0,
+          "shots_per_game": 1.6,
+          "stat_season": "current"
+        },
+        {
+          "player": "Matthew Tkachuk",
+          "position": "L",
+          "games_played": 7,
+          "toi_per_game": 20.1,
+          "shots_per_game": 2.0,
+          "stat_season": "current"
+        }
+      ]
+    },
+    {
+      "away": "NYR",
+      "home": "NJD",
+      "away_full": "New York Rangers",
+      "home_full": "New Jersey Devils",
+      "start_time_utc": "2026-10-15T23:00:00Z",
+      "away_games_this_week": 3,
+      "home_games_this_week": 4,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
+      "away_goalie": {
+        "goalie": "D. Garand",
+        "date": "2026-10-13",
+        "sv_pct": 0.951,
+        "gaa": 1.15,
+        "stat_season": "current"
+      },
+      "home_goalie": {
+        "goalie": "J. Allen",
+        "date": "2026-10-13",
+        "sv_pct": 0.885,
+        "gaa": 2.98,
+        "stat_season": "current"
+      },
+      "away_usage_leaders": [
+        {
+          "player": "Adam Fox",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 21.6,
+          "shots_per_game": 0.75,
+          "stat_season": "current"
+        },
+        {
+          "player": "Vladislav Gavrikov",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 21.1,
+          "shots_per_game": 1.38,
+          "stat_season": "current"
+        },
+        {
+          "player": "Mika Zibanejad",
+          "position": "C",
+          "games_played": 8,
+          "toi_per_game": 20.6,
+          "shots_per_game": 2.12,
+          "stat_season": "current"
+        },
+        {
+          "player": "Marcus Pettersson",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 20.6,
+          "shots_per_game": 0.75,
+          "stat_season": "current"
+        },
+        {
+          "player": "Sean Durzi",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 20.4,
+          "shots_per_game": 0.5,
+          "stat_season": "current"
+        }
+      ],
+      "home_usage_leaders": [
+        {
+          "player": "Luke Hughes",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 23.9,
+          "shots_per_game": 2.83,
+          "stat_season": "current"
+        },
+        {
+          "player": "Jack Hughes",
+          "position": "C",
+          "games_played": 6,
+          "toi_per_game": 21.5,
           "shots_per_game": 4.17,
           "stat_season": "current"
         },
         {
-          "player": "Nazem Kadri",
-          "position": "C",
+          "player": "Dougie Hamilton",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.4,
+          "shots_per_game": 3.33,
+          "stat_season": "current"
+        },
+        {
+          "player": "Brett Pesce",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.1,
+          "shots_per_game": 0.83,
+          "stat_season": "current"
+        },
+        {
+          "player": "Jonas Siegenthaler",
+          "position": "D",
           "games_played": 6,
           "toi_per_game": 19.2,
+          "shots_per_game": 0.33,
+          "stat_season": "current"
+        }
+      ]
+    },
+    {
+      "away": "PHI",
+      "home": "DET",
+      "away_full": "Philadelphia Flyers",
+      "home_full": "Detroit Red Wings",
+      "start_time_utc": "2026-10-15T23:30:00Z",
+      "away_games_this_week": 3,
+      "home_games_this_week": 3,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
+      "away_goalie": {
+        "goalie": "D. Vladar",
+        "date": "2026-10-13",
+        "sv_pct": 0.875,
+        "gaa": 4.21,
+        "stat_season": "current"
+      },
+      "home_goalie": {
+        "goalie": "J. Gibson",
+        "date": "2026-10-13",
+        "sv_pct": 0.863,
+        "gaa": 3.76,
+        "stat_season": "current"
+      },
+      "away_usage_leaders": [
+        {
+          "player": "Travis Sanheim",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 25.3,
+          "shots_per_game": 1.75,
+          "stat_season": "current"
+        },
+        {
+          "player": "Jamie Drysdale",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 22.1,
+          "shots_per_game": 1.12,
+          "stat_season": "current"
+        },
+        {
+          "player": "Cam York",
+          "position": "D",
+          "games_played": 5,
+          "toi_per_game": 21.8,
+          "shots_per_game": 1.2,
+          "stat_season": "current"
+        },
+        {
+          "player": "Nick Seeler",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 19.4,
+          "shots_per_game": 0.5,
+          "stat_season": "current"
+        },
+        {
+          "player": "Trevor Zegras",
+          "position": "C",
+          "games_played": 8,
+          "toi_per_game": 18.5,
+          "shots_per_game": 1.38,
+          "stat_season": "current"
+        }
+      ],
+      "home_usage_leaders": [
+        {
+          "player": "Moritz Seider",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 25.1,
+          "shots_per_game": 1.83,
+          "stat_season": "current"
+        },
+        {
+          "player": "Dylan Larkin",
+          "position": "C",
+          "games_played": 4,
+          "toi_per_game": 20.7,
+          "shots_per_game": 2.75,
+          "stat_season": "current"
+        },
+        {
+          "player": "Lucas Raymond",
+          "position": "L",
+          "games_played": 6,
+          "toi_per_game": 20.3,
           "shots_per_game": 3.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Alex DeBrincat",
+          "position": "R",
+          "games_played": 6,
+          "toi_per_game": 20.2,
+          "shots_per_game": 4.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Andrew Copp",
+          "position": "C",
+          "games_played": 6,
+          "toi_per_game": 19.6,
+          "shots_per_game": 1.83,
+          "stat_season": "current"
+        }
+      ]
+    },
+    {
+      "away": "WPG",
+      "home": "CHI",
+      "away_full": "Winnipeg Jets",
+      "home_full": "Chicago Blackhawks",
+      "start_time_utc": "2026-10-16T00:00:00Z",
+      "away_games_this_week": 3,
+      "home_games_this_week": 3,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
+      "away_goalie": {
+        "goalie": "S. Skinner",
+        "date": "2026-10-13",
+        "sv_pct": 0.917,
+        "gaa": 2.47,
+        "stat_season": "current"
+      },
+      "home_goalie": {
+        "goalie": "S. Knight",
+        "date": "2026-10-13",
+        "sv_pct": 0.885,
+        "gaa": 3.64,
+        "stat_season": "current"
+      },
+      "away_usage_leaders": [
+        {
+          "player": "Neal Pionk",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 23.4,
+          "shots_per_game": 1.5,
+          "stat_season": "current"
+        },
+        {
+          "player": "Dylan Samberg",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 22.5,
+          "shots_per_game": 1.33,
+          "stat_season": "current"
+        },
+        {
+          "player": "Dylan DeMelo",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.9,
+          "shots_per_game": 0.5,
+          "stat_season": "current"
+        },
+        {
+          "player": "Kyle Connor",
+          "position": "L",
+          "games_played": 6,
+          "toi_per_game": 20.7,
+          "shots_per_game": 5.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Mark Scheifele",
+          "position": "C",
+          "games_played": 6,
+          "toi_per_game": 20.5,
+          "shots_per_game": 1.67,
+          "stat_season": "current"
+        }
+      ],
+      "home_usage_leaders": [
+        {
+          "player": "Bowen Byram",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 24.7,
+          "shots_per_game": 0.83,
+          "stat_season": "current"
+        },
+        {
+          "player": "Connor Bedard",
+          "position": "C",
+          "games_played": 1,
+          "toi_per_game": 21.1,
+          "shots_per_game": 3.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Artyom Levshunov",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 20.1,
+          "shots_per_game": 1.43,
+          "stat_season": "current"
+        },
+        {
+          "player": "Alex Vlasic",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 19.9,
+          "shots_per_game": 0.57,
+          "stat_season": "current"
+        },
+        {
+          "player": "Patrick Kane",
+          "position": "R",
+          "games_played": 7,
+          "toi_per_game": 19.6,
+          "shots_per_game": 1.57,
+          "stat_season": "current"
+        }
+      ]
+    },
+    {
+      "away": "SJS",
+      "home": "NSH",
+      "away_full": "San Jose Sharks",
+      "home_full": "Nashville Predators",
+      "start_time_utc": "2026-10-16T00:00:00Z",
+      "away_games_this_week": 3,
+      "home_games_this_week": 3,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
+      "away_goalie": {
+        "goalie": "Y. Askarov",
+        "date": "2026-10-13",
+        "sv_pct": 0.848,
+        "gaa": 3.99,
+        "stat_season": "current"
+      },
+      "home_goalie": {
+        "goalie": "J. Saros",
+        "date": "2026-10-13",
+        "sv_pct": 0.897,
+        "gaa": 3.17,
+        "stat_season": "current"
+      },
+      "away_usage_leaders": [
+        {
+          "player": "Macklin Celebrini",
+          "position": "C",
+          "games_played": 4,
+          "toi_per_game": 21.6,
+          "shots_per_game": 4.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Jacob Trouba",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.3,
+          "shots_per_game": 1.83,
+          "stat_season": "current"
+        },
+        {
+          "player": "Darnell Nurse",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 20.6,
+          "shots_per_game": 2.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Alexander Wennberg",
+          "position": "C",
+          "games_played": 6,
+          "toi_per_game": 19.8,
+          "shots_per_game": 1.83,
+          "stat_season": "current"
+        },
+        {
+          "player": "Michael Kesselring",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 19.5,
+          "shots_per_game": 0.83,
+          "stat_season": "current"
+        }
+      ],
+      "home_usage_leaders": [
+        {
+          "player": "Roman Josi",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 25.2,
+          "shots_per_game": 1.67,
+          "stat_season": "current"
+        },
+        {
+          "player": "Ryan O'Reilly",
+          "position": "C",
+          "games_played": 6,
+          "toi_per_game": 21.8,
+          "shots_per_game": 1.67,
+          "stat_season": "current"
+        },
+        {
+          "player": "Filip Forsberg",
+          "position": "L",
+          "games_played": 6,
+          "toi_per_game": 20.9,
+          "shots_per_game": 2.67,
+          "stat_season": "current"
+        },
+        {
+          "player": "Brady Skjei",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 20.2,
+          "shots_per_game": 1.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Steven Stamkos",
+          "position": "C",
+          "games_played": 6,
+          "toi_per_game": 19.5,
+          "shots_per_game": 1.83,
+          "stat_season": "current"
+        }
+      ]
+    },
+    {
+      "away": "STL",
+      "home": "MIN",
+      "away_full": "St. Louis Blues",
+      "home_full": "Minnesota Wild",
+      "start_time_utc": "2026-10-16T00:00:00Z",
+      "away_games_this_week": 3,
+      "home_games_this_week": 4,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
+      "away_goalie": {
+        "goalie": "J. Hofer",
+        "date": "2026-10-13",
+        "sv_pct": 0.921,
+        "gaa": 1.76,
+        "stat_season": "current"
+      },
+      "home_goalie": {
+        "goalie": "C. Pickard",
+        "date": "2026-10-13",
+        "sv_pct": 0.8,
+        "gaa": 5.0,
+        "stat_season": "current"
+      },
+      "away_usage_leaders": [
+        {
+          "player": "Philip Broberg",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 22.6,
+          "shots_per_game": 1.5,
+          "stat_season": "current"
+        },
+        {
+          "player": "Cam Fowler",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 22.6,
+          "shots_per_game": 1.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Colton Parayko",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.2,
+          "shots_per_game": 1.33,
+          "stat_season": "current"
+        },
+        {
+          "player": "Robert Thomas",
+          "position": "C",
+          "games_played": 6,
+          "toi_per_game": 19.5,
+          "shots_per_game": 1.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Brandon Carlo",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 17.7,
+          "shots_per_game": 0.67,
+          "stat_season": "current"
+        }
+      ],
+      "home_usage_leaders": [
+        {
+          "player": "Quinn Hughes",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 26.9,
+          "shots_per_game": 2.71,
+          "stat_season": "current"
+        },
+        {
+          "player": "Jared Spurgeon",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 22.4,
+          "shots_per_game": 1.17,
+          "stat_season": "current"
+        },
+        {
+          "player": "Jonas Brodin",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 21.5,
+          "shots_per_game": 0.86,
+          "stat_season": "current"
+        },
+        {
+          "player": "Olli Maatta",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.4,
+          "shots_per_game": 0.5,
+          "stat_season": "current"
+        },
+        {
+          "player": "Matt Boldy",
+          "position": "L",
+          "games_played": 7,
+          "toi_per_game": 21.1,
+          "shots_per_game": 3.86,
+          "stat_season": "current"
+        }
+      ]
+    },
+    {
+      "away": "UTA",
+      "home": "EDM",
+      "away_full": "Utah Mammoth",
+      "home_full": "Edmonton Oilers",
+      "start_time_utc": "2026-10-16T01:00:00Z",
+      "away_games_this_week": 3,
+      "home_games_this_week": 3,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
+      "away_goalie": {
+        "goalie": "K. Vejmelka",
+        "date": "2026-10-13",
+        "sv_pct": 0.895,
+        "gaa": 2.46,
+        "stat_season": "current"
+      },
+      "home_goalie": {
+        "goalie": "D. Levi",
+        "date": "2026-10-13",
+        "sv_pct": 0.903,
+        "gaa": 2.76,
+        "stat_season": "current"
+      },
+      "away_usage_leaders": [
+        {
+          "player": "Mikhail Sergachev",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 22.3,
+          "shots_per_game": 2.43,
+          "stat_season": "current"
+        },
+        {
+          "player": "Nate Schmidt",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 20.8,
+          "shots_per_game": 1.29,
+          "stat_season": "current"
+        },
+        {
+          "player": "MacKenzie Weegar",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 20.5,
+          "shots_per_game": 1.86,
+          "stat_season": "current"
+        },
+        {
+          "player": "John Marino",
+          "position": "D",
+          "games_played": 7,
+          "toi_per_game": 20.2,
+          "shots_per_game": 0.86,
+          "stat_season": "current"
+        },
+        {
+          "player": "Logan Cooley",
+          "position": "C",
+          "games_played": 7,
+          "toi_per_game": 18.5,
+          "shots_per_game": 0.71,
+          "stat_season": "current"
+        }
+      ],
+      "home_usage_leaders": [
+        {
+          "player": "Evan Bouchard",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 25.1,
+          "shots_per_game": 3.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Connor McDavid",
+          "position": "C",
+          "games_played": 6,
+          "toi_per_game": 23.6,
+          "shots_per_game": 2.33,
+          "stat_season": "current"
+        },
+        {
+          "player": "Ryan Shea",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 23.1,
+          "shots_per_game": 0.67,
+          "stat_season": "current"
+        },
+        {
+          "player": "Connor Murphy",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.8,
+          "shots_per_game": 0.5,
+          "stat_season": "current"
+        },
+        {
+          "player": "Mattias Ekholm",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.7,
+          "shots_per_game": 0.83,
+          "stat_season": "current"
+        }
+      ]
+    },
+    {
+      "away": "CGY",
+      "home": "VGK",
+      "away_full": "Calgary Flames",
+      "home_full": "Vegas Golden Knights",
+      "start_time_utc": "2026-10-16T02:00:00Z",
+      "away_games_this_week": 3,
+      "home_games_this_week": 4,
+      "away_rest_days": 2,
+      "home_rest_days": 2,
+      "away_b2b": false,
+      "home_b2b": false,
+      "away_goalie": {
+        "goalie": "D. Wolf",
+        "date": "2026-10-13",
+        "sv_pct": 0.839,
+        "gaa": 4.56,
+        "stat_season": "current"
+      },
+      "home_goalie": {
+        "goalie": "A. Hill",
+        "date": "2026-10-13",
+        "sv_pct": 0.903,
+        "gaa": 2.27,
+        "stat_season": "current"
+      },
+      "away_usage_leaders": [
+        {
+          "player": "Kevin Bahl",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.7,
+          "shots_per_game": 1.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Simon Nemec",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 21.0,
+          "shots_per_game": 1.67,
+          "stat_season": "current"
+        },
+        {
+          "player": "Zach Whitecloud",
+          "position": "D",
+          "games_played": 6,
+          "toi_per_game": 20.8,
+          "shots_per_game": 0.67,
+          "stat_season": "current"
+        },
+        {
+          "player": "Yan Kuznetsov",
+          "position": "D",
+          "games_played": 5,
+          "toi_per_game": 18.7,
+          "shots_per_game": 1.6,
+          "stat_season": "current"
+        },
+        {
+          "player": "Mikael Backlund",
+          "position": "C",
+          "games_played": 6,
+          "toi_per_game": 18.3,
+          "shots_per_game": 3.5,
+          "stat_season": "current"
+        }
+      ],
+      "home_usage_leaders": [
+        {
+          "player": "Shea Theodore",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 21.8,
+          "shots_per_game": 2.25,
+          "stat_season": "current"
+        },
+        {
+          "player": "Jack Eichel",
+          "position": "C",
+          "games_played": 8,
+          "toi_per_game": 20.9,
+          "shots_per_game": 3.0,
+          "stat_season": "current"
+        },
+        {
+          "player": "Mitch Marner",
+          "position": "R",
+          "games_played": 8,
+          "toi_per_game": 20.4,
+          "shots_per_game": 2.62,
+          "stat_season": "current"
+        },
+        {
+          "player": "Noah Hanifin",
+          "position": "D",
+          "games_played": 8,
+          "toi_per_game": 20.3,
+          "shots_per_game": 1.25,
+          "stat_season": "current"
+        },
+        {
+          "player": "Mark Stone",
+          "position": "R",
+          "games_played": 8,
+          "toi_per_game": 19.1,
+          "shots_per_game": 2.0,
           "stat_season": "current"
         }
       ]
