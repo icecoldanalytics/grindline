@@ -418,5 +418,13 @@
   "2026-10-13|BOS@SJS": {
     "away_starter": "J. Swayman",
     "home_starter": "Y. Askarov"
+  },
+  "2026-10-14|MTL@WSH": {
+    "away_starter": "J. Dobes",
+    "home_starter": "C. Lindgren"
+  },
+  "2026-10-14|DAL@COL": {
+    "away_starter": "C. DeSmith",
+    "home_starter": "S. Wedgewood"
   }
 }
