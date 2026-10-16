@@ -1193,9 +1193,9 @@
       "side": "Yes",
       "price": "+135",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-15",
@@ -1206,9 +1206,9 @@
       "side": "Over",
       "price": "+110",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-15",
@@ -1219,9 +1219,9 @@
       "side": "Over",
       "price": "+100",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-15",
@@ -1232,9 +1232,9 @@
       "side": "Over",
       "price": "+107",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-10-15",
@@ -1245,9 +1245,9 @@
       "side": "Yes",
       "price": "+165",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-15",
@@ -1258,9 +1258,9 @@
       "side": "Over",
       "price": "-105",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-10-15",
@@ -1271,9 +1271,9 @@
       "side": "Over",
       "price": "-160",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-10-15",
@@ -1297,6 +1297,97 @@
       "side": "Over",
       "price": "-164",
       "book": "fanduel",
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
+    },
+    {
+      "date": "2026-10-16",
+      "game": "Pittsburgh Penguins @ Colorado Avalanche",
+      "player": "Cale Makar",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-140",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-16",
+      "game": "Boston Bruins @ Anaheim Ducks",
+      "player": "David Pastrnak",
+      "market": "player_goal_scorer_anytime",
+      "line": "N/A",
+      "side": "Yes",
+      "price": "+150",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-16",
+      "game": "Boston Bruins @ Anaheim Ducks",
+      "player": "Charlie McAvoy",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+115",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-16",
+      "game": "Pittsburgh Penguins @ Colorado Avalanche",
+      "player": "Artturi Lehkonen",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-150",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-16",
+      "game": "Pittsburgh Penguins @ Colorado Avalanche",
+      "player": "Bryan Rust",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+132",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-16",
+      "game": "Boston Bruins @ Anaheim Ducks",
+      "player": "Cutter Gauthier",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "-115",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-16",
+      "game": "Boston Bruins @ Anaheim Ducks",
+      "player": "Beckett Sennecke",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-115",
+      "book": "betmgm",
       "graded": false,
       "actual_stat": null,
       "hit": null
