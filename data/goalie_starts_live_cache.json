@@ -426,5 +426,49 @@
   "2026-10-14|DAL@COL": {
     "away_starter": "C. DeSmith",
     "home_starter": "S. Wedgewood"
+  },
+  "2026-10-15|BUF@TOR": {
+    "away_starter": "U. Luukkonen",
+    "home_starter": "S. Bobrovsky"
+  },
+  "2026-10-15|NYI@OTT": {
+    "away_starter": "S. Varlamov",
+    "home_starter": "L. Ullmark"
+  },
+  "2026-10-15|SEA@TBL": {
+    "away_starter": "P. Grubauer",
+    "home_starter": "A. Vasilevskiy"
+  },
+  "2026-10-15|VAN@FLA": {
+    "away_starter": "L. Meril\u00e4inen",
+    "home_starter": "A. Schmid"
+  },
+  "2026-10-15|NYR@NJD": {
+    "away_starter": "D. Garand",
+    "home_starter": "N. Daws"
+  },
+  "2026-10-15|PHI@DET": {
+    "away_starter": "J. Woll",
+    "home_starter": "D. Tarasov"
+  },
+  "2026-10-15|WPG@CHI": {
+    "away_starter": "S. Skinner",
+    "home_starter": "S. Knight"
+  },
+  "2026-10-15|SJS@NSH": {
+    "away_starter": "A. Nedeljkovic",
+    "home_starter": "J. Saros"
+  },
+  "2026-10-15|STL@MIN": {
+    "away_starter": "J. Hofer",
+    "home_starter": "J. Wallstedt"
+  },
+  "2026-10-15|UTA@EDM": {
+    "away_starter": "K. Vejmelka",
+    "home_starter": "D. Levi"
+  },
+  "2026-10-15|CGY@VGK": {
+    "away_starter": "D. Wolf",
+    "home_starter": "C. Hart"
   }
 }
