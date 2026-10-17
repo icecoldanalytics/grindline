@@ -306,6 +306,34 @@
       "away_score": 5,
       "home_score": 2,
       "fade_won": false
+    },
+    {
+      "date": "2026-10-17",
+      "away": "BOS",
+      "home": "LAK",
+      "away_rest": 1,
+      "home_rest": 4,
+      "signal": "emerging_edge",
+      "home_ml_avg": -137.4,
+      "home_ml_best": -133,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-17",
+      "away": "PIT",
+      "home": "VGK",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "emerging_edge",
+      "home_ml_avg": -238.8,
+      "home_ml_best": -235,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
