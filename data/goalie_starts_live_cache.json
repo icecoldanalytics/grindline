@@ -470,5 +470,13 @@
   "2026-10-15|CGY@VGK": {
     "away_starter": "D. Wolf",
     "home_starter": "C. Hart"
+  },
+  "2026-10-16|PIT@COL": {
+    "away_starter": "A. Silovs",
+    "home_starter": "M. Blackwood"
+  },
+  "2026-10-16|BOS@ANA": {
+    "away_starter": "M. DiPietro",
+    "home_starter": "L. Dostal"
   }
 }
