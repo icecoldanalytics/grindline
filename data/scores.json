@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "updated": "06:57 PM MT",
+  "updated": "10:18 PM MT",
   "games": [
     {
       "away": "NJD",
@@ -51,33 +51,33 @@
       "home": "TOR",
       "away_city": "New York",
       "home_city": "Toronto",
-      "away_score": 2,
-      "home_score": 0,
-      "status": "live",
-      "display": "2nd \u00b7 06:44",
-      "period_label": "2nd"
+      "away_score": 4,
+      "home_score": 1,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "BUF",
       "home": "MTL",
       "away_city": "Buffalo",
       "home_city": "Montr\u00e9al",
-      "away_score": 2,
-      "home_score": 3,
-      "status": "live",
-      "display": "2nd \u00b7 08:39",
-      "period_label": "2nd"
+      "away_score": 3,
+      "home_score": 4,
+      "status": "final",
+      "display": "Final/OT",
+      "period_label": "OT"
     },
     {
       "away": "SJS",
       "home": "DET",
       "away_city": "San Jose",
       "home_city": "Detroit",
-      "away_score": 2,
-      "home_score": 1,
-      "status": "live",
-      "display": "2nd \u00b7 07:24",
-      "period_label": "2nd"
+      "away_score": 3,
+      "home_score": 4,
+      "status": "final",
+      "display": "Final/SO",
+      "period_label": "SO"
     },
     {
       "away": "OTT",
@@ -85,10 +85,10 @@
       "away_city": "Ottawa",
       "home_city": "Philadelphia",
       "away_score": 1,
-      "home_score": 2,
-      "status": "live",
-      "display": "2nd \u00b7 11:59",
-      "period_label": "2nd"
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "NYR",
@@ -96,65 +96,65 @@
       "away_city": "New York",
       "home_city": "Columbus",
       "away_score": 0,
-      "home_score": 0,
-      "status": "live",
-      "display": "2nd \u00b7 05:34",
-      "period_label": "2nd"
+      "home_score": 1,
+      "status": "final",
+      "display": "Final/OT",
+      "period_label": "OT"
     },
     {
       "away": "DAL",
       "home": "CHI",
       "away_city": "Dallas",
       "home_city": "Chicago",
-      "away_score": 2,
+      "away_score": 4,
       "home_score": 0,
-      "status": "live",
-      "display": "2nd \u00b7 06:00",
-      "period_label": "2nd"
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "STL",
       "home": "NSH",
       "away_city": "St. Louis",
       "home_city": "Nashville",
-      "away_score": 1,
-      "home_score": 2,
-      "status": "live",
-      "display": "1st \u00b7 06:10",
-      "period_label": "1st"
+      "away_score": 2,
+      "home_score": 5,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "BOS",
       "home": "LAK",
       "away_city": "Boston",
       "home_city": "Los Angeles",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 4,
+      "home_score": 1,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "EDM",
       "home": "UTA",
       "away_city": "Edmonton",
       "home_city": "Utah",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 5,
+      "home_score": 2,
+      "status": "live",
+      "display": "3rd \u00b7 13:14",
+      "period_label": "3rd"
     },
     {
       "away": "PIT",
       "home": "VGK",
       "away_city": "Pittsburgh",
       "home_city": "Vegas",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 5,
+      "status": "live",
+      "display": "3rd \u00b7 10:13",
+      "period_label": "3rd"
     }
   ]
 }
