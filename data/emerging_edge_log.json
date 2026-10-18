@@ -334,6 +334,34 @@
       "graded": false,
       "away_starter": null,
       "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-18",
+      "away": "CAR",
+      "home": "CGY",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": 181.4,
+      "home_ml_best": 187,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-18",
+      "away": "CBJ",
+      "home": "MIN",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -186.2,
+      "home_ml_best": -180,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
