@@ -1401,9 +1401,9 @@
       "side": "Over",
       "price": "-205",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-17",
@@ -1414,9 +1414,9 @@
       "side": "Yes",
       "price": "+225",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-17",
@@ -1427,9 +1427,9 @@
       "side": "Over",
       "price": "-185",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-17",
@@ -1440,9 +1440,9 @@
       "side": "Over",
       "price": "-125",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-17",
@@ -1453,9 +1453,9 @@
       "side": "Over",
       "price": "+100",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-10-17",
@@ -1466,9 +1466,9 @@
       "side": "Over",
       "price": "-130",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 5,
+      "hit": true
     },
     {
       "date": "2026-10-17",
@@ -1479,9 +1479,9 @@
       "side": "Over",
       "price": "-165",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-17",
@@ -1492,6 +1492,110 @@
       "side": "Over",
       "price": "-125",
       "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-18",
+      "game": "Columbus Blue Jackets @ Minnesota Wild",
+      "player": "Adam Fantilli",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-120",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-18",
+      "game": "Carolina Hurricanes @ Calgary Flames",
+      "player": "Andrei Svechnikov",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-175",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-18",
+      "game": "Columbus Blue Jackets @ Minnesota Wild",
+      "player": "Charlie Coyle",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+120",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-18",
+      "game": "Carolina Hurricanes @ Calgary Flames",
+      "player": "Jaccob Slavin",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-101",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-18",
+      "game": "Carolina Hurricanes @ Calgary Flames",
+      "player": "Bradly Nadeau",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-102",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-18",
+      "game": "Columbus Blue Jackets @ Minnesota Wild",
+      "player": "Blake Coleman",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-149",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-18",
+      "game": "Carolina Hurricanes @ Calgary Flames",
+      "player": "Joel Farabee",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+110",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-18",
+      "game": "Columbus Blue Jackets @ Minnesota Wild",
+      "player": "Adam Fantilli",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-105",
+      "book": "draftkings",
       "graded": false,
       "actual_stat": null,
       "hit": null
