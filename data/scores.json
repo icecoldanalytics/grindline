@@ -1,6 +1,6 @@
 {
   "date": "2026-10-18",
-  "updated": "07:09 PM MT",
+  "updated": "10:27 PM MT",
   "games": [
     {
       "away": "CBJ",
@@ -18,11 +18,11 @@
       "home": "CGY",
       "away_city": "Carolina",
       "home_city": "Calgary",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "live",
-      "display": "2nd \u00b7 14:31",
-      "period_label": "2nd"
+      "away_score": 2,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     }
   ]
 }
