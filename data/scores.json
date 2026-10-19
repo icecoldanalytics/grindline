@@ -1,28 +1,50 @@
 {
-  "date": "2026-10-18",
-  "updated": "10:27 PM MT",
+  "date": "2026-10-19",
+  "updated": "04:12 AM MT",
   "games": [
     {
-      "away": "CBJ",
-      "home": "MIN",
-      "away_city": "Columbus",
-      "home_city": "Minnesota",
-      "away_score": 1,
-      "home_score": 2,
-      "status": "final",
-      "display": "Final",
-      "period_label": "3rd"
+      "away": "ANA",
+      "home": "NYR",
+      "away_city": "Anaheim",
+      "home_city": "New York",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
     },
     {
-      "away": "CAR",
-      "home": "CGY",
-      "away_city": "Carolina",
-      "home_city": "Calgary",
-      "away_score": 2,
-      "home_score": 3,
-      "status": "final",
-      "display": "Final",
-      "period_label": "3rd"
+      "away": "COL",
+      "home": "PHI",
+      "away_city": "Colorado",
+      "home_city": "Philadelphia",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
+    },
+    {
+      "away": "SJS",
+      "home": "TOR",
+      "away_city": "San Jose",
+      "home_city": "Toronto",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
+    },
+    {
+      "away": "PIT",
+      "home": "UTA",
+      "away_city": "Pittsburgh",
+      "home_city": "Utah",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
     }
   ]
 }
