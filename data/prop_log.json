@@ -1505,9 +1505,9 @@
       "side": "Over",
       "price": "-120",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-18",
@@ -1518,9 +1518,9 @@
       "side": "Over",
       "price": "-175",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-18",
@@ -1531,9 +1531,9 @@
       "side": "Over",
       "price": "+120",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-18",
@@ -1544,9 +1544,9 @@
       "side": "Over",
       "price": "-101",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-10-18",
@@ -1557,9 +1557,9 @@
       "side": "Over",
       "price": "-102",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-10-18",
@@ -1570,9 +1570,9 @@
       "side": "Over",
       "price": "-149",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-10-18",
@@ -1583,9 +1583,9 @@
       "side": "Over",
       "price": "+110",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-18",
@@ -1595,6 +1595,110 @@
       "line": "2.5",
       "side": "Over",
       "price": "-105",
+      "book": "draftkings",
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
+    },
+    {
+      "date": "2026-10-19",
+      "game": "San Jose Sharks @ Toronto Maple Leafs",
+      "player": "Auston Matthews",
+      "market": "player_points",
+      "line": "1.5",
+      "side": "Over",
+      "price": "+182",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-19",
+      "game": "San Jose Sharks @ Toronto Maple Leafs",
+      "player": "Auston Matthews",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+125",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-19",
+      "game": "Anaheim Ducks @ New York Rangers",
+      "player": "Adam Fox",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-108",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-19",
+      "game": "Colorado Avalanche @ Philadelphia Flyers",
+      "player": "Artturi Lehkonen",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-132",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-19",
+      "game": "Colorado Avalanche @ Philadelphia Flyers",
+      "player": "Brock Nelson",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+110",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-19",
+      "game": "San Jose Sharks @ Toronto Maple Leafs",
+      "player": "Alex Wennberg",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+115",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-19",
+      "game": "San Jose Sharks @ Toronto Maple Leafs",
+      "player": "Darnell Nurse",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-137",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-19",
+      "game": "Pittsburgh Penguins @ Utah Mammoth",
+      "player": "Anders Lee",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-120",
       "book": "draftkings",
       "graded": false,
       "actual_stat": null,

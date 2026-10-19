@@ -1,15 +1,15 @@
 {
-  "total_logged": 123,
-  "total_graded": 102,
+  "total_logged": 131,
+  "total_graded": 110,
   "pending": 21,
   "overall": {
-    "n": 102,
-    "wins": 51,
+    "n": 110,
+    "wins": 55,
     "hit_rate": 50.0,
-    "roi": -2.1,
+    "roi": -2.5,
     "roi_ci95": [
-      -23.6,
-      14.7
+      -22.9,
+      13.9
     ],
     "sample_ok": true
   },
@@ -37,24 +37,24 @@
       "sample_ok": false
     },
     "player_points": {
-      "n": 26,
-      "wins": 12,
-      "hit_rate": 46.2,
-      "roi": -15.7,
+      "n": 30,
+      "wins": 14,
+      "hit_rate": 46.7,
+      "roi": -15.4,
       "roi_ci95": [
-        -51.4,
-        22.5
+        -47.3,
+        21.8
       ],
       "sample_ok": true
     },
     "player_shots_on_goal": {
-      "n": 49,
-      "wins": 29,
-      "hit_rate": 59.2,
-      "roi": 12.5,
+      "n": 53,
+      "wins": 31,
+      "hit_rate": 58.5,
+      "roi": 11.5,
       "roi_ci95": [
-        -17.7,
-        34.3
+        -17.9,
+        32.0
       ],
       "sample_ok": true
     }
