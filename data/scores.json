@@ -1,17 +1,17 @@
 {
   "date": "2026-10-18",
-  "updated": "02:54 AM MT",
+  "updated": "07:09 PM MT",
   "games": [
     {
       "away": "CBJ",
       "home": "MIN",
       "away_city": "Columbus",
       "home_city": "Minnesota",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 1,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "CAR",
@@ -20,9 +20,9 @@
       "home_city": "Calgary",
       "away_score": 0,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "live",
+      "display": "2nd \u00b7 14:31",
+      "period_label": "2nd"
     }
   ]
 }
