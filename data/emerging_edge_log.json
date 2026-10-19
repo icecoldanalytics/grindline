@@ -351,9 +351,12 @@
       "home_ml_avg": 181.4,
       "home_ml_best": 187,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "B. Bussi",
+      "goalie_bucket": "excluded",
+      "away_score": 2,
+      "home_score": 3,
+      "fade_won": true
     },
     {
       "date": "2026-10-18",
@@ -365,9 +368,12 @@
       "home_ml_avg": -186.2,
       "home_ml_best": -180,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "C. Talbot",
+      "goalie_bucket": "excluded",
+      "away_score": 1,
+      "home_score": 2,
+      "fade_won": true
     }
   ]
 }

@@ -534,5 +534,13 @@
   "2026-10-17|PIT@VGK": {
     "away_starter": "S. Murashov",
     "home_starter": "A. Hill"
+  },
+  "2026-10-18|CBJ@MIN": {
+    "away_starter": "C. Talbot",
+    "home_starter": "J. Wallstedt"
+  },
+  "2026-10-18|CAR@CGY": {
+    "away_starter": "B. Bussi",
+    "home_starter": "D. Cooley"
   }
 }
