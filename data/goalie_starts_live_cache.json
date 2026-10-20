@@ -542,5 +542,21 @@
   "2026-10-18|CAR@CGY": {
     "away_starter": "B. Bussi",
     "home_starter": "D. Cooley"
+  },
+  "2026-10-19|ANA@NYR": {
+    "away_starter": "V. Husso",
+    "home_starter": "D. Garand"
+  },
+  "2026-10-19|COL@PHI": {
+    "away_starter": "M. Blackwood",
+    "home_starter": "J. Woll"
+  },
+  "2026-10-19|SJS@TOR": {
+    "away_starter": "Y. Askarov",
+    "home_starter": "S. Bobrovsky"
+  },
+  "2026-10-19|PIT@UTA": {
+    "away_starter": "A. Silovs",
+    "home_starter": "S. Cossa"
   }
 }
