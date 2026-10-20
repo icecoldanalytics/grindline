@@ -374,6 +374,62 @@
       "away_score": 1,
       "home_score": 2,
       "fade_won": true
+    },
+    {
+      "date": "2026-10-20",
+      "away": "ANA",
+      "home": "NYI",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -153.7,
+      "home_ml_best": -150,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-20",
+      "away": "COL",
+      "home": "NJD",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -109.0,
+      "home_ml_best": -106,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-20",
+      "away": "SJS",
+      "home": "MTL",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -205.0,
+      "home_ml_best": -195,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-20",
+      "away": "TOR",
+      "home": "CBJ",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "emerging_edge",
+      "home_ml_avg": -155.7,
+      "home_ml_best": -150,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
