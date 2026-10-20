@@ -1609,9 +1609,9 @@
       "side": "Over",
       "price": "+182",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-10-19",
@@ -1622,9 +1622,9 @@
       "side": "Yes",
       "price": "+125",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-19",
@@ -1635,9 +1635,9 @@
       "side": "Over",
       "price": "-108",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-19",
@@ -1648,9 +1648,9 @@
       "side": "Over",
       "price": "-132",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-10-19",
@@ -1661,9 +1661,9 @@
       "side": "Over",
       "price": "+110",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-19",
@@ -1674,9 +1674,9 @@
       "side": "Over",
       "price": "+115",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-19",
@@ -1687,9 +1687,9 @@
       "side": "Over",
       "price": "-137",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-10-19",
@@ -1699,6 +1699,97 @@
       "line": "1.5",
       "side": "Over",
       "price": "-120",
+      "book": "draftkings",
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
+    },
+    {
+      "date": "2026-10-20",
+      "game": "Toronto Maple Leafs @ Columbus Blue Jackets",
+      "player": "Adam Fantilli",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+110",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-20",
+      "game": "Boston Bruins @ Dallas Stars",
+      "player": "Charlie McAvoy",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+105",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-20",
+      "game": "Carolina Hurricanes @ Vancouver Canucks",
+      "player": "Andrei Svechnikov",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-135",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-20",
+      "game": "Los Angeles Kings @ Washington Capitals",
+      "player": "Adrian Kempe",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-128",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-20",
+      "game": "Tampa Bay Lightning @ Vegas Golden Knights",
+      "player": "Anthony Cirelli",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+250",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-20",
+      "game": "San Jose Sharks @ Montr\u00e9al Canadiens",
+      "player": "Alex Newhook",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-137",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-20",
+      "game": "Colorado Avalanche @ New Jersey Devils",
+      "player": "Arseny Gritsyuk",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+125",
       "book": "draftkings",
       "graded": false,
       "actual_stat": null,
