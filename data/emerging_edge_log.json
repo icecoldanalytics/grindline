@@ -385,9 +385,12 @@
       "home_ml_avg": -153.7,
       "home_ml_best": -150,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "L. Dostal",
+      "goalie_bucket": "excluded",
+      "away_score": 2,
+      "home_score": 3,
+      "fade_won": true
     },
     {
       "date": "2026-10-20",
@@ -399,9 +402,12 @@
       "home_ml_avg": -109.0,
       "home_ml_best": -106,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "S. Wedgewood",
+      "goalie_bucket": "excluded",
+      "away_score": 3,
+      "home_score": 4,
+      "fade_won": true
     },
     {
       "date": "2026-10-20",
@@ -413,9 +419,12 @@
       "home_ml_avg": -205.0,
       "home_ml_best": -195,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "A. Nedeljkovic",
+      "goalie_bucket": "excluded",
+      "away_score": 4,
+      "home_score": 3,
+      "fade_won": false
     },
     {
       "date": "2026-10-20",
@@ -427,9 +436,12 @@
       "home_ml_avg": -155.7,
       "home_ml_best": -150,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "A. Stolarz",
+      "goalie_bucket": "backup",
+      "away_score": 6,
+      "home_score": 2,
+      "fade_won": false
     }
   ]
 }

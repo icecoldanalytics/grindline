@@ -1,23 +1,23 @@
 {
-  "generated": "2026-10-20 06:05 AM MT",
+  "generated": "2026-10-21 06:05 AM MT",
   "season": "2025-26",
-  "through_date": "2026-10-17",
+  "through_date": "2026-10-20",
   "pricing": {
     "method": "Real home moneyline, average across every US bookmaker the Odds API returns for that game (typically 9-11 books, not a fixed list \u2014 see rest_edge.home_ml_average), captured by the morning capture job. Never a fixed assumed time like 7 AM \u2014 each game's exact capture time is logged and shown per game in the results below.",
     "assumed_odds_used": false
   },
   "rest_edge": {
-    "games": 148,
+    "games": 149,
     "wins": 97,
-    "losses": 51,
-    "win_rate": 65.5,
-    "roi": 11.8,
-    "avg_odds": -120.4,
-    "breakeven_rate": 54.6,
-    "sd_above_breakeven": 2.7,
+    "losses": 52,
+    "win_rate": 65.1,
+    "roi": 11.1,
+    "avg_odds": -120.7,
+    "breakeven_rate": 54.7,
+    "sd_above_breakeven": 2.5,
     "sample_ok": true,
     "label": "Away B2B + Home Rested 2 Days",
-    "streak": "4W",
+    "streak": "1L",
     "best_month": "Feb 2026",
     "monthly": [
       {
@@ -65,8 +65,8 @@
       {
         "month": "2026-10",
         "wins": 9,
-        "losses": 3,
-        "roi": 24.5
+        "losses": 4,
+        "roi": 14.9
       }
     ],
     "cumulative": [
@@ -661,6 +661,10 @@
       {
         "date": "2026-10-17",
         "units": 17.51
+      },
+      {
+        "date": "2026-10-20",
+        "units": 16.51
       }
     ],
     "status": "Active"
@@ -701,33 +705,24 @@
       "cumulative": []
     },
     "backup_comparison": {
-      "games": 0,
+      "games": 1,
       "wins": 0,
-      "losses": 0,
+      "losses": 1,
       "win_rate": 0.0,
-      "roi": 0.0,
-      "avg_odds": 0,
-      "breakeven_rate": 0.0,
-      "sd_above_breakeven": 0.0,
+      "roi": -100.0,
+      "avg_odds": -155.7,
+      "breakeven_rate": 60.9,
+      "sd_above_breakeven": -1.2,
       "sample_ok": false
     },
-    "excluded_pre_min_games": 22,
-    "pending_goalie_resolution": 4,
+    "excluded_pre_min_games": 25,
+    "pending_goalie_resolution": 0,
     "last5": []
   },
   "summary": {
-    "total_rest_edge_games": 148,
+    "total_rest_edge_games": 149,
     "cancelled_both_b2b": 0,
     "last5_rest_edge": [
-      {
-        "date": "2026-10-10",
-        "away": "ANA",
-        "home": "CGY",
-        "score": "4-2",
-        "odds": 103.2,
-        "fade_won": false,
-        "price_time": "6:00 AM MT"
-      },
       {
         "date": "2026-10-10",
         "away": "CBJ",
@@ -762,6 +757,15 @@
         "score": "2-6",
         "odds": -238.8,
         "fade_won": true,
+        "price_time": "6:00 AM MT"
+      },
+      {
+        "date": "2026-10-20",
+        "away": "TOR",
+        "home": "CBJ",
+        "score": "6-2",
+        "odds": -155.7,
+        "fade_won": false,
         "price_time": "6:00 AM MT"
       }
     ]
