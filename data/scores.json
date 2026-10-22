@@ -1,17 +1,17 @@
 {
   "date": "2026-10-21",
-  "updated": "07:27 PM MT",
+  "updated": "10:28 PM MT",
   "games": [
     {
       "away": "PHI",
       "home": "BUF",
       "away_city": "Philadelphia",
       "home_city": "Buffalo",
-      "away_score": 2,
+      "away_score": 3,
       "home_score": 1,
-      "status": "live",
-      "display": "2nd \u00b7 02:27",
-      "period_label": "2nd"
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "FLA",
@@ -19,10 +19,10 @@
       "away_city": "Florida",
       "home_city": "Ottawa",
       "away_score": 1,
-      "home_score": 3,
-      "status": "live",
-      "display": "2nd \u00b7 15:12",
-      "period_label": "2nd"
+      "home_score": 5,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     }
   ]
 }
