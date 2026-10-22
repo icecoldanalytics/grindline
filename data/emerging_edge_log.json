@@ -442,6 +442,20 @@
       "away_score": 6,
       "home_score": 2,
       "fade_won": false
+    },
+    {
+      "date": "2026-10-22",
+      "away": "FLA",
+      "home": "PIT",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -113.6,
+      "home_ml_best": -110,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
