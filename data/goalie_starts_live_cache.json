@@ -602,5 +602,13 @@
   "2026-10-20|TBL@VGK": {
     "away_starter": "A. Vasilevskiy",
     "home_starter": "C. Hart"
+  },
+  "2026-10-21|PHI@BUF": {
+    "away_starter": "D. Vladar",
+    "home_starter": "U. Luukkonen"
+  },
+  "2026-10-21|FLA@OTT": {
+    "away_starter": "A. Schmid",
+    "home_starter": "L. Ullmark"
   }
 }
