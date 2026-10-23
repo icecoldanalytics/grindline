@@ -610,5 +610,53 @@
   "2026-10-21|FLA@OTT": {
     "away_starter": "A. Schmid",
     "home_starter": "L. Ullmark"
+  },
+  "2026-10-22|NSH@BOS": {
+    "away_starter": "J. Annunen",
+    "home_starter": "M. DiPietro"
+  },
+  "2026-10-22|NYR@TOR": {
+    "away_starter": "D. Garand",
+    "home_starter": "S. Bobrovsky"
+  },
+  "2026-10-22|SJS@OTT": {
+    "away_starter": "Y. Askarov",
+    "home_starter": "S. Ersson"
+  },
+  "2026-10-22|ANA@NJD": {
+    "away_starter": "V. Husso",
+    "home_starter": "N. Daws"
+  },
+  "2026-10-22|FLA@PIT": {
+    "away_starter": "C. Black",
+    "home_starter": "A. Silovs"
+  },
+  "2026-10-22|LAK@NYI": {
+    "away_starter": "D. Kuemper",
+    "home_starter": "S. Varlamov"
+  },
+  "2026-10-22|VGK@STL": {
+    "away_starter": "A. Hill",
+    "home_starter": "J. Hofer"
+  },
+  "2026-10-22|WPG@DAL": {
+    "away_starter": "S. Skinner",
+    "home_starter": "J. Oettinger"
+  },
+  "2026-10-22|MIN@CGY": {
+    "away_starter": "J. Wallstedt",
+    "home_starter": "D. Cooley"
+  },
+  "2026-10-22|CAR@EDM": {
+    "away_starter": "B. Bussi",
+    "home_starter": "D. Levi"
+  },
+  "2026-10-22|UTA@SEA": {
+    "away_starter": "K. Vejmelka",
+    "home_starter": "P. Grubauer"
+  },
+  "2026-10-22|DET@VAN": {
+    "away_starter": "J. Gibson",
+    "home_starter": "K. Lankinen"
   }
 }

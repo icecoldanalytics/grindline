@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-22 06:05 AM MT",
+  "generated": "2026-10-23 06:05 AM MT",
   "season": "2025-26",
   "through_date": "2026-10-20",
   "pricing": {
@@ -705,18 +705,18 @@
       "cumulative": []
     },
     "backup_comparison": {
-      "games": 1,
-      "wins": 0,
+      "games": 2,
+      "wins": 1,
       "losses": 1,
-      "win_rate": 0.0,
-      "roi": -100.0,
-      "avg_odds": -155.7,
-      "breakeven_rate": 60.9,
-      "sd_above_breakeven": -1.2,
+      "win_rate": 50.0,
+      "roi": -6.0,
+      "avg_odds": -134.6,
+      "breakeven_rate": 57.4,
+      "sd_above_breakeven": -0.2,
       "sample_ok": false
     },
     "excluded_pre_min_games": 25,
-    "pending_goalie_resolution": 1,
+    "pending_goalie_resolution": 0,
     "last5": []
   },
   "summary": {

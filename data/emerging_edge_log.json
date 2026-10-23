@@ -453,9 +453,12 @@
       "home_ml_avg": -113.6,
       "home_ml_best": -110,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "C. Black",
+      "goalie_bucket": "backup",
+      "away_score": 0,
+      "home_score": 4,
+      "fade_won": true
     }
   ]
 }
