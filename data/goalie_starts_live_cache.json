@@ -658,5 +658,13 @@
   "2026-10-22|DET@VAN": {
     "away_starter": "J. Gibson",
     "home_starter": "K. Lankinen"
+  },
+  "2026-10-23|MTL@CHI": {
+    "away_starter": "J. Fowler",
+    "home_starter": "S. Knight"
+  },
+  "2026-10-23|TBL@COL": {
+    "away_starter": "A. Vasilevskiy",
+    "home_starter": "M. Blackwood"
   }
 }
