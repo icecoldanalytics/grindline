@@ -1,28 +1,28 @@
 {
   "date": "2026-10-23",
-  "updated": "07:31 PM MT",
+  "updated": "10:24 PM MT",
   "games": [
     {
       "away": "MTL",
       "home": "CHI",
       "away_city": "Montr\u00e9al",
       "home_city": "Chicago",
-      "away_score": 2,
+      "away_score": 4,
       "home_score": 1,
-      "status": "live",
-      "display": "2nd \u00b7 08:35",
-      "period_label": "2nd"
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "TBL",
       "home": "COL",
       "away_city": "Tampa Bay",
       "home_city": "Colorado",
-      "away_score": 0,
-      "home_score": 2,
-      "status": "live",
-      "display": "1st \u00b7 08:33",
-      "period_label": "1st"
+      "away_score": 3,
+      "home_score": 6,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     }
   ]
 }
