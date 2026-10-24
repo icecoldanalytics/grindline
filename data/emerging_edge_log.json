@@ -459,6 +459,20 @@
       "away_score": 0,
       "home_score": 4,
       "fade_won": true
+    },
+    {
+      "date": "2026-10-24",
+      "away": "TBL",
+      "home": "UTA",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "emerging_edge",
+      "home_ml_avg": -142.1,
+      "home_ml_best": -138,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
