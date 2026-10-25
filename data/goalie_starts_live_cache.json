@@ -666,5 +666,53 @@
   "2026-10-23|TBL@COL": {
     "away_starter": "A. Vasilevskiy",
     "home_starter": "M. Blackwood"
+  },
+  "2026-10-24|ANA@PHI": {
+    "away_starter": "L. Dostal",
+    "home_starter": "J. Woll"
+  },
+  "2026-10-24|LAK@NJD": {
+    "away_starter": "A. Forsberg",
+    "home_starter": "J. Allen"
+  },
+  "2026-10-24|SJS@BOS": {
+    "away_starter": "A. Nedeljkovic",
+    "home_starter": "J. Swayman"
+  },
+  "2026-10-24|NYR@OTT": {
+    "away_starter": "D. Garand",
+    "home_starter": "J. Johansson"
+  },
+  "2026-10-24|NSH@PIT": {
+    "away_starter": "J. Saros",
+    "home_starter": "A. Silovs"
+  },
+  "2026-10-24|BUF@WSH": {
+    "away_starter": "U. Luukkonen",
+    "home_starter": "C. Lindgren"
+  },
+  "2026-10-24|VGK@CBJ": {
+    "away_starter": "C. Hart",
+    "home_starter": "C. Talbot"
+  },
+  "2026-10-24|CAR@STL": {
+    "away_starter": "P. Kochetkov",
+    "home_starter": "J. Hofer"
+  },
+  "2026-10-24|TOR@EDM": {
+    "away_starter": "A. Stolarz",
+    "home_starter": "T. Jarry"
+  },
+  "2026-10-24|TBL@UTA": {
+    "away_starter": "D. Hildeby",
+    "home_starter": "K. Vejmelka"
+  },
+  "2026-10-24|DET@CGY": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-10-24|MIN@SEA": {
+    "away_starter": null,
+    "home_starter": null
   }
 }

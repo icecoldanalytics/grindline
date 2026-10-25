@@ -471,8 +471,8 @@
       "home_ml_best": -138,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "D. Hildeby",
+      "goalie_bucket": "backup"
     },
     {
       "date": "2026-10-25",
