@@ -473,6 +473,20 @@
       "graded": false,
       "away_starter": null,
       "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-25",
+      "away": "MIN",
+      "home": "VAN",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": 155.6,
+      "home_ml_best": 166,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
