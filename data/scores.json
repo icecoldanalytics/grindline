@@ -1,6 +1,6 @@
 {
   "date": "2026-10-25",
-  "updated": "07:06 PM MT",
+  "updated": "10:31 PM MT",
   "games": [
     {
       "away": "FLA",
@@ -30,32 +30,32 @@
       "away_city": "Montr\u00e9al",
       "home_city": "Winnipeg",
       "away_score": 2,
-      "home_score": 0,
-      "status": "live",
-      "display": "2nd \u00b7 11:11",
-      "period_label": "2nd"
+      "home_score": 1,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "COL",
       "home": "NSH",
       "away_city": "Colorado",
       "home_city": "Nashville",
-      "away_score": 0,
-      "home_score": 2,
-      "status": "live",
-      "display": "2nd \u00b7 18:58",
-      "period_label": "2nd"
+      "away_score": 2,
+      "home_score": 6,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "MIN",
       "home": "VAN",
       "away_city": "Minnesota",
       "home_city": "Vancouver",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 4,
+      "home_score": 2,
+      "status": "live",
+      "display": "3rd \u00b7 00:18",
+      "period_label": "3rd"
     }
   ]
 }
