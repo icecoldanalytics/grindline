@@ -1,61 +1,39 @@
 {
-  "date": "2026-10-25",
-  "updated": "10:31 PM MT",
+  "date": "2026-10-26",
+  "updated": "04:26 AM MT",
   "games": [
     {
-      "away": "FLA",
-      "home": "CHI",
-      "away_city": "Florida",
-      "home_city": "Chicago",
-      "away_score": 3,
-      "home_score": 2,
-      "status": "final",
-      "display": "Final",
-      "period_label": "3rd"
+      "away": "LAK",
+      "home": "NYR",
+      "away_city": "Los Angeles",
+      "home_city": "New York",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
     },
     {
-      "away": "NYI",
-      "home": "DAL",
-      "away_city": "New York",
-      "home_city": "Dallas",
-      "away_score": 3,
-      "home_score": 6,
-      "status": "final",
-      "display": "Final",
-      "period_label": "3rd"
+      "away": "TOR",
+      "home": "CGY",
+      "away_city": "Toronto",
+      "home_city": "Calgary",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
     },
     {
-      "away": "MTL",
-      "home": "WPG",
-      "away_city": "Montr\u00e9al",
-      "home_city": "Winnipeg",
-      "away_score": 2,
-      "home_score": 1,
-      "status": "final",
-      "display": "Final",
-      "period_label": "3rd"
-    },
-    {
-      "away": "COL",
-      "home": "NSH",
-      "away_city": "Colorado",
-      "home_city": "Nashville",
-      "away_score": 2,
-      "home_score": 6,
-      "status": "final",
-      "display": "Final",
-      "period_label": "3rd"
-    },
-    {
-      "away": "MIN",
-      "home": "VAN",
-      "away_city": "Minnesota",
-      "home_city": "Vancouver",
-      "away_score": 4,
-      "home_score": 2,
-      "status": "live",
-      "display": "3rd \u00b7 00:18",
-      "period_label": "3rd"
+      "away": "DET",
+      "home": "EDM",
+      "away_city": "Detroit",
+      "home_city": "Edmonton",
+      "away_score": 0,
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
     }
   ]
 }
