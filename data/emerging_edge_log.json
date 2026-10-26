@@ -470,9 +470,12 @@
       "home_ml_avg": -142.1,
       "home_ml_best": -138,
       "price_source": "live_06:00_MT",
-      "graded": false,
+      "graded": true,
       "away_starter": "D. Hildeby",
-      "goalie_bucket": "backup"
+      "goalie_bucket": "backup",
+      "away_score": 4,
+      "home_score": 5,
+      "fade_won": true
     },
     {
       "date": "2026-10-25",
@@ -484,9 +487,12 @@
       "home_ml_avg": 155.6,
       "home_ml_best": 166,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "C. Pickard",
+      "goalie_bucket": "backup",
+      "away_score": 4,
+      "home_score": 2,
+      "fade_won": false
     }
   ]
 }

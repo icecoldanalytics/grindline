@@ -714,5 +714,25 @@
   "2026-10-24|MIN@SEA": {
     "away_starter": null,
     "home_starter": null
+  },
+  "2026-10-25|FLA@CHI": {
+    "away_starter": "A. Schmid",
+    "home_starter": "S. Knight"
+  },
+  "2026-10-25|NYI@DAL": {
+    "away_starter": "I. Sorokin",
+    "home_starter": "J. Oettinger"
+  },
+  "2026-10-25|MTL@WPG": {
+    "away_starter": "J. Fowler",
+    "home_starter": "S. Skinner"
+  },
+  "2026-10-25|COL@NSH": {
+    "away_starter": "S. Wedgewood",
+    "home_starter": "J. Annunen"
+  },
+  "2026-10-25|MIN@VAN": {
+    "away_starter": "C. Pickard",
+    "home_starter": "L. Meril\u00e4inen"
   }
 }
