@@ -1,39 +1,39 @@
 {
   "date": "2026-10-25",
-  "updated": "03:20 AM MT",
+  "updated": "07:06 PM MT",
   "games": [
     {
       "away": "FLA",
       "home": "CHI",
       "away_city": "Florida",
       "home_city": "Chicago",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 3,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "NYI",
       "home": "DAL",
       "away_city": "New York",
       "home_city": "Dallas",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 3,
+      "home_score": 6,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "MTL",
       "home": "WPG",
       "away_city": "Montr\u00e9al",
       "home_city": "Winnipeg",
-      "away_score": 0,
+      "away_score": 2,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "live",
+      "display": "2nd \u00b7 11:11",
+      "period_label": "2nd"
     },
     {
       "away": "COL",
@@ -41,10 +41,10 @@
       "away_city": "Colorado",
       "home_city": "Nashville",
       "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "home_score": 2,
+      "status": "live",
+      "display": "2nd \u00b7 18:58",
+      "period_label": "2nd"
     },
     {
       "away": "MIN",
