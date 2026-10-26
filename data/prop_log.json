@@ -2129,9 +2129,9 @@
       "side": "Over",
       "price": "-110",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-25",
@@ -2155,9 +2155,9 @@
       "side": "Over",
       "price": "+180",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-10-25",
@@ -2168,9 +2168,9 @@
       "side": "Over",
       "price": "+120",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-10-25",
@@ -2181,9 +2181,9 @@
       "side": "Over",
       "price": "+102",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-10-25",
@@ -2194,9 +2194,9 @@
       "side": "Over",
       "price": "+105",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-25",
@@ -2207,6 +2207,110 @@
       "side": "Over",
       "price": "+125",
       "book": "draftkings",
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
+    },
+    {
+      "date": "2026-10-26",
+      "game": "Detroit Red Wings @ Edmonton Oilers",
+      "player": "Connor McDavid",
+      "market": "player_assists",
+      "line": "1.5",
+      "side": "Over",
+      "price": "+160",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-26",
+      "game": "Toronto Maple Leafs @ Calgary Flames",
+      "player": "Auston Matthews",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+102",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-26",
+      "game": "Detroit Red Wings @ Edmonton Oilers",
+      "player": "Alex DeBrincat",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+118",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-26",
+      "game": "Los Angeles Kings @ New York Rangers",
+      "player": "Adam Fox",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-135",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-26",
+      "game": "Toronto Maple Leafs @ Calgary Flames",
+      "player": "Auston Matthews",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+135",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-26",
+      "game": "Detroit Red Wings @ Edmonton Oilers",
+      "player": "Dylan Larkin",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-135",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-26",
+      "game": "Los Angeles Kings @ New York Rangers",
+      "player": "Adrian Kempe",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+150",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-26",
+      "game": "Toronto Maple Leafs @ Calgary Flames",
+      "player": "Darren Raddysh",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-110",
+      "book": "fanduel",
       "graded": false,
       "actual_stat": null,
       "hit": null
