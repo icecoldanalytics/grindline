@@ -3091,6 +3091,18 @@
       "away_score": 4,
       "home_score": 5,
       "fade_won": true
+    },
+    {
+      "date": "2026-10-27",
+      "away": "LAK",
+      "home": "CHI",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": 83.1,
+      "home_ml_best": 104,
+      "price_source": "live_06:00_MT",
+      "graded": false
     }
   ]
 }
