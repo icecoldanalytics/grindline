@@ -734,5 +734,17 @@
   "2026-10-25|MIN@VAN": {
     "away_starter": "C. Pickard",
     "home_starter": "L. Meril\u00e4inen"
+  },
+  "2026-10-26|LAK@NYR": {
+    "away_starter": "D. Kuemper",
+    "home_starter": "J. Reimer"
+  },
+  "2026-10-26|TOR@CGY": {
+    "away_starter": "S. Bobrovsky",
+    "home_starter": "D. Cooley"
+  },
+  "2026-10-26|DET@EDM": {
+    "away_starter": "M. Postava",
+    "home_starter": "T. Jarry"
   }
 }
