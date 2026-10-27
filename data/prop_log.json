@@ -2220,9 +2220,9 @@
       "side": "Over",
       "price": "+160",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-10-26",
@@ -2233,9 +2233,9 @@
       "side": "Over",
       "price": "+102",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-10-26",
@@ -2246,9 +2246,9 @@
       "side": "Over",
       "price": "+118",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-10-26",
@@ -2259,9 +2259,9 @@
       "side": "Over",
       "price": "-135",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-26",
@@ -2272,9 +2272,9 @@
       "side": "Yes",
       "price": "+135",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-26",
@@ -2285,9 +2285,9 @@
       "side": "Over",
       "price": "-135",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-26",
@@ -2298,9 +2298,9 @@
       "side": "Over",
       "price": "+150",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 7,
+      "hit": true
     },
     {
       "date": "2026-10-26",
@@ -2311,6 +2311,110 @@
       "side": "Over",
       "price": "-110",
       "book": "fanduel",
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
+    },
+    {
+      "date": "2026-10-27",
+      "game": "Los Angeles Kings @ Chicago Blackhawks",
+      "player": "Adrian Kempe",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-165",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-27",
+      "game": "Boston Bruins @ Carolina Hurricanes",
+      "player": "Andrei Svechnikov",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+188",
+      "book": "betrivers",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-27",
+      "game": "New York Islanders @ Nashville Predators",
+      "player": "Bo Horvat",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-178",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-27",
+      "game": "Columbus Blue Jackets @ Philadelphia Flyers",
+      "player": "Adam Fantilli",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-145",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-27",
+      "game": "Ottawa Senators @ Vegas Golden Knights",
+      "player": "Claude Giroux",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-110",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-27",
+      "game": "Buffalo Sabres @ San Jose Sharks",
+      "player": "Collin Graf",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+150",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-27",
+      "game": "Minnesota Wild @ Utah Mammoth",
+      "player": "Anders Lee",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-169",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-27",
+      "game": "Montr\u00e9al Canadiens @ St Louis Blues",
+      "player": "Chris Kreider",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+300",
+      "book": "draftkings",
       "graded": false,
       "actual_stat": null,
       "hit": null
