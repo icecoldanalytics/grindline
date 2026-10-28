@@ -507,6 +507,34 @@
       "graded": false,
       "away_starter": null,
       "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-28",
+      "away": "NJD",
+      "home": "COL",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -171.0,
+      "home_ml_best": -165,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-28",
+      "away": "PHI",
+      "home": "WSH",
+      "away_rest": 1,
+      "home_rest": 4,
+      "signal": "emerging_edge",
+      "home_ml_avg": -230.0,
+      "home_ml_best": -223,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
