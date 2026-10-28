@@ -746,5 +746,49 @@
   "2026-10-26|DET@EDM": {
     "away_starter": "M. Postava",
     "home_starter": "T. Jarry"
+  },
+  "2026-10-27|CBJ@PHI": {
+    "away_starter": "C. Talbot",
+    "home_starter": "D. Vladar"
+  },
+  "2026-10-27|BOS@CAR": {
+    "away_starter": "J. Swayman",
+    "home_starter": "P. Kochetkov"
+  },
+  "2026-10-27|LAK@CHI": {
+    "away_starter": "A. Forsberg",
+    "home_starter": "S. Knight"
+  },
+  "2026-10-27|MTL@STL": {
+    "away_starter": "J. Fowler",
+    "home_starter": "J. Binnington"
+  },
+  "2026-10-27|NYI@NSH": {
+    "away_starter": "S. Varlamov",
+    "home_starter": "J. Saros"
+  },
+  "2026-10-27|NJD@DAL": {
+    "away_starter": "C. Hellebuyck",
+    "home_starter": "C. DeSmith"
+  },
+  "2026-10-27|FLA@WPG": {
+    "away_starter": "A. Schmid",
+    "home_starter": "C. Stevenson"
+  },
+  "2026-10-27|MIN@UTA": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-10-27|OTT@VGK": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-10-27|VAN@ANA": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-10-27|BUF@SJS": {
+    "away_starter": null,
+    "home_starter": null
   }
 }

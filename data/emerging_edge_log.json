@@ -505,8 +505,8 @@
       "home_ml_best": 104,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "A. Forsberg",
+      "goalie_bucket": "backup"
     },
     {
       "date": "2026-10-28",

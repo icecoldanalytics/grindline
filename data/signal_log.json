@@ -3102,7 +3102,10 @@
       "home_ml_avg": 83.1,
       "home_ml_best": 104,
       "price_source": "live_06:00_MT",
-      "graded": false
+      "graded": true,
+      "away_score": 1,
+      "home_score": 2,
+      "fade_won": true
     }
   ]
 }
