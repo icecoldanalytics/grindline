@@ -2324,9 +2324,9 @@
       "side": "Over",
       "price": "-165",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-27",
@@ -2337,9 +2337,9 @@
       "side": "Yes",
       "price": "+188",
       "book": "betrivers",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-27",
@@ -2350,9 +2350,9 @@
       "side": "Over",
       "price": "-178",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-10-27",
@@ -2363,9 +2363,9 @@
       "side": "Over",
       "price": "-145",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-10-27",
@@ -2376,9 +2376,9 @@
       "side": "Over",
       "price": "-110",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-10-27",
@@ -2389,9 +2389,9 @@
       "side": "Over",
       "price": "+150",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-27",
@@ -2402,9 +2402,9 @@
       "side": "Over",
       "price": "-169",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-27",
@@ -2414,6 +2414,110 @@
       "line": "0.5",
       "side": "Over",
       "price": "+300",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-28",
+      "game": "Toronto Maple Leafs @ Seattle Kraken",
+      "player": "Auston Matthews",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+125",
+      "book": "betrivers",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-28",
+      "game": "Philadelphia Flyers @ Washington Capitals",
+      "player": "Alex Ovechkin",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+230",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-28",
+      "game": "Calgary Flames @ Edmonton Oilers",
+      "player": "Connor McDavid",
+      "market": "player_points",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-135",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-28",
+      "game": "Calgary Flames @ Edmonton Oilers",
+      "player": "Evan Bouchard",
+      "market": "player_points",
+      "line": "1.5",
+      "side": "Over",
+      "price": "+174",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-28",
+      "game": "Philadelphia Flyers @ Washington Capitals",
+      "player": "Alex Ovechkin",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+130",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-28",
+      "game": "Toronto Maple Leafs @ Seattle Kraken",
+      "player": "Auston Matthews",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+106",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-28",
+      "game": "Toronto Maple Leafs @ Seattle Kraken",
+      "player": "Bobby McMann",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-156",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-28",
+      "game": "New Jersey Devils @ Colorado Avalanche",
+      "player": "Artturi Lehkonen",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+150",
       "book": "draftkings",
       "graded": false,
       "actual_stat": null,
