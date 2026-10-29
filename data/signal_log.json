@@ -3106,6 +3106,18 @@
       "away_score": 1,
       "home_score": 2,
       "fade_won": true
+    },
+    {
+      "date": "2026-10-29",
+      "away": "WSH",
+      "home": "NSH",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": -108.7,
+      "home_ml_best": -107,
+      "price_source": "live_06:00_MT",
+      "graded": false
     }
   ]
 }
