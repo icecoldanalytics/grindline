@@ -27694,5 +27694,69 @@
       "shutouts": 0,
       "toi_seconds": 0
     }
+  },
+  "8482100": {
+    "20252026": {
+      "games_played": 81,
+      "points": 33,
+      "goals": 11,
+      "assists": 22,
+      "shots": 122,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    },
+    "20242025": {
+      "games_played": 0,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    }
+  },
+  "8483497": {
+    "20252026": {
+      "games_played": 28,
+      "points": 7,
+      "goals": 4,
+      "assists": 3,
+      "shots": 33,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    },
+    "20242025": {
+      "games_played": 12,
+      "points": 6,
+      "goals": 3,
+      "assists": 3,
+      "shots": 22,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    }
   }
 }
