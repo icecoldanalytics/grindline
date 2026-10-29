@@ -790,5 +790,21 @@
   "2026-10-27|BUF@SJS": {
     "away_starter": null,
     "home_starter": null
+  },
+  "2026-10-28|PHI@WSH": {
+    "away_starter": "J. Woll",
+    "home_starter": "L. Thompson"
+  },
+  "2026-10-28|CGY@EDM": {
+    "away_starter": "D. Cooley",
+    "home_starter": "T. Jarry"
+  },
+  "2026-10-28|NJD@COL": {
+    "away_starter": "J. Allen",
+    "home_starter": "M. Blackwood"
+  },
+  "2026-10-28|TOR@SEA": {
+    "away_starter": "S. Bobrovsky",
+    "home_starter": "P. Grubauer"
   }
 }

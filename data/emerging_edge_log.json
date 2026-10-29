@@ -504,9 +504,12 @@
       "home_ml_avg": 83.1,
       "home_ml_best": 104,
       "price_source": "live_06:00_MT",
-      "graded": false,
+      "graded": true,
       "away_starter": "A. Forsberg",
-      "goalie_bucket": "backup"
+      "goalie_bucket": "backup",
+      "away_score": 1,
+      "home_score": 2,
+      "fade_won": true
     },
     {
       "date": "2026-10-28",
@@ -519,8 +522,8 @@
       "home_ml_best": -165,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "J. Allen",
+      "goalie_bucket": "number_one"
     },
     {
       "date": "2026-10-28",
@@ -533,8 +536,8 @@
       "home_ml_best": -223,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "J. Woll",
+      "goalie_bucket": "number_one"
     },
     {
       "date": "2026-10-29",
