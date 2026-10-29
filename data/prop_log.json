@@ -2428,9 +2428,9 @@
       "side": "Yes",
       "price": "+125",
       "book": "betrivers",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-28",
@@ -2441,9 +2441,9 @@
       "side": "Yes",
       "price": "+230",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-28",
@@ -2454,9 +2454,9 @@
       "side": "Over",
       "price": "-135",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-10-28",
@@ -2467,9 +2467,9 @@
       "side": "Over",
       "price": "+174",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-10-28",
@@ -2480,9 +2480,9 @@
       "side": "Over",
       "price": "+130",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-10-28",
@@ -2493,9 +2493,9 @@
       "side": "Over",
       "price": "+106",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-10-28",
@@ -2506,9 +2506,9 @@
       "side": "Over",
       "price": "-156",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-10-28",
@@ -2519,6 +2519,110 @@
       "side": "Over",
       "price": "+150",
       "book": "draftkings",
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
+    },
+    {
+      "date": "2026-10-29",
+      "game": "Boston Bruins @ St Louis Blues",
+      "player": "Charlie McAvoy",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+105",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-29",
+      "game": "Chicago Blackhawks @ Detroit Red Wings",
+      "player": "Alex DeBrincat",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+115",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-29",
+      "game": "Winnipeg Jets @ Tampa Bay Lightning",
+      "player": "Brandon Hagel",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+115",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-29",
+      "game": "Ottawa Senators @ Los Angeles Kings",
+      "player": "Adrian Kempe",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+135",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-29",
+      "game": "Columbus Blue Jackets @ Carolina Hurricanes",
+      "player": "Adam Fantilli",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-105",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-29",
+      "game": "Chicago Blackhawks @ Detroit Red Wings",
+      "player": "Alex DeBrincat",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-205",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-29",
+      "game": "Columbus Blue Jackets @ Carolina Hurricanes",
+      "player": "Adam Fantilli",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-185",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-29",
+      "game": "Chicago Blackhawks @ Detroit Red Wings",
+      "player": "Alex DeBrincat",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "-119",
+      "book": "betonlineag",
       "graded": false,
       "actual_stat": null,
       "hit": null
