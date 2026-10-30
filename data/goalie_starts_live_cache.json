@@ -806,5 +806,49 @@
   "2026-10-28|TOR@SEA": {
     "away_starter": "S. Bobrovsky",
     "home_starter": "P. Grubauer"
+  },
+  "2026-10-29|WPG@TBL": {
+    "away_starter": "S. Skinner",
+    "home_starter": "A. Vasilevskiy"
+  },
+  "2026-10-29|UTA@PIT": {
+    "away_starter": "S. Cossa",
+    "home_starter": "A. Silovs"
+  },
+  "2026-10-29|CBJ@CAR": {
+    "away_starter": "J. Greaves",
+    "home_starter": "P. Kochetkov"
+  },
+  "2026-10-29|CHI@DET": {
+    "away_starter": "S. Knight",
+    "home_starter": "J. Gibson"
+  },
+  "2026-10-29|BOS@STL": {
+    "away_starter": "J. Swayman",
+    "home_starter": "J. Hofer"
+  },
+  "2026-10-29|WSH@NSH": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-10-29|MTL@DAL": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-10-29|NYI@MIN": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-10-29|BUF@ANA": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-10-29|OTT@LAK": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-10-29|VAN@SJS": {
+    "away_starter": null,
+    "home_starter": null
   }
 }
