@@ -1,6 +1,6 @@
 {
   "date": "2026-10-29",
-  "updated": "08:33 PM MT",
+  "updated": "11:33 PM MT",
   "games": [
     {
       "away": "WPG",
@@ -53,8 +53,8 @@
       "home_city": "St. Louis",
       "away_score": 1,
       "home_score": 4,
-      "status": "live",
-      "display": "3rd \u00b7 04:21",
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     },
     {
@@ -64,8 +64,8 @@
       "home_city": "Nashville",
       "away_score": 4,
       "home_score": 3,
-      "status": "live",
-      "display": "3rd \u00b7 08:32",
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     },
     {
@@ -73,10 +73,10 @@
       "home": "DAL",
       "away_city": "Montr\u00e9al",
       "home_city": "Dallas",
-      "away_score": 4,
+      "away_score": 5,
       "home_score": 2,
-      "status": "live",
-      "display": "3rd \u00b7 01:49",
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     },
     {
@@ -84,44 +84,44 @@
       "home": "MIN",
       "away_city": "New York",
       "home_city": "Minnesota",
-      "away_score": 3,
+      "away_score": 4,
       "home_score": 3,
-      "status": "live",
-      "display": "3rd \u00b7 02:11",
-      "period_label": "3rd"
+      "status": "final",
+      "display": "Final/OT",
+      "period_label": "OT"
     },
     {
       "away": "BUF",
       "home": "ANA",
       "away_city": "Buffalo",
       "home_city": "Anaheim",
-      "away_score": 1,
-      "home_score": 3,
-      "status": "live",
-      "display": "1st \u00b7 08:43",
-      "period_label": "1st"
+      "away_score": 7,
+      "home_score": 6,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "OTT",
       "home": "LAK",
       "away_city": "Ottawa",
       "home_city": "Los Angeles",
-      "away_score": 1,
-      "home_score": 0,
-      "status": "live",
-      "display": "1st \u00b7 05:37",
-      "period_label": "1st"
+      "away_score": 5,
+      "home_score": 6,
+      "status": "final",
+      "display": "Final/OT",
+      "period_label": "OT"
     },
     {
       "away": "VAN",
       "home": "SJS",
       "away_city": "Vancouver",
       "home_city": "San Jose",
-      "away_score": 1,
-      "home_score": 0,
-      "status": "live",
-      "display": "1st \u00b7 05:06",
-      "period_label": "1st"
+      "away_score": 2,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     }
   ]
 }
