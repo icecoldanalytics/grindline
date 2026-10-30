@@ -552,6 +552,20 @@
       "graded": false,
       "away_starter": null,
       "goalie_bucket": null
+    },
+    {
+      "date": "2026-10-30",
+      "away": "WPG",
+      "home": "FLA",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -223.5,
+      "home_ml_best": -218,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
