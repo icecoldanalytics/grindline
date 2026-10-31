@@ -1,39 +1,39 @@
 {
   "date": "2026-10-30",
-  "updated": "05:33 AM MT",
+  "updated": "08:17 PM MT",
   "games": [
     {
       "away": "NJD",
       "home": "VGK",
       "away_city": "New Jersey",
       "home_city": "Vegas",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 5,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "WPG",
       "home": "FLA",
       "away_city": "Winnipeg",
       "home_city": "Florida",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 5,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "SEA",
       "home": "CGY",
       "away_city": "Seattle",
       "home_city": "Calgary",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 5,
+      "status": "live",
+      "display": "3rd \u00b7 14:48",
+      "period_label": "3rd"
     }
   ]
 }
