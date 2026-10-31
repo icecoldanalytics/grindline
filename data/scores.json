@@ -1,6 +1,6 @@
 {
   "date": "2026-10-30",
-  "updated": "08:17 PM MT",
+  "updated": "11:21 PM MT",
   "games": [
     {
       "away": "NJD",
@@ -30,9 +30,9 @@
       "away_city": "Seattle",
       "home_city": "Calgary",
       "away_score": 2,
-      "home_score": 5,
-      "status": "live",
-      "display": "3rd \u00b7 14:48",
+      "home_score": 6,
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     }
   ]
