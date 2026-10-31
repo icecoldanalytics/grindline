@@ -850,5 +850,17 @@
   "2026-10-29|VAN@SJS": {
     "away_starter": null,
     "home_starter": null
+  },
+  "2026-10-30|NJD@VGK": {
+    "away_starter": "C. Hellebuyck",
+    "home_starter": "A. Hill"
+  },
+  "2026-10-30|WPG@FLA": {
+    "away_starter": "N. Daws",
+    "home_starter": "A. Schmid"
+  },
+  "2026-10-30|SEA@CGY": {
+    "away_starter": "P. Grubauer",
+    "home_starter": "D. Wolf"
   }
 }
