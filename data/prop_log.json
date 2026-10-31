@@ -2636,9 +2636,9 @@
       "side": "Over",
       "price": "-220",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-10-30",
@@ -2649,9 +2649,9 @@
       "side": "Over",
       "price": "+100",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 6,
+      "hit": true
     },
     {
       "date": "2026-10-30",
@@ -2662,9 +2662,9 @@
       "side": "Over",
       "price": "-169",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 8,
+      "hit": true
     },
     {
       "date": "2026-10-30",
@@ -2675,9 +2675,9 @@
       "side": "Over",
       "price": "-164",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-10-30",
@@ -2688,9 +2688,9 @@
       "side": "Over",
       "price": "-102",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-10-30",
@@ -2701,9 +2701,9 @@
       "side": "Over",
       "price": "+108",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-10-30",
@@ -2714,9 +2714,9 @@
       "side": "Over",
       "price": "+136",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 8,
+      "hit": true
     },
     {
       "date": "2026-10-30",
@@ -2727,6 +2727,110 @@
       "side": "Over",
       "price": "+107",
       "book": "betonlineag",
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
+    },
+    {
+      "date": "2026-10-31",
+      "game": "Toronto Maple Leafs @ Vancouver Canucks",
+      "player": "Auston Matthews",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-120",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-31",
+      "game": "Toronto Maple Leafs @ Vancouver Canucks",
+      "player": "Auston Matthews",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+102",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-31",
+      "game": "Buffalo Sabres @ Los Angeles Kings",
+      "player": "Adrian Kempe",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+180",
+      "book": "betrivers",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-31",
+      "game": "Columbus Blue Jackets @ Dallas Stars",
+      "player": "Adam Fantilli",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-105",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-31",
+      "game": "St Louis Blues @ Detroit Red Wings",
+      "player": "Alex DeBrincat",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-175",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-31",
+      "game": "Edmonton Oilers @ New York Islanders",
+      "player": "Bo Horvat",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-120",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-31",
+      "game": "Ottawa Senators @ San Jose Sharks",
+      "player": "Claude Giroux",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-154",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-10-31",
+      "game": "Calgary Flames @ Colorado Avalanche",
+      "player": "Artturi Lehkonen",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-185",
+      "book": "betmgm",
       "graded": false,
       "actual_stat": null,
       "hit": null
