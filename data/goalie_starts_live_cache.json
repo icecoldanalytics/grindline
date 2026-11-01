@@ -862,5 +862,45 @@
   "2026-10-30|SEA@CGY": {
     "away_starter": "P. Grubauer",
     "home_starter": "D. Wolf"
+  },
+  "2026-10-31|CHI@BOS": {
+    "away_starter": "A. Soderblom",
+    "home_starter": "M. DiPietro"
+  },
+  "2026-10-31|STL@DET": {
+    "away_starter": "J. Hofer",
+    "home_starter": "J. Gibson"
+  },
+  "2026-10-31|TBL@NSH": {
+    "away_starter": "A. Vasilevskiy",
+    "home_starter": "J. Annunen"
+  },
+  "2026-10-31|EDM@NYI": {
+    "away_starter": "T. Jarry",
+    "home_starter": "I. Sorokin"
+  },
+  "2026-10-31|BUF@LAK": {
+    "away_starter": "U. Luukkonen",
+    "home_starter": "A. Forsberg"
+  },
+  "2026-10-31|OTT@SJS": {
+    "away_starter": "S. Ersson",
+    "home_starter": "A. Nedeljkovic"
+  },
+  "2026-10-31|PIT@MTL": {
+    "away_starter": "S. Murashov",
+    "home_starter": "J. Fowler"
+  },
+  "2026-10-31|TOR@VAN": {
+    "away_starter": "A. Stolarz",
+    "home_starter": "L. Meril\u00e4inen"
+  },
+  "2026-10-31|CBJ@DAL": {
+    "away_starter": "J. Greaves",
+    "home_starter": "J. Oettinger"
+  },
+  "2026-10-31|CGY@COL": {
+    "away_starter": "A. Sergeev",
+    "home_starter": "M. Blackwood"
   }
 }
