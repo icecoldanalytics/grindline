@@ -586,6 +586,34 @@
       "graded": false,
       "away_starter": null,
       "goalie_bucket": null
+    },
+    {
+      "date": "2026-11-01",
+      "away": "EDM",
+      "home": "NYR",
+      "away_rest": 1,
+      "home_rest": 6,
+      "signal": "emerging_edge",
+      "home_ml_avg": -126.3,
+      "home_ml_best": -121,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-11-01",
+      "away": "OTT",
+      "home": "ANA",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": 8.9,
+      "home_ml_best": 103,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
