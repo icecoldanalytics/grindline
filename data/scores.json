@@ -1,6 +1,6 @@
 {
   "date": "2026-10-31",
-  "updated": "08:08 PM MT",
+  "updated": "11:49 PM MT",
   "games": [
     {
       "away": "CHI",
@@ -95,10 +95,10 @@
       "home": "DAL",
       "away_city": "Columbus",
       "home_city": "Dallas",
-      "away_score": 0,
-      "home_score": 2,
-      "status": "live",
-      "display": "3rd \u00b7 15:23",
+      "away_score": 1,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     },
     {
@@ -106,11 +106,11 @@
       "home": "COL",
       "away_city": "Calgary",
       "home_city": "Colorado",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 5,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     }
   ]
 }
