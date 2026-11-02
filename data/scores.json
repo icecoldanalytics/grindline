@@ -1,6 +1,6 @@
 {
   "date": "2026-11-01",
-  "updated": "08:24 PM MT",
+  "updated": "11:49 PM MT",
   "games": [
     {
       "away": "WPG",
@@ -52,10 +52,10 @@
       "away_city": "Ottawa",
       "home_city": "Anaheim",
       "away_score": 3,
-      "home_score": 2,
-      "status": "live",
-      "display": "2nd \u00b7 09:16",
-      "period_label": "2nd"
+      "home_score": 6,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     }
   ]
 }
