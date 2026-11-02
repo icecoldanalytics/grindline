@@ -1,6 +1,6 @@
 {
   "date": "2026-11-01",
-  "updated": "06:04 AM MT",
+  "updated": "08:24 PM MT",
   "games": [
     {
       "away": "WPG",
@@ -8,54 +8,54 @@
       "away_city": "Winnipeg",
       "home_city": "Carolina",
       "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "home_score": 7,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "MIN",
       "home": "WSH",
       "away_city": "Minnesota",
       "home_city": "Washington",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 5,
+      "home_score": 1,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "UTA",
       "home": "PHI",
       "away_city": "Utah",
       "home_city": "Philadelphia",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 3,
+      "home_score": 6,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "EDM",
       "home": "NYR",
       "away_city": "Edmonton",
       "home_city": "New York",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 4,
+      "home_score": 1,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "OTT",
       "home": "ANA",
       "away_city": "Ottawa",
       "home_city": "Anaheim",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 3,
+      "home_score": 2,
+      "status": "live",
+      "display": "2nd \u00b7 09:16",
+      "period_label": "2nd"
     }
   ]
 }
