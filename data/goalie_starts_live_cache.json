@@ -902,5 +902,25 @@
   "2026-10-31|CGY@COL": {
     "away_starter": "A. Sergeev",
     "home_starter": "M. Blackwood"
+  },
+  "2026-11-01|WPG@CAR": {
+    "away_starter": "S. Skinner",
+    "home_starter": "P. Kochetkov"
+  },
+  "2026-11-01|MIN@WSH": {
+    "away_starter": "J. Wallstedt",
+    "home_starter": "L. Thompson"
+  },
+  "2026-11-01|UTA@PHI": {
+    "away_starter": "K. Vejmelka",
+    "home_starter": "D. Vladar"
+  },
+  "2026-11-01|EDM@NYR": {
+    "away_starter": "M. Tomkins",
+    "home_starter": "D. Garand"
+  },
+  "2026-11-01|OTT@ANA": {
+    "away_starter": "J. Johansson",
+    "home_starter": "L. Brossoit"
   }
 }

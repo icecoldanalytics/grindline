@@ -555,9 +555,12 @@
       "home_ml_avg": -108.7,
       "home_ml_best": -107,
       "price_source": "live_06:00_MT",
-      "graded": false,
+      "graded": true,
       "away_starter": null,
-      "goalie_bucket": null
+      "goalie_bucket": null,
+      "away_score": 4,
+      "home_score": 3,
+      "fade_won": false
     },
     {
       "date": "2026-10-30",
@@ -569,9 +572,12 @@
       "home_ml_avg": -223.5,
       "home_ml_best": -218,
       "price_source": "live_06:00_MT",
-      "graded": false,
+      "graded": true,
       "away_starter": "N. Daws",
-      "goalie_bucket": "backup"
+      "goalie_bucket": "backup",
+      "away_score": 2,
+      "home_score": 5,
+      "fade_won": true
     },
     {
       "date": "2026-10-31",
@@ -583,9 +589,12 @@
       "home_ml_avg": -410.1,
       "home_ml_best": -390,
       "price_source": "live_06:00_MT",
-      "graded": false,
+      "graded": true,
       "away_starter": "A. Sergeev",
-      "goalie_bucket": "backup"
+      "goalie_bucket": "backup",
+      "away_score": 2,
+      "home_score": 5,
+      "fade_won": true
     },
     {
       "date": "2026-11-01",
@@ -597,9 +606,12 @@
       "home_ml_avg": -126.3,
       "home_ml_best": -121,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "M. Tomkins",
+      "goalie_bucket": "backup",
+      "away_score": 4,
+      "home_score": 1,
+      "fade_won": false
     },
     {
       "date": "2026-11-01",
@@ -611,9 +623,12 @@
       "home_ml_avg": 8.9,
       "home_ml_best": 103,
       "price_source": "live_06:00_MT",
-      "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "graded": true,
+      "away_starter": "J. Johansson",
+      "goalie_bucket": "backup",
+      "away_score": 3,
+      "home_score": 6,
+      "fade_won": true
     }
   ]
 }

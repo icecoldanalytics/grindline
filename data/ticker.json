@@ -1,40 +1,33 @@
 {
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "games": [
     {
-      "away": "WPG",
-      "home": "CAR",
-      "time": "12:00 PM MT",
-      "away_ml": "+220",
-      "home_ml": "-275"
+      "away": "VGK",
+      "home": "BOS",
+      "time": "6:00 PM MT",
+      "away_ml": "-112",
+      "home_ml": "-108"
     },
     {
-      "away": "MIN",
-      "home": "WSH",
-      "time": "2:30 PM MT",
-      "away_ml": "-110",
-      "home_ml": "-110"
+      "away": "DET",
+      "home": "FLA",
+      "time": "6:00 PM MT",
+      "away_ml": "+145",
+      "home_ml": "-175"
     },
     {
-      "away": "UTA",
-      "home": "PHI",
-      "time": "3:00 PM MT",
-      "away_ml": "-164",
-      "home_ml": "+136"
-    },
-    {
-      "away": "EDM",
-      "home": "NYR",
-      "time": "5:00 PM MT",
-      "away_ml": "+105",
-      "home_ml": "-126"
-    },
-    {
-      "away": "OTT",
-      "home": "ANA",
+      "away": "COL",
+      "home": "CHI",
       "time": "7:00 PM MT",
-      "away_ml": "-118",
-      "home_ml": "-102"
+      "away_ml": "-230",
+      "home_ml": "+190"
+    },
+    {
+      "away": "CGY",
+      "home": "SJS",
+      "time": "8:00 PM MT",
+      "away_ml": "+114",
+      "home_ml": "-135"
     }
   ]
 }
