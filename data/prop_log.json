@@ -2844,9 +2844,9 @@
       "side": "Over",
       "price": "-135",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-01",
@@ -2857,9 +2857,9 @@
       "side": "Over",
       "price": "-175",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-01",
@@ -2870,9 +2870,9 @@
       "side": "Over",
       "price": "-190",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-01",
@@ -2883,9 +2883,9 @@
       "side": "Over",
       "price": "+135",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-11-01",
@@ -2896,9 +2896,9 @@
       "side": "Over",
       "price": "-105",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-11-01",
@@ -2909,9 +2909,9 @@
       "side": "Over",
       "price": "+130",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-11-01",
@@ -2922,9 +2922,9 @@
       "side": "Yes",
       "price": "+230",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-01",
@@ -2934,6 +2934,110 @@
       "line": "",
       "side": "Yes",
       "price": "+190",
+      "book": "draftkings",
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
+    },
+    {
+      "date": "2026-11-02",
+      "game": "Vegas Golden Knights @ Boston Bruins",
+      "player": "David Pastrnak",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-105",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-02",
+      "game": "Vegas Golden Knights @ Boston Bruins",
+      "player": "David Pastrnak",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-154",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-02",
+      "game": "Vegas Golden Knights @ Boston Bruins",
+      "player": "Charlie McAvoy",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-108",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-02",
+      "game": "Detroit Red Wings @ Florida Panthers",
+      "player": "Alex DeBrincat",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-169",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-02",
+      "game": "Colorado Avalanche @ Chicago Blackhawks",
+      "player": "Artturi Lehkonen",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-110",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-02",
+      "game": "Colorado Avalanche @ Chicago Blackhawks",
+      "player": "Anton Frondell",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-140",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-02",
+      "game": "Detroit Red Wings @ Florida Panthers",
+      "player": "Alex DeBrincat",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+180",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-02",
+      "game": "Calgary Flames @ San Jose Sharks",
+      "player": "Dmitry Orlov",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-105",
       "book": "draftkings",
       "graded": false,
       "actual_stat": null,
