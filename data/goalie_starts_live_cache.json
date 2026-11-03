@@ -922,5 +922,21 @@
   "2026-11-01|OTT@ANA": {
     "away_starter": "J. Johansson",
     "home_starter": "L. Brossoit"
+  },
+  "2026-11-02|VGK@BOS": {
+    "away_starter": "C. Hart",
+    "home_starter": "J. Swayman"
+  },
+  "2026-11-02|DET@FLA": {
+    "away_starter": "D. Tarasov",
+    "home_starter": "J. Markstrom"
+  },
+  "2026-11-02|COL@CHI": {
+    "away_starter": "M. Blackwood",
+    "home_starter": "S. Knight"
+  },
+  "2026-11-02|CGY@SJS": {
+    "away_starter": "D. Wolf",
+    "home_starter": "Y. Askarov"
   }
 }
