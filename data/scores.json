@@ -1,50 +1,50 @@
 {
   "date": "2026-11-02",
-  "updated": "07:52 AM MT",
+  "updated": "09:54 PM MT",
   "games": [
     {
       "away": "VGK",
       "home": "BOS",
       "away_city": "Vegas",
       "home_city": "Boston",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final/SO",
+      "period_label": "SO"
     },
     {
       "away": "DET",
       "home": "FLA",
       "away_city": "Detroit",
       "home_city": "Florida",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 5,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "COL",
       "home": "CHI",
       "away_city": "Colorado",
       "home_city": "Chicago",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 5,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "CGY",
       "home": "SJS",
       "away_city": "Calgary",
       "home_city": "San Jose",
-      "away_score": 0,
+      "away_score": 1,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "live",
+      "display": "2nd \u00b7 08:44",
+      "period_label": "2nd"
     }
   ]
 }
