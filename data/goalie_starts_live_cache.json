@@ -938,5 +938,49 @@
   "2026-11-02|CGY@SJS": {
     "away_starter": "D. Wolf",
     "home_starter": "Y. Askarov"
+  },
+  "2026-11-03|UTA@TOR": {
+    "away_starter": "S. Cossa",
+    "home_starter": "S. Bobrovsky"
+  },
+  "2026-11-03|WPG@MTL": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-03|DET@TBL": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-03|STL@NYR": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-03|MIN@PHI": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-03|VGK@PIT": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-03|DAL@WSH": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-03|COL@CBJ": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-03|EDM@NJD": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-03|CAR@NSH": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-03|ANA@VAN": {
+    "away_starter": null,
+    "home_starter": null
   }
 }
