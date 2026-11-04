@@ -3052,9 +3052,9 @@
       "side": "Over",
       "price": "+120",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-11-03",
@@ -3065,9 +3065,9 @@
       "side": "Over",
       "price": "+126",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-11-03",
@@ -3078,9 +3078,9 @@
       "side": "Over",
       "price": "+104",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-03",
@@ -3091,9 +3091,9 @@
       "side": "Over",
       "price": "+164",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-11-03",
@@ -3104,9 +3104,9 @@
       "side": "Over",
       "price": "+130",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-03",
@@ -3117,9 +3117,9 @@
       "side": "Over",
       "price": "-135",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-03",
@@ -3143,6 +3143,110 @@
       "side": "Over",
       "price": "+110",
       "book": "draftkings",
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
+    },
+    {
+      "date": "2026-11-04",
+      "game": "San Jose Sharks @ Los Angeles Kings",
+      "player": "Adrian Kempe",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+165",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-04",
+      "game": "Ottawa Senators @ Buffalo Sabres",
+      "player": "Claude Giroux",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+136",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-04",
+      "game": "Ottawa Senators @ Buffalo Sabres",
+      "player": "Drake Batherson",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+154",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-04",
+      "game": "Chicago Blackhawks @ Florida Panthers",
+      "player": "Anton Frondell",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-144",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-04",
+      "game": "San Jose Sharks @ Los Angeles Kings",
+      "player": "Alex Laferriere",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-145",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-04",
+      "game": "Calgary Flames @ Seattle Kraken",
+      "player": "Berkly Catton",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+132",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-04",
+      "game": "Calgary Flames @ Seattle Kraken",
+      "player": "Aydar Suniev",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+375",
+      "book": "betrivers",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-04",
+      "game": "Chicago Blackhawks @ Florida Panthers",
+      "player": "Aaron Ekblad",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+725",
+      "book": "fanduel",
       "graded": false,
       "actual_stat": null,
       "hit": null
