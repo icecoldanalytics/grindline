@@ -3156,9 +3156,9 @@
       "side": "Yes",
       "price": "+165",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-11-04",
@@ -3169,9 +3169,9 @@
       "side": "Over",
       "price": "+136",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-04",
@@ -3182,9 +3182,9 @@
       "side": "Over",
       "price": "+154",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-11-04",
@@ -3195,9 +3195,9 @@
       "side": "Over",
       "price": "-144",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-11-04",
@@ -3208,9 +3208,9 @@
       "side": "Over",
       "price": "-145",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-04",
@@ -3221,9 +3221,9 @@
       "side": "Over",
       "price": "+132",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-04",
@@ -3234,9 +3234,9 @@
       "side": "Yes",
       "price": "+375",
       "book": "betrivers",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-04",
@@ -3247,6 +3247,110 @@
       "side": "Yes",
       "price": "+725",
       "book": "fanduel",
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
+    },
+    {
+      "date": "2026-11-05",
+      "game": "Vegas Golden Knights @ Detroit Red Wings",
+      "player": "Alex DeBrincat",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+170",
+      "book": "betrivers",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-05",
+      "game": "Philadelphia Flyers @ New York Rangers",
+      "player": "Adam Fox",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-108",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-05",
+      "game": "Dallas Stars @ Columbus Blue Jackets",
+      "player": "Adam Fantilli",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+105",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-05",
+      "game": "Chicago Blackhawks @ Tampa Bay Lightning",
+      "player": "Anthony Cirelli",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+146",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-05",
+      "game": "Nashville Predators @ Colorado Avalanche",
+      "player": "Artturi Lehkonen",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+154",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-05",
+      "game": "Boston Bruins @ Pittsburgh Penguins",
+      "player": "Ben Kindel",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+139",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-05",
+      "game": "Carolina Hurricanes @ New York Islanders",
+      "player": "Andrei Svechnikov",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+100",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-05",
+      "game": "Anaheim Ducks @ Edmonton Oilers",
+      "player": "Alex Killorn",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+178",
+      "book": "betonlineag",
       "graded": false,
       "actual_stat": null,
       "hit": null
