@@ -3121,6 +3121,18 @@
       "away_score": 4,
       "home_score": 3,
       "fade_won": false
+    },
+    {
+      "date": "2026-11-05",
+      "away": "CHI",
+      "home": "TBL",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": -411.9,
+      "home_ml_best": -390,
+      "price_source": "live_06:00_MT",
+      "graded": false
     }
   ]
 }
