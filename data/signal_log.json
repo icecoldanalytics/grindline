@@ -3133,6 +3133,30 @@
       "home_ml_best": -390,
       "price_source": "live_06:00_MT",
       "graded": false
+    },
+    {
+      "date": "2026-11-06",
+      "away": "ANA",
+      "home": "CGY",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": -125.6,
+      "home_ml_best": -120,
+      "price_source": "live_06:00_MT",
+      "graded": false
+    },
+    {
+      "date": "2026-11-06",
+      "away": "CBJ",
+      "home": "BUF",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": -172.4,
+      "home_ml_best": -169,
+      "price_source": "live_06:00_MT",
+      "graded": false
     }
   ]
 }
