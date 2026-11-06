@@ -1,23 +1,23 @@
 {
-  "generated": "2026-11-05 06:05 AM MT",
+  "generated": "2026-11-06 06:05 AM MT",
   "season": "2025-26",
-  "through_date": "2026-10-29",
+  "through_date": "2026-11-05",
   "pricing": {
     "method": "Real home moneyline, average across every US bookmaker the Odds API returns for that game (typically 9-11 books, not a fixed list \u2014 see rest_edge.home_ml_average), captured by the morning capture job. Never a fixed assumed time like 7 AM \u2014 each game's exact capture time is logged and shown per game in the results below.",
     "assumed_odds_used": false
   },
   "rest_edge": {
-    "games": 152,
-    "wins": 99,
+    "games": 153,
+    "wins": 100,
     "losses": 53,
-    "win_rate": 65.1,
-    "roi": 11.2,
-    "avg_odds": -119.4,
-    "breakeven_rate": 54.4,
+    "win_rate": 65.4,
+    "roi": 11.3,
+    "avg_odds": -121.3,
+    "breakeven_rate": 54.8,
     "sd_above_breakeven": 2.6,
     "sample_ok": true,
     "label": "Away B2B + Home Rested 2 Days",
-    "streak": "1L",
+    "streak": "1W",
     "best_month": "Feb 2026",
     "monthly": [
       {
@@ -67,6 +67,12 @@
         "wins": 11,
         "losses": 5,
         "roi": 15.5
+      },
+      {
+        "month": "2026-11",
+        "wins": 1,
+        "losses": 0,
+        "roi": 24.3
       }
     ],
     "cumulative": [
@@ -677,6 +683,10 @@
       {
         "date": "2026-10-29",
         "units": 17.04
+      },
+      {
+        "date": "2026-11-05",
+        "units": 17.28
       }
     ],
     "status": "Active"
@@ -744,7 +754,7 @@
       "sample_ok": false
     },
     "excluded_pre_min_games": 25,
-    "pending_goalie_resolution": 5,
+    "pending_goalie_resolution": 7,
     "last5": [
       {
         "date": "2026-10-28",
@@ -769,18 +779,9 @@
     ]
   },
   "summary": {
-    "total_rest_edge_games": 152,
+    "total_rest_edge_games": 153,
     "cancelled_both_b2b": 0,
     "last5_rest_edge": [
-      {
-        "date": "2026-10-17",
-        "away": "PIT",
-        "home": "VGK",
-        "score": "2-6",
-        "odds": -238.8,
-        "fade_won": true,
-        "price_time": "6:00 AM MT"
-      },
       {
         "date": "2026-10-20",
         "away": "TOR",
@@ -815,6 +816,15 @@
         "score": "4-3",
         "odds": -108.7,
         "fade_won": false,
+        "price_time": "6:00 AM MT"
+      },
+      {
+        "date": "2026-11-05",
+        "away": "CHI",
+        "home": "TBL",
+        "score": "1-4",
+        "odds": -411.9,
+        "fade_won": true,
         "price_time": "6:00 AM MT"
       }
     ]
