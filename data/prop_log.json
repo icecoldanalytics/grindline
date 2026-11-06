@@ -3260,9 +3260,9 @@
       "side": "Yes",
       "price": "+170",
       "book": "betrivers",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-05",
@@ -3273,9 +3273,9 @@
       "side": "Over",
       "price": "-108",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-11-05",
@@ -3286,9 +3286,9 @@
       "side": "Over",
       "price": "+105",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 5,
+      "hit": true
     },
     {
       "date": "2026-11-05",
@@ -3299,9 +3299,9 @@
       "side": "Over",
       "price": "+146",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-11-05",
@@ -3312,9 +3312,9 @@
       "side": "Over",
       "price": "+154",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-11-05",
@@ -3325,9 +3325,9 @@
       "side": "Over",
       "price": "+139",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-05",
@@ -3338,9 +3338,9 @@
       "side": "Over",
       "price": "+100",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 7,
+      "hit": true
     },
     {
       "date": "2026-11-05",
@@ -3350,6 +3350,110 @@
       "line": "0.5",
       "side": "Over",
       "price": "+178",
+      "book": "betonlineag",
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
+    },
+    {
+      "date": "2026-11-06",
+      "game": "Columbus Blue Jackets @ Buffalo Sabres",
+      "player": "Adam Fantilli",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-130",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-06",
+      "game": "Columbus Blue Jackets @ Buffalo Sabres",
+      "player": "Adam Fantilli",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-108",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-06",
+      "game": "San Jose Sharks @ Minnesota Wild",
+      "player": "Blake Coleman",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-195",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-06",
+      "game": "Anaheim Ducks @ Calgary Flames",
+      "player": "Beckett Sennecke",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-108",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-06",
+      "game": "Columbus Blue Jackets @ Buffalo Sabres",
+      "player": "Charlie Coyle",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-105",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-06",
+      "game": "Columbus Blue Jackets @ Buffalo Sabres",
+      "player": "Denton Mateychuk",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-110",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-06",
+      "game": "San Jose Sharks @ Minnesota Wild",
+      "player": "Bobby Brink",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "+109",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-06",
+      "game": "Anaheim Ducks @ Calgary Flames",
+      "player": "Aydar Suniev",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-123",
       "book": "betonlineag",
       "graded": false,
       "actual_stat": null,
