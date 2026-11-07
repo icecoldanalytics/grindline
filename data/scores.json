@@ -1,39 +1,39 @@
 {
   "date": "2026-11-06",
-  "updated": "08:26 AM MT",
+  "updated": "08:44 PM MT",
   "games": [
     {
       "away": "CBJ",
       "home": "BUF",
       "away_city": "Columbus",
       "home_city": "Buffalo",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 5,
+      "status": "live",
+      "display": "3rd \u00b7 01:12",
+      "period_label": "3rd"
     },
     {
       "away": "SJS",
       "home": "MIN",
       "away_city": "San Jose",
       "home_city": "Minnesota",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 1,
+      "home_score": 2,
+      "status": "live",
+      "display": "2nd \u00b7 01:14",
+      "period_label": "2nd"
     },
     {
       "away": "ANA",
       "home": "CGY",
       "away_city": "Anaheim",
       "home_city": "Calgary",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 3,
+      "status": "live",
+      "display": "2nd \u00b7 03:07",
+      "period_label": "2nd"
     }
   ]
 }
