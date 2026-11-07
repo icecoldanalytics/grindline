@@ -3147,7 +3147,10 @@
       "home_ml_avg": -125.6,
       "home_ml_best": -120,
       "price_source": "live_06:00_MT",
-      "graded": false
+      "graded": true,
+      "away_score": 5,
+      "home_score": 3,
+      "fade_won": false
     },
     {
       "date": "2026-11-06",
@@ -3159,7 +3162,10 @@
       "home_ml_avg": -172.4,
       "home_ml_best": -169,
       "price_source": "live_06:00_MT",
-      "graded": false
+      "graded": true,
+      "away_score": 2,
+      "home_score": 5,
+      "fade_won": true
     },
     {
       "date": "2026-11-07",
