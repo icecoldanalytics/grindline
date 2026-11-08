@@ -683,8 +683,8 @@
       "home_ml_best": -390,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "A. Soderblom",
+      "goalie_bucket": "backup"
     },
     {
       "date": "2026-11-06",
