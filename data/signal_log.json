@@ -3193,6 +3193,18 @@
       "home_ml_best": -119,
       "price_source": "live_06:00_MT",
       "graded": false
+    },
+    {
+      "date": "2026-11-09",
+      "away": "PHI",
+      "home": "VAN",
+      "away_rest": 1,
+      "home_rest": 2,
+      "signal": "rest_edge",
+      "home_ml_avg": 115.1,
+      "home_ml_best": 118,
+      "price_source": "live_06:00_MT",
+      "graded": false
     }
   ]
 }
