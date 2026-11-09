@@ -3192,7 +3192,10 @@
       "home_ml_avg": -120.8,
       "home_ml_best": -119,
       "price_source": "live_06:00_MT",
-      "graded": false
+      "graded": true,
+      "away_score": 2,
+      "home_score": 5,
+      "fade_won": true
     },
     {
       "date": "2026-11-09",

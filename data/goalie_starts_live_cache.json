@@ -1042,5 +1042,65 @@
   "2026-11-05|NSH@COL": {
     "away_starter": null,
     "home_starter": null
+  },
+  "2026-11-06|CBJ@BUF": {
+    "away_starter": "J. Greaves",
+    "home_starter": "U. Luukkonen"
+  },
+  "2026-11-06|SJS@MIN": {
+    "away_starter": "Y. Askarov",
+    "home_starter": "J. Wallstedt"
+  },
+  "2026-11-06|ANA@CGY": {
+    "away_starter": "L. Dostal",
+    "home_starter": "D. Wolf"
+  },
+  "2026-11-07|FLA@WSH": {
+    "away_starter": "A. Schmid",
+    "home_starter": "L. Thompson"
+  },
+  "2026-11-07|STL@NSH": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-07|NYR@SEA": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-07|MTL@TOR": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-07|UTA@OTT": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-07|NJD@NYI": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-07|CHI@CAR": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-07|SJS@DAL": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-07|TBL@MIN": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-07|DET@COL": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-07|PIT@LAK": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-07|VAN@EDM": {
+    "away_starter": null,
+    "home_starter": null
   }
 }

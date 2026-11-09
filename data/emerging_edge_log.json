@@ -697,8 +697,8 @@
       "home_ml_best": -120,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "L. Dostal",
+      "goalie_bucket": "number_one"
     },
     {
       "date": "2026-11-06",
@@ -711,8 +711,8 @@
       "home_ml_best": -169,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "J. Greaves",
+      "goalie_bucket": "number_one"
     },
     {
       "date": "2026-11-07",
