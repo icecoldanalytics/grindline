@@ -3468,9 +3468,9 @@
       "side": "Over",
       "price": "-165",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-08",
@@ -3481,9 +3481,9 @@
       "side": "Over",
       "price": "+135",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-08",
@@ -3494,9 +3494,9 @@
       "side": "Over",
       "price": "+112",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 8,
+      "hit": true
     },
     {
       "date": "2026-11-08",
@@ -3507,9 +3507,9 @@
       "side": "Over",
       "price": "+132",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-08",
@@ -3520,9 +3520,9 @@
       "side": "Over",
       "price": "+112",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-08",
@@ -3533,9 +3533,9 @@
       "side": "Over",
       "price": "+112",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-08",
@@ -3546,9 +3546,9 @@
       "side": "Over",
       "price": "-125",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-11-08",
@@ -3559,6 +3559,110 @@
       "side": "Over",
       "price": "+110",
       "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-09",
+      "game": "New York Rangers @ Edmonton Oilers",
+      "player": "Connor McDavid",
+      "market": "player_points",
+      "line": "1.5",
+      "side": "Over",
+      "price": "+100",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-09",
+      "game": "New York Rangers @ Edmonton Oilers",
+      "player": "Connor McDavid",
+      "market": "player_assists",
+      "line": "1.5",
+      "side": "Over",
+      "price": "+165",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-09",
+      "game": "New York Rangers @ Edmonton Oilers",
+      "player": "Adam Fox",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-125",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-09",
+      "game": "Philadelphia Flyers @ Vancouver Canucks",
+      "player": "Brock Boeser",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+138",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-09",
+      "game": "New York Rangers @ Edmonton Oilers",
+      "player": "Alexis Lafreni\u00e8re",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+138",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-09",
+      "game": "New York Islanders @ San Jose Sharks",
+      "player": "Bo Horvat",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+128",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-09",
+      "game": "New York Islanders @ San Jose Sharks",
+      "player": "Brayden Schenn",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+155",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-09",
+      "game": "Philadelphia Flyers @ Vancouver Canucks",
+      "player": "Christian Dvorak",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+107",
+      "book": "betonlineag",
       "graded": false,
       "actual_stat": null,
       "hit": null
