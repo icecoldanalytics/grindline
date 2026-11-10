@@ -739,8 +739,8 @@
       "home_ml_best": -132,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "J. Markstrom",
+      "goalie_bucket": "number_one"
     },
     {
       "date": "2026-11-08",
@@ -753,8 +753,8 @@
       "home_ml_best": -119,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "A. Silovs",
+      "goalie_bucket": "number_one"
     },
     {
       "date": "2026-11-08",
@@ -767,8 +767,8 @@
       "home_ml_best": 128,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "A. Vasilevskiy",
+      "goalie_bucket": "number_one"
     },
     {
       "date": "2026-11-09",
@@ -781,8 +781,8 @@
       "home_ml_best": 118,
       "price_source": "live_06:00_MT",
       "graded": false,
-      "away_starter": null,
-      "goalie_bucket": null
+      "away_starter": "J. Woll",
+      "goalie_bucket": "backup"
     }
   ]
 }

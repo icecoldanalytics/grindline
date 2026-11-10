@@ -1102,5 +1102,41 @@
   "2026-11-07|VAN@EDM": {
     "away_starter": null,
     "home_starter": null
+  },
+  "2026-11-08|FLA@BOS": {
+    "away_starter": "J. Markstrom",
+    "home_starter": "J. Swayman"
+  },
+  "2026-11-08|VGK@BUF": {
+    "away_starter": "A. Hill",
+    "home_starter": "C. Ellis"
+  },
+  "2026-11-08|TBL@WPG": {
+    "away_starter": "A. Vasilevskiy",
+    "home_starter": "S. Skinner"
+  },
+  "2026-11-08|NJD@TOR": {
+    "away_starter": "C. Hellebuyck",
+    "home_starter": "A. Stolarz"
+  },
+  "2026-11-08|PHI@CGY": {
+    "away_starter": "D. Vladar",
+    "home_starter": "D. Cooley"
+  },
+  "2026-11-08|PIT@ANA": {
+    "away_starter": "A. Silovs",
+    "home_starter": "L. Brossoit"
+  },
+  "2026-11-09|NYR@EDM": {
+    "away_starter": "D. Garand",
+    "home_starter": "D. Levi"
+  },
+  "2026-11-09|PHI@VAN": {
+    "away_starter": "J. Woll",
+    "home_starter": "L. Meril\u00e4inen"
+  },
+  "2026-11-09|NYI@SJS": {
+    "away_starter": "I. Sorokin",
+    "home_starter": "Y. Askarov"
   }
 }
