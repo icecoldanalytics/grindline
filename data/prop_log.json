@@ -3676,9 +3676,9 @@
       "side": "Over",
       "price": "+135",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-10",
@@ -3689,9 +3689,9 @@
       "side": "Yes",
       "price": "+141",
       "book": "williamhill_us",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-10",
@@ -3715,9 +3715,9 @@
       "side": "Over",
       "price": "-182",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-10",
@@ -3728,9 +3728,9 @@
       "side": "Over",
       "price": "+100",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-10",
@@ -3754,9 +3754,9 @@
       "side": "Over",
       "price": "+130",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-11-10",
@@ -3767,6 +3767,97 @@
       "side": "Yes",
       "price": "+230",
       "book": "fanduel",
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
+    },
+    {
+      "date": "2026-11-11",
+      "game": "Utah Mammoth @ Vegas Golden Knights",
+      "player": "Clayton Keller",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-135",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-11",
+      "game": "New York Rangers @ Calgary Flames",
+      "player": "Adam Fox",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-140",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-11",
+      "game": "New York Rangers @ Calgary Flames",
+      "player": "Alexis Lafreniere",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-175",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-11",
+      "game": "Pittsburgh Penguins @ San Jose Sharks",
+      "player": "Ben Kindel",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-164",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-11",
+      "game": "Pittsburgh Penguins @ San Jose Sharks",
+      "player": "Alex Wennberg",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-105",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-11",
+      "game": "Nashville Predators @ Anaheim Ducks",
+      "player": "Beckett Sennecke",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-120",
+      "book": "fanduel",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-11",
+      "game": "Tampa Bay Lightning @ Buffalo Sabres",
+      "player": "Anthony Cirelli",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "+100",
+      "book": "draftkings",
       "graded": false,
       "actual_stat": null,
       "hit": null
