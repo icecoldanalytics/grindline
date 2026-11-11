@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-10 06:05 AM MT",
+  "generated": "2026-11-11 06:05 AM MT",
   "season": "2025-26",
   "through_date": "2026-11-09",
   "pricing": {
@@ -774,7 +774,7 @@
       "sample_ok": false
     },
     "excluded_pre_min_games": 25,
-    "pending_goalie_resolution": 5,
+    "pending_goalie_resolution": 6,
     "last5": [
       {
         "date": "2026-10-28",
