@@ -1,6 +1,6 @@
 {
   "date": "2026-11-10",
-  "updated": "08:43 PM MT",
+  "updated": "11:56 PM MT",
   "games": [
     {
       "away": "COL",
@@ -18,21 +18,21 @@
       "home": "MTL",
       "away_city": "Minnesota",
       "home_city": "Montr\u00e9al",
-      "away_score": 1,
-      "home_score": 0,
-      "status": "live",
-      "display": "3rd \u00b7 03:52",
-      "period_label": "3rd"
+      "away_score": 2,
+      "home_score": 1,
+      "status": "final",
+      "display": "Final/OT",
+      "period_label": "OT"
     },
     {
       "away": "WSH",
       "home": "OTT",
       "away_city": "Washington",
       "home_city": "Ottawa",
-      "away_score": 2,
+      "away_score": 3,
       "home_score": 2,
-      "status": "live",
-      "display": "OT \u00b7 04:08",
+      "status": "final",
+      "display": "Final/OT",
       "period_label": "OT"
     },
     {
@@ -51,10 +51,10 @@
       "home": "CBJ",
       "away_city": "Florida",
       "home_city": "Columbus",
-      "away_score": 2,
+      "away_score": 4,
       "home_score": 1,
-      "status": "live",
-      "display": "3rd \u00b7 14:02",
+      "status": "final",
+      "display": "Final",
       "period_label": "3rd"
     },
     {
@@ -62,22 +62,22 @@
       "home": "STL",
       "away_city": "Detroit",
       "home_city": "St. Louis",
-      "away_score": 1,
-      "home_score": 2,
-      "status": "live",
-      "display": "2nd \u00b7 01:08",
-      "period_label": "2nd"
+      "away_score": 2,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "NSH",
       "home": "LAK",
       "away_city": "Nashville",
       "home_city": "Los Angeles",
-      "away_score": 0,
+      "away_score": 3,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     }
   ]
 }
