@@ -783,6 +783,20 @@
       "graded": false,
       "away_starter": "J. Woll",
       "goalie_bucket": "backup"
+    },
+    {
+      "date": "2026-11-11",
+      "away": "NSH",
+      "home": "ANA",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -146.4,
+      "home_ml_best": -141,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
