@@ -1,72 +1,72 @@
 {
   "date": "2026-11-10",
-  "updated": "01:03 AM MT",
+  "updated": "08:43 PM MT",
   "games": [
     {
       "away": "COL",
       "home": "TOR",
       "away_city": "Colorado",
       "home_city": "Toronto",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 6,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "MIN",
       "home": "MTL",
       "away_city": "Minnesota",
       "home_city": "Montr\u00e9al",
-      "away_score": 0,
+      "away_score": 1,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "live",
+      "display": "3rd \u00b7 03:52",
+      "period_label": "3rd"
     },
     {
       "away": "WSH",
       "home": "OTT",
       "away_city": "Washington",
       "home_city": "Ottawa",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 2,
+      "status": "live",
+      "display": "OT \u00b7 04:08",
+      "period_label": "OT"
     },
     {
       "away": "NJD",
       "home": "WPG",
       "away_city": "New Jersey",
       "home_city": "Winnipeg",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 4,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "FLA",
       "home": "CBJ",
       "away_city": "Florida",
       "home_city": "Columbus",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 1,
+      "status": "live",
+      "display": "3rd \u00b7 14:02",
+      "period_label": "3rd"
     },
     {
       "away": "DET",
       "home": "STL",
       "away_city": "Detroit",
       "home_city": "St. Louis",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 1,
+      "home_score": 2,
+      "status": "live",
+      "display": "2nd \u00b7 01:08",
+      "period_label": "2nd"
     },
     {
       "away": "NSH",
