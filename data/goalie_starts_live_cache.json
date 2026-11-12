@@ -1138,5 +1138,33 @@
   "2026-11-09|NYI@SJS": {
     "away_starter": "I. Sorokin",
     "home_starter": "Y. Askarov"
+  },
+  "2026-11-10|COL@TOR": {
+    "away_starter": "M. Blackwood",
+    "home_starter": "S. Bobrovsky"
+  },
+  "2026-11-10|MIN@MTL": {
+    "away_starter": "J. Wallstedt",
+    "home_starter": "J. Fowler"
+  },
+  "2026-11-10|WSH@OTT": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-10|NJD@WPG": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-10|FLA@CBJ": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-10|DET@STL": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-10|NSH@LAK": {
+    "away_starter": null,
+    "home_starter": null
   }
 }
