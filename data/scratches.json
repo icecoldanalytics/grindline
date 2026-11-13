@@ -1,16 +1,10 @@
 {
   "scratched": [
-    "Bowen Byram",
-    "Patrick Kane"
+    "Bowen Byram"
   ],
   "details": [
     {
       "player": "Bowen Byram",
-      "injury": "Upper Body",
-      "team": "CHI"
-    },
-    {
-      "player": "Patrick Kane",
       "injury": "Upper Body",
       "team": "CHI"
     }
