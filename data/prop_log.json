@@ -3975,9 +3975,9 @@
       "side": "Over",
       "price": "-135",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-13",
@@ -3988,9 +3988,9 @@
       "side": "Over",
       "price": "+110",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-13",
@@ -4001,9 +4001,9 @@
       "side": "Over",
       "price": "-155",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-13",
@@ -4014,9 +4014,9 @@
       "side": "Over",
       "price": "-150",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-13",
@@ -4027,9 +4027,9 @@
       "side": "Over",
       "price": "+171",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-13",
@@ -4040,9 +4040,9 @@
       "side": "Over",
       "price": "-132",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-11-13",
@@ -4053,9 +4053,9 @@
       "side": "Over",
       "price": "-145",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 6,
+      "hit": true
     },
     {
       "date": "2026-11-13",
@@ -4066,9 +4066,9 @@
       "side": "Over",
       "price": "-114",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-11-13",
@@ -4079,9 +4079,9 @@
       "side": "Over",
       "price": "-155",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-11-13",
@@ -4092,6 +4092,110 @@
       "side": "Over",
       "price": "-120",
       "book": "draftkings",
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
+    },
+    {
+      "date": "2026-11-14",
+      "game": "Edmonton Oilers @ Toronto Maple Leafs",
+      "player": "Auston Matthews",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+117",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-14",
+      "game": "Calgary Flames @ Los Angeles Kings",
+      "player": "Adrian Kempe",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+149",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-14",
+      "game": "Detroit Red Wings @ Tampa Bay Lightning",
+      "player": "Alex DeBrincat",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-155",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-14",
+      "game": "Seattle Kraken @ Carolina Hurricanes",
+      "player": "Andrei Svechnikov",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-105",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-14",
+      "game": "New Jersey Devils @ Washington Capitals",
+      "player": "Alex Tuch",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+100",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-14",
+      "game": "Ottawa Senators @ Pittsburgh Penguins",
+      "player": "Ben Kindel",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+100",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-14",
+      "game": "Florida Panthers @ St Louis Blues",
+      "player": "Anton Lundell",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-172",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-14",
+      "game": "Buffalo Sabres @ Dallas Stars",
+      "player": "Jack Quinn",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+146",
+      "book": "betonlineag",
       "graded": false,
       "actual_stat": null,
       "hit": null
