@@ -1,40 +1,19 @@
 {
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "games": [
     {
-      "away": "EDM",
-      "home": "PHI",
+      "away": "MTL",
+      "home": "NYR",
       "time": "6:30 PM MT",
-      "away_ml": "-148",
-      "home_ml": "+124"
-    },
-    {
-      "away": "FLA",
-      "home": "DAL",
-      "time": "7:00 PM MT",
-      "away_ml": "+114",
-      "home_ml": "-135"
-    },
-    {
-      "away": "CGY",
-      "home": "ANA",
-      "time": "7:00 PM MT",
-      "away_ml": "+130",
-      "home_ml": "-155"
+      "away_ml": null,
+      "home_ml": null
     },
     {
       "away": "VAN",
-      "home": "VGK",
-      "time": "8:00 PM MT",
-      "away_ml": "+320",
-      "home_ml": "-410"
-    },
-    {
-      "away": "NSH",
-      "home": "SJS",
-      "time": "8:00 PM MT",
-      "away_ml": "-170",
-      "home_ml": "+142"
+      "home": "UTA",
+      "time": "8:30 PM MT",
+      "away_ml": "+270",
+      "home_ml": "-345"
     }
   ]
 }
