@@ -1,61 +1,28 @@
 {
-  "date": "2026-11-15",
-  "updated": "08:41 PM MT",
+  "date": "2026-11-16",
+  "updated": "12:09 AM MT",
   "games": [
     {
-      "away": "EDM",
-      "home": "PHI",
-      "away_city": "Edmonton",
-      "home_city": "Philadelphia",
-      "away_score": 4,
-      "home_score": 2,
-      "status": "live",
-      "display": "3rd \u00b7 15:38",
-      "period_label": "3rd"
-    },
-    {
-      "away": "FLA",
-      "home": "DAL",
-      "away_city": "Florida",
-      "home_city": "Dallas",
-      "away_score": 1,
-      "home_score": 1,
-      "status": "live",
-      "display": "2nd \u00b7 14:09",
-      "period_label": "2nd"
-    },
-    {
-      "away": "CGY",
-      "home": "ANA",
-      "away_city": "Calgary",
-      "home_city": "Anaheim",
+      "away": "MTL",
+      "home": "NYR",
+      "away_city": "Montr\u00e9al",
+      "home_city": "New York",
       "away_score": 0,
-      "home_score": 2,
-      "status": "live",
-      "display": "2nd \u00b7 13:34",
-      "period_label": "2nd"
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
     },
     {
       "away": "VAN",
-      "home": "VGK",
+      "home": "UTA",
       "away_city": "Vancouver",
-      "home_city": "Vegas",
-      "away_score": 2,
-      "home_score": 1,
-      "status": "live",
-      "display": "1st \u00b7 04:13",
-      "period_label": "1st"
-    },
-    {
-      "away": "NSH",
-      "home": "SJS",
-      "away_city": "Nashville",
-      "home_city": "San Jose",
+      "home_city": "Utah",
       "away_score": 0,
-      "home_score": 2,
-      "status": "live",
-      "display": "1st \u00b7 03:06",
-      "period_label": "1st"
+      "home_score": 0,
+      "status": "pre",
+      "display": "Upcoming",
+      "period_label": ""
     }
   ]
 }
