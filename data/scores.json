@@ -1,28 +1,28 @@
 {
   "date": "2026-11-16",
-  "updated": "09:35 AM MT",
+  "updated": "11:02 PM MT",
   "games": [
     {
       "away": "MTL",
       "home": "NYR",
       "away_city": "Montr\u00e9al",
       "home_city": "New York",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 1,
+      "home_score": 3,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "VAN",
       "home": "UTA",
       "away_city": "Vancouver",
       "home_city": "Utah",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 2,
+      "home_score": 2,
+      "status": "live",
+      "display": "3rd \u00b7 07:08",
+      "period_label": "3rd"
     }
   ]
 }
