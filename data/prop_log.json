@@ -4352,9 +4352,9 @@
       "side": "Over",
       "price": "+105",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-11-16",
@@ -4365,9 +4365,9 @@
       "side": "Over",
       "price": "+120",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-11-16",
@@ -4391,9 +4391,9 @@
       "side": "Over",
       "price": "-120",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-11-16",
@@ -4404,6 +4404,110 @@
       "side": "Over",
       "price": "-140",
       "book": "betmgm",
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
+    },
+    {
+      "date": "2026-11-17",
+      "game": "Dallas Stars @ Vegas Golden Knights",
+      "player": "Jack Eichel",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-169",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-17",
+      "game": "Los Angeles Kings @ Boston Bruins",
+      "player": "Adrian Kempe",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-140",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-17",
+      "game": "Columbus Blue Jackets @ New York Islanders",
+      "player": "Adam Fantilli",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-120",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-17",
+      "game": "Washington Capitals @ Tampa Bay Lightning",
+      "player": "Alex Ovechkin",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+400",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-17",
+      "game": "Buffalo Sabres @ Philadelphia Flyers",
+      "player": "Christian Dvorak",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "+100",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-17",
+      "game": "Toronto Maple Leafs @ Chicago Blackhawks",
+      "player": "Anton Frondell",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+146",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-17",
+      "game": "Anaheim Ducks @ St Louis Blues",
+      "player": "Beckett Sennecke",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-140",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-17",
+      "game": "Nashville Predators @ Minnesota Wild",
+      "player": "Blake Coleman",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+140",
+      "book": "draftkings",
       "graded": false,
       "actual_stat": null,
       "hit": null
