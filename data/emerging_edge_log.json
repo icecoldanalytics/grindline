@@ -811,6 +811,20 @@
       "graded": false,
       "away_starter": null,
       "goalie_bucket": null
+    },
+    {
+      "date": "2026-11-18",
+      "away": "BOS",
+      "home": "DET",
+      "away_rest": 1,
+      "home_rest": 4,
+      "signal": "emerging_edge",
+      "home_ml_avg": -107.8,
+      "home_ml_best": -101,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
