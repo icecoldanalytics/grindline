@@ -4417,9 +4417,9 @@
       "side": "Over",
       "price": "-169",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-11-17",
@@ -4430,9 +4430,9 @@
       "side": "Over",
       "price": "-140",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-17",
@@ -4443,9 +4443,9 @@
       "side": "Over",
       "price": "-120",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-17",
@@ -4456,9 +4456,9 @@
       "side": "Yes",
       "price": "+400",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-17",
@@ -4469,9 +4469,9 @@
       "side": "Over",
       "price": "+100",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-11-17",
@@ -4482,9 +4482,9 @@
       "side": "Over",
       "price": "+146",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": false
     },
     {
       "date": "2026-11-17",
@@ -4508,6 +4508,110 @@
       "side": "Over",
       "price": "+140",
       "book": "draftkings",
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
+    },
+    {
+      "date": "2026-11-18",
+      "game": "Boston Bruins @ Detroit Red Wings",
+      "player": "Charlie McAvoy",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-111",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-18",
+      "game": "Boston Bruins @ Detroit Red Wings",
+      "player": "David Pastrnak",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "+109",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-18",
+      "game": "Boston Bruins @ Detroit Red Wings",
+      "player": "Alex DeBrincat",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-175",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-18",
+      "game": "Montr\u00e9al Canadiens @ New Jersey Devils",
+      "player": "Cole Caufield",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-152",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-18",
+      "game": "Montr\u00e9al Canadiens @ New Jersey Devils",
+      "player": "Arseny Gritsyuk",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-105",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-18",
+      "game": "Colorado Avalanche @ Utah Mammoth",
+      "player": "Artturi Lehkonen",
+      "market": "player_goal_scorer_anytime",
+      "line": "Anytime",
+      "side": "Yes",
+      "price": "+170",
+      "book": "betrivers",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-18",
+      "game": "Colorado Avalanche @ Utah Mammoth",
+      "player": "Barrett Hayton",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-169",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-18",
+      "game": "Colorado Avalanche @ Utah Mammoth",
+      "player": "Anders Lee",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+132",
+      "book": "betonlineag",
       "graded": false,
       "actual_stat": null,
       "hit": null
