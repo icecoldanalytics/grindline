@@ -4521,9 +4521,9 @@
       "side": "Over",
       "price": "-111",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-18",
@@ -4534,9 +4534,9 @@
       "side": "Over",
       "price": "+109",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 6,
+      "hit": true
     },
     {
       "date": "2026-11-18",
@@ -4547,9 +4547,9 @@
       "side": "Over",
       "price": "-175",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-18",
@@ -4586,9 +4586,9 @@
       "side": "Yes",
       "price": "+170",
       "book": "betrivers",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-18",
@@ -4599,9 +4599,9 @@
       "side": "Over",
       "price": "-169",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
     },
     {
       "date": "2026-11-18",
@@ -4611,6 +4611,110 @@
       "line": "0.5",
       "side": "Over",
       "price": "+132",
+      "book": "betonlineag",
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
+    },
+    {
+      "date": "2026-11-19",
+      "game": "Dallas Stars @ Vegas Golden Knights",
+      "player": "Jack Eichel",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-105",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-19",
+      "game": "Los Angeles Kings @ Toronto Maple Leafs",
+      "player": "Adrian Kempe",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-135",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-19",
+      "game": "New York Islanders @ Winnipeg Jets",
+      "player": "Bo Horvat",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-155",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-19",
+      "game": "Anaheim Ducks @ Colorado Avalanche",
+      "player": "Artturi Lehkonen",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-175",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-19",
+      "game": "Columbus Blue Jackets @ Chicago Blackhawks",
+      "player": "Adam Fantilli",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+170",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-19",
+      "game": "Buffalo Sabres @ Washington Capitals",
+      "player": "Alex Ovechkin",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+125",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-19",
+      "game": "Edmonton Oilers @ Tampa Bay Lightning",
+      "player": "Anthony Cirelli",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-108",
+      "book": "betonlineag",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-19",
+      "game": "St Louis Blues @ Pittsburgh Penguins",
+      "player": "Ben Kindel",
+      "market": "player_shots_on_goal",
+      "line": "1.5",
+      "side": "Over",
+      "price": "-172",
       "book": "betonlineag",
       "graded": false,
       "actual_stat": null,
