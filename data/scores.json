@@ -1,28 +1,28 @@
 {
   "date": "2026-11-18",
-  "updated": "01:09 AM MT",
+  "updated": "10:07 PM MT",
   "games": [
     {
       "away": "BOS",
       "home": "DET",
       "away_city": "Boston",
       "home_city": "Detroit",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 4,
+      "home_score": 1,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "MTL",
       "home": "NJD",
       "away_city": "Montr\u00e9al",
       "home_city": "New Jersey",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 3,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "COL",
@@ -31,9 +31,9 @@
       "home_city": "Utah",
       "away_score": 0,
       "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "status": "live",
+      "display": "1st \u00b7 08:54",
+      "period_label": "1st"
     }
   ]
 }
