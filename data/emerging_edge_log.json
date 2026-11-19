@@ -825,6 +825,20 @@
       "graded": false,
       "away_starter": null,
       "goalie_bucket": null
+    },
+    {
+      "date": "2026-11-19",
+      "away": "MTL",
+      "home": "CAR",
+      "away_rest": 1,
+      "home_rest": 5,
+      "signal": "emerging_edge",
+      "home_ml_avg": -274.0,
+      "home_ml_best": -260,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
