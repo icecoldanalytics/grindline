@@ -4625,9 +4625,9 @@
       "side": "Over",
       "price": "-105",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-19",
@@ -4638,9 +4638,9 @@
       "side": "Over",
       "price": "-135",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 3,
+      "hit": true
     },
     {
       "date": "2026-11-19",
@@ -4651,9 +4651,9 @@
       "side": "Over",
       "price": "-155",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-19",
@@ -4664,9 +4664,9 @@
       "side": "Over",
       "price": "-175",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-19",
@@ -4677,9 +4677,9 @@
       "side": "Over",
       "price": "+170",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-19",
@@ -4690,9 +4690,9 @@
       "side": "Over",
       "price": "+125",
       "book": "draftkings",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-19",
@@ -4703,9 +4703,9 @@
       "side": "Over",
       "price": "-108",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-19",
