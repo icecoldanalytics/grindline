@@ -1,103 +1,40 @@
 {
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "games": [
     {
-      "away": "EDM",
-      "home": "CAR",
-      "time": "12:00 PM MT",
-      "away_ml": "+152",
-      "home_ml": "-184"
-    },
-    {
-      "away": "CHI",
-      "home": "CGY",
-      "time": "2:30 PM MT",
-      "away_ml": "+138",
-      "home_ml": "-166"
+      "away": "CAR",
+      "home": "NYR",
+      "time": "11:30 AM MT",
+      "away_ml": "-155",
+      "home_ml": "+130"
     },
     {
       "away": "BUF",
-      "home": "FLA",
-      "time": "5:00 PM MT",
-      "away_ml": "+130",
-      "home_ml": "-156"
+      "home": "TBL",
+      "time": "4:00 PM MT",
+      "away_ml": "+170",
+      "home_ml": "-205"
     },
     {
-      "away": "PIT",
-      "home": "NSH",
-      "time": "5:00 PM MT",
-      "away_ml": "+114",
-      "home_ml": "-137"
-    },
-    {
-      "away": "WSH",
-      "home": "BOS",
-      "time": "6:00 PM MT",
-      "away_ml": "+100",
-      "home_ml": "-120"
-    },
-    {
-      "away": "CBJ",
-      "home": "TOR",
-      "time": "6:00 PM MT",
-      "away_ml": "+102",
-      "home_ml": "-122"
-    },
-    {
-      "away": "PHI",
-      "home": "MTL",
-      "time": "6:00 PM MT",
-      "away_ml": null,
-      "home_ml": null
-    },
-    {
-      "away": "LAK",
-      "home": "OTT",
-      "time": "6:00 PM MT",
-      "away_ml": "+145",
-      "home_ml": "-175"
-    },
-    {
-      "away": "NYI",
-      "home": "DET",
-      "time": "6:00 PM MT",
-      "away_ml": "-122",
-      "home_ml": "+102"
-    },
-    {
-      "away": "NJD",
+      "away": "EDM",
       "home": "STL",
       "time": "6:00 PM MT",
       "away_ml": null,
       "home_ml": null
     },
     {
-      "away": "VGK",
-      "home": "WPG",
+      "away": "PIT",
+      "home": "DAL",
       "time": "6:00 PM MT",
-      "away_ml": "-135",
-      "home_ml": "+114"
+      "away_ml": "+185",
+      "home_ml": "-225"
     },
     {
-      "away": "ANA",
-      "home": "UTA",
-      "time": "8:00 PM MT",
-      "away_ml": "+136",
-      "home_ml": "-162"
-    },
-    {
-      "away": "MIN",
+      "away": "CHI",
       "home": "VAN",
-      "time": "9:00 PM MT",
-      "away_ml": "-298",
-      "home_ml": "+240"
-    },
-    {
-      "away": "SEA",
-      "home": "SJS",
-      "time": "9:00 PM MT",
-      "away_ml": "-102",
-      "home_ml": "-118"
+      "time": "7:00 PM MT",
+      "away_ml": "-112",
+      "home_ml": "-108"
     }
   ]
 }
