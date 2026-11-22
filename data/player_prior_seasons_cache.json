@@ -28046,5 +28046,101 @@
       "shutouts": 0,
       "toi_seconds": 0
     }
+  },
+  "8478104": {
+    "20252026": {
+      "games_played": 21,
+      "points": 8,
+      "goals": 3,
+      "assists": 5,
+      "shots": 18,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    },
+    "20242025": {
+      "games_played": 0,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    }
+  },
+  "8482674": {
+    "20252026": {
+      "games_played": 0,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    },
+    "20242025": {
+      "games_played": 0,
+      "points": 0,
+      "goals": 0,
+      "assists": 0,
+      "shots": 0,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    }
+  },
+  "8481577": {
+    "20252026": {
+      "games_played": 9,
+      "points": 1,
+      "goals": 0,
+      "assists": 1,
+      "shots": 9,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    },
+    "20242025": {
+      "games_played": 61,
+      "points": 24,
+      "goals": 11,
+      "assists": 13,
+      "shots": 104,
+      "shots_against": 0,
+      "goals_against": 0,
+      "games_started": 0,
+      "wins": 0,
+      "losses": 0,
+      "ot_losses": 0,
+      "shutouts": 0,
+      "toi_seconds": 0
+    }
   }
 }
