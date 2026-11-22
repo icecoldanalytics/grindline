@@ -839,6 +839,48 @@
       "graded": false,
       "away_starter": null,
       "goalie_bucket": null
+    },
+    {
+      "date": "2026-11-22",
+      "away": "BUF",
+      "home": "TBL",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -203.6,
+      "home_ml_best": -194,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-11-22",
+      "away": "CAR",
+      "home": "NYR",
+      "away_rest": 1,
+      "home_rest": 6,
+      "signal": "emerging_edge",
+      "home_ml_avg": 132.8,
+      "home_ml_best": 136,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
+    },
+    {
+      "date": "2026-11-22",
+      "away": "PIT",
+      "home": "DAL",
+      "away_rest": 1,
+      "home_rest": 3,
+      "signal": "emerging_edge",
+      "home_ml_avg": -221.1,
+      "home_ml_best": -210,
+      "price_source": "live_06:00_MT",
+      "graded": false,
+      "away_starter": null,
+      "goalie_bucket": null
     }
   ]
 }
