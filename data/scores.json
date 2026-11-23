@@ -1,39 +1,39 @@
 {
   "date": "2026-11-22",
-  "updated": "08:50 AM MT",
+  "updated": "09:40 PM MT",
   "games": [
     {
       "away": "CAR",
       "home": "NYR",
       "away_city": "Carolina",
       "home_city": "New York",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 5,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "BUF",
       "home": "TBL",
       "away_city": "Buffalo",
       "home_city": "Tampa Bay",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 6,
+      "home_score": 2,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "EDM",
       "home": "STL",
       "away_city": "Edmonton",
       "home_city": "St. Louis",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 4,
+      "home_score": 5,
+      "status": "final",
+      "display": "Final/SO",
+      "period_label": "SO"
     },
     {
       "away": "PIT",
@@ -41,21 +41,21 @@
       "away_city": "Pittsburgh",
       "home_city": "Dallas",
       "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "home_score": 1,
+      "status": "final",
+      "display": "Final",
+      "period_label": "3rd"
     },
     {
       "away": "CHI",
       "home": "VAN",
       "away_city": "Chicago",
       "home_city": "Vancouver",
-      "away_score": 0,
-      "home_score": 0,
-      "status": "pre",
-      "display": "Upcoming",
-      "period_label": ""
+      "away_score": 6,
+      "home_score": 3,
+      "status": "live",
+      "display": "3rd \u00b7 03:42",
+      "period_label": "3rd"
     }
   ]
 }
