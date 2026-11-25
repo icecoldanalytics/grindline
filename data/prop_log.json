@@ -5054,9 +5054,9 @@
       "side": "Over",
       "price": "-110",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-24",
@@ -5067,9 +5067,9 @@
       "side": "Over",
       "price": "+100",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-11-24",
@@ -5080,9 +5080,9 @@
       "side": "Over",
       "price": "+110",
       "book": "betmgm",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 0,
+      "hit": false
     },
     {
       "date": "2026-11-24",
@@ -5093,9 +5093,9 @@
       "side": "Over",
       "price": "-140",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": false
     },
     {
       "date": "2026-11-24",
@@ -5106,9 +5106,9 @@
       "side": "Over",
       "price": "-110",
       "book": "fanduel",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 4,
+      "hit": true
     },
     {
       "date": "2026-11-24",
@@ -5119,9 +5119,9 @@
       "side": "Over",
       "price": "+128",
       "book": "betonlineag",
-      "graded": false,
-      "actual_stat": null,
-      "hit": null
+      "graded": true,
+      "actual_stat": 1,
+      "hit": true
     },
     {
       "date": "2026-11-24",
@@ -5132,6 +5132,110 @@
       "side": "Over",
       "price": "+186",
       "book": "betonlineag",
+      "graded": true,
+      "actual_stat": 2,
+      "hit": true
+    },
+    {
+      "date": "2026-11-25",
+      "game": "Ottawa Senators @ Florida Panthers",
+      "player": "Aleksander Barkov",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-150",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-25",
+      "game": "Nashville Predators @ Dallas Stars",
+      "player": "Filip Forsberg",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-140",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-25",
+      "game": "New York Rangers @ Buffalo Sabres",
+      "player": "Adam Fox",
+      "market": "player_points",
+      "line": "0.5",
+      "side": "Over",
+      "price": "-150",
+      "book": "betmgm",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-25",
+      "game": "Vancouver Canucks @ Detroit Red Wings",
+      "player": "Alex DeBrincat",
+      "market": "player_shots_on_goal",
+      "line": "3.5",
+      "side": "Over",
+      "price": "-110",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-25",
+      "game": "St Louis Blues @ New York Islanders",
+      "player": "Bo Horvat",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "-130",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-25",
+      "game": "Carolina Hurricanes @ Tampa Bay Lightning",
+      "player": "Andrei Svechnikov",
+      "market": "player_shots_on_goal",
+      "line": "2.5",
+      "side": "Over",
+      "price": "+105",
+      "book": "draftkings",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-25",
+      "game": "Philadelphia Flyers @ Washington Capitals",
+      "player": "Alex Ovechkin",
+      "market": "player_goal_scorer_anytime",
+      "line": "N/A",
+      "side": "Yes",
+      "price": "+380",
+      "book": "betrivers",
+      "graded": false,
+      "actual_stat": null,
+      "hit": null
+    },
+    {
+      "date": "2026-11-25",
+      "game": "Winnipeg Jets @ Boston Bruins",
+      "player": "Casey Mittelstadt",
+      "market": "player_assists",
+      "line": "0.5",
+      "side": "Over",
+      "price": "+185",
+      "book": "draftkings",
       "graded": false,
       "actual_stat": null,
       "hit": null
