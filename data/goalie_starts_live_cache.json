@@ -1190,5 +1190,49 @@
   "2026-11-11|PIT@SJS": {
     "away_starter": null,
     "home_starter": null
+  },
+  "2026-11-12|CAR@SEA": {
+    "away_starter": "B. Bussi",
+    "home_starter": "P. Grubauer"
+  },
+  "2026-11-12|MTL@BOS": {
+    "away_starter": "J. Fowler",
+    "home_starter": "J. Swayman"
+  },
+  "2026-11-12|MIN@TOR": {
+    "away_starter": "J. Wallstedt",
+    "home_starter": "A. Stolarz"
+  },
+  "2026-11-12|COL@OTT": {
+    "away_starter": "S. Wedgewood",
+    "home_starter": "L. Ullmark"
+  },
+  "2026-11-12|WSH@NJD": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-12|TBL@CBJ": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-12|DET@FLA": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-12|BUF@CHI": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-12|WPG@DAL": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-12|STL@UTA": {
+    "away_starter": null,
+    "home_starter": null
+  },
+  "2026-11-12|NYI@LAK": {
+    "away_starter": null,
+    "home_starter": null
   }
 }
