@@ -1,7 +1,8 @@
 {
   "scratched": [
     "Bowen Byram",
-    "Connor Bedard"
+    "Connor Bedard",
+    "Patrick Kane"
   ],
   "details": [
     {
@@ -12,6 +13,11 @@
     {
       "player": "Connor Bedard",
       "injury": "Shoulder",
+      "team": "CHI"
+    },
+    {
+      "player": "Patrick Kane",
+      "injury": "Lower Body",
       "team": "CHI"
     }
   ],
